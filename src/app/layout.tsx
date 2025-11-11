@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased font-sans`}>
+    <html lang="en">
+      <body className={`${inter.variable} antialiased font-sans bg-white`}>
         <Header />
         <main className="pt-16 min-h-screen">
           {children}
