@@ -17,7 +17,7 @@ export default function Portfolio() {
       title: "The Skate Workshop",
       category: "Mobile App • Web Platform",
       description: "Olympic-level skateboarding coaching platform with video feedback, 400+ trick database, and multiplayer features.",
-      image: "/images/skateboarding-action.jpg",
+      image: "/images/image_6483441.jpeg",
       tags: ["React Native", "Next.js", "Stripe", "Real-time"],
       color: "blue",
       href: "/portfolio/skate-workshop",
@@ -30,7 +30,7 @@ export default function Portfolio() {
       description: "Music artist portfolio with streaming integrations, performance optimization, and SEO for discoverability.",
       image: "/images/client-collaboration.jpg",
       tags: ["Next.js", "SEO", "Performance"],
-      color: "purple",
+      color: "blue",
       href: "/portfolio/cbarrgs",
       liveUrl: "https://cbarrgs.com"
     }

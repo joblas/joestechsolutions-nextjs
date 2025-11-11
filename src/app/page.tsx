@@ -5,34 +5,27 @@ import { ArrowRight, Smartphone, Globe, Zap, Briefcase, CheckCircle, Sparkles } 
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      {/* Hero Section with Animated Background */}
-      <section className="relative overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20 animate-gradient" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/50 to-transparent" />
-
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIxMjEyMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
-
+    <div className="min-h-screen bg-white">
+      {/* Hero Section with Clean Background */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E9F1FA] to-white">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="text-center space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600/10 border border-blue-600/20 rounded-full text-blue-400 text-sm font-medium backdrop-blur-sm animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#00ABE4]/20 rounded-full text-[#00ABE4] text-sm font-medium shadow-sm animate-fade-in">
               <Sparkles className="w-4 h-4" />
               <span>Building the future, one app at a time</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight animate-slide-up">
-              <span className="block text-white mb-2">Boutique Development</span>
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="block text-gray-900 mb-2">Boutique Development</span>
+              <span className="block text-[#00ABE4]">
                 For Ambitious SMBs
               </span>
             </h1>
 
             {/* Subheading */}
-            <p className="mt-6 text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay">
+            <p className="mt-6 text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay">
               From Olympic coaching apps to AI infrastructure—we build mobile apps, web platforms,
               and custom solutions that help growing businesses compete.
             </p>
@@ -40,22 +33,19 @@ export default function Home() {
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
               <Link href="/portfolio">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 group">
+                <Button size="lg" style={{ backgroundColor: '#00ABE4' }} className="hover:opacity-90 text-lg px-8 py-6 group">
                   View Our Work
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-slate-700 hover:bg-slate-800 hover:border-slate-600">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-gray-300 hover:bg-[#E9F1FA] hover:border-[#00ABE4]">
                   Schedule Discovery Call
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
       </section>
 
       {/* Featured Case Study - The Skate Workshop */}
