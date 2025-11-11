@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Music artist portfolio website with streaming integrations, performance optimization, and SEO.",
 };
 
-export default function CbarrgsC aseStudy() {
+export default function CbarrgsCaseStudy() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Back Button */}
