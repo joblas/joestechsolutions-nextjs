@@ -28,7 +28,7 @@ export default function Portfolio() {
       title: "Cbarrgs Music",
       category: "Artist Website",
       description: "Music artist portfolio with streaming integrations, performance optimization, and SEO for discoverability.",
-      image: "/images/client-collaboration.jpg",
+      image: "/images/cbarrgs-logo.png",
       tags: ["Next.js", "SEO", "Performance"],
       color: "blue",
       href: "/portfolio/cbarrgs",

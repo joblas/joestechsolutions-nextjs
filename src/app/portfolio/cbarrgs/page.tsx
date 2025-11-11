@@ -54,12 +54,12 @@ export default function CbarrgsCaseStudy() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-700">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-700 bg-white flex items-center justify-center">
                 <Image
-                  src="/images/client-collaboration.jpg"
-                  alt="Cbarrgs collaboration"
+                  src="/images/cbarrgs-logo.png"
+                  alt="Cbarrgs logo"
                   fill
-                  className="object-cover"
+                  className="object-contain p-8"
                 />
               </div>
             </div>
