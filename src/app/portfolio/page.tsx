@@ -41,10 +41,10 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Hero */}
       <section className="relative overflow-hidden py-20 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
+        <div className="absolute inset-0 bg-linear-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
@@ -81,7 +81,7 @@ export default function Portfolio() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/50 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className="inline-block px-3 py-1 bg-blue-600/90 backdrop-blur-sm rounded-full text-white text-sm font-medium">
                       {project.category}

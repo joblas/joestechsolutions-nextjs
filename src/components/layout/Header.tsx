@@ -16,12 +16,12 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-slate-950/95 backdrop-blur-sm border-b border-slate-800 shadow-sm" role="banner">
+    <header className="fixed top-0 w-full z-50 bg-[#0d0d12]/95 backdrop-blur-md border-b border-white/10" role="banner">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-white hover:text-blue-400 transition-colors">
+          <div className="shrink-0">
+            <Link href="/" className="text-xl font-bold text-white hover:text-[#0099ff] transition-colors font-space-grotesk">
               Joe's Tech Solutions
             </Link>
           </div>
@@ -33,13 +33,13 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-slate-300 hover:text-blue-400 transition-colors text-sm font-medium"
+                  className="text-white/70 hover:text-[#0099ff] transition-colors text-sm font-medium"
                 >
                   {item.name}
                 </Link>
               ))}
               <Link href="/contact">
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                <Button size="sm" className="bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full shadow-lg shadow-[#0099ff]/20">
                   Get Started
                 </Button>
               </Link>
@@ -50,7 +50,7 @@ export function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-slate-300 hover:text-blue-400"
+              className="text-white/70 hover:text-[#0099ff]"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
@@ -67,7 +67,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-slate-300 hover:text-blue-400 hover:bg-slate-800 rounded transition-colors min-h-[44px] flex items-center"
+                className="flex items-center px-4 py-2 text-white/70 hover:text-[#0099ff] hover:bg-white/5 rounded transition-colors min-h-[44px]"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -75,7 +75,7 @@ export function Header() {
             ))}
             <div className="px-4 pt-2">
               <Link href="/contact" className="block">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 min-h-[44px]">
+                <Button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0099ff]/20">
                   Get Started
                 </Button>
               </Link>
