@@ -38,7 +38,7 @@ export default function CbarrgsCaseStudy() {
                 Cbarrgs Music
               </h1>
 
-              <p className="text-xl text-slate-300 leading-relaxed">
+              <p className="text-xl text-slate-100 leading-relaxed">
                 Electronic music artist portfolio with seamless streaming platform integrations,
                 optimized performance, and SEO strategy for music discovery.
               </p>
@@ -56,7 +56,7 @@ export default function CbarrgsCaseStudy() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-700 bg-white flex items-center justify-center">
                 <Image
-                  src="/images/cbarrgs-logo.png"
+                  src="/images/cbarrgs-logo.jpeg"
                   alt="Cbarrgs logo"
                   fill
                   className="object-contain p-8"
@@ -79,7 +79,7 @@ export default function CbarrgsCaseStudy() {
                 <CardTitle className="text-white">Platform</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-400">Next.js Web Platform</p>
+                <p className="text-slate-200">Next.js Web Platform</p>
               </CardContent>
             </Card>
 
@@ -91,7 +91,7 @@ export default function CbarrgsCaseStudy() {
                 <CardTitle className="text-white">Performance</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-400">Optimized Font Loading</p>
+                <p className="text-slate-200">Optimized Font Loading</p>
               </CardContent>
             </Card>
 
@@ -103,7 +103,7 @@ export default function CbarrgsCaseStudy() {
                 <CardTitle className="text-white">SEO</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-400">Schema.org Structured Data</p>
+                <p className="text-slate-200">Schema.org Structured Data</p>
               </CardContent>
             </Card>
           </div>
@@ -140,7 +140,7 @@ export default function CbarrgsCaseStudy() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-300">{item}</span>
+                    <span className="text-slate-100">{item}</span>
                   </div>
                 ))}
               </div>
@@ -168,7 +168,7 @@ export default function CbarrgsCaseStudy() {
                 <CardContent>
                   <ul className="space-y-2">
                     {stack.tech.map((item, i) => (
-                      <li key={i} className="text-slate-300 text-sm">{item}</li>
+                      <li key={i} className="text-slate-200 text-sm">{item}</li>
                     ))}
                   </ul>
                 </CardContent>
@@ -214,7 +214,7 @@ export default function CbarrgsCaseStudy() {
                   <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300">{feature.description}</p>
+                  <p className="text-slate-100">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -256,7 +256,7 @@ export default function CbarrgsCaseStudy() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Need a Professional Website?
           </h2>
-          <p className="text-xl text-slate-300 mb-10">
+          <p className="text-xl text-slate-100 mb-10">
             Let's build your online presence
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

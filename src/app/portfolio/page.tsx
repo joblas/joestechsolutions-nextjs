@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowRight, ExternalLink, Smartphone, Globe } from "lucide-react";
 import type { Metadata } from "next";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { AnimatedCard } from "@/components/animations/AnimatedCard";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "Portfolio | Joe's Tech Solutions",
@@ -17,7 +21,7 @@ export default function Portfolio() {
       title: "The Skate Workshop",
       category: "Mobile App • Web Platform",
       description: "Olympic-level skateboarding coaching platform with video feedback, 400+ trick database, and multiplayer features.",
-      image: "/images/image_6483441.jpeg",
+      image: "/images/the-skate-workshop.png",
       tags: ["React Native", "Next.js", "Stripe", "Real-time"],
       color: "blue",
       href: "/portfolio/skate-workshop",
@@ -28,7 +32,7 @@ export default function Portfolio() {
       title: "Cbarrgs Music",
       category: "Artist Website",
       description: "Music artist portfolio with streaming integrations, performance optimization, and SEO for discoverability.",
-      image: "/images/cbarrgs-logo.png",
+      image: "/images/cbarrgs-logo.jpeg",
       tags: ["Next.js", "SEO", "Performance"],
       color: "blue",
       href: "/portfolio/cbarrgs",
@@ -44,16 +48,20 @@ export default function Portfolio() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="block text-white mb-2">Our Work</span>
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Building Real Solutions
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              From Olympic coaching apps to artist portfolios—see how we help
-              businesses bring their vision to life.
-            </p>
+            <FadeIn delay={0.1}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+                <span className="block text-white mb-2">Our Work</span>
+                <span className="block text-blue-400 font-bold">
+                  Building Real Solutions
+                </span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-xl sm:text-2xl text-slate-100 max-w-3xl mx-auto leading-relaxed">
+                From Olympic coaching apps to artist portfolios—see how we help
+                businesses bring their vision to life.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -61,9 +69,11 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <StaggerContainer className="grid lg:grid-cols-2 gap-8" staggerDelay={0.2}>
             {projects.map((project, index) => (
-              <Card key={project.id} className="bg-slate-800/50 border-slate-700 hover:border-blue-600/50 transition-all duration-300 overflow-hidden group">
+              <StaggerItem key={project.id}>
+                <AnimatedCard>
+                  <Card className="bg-slate-800/50 border-slate-700 hover:border-blue-600/50 transition-all duration-300 overflow-hidden group h-full">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image}
@@ -81,7 +91,7 @@ export default function Portfolio() {
 
                 <CardHeader>
                   <CardTitle className="text-2xl text-white mb-2">{project.title}</CardTitle>
-                  <CardDescription className="text-slate-300 text-base">
+                  <CardDescription className="text-slate-100 text-base">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -91,7 +101,7 @@ export default function Portfolio() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-slate-700/50 border border-slate-600 rounded-full text-slate-300 text-sm"
+                        className="px-3 py-1 bg-slate-700/50 border border-slate-600 rounded-full text-slate-200 text-sm"
                       >
                         {tag}
                       </span>
@@ -113,44 +123,58 @@ export default function Portfolio() {
                     </Link>
                   </div>
                 </CardContent>
-              </Card>
+                  </Card>
+                </AnimatedCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
           {/* More Projects Coming */}
-          <div className="mt-16 text-center">
-            <Card className="bg-slate-800/30 border-slate-700 border-dashed">
-              <CardContent className="py-12">
-                <p className="text-slate-400 text-lg mb-6">
-                  More case studies coming soon. Working on something exciting?
-                </p>
-                <Link href="/contact">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                    Start Your Project
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
+          <FadeIn delay={0.4}>
+            <div className="mt-16 text-center">
+              <Card className="bg-slate-800/30 border-slate-700 border-dashed">
+                <CardContent className="py-12">
+                  <p className="text-slate-200 text-lg mb-6">
+                    More case studies coming soon. Working on something exciting?
+                  </p>
+                  <Link href="/contact">
+                    <MagneticButton strength={0.2}>
+                      <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                        Start Your Project
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </MagneticButton>
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
       <section className="relative py-20 sm:py-32 bg-slate-900/50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Let's Build Something Together
-          </h2>
-          <p className="text-xl text-slate-300 mb-10">
-            Have a project in mind? Let's discuss how we can help bring it to life.
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-10 py-6 group">
-              Schedule Discovery Call
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Let's Build Something Together
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="text-xl text-slate-100 mb-10">
+              Have a project in mind? Let's discuss how we can help bring it to life.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <Link href="/contact">
+              <MagneticButton strength={0.3}>
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-10 py-6 group">
+                  Schedule Discovery Call
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </MagneticButton>
+            </Link>
+          </FadeIn>
         </div>
       </section>
     </div>

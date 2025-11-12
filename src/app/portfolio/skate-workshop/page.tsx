@@ -38,7 +38,7 @@ export default function SkateWorkshopCaseStudy() {
                 The Skate Workshop
               </h1>
 
-              <p className="text-xl text-slate-300 leading-relaxed">
+              <p className="text-xl text-slate-100 leading-relaxed">
                 Olympic-level skateboarding coaching delivered through a mobile-first platform
                 with video feedback, comprehensive trick database, and multiplayer features.
               </p>
@@ -79,7 +79,7 @@ export default function SkateWorkshopCaseStudy() {
                 <CardTitle className="text-white">Platform</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-400">iOS, Android, Web</p>
+                <p className="text-slate-200">iOS, Android, Web</p>
               </CardContent>
             </Card>
 
@@ -91,7 +91,7 @@ export default function SkateWorkshopCaseStudy() {
                 <CardTitle className="text-white">Users</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-400">Beta Testing Phase</p>
+                <p className="text-slate-200">Beta Testing Phase</p>
               </CardContent>
             </Card>
 
@@ -103,7 +103,7 @@ export default function SkateWorkshopCaseStudy() {
                 <CardTitle className="text-white">Features</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-400">400+ Tricks, Video Feedback, Multiplayer</p>
+                <p className="text-slate-200">400+ Tricks, Video Feedback, Multiplayer</p>
               </CardContent>
             </Card>
           </div>
@@ -141,7 +141,7 @@ export default function SkateWorkshopCaseStudy() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-300">{item}</span>
+                    <span className="text-slate-100">{item}</span>
                   </div>
                 ))}
               </div>
@@ -169,7 +169,7 @@ export default function SkateWorkshopCaseStudy() {
                 <CardContent>
                   <ul className="space-y-2">
                     {stack.tech.map((item, i) => (
-                      <li key={i} className="text-slate-300 text-sm">{item}</li>
+                      <li key={i} className="text-slate-200 text-sm">{item}</li>
                     ))}
                   </ul>
                 </CardContent>
@@ -215,7 +215,7 @@ export default function SkateWorkshopCaseStudy() {
                   <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300">{feature.description}</p>
+                  <p className="text-slate-100">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -257,7 +257,7 @@ export default function SkateWorkshopCaseStudy() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Build Your App?
           </h2>
-          <p className="text-xl text-slate-300 mb-10">
+          <p className="text-xl text-slate-100 mb-10">
             Let's discuss your mobile or web platform project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
