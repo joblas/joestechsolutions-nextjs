@@ -8,7 +8,7 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
 export const metadata: Metadata = {
   title: "Contact | Joe's Tech Solutions",
-  description: "Get in touch to discuss your mobile app, web platform, or AI infrastructure project.",
+  description: "Get in touch to discuss your mobile app, website, e-commerce platform, or custom software needs.",
 };
 
 export default function Contact() {
@@ -25,15 +25,16 @@ export default function Contact() {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Let's Build</span>
+                <span className="block text-white mb-3">Let's Discuss</span>
                 <span className="block text-[#0EA5E9]">
-                  Something Great Together
+                  Your Project
                 </span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                Schedule a free 30-minute discovery call to discuss your project
+                Free 30-minute discovery call. No pitch, no pressure—just a conversation about
+                what you need and how we can help.
               </p>
             </FadeIn>
           </div>
@@ -160,7 +161,7 @@ export default function Contact() {
                 What We Can Help With
               </h2>
               <p className="text-xl text-white/70 font-light">
-                Our core services for growing businesses
+                Our core services for your business
               </p>
             </div>
           </FadeIn>
@@ -169,8 +170,8 @@ export default function Contact() {
             {[
               { title: "Mobile Apps", desc: "iOS & Android", price: "$25K-150K", color: "#0EA5E9" },
               { title: "Web Development", desc: "React & Next.js", price: "$30K-250K", color: "#06B6D4" },
-              { title: "AI Infrastructure", desc: "Private deployment", price: "$9.5K-35K", color: "#0EA5E9" },
-              { title: "Consulting", desc: "Strategy & ops", price: "$175-350/hr", color: "#0EA5E9" }
+              { title: "E-commerce", desc: "Online stores", price: "$5K-50K", color: "#0EA5E9" },
+              { title: "Custom Solutions", desc: "APIs & integrations", price: "Contact", color: "#06B6D4" }
             ].map((service, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>

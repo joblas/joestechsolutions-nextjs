@@ -27,16 +27,16 @@ export default function Home() {
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0EA5E9] text-sm font-medium backdrop-blur-sm">
                 <Sparkles className="w-4 h-4" aria-hidden="true" />
-                <span>Building the future, one solution at a time</span>
+                <span>Flexible solutions for every business type</span>
               </div>
             </FadeIn>
 
             {/* Main Heading */}
             <FadeIn delay={0.2}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Premium Tech Solutions</span>
+                <span className="block text-white mb-3">Technology Built for Your Business</span>
                 <span className="block text-[#0EA5E9]">
-                  For Ambitious SMBs
+                  (Whatever That Looks Like)
                 </span>
               </h1>
             </FadeIn>
@@ -44,8 +44,8 @@ export default function Home() {
             {/* Subheading */}
             <FadeIn delay={0.3}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                From Olympic coaching apps to AI infrastructure—we build mobile apps, web platforms,
-                and custom solutions that help growing businesses compete.
+                Websites, mobile apps, e-commerce platforms, and custom solutions. We work with startups,
+                established companies, and businesses of all sizes.
               </p>
             </FadeIn>
 
@@ -80,8 +80,7 @@ export default function Home() {
                 What We Build
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Full-stack development, AI infrastructure, and strategic consulting
-                for growing businesses
+                Custom software solutions for businesses of all sizes
               </p>
             </FadeIn>
           </div>
@@ -102,7 +101,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Cross-platform mobile applications with native performance and seamless user experiences
+                      iOS and Android apps that your customers will love. Built to engage users and drive your business forward.
                     </p>
                     <Link href="/services#mobile" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
                       Learn more
@@ -128,7 +127,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Fast, responsive, and SEO-optimized web applications that drive results
+                      Beautiful, fast websites that convert visitors into customers. Built with SEO and user experience in mind.
                     </p>
                     <Link href="/services#web" className="text-[#06B6D4] text-sm font-medium hover:text-[#0891b2] inline-flex items-center group/link transition-colors">
                       Learn more
@@ -139,24 +138,24 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* AI Infrastructure */}
+            {/* Custom Solutions */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0EA5E9]/20 transition-all duration-300">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="AI Infrastructure" width={32} height={32} className="object-contain" />
+                      <Image src="/icons/tools-dynamic/premium.png" alt="Custom Solutions" width={32} height={32} className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">AI Infrastructure</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">Custom Solutions</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      Private AI deployment & optimization
+                      API development & integrations
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Save $50K-$120K/year with private AI infrastructure tailored to your needs
+                      Have a unique need? We build custom solutions, APIs, and integrations tailored to your business.
                     </p>
-                    <Link href="/services#ai" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
+                    <Link href="/services#custom" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
                       Learn more
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
@@ -165,24 +164,24 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* Consulting */}
+            {/* E-commerce */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0EA5E9]/20 transition-all duration-300">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="Strategic Consulting" width={32} height={32} className="object-contain" />
+                      <Image src="/icons/rocket-dynamic/premium.png" alt="E-commerce Solutions" width={32} height={32} className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">Strategic Consulting</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">E-commerce</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      Technology strategy & operations
+                      Online stores & payment integration
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      From Waymo operations to your technology roadmap—expert guidance
+                      Turn browsers into buyers. Custom stores or Shopify setups with secure payments and analytics.
                     </p>
-                    <Link href="/services#consulting" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
+                    <Link href="/services#ecommerce" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
                       Learn more
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
@@ -282,11 +281,11 @@ export default function Home() {
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Enterprise-Grade Technology
+                Modern Technology Stack
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                Leveraging cutting-edge tools from the world's leading technology companies
-                to deliver robust, scalable solutions
+                Leveraging cutting-edge tools from leading technology companies
+                to deliver reliable, scalable solutions
               </p>
             </FadeIn>
           </div>

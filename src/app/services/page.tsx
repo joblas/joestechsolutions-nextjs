@@ -12,7 +12,7 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "Services | Joe's Tech Solutions",
-  description: "Mobile app development, web platforms, private AI infrastructure, and strategic consulting for ambitious SMBs.",
+  description: "Mobile app development, web platforms, e-commerce solutions, and custom software for businesses of all sizes.",
 };
 
 export default function Services() {
@@ -32,14 +32,14 @@ export default function Services() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Full-Stack Technology Partner</span>
                 <span className="block text-[#0EA5E9]">
-                  For Growing Businesses
+                  For Your Business
                 </span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                From managing Waymo autonomous vehicle operations to building practical technology solutions—
-                hands-on builder who understands systems, operations, and execution.
+                Websites, mobile apps, e-commerce platforms, and custom software—
+                practical technology solutions tailored to your needs.
               </p>
             </FadeIn>
           </div>
@@ -66,8 +66,8 @@ export default function Services() {
                       </div>
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
-                      Cross-platform mobile applications built with React Native for iOS and Android.
-                      From concept to App Store deployment.
+                      iOS and Android apps that your customers will love. Whether you need subscription billing,
+                      real-time features, or offline functionality, we build mobile-first solutions that engage users.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
@@ -114,8 +114,8 @@ export default function Services() {
                       </div>
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
-                      Modern web applications with React, Next.js, and TypeScript.
-                      Fast, responsive, and SEO-optimized for growing businesses.
+                      Beautiful, fast websites that convert visitors into customers. From startup landing pages
+                      to complex web applications, we build with SEO, mobile responsiveness, and user experience in mind.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
@@ -147,123 +147,111 @@ export default function Services() {
             </StaggerItem>
           </StaggerContainer>
 
-          {/* Featured Service - AI Infrastructure */}
+          {/* E-commerce Solutions */}
           <FadeIn delay={0.2}>
-            <div id="ai" className="mb-20">
-              <div className="relative bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-3xl border-2 border-[#0EA5E9]/50 p-8 lg:p-12 overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-[#0EA5E9]/20 to-transparent rounded-full blur-3xl" />
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="inline-block px-4 py-2 bg-linear-to-r from-[#0EA5E9] to-[#06B6D4] rounded-full text-white text-sm font-bold shadow-lg">
-                    ⭐ SPECIALTY SERVICE
-                  </span>
-                </div>
-
-                <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center">
-                        <Image src="/icons/rocket-dynamic/premium.png" alt="AI Infrastructure" width={40} height={40} className="object-contain" />
-                      </div>
-                      <div>
-                        <h2 className="text-3xl font-bold text-white font-space-grotesk">Private AI Infrastructure</h2>
-                        <p className="text-[#0EA5E9] font-bold text-xl">$9,500 - $35,000</p>
-                      </div>
-                    </div>
-
-                    <p className="text-lg text-white/80 leading-relaxed font-light">
-                      Own your AI infrastructure. Complete private deployment with automated scripts for rapid setup.
-                      Ollama, OpenWebUI, VPN, and security—deployed in under 30 minutes.
-                    </p>
-
-                    <div className="bg-[#0d0d12]/50 rounded-2xl p-6 border border-[#0EA5E9]/20">
-                      <h3 className="text-white font-semibold mb-3 flex items-center gap-2 font-space-grotesk">
-                        <Rocket weight="duotone" className="w-5 h-5 text-[#0EA5E9]" />
-                        ROI: Save $50K-$120K/year vs cloud APIs
-                      </h3>
-                      <p className="text-white/70 text-sm leading-relaxed">
-                        Typical payback period: 8-12 weeks. After that, it's pure savings compared to
-                        ongoing cloud AI API costs.
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { icon: Code, text: "Automated deployment scripts" },
-                        { icon: ShieldCheck, text: "HIPAA/SOC 2 ready" },
-                        { icon: Database, text: "Model fine-tuning support" },
-                        { icon: Rocket, text: "30-minute setup time" }
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center gap-3 bg-[#0d0d12]/50 rounded-xl p-3 border border-white/5">
-                          <item.icon weight="duotone" className="w-6 h-6 text-[#0EA5E9] shrink-0" />
-                          <span className="text-white/80 text-sm">{item.text}</span>
+            <div id="ecommerce" className="mb-20">
+              <AnimatedCard>
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#0EA5E9]/10 to-transparent rounded-full blur-3xl" />
+                  <div className="relative grid lg:grid-cols-2 gap-8 p-8">
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Image src="/icons/rocket-dynamic/premium.png" alt="E-commerce" width={40} height={40} className="object-contain" />
                         </div>
-                      ))}
+                        <div>
+                          <h2 className="text-2xl font-bold text-white font-space-grotesk">E-commerce Solutions</h2>
+                          <p className="text-[#0EA5E9] font-semibold text-lg">$5K - $50K</p>
+                        </div>
+                      </div>
+
+                      <p className="text-white/80 text-lg leading-relaxed font-light">
+                        Turn browsers into buyers. Custom-built stores or Shopify setups with everything you need:
+                        secure payments, inventory management, mobile optimization, and analytics that tell you what's working.
+                      </p>
+
+                      <div className="space-y-3">
+                        {[
+                          "Custom e-commerce platforms (Next.js, React)",
+                          "Shopify theme customization & app integration",
+                          "Stripe & PayPal payment processing",
+                          "Inventory management & order tracking",
+                          "Mobile-responsive design",
+                          "SEO optimization for product pages"
+                        ].map((feature, index) => (
+                          <div key={index} className="flex items-start">
+                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mr-3 shrink-0 mt-0.5" />
+                            <span className="text-white/80">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <Link href="/contact">
+                        <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
+                          Get E-commerce Quote
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
 
-                    <Link href="/contact">
-                      <Button size="lg" className="w-full bg-linear-to-r from-[#0EA5E9] to-[#06B6D4] hover:from-[#0284c7] hover:to-[#0891b2] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/30">
-                        Get AI Infrastructure Quote
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-
-                  <div className="relative">
-                    <div className="relative aspect-4/3 bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
-                      <Image
-                        src="/images/tech-monitors-development.jpg"
-                        alt="AI Infrastructure Setup"
-                        fill
-                        className="object-cover opacity-70"
-                      />
+                    <div className="relative">
+                      <div className="relative aspect-4/3 bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
+                        <Image
+                          src="/images/tech-monitors-development.jpg"
+                          alt="E-commerce Platform"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </Card>
+              </AnimatedCard>
             </div>
           </FadeIn>
 
-          {/* Strategic Consulting */}
+          {/* Custom Solutions */}
           <FadeIn delay={0.3}>
             <AnimatedCard>
-              <Card id="consulting" className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 overflow-hidden group">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#0EA5E9]/10 to-transparent rounded-full blur-3xl" />
+              <Card id="custom" className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 overflow-hidden group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#06B6D4]/10 to-transparent rounded-full blur-3xl" />
                 <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Image src="/icons/tools-dynamic/premium.png" alt="Strategic Consulting" width={40} height={40} className="object-contain" />
+                      <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Image src="/icons/tools-dynamic/premium.png" alt="Custom Solutions" width={40} height={40} className="object-contain" />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-bold text-white font-space-grotesk">Strategic Consulting</h2>
-                        <p className="text-[#0EA5E9] font-semibold text-lg">$175 - $350/hour</p>
+                        <h2 className="text-2xl font-bold text-white font-space-grotesk">Custom Solutions</h2>
+                        <p className="text-[#06B6D4] font-semibold text-lg">Contact for Quote</p>
                       </div>
                     </div>
 
                     <p className="text-white/80 text-lg leading-relaxed font-light">
-                      Technology strategy and operations consulting from someone who managed complex
-                      technical systems at Waymo and autonomous vehicle startups.
+                      Have a unique business need? We build custom software solutions, APIs, and integrations
+                      that solve your specific challenges and connect your systems.
                     </p>
 
                     <div className="space-y-3">
                       {[
-                        "Technology roadmap & architecture design",
-                        "AI integration strategy & implementation planning",
-                        "Build vs buy decision frameworks",
-                        "Operations optimization & process improvement",
-                        "System design & scalability planning",
-                        "Technical program management"
+                        "Custom application development",
+                        "API development & third-party integrations",
+                        "Database design & optimization",
+                        "Legacy system modernization",
+                        "Automation & workflow tools",
+                        "Technical consulting & architecture",
+                        "System migrations & data imports"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-start">
-                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mr-3 shrink-0 mt-0.5" />
+                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#06B6D4] mr-3 shrink-0 mt-0.5" />
                           <span className="text-white/80">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <Link href="/contact">
-                      <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
-                        Schedule Consultation
+                      <Button className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group/btn shadow-lg shadow-[#06B6D4]/20">
+                        Discuss Your Project
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
@@ -273,7 +261,7 @@ export default function Services() {
                     <div className="relative aspect-4/3 bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
                       <Image
                         src="/images/consulting.jpg"
-                        alt="Strategic Consulting Team Discussion"
+                        alt="Custom Software Solutions"
                         fill
                         className="object-cover"
                       />

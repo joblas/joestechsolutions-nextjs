@@ -11,7 +11,7 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "About | Joe's Tech Solutions",
-  description: "Learn about Joe's Tech Solutions - from Waymo operations to building custom solutions for ambitious SMBs.",
+  description: "Learn about Joe's Tech Solutions - from Waymo operations to building custom technology solutions for businesses.",
 };
 
 export default function About() {
@@ -29,14 +29,14 @@ export default function About() {
             <div className="space-y-8">
               <FadeIn delay={0.1}>
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-space-grotesk">
-                  Hi, I'm Joe
+                  The Developer Who Speaks Operations
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                  From managing Waymo autonomous vehicle operations to building practical
-                  technology solutions—a hands-on builder who understands systems, operations,
-                  and execution.
+                  Most developers don't understand how businesses actually work. I do. From managing
+                  Waymo's technical operations to building custom software today, I know how to bridge
+                  the gap between great technology and practical business needs.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
@@ -77,7 +77,7 @@ export default function About() {
                 Background
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Technical operations at scale, now applied to custom development
+                Technical operations experience applied to practical solutions
               </p>
             </div>
           </FadeIn>
@@ -92,7 +92,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Waymo Operations</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Managed complex technical systems for autonomous vehicle operations
+                      Managed critical infrastructure at Waymo—learned how to handle complexity, ensure reliability, and deliver results under pressure
                     </p>
                   </CardContent>
                 </Card>
@@ -120,11 +120,11 @@ export default function About() {
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
                     <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="AI Infrastructure" width={40} height={40} className="object-contain" />
+                      <Image src="/icons/rocket-dynamic/premium.png" alt="E-commerce & Custom Solutions" width={40} height={40} className="object-contain" />
                     </div>
-                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Infrastructure</h3>
+                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">E-commerce & Custom Solutions</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Deploying private AI solutions that save businesses $50K-120K/year
+                      Online stores, payment integration, and custom software tailored to your business needs
                     </p>
                   </CardContent>
                 </Card>
@@ -150,8 +150,8 @@ export default function About() {
                 description: "Not just a consultant—an actual builder who's managed complex technical operations and writes code daily."
               },
               {
-                title: "SMB-Focused",
-                description: "Pricing and approach designed for growing businesses, not enterprises with unlimited budgets."
+                title: "Flexible Approach",
+                description: "Tailored solutions for businesses of all sizes, from startups to established companies."
               },
               {
                 title: "End-to-End Delivery",
@@ -159,7 +159,7 @@ export default function About() {
               },
               {
                 title: "Practical Solutions",
-                description: "Technology choices based on what actually works, not what's trendy. Boring tech that solves real problems."
+                description: "Technology choices based on what actually works, not what's trendy. Reliable tech that solves real problems."
               }
             ].map((item, index) => (
               <StaggerItem key={index}>
@@ -210,11 +210,11 @@ export default function About() {
           <FadeIn>
             <div className="text-center mb-20">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Enterprise-Grade Technology
+                Modern Technology Stack
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                Leveraging cutting-edge tools from the world's leading technology companies
-                to deliver robust, scalable solutions
+                Leveraging cutting-edge tools from leading technology companies
+                to deliver reliable, scalable solutions
               </p>
             </div>
           </FadeIn>
