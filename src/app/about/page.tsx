@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import { Briefcase, Code, Brain } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -20,9 +19,9 @@ export default function About() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-linear-to-br from-[#231b3d] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#0099ff] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -43,7 +42,7 @@ export default function About() {
               <FadeIn delay={0.3}>
                 <Link href="/contact">
                   <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full group shadow-lg shadow-[#0099ff]/20">
+                    <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20">
                       Let's Work Together
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -54,7 +53,7 @@ export default function About() {
 
             <FadeIn delay={0.4} direction="left">
               <div className="relative">
-                <div className="absolute inset-0 bg-[#0099ff] rounded-3xl blur-2xl opacity-20" />
+                <div className="absolute inset-0 bg-[#0EA5E9] rounded-3xl blur-2xl opacity-20" />
                 <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
                   <Image
                     src="/images/joe-profile.jpg"
@@ -86,10 +85,10 @@ export default function About() {
           <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0099ff]/50 transition-all duration-500 h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#0099ff]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Briefcase weight="duotone" className="w-10 h-10 text-[#0099ff]" />
+                    <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <Image src="/icons/tools-dynamic/premium.png" alt="Waymo Operations" width={40} height={40} className="object-contain" />
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Waymo Operations</h3>
                     <p className="text-white/70 leading-relaxed">
@@ -102,10 +101,10 @@ export default function About() {
 
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#a683ff]/50 transition-all duration-500 h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#a683ff]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Code weight="duotone" className="w-10 h-10 text-[#a683ff]" />
+                    <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <Image src="/icons/computer-dynamic/premium.png" alt="Full-Stack Developer" width={40} height={40} className="object-contain" />
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Full-Stack Developer</h3>
                     <p className="text-white/70 leading-relaxed">
@@ -118,10 +117,10 @@ export default function About() {
 
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#96a3ff]/50 transition-all duration-500 h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#96a3ff]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Brain weight="duotone" className="w-10 h-10 text-[#96a3ff]" />
+                    <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <Image src="/icons/rocket-dynamic/premium.png" alt="AI Infrastructure" width={40} height={40} className="object-contain" />
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Infrastructure</h3>
                     <p className="text-white/70 leading-relaxed">
@@ -165,7 +164,7 @@ export default function About() {
             ].map((item, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0099ff]/50 transition-all duration-500">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500">
                     <CardContent className="p-8">
                       <h3 className="text-white font-bold text-2xl mb-4 font-space-grotesk">{item.title}</h3>
                       <p className="text-white/70 text-lg leading-relaxed">{item.description}</p>
@@ -247,9 +246,9 @@ export default function About() {
 
       {/* CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-[#231b3d] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0099ff] rounded-full blur-[150px] animate-glow" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0EA5E9] rounded-full blur-[150px] animate-glow" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -266,7 +265,7 @@ export default function About() {
           <FadeIn delay={0.3}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0099ff] hover:bg-[#0088ee] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0099ff]/30">
+                <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

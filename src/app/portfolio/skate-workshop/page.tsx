@@ -25,7 +25,7 @@ export default function SkateWorkshopCaseStudy() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pb-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-sky-900/20 to-pink-900/20" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -85,8 +85,8 @@ export default function SkateWorkshopCaseStudy() {
 
             <Card className="bg-slate-800/50 border-slate-700 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-cyan-400" />
                 </div>
                 <CardTitle className="text-white">Users</CardTitle>
               </CardHeader>
@@ -239,7 +239,7 @@ export default function SkateWorkshopCaseStudy() {
               { label: "Trick Database", value: "400+", desc: "Comprehensive tutorials" },
               { label: "Features", value: "Real-time", desc: "Multiplayer & Feedback" }
             ].map((stat, index) => (
-              <Card key={index} className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-600/30 text-center">
+              <Card key={index} className="bg-gradient-to-br from-blue-900/20 to-sky-900/20 border-blue-600/30 text-center">
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-blue-400 mb-2">{stat.value}</div>
                   <div className="text-white font-semibold mb-1">{stat.label}</div>
@@ -252,7 +252,7 @@ export default function SkateWorkshopCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-gradient-to-r from-blue-900/30 via-purple-900/30 to-pink-900/30">
+      <section className="relative py-20 sm:py-32 bg-gradient-to-r from-blue-900/30 via-sky-900/30 to-pink-900/30">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Build Your App?

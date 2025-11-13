@@ -51,13 +51,14 @@
 :root {
   --radius: 0.625rem;
 
-  /* Lemni-inspired color palette */
+  /* Professional Navy/Blue color system */
+  --color-deep-navy: #0A1628;
+  --color-electric-blue: #0EA5E9;
+  --color-cyan: #06B6D4;
+  --color-slate-900: #1E293B;
+  --color-slate-100: #F1F5F9;
   --color-deep-charcoal: #0d0d12;
   --color-secondary-dark: #1c1c26;
-  --color-bright-cyan: #0099ff;
-  --color-accent-purple: #a683ff;
-  --color-gradient-purple-start: #231b3d;
-  --color-gradient-purple-end: #96a3ff;
 
   /* Light mode (default) */
   --background: oklch(0.99 0 0);  /* Near white */
@@ -101,31 +102,31 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: #1c1c26;
   --popover-foreground: oklch(0.98 0 0);
-  --primary: #0099ff;  /* Bright cyan */
+  --primary: #0EA5E9;  /* Electric blue */
   --primary-foreground: oklch(1 0 0);
   --secondary: #1c1c26;
   --secondary-foreground: oklch(0.98 0 0);
   --muted: #1c1c26;
   --muted-foreground: oklch(0.65 0 0);
-  --accent: #0099ff;  /* Bright cyan */
+  --accent: #06B6D4;  /* Cyan */
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #0099ff;
-  --chart-1: #0099ff;
-  --chart-2: #a683ff;
-  --chart-3: #96a3ff;
-  --chart-4: #231b3d;
+  --ring: #0EA5E9;
+  --chart-1: #0EA5E9;
+  --chart-2: #06B6D4;
+  --chart-3: #0A1628;
+  --chart-4: #1E293B;
   --chart-5: #1c1c26;
   --sidebar: #0d0d12;
   --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: #0099ff;
+  --sidebar-primary: #0EA5E9;
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: #1c1c26;
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #0099ff;
+  --sidebar-ring: #0EA5E9;
 }
 
 @layer base {
@@ -241,12 +242,16 @@
   }
 
   /* Gradient utilities */
-  .bg-gradient-purple-blue {
-    background: linear-gradient(135deg, var(--color-gradient-purple-start), var(--color-gradient-purple-end));
+  .bg-gradient-navy-blue {
+    background: linear-gradient(135deg, var(--color-deep-navy), var(--color-electric-blue));
   }
 
-  .bg-gradient-cyan-purple {
-    background: linear-gradient(135deg, var(--color-bright-cyan), var(--color-accent-purple));
+  .bg-gradient-blue-cyan {
+    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-cyan));
+  }
+
+  .bg-gradient-navy-cyan {
+    background: linear-gradient(135deg, var(--color-deep-navy), var(--color-cyan));
   }
 
   /* Accessibility: Screen Reader Only */

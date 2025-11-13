@@ -25,12 +25,12 @@ export default function CbarrgsCaseStudy() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pb-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/20 via-pink-900/20 to-blue-900/20" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-purple-600/20 border border-purple-600/30 rounded-full text-purple-400 text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-cyan-600/20 border border-cyan-600/30 rounded-full text-cyan-400 text-sm font-semibold">
                 Artist Website • Performance Optimized
               </div>
 
@@ -45,7 +45,7 @@ export default function CbarrgsCaseStudy() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://cbarrgs.com" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                  <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
                     Visit Live Site
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </Button>
@@ -73,8 +73,8 @@ export default function CbarrgsCaseStudy() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="bg-slate-800/50 border-slate-700 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-6 h-6 text-cyan-400" />
                 </div>
                 <CardTitle className="text-white">Platform</CardTitle>
               </CardHeader>
@@ -206,10 +206,10 @@ export default function CbarrgsCaseStudy() {
                 icon: Globe
               }
             ].map((feature, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:border-purple-600/50 transition-colors group">
+              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:border-cyan-600/50 transition-colors group">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-cyan-400" />
                   </div>
                   <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
                 </CardHeader>
@@ -238,9 +238,9 @@ export default function CbarrgsCaseStudy() {
               { label: "Platforms", value: "5+", desc: "Streaming integrations" },
               { label: "SEO", value: "Optimized", desc: "Schema & Open Graph" }
             ].map((stat, index) => (
-              <Card key={index} className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border-purple-600/30 text-center">
+              <Card key={index} className="bg-gradient-to-br from-sky-900/20 to-blue-900/20 border-cyan-600/30 text-center">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-purple-400 mb-2">{stat.value}</div>
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">{stat.value}</div>
                   <div className="text-white font-semibold mb-1">{stat.label}</div>
                   <div className="text-slate-400 text-sm">{stat.desc}</div>
                 </CardContent>
@@ -251,7 +251,7 @@ export default function CbarrgsCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-gradient-to-r from-purple-900/30 via-pink-900/30 to-blue-900/30">
+      <section className="relative py-20 sm:py-32 bg-gradient-to-r from-sky-900/30 via-pink-900/30 to-blue-900/30">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Need a Professional Website?
@@ -261,7 +261,7 @@ export default function CbarrgsCaseStudy() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+              <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
                 Schedule Discovery Call
               </Button>
             </Link>

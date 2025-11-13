@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Mail, MessageSquare, Calendar } from "lucide-react";
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -16,9 +16,9 @@ export default function Contact() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-linear-to-br from-[#231b3d] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0099ff] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -26,7 +26,7 @@ export default function Contact() {
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Let's Build</span>
-                <span className="block text-[#0099ff]">
+                <span className="block text-[#0EA5E9]">
                   Something Great Together
                 </span>
               </h1>
@@ -47,10 +47,10 @@ export default function Contact() {
             {/* Email */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0099ff]/50 transition-all duration-500 group h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 group h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-[#0099ff]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                      <Mail className="w-8 h-8 text-[#0099ff]" />
+                    <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                      <Image src="/icons/mail-dynamic/premium.png" alt="Email" width={32} height={32} className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Email</CardTitle>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
@@ -60,7 +60,7 @@ export default function Contact() {
                   <CardContent>
                     <a
                       href="mailto:joe@joestechsolutions.com"
-                      className="text-[#0099ff] hover:text-[#0088ee] text-lg font-medium transition-colors"
+                      className="text-[#0EA5E9] hover:text-[#0284c7] text-lg font-medium transition-colors"
                     >
                       joe@joestechsolutions.com
                     </a>
@@ -72,10 +72,10 @@ export default function Contact() {
             {/* Calendar */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#a683ff]/50 transition-all duration-500 group h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 group h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-[#a683ff]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                      <Calendar className="w-8 h-8 text-[#a683ff]" />
+                    <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                      <Image src="/icons/calender-dynamic/premium.png" alt="Calendar" width={32} height={32} className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Schedule a Call</CardTitle>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
@@ -86,8 +86,8 @@ export default function Contact() {
                     <p className="text-white/70 mb-4">
                       Coming soon: Direct calendar booking integration
                     </p>
-                    <Button className="bg-[#a683ff]/50 text-white/50 cursor-not-allowed rounded-full" disabled>
-                      <Calendar className="mr-2 h-4 w-4" />
+                    <Button className="bg-[#06B6D4]/50 text-white/50 cursor-not-allowed rounded-full" disabled>
+                      <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                       Book a Call (Coming Soon)
                     </Button>
                   </CardContent>
@@ -102,8 +102,8 @@ export default function Contact() {
               <Card className="bg-[#1c1c26] border-white/10">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-[#0099ff]/10 rounded-2xl flex items-center justify-center">
-                      <MessageSquare className="w-8 h-8 text-[#0099ff]" />
+                    <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center">
+                      <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Message" width={32} height={32} className="object-contain" />
                     </div>
                     <div>
                       <CardTitle className="text-white text-2xl font-space-grotesk">Quick Message</CardTitle>
@@ -118,7 +118,7 @@ export default function Contact() {
                     For now, please email us directly at{" "}
                     <a
                       href="mailto:joe@joestechsolutions.com"
-                      className="text-[#0099ff] hover:text-[#0088ee] font-medium transition-colors"
+                      className="text-[#0EA5E9] hover:text-[#0284c7] font-medium transition-colors"
                     >
                       joe@joestechsolutions.com
                     </a>
@@ -126,21 +126,21 @@ export default function Contact() {
                   </p>
                   <ul className="space-y-4 text-white/80">
                     <li className="flex items-start">
-                      <span className="text-[#0099ff] mr-3 text-xl">•</span>
+                      <span className="text-[#0EA5E9] mr-3 text-xl">•</span>
                       <span>Brief project description</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#0099ff] mr-3 text-xl">•</span>
+                      <span className="text-[#0EA5E9] mr-3 text-xl">•</span>
                       <span>Timeline and budget (if known)</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#0099ff] mr-3 text-xl">•</span>
+                      <span className="text-[#0EA5E9] mr-3 text-xl">•</span>
                       <span>Any specific questions or requirements</span>
                     </li>
                   </ul>
                   <a href="mailto:joe@joestechsolutions.com">
-                    <Button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white mt-6 rounded-full shadow-lg shadow-[#0099ff]/20">
-                      <Mail className="mr-2 h-4 w-4" />
+                    <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white mt-6 rounded-full shadow-lg shadow-[#0EA5E9]/20">
+                      <Image src="/icons/mail-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                       Send Email
                     </Button>
                   </a>
@@ -167,10 +167,10 @@ export default function Contact() {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
             {[
-              { title: "Mobile Apps", desc: "iOS & Android", price: "$25K-150K", color: "#0099ff" },
-              { title: "Web Development", desc: "React & Next.js", price: "$30K-250K", color: "#a683ff" },
-              { title: "AI Infrastructure", desc: "Private deployment", price: "$9.5K-35K", color: "#96a3ff" },
-              { title: "Consulting", desc: "Strategy & ops", price: "$175-350/hr", color: "#0099ff" }
+              { title: "Mobile Apps", desc: "iOS & Android", price: "$25K-150K", color: "#0EA5E9" },
+              { title: "Web Development", desc: "React & Next.js", price: "$30K-250K", color: "#06B6D4" },
+              { title: "AI Infrastructure", desc: "Private deployment", price: "$9.5K-35K", color: "#0EA5E9" },
+              { title: "Consulting", desc: "Strategy & ops", price: "$175-350/hr", color: "#0EA5E9" }
             ].map((service, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>
