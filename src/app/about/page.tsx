@@ -205,10 +205,10 @@ export default function About() {
       </section>
 
       {/* Technology Stack Section */}
-      <section className="relative py-24 sm:py-32">
+      <section className="relative py-24 sm:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-20">
+          <div className="text-center mb-20">
+            <FadeIn>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
                 Modern Technology Stack
               </h2>
@@ -216,31 +216,68 @@ export default function About() {
                 Leveraging cutting-edge tools from leading technology companies
                 to deliver reliable, scalable solutions
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
 
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8" staggerDelay={0.08}>
-            {[
-              { name: "Anthropic Claude", logo: "/logos/claude-color.png" },
-              { name: "OpenAI", logo: "/logos/openai.png" },
-              { name: "Replicate", logo: "/logos/replicate.png" },
-              { name: "Flux AI", logo: "/logos/flux.png" },
-              { name: "Ollama", logo: "/logos/ollama.png" },
-              { name: "Open WebUI", logo: "/logos/openwebui.png" },
-              { name: "n8n", logo: "/logos/n8n-color.png" },
-              { name: "Cloudflare", logo: "/logos/cloudflare-color.png" }
-            ].map((tech) => (
-              <StaggerItem key={tech.name}>
-                <div className="flex items-center justify-center p-8 bg-[#1c1c26] border border-white/10 rounded-2xl hover:border-white/20 hover:bg-[#1c1c26]/80 hover:scale-105 transition-all duration-300 group cursor-pointer h-32">
+          {/* Top Row - Scrolling Left */}
+          <div className="relative mb-8 overflow-hidden">
+            <div className="flex gap-8 animate-scroll-left">
+              {[
+                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
+                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
+                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
+                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
+                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
+                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
+              ].map((tech, index) => (
+                <a
+                  key={index}
+                  href={tech.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
+                >
                   <img
                     src={tech.logo}
                     alt={`${tech.name} logo`}
-                    className="max-h-12 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert"
+                    className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
                   />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Row - Scrolling Right */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-8 animate-scroll-right">
+              {[
+                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
+                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
+                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
+                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
+                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
+                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
+                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
+                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
+              ].map((tech, index) => (
+                <a
+                  key={index}
+                  href={tech.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
+                >
+                  <img
+                    src={tech.logo}
+                    alt={`${tech.name} logo`}
+                    className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
