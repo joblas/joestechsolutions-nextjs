@@ -213,17 +213,20 @@ export default function AnimationsDemo() {
           <div className="relative mb-8 overflow-hidden">
             <div className="flex gap-8 animate-scroll-left">
               {[
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png" },
-                { name: "OpenAI", logo: "/logos/openai.png" },
-                { name: "Replicate", logo: "/logos/replicate.png" },
-                { name: "Flux AI", logo: "/logos/flux.png" },
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png" },
-                { name: "OpenAI", logo: "/logos/openai.png" },
-                { name: "Replicate", logo: "/logos/replicate.png" },
-                { name: "Flux AI", logo: "/logos/flux.png" },
+                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
+                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
+                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
+                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
+                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
+                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
               ].map((tech, index) => (
-                <div
+                <a
                   key={index}
+                  href={tech.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-shrink-0 w-48 h-32 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:bg-white/10 transition-colors"
                 >
                   <img
@@ -231,7 +234,7 @@ export default function AnimationsDemo() {
                     alt={`${tech.name} logo`}
                     className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -240,17 +243,20 @@ export default function AnimationsDemo() {
           <div className="relative overflow-hidden">
             <div className="flex gap-8 animate-scroll-right">
               {[
-                { name: "Ollama", logo: "/logos/ollama.png" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png" },
-                { name: "n8n", logo: "/logos/n8n-color.png" },
-                { name: "Cloudflare", logo: "/logos/cloudflare-color.png" },
-                { name: "Ollama", logo: "/logos/ollama.png" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png" },
-                { name: "n8n", logo: "/logos/n8n-color.png" },
-                { name: "Cloudflare", logo: "/logos/cloudflare-color.png" },
+                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
+                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
+                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
+                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
+                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
+                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
+                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
+                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
               ].map((tech, index) => (
-                <div
+                <a
                   key={index}
+                  href={tech.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-shrink-0 w-48 h-32 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:bg-white/10 transition-colors"
                 >
                   <img
@@ -258,7 +264,7 @@ export default function AnimationsDemo() {
                     alt={`${tech.name} logo`}
                     className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>
