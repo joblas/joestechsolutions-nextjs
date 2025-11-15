@@ -261,13 +261,13 @@ export default function Home() {
             <FadeIn delay={0.4}>
               <div className="relative group">
                 <div className="absolute inset-0 bg-linear-to-r from-[#0EA5E9] to-[#06B6D4] rounded-3xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity animate-glow" />
-                <div className="relative aspect-4/3 bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-3xl border border-white/10 flex items-center justify-center hover:border-[#0EA5E9]/30 transition-all duration-500">
-                  <div className="text-center p-8">
-                    <Image src="/icons/mobile-dynamic/premium.png" alt="Mobile App" width={96} height={96} className="mx-auto mb-4 opacity-40 object-contain" />
-                    <p className="text-white/50 text-sm font-light">
-                      App screenshots coming soon
-                    </p>
-                  </div>
+                <div className="relative aspect-square bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-3xl border border-white/10 overflow-hidden hover:border-[#0EA5E9]/30 transition-all duration-500">
+                  <Image
+                    src="/images/skate-workshop-hero.png"
+                    alt="The Skate Workshop App"
+                    fill
+                    className="object-cover p-8"
+                  />
                 </div>
               </div>
             </FadeIn>
