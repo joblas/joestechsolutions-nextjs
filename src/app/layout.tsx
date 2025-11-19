@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,6 +21,39 @@ export const metadata: Metadata = {
   title: "Joe's Tech Solutions | Boutique Development Studio",
   description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs. From Olympic-level coaching apps to custom web solutions.",
   keywords: ["mobile app development", "web development", "AI infrastructure", "React Native", "Next.js", "consulting"],
+  icons: {
+    icon: [
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  openGraph: {
+    title: "Joe's Tech Solutions | Boutique Development Studio",
+    description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
+    url: 'https://joestechsolutions.com',
+    siteName: "Joe's Tech Solutions",
+    images: [
+      {
+        url: '/logo-main.png',
+        width: 2400,
+        height: 1200,
+        alt: "Joe's Tech Solutions Logo",
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Joe's Tech Solutions | Boutique Development Studio",
+    description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
+    images: ['/logo-main.png'],
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +75,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -21,8 +22,17 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="shrink-0">
-            <Link href="/" className="text-xl font-bold text-white hover:text-[#0099ff] transition-colors font-space-grotesk">
-              Joe's Tech Solutions
+            <Link href="/" className="flex items-center gap-3 group">
+              <Image
+                src="/logo-icon.png"
+                alt="Joe's Tech Solutions"
+                width={40}
+                height={40}
+                className="transition-transform group-hover:scale-105"
+              />
+              <span className="text-lg font-bold text-white group-hover:text-[#0EA5E9] transition-colors font-space-grotesk hidden sm:inline">
+                Joe's Tech Solutions
+              </span>
             </Link>
           </div>
 

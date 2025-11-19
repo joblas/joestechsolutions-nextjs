@@ -41,3 +41,12 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# IDE and AI assistant folders
+.bmad
+.claude
+.vscode
+.windsurf
+
+# Screenshots and recordings
+screenshot/
