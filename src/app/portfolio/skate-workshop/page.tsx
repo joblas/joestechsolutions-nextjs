@@ -261,11 +261,11 @@ export default function SkateWorkshopCaseStudy() {
             Let's discuss your mobile or web platform project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 Schedule Discovery Call
               </Button>
-            </Link>
+            </a>
             <Link href="/portfolio">
               <Button size="lg" variant="outline" className="border-slate-700 hover:bg-slate-800">
                 <ArrowLeft className="mr-2 h-4 w-4" />

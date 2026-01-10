@@ -87,12 +87,12 @@ export default function Services() {
                         </div>
                       ))}
                     </div>
-                    <Link href="/contact">
+                    <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
                         Get Mobile App Quote
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </AnimatedCard>
@@ -135,12 +135,12 @@ export default function Services() {
                         </div>
                       ))}
                     </div>
-                    <Link href="/contact">
+                    <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group/btn shadow-lg shadow-[#06B6D4]/20">
                         Get Web Development Quote
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               </AnimatedCard>
@@ -186,12 +186,12 @@ export default function Services() {
                         ))}
                       </div>
 
-                      <Link href="/contact">
+                      <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
                           Get E-commerce Quote
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
-                      </Link>
+                      </a>
                     </div>
 
                     <div className="relative">
@@ -249,12 +249,12 @@ export default function Services() {
                       ))}
                     </div>
 
-                    <Link href="/contact">
+                    <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group/btn shadow-lg shadow-[#06B6D4]/20">
                         Discuss Your Project
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="relative">
@@ -411,14 +411,14 @@ export default function Services() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <Link href="/contact">
+            <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
-            </Link>
+            </a>
           </FadeIn>
         </div>
       </section>

@@ -40,14 +40,14 @@ export default function About() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <Link href="/contact">
+                <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20">
                       Let's Work Together
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </MagneticButton>
-                </Link>
+                </a>
               </FadeIn>
             </div>
 
@@ -300,14 +300,14 @@ export default function About() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <Link href="/contact">
+            <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
-            </Link>
+            </a>
           </FadeIn>
         </div>
       </section>

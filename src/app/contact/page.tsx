@@ -85,12 +85,14 @@ export default function Contact() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-4">
-                      Coming soon: Direct calendar booking integration
+                      Pick a time that works for you and let's chat about your project.
                     </p>
-                    <Button className="bg-[#06B6D4]/50 text-white/50 cursor-not-allowed rounded-full" disabled>
-                      <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
-                      Book a Call (Coming Soon)
-                    </Button>
+                    <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full">
+                        <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
+                        Book a Call
+                      </Button>
+                    </a>
                   </CardContent>
                 </Card>
               </AnimatedCard>

@@ -60,11 +60,11 @@ export default function Home() {
                     </Button>
                   </MagneticButton>
                 </Link>
-                <Link href="/contact">
+                <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all">
                     Schedule Discovery Call
                   </Button>
-                </Link>
+                </a>
               </div>
             </FadeIn>
           </div>
@@ -368,14 +368,14 @@ export default function Home() {
               Let's discuss your project. Schedule a free discovery call to explore how
               we can help bring your vision to life.
             </p>
-            <Link href="/contact">
+            <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30 transition-all">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </MagneticButton>
-            </Link>
+            </a>
           </FadeIn>
         </div>
       </section>
