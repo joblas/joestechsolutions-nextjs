@@ -74,31 +74,8 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export default function PrivateAISetup() {
-  const [isLoadingLocal, setIsLoadingLocal] = useState(false);
-  const [isLoadingVPS, setIsLoadingVPS] = useState(false);
-
-  const handleCheckout = async (type: "local" | "vps") => {
-    const setLoading = type === "local" ? setIsLoadingLocal : setIsLoadingVPS;
-    setLoading(true);
-
-    try {
-      const response = await fetch("/api/create-checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type }),
-      });
-      const data = await response.json();
-
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        console.error("No checkout URL returned");
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error("Checkout error:", error);
-      setLoading(false);
-    }
+  const handleGetStarted = (type: "local" | "vps") => {
+    window.location.href = `/private-ai-setup/checkout?type=${type}`;
   };
 
   return (
@@ -174,11 +151,10 @@ export default function PrivateAISetup() {
                     </div>
                     <MagneticButton strength={0.2} className="w-full">
                       <Button
-                        onClick={() => handleCheckout("local")}
-                        disabled={isLoadingLocal}
-                        className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20 py-6 text-lg disabled:opacity-50"
+                        onClick={() => handleGetStarted("local")}
+                        className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20 py-6 text-lg"
                       >
-                        {isLoadingLocal ? "Loading..." : "Local Setup — $99"}
+                        Get Started — $99
                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </MagneticButton>
@@ -227,11 +203,10 @@ export default function PrivateAISetup() {
                     </div>
                     <MagneticButton strength={0.2} className="w-full">
                       <Button
-                        onClick={() => handleCheckout("vps")}
-                        disabled={isLoadingVPS}
-                        className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group shadow-lg shadow-[#06B6D4]/20 py-6 text-lg disabled:opacity-50"
+                        onClick={() => handleGetStarted("vps")}
+                        className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group shadow-lg shadow-[#06B6D4]/20 py-6 text-lg"
                       >
-                        {isLoadingVPS ? "Loading..." : "VPS Setup — $99 + $29/mo"}
+                        Get Started — $99 + $29/mo
                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </MagneticButton>
@@ -409,23 +384,21 @@ export default function PrivateAISetup() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton strength={0.3}>
                 <Button
-                  onClick={() => handleCheckout("local")}
-                  disabled={isLoadingLocal}
+                  onClick={() => handleGetStarted("local")}
                   size="lg"
-                  className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30 disabled:opacity-50"
+                  className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30"
                 >
-                  {isLoadingLocal ? "Loading..." : "Local — $99"}
+                  Local — $99
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
               <MagneticButton strength={0.3}>
                 <Button
-                  onClick={() => handleCheckout("vps")}
-                  disabled={isLoadingVPS}
+                  onClick={() => handleGetStarted("vps")}
                   size="lg"
-                  className="bg-[#06B6D4] hover:bg-[#0891b2] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#06B6D4]/30 disabled:opacity-50"
+                  className="bg-[#06B6D4] hover:bg-[#0891b2] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#06B6D4]/30"
                 >
-                  {isLoadingVPS ? "Loading..." : "VPS — $99 + $29/mo"}
+                  VPS — $99 + $29/mo
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>

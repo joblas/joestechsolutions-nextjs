@@ -6,8 +6,8 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Validate required fields
-    const requiredFields = ["sessionId", "email", "name", "setupType", "operatingSystem", "useCases"];
+    // Validate required fields (sessionId is optional - added after payment)
+    const requiredFields = ["email", "name", "setupType", "operatingSystem", "useCases"];
     for (const field of requiredFields) {
       if (!body[field]) {
         return NextResponse.json(
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
     // Create intake data object
     const intakeData: Omit<IntakeData, "id" | "timestamp" | "status"> = {
-      sessionId: body.sessionId,
+      sessionId: body.sessionId || "", // Will be updated after Stripe payment
       email: body.email,
       name: body.name,
       setupType: body.setupType,

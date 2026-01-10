@@ -4,12 +4,13 @@ import { getStripe, LOCAL_PRICE_ID, VPS_SETUP_PRICE_ID, VPS_MONTHLY_PRICE_ID, BA
 interface CheckoutRequest {
   type: "local" | "vps";
   includeMonthly?: boolean; // For VPS, whether to include the monthly subscription
+  intakeId?: string; // ID from intake form submission
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: CheckoutRequest = await request.json();
-    const { type, includeMonthly = true } = body;
+    const { type, includeMonthly = true, intakeId } = body;
 
     // Validate request
     if (!type || !["local", "vps"].includes(type)) {
@@ -19,21 +20,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate price IDs are configured
-    if (type === "local" && LOCAL_PRICE_ID.includes("REPLACE_ME")) {
-      console.error("STRIPE_LOCAL_PRICE_ID is not configured");
-      return NextResponse.json(
-        { error: "Payment configuration error. Please contact support." },
-        { status: 500 }
-      );
-    }
+    // Check if we're in demo mode (Stripe not configured)
+    const isDemoMode = LOCAL_PRICE_ID.includes("REPLACE_ME") ||
+                       VPS_SETUP_PRICE_ID.includes("REPLACE_ME") ||
+                       VPS_MONTHLY_PRICE_ID.includes("REPLACE_ME") ||
+                       !process.env.STRIPE_SECRET_KEY;
 
-    if (type === "vps" && (VPS_SETUP_PRICE_ID.includes("REPLACE_ME") || VPS_MONTHLY_PRICE_ID.includes("REPLACE_ME"))) {
-      console.error("VPS price IDs are not configured");
-      return NextResponse.json(
-        { error: "Payment configuration error. Please contact support." },
-        { status: 500 }
-      );
+    if (isDemoMode) {
+      // Demo mode: bypass Stripe and go directly to success page
+      console.log("Demo mode: Stripe not configured, redirecting to success page");
+      const demoSessionId = `demo_${Date.now()}_${type}`;
+      return NextResponse.json({
+        url: `${BASE_URL}/private-ai-setup/success?session_id=${demoSessionId}&type=${type}&demo=true`
+      });
     }
 
     // Build line items based on type
@@ -69,6 +68,7 @@ export async function POST(request: NextRequest) {
         type,
         setup_price: "99",
         monthly_price: type === "vps" && includeMonthly ? "29" : "0",
+        intake_id: intakeId || "",
       },
     });
 
