@@ -48,11 +48,11 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
+              <Link href="/services">
                 <Button size="sm" className="bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full shadow-lg shadow-[#0099ff]/20">
                   Get Started
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -84,11 +84,11 @@ export function Header() {
               </Link>
             ))}
             <div className="px-4 pt-2">
-              <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer" className="block">
+              <Link href="/services" className="block" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0099ff]/20">
                   Get Started
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         )}
