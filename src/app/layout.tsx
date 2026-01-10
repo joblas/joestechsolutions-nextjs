@@ -88,7 +88,7 @@ export default function RootLayout({
         <Footer />
         <SpeedInsights />
         <Analytics />
-        <GoogleAnalytics gaId="G-D7W2F51T8T" />
+        <GoogleAnalytics gaId="G-MBFJDHF0W9" />
       </body>
     </html>
   );
