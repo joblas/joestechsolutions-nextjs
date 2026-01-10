@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Desktop, Cloud, Spinner, ArrowLeft, LockSimple, CheckCircle, Warning } from "@phosphor-icons/react";
+import { Desktop, Cloud, Spinner, ArrowLeft, ArrowRight, CheckCircle, Warning } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 function QualifyForm() {
@@ -54,32 +54,29 @@ function QualifyForm() {
     }
   }, [qualifyData.operatingSystem, qualifyData.ramAmount, isVPS]);
 
-  const handleProceedToPayment = async () => {
+  const handleBookCall = async () => {
     setIsSubmitting(true);
     setError(null);
 
     try {
-      // Store qualification data in session storage for use after payment
-      sessionStorage.setItem("privateAIQualify", JSON.stringify(qualifyData));
-
-      // Create Stripe checkout session
-      const checkoutResponse = await fetch("/api/create-checkout", {
+      // Save qualification data to intakes API (so Joe has the info before the call)
+      const response = await fetch("/api/intakes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type: qualifyData.setupType,
+          ...qualifyData,
+          status: "pending_call",
         }),
       });
 
-      const checkoutData = await checkoutResponse.json();
-
-      if (checkoutData.url) {
-        window.location.href = checkoutData.url;
-      } else {
-        throw new Error("Failed to create checkout session");
+      if (!response.ok) {
+        throw new Error("Failed to save your information");
       }
+
+      // Redirect to Calendly to book the discovery call
+      window.location.href = "https://calendly.com/joe-joestechsolutions/private-ai-setup-call";
     } catch (err) {
-      console.error("Checkout error:", err);
+      console.error("Booking error:", err);
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setIsSubmitting(false);
     }
@@ -264,7 +261,7 @@ function QualifyForm() {
 
               {/* Submit */}
               <Button
-                onClick={handleProceedToPayment}
+                onClick={handleBookCall}
                 disabled={!canProceed || isSubmitting}
                 className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
                   isVPS
@@ -275,18 +272,18 @@ function QualifyForm() {
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
                     <Spinner className="h-5 w-5 animate-spin" />
-                    Processing...
+                    Saving...
                   </span>
                 ) : (
                   <span className="flex items-center justify-center gap-2">
-                    <LockSimple weight="bold" className="h-5 w-5" />
-                    Continue to Payment — {isVPS ? "$99 + $29/mo" : "$99"}
+                    Book Discovery Call
+                    <ArrowRight className="h-5 w-5" />
                   </span>
                 )}
               </Button>
 
               <p className="text-center text-white/50 text-sm">
-                Secure checkout powered by Stripe
+                Free 15-minute call to discuss your setup
               </p>
             </CardContent>
           </Card>

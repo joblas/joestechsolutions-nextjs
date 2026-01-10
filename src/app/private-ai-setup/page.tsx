@@ -303,22 +303,22 @@ export default function PrivateAISetup() {
               {
                 number: "1",
                 title: "Quick Check",
-                description: "Confirm your system meets the requirements (30 seconds)."
+                description: "Confirm your system qualifies for AI setup (30 seconds)."
               },
               {
                 number: "2",
-                title: "Pay",
-                description: "Secure $99 checkout via Stripe. You're in!"
+                title: "Book Call",
+                description: "Schedule a free discovery call to discuss your needs."
               },
               {
                 number: "3",
-                title: "Tell Me More",
-                description: "Quick form about your use cases so I can prepare."
+                title: "We Chat",
+                description: "I'll answer questions and make sure it's a good fit."
               },
               {
                 number: "4",
-                title: "Book & Go Live",
-                description: "Schedule your setup call. We install together, you're live!"
+                title: "Pay & Setup",
+                description: "Pay $99, then we do the live setup together."
               }
             ].map((step, index) => (
               <StaggerItem key={index}>
