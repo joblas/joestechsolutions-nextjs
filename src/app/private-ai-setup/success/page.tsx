@@ -168,7 +168,7 @@ function SuccessContent() {
                   Or use Calendly's popup widget:
                 */}
                 <a
-                  href="https://calendly.com/YOUR_CALENDLY_LINK"
+                  href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block"
