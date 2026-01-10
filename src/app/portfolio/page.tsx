@@ -21,7 +21,7 @@ export default function Portfolio() {
       title: "The Skate Workshop",
       category: "Mobile App • Web Platform",
       description: "Olympic-level skateboarding coaching platform with video feedback, 400+ trick database, and multiplayer features.",
-      image: "/images/the-skate-workshop.png",
+      image: "/images/skate-workshop-hero.png",
       tags: ["React Native", "Next.js", "Stripe", "Real-time"],
       color: "blue",
       href: "/portfolio/skate-workshop",
