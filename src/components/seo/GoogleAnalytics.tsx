@@ -2,41 +2,43 @@
 
 import Script from 'next/script';
 
-// Replace with your GA4 Measurement ID after creating it at https://analytics.google.com
-// Format: G-XXXXXXXXXX
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
 
 export function GoogleAnalytics() {
-  // Don't render if no measurement ID is configured
   if (!GA_MEASUREMENT_ID) {
     return null;
   }
 
   return (
     <>
+      {/* Setup script MUST run before gtag.js loads */}
+      <Script
+        id="google-analytics-setup"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      {/* Load gtag.js after setup is complete */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function(){window.dataLayer.push(arguments);}
-          window.gtag('js', new Date());
-          window.gtag('config', '${GA_MEASUREMENT_ID}', {
-            page_title: document.title,
-            page_location: window.location.href,
-          });
-        `}
-      </Script>
     </>
   );
 }
 
-// Utility function to track events (for conversion tracking)
+// Utility function to track events
 export function trackEvent(eventName: string, parameters?: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && 'gtag' in window) {
-    (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', eventName, parameters);
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', eventName, parameters);
   }
 }
 
@@ -45,3 +47,11 @@ export const trackDiscoveryCall = () => trackEvent('schedule_discovery_call', { 
 export const trackContactSubmit = () => trackEvent('contact_form_submit');
 export const trackCheckoutStart = () => trackEvent('begin_checkout', { item_name: 'Private AI Setup' });
 export const trackCheckoutComplete = () => trackEvent('purchase', { item_name: 'Private AI Setup' });
+
+// Extend Window interface for TypeScript
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
+  }
+}
