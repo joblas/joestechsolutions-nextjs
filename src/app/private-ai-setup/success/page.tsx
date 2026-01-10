@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { CheckCircle, Warning, Spinner, CalendarCheck, Desktop, Cloud } from "@phosphor-icons/react";
+import { CheckCircle, Warning, Spinner, CalendarCheck, Desktop, Cloud, ArrowRight } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 interface PaymentInfo {
@@ -23,6 +23,21 @@ function SuccessContent() {
   const isDemo = searchParams.get("demo") === "true";
 
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo | null>(null);
+  const [step, setStep] = useState<"verifying" | "intake" | "scheduling">("verifying");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Form data for intake
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    useCases: "",
+    // VPS-specific
+    domainPreference: "",
+    modelSizePreference: "small" as "small" | "medium" | "large",
+    // Local-specific
+    specs: "",
+  });
 
   const isVPS = paymentInfo?.type === "vps" || urlType === "vps";
 
@@ -42,6 +57,7 @@ function SuccessContent() {
         type: urlType || "local",
         sessionId: sessionId,
       });
+      setStep("intake");
       return;
     }
 
@@ -52,6 +68,14 @@ function SuccessContent() {
 
         if (data.valid) {
           setPaymentInfo(data);
+          // Pre-fill email from Stripe if available
+          if (data.email) {
+            setFormData(prev => ({ ...prev, email: data.email }));
+          }
+          if (data.name) {
+            setFormData(prev => ({ ...prev, name: data.name }));
+          }
+          setStep("intake");
         } else {
           setPaymentInfo({ valid: false, error: data.error || "Payment verification failed" });
         }
@@ -63,8 +87,62 @@ function SuccessContent() {
     verifyPayment();
   }, [sessionId, urlType, isDemo]);
 
+  // Load qualification data from session storage
+  useEffect(() => {
+    const qualifyData = sessionStorage.getItem("privateAIQualify");
+    if (qualifyData) {
+      try {
+        const parsed = JSON.parse(qualifyData);
+        // We could use this data if needed
+        console.log("Qualification data:", parsed);
+      } catch {
+        // Ignore parsing errors
+      }
+    }
+  }, []);
+
+  const handleIntakeSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      // Get qualification data from session storage
+      const qualifyData = sessionStorage.getItem("privateAIQualify");
+      const qualifyParsed = qualifyData ? JSON.parse(qualifyData) : {};
+
+      // Save the intake data
+      const response = await fetch("/api/intakes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          ...qualifyParsed,
+          setupType: paymentInfo?.type || urlType || "local",
+          sessionId: paymentInfo?.sessionId || sessionId,
+          status: "paid",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save your information");
+      }
+
+      // Clear session storage
+      sessionStorage.removeItem("privateAIQualify");
+
+      // Move to scheduling step
+      setStep("scheduling");
+    } catch (err) {
+      console.error("Intake error:", err);
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   // Loading state
-  if (!paymentInfo) {
+  if (step === "verifying" && !paymentInfo) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -76,7 +154,7 @@ function SuccessContent() {
   }
 
   // Invalid payment
-  if (!paymentInfo.valid) {
+  if (paymentInfo && !paymentInfo.valid) {
     return (
       <div className="min-h-screen py-24">
         <div className="mx-auto max-w-2xl px-6">
@@ -106,7 +184,211 @@ function SuccessContent() {
     );
   }
 
-  // Success - show scheduling
+  // Step 2: Intake Form
+  if (step === "intake") {
+    return (
+      <div className="min-h-screen py-24">
+        <div className="mx-auto max-w-2xl px-6">
+          {/* Demo Mode Banner */}
+          {isDemo && (
+            <div className="mb-6 p-4 bg-amber-500/20 border border-amber-500/50 rounded-xl text-center">
+              <p className="text-amber-400 font-medium">
+                🧪 Demo Mode — Stripe not configured. This is a UI preview only.
+              </p>
+            </div>
+          )}
+
+          <FadeIn>
+            <div className="text-center mb-8">
+              <CheckCircle weight="duotone" className="h-16 w-16 text-green-500 mx-auto mb-4" />
+              <h1 className="text-3xl font-bold text-white font-space-grotesk mb-2">
+                Payment Successful!
+              </h1>
+              <p className="text-white/70">
+                Now tell me a bit more so I can prepare for your setup.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <Card className="bg-[#1c1c26] border-white/10">
+              <CardContent className="p-8">
+                <form onSubmit={handleIntakeSubmit} className="space-y-6">
+                  {/* Setup Type Indicator */}
+                  <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
+                    {isVPS ? (
+                      <Cloud weight="duotone" className="h-6 w-6 text-[#06B6D4]" />
+                    ) : (
+                      <Desktop weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
+                    )}
+                    <span className="text-white font-medium">
+                      {isVPS ? "VPS Hosting Setup" : "Local Install"} — Paid ✓
+                    </span>
+                  </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
+                      {error}
+                    </div>
+                  )}
+
+                  {/* Name */}
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                      placeholder="John Smith"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  {/* VPS-specific: Domain Preference */}
+                  {isVPS && (
+                    <div>
+                      <label htmlFor="domain" className="block text-sm font-medium text-white mb-2">
+                        Preferred Domain (optional)
+                      </label>
+                      <input
+                        type="text"
+                        id="domain"
+                        value={formData.domainPreference}
+                        onChange={(e) => setFormData({ ...formData, domainPreference: e.target.value })}
+                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                        placeholder="myai.yourdomain.com or leave blank for suggestions"
+                      />
+                      <p className="text-white/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
+                    </div>
+                  )}
+
+                  {/* VPS-specific: Model Size */}
+                  {isVPS && (
+                    <div>
+                      <label className="block text-sm font-medium text-white mb-3">
+                        Expected Model Size
+                      </label>
+                      <div className="grid grid-cols-3 gap-3">
+                        {[
+                          { value: "small", label: "Small (7B)", desc: "Mistral 7B, Llama3 8B" },
+                          { value: "medium", label: "Medium (13B)", desc: "Llama2 13B" },
+                          { value: "large", label: "Large (30B+)", desc: "May need upgrade" },
+                        ].map((option) => (
+                          <label
+                            key={option.value}
+                            className={`flex flex-col items-center p-3 rounded-xl border cursor-pointer transition-all text-center ${
+                              formData.modelSizePreference === option.value
+                                ? "border-[#06B6D4] bg-[#06B6D4]/10"
+                                : "border-white/10 hover:border-white/20"
+                            }`}
+                          >
+                            <input
+                              type="radio"
+                              name="modelSize"
+                              value={option.value}
+                              checked={formData.modelSizePreference === option.value}
+                              onChange={(e) =>
+                                setFormData({
+                                  ...formData,
+                                  modelSizePreference: e.target.value as typeof formData.modelSizePreference,
+                                })
+                              }
+                              className="sr-only"
+                            />
+                            <span className="text-white font-medium text-sm">{option.label}</span>
+                            <span className="text-white/50 text-xs">{option.desc}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Specs (only for local) */}
+                  {!isVPS && (
+                    <div>
+                      <label htmlFor="specs" className="block text-sm font-medium text-white mb-2">
+                        Computer Specs (RAM, CPU, GPU if any)
+                      </label>
+                      <textarea
+                        id="specs"
+                        value={formData.specs}
+                        onChange={(e) => setFormData({ ...formData, specs: e.target.value })}
+                        rows={2}
+                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors resize-none"
+                        placeholder="e.g., 16GB RAM, Intel i7, no dedicated GPU"
+                      />
+                    </div>
+                  )}
+
+                  {/* Use Cases */}
+                  <div>
+                    <label htmlFor="useCases" className="block text-sm font-medium text-white mb-2">
+                      What do you want to use AI for? *
+                    </label>
+                    <textarea
+                      id="useCases"
+                      required
+                      value={formData.useCases}
+                      onChange={(e) => setFormData({ ...formData, useCases: e.target.value })}
+                      rows={4}
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors resize-none"
+                      placeholder="e.g., Writing assistance, coding help, analyzing documents, brainstorming ideas..."
+                    />
+                  </div>
+
+                  {/* Submit */}
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
+                      isVPS
+                        ? "bg-[#06B6D4] hover:bg-[#0891b2] shadow-[#06B6D4]/20"
+                        : "bg-[#0EA5E9] hover:bg-[#0284c7] shadow-[#0EA5E9]/20"
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Spinner className="h-5 w-5 animate-spin" />
+                        Saving...
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2">
+                        Continue to Scheduling
+                        <ArrowRight className="h-5 w-5" />
+                      </span>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </FadeIn>
+        </div>
+      </div>
+    );
+  }
+
+  // Step 3: Scheduling
   return (
     <div className="min-h-screen py-24">
       <div className="mx-auto max-w-2xl px-6">
@@ -124,10 +406,10 @@ function SuccessContent() {
             <CardHeader className="text-center">
               <CheckCircle weight="duotone" className="h-16 w-16 text-[#0EA5E9] mx-auto mb-4" />
               <h1 className="text-3xl font-bold text-white font-space-grotesk mb-2">
-                {isDemo ? "Demo: Payment Success" : "Payment Successful!"}
+                You're All Set!
               </h1>
               <p className="text-white/70">
-                Thank you{paymentInfo.name ? `, ${paymentInfo.name.split(" ")[0]}` : ""}! Now let's schedule your setup call.
+                One last step — pick a time for your setup call.
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -139,13 +421,8 @@ function SuccessContent() {
                   <Desktop weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
                 )}
                 <span className="text-white font-medium">
-                  {isVPS ? "VPS Hosting Setup" : "Local Install"} — {isVPS ? "$99 + $29/mo" : "$99"}
+                  {isVPS ? "VPS Hosting Setup" : "Local Install"} — Ready to schedule
                 </span>
-              </div>
-
-              {/* Confirmation Email Notice */}
-              <div className="text-center text-white/60 text-sm">
-                <p>A confirmation email has been sent to <span className="text-white">{paymentInfo.email}</span></p>
               </div>
 
               {/* Calendly Embed Placeholder */}
@@ -155,18 +432,6 @@ function SuccessContent() {
                 <p className="text-white/60 mb-6">
                   Pick a 90-minute slot that works for you. I'll walk you through everything.
                 </p>
-                {/*
-                  TODO: Replace with your Calendly embed:
-
-                  <iframe
-                    src="https://calendly.com/YOUR_USERNAME/private-ai-setup"
-                    width="100%"
-                    height="600"
-                    frameBorder="0"
-                  />
-
-                  Or use Calendly's popup widget:
-                */}
                 <a
                   href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call"
                   target="_blank"

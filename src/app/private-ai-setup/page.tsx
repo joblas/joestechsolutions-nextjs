@@ -75,7 +75,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function PrivateAISetup() {
   const handleGetStarted = (type: "local" | "vps") => {
-    window.location.href = `/private-ai-setup/checkout?type=${type}`;
+    window.location.href = `/private-ai-setup/qualify?type=${type}`;
   };
 
   return (
@@ -302,23 +302,23 @@ export default function PrivateAISetup() {
             {[
               {
                 number: "1",
-                title: "Choose & Pay",
-                description: "Pick Local or VPS. Pay $99 via secure Stripe checkout."
+                title: "Quick Check",
+                description: "Confirm your system meets the requirements (30 seconds)."
               },
               {
                 number: "2",
-                title: "Quick Intake",
-                description: "2-minute form about your setup and use cases."
+                title: "Pay",
+                description: "Secure $99 checkout via Stripe. You're in!"
               },
               {
                 number: "3",
-                title: "Live Setup",
-                description: "Book a call. I install & train via screen share."
+                title: "Tell Me More",
+                description: "Quick form about your use cases so I can prepare."
               },
               {
                 number: "4",
-                title: "You're Live",
-                description: "VPS: Get your URL + credentials. Local: Start using immediately."
+                title: "Book & Go Live",
+                description: "Schedule your setup call. We install together, you're live!"
               }
             ].map((step, index) => (
               <StaggerItem key={index}>
