@@ -87,12 +87,12 @@ export default function Contact() {
                     <p className="text-white/70 mb-4">
                       Pick a time that works for you and let's chat about your project.
                     </p>
-                    <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                      <Button className="bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full">
+                    <Button asChild className="bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full">
+                      <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
                         <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                         Book a Call
-                      </Button>
-                    </a>
+                      </a>
+                    </Button>
                   </CardContent>
                 </Card>
               </AnimatedCard>
@@ -141,12 +141,12 @@ export default function Contact() {
                       <span>Any specific questions or requirements</span>
                     </li>
                   </ul>
-                  <a href="mailto:joe@joestechsolutions.com">
-                    <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white mt-6 rounded-full shadow-lg shadow-[#0EA5E9]/20">
+                  <Button asChild className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white mt-6 rounded-full shadow-lg shadow-[#0EA5E9]/20">
+                    <a href="mailto:joe@joestechsolutions.com?subject=Project%20Inquiry&body=Hi%20Joe%2C%0A%0AI%27m%20interested%20in%20discussing%20a%20project.%0A%0AProject%20description%3A%0A%0ATimeline%2Fbudget%3A%0A%0AQuestions%3A">
                       <Image src="/icons/mail-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                       Send Email
-                    </Button>
-                  </a>
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
             </div>
