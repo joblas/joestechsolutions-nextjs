@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
+import { CheckCircle, Robot } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
@@ -98,7 +98,7 @@ export default function Home() {
                   <div className="grid md:grid-cols-2 gap-6 p-6">
                     <div className="space-y-4">
                       <div className="w-14 h-14 bg-[#0EA5E9]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0EA5E9]/30 transition-all duration-300">
-                        <Image src="/icons/ai-dynamic/premium.png" alt="Private AI" width={32} height={32} className="object-contain" />
+                        <Robot weight="duotone" className="h-8 w-8 text-[#0EA5E9]" />
                       </div>
                       <div>
                         <CardTitle className="text-white text-2xl font-space-grotesk mb-2">Private AI Setup</CardTitle>
