@@ -8,8 +8,8 @@ export {
   BreadcrumbSchema
 } from './JsonLd';
 
+// Event tracking utilities (GA script loaded via @next/third-parties in layout.tsx)
 export {
-  GoogleAnalytics,
   trackEvent,
   trackDiscoveryCall,
   trackContactSubmit,
