@@ -39,10 +39,10 @@ export async function POST(request: NextRequest) {
     const lineItems: { price: string; quantity: number }[] = [];
 
     if (type === "local") {
-      // Local setup: just the one-time $99 fee
+      // Local setup: just the one-time $150 fee
       lineItems.push({ price: LOCAL_PRICE_ID, quantity: 1 });
     } else {
-      // VPS setup: $99 setup fee + $29/mo subscription
+      // VPS setup: $500 setup fee + $50/mo subscription
       lineItems.push({ price: VPS_SETUP_PRICE_ID, quantity: 1 });
 
       if (includeMonthly) {
@@ -66,8 +66,8 @@ export async function POST(request: NextRequest) {
       metadata: {
         product: "private-ai-setup",
         type,
-        setup_price: "99",
-        monthly_price: type === "vps" && includeMonthly ? "29" : "0",
+        setup_price: type === "local" ? "150" : "500",
+        monthly_price: type === "vps" && includeMonthly ? "50" : "0",
         intake_id: intakeId || "",
       },
     });
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
  *
  * If you prefer simpler integration, create Payment Links in Stripe Dashboard:
  * 1. Products → Payment Links → Create
- * 2. Create separate links for Local ($99) and VPS ($99 + $29/mo)
+ * 2. Create separate links for Local ($150) and VPS ($500 + $50/mo)
  *
  * Then replace this endpoint with:
  *

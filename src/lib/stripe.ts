@@ -39,13 +39,13 @@ export const stripe = {
 // Price IDs for Private AI Setup products
 // Replace with your actual price IDs from Stripe Dashboard
 
-// "Private AI Local Setup" — $99 one-time
+// "Private AI Local Setup" — $150 one-time
 export const LOCAL_PRICE_ID = process.env.STRIPE_LOCAL_PRICE_ID || "price_LOCAL_REPLACE_ME";
 
-// "Private AI VPS Setup" — $99 one-time setup fee
+// "Private AI VPS Setup" — $500 one-time setup fee (for businesses)
 export const VPS_SETUP_PRICE_ID = process.env.STRIPE_VPS_SETUP_PRICE_ID || "price_VPS_SETUP_REPLACE_ME";
 
-// "VPS Monthly Hosting" — $29/mo subscription (optional, bundled with VPS)
+// "VPS Monthly Hosting" — $50/mo subscription (optional, bundled with VPS)
 export const VPS_MONTHLY_PRICE_ID = process.env.STRIPE_VPS_MONTHLY_PRICE_ID || "price_VPS_MONTHLY_REPLACE_ME";
 
 // Base URL for redirects

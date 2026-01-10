@@ -133,7 +133,7 @@ function QualifyForm() {
                     {isVPS ? "VPS Hosting Setup" : "Local Install"}
                   </span>
                   <span className="text-white/50 text-sm">
-                    {isVPS ? "$99 setup + $29/mo" : "$99 one-time"}
+                    {isVPS ? "$500 setup + $50/mo" : "$150 one-time"}
                   </span>
                 </div>
                 <button

@@ -18,7 +18,7 @@ export interface IntakeData {
   modelSizePreference?: "small" | "medium" | "large";
   // Metadata
   timestamp: string;
-  status: "pending" | "scheduled" | "completed";
+  status: "pending" | "pending_call" | "scheduled" | "completed";
 }
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -46,7 +46,8 @@ export async function getIntakes(): Promise<IntakeData[]> {
 
 // Add a new intake
 export async function addIntake(
-  intake: Omit<IntakeData, "id" | "timestamp" | "status">
+  intake: Omit<IntakeData, "id" | "timestamp" | "status">,
+  status: IntakeData["status"] = "pending"
 ): Promise<IntakeData> {
   await ensureDataDir();
   const intakes = await getIntakes();
@@ -55,7 +56,7 @@ export async function addIntake(
     ...intake,
     id: `intake_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
     timestamp: new Date().toISOString(),
-    status: "pending",
+    status,
   };
 
   intakes.push(newIntake);

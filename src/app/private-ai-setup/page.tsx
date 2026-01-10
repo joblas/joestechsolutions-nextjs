@@ -15,23 +15,23 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     question: "What VPS specs do I get?",
-    answer: "Hostinger KVM 1: 1 vCPU, 4GB RAM, 50GB NVMe SSD. Runs 7B parameter models (Mistral 7B, Llama3 8B) smoothly. Larger models need more RAM — we can upgrade anytime."
+    answer: "Hostinger KVM 1: 1 vCPU, 4GB RAM, 50GB NVMe SSD. I've found this handles 7B parameter models (Mistral 7B, Llama3 8B) really well for most use cases. If you need to run larger models down the road, we can always upgrade — I'll help you scale when you're ready."
   },
   {
     question: "What hardware do I need for local install?",
-    answer: "8GB RAM minimum (16GB recommended). Modern CPU (2020+). No GPU required, but if you have one, we'll configure it for faster inference."
+    answer: "8GB RAM minimum, though I recommend 16GB for a smoother experience. Any modern CPU from 2020 or later works great. GPU isn't required, but if you have one, I'll configure it for faster responses. During our call, I'll check your specs and make sure you're set up for success."
   },
   {
     question: "Can I cancel VPS hosting anytime?",
-    answer: "Yes! Cancel anytime through Hostinger. No contracts, no penalties. Your $29/mo covers the VPS, domain, and ongoing support."
+    answer: "Absolutely — no contracts, no penalties. Cancel anytime through Hostinger. Your $29/mo covers the VPS, domain, and my ongoing support. I want this to work for you, and if it's ever not the right fit, you're free to go."
   },
   {
     question: "Is my data really private?",
-    answer: "100%. Local install runs entirely on your machine. VPS runs on your dedicated server — no shared resources, no third-party access. You own the hardware and data."
+    answer: "Yes, and this is the whole point. With local install, everything runs on your machine — your prompts, outputs, and data never leave your computer. With VPS, you get your own dedicated server — no shared resources, no third-party access. You own the hardware and data completely. I set this up for clients specifically because they want that control back."
   },
   {
     question: "What open-source models can I run?",
-    answer: "Mistral 7B, Llama3 8B, CodeLlama, Phi-2, and many more. I'll recommend the best model for your use case during setup."
+    answer: "Mistral 7B, Llama3 8B, CodeLlama, Phi-2, and many more. During our call, I'll ask about what you want to use AI for, then recommend the best model for your specific needs. Most clients start with Mistral or Llama and we can always add more later."
   }
 ];
 
@@ -93,18 +93,19 @@ export default function PrivateAISetup() {
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 mb-6">
                 <Robot weight="duotone" className="h-5 w-5 text-[#0EA5E9]" />
-                <span className="text-[#0EA5E9] font-medium">Done-For-You Setup</span>
+                <span className="text-[#0EA5E9] font-medium">Done-For-You AI Setup</span>
               </div>
             </FadeIn>
             <FadeIn delay={0.15}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Private AI Setup</span>
+                <span className="block text-white mb-3">Your AI. Your Data. Your Control.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Your own AI workspace — on your computer or a dedicated VPS.
-                I handle installation, configuration, and training.
+                I set up private AI systems for business owners who want powerful AI tools
+                without sending sensitive data to big tech companies. Running locally or on your own server —
+                you keep full control.
               </p>
             </FadeIn>
           </div>
@@ -127,21 +128,21 @@ export default function PrivateAISetup() {
                       </div>
                       <div>
                         <h2 className="text-2xl font-bold text-white font-space-grotesk">Local Install</h2>
-                        <p className="text-[#0EA5E9] font-semibold text-xl">$99 one-time</p>
+                        <p className="text-[#0EA5E9] font-semibold text-xl">$150 one-time</p>
                       </div>
                     </div>
                     <p className="text-white/70 text-base leading-relaxed mb-4">
-                      On your computer — no monthly costs. Perfect if you have a modern laptop or desktop.
+                      Runs entirely on your computer — your data never leaves your machine. Perfect for professionals who want AI without subscriptions or data concerns.
                     </p>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
                     <div className="space-y-3">
                       {[
-                        "Ollama + Open WebUI installed",
-                        "One open-source model (Mistral 7B/Llama3 8B)",
-                        "60-90 min live setup & training",
-                        "7 days email support",
-                        "No monthly fees — you own it"
+                        "ChatGPT-like interface, runs 100% locally",
+                        "Powerful AI model included (Mistral or Llama)",
+                        "75-min session: 15 min overview, 45 min install, 15 min demo",
+                        "7 days email support after setup",
+                        "Pay once — no subscriptions, ever"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-start">
                           <CheckCircle weight="duotone" className="h-5 w-5 text-[#0EA5E9] mr-3 shrink-0 mt-0.5" />
@@ -154,7 +155,7 @@ export default function PrivateAISetup() {
                         onClick={() => handleGetStarted("local")}
                         className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20 py-6 text-lg"
                       >
-                        Get Started — $99
+                        Get Started — $150
                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </MagneticButton>
@@ -178,21 +179,21 @@ export default function PrivateAISetup() {
                       </div>
                       <div>
                         <h2 className="text-2xl font-bold text-white font-space-grotesk">VPS Hosting</h2>
-                        <p className="text-[#06B6D4] font-semibold text-xl">$99 setup + $29/mo</p>
+                        <p className="text-[#06B6D4] font-semibold text-xl">$500 setup + $50/mo</p>
                       </div>
                     </div>
                     <p className="text-white/70 text-base leading-relaxed mb-4">
-                      Dedicated VPS with your own domain. Access from anywhere, always on.
+                      Your own private AI server, accessible from anywhere. I handle the hosting, updates, and maintenance so you can just use it.
                     </p>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
                     <div className="space-y-3">
                       {[
                         "Everything in Local, plus:",
-                        "Hostinger KVM 1 VPS (1 vCPU/4GB/50GB NVMe)",
-                        "Custom domain setup ($10/yr value)",
-                        "Pre-installed with SSL certificate",
-                        "Monthly monitoring & updates",
+                        "Dedicated server (4GB RAM, 50GB SSD)",
+                        "Your own domain (myai.yourdomain.com)",
+                        "Secure HTTPS access from any device",
+                        "I monitor and update it monthly",
                         "Cancel anytime — no contracts"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-start">
@@ -206,7 +207,7 @@ export default function PrivateAISetup() {
                         onClick={() => handleGetStarted("vps")}
                         className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group shadow-lg shadow-[#06B6D4]/20 py-6 text-lg"
                       >
-                        Get Started — $99 + $29/mo
+                        Get Started — $500 + $50/mo
                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </MagneticButton>
@@ -224,10 +225,10 @@ export default function PrivateAISetup() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                What You Get
+                What's Included
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Both options include personal setup, training, and support.
+                I walk you through everything live — you'll know exactly how to use it when we're done.
               </p>
             </div>
           </FadeIn>
@@ -238,15 +239,15 @@ export default function PrivateAISetup() {
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
                   <Desktop weight="duotone" className="h-8 w-8 text-[#0EA5E9]" />
-                  <h3 className="text-2xl font-bold text-white font-space-grotesk">Local Setup ($99)</h3>
+                  <h3 className="text-2xl font-bold text-white font-space-grotesk">Local Setup ($150)</h3>
                 </div>
                 <div className="space-y-4">
                   {[
-                    { icon: Robot, text: "Ollama + Open WebUI on your machine" },
-                    { icon: ShieldCheck, text: "One open-source model installed" },
-                    { icon: Clock, text: "60-90 min live setup & training" },
-                    { icon: Envelope, text: "7 days email support" },
-                    { icon: CurrencyDollarSimple, text: "No recurring fees ever" }
+                    { icon: Robot, text: "ChatGPT-style interface on your computer" },
+                    { icon: ShieldCheck, text: "AI model configured for your use case" },
+                    { icon: Clock, text: "75-min live session (overview, install, demo)" },
+                    { icon: Envelope, text: "7 days email support for questions" },
+                    { icon: CurrencyDollarSimple, text: "One payment — yours forever" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-4 p-4 bg-[#1c1c26] rounded-xl border border-white/5">
                       <item.icon weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
@@ -262,15 +263,15 @@ export default function PrivateAISetup() {
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
                   <Cloud weight="duotone" className="h-8 w-8 text-[#06B6D4]" />
-                  <h3 className="text-2xl font-bold text-white font-space-grotesk">VPS Setup ($99 + $29/mo)</h3>
+                  <h3 className="text-2xl font-bold text-white font-space-grotesk">VPS Setup ($500 + $50/mo)</h3>
                 </div>
                 <div className="space-y-4">
                   {[
                     { icon: Robot, text: "Everything in Local, plus..." },
-                    { icon: Cloud, text: "Hostinger KVM 1 VPS (dedicated resources)" },
-                    { icon: Globe, text: "Custom domain with SSL (myai.yourdomain.com)" },
-                    { icon: Wrench, text: "Monthly monitoring & updates" },
-                    { icon: ShieldCheck, text: "Production-ready, always accessible" }
+                    { icon: Cloud, text: "Your own dedicated server (not shared)" },
+                    { icon: Globe, text: "Custom domain with HTTPS security" },
+                    { icon: Wrench, text: "I handle monthly updates for you" },
+                    { icon: ShieldCheck, text: "Access your AI from any device, anywhere" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-4 p-4 bg-[#1c1c26] rounded-xl border border-white/5">
                       <item.icon weight="duotone" className="h-6 w-6 text-[#06B6D4]" />
@@ -290,10 +291,10 @@ export default function PrivateAISetup() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Our 4-Step Process
+                How It Works
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Simple, straightforward, done in one session.
+                We'll start with a free call so I can understand your needs before anything else.
               </p>
             </div>
           </FadeIn>
@@ -303,22 +304,22 @@ export default function PrivateAISetup() {
               {
                 number: "1",
                 title: "Quick Check",
-                description: "Confirm your system qualifies for AI setup (30 seconds)."
+                description: "Answer 2 questions so I know your system is ready."
               },
               {
                 number: "2",
-                title: "Book Call",
-                description: "Schedule a free discovery call to discuss your needs."
+                title: "Free Call",
+                description: "Book a 15-min call — I want to understand what you need."
               },
               {
                 number: "3",
-                title: "We Chat",
-                description: "I'll answer questions and make sure it's a good fit."
+                title: "We Decide",
+                description: "If it's a good fit, I'll send you a payment link."
               },
               {
                 number: "4",
-                title: "Pay & Setup",
-                description: "Pay $99, then we do the live setup together."
+                title: "Live Setup",
+                description: "75 min together: overview, install, and hands-on demo."
               }
             ].map((step, index) => (
               <StaggerItem key={index}>
@@ -372,12 +373,13 @@ export default function PrivateAISetup() {
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-              Ready to Start?
+              Take Back Control of Your Data
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Get your private AI running today. No data harvesting, no third parties — just powerful AI that you control.
+              Stop sending every prompt to OpenAI or Google. I'll set up your own private AI workspace —
+              powerful, secure, and completely under your control.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -388,7 +390,7 @@ export default function PrivateAISetup() {
                   size="lg"
                   className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30"
                 >
-                  Local — $99
+                  Local — $150
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
@@ -398,7 +400,7 @@ export default function PrivateAISetup() {
                   size="lg"
                   className="bg-[#06B6D4] hover:bg-[#0891b2] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#06B6D4]/30"
                 >
-                  VPS — $99 + $29/mo
+                  VPS — $500 + $50/mo
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
@@ -407,7 +409,7 @@ export default function PrivateAISetup() {
           <FadeIn delay={0.4}>
             <div className="mt-8 flex items-center justify-center gap-2 text-white/50">
               <ShieldCheck weight="duotone" className="h-5 w-5" />
-              <span className="text-sm">Secure checkout powered by Stripe</span>
+              <span className="text-sm">Free discovery call — no payment until we chat</span>
             </div>
           </FadeIn>
         </div>

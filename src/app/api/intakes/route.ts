@@ -6,8 +6,15 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Validate required fields (sessionId is optional - added after payment)
-    const requiredFields = ["email", "name", "setupType", "operatingSystem", "useCases"];
+    // Check if this is a pre-call qualification (minimal data)
+    const isPendingCall = body.status === "pending_call";
+
+    // For pending_call, only require setupType and operatingSystem
+    // For full intake, require all fields
+    const requiredFields = isPendingCall
+      ? ["setupType", "operatingSystem"]
+      : ["email", "name", "setupType", "operatingSystem", "useCases"];
+
     for (const field of requiredFields) {
       if (!body[field]) {
         return NextResponse.json(
@@ -27,13 +34,13 @@ export async function POST(request: NextRequest) {
 
     // Create intake data object
     const intakeData: Omit<IntakeData, "id" | "timestamp" | "status"> = {
-      sessionId: body.sessionId || "", // Will be updated after Stripe payment
-      email: body.email,
-      name: body.name,
+      sessionId: body.sessionId || "",
+      email: body.email || "", // Optional for pending_call
+      name: body.name || "", // Optional for pending_call
       setupType: body.setupType,
       operatingSystem: body.operatingSystem,
-      specs: body.specs || "",
-      useCases: body.useCases,
+      specs: body.specs || body.ramAmount || "", // Accept ramAmount as specs
+      useCases: body.useCases || "", // Optional for pending_call
     };
 
     // Add VPS-specific fields if applicable
@@ -42,9 +49,9 @@ export async function POST(request: NextRequest) {
       intakeData.modelSizePreference = body.modelSizePreference || "small";
     }
 
-    const intake = await addIntake(intakeData);
+    const intake = await addIntake(intakeData, isPendingCall ? "pending_call" : undefined);
 
-    console.log(`[Intake Created] ${intake.id} - ${intake.setupType} - ${intake.email}`);
+    console.log(`[Intake Created] ${intake.id} - ${intake.setupType} - ${isPendingCall ? "pending_call" : intake.email}`);
 
     return NextResponse.json({
       success: true,
