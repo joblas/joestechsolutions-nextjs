@@ -85,6 +85,61 @@ export default function Home() {
             </FadeIn>
           </div>
 
+          {/* Featured: Private AI Setup */}
+          <FadeIn delay={0.1}>
+            <Link href="/private-ai-setup" className="block mb-8">
+              <AnimatedCard>
+                <Card className="relative bg-gradient-to-br from-[#0EA5E9]/10 via-[#1c1c26] to-[#06B6D4]/10 border-[#0EA5E9]/30 hover:border-[#0EA5E9]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
+                  {/* Most Popular badge */}
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0EA5E9]/20 rounded-full text-[#0EA5E9] text-sm font-medium z-10">
+                    Most Popular
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6 p-6">
+                    <div className="space-y-4">
+                      <div className="w-14 h-14 bg-[#0EA5E9]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0EA5E9]/30 transition-all duration-300">
+                        <Image src="/icons/ai-dynamic/premium.png" alt="Private AI" width={32} height={32} className="object-contain" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-white text-2xl font-space-grotesk mb-2">Private AI Setup</CardTitle>
+                        <CardDescription className="text-white/70 text-base">
+                          Your own AI assistant. No data leaks. No subscriptions.
+                        </CardDescription>
+                      </div>
+                      <p className="text-white/60 leading-relaxed">
+                        Run ChatGPT-level AI on your own computer or private server. Keep sensitive data in-house while getting the same powerful capabilities. Starting at $150.
+                      </p>
+                      <div className="flex items-center gap-2 text-[#0EA5E9] font-medium group/link">
+                        Get Started
+                        <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
+                      </div>
+                    </div>
+                    <div className="hidden md:flex items-center justify-center">
+                      <div className="grid grid-cols-2 gap-3 text-sm">
+                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
+                          <span className="text-[#0EA5E9] font-semibold">100%</span>
+                          <span className="text-white/60 block">Private</span>
+                        </div>
+                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
+                          <span className="text-[#06B6D4] font-semibold">$0/mo</span>
+                          <span className="text-white/60 block">After Setup</span>
+                        </div>
+                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
+                          <span className="text-[#0EA5E9] font-semibold">75 min</span>
+                          <span className="text-white/60 block">Live Session</span>
+                        </div>
+                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
+                          <span className="text-[#06B6D4] font-semibold">GPT-4</span>
+                          <span className="text-white/60 block">Level AI</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </AnimatedCard>
+            </Link>
+          </FadeIn>
+
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
             {/* Mobile App Development */}
             <StaggerItem>
