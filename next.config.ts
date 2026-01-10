@@ -27,18 +27,18 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+    value: 'camera=(), microphone=(), geolocation=()'
   },
   {
     key: 'Content-Security-Policy',
     value: `
       default-src 'self';
-      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://www.googletagmanager.com;
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://*.googletagmanager.com;
       style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https:;
+      img-src 'self' data: https: https://*.google-analytics.com https://*.googletagmanager.com;
       font-src 'self' data:;
-      connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://www.google-analytics.com https://analytics.google.com;
-      frame-src 'self';
+      connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+      frame-src 'self' https://vercel.live;
       frame-ancestors 'none';
       base-uri 'self';
       form-action 'self';
