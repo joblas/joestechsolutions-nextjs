@@ -9,10 +9,19 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { MagneticButton } from "@/components/animations/MagneticButton";
+import { ServiceSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Services | Joe's Tech Solutions",
-  description: "Mobile app development, web platforms, e-commerce solutions, and custom software for businesses of all sizes.",
+  description: "Mobile app development, web platforms, e-commerce solutions, and custom software for businesses of all sizes. React Native, Next.js, and private AI infrastructure.",
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: "Services | Joe's Tech Solutions",
+    description: "Mobile app development, web platforms, e-commerce solutions, and custom software for businesses of all sizes.",
+    url: 'https://joestechsolutions.com/services',
+  },
 };
 
 export default function Services() {

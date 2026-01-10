@@ -1,0 +1,20 @@
+# Joe's Tech Solutions - robots.txt
+# https://joestechsolutions.com
+# Updated: January 2026
+
+User-agent: *
+Allow: /
+
+# Disallow admin and checkout pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private-ai-setup/qualify
+Disallow: /private-ai-setup/checkout
+Disallow: /private-ai-setup/success
+Disallow: /animations-demo
+
+# Sitemap location
+Sitemap: https://joestechsolutions.com/sitemap.xml
+
+# Crawl-delay for politeness (optional)
+Crawl-delay: 1

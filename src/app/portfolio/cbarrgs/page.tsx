@@ -7,7 +7,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cbarrgs Music Case Study | Joe's Tech Solutions",
-  description: "Music artist portfolio website with streaming integrations, performance optimization, and SEO.",
+  description: "Music artist portfolio website with streaming integrations, performance optimization, and SEO. Web development case study.",
+  alternates: {
+    canonical: '/portfolio/cbarrgs',
+  },
+  openGraph: {
+    title: "Cbarrgs Music Case Study | Joe's Tech Solutions",
+    description: "Music artist portfolio website with streaming integrations, performance optimization, and SEO.",
+    url: 'https://joestechsolutions.com/portfolio/cbarrgs',
+  },
 };
 
 export default function CbarrgsCaseStudy() {

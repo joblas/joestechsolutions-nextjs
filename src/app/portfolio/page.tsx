@@ -12,6 +12,14 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 export const metadata: Metadata = {
   title: "Portfolio | Joe's Tech Solutions",
   description: "See our work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
+  alternates: {
+    canonical: '/portfolio',
+  },
+  openGraph: {
+    title: "Portfolio | Joe's Tech Solutions",
+    description: "See our work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
+    url: 'https://joestechsolutions.com/portfolio',
+  },
 };
 
 export default function Portfolio() {

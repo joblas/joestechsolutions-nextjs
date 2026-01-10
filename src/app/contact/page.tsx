@@ -8,7 +8,15 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
 export const metadata: Metadata = {
   title: "Contact | Joe's Tech Solutions",
-  description: "Get in touch to discuss your mobile app, website, e-commerce platform, or custom software needs.",
+  description: "Get in touch to discuss your mobile app, website, e-commerce platform, or custom software needs. Schedule a free discovery call.",
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: "Contact | Joe's Tech Solutions",
+    description: "Get in touch to discuss your mobile app, website, e-commerce platform, or custom software needs.",
+    url: 'https://joestechsolutions.com/contact',
+  },
 };
 
 export default function Contact() {

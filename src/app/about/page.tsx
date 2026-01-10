@@ -10,8 +10,16 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
-  title: "About | Joe's Tech Solutions",
-  description: "Learn about Joe's Tech Solutions - from Waymo operations to building custom technology solutions for businesses.",
+  title: "About Joe Blas | Joe's Tech Solutions",
+  description: "Learn about Joe's Tech Solutions - boutique development studio building custom technology solutions for ambitious SMBs.",
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: "About | Joe's Tech Solutions",
+    description: "Learn about Joe's Tech Solutions - boutique development studio building custom technology solutions for ambitious SMBs.",
+    url: 'https://joestechsolutions.com/about',
+  },
 };
 
 export default function About() {

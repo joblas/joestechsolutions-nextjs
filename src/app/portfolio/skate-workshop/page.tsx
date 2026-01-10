@@ -7,7 +7,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "The Skate Workshop Case Study | Joe's Tech Solutions",
-  description: "Olympic-level skateboarding coaching platform built with React Native, Next.js, and real-time features.",
+  description: "Olympic-level skateboarding coaching platform built with React Native, Next.js, and real-time features. Mobile app development case study.",
+  alternates: {
+    canonical: '/portfolio/skate-workshop',
+  },
+  openGraph: {
+    title: "The Skate Workshop Case Study | Joe's Tech Solutions",
+    description: "Olympic-level skateboarding coaching platform built with React Native, Next.js, and real-time features.",
+    url: 'https://joestechsolutions.com/portfolio/skate-workshop',
+  },
 };
 
 export default function SkateWorkshopCaseStudy() {
