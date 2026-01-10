@@ -137,7 +137,7 @@ export default function Portfolio() {
                   <p className="text-slate-200 text-lg mb-6">
                     More case studies coming soon. Working on something exciting?
                   </p>
-                  <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
                     <MagneticButton strength={0.2}>
                       <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                         Start Your Project
@@ -166,7 +166,7 @@ export default function Portfolio() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <a href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-10 py-6 group">
                   Schedule Discovery Call
