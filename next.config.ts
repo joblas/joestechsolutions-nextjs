@@ -33,11 +33,11 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: `
       default-src 'self';
-      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://*.googletagmanager.com;
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://*.googletagmanager.com https://*.google-analytics.com;
       style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https: https://*.google-analytics.com https://*.googletagmanager.com;
+      img-src 'self' data: https: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net;
       font-src 'self' data:;
-      connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+      connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://stats.g.doubleclick.net;
       frame-src 'self' https://vercel.live;
       frame-ancestors 'none';
       base-uri 'self';
