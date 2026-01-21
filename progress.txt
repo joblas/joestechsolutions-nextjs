@@ -146,3 +146,18 @@ Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
   - Use .slice(0, 4) to limit to 4 most recent
   - FadeIn delay should increment for visual stagger effect (0.25, 0.35, etc.)
 ---
+
+## 2026-01-20 - US-001d
+- Created CategoryNav.tsx component at src/components/blog/CategoryNav.tsx
+- Displays all 5 pillars as clickable pills with hover effects
+- Uses getAllPillars() to iterate over pillar definitions
+- Pills link to /blog/category/[pillar] routes
+- Supports activePillar prop for highlighting current category
+- Integrated into blog hub page below intro text, centered
+- Files created: src/components/blog/CategoryNav.tsx
+- Files changed: src/app/blog/page.tsx
+- **Learnings for future iterations:**
+  - getAllPillars() returns array of all pillar objects
+  - Pillar objects have bgClass, textClass, darkBgClass, darkTextClass for styling
+  - Use cn() utility for conditional class merging
+---
