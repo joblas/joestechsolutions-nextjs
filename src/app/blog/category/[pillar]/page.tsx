@@ -78,8 +78,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 font-space-grotesk">
                 {pillar.name}
               </h1>
-              <p className="text-xl text-white/80 max-w-2xl mx-auto font-light mb-8">
+              <p className="text-xl text-white/80 max-w-2xl mx-auto font-light mb-4">
                 {pillar.description}
+              </p>
+              <p className="text-sm text-white/50 mb-8">
+                {posts.length} {posts.length === 1 ? 'post' : 'posts'} in this category
               </p>
               <CategoryNav className="justify-center" activePillar={pillarSlug} />
             </div>
