@@ -9,6 +9,7 @@
 - The content pipeline (Python) is already complete in /scripts/content-pipeline/
 - Use `pnpm build` for type checking (no separate typecheck script)
 - The ralph folder is excluded from TypeScript build (separate project)
+- MDXContent uses next-mdx-remote/rsc (RSC) - pass raw MDX string directly, NOT serialized output
 
 ## Project Context
 - Building a blog UI for an automated AI education content platform
@@ -101,5 +102,18 @@ Thread: https://ampcode.com/threads/T-019bde89-4ed2-70f9-b18f-0dd1c5e45d2f
   - FadeIn component used for animations with delay prop
   - Dark theme styling uses specific colors: bg-[#0A1628], text-white, text-white/80
   - Blog pages should include SEO metadata with canonical URLs
+---
+
+## 2026-01-20 - US-005a
+Thread: https://ampcode.com/threads/T-019bde8e-7c81-719b-8d0e-83c58b884fea
+- Fixed Basic Post Page at src/app/blog/[slug]/page.tsx
+- Removed incorrect `serialize` usage - MDXContent uses `next-mdx-remote/rsc` which takes raw MDX string directly
+- Page displays: title, pillar tag, type badge, date, reading time, MDX content
+- Uses notFound() for invalid slugs
+- Files changed: src/app/blog/[slug]/page.tsx
+- **Learnings for future iterations:**
+  - MDXContent uses `next-mdx-remote/rsc` (React Server Components) - pass raw MDX string, NOT serialized output
+  - Don't use `serialize` from `next-mdx-remote/serialize` with RSC components
+  - Post header shows pillar tag with color-coded classes, type badge, and reading time
 ---
 

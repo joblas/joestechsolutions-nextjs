@@ -113,7 +113,7 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "notes": "Core reading experience"
     },
     {
@@ -874,16 +874,17 @@
       "title": "Scheduled Roundup Generation",
       "description": "As Joe, I want roundups auto-generated on a schedule so I don't forget.",
       "acceptanceCriteria": [
-        "Config option in sources.yaml: `roundups:` section with pillar, frequency (weekly/monthly), day",
-        "Default config includes weekly roundups for all 4 main pillars: news, local-ai, prompting, experiments",
-        "`python main.py roundup --scheduled` runs all due roundups",
+        "Config option in sources.yaml: `roundups:` section with pillar, frequency, days",
+        "Default config: twice-weekly roundups (Tuesday + Thursday) for all 4 pillars: news, local-ai, prompting, experiments",
+        "Supports multiple days per pillar: `days: [tuesday, thursday]`",
+        "`python main.py roundup --scheduled` runs all due roundups for today",
         "Tracks last roundup date per pillar in `logs/roundups.json`",
-        "GitHub Actions workflow can call this on schedule",
+        "GitHub Actions workflow runs on Tues/Thurs schedule",
         "Script compiles without errors"
       ],
       "priority": 55,
       "passes": false,
-      "notes": "Weekly roundups for: Tech News (news), Self-Hosted AI (local-ai), LLMs & Prompting (prompting), Fun AI Content (experiments)"
+      "notes": "Twice-weekly (Tues/Thurs) roundups for: Tech News, Self-Hosted AI, LLMs & Prompting, Fun AI Content"
     }
   ]
 }
