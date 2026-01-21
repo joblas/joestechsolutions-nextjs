@@ -31,3 +31,32 @@ Thread: https://ampcode.com/threads/T-019bde79-28cb-720c-be1d-c96a1f0f0063
   - Pillars have Tailwind classes for both light and dark mode styling
 ---
 
+## 2026-01-20 - US-F02
+Thread: https://ampcode.com/threads/T-019bde7b-400d-769b-b084-6b496de4c85d
+- Created MDX content loader at src/lib/blog/posts.ts
+- Added gray-matter dependency for frontmatter parsing
+- Implemented functions: getAllPosts(), getPostBySlug(), getPostsByType(), getPostsByPillar()
+- Also added: getAllPostsMeta(), getFeaturedPosts(), getAllTags(), getPostsByTag()
+- Files changed: src/lib/blog/posts.ts, package.json, pnpm-lock.yaml
+- **Learnings for future iterations:**
+  - gray-matter is the standard for parsing MDX frontmatter
+  - Content is in content/blog/guides/ and content/blog/articles/
+  - Reading time calculated at 200 words per minute
+  - Slugs extracted from filename (date prefix removed if present)
+---
+
+## 2026-01-20 - US-F03
+Thread: https://ampcode.com/threads/T-019bde7e-2223-765e-b819-309ab79723f3
+- Created 4 sample MDX content files for testing blog UI
+- Files created:
+  - content/blog/guides/getting-started-with-ollama.mdx (pillar: local-ai, featured: true)
+  - content/blog/guides/effective-prompting-techniques.mdx (pillar: prompting)
+  - content/blog/articles/claude-sonnet-4-release.mdx (pillar: news)
+  - content/blog/articles/ai-image-generation-experiment.mdx (pillar: experiments)
+- All files have complete frontmatter matching the schema
+- **Learnings for future iterations:**
+  - Frontmatter requires: title, date, type, pillar, excerpt; optional: featured, featuredImage, tags, author, draft
+  - Date format is ISO string: "YYYY-MM-DD"
+  - Featured images referenced with /images/blog/ path (images don't need to exist yet)
+---
+

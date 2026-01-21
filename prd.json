@@ -32,7 +32,7 @@
         "`pnpm build` succeeds"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "notes": "Foundation - depends on US-F01"
     },
     {
@@ -47,7 +47,7 @@
         "`pnpm build` succeeds"
       ],
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "notes": "Foundation - depends on US-F01 for schema"
     },
     {
