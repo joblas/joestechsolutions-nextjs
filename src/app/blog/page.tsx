@@ -2,6 +2,7 @@ import { getAllPostsMeta, getFeaturedPosts, getPostsMetaByType } from '@/lib/blo
 import { PostCard } from '@/components/blog/PostCard';
 import { BlogHero } from '@/components/blog/BlogHero';
 import { CategoryNav } from '@/components/blog/CategoryNav';
+import { SearchButton } from '@/components/blog/SearchButton';
 import { FadeIn } from '@/components/animations/FadeIn';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -43,6 +44,9 @@ export default function BlogPage() {
                 Practical guides and insights on AI, local models, and automation
                 to help you work smarter with technology.
               </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                <SearchButton posts={posts} />
+              </div>
               <CategoryNav className="justify-center" />
             </div>
           </FadeIn>
