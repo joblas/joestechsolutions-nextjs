@@ -132,3 +132,17 @@ Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
   - Hover effects include border brightness increase and background opacity change
 ---
 
+
+## 2026-01-20 - US-001c
+- Added 'Latest Guides' section displaying 4 most recent guides
+- Added 'Latest Articles' section displaying 4 most recent articles
+- Both sections use PostCard component in responsive grid (1/2/4 columns)
+- Added "View All Guides →" and "View All Articles →" navigation links
+- Links point to /blog/guides and /blog/articles respectively
+- Fallback to "All Posts" section if no guides or articles exist
+- Files changed: src/app/blog/page.tsx
+- **Learnings for future iterations:**
+  - getPostsMetaByType('guide') and getPostsMetaByType('article') are available
+  - Use .slice(0, 4) to limit to 4 most recent
+  - FadeIn delay should increment for visual stagger effect (0.25, 0.35, etc.)
+---
