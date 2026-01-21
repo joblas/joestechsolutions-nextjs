@@ -5,6 +5,8 @@ import { getPillarBySlug } from '@/lib/blog/pillars';
 import { MDXContent } from '@/components/blog/MDXContent';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 import { PostNavigation } from '@/components/blog/PostNavigation';
+import { ShareButtons } from '@/components/blog/ShareButtons';
+import { BlogCTA } from '@/components/blog/BlogCTA';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
@@ -119,6 +121,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                   {post.readingTime} min read
                 </span>
               </div>
+
+              {/* Share Buttons */}
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <ShareButtons url={`/blog/${slug}`} title={post.title} />
+              </div>
             </header>
 
             {/* Featured Image */}
@@ -140,6 +147,11 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="prose prose-invert prose-lg max-w-none">
               <MDXContent source={post.content} />
             </div>
+          </FadeIn>
+
+          {/* CTA Section */}
+          <FadeIn delay={0.25}>
+            <BlogCTA variant="both" />
           </FadeIn>
 
           {/* Navigation */}
