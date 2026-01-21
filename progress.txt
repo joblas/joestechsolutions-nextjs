@@ -190,3 +190,10 @@ Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
   - Pillar.color can be used in inline styles for dynamic gradients
   - Combine Tailwind classes for smooth multi-property transitions
 ---
+## 2026-01-20 - US-003a
+- Created /blog/category/[pillar]/page.tsx with dynamic routing
+- Pillar validation with notFound() for invalid slugs
+- generateStaticParams for all pillar slugs
+- Separate sections for guides and articles with counts
+- Dynamic pillar color for glow effect and category badge
+---
