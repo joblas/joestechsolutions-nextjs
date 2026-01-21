@@ -175,3 +175,18 @@ Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
   - getPostsMetaByType('guide') and getPostsMetaByType('article') handle filtering
   - Reuse FadeIn animations with staggered delays
 ---
+
+## 2026-01-20 - US-004b
+- Added featured image with Next.js Image component
+- Aspect-video ratio container for consistent sizing
+- Gradient placeholder using pillar colors when no image
+- Added excerpt display with line-clamp-2
+- Added reading time with SVG clock icon
+- Enhanced hover: -translate-y-1 lift, shadow-lg, image scale-105
+- Updated to rounded-xl for softer corners
+- Files changed: src/components/blog/PostCard.tsx
+- **Learnings for future iterations:**
+  - Use aspect-video for consistent image sizing
+  - Pillar.color can be used in inline styles for dynamic gradients
+  - Combine Tailwind classes for smooth multi-property transitions
+---
