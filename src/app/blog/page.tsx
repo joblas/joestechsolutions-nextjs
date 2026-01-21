@@ -1,6 +1,7 @@
 import { getAllPostsMeta, getFeaturedPosts, getPostsMetaByType } from '@/lib/blog/posts';
 import { PostCard } from '@/components/blog/PostCard';
 import { BlogHero } from '@/components/blog/BlogHero';
+import { CategoryNav } from '@/components/blog/CategoryNav';
 import { FadeIn } from '@/components/animations/FadeIn';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -34,14 +35,15 @@ export default function BlogPage() {
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 font-space-grotesk">
                 Blog
               </h1>
-              <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-white/80 max-w-2xl mx-auto font-light mb-8">
                 Practical guides and insights on AI, local models, and automation
                 to help you work smarter with technology.
               </p>
+              <CategoryNav className="justify-center" />
             </div>
           </FadeIn>
 
