@@ -833,6 +833,57 @@
       "priority": 52,
       "passes": false,
       "notes": ""
+    },
+    {
+      "id": "CP-018",
+      "title": "Aggregated Roundup Posts",
+      "description": "As Joe, I want to combine multiple sources into a single roundup post so readers get comprehensive updates on a topic.",
+      "acceptanceCriteria": [
+        "`python main.py roundup --pillar news --days 7` aggregates recent sources into one post",
+        "Collects all ingested items from the specified pillar within the date range",
+        "Uses Claude to synthesize into a cohesive roundup article (not just summaries)",
+        "Generates title like 'Weekly AI News Roundup: [Date Range]'",
+        "Each source gets a section with key takeaways and link to original",
+        "Includes 'What This Means For You' synthesis section at the end",
+        "Creates single ContentItem with `source_type=roundup` and references to source items",
+        "Supports `--min-sources N` to require minimum sources (default: 3)",
+        "Skips if not enough sources in date range (logs warning)",
+        "Script compiles without errors"
+      ],
+      "priority": 53,
+      "passes": false,
+      "notes": "Creates weekly/monthly roundups from multiple sources"
+    },
+    {
+      "id": "CP-019",
+      "title": "Roundup Prompt Templates",
+      "description": "As Joe, I want dedicated prompts for roundup posts so they have consistent structure.",
+      "acceptanceCriteria": [
+        "Create `config/prompts/roundup_transform.md` with roundup-specific prompt",
+        "Prompt instructs Claude to: synthesize (not summarize), find themes, provide actionable insights",
+        "Template includes sections: Introduction, [Topic Sections], Key Themes, What This Means",
+        "Voice guide applied same as individual posts",
+        "Script compiles without errors"
+      ],
+      "priority": 54,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-020",
+      "title": "Scheduled Roundup Generation",
+      "description": "As Joe, I want roundups auto-generated on a schedule so I don't forget.",
+      "acceptanceCriteria": [
+        "Config option in sources.yaml: `roundups:` section with pillar, frequency (weekly/monthly), day",
+        "Default config includes weekly roundups for all 4 main pillars: news, local-ai, prompting, experiments",
+        "`python main.py roundup --scheduled` runs all due roundups",
+        "Tracks last roundup date per pillar in `logs/roundups.json`",
+        "GitHub Actions workflow can call this on schedule",
+        "Script compiles without errors"
+      ],
+      "priority": 55,
+      "passes": false,
+      "notes": "Weekly roundups for: Tech News (news), Self-Hosted AI (local-ai), LLMs & Prompting (prompting), Fun AI Content (experiments)"
     }
   ]
 }
