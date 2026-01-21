@@ -1,0 +1,33 @@
+# Ralph Progress Log - AI Blog UI
+
+## Codebase Patterns
+- This is a Next.js 14+ project with App Router
+- Tailwind CSS is used for styling
+- Content lives in /content/blog/guides/ and /content/blog/articles/ as MDX files
+- Components go in /src/components/blog/
+- Lib functions go in /src/lib/blog/
+- The content pipeline (Python) is already complete in /scripts/content-pipeline/
+- Use `pnpm build` for type checking (no separate typecheck script)
+- The ralph folder is excluded from TypeScript build (separate project)
+
+## Project Context
+- Building a blog UI for an automated AI education content platform
+- Two content types: Guides (evergreen how-tos) and Articles (timely news)
+- Five pillars: local-ai, prompting, tutorials, news, experiments
+- Design inspired by artificial-intelligence.blog and forwardfuture.ai
+- Must support dark mode and be fully responsive
+
+---
+
+## 2026-01-20 - US-F01
+Thread: https://ampcode.com/threads/T-019bde79-28cb-720c-be1d-c96a1f0f0063
+- Blog content model and types already implemented (found pre-existing)
+- Files verified: src/lib/blog/types.ts, src/lib/blog/pillars.ts
+- Fixed tsconfig.json to exclude ralph folder from TypeScript compilation
+- **Learnings for future iterations:**
+  - The ralph folder contains a separate project (flowchart app) that should not be included in main build
+  - No `pnpm typecheck` script exists - use `pnpm build` which includes TypeScript checking
+  - Types include: Post, PostMeta, PostFrontmatter, Pillar, ContentType, PillarSlug
+  - Pillars have Tailwind classes for both light and dark mode styling
+---
+

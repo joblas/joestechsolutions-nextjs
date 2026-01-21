@@ -1,0 +1,24 @@
+youtube:
+  - id: "@intheworldofai"
+    name: "In the World of AI"
+    active: true
+  - id: "@ColeMedin"
+    name: "Cole Medin"
+    active: true
+  - id: "@NetworkChuck"
+    name: "NetworkChuck"
+    active: true
+  - id: "@matthew_berman"
+    name: "Matthew Berman"
+    active: true
+  - id: "@NickPonte808"
+    name: "Nick Ponte"
+    active: true
+  - id: "@professorpatterns"
+    name: "Professor Patterns"
+    active: true
+
+rss:
+  - url: "https://example.com/feed"
+    name: "Example Blog"
+    active: true

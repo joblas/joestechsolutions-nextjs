@@ -1,0 +1,838 @@
+{
+  "project": "AI Blog Automation",
+  "branchName": "ralph/ai-blog-automation",
+  "description": "Automated AI education blog + content pipeline for joestechsolutions.com",
+  "userStories": [
+    {
+      "id": "US-F01",
+      "title": "Blog Content Model & Types",
+      "description": "As a developer, I need TypeScript types and content schema so all blog components share consistent data structures.",
+      "acceptanceCriteria": [
+        "Create `src/lib/blog/types.ts` with Post, Pillar, ContentType interfaces",
+        "Define frontmatter schema: title, date, type (guide/article), pillar, excerpt, featured, featuredImage, tags, draft",
+        "Create `src/lib/blog/pillars.ts` with pillar definitions (slug, name, color, description)",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "Foundation - must complete first"
+    },
+    {
+      "id": "US-F02",
+      "title": "MDX Content Loader",
+      "description": "As a developer, I need functions to load and parse MDX files so pages can fetch blog content.",
+      "acceptanceCriteria": [
+        "Create `src/lib/blog/posts.ts` with `getAllPosts()`, `getPostBySlug()`, `getPostsByType()`, `getPostsByPillar()`",
+        "Parse frontmatter from MDX files in `content/blog/guides/` and `content/blog/articles/`",
+        "Compute reading time from content length",
+        "Sort posts by date descending by default",
+        "Filter out `draft: true` posts in production",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "Foundation - depends on US-F01"
+    },
+    {
+      "id": "US-F03",
+      "title": "Sample Content Files",
+      "description": "As a developer, I need sample MDX files so I can test the blog UI during development.",
+      "acceptanceCriteria": [
+        "Create 2 sample guides in `content/blog/guides/` (different pillars)",
+        "Create 2 sample articles in `content/blog/articles/` (different pillars)",
+        "Each file has complete frontmatter matching schema",
+        "At least one marked `featured: true`",
+        "`pnpm build` succeeds"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": "Foundation - depends on US-F01 for schema"
+    },
+    {
+      "id": "US-004a",
+      "title": "Basic Post Card",
+      "description": "As a visitor, I want post cards so I can scan content quickly.",
+      "acceptanceCriteria": [
+        "Create `PostCard.tsx` component in `src/components/blog/`",
+        "Display: title, date, pillar tag, content type badge",
+        "Link to `/blog/[slug]`",
+        "Responsive width",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": "Core component needed by many pages"
+    },
+    {
+      "id": "US-004c",
+      "title": "Post Grid Layout",
+      "description": "As a visitor, I want posts in a responsive grid layout.",
+      "acceptanceCriteria": [
+        "Create `PostGrid.tsx` wrapper component",
+        "4 columns on desktop, 2 on tablet, 1 on mobile",
+        "Consistent gap/spacing",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill (all breakpoints)"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": "Core layout component"
+    },
+    {
+      "id": "US-001a",
+      "title": "Blog Hub Page Scaffold",
+      "description": "As a visitor, I want a /blog page so I can access the blog content.",
+      "acceptanceCriteria": [
+        "Create `/blog/page.tsx` route",
+        "Fetch all posts using content loader",
+        "Display page title 'Blog' and brief intro text",
+        "Simple list of post titles (placeholder for cards)",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": "First visible page"
+    },
+    {
+      "id": "US-005a",
+      "title": "Basic Post Page",
+      "description": "As a visitor, I want to read individual blog posts.",
+      "acceptanceCriteria": [
+        "Create `/blog/[slug]/page.tsx` route",
+        "Fetch post by slug (searches both guides/ and articles/)",
+        "Render MDX content",
+        "Post header: title, date, pillar tag, type badge",
+        "404 for invalid slugs",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": "Core reading experience"
+    },
+    {
+      "id": "US-001b",
+      "title": "Blog Hero Section",
+      "description": "As a visitor, I want to see featured posts prominently so I know what's important.",
+      "acceptanceCriteria": [
+        "Create `BlogHero.tsx` component",
+        "Display 1-3 featured posts (from `featured: true` frontmatter)",
+        "Fallback to 3 most recent if none featured",
+        "Hero card shows: title, excerpt, pillar tag, type badge",
+        "Link to individual post",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-001c",
+      "title": "Blog Sections (Guides & Articles)",
+      "description": "As a visitor, I want separate sections for Guides and Articles on the hub page.",
+      "acceptanceCriteria": [
+        "'Latest Guides' section with 4 most recent guides",
+        "'Latest Articles' section with 4 most recent articles",
+        "Each section uses PostCard component",
+        "'View All Guides' / 'View All Articles' links",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-001d",
+      "title": "Category Navigation Pills",
+      "description": "As a visitor, I want category pills so I can quickly filter by topic.",
+      "acceptanceCriteria": [
+        "Create `CategoryNav.tsx` component",
+        "Display all pillars as clickable pills/tabs",
+        "Each pill links to `/blog/category/[pillar]`",
+        "Pills use pillar colors from config",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004b",
+      "title": "Post Card Visual Polish",
+      "description": "As a visitor, I want polished post cards with images and hover effects.",
+      "acceptanceCriteria": [
+        "Add featured image (with placeholder fallback)",
+        "Add excerpt (2-line clamp)",
+        "Add reading time",
+        "Pillar tag color-coded",
+        "Hover state with subtle lift/shadow",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": "Polish pass on PostCard"
+    },
+    {
+      "id": "US-002a",
+      "title": "Guides List Page",
+      "description": "As a visitor, I want a /blog/guides page to browse all guides.",
+      "acceptanceCriteria": [
+        "Create `/blog/guides/page.tsx` route",
+        "Fetch all posts with `type: guide`",
+        "Display in PostGrid",
+        "Page title: 'Guides'",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 12,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002b",
+      "title": "Articles List Page",
+      "description": "As a visitor, I want a /blog/articles page to browse all articles.",
+      "acceptanceCriteria": [
+        "Create `/blog/articles/page.tsx` route",
+        "Fetch all posts with `type: article`",
+        "Display in PostGrid",
+        "Page title: 'Articles'",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 13,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003a",
+      "title": "Category Filter Page",
+      "description": "As a visitor, I want to browse content by category/pillar.",
+      "acceptanceCriteria": [
+        "Create `/blog/category/[pillar]/page.tsx` route",
+        "Fetch all posts matching pillar",
+        "Display pillar name as page header",
+        "Show both guides and articles (labeled)",
+        "404 for invalid pillar slugs",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 14,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005b",
+      "title": "Post Page Header & Meta",
+      "description": "As a visitor, I want complete post metadata visible.",
+      "acceptanceCriteria": [
+        "Create `PostMeta.tsx` component",
+        "Display: author (default: 'Joe'), date, reading time, pillar tag, content type",
+        "Featured image (full-width or constrained)",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 15,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005c",
+      "title": "MDX Component Mapping",
+      "description": "As a visitor, I want rich content formatting in posts.",
+      "acceptanceCriteria": [
+        "Create `src/components/blog/mdx/` directory",
+        "Code blocks with syntax highlighting (use existing or add `shiki`/`prism`)",
+        "Callout/alert component (info, warning, tip)",
+        "Image component with caption support",
+        "Table styling",
+        "`pnpm typecheck` passes",
+        "Verify in browser with sample post using all components"
+      ],
+      "priority": 16,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005d",
+      "title": "Table of Contents",
+      "description": "As a visitor, I want a table of contents so I can navigate long posts.",
+      "acceptanceCriteria": [
+        "Create `TableOfContents.tsx` component",
+        "Auto-generate from H2/H3 headings in content",
+        "Sticky sidebar on desktop, collapsible on mobile",
+        "Smooth scroll to section on click",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 17,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005e",
+      "title": "Related Posts",
+      "description": "As a visitor, I want related post suggestions so I can discover more content.",
+      "acceptanceCriteria": [
+        "Create `RelatedPosts.tsx` component",
+        "Show 3 posts from same pillar (excluding current)",
+        "Fallback to same type if not enough pillar matches",
+        "Display as mini-cards",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 18,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005f",
+      "title": "Post Navigation (Prev/Next)",
+      "description": "As a visitor, I want previous/next links so I can read sequentially.",
+      "acceptanceCriteria": [
+        "Show 'Previous Post' and 'Next Post' at bottom",
+        "Navigate within same content type (guide→guide, article→article)",
+        "Display title of prev/next post",
+        "Hide if no prev/next exists",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 19,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005g",
+      "title": "Post SEO Meta Tags",
+      "description": "As Joe, I want proper SEO so posts rank well in search.",
+      "acceptanceCriteria": [
+        "Generate `<title>` from post title",
+        "Generate `<meta description>` from excerpt",
+        "Open Graph tags: og:title, og:description, og:image, og:type",
+        "Twitter card tags",
+        "Canonical URL",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds"
+      ],
+      "priority": 20,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005h",
+      "title": "Social Share Buttons",
+      "description": "As a visitor, I want share buttons so I can share posts easily.",
+      "acceptanceCriteria": [
+        "Create `ShareButtons.tsx` component",
+        "Twitter/X, LinkedIn, Copy Link buttons",
+        "Copy Link shows 'Copied!' feedback",
+        "Uses post URL and title",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 21,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005i",
+      "title": "Post CTA Sections",
+      "description": "As Joe, I want CTAs in posts to drive conversions.",
+      "acceptanceCriteria": [
+        "Create `BlogCTA.tsx` component",
+        "Newsletter signup CTA (links to existing signup or placeholder)",
+        "Consultation CTA (links to contact/booking page)",
+        "Appears after post content, before related posts",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 22,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003b",
+      "title": "Category Page Metadata",
+      "description": "As a visitor, I want category descriptions so I understand what each topic covers.",
+      "acceptanceCriteria": [
+        "Display pillar description below header",
+        "Show post count: '12 posts'",
+        "Use pillar color as accent",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 23,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002c",
+      "title": "List Page Pagination",
+      "description": "As a visitor, I want pagination so I can browse older content.",
+      "acceptanceCriteria": [
+        "12 posts per page",
+        "'Previous' / 'Next' navigation buttons",
+        "Page number in URL: `/blog/guides?page=2`",
+        "Disabled state for first/last page",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 24,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002d",
+      "title": "List Page Sorting",
+      "description": "As a visitor, I want to sort posts by different criteria.",
+      "acceptanceCriteria": [
+        "Sort dropdown: 'Newest', 'Oldest', 'A-Z'",
+        "Sort persists in URL params",
+        "Default: Newest",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 25,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006a",
+      "title": "Search Index",
+      "description": "As a developer, I need a search index so search can be client-side.",
+      "acceptanceCriteria": [
+        "Create `src/lib/blog/search.ts`",
+        "Build search index from: title, excerpt, tags, pillar",
+        "Index generated at build time (not runtime)",
+        "Export `searchPosts(query)` function",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds"
+      ],
+      "priority": 26,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006b",
+      "title": "Inline Search Bar",
+      "description": "As a visitor, I want a search bar on the blog page.",
+      "acceptanceCriteria": [
+        "Add search input to /blog page header",
+        "Filter visible posts as user types",
+        "Debounce input (300ms)",
+        "Show result count",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 27,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006c",
+      "title": "Search Modal",
+      "description": "As a visitor, I want a search modal for focused searching.",
+      "acceptanceCriteria": [
+        "Create `BlogSearch.tsx` modal component",
+        "Search icon in blog nav opens modal",
+        "Keyboard shortcut: Cmd/Ctrl + K",
+        "Results as list items with title, excerpt preview, pillar",
+        "Click result navigates to post",
+        "Escape closes modal",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 28,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006d",
+      "title": "Search Empty State",
+      "description": "As a visitor, I want helpful feedback when search finds nothing.",
+      "acceptanceCriteria": [
+        "'No results for X' message",
+        "Suggest: 'Try different keywords' or show popular posts",
+        "Clear search button",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 29,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Featured Posts Management",
+      "description": "As Joe, I want to manually select featured posts.",
+      "acceptanceCriteria": [
+        "Frontmatter field: `featured: true` or `featured: 1` (for ordering)",
+        "Featured posts appear in hero section on /blog",
+        "Max 3 featured posts displayed",
+        "Auto-fallback to most recent if none marked featured",
+        "`pnpm typecheck` passes",
+        "`pnpm build` succeeds",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 30,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008a",
+      "title": "Dark Mode Toggle",
+      "description": "As a visitor, I want a dark mode toggle.",
+      "acceptanceCriteria": [
+        "Add theme toggle button to site header",
+        "Respects system preference by default (`prefers-color-scheme`)",
+        "Persists choice in localStorage",
+        "Uses class on `<html>` to avoid hydration mismatch",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 31,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008b",
+      "title": "Dark Mode Blog Styling",
+      "description": "As a visitor, I want blog components styled for dark mode.",
+      "acceptanceCriteria": [
+        "PostCard, PostGrid dark variants",
+        "BlogHero dark variant",
+        "Post page content dark variant",
+        "Code blocks have dark theme",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill (both modes)"
+      ],
+      "priority": 32,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008c",
+      "title": "Dark Mode Accessibility Audit",
+      "description": "As a visitor, I want proper contrast in dark mode.",
+      "acceptanceCriteria": [
+        "All text meets WCAG AA contrast (4.5:1 for body, 3:1 for large text)",
+        "Pillar tag colors readable in dark mode",
+        "Focus states visible",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 33,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Blog 404 Page",
+      "description": "As a visitor, I want a helpful 404 page when a post doesn't exist.",
+      "acceptanceCriteria": [
+        "Custom 404 for `/blog/[invalid-slug]`",
+        "Message: 'Post not found'",
+        "Link back to /blog",
+        "Suggest recent posts",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 34,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "Empty State Handling",
+      "description": "As a visitor, I want helpful messages when sections are empty.",
+      "acceptanceCriteria": [
+        "Empty state for: no guides, no articles, no category matches",
+        "Message: 'No posts yet' with context",
+        "Does not break layout",
+        "`pnpm typecheck` passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 35,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-001",
+      "title": "Pipeline Config & Schema Validation",
+      "description": "As a developer, I want validated config loading so the pipeline fails fast on bad configuration.",
+      "acceptanceCriteria": [
+        "`config/sources.yaml` validated with Pydantic model on load",
+        "`config/pillars.yaml` created with pillar definitions (slug, name, color, description)",
+        "Clear error messages for missing/invalid config",
+        "`python main.py status` shows loaded sources count",
+        "Script compiles without errors (`python -m py_compile`)"
+      ],
+      "priority": 36,
+      "passes": false,
+      "notes": "Pipeline foundation"
+    },
+    {
+      "id": "CP-002",
+      "title": "YouTube Transcript Ingestion",
+      "description": "As Joe, I want to ingest YouTube video transcripts so I can transform them into blog content.",
+      "acceptanceCriteria": [
+        "`python main.py ingest --url 'https://youtube.com/...'` fetches transcript",
+        "Uses `youtube-transcript-api` for caption extraction",
+        "Saves to `processed/{video_id}.json` with ContentItem schema",
+        "Skips already-processed videos (idempotent)",
+        "Logs warning if no transcript available",
+        "Script compiles without errors"
+      ],
+      "priority": 37,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-003",
+      "title": "YouTube Audio Fallback (Whisper)",
+      "description": "As Joe, I want audio transcription fallback so videos without captions can still be processed.",
+      "acceptanceCriteria": [
+        "If no transcript available, downloads audio via `yt-dlp`",
+        "Transcribes with `faster-whisper` (local) or AssemblyAI (cloud fallback)",
+        "Stores transcription in same ContentItem format",
+        "`--skip-whisper` flag to disable fallback",
+        "Script compiles without errors"
+      ],
+      "priority": 38,
+      "passes": false,
+      "notes": "Optional - can be deferred"
+    },
+    {
+      "id": "CP-004",
+      "title": "Article Ingestion (Trafilatura)",
+      "description": "As Joe, I want to ingest web articles so I can transform news/blog posts into content.",
+      "acceptanceCriteria": [
+        "`python main.py ingest --url 'https://example.com/article'` extracts text",
+        "Uses `trafilatura` for clean text extraction",
+        "Saves to `processed/{url_hash}.json` with ContentItem schema",
+        "Skips already-processed URLs (idempotent)",
+        "Script compiles without errors"
+      ],
+      "priority": 39,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-005",
+      "title": "Channel/Feed Batch Ingestion",
+      "description": "As Joe, I want to ingest all new content from my approved sources automatically.",
+      "acceptanceCriteria": [
+        "`python main.py ingest` (no URL) processes all sources in `sources.yaml`",
+        "For YouTube channels: fetches latest N videos not yet processed",
+        "For RSS feeds: fetches latest N articles not yet processed",
+        "`--limit N` flag to control how many items per source",
+        "Summary output: 'Ingested 3 new items, skipped 5 existing'",
+        "Script compiles without errors"
+      ],
+      "priority": 40,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-006",
+      "title": "Blog Content Transformation",
+      "description": "As Joe, I want AI to transform source content into original blog posts.",
+      "acceptanceCriteria": [
+        "`python main.py transform` processes all `status=ingested` items",
+        "Uses Claude API with `blog_transform.md` prompt",
+        "Generates: title options, outline, full draft, key takeaways",
+        "Auto-classifies as Guide or Article based on content",
+        "Tags with content pillar from `pillars.yaml`",
+        "Updates item to `status=transformed`",
+        "Script compiles without errors"
+      ],
+      "priority": 41,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-007",
+      "title": "Social Content Generation",
+      "description": "As Joe, I want AI to generate Instagram and TikTok content from each blog post.",
+      "acceptanceCriteria": [
+        "Runs after blog transformation (same `transform` command)",
+        "Uses `instagram_generate.md` prompt for IG content",
+        "Uses `tiktok_generate.md` prompt for TikTok script",
+        "Generates: short caption, long caption, carousel slides, hashtags, TikTok script",
+        "Stored in ContentItem.social_content",
+        "Script compiles without errors"
+      ],
+      "priority": 42,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-008",
+      "title": "Voice Consistency Check",
+      "description": "As Joe, I want the system to flag content that doesn't match my voice.",
+      "acceptanceCriteria": [
+        "Voice check runs after transformation",
+        "Scans for banned words: 'revolutionary', 'game-changing', 'mind-blowing', 'scary', etc.",
+        "Scans for jargon without explanation",
+        "Adds `voice_warnings` list to ContentItem",
+        "Logs warnings but doesn't block (human review catches)",
+        "Script compiles without errors"
+      ],
+      "priority": 43,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-009",
+      "title": "Google Docs Draft Creation",
+      "description": "As Joe, I want drafts created in Google Docs so I can review and edit before publishing.",
+      "acceptanceCriteria": [
+        "`python main.py draft` processes all `status=transformed` items",
+        "Creates Google Doc using service account",
+        "Doc includes: blog content, IG content, TikTok script (all sections)",
+        "Doc title format: `[REVIEW] {title} - {date}`",
+        "First line: `STATUS: READY FOR REVIEW`",
+        "Updates item with `google_doc_id` and `status=drafted`",
+        "Script compiles without errors"
+      ],
+      "priority": 44,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-010",
+      "title": "Approval Status Detection",
+      "description": "As a developer, I want the system to detect when Joe approves a draft.",
+      "acceptanceCriteria": [
+        "`python main.py publish --check` scans all drafted items",
+        "Reads Google Doc, checks if first line says `STATUS: APPROVED`",
+        "Lists approved docs ready for publish",
+        "Does NOT modify anything (read-only check)",
+        "Script compiles without errors"
+      ],
+      "priority": 45,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-011",
+      "title": "MDX File Publishing",
+      "description": "As Joe, I want approved content published as MDX files in the correct folder.",
+      "acceptanceCriteria": [
+        "`python main.py publish` processes approved docs",
+        "Extracts blog content from Google Doc",
+        "Creates MDX file with frontmatter (title, date, pillar, type, excerpt, etc.)",
+        "Saves to `content/blog/guides/` or `content/blog/articles/` based on type",
+        "Filename format: `YYYY-MM-DD-slug.mdx`",
+        "Updates item to `status=published`",
+        "Updates Google Doc: `STATUS: PUBLISHED`",
+        "Script compiles without errors"
+      ],
+      "priority": 46,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-012",
+      "title": "Git Commit Automation",
+      "description": "As Joe, I want published content auto-committed so it deploys automatically.",
+      "acceptanceCriteria": [
+        "After MDX file created, runs `git add` + `git commit`",
+        "Commit message: `content: {title}`",
+        "`--auto-push` flag to also push to remote",
+        "`--no-commit` flag to skip git operations",
+        "Never commits if MDX file is empty/invalid",
+        "Script compiles without errors"
+      ],
+      "priority": 47,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-013",
+      "title": "Source Attribution Tracking",
+      "description": "As Joe, I want source attribution tracked internally for my records.",
+      "acceptanceCriteria": [
+        "ContentItem stores: source_url, source_type, original_title, original_author",
+        "Attribution NOT included in published MDX (per PRD non-goal)",
+        "`python main.py status --sources` lists all processed sources",
+        "Script compiles without errors"
+      ],
+      "priority": 48,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-014",
+      "title": "Pipeline Run Logging",
+      "description": "As Joe, I want logs of all pipeline runs so I can debug failures.",
+      "acceptanceCriteria": [
+        "All commands log to `logs/pipeline-{date}.log`",
+        "Log includes: timestamp, command, items processed, success/failure",
+        "Errors include full stack trace",
+        "`python main.py status` shows last 5 runs summary",
+        "Script compiles without errors"
+      ],
+      "priority": 49,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-015",
+      "title": "Dry Run Mode",
+      "description": "As Joe, I want a dry-run mode so I can preview changes without side effects.",
+      "acceptanceCriteria": [
+        "`--dry-run` flag available on all commands",
+        "Dry run: no API calls, no file writes, no git commits",
+        "Logs what WOULD happen",
+        "Exit code 0 if dry run would succeed",
+        "Script compiles without errors"
+      ],
+      "priority": 50,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-016",
+      "title": "Budget & Rate Limiting",
+      "description": "As Joe, I want API budget controls so I don't accidentally overspend.",
+      "acceptanceCriteria": [
+        "Config option: `daily_claude_budget: 5.00` (USD)",
+        "Tracks token usage per day in `logs/usage.json`",
+        "Warns at 80% budget, stops at 100%",
+        "`python main.py status --usage` shows current spend",
+        "Script compiles without errors"
+      ],
+      "priority": 51,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-017",
+      "title": "Manual Topic Injection",
+      "description": "As Joe, I want to manually add topics so I'm not dependent on external sources.",
+      "acceptanceCriteria": [
+        "`python main.py ingest --topic 'How to use Claude for X' --pillar prompting`",
+        "Creates ContentItem with `source_type=manual`",
+        "Skips ingestion, goes straight to transformation",
+        "Script compiles without errors"
+      ],
+      "priority": 52,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
