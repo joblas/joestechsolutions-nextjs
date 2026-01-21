@@ -63,7 +63,7 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "notes": "Core component needed by many pages"
     },
     {
@@ -78,7 +78,7 @@
         "Verify in browser using dev-browser skill (all breakpoints)"
       ],
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "notes": "Core layout component"
     },
     {

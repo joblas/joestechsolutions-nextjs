@@ -58,5 +58,33 @@ Thread: https://ampcode.com/threads/T-019bde7e-2223-765e-b819-309ab79723f3
   - Frontmatter requires: title, date, type, pillar, excerpt; optional: featured, featuredImage, tags, author, draft
   - Date format is ISO string: "YYYY-MM-DD"
   - Featured images referenced with /images/blog/ path (images don't need to exist yet)
+  ---
+
+  ## 2026-01-20 - US-004a
+  Thread: https://ampcode.com/threads/T-019bde86-4d55-735e-8354-0c448b7279e2
+  - Created PostCard.tsx component in src/components/blog/
+  - Displays: title, date, pillar tag (color-coded), content type badge
+  - Links to /blog/[slug] correctly
+  - Responsive width with rounded border and hover effects
+  - Uses cn() utility for className merging
+  - Files changed: src/components/blog/PostCard.tsx
+  - **Learnings for future iterations:**
+  - PostCard uses getPillarBySlug to get pillar colors (bgClass, textClass, darkBgClass, darkTextClass)
+  - Uses line-clamp-2 for title truncation
+  - Uses group/group-hover pattern for linked hover states
+  - Date formatted with toLocaleDateString for consistent display
+  ---
+
+## 2026-01-20 - US-004c
+Thread: https://ampcode.com/threads/T-019bde88-03c7-756f-82c5-9c925b65e530
+- Created PostGrid.tsx component in src/components/blog/
+- Responsive grid: 1 column mobile, 2 columns tablet (sm:), 4 columns desktop (lg:)
+- Consistent gap-6 spacing
+- Empty state displays "No posts found." message
+- Files changed: src/components/blog/PostGrid.tsx
+- **Learnings for future iterations:**
+  - Grid uses Tailwind responsive prefixes: grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+  - Component accepts className prop for additional styling via cn() utility
+  - PostCard used as child component within the grid
 ---
 
