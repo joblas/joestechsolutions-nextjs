@@ -197,3 +197,12 @@ Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
 - Separate sections for guides and articles with counts
 - Dynamic pillar color for glow effect and category badge
 ---
+
+## 2026-01-20 - US-005b, US-005e, US-005f, US-005g
+- Created PostMeta.tsx, RelatedPosts.tsx, PostNavigation.tsx
+- Updated [slug]/page.tsx with all post page enhancements
+- Author, date, reading time with icons
+- Related posts from same pillar with fallback to same type
+- Prev/Next navigation within same content type
+- Twitter card and OG image meta tags
+---
