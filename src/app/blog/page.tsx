@@ -1,7 +1,8 @@
-import { getAllPostsMeta, getFeaturedPosts } from '@/lib/blog/posts';
+import { getAllPostsMeta, getFeaturedPosts, getPostsMetaByType } from '@/lib/blog/posts';
 import { PostCard } from '@/components/blog/PostCard';
 import { BlogHero } from '@/components/blog/BlogHero';
 import { FadeIn } from '@/components/animations/FadeIn';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = getAllPostsMeta();
   const featuredPosts = getFeaturedPosts(3);
+  const latestGuides = getPostsMetaByType('guide').slice(0, 4);
+  const latestArticles = getPostsMetaByType('article').slice(0, 4);
 
   return (
     <div className="min-h-screen">
@@ -36,7 +39,7 @@ export default function BlogPage() {
                 Blog
               </h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
-                Practical guides and insights on AI, local models, and automation 
+                Practical guides and insights on AI, local models, and automation
                 to help you work smarter with technology.
               </p>
             </div>
@@ -51,14 +54,61 @@ export default function BlogPage() {
             </FadeIn>
           )}
 
-          <FadeIn delay={0.3}>
-            <h2 className="text-2xl font-semibold text-white mb-6">All Posts</h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {posts.map((post) => (
-                <PostCard key={post.slug} post={post} />
-              ))}
-            </div>
-          </FadeIn>
+          {/* Latest Guides Section */}
+          {latestGuides.length > 0 && (
+            <FadeIn delay={0.25}>
+              <div className="mb-16">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-2xl font-semibold text-white">Latest Guides</h2>
+                  <Link
+                    href="/blog/guides"
+                    className="text-sm text-[#0EA5E9] hover:text-[#0EA5E9]/80 transition-colors font-medium"
+                  >
+                    View All Guides →
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {latestGuides.map((post) => (
+                    <PostCard key={post.slug} post={post} />
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          )}
+
+          {/* Latest Articles Section */}
+          {latestArticles.length > 0 && (
+            <FadeIn delay={0.35}>
+              <div className="mb-16">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-2xl font-semibold text-white">Latest Articles</h2>
+                  <Link
+                    href="/blog/articles"
+                    className="text-sm text-[#0EA5E9] hover:text-[#0EA5E9]/80 transition-colors font-medium"
+                  >
+                    View All Articles →
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {latestArticles.map((post) => (
+                    <PostCard key={post.slug} post={post} />
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          )}
+
+          {/* Fallback: All Posts (shown if no guides or articles) */}
+          {latestGuides.length === 0 && latestArticles.length === 0 && posts.length > 0 && (
+            <FadeIn delay={0.3}>
+              <h2 className="text-2xl font-semibold text-white mb-6">All Posts</h2>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {posts.map((post) => (
+                  <PostCard key={post.slug} post={post} />
+                ))}
+              </div>
+            </FadeIn>
+          )}
 
           {posts.length === 0 && (
             <FadeIn delay={0.2}>
