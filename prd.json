@@ -130,7 +130,7 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 8,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -885,6 +885,71 @@
       "priority": 55,
       "passes": false,
       "notes": "Twice-weekly (Tues/Thurs) roundups for: Tech News, Self-Hosted AI, LLMs & Prompting, Fun AI Content"
+    },
+    {
+      "id": "CP-021",
+      "title": "AI Featured Image Generation",
+      "description": "As Joe, I want AI-generated featured images for each blog post so the content looks professional and original.",
+      "acceptanceCriteria": [
+        "Integrate Google Gemini API (Nano Banana Pro / gemini-3-pro-image-preview)",
+        "After blog transformation, auto-generate featured image based on post title + pillar",
+        "Prompt template in `config/prompts/featured_image.md` with style guidelines",
+        "Save image to `public/images/blog/{slug}.png`",
+        "Update ContentItem with `featuredImage` path",
+        "Support `--skip-images` flag to skip generation",
+        "Images are high quality (1024px minimum)",
+        "Script compiles without errors"
+      ],
+      "priority": 56,
+      "passes": false,
+      "notes": "Uses Google Nano Banana Pro for professional AI-generated images"
+    },
+    {
+      "id": "CP-022",
+      "title": "Featured Image Prompt Templates",
+      "description": "As Joe, I want consistent image styles that match my brand.",
+      "acceptanceCriteria": [
+        "Create `config/prompts/featured_image.md` with image generation prompt",
+        "Style: modern, clean, tech-focused, vibrant colors matching pillar",
+        "Each pillar has color palette guidance (purple for local-ai, blue for prompting, etc.)",
+        "Prompt includes: subject from title, pillar colors, 'professional tech blog style'",
+        "No text in images (clean visuals only)",
+        "Script compiles without errors"
+      ],
+      "priority": 57,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-023",
+      "title": "Roundup Post Images",
+      "description": "As Joe, I want unique featured images for roundup posts.",
+      "acceptanceCriteria": [
+        "Roundup posts get distinct visual style (collage/mosaic feel)",
+        "Prompt template: `config/prompts/roundup_image.md`",
+        "Includes date range in composition (e.g., 'Jan 13-20' as subtle element)",
+        "Different style per pillar while maintaining cohesive brand",
+        "Script compiles without errors"
+      ],
+      "priority": 58,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CP-024",
+      "title": "Image Generation API Config",
+      "description": "As a developer, I want configurable image generation settings.",
+      "acceptanceCriteria": [
+        "Config option: `image_provider: gemini` (extensible for future providers)",
+        "Config option: `image_resolution: 1024` (supports 1024, 2048, 4096)",
+        "Config option: `image_style: modern-tech` (style preset name)",
+        "Environment variable: `GOOGLE_API_KEY` for Gemini API",
+        "Fallback: if image generation fails, use placeholder and log warning",
+        "Script compiles without errors"
+      ],
+      "priority": 59,
+      "passes": false,
+      "notes": ""
     }
   ]
 }

@@ -1,5 +1,6 @@
-import { getAllPostsMeta } from '@/lib/blog/posts';
+import { getAllPostsMeta, getFeaturedPosts } from '@/lib/blog/posts';
 import { PostCard } from '@/components/blog/PostCard';
+import { BlogHero } from '@/components/blog/BlogHero';
 import { FadeIn } from '@/components/animations/FadeIn';
 import type { Metadata } from 'next';
 
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const posts = getAllPostsMeta();
+  const featuredPosts = getFeaturedPosts(3);
 
   return (
     <div className="min-h-screen">
@@ -40,7 +42,17 @@ export default function BlogPage() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
+          {featuredPosts.length > 0 && (
+            <FadeIn delay={0.15}>
+              <div className="mb-16">
+                <h2 className="text-2xl font-semibold text-white mb-6">Featured</h2>
+                <BlogHero posts={featuredPosts} />
+              </div>
+            </FadeIn>
+          )}
+
+          <FadeIn delay={0.3}>
+            <h2 className="text-2xl font-semibold text-white mb-6">All Posts</h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {posts.map((post) => (
                 <PostCard key={post.slug} post={post} />

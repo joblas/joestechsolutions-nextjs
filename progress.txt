@@ -117,3 +117,18 @@ Thread: https://ampcode.com/threads/T-019bde8e-7c81-719b-8d0e-83c58b884fea
   - Post header shows pillar tag with color-coded classes, type badge, and reading time
 ---
 
+## 2026-01-20 - US-001b
+Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
+- Created BlogHero.tsx component at src/components/blog/BlogHero.tsx
+- Displays 1-3 featured posts with responsive layout (main card + 2 side cards)
+- Uses getFeaturedPosts() which falls back to most recent if none featured
+- Hero cards show: title, excerpt, pillar tag (color-coded), type badge, "Read more" link
+- Updated blog page to include Featured section with BlogHero
+- Files changed: src/components/blog/BlogHero.tsx, src/app/blog/page.tsx
+- **Learnings for future iterations:**
+  - BlogHero uses HeroCard sub-component with isMain prop for larger main card
+  - Layout adapts: 1 card = full width, 2 cards = 2 columns, 3 cards = main + stacked side
+  - Uses semi-transparent glassmorphism styling with white/5 to white/[0.02] gradients
+  - Hover effects include border brightness increase and background opacity change
+---
+
