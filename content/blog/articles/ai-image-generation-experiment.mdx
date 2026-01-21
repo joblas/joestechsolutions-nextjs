@@ -1,0 +1,71 @@
+---
+title: "I Made AI Generate 100 App Icons: Here's What Worked"
+date: "2026-01-12"
+type: article
+pillar: experiments
+excerpt: "An experiment testing different prompting strategies for AI image generation. Some results surprised me."
+featured: false
+featuredImage: "/images/blog/ai-icons-experiment.jpg"
+tags:
+  - image-generation
+  - experiment
+  - design
+  - midjourney
+author: Joe
+---
+
+I needed app icons for a side project and decided to test how well AI image generators handle this specific use case. After generating 100 icons across different tools and prompts, here's what I learned.
+
+## The Setup
+
+I tested three generators:
+- DALL-E 3
+- Midjourney v6
+- Stable Diffusion XL (local)
+
+For each, I tried various prompting approaches to generate iOS-style app icons.
+
+## What Worked
+
+### Explicit Style References
+
+Being specific about the style dramatically improved results.
+
+**Vague:** "app icon for a weather app"
+
+**Specific:** "iOS app icon, weather app, minimal design, single cloud symbol, gradient blue background, rounded corners, no text, professional, 1024x1024"
+
+### Negative Prompts
+
+Telling the model what NOT to include helped avoid common problems:
+- "no text"
+- "no borders within the icon"
+- "no realistic photos"
+- "no complex scenes"
+
+### Color Constraints
+
+Limiting the color palette produced more cohesive results. "Using only shades of blue and white" worked better than leaving colors open-ended.
+
+## What Didn't Work
+
+### Expecting Consistency
+
+Getting multiple icons in a matching style was difficult. Each generation felt like starting fresh. For a full icon set, you'll need heavy post-processing.
+
+### Text and Symbols
+
+Any text in icons came out poorly. Even simple letters often had artifacts. Symbols fared better but still required careful prompting.
+
+## The Results
+
+Out of 100 generations:
+- ~15 were usable with minor edits
+- ~30 were good starting points for redesign
+- ~55 needed significant work or were unusable
+
+## My Recommendation
+
+AI image generation is a helpful starting point for app icons, but not a replacement for a designer. Use it for ideation and rough concepts, then refine manually or hire a professional for the final assets.
+
+The technology is improving rapidly though. I'll revisit this experiment in six months and see how things change.

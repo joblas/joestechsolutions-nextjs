@@ -1,0 +1,87 @@
+---
+title: "5 Prompting Techniques That Actually Work"
+date: "2026-01-10"
+type: guide
+pillar: prompting
+excerpt: "Move beyond basic prompts with these proven techniques that get better results from any language model."
+featured: false
+featuredImage: "/images/blog/prompting-guide.jpg"
+tags:
+  - prompting
+  - llm
+  - tips
+  - techniques
+author: Joe
+---
+
+After working with language models daily for years, I've found that the difference between mediocre and excellent results often comes down to how you structure your prompts.
+
+## The Problem with Basic Prompts
+
+Most people type a quick question and hope for the best. That can work for simple tasks, but for anything complex, you're leaving quality on the table.
+
+## Technique 1: Role Assignment
+
+Tell the model who it should be. This frames the entire conversation.
+
+**Basic:** "How do I improve my website's SEO?"
+
+**Better:** "You are an SEO consultant with 10 years of experience. A small business owner asks you how to improve their local service website's SEO. Provide actionable advice."
+
+## Technique 2: Chain of Thought
+
+Ask the model to think step by step. This works especially well for reasoning tasks.
+
+```
+Solve this problem step by step:
+[Your problem here]
+
+First, identify what we know.
+Then, determine what we need to find.
+Finally, work through the solution.
+```
+
+## Technique 3: Few-Shot Examples
+
+Show the model what you want by providing examples.
+
+```
+Convert these sentences to a professional tone:
+
+Input: "Hey, can you send me that thing?"
+Output: "Could you please send me the document we discussed?"
+
+Input: "This is broken, fix it."
+Output: [Model completes the pattern]
+```
+
+## Technique 4: Structured Output
+
+Specify the exact format you need.
+
+```
+Analyze this code and respond in this format:
+
+## Issues Found
+- [List each issue]
+
+## Suggested Fixes
+- [Corresponding fixes]
+
+## Code Quality Score
+[1-10 rating with explanation]
+```
+
+## Technique 5: Constraints and Boundaries
+
+Set clear limits to keep responses focused.
+
+- "In 3 sentences or less..."
+- "Using only built-in Python libraries..."
+- "Suitable for a beginner audience..."
+
+## Putting It Together
+
+The best prompts combine multiple techniques. Start with a role, provide context, give examples if needed, specify the output format, and set appropriate constraints.
+
+Experiment with these techniques and you'll see immediate improvements in your results.

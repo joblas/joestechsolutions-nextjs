@@ -1,0 +1,67 @@
+---
+title: "Getting Started with Ollama: Run LLMs on Your Own Machine"
+date: "2026-01-15"
+type: guide
+pillar: local-ai
+excerpt: "Learn how to set up Ollama and run powerful language models locally on your computer without sending data to the cloud."
+featured: true
+featuredImage: "/images/blog/ollama-setup.jpg"
+tags:
+  - ollama
+  - local-ai
+  - llama
+  - privacy
+author: Joe
+---
+
+Running AI models locally has never been easier. Ollama makes it simple to download and run large language models on your own hardware, keeping your data private and your costs at zero.
+
+## Why Run Models Locally?
+
+There are several compelling reasons to run LLMs on your own machine:
+
+1. **Privacy** - Your prompts and data never leave your computer
+2. **Cost** - No API fees or subscription costs
+3. **Speed** - No network latency for each request
+4. **Control** - Full control over which models you use and how
+
+## Installing Ollama
+
+Getting started with Ollama takes just a few minutes. Head to [ollama.com](https://ollama.com) and download the installer for your operating system.
+
+### macOS and Linux
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+### Windows
+
+Download the installer from the Ollama website and run it. The installation is straightforward and requires no special configuration.
+
+## Running Your First Model
+
+Once installed, running a model is as simple as:
+
+```bash
+ollama run llama3.2
+```
+
+This downloads the Llama 3.2 model (if not already present) and starts an interactive chat session.
+
+## Choosing the Right Model
+
+Ollama supports many models, each with different strengths:
+
+| Model | Best For | Size |
+|-------|----------|------|
+| Llama 3.2 | General chat, coding | 3B-8B |
+| Mistral | Fast responses, good reasoning | 7B |
+| CodeLlama | Programming tasks | 7B-34B |
+| Phi-3 | Lightweight, efficient | 3.8B |
+
+Start with a smaller model to test your hardware, then scale up as needed.
+
+## What's Next?
+
+Now that you have Ollama running, you can explore integrating it with your applications using the local API, or try out different models to find the best fit for your use cases.
