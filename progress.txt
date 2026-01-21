@@ -161,3 +161,17 @@ Thread: https://ampcode.com/threads/T-019bde91-521c-7028-80b3-87bd7140a58f
   - Pillar objects have bgClass, textClass, darkBgClass, darkTextClass for styling
   - Use cn() utility for conditional class merging
 ---
+
+## 2026-01-20 - US-002a, US-002b
+- Created /blog/guides page at src/app/blog/guides/page.tsx
+- Created /blog/articles page at src/app/blog/articles/page.tsx
+- Both use getPostsMetaByType() to fetch filtered posts
+- Responsive grid layout (1/2/4 columns)
+- CategoryNav integrated for pillar navigation
+- Empty state handling with friendly message
+- SEO metadata with canonical URLs
+- **Learnings for future iterations:**
+  - List pages follow same pattern: hero, category nav, grid of cards
+  - getPostsMetaByType('guide') and getPostsMetaByType('article') handle filtering
+  - Reuse FadeIn animations with staggered delays
+---
