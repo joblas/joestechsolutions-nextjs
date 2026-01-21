@@ -88,3 +88,18 @@ Thread: https://ampcode.com/threads/T-019bde88-03c7-756f-82c5-9c925b65e530
   - PostCard used as child component within the grid
 ---
 
+## 2026-01-20 - US-001a
+Thread: https://ampcode.com/threads/T-019bde89-4ed2-70f9-b18f-0dd1c5e45d2f
+- Created Blog Hub page at src/app/blog/page.tsx
+- Displays "Blog" title and intro text about AI guides
+- Fetches and displays all posts using getAllPostsMeta()
+- Uses PostCard components in a responsive grid layout
+- Includes metadata for SEO (title, description, OpenGraph)
+- Files created: src/app/blog/page.tsx
+- **Learnings for future iterations:**
+  - Follow the existing page patterns (see about/page.tsx) for hero sections and styling
+  - FadeIn component used for animations with delay prop
+  - Dark theme styling uses specific colors: bg-[#0A1628], text-white, text-white/80
+  - Blog pages should include SEO metadata with canonical URLs
+---
+
