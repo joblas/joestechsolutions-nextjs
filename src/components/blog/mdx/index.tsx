@@ -26,17 +26,17 @@ export const mdxComponents = {
 
   // Style tables
   table: ({ children, ...props }: ComponentProps<'table'>) => (
-    <div className="my-6 overflow-x-auto rounded-lg border border-white/10">
+    <div className="my-6 overflow-x-auto rounded-lg border border-gray-200 dark:border-white/10">
       <table className="w-full text-sm" {...props}>{children}</table>
     </div>
   ),
   th: ({ children, ...props }: ComponentProps<'th'>) => (
-    <th className="bg-white/5 px-4 py-2 text-left font-semibold text-white" {...props}>
+    <th className="bg-gray-50 dark:bg-white/5 px-4 py-2 text-left font-semibold text-gray-900 dark:text-white" {...props}>
       {children}
     </th>
   ),
   td: ({ children, ...props }: ComponentProps<'td'>) => (
-    <td className="border-t border-white/10 px-4 py-2 text-white/80" {...props}>
+    <td className="border-t border-gray-200 dark:border-white/10 px-4 py-2 text-gray-700 dark:text-white/80" {...props}>
       {children}
     </td>
   ),
@@ -44,7 +44,7 @@ export const mdxComponents = {
   // Style blockquotes
   blockquote: ({ children, ...props }: ComponentProps<'blockquote'>) => (
     <blockquote
-      className="my-6 border-l-4 border-primary pl-4 italic text-white/70"
+      className="my-6 border-l-4 border-primary pl-4 italic text-gray-600 dark:text-white/70"
       {...props}
     >
       {children}
@@ -56,7 +56,7 @@ export const mdxComponents = {
     <figure className="my-6">
       <img className="rounded-lg w-full" alt={alt} {...props} />
       {alt && (
-        <figcaption className="mt-2 text-center text-sm text-white/50">
+        <figcaption className="mt-2 text-center text-sm text-gray-500 dark:text-white/50">
           {alt}
         </figcaption>
       )}
