@@ -7,6 +7,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ThemeScript } from "@/components/theme-script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -69,26 +71,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <ThemeScript />
         <OrganizationSchema />
         <WebsiteSchema />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased font-sans bg-background text-foreground`}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded"
-        >
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content" className="pt-16 min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <SpeedInsights />
-        <Analytics />
-        <GoogleAnalytics gaId="G-MBFJDHF0W9" />
+        <ThemeProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded"
+          >
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main-content" className="pt-16 min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <SpeedInsights />
+          <Analytics />
+          <GoogleAnalytics gaId="G-MBFJDHF0W9" />
+        </ThemeProvider>
       </body>
     </html>
   );

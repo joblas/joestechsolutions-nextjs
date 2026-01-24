@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -49,6 +50,7 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
+              <ThemeToggle />
               <Link href="/services">
                 <Button size="sm" className="bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full shadow-lg shadow-[#0099ff]/20">
                   Get Started
@@ -57,8 +59,9 @@ export function Header() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white/70 hover:text-[#0099ff]"
