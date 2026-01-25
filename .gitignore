@@ -67,3 +67,4 @@ venv/
 
 # Content pipeline temp files
 scripts/content-pipeline/out.txt
+ralph/
