@@ -1,0 +1,24 @@
+- slug: local-ai
+  name: "Self-Hosted & Local AI"
+  color: "#8B5CF6"
+  description: "Running LLMs locally, privacy-first workflows, and hardware recommendations."
+
+- slug: prompting
+  name: "How to Use LLMs & Prompting"
+  color: "#3B82F6"
+  description: "Prompt thinking frameworks, workflow prompts, and tool-specific guides."
+
+- slug: tutorials
+  name: "How-To Guides & Tutorials"
+  color: "#10B981"
+  description: "Step-by-step walkthroughs, tool comparisons, and practical automation setups."
+
+- slug: news
+  name: "Tech News & AI Commentary"
+  color: "#F59E0B"
+  description: "Calm, grounded updates and analysis of the latest AI business implications."
+
+- slug: experiments
+  name: "Fun & Engaging AI Content"
+  color: "#EC4899"
+  description: "Experiments, demos, new tool discoveries, and creative AI use cases."

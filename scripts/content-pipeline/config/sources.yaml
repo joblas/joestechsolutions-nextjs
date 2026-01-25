@@ -17,8 +17,67 @@ youtube:
   - id: "@professorpatterns"
     name: "Professor Patterns"
     active: true
+  - id: "@sabrina_ramonov"
+    name: "Sabrina Ramonov"
+    active: true
+  - id: "@RoboNuggets"
+    name: "RoboNuggets"
+    active: true
+  - id: "@GregIsenberg"
+    name: "Greg Isenberg"
+    active: true
 
 rss:
+  - url: "https://www.sabrina.dev/feed"
+    name: "Sabrina Ramonov (Substack)"
+    active: true
+  - url: "https://www.gregisenberg.com/blog/feed"
+    name: "Greg Isenberg Blog"
+    active: true
+  - url: "https://www.joshwcomeau.com/rss.xml"
+    name: "Josh W. Comeau (Premium UI/UX)"
+    active: true
+  - url: "https://nextjs.org/feed.xml"
+    name: "Next.js Official Blog"
+    active: true
+  - url: "https://ollama.com/blog/feed.xml"
+    name: "Ollama (Local AI)"
+    active: true
+  - url: "https://mistral.ai/news/feed.xml"
+    name: "Mistral AI (Open Weights)"
+    active: true
+  - url: "https://openai.com/news/rss.xml"
+    name: "OpenAI News"
+    active: true
+  - url: "https://www.therundown.ai/feed"
+    name: "The Rundown AI"
+    active: true
+  - url: "https://venturebeat.com/category/ai/feed/"
+    name: "VentureBeat AI"
+    active: true
+  - url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    name: "TechCrunch AI"
+    active: true
+  - url: "https://blog.google/technology/ai/rss/"
+    name: "Google AI Blog"
+    active: true
+  - url: "https://www.skool.com/robonuggets/about"
+    name: "RoboNuggets (Skool)"
+    active: true
   - url: "https://example.com/feed"
     name: "Example Blog"
     active: true
+
+roundups:
+  - pillar: "news"
+    days: ["tuesday", "thursday"]
+    lookback_days: 7
+  - pillar: "local-ai"
+    days: ["tuesday", "thursday"]
+    lookback_days: 7
+  - pillar: "prompting"
+    days: ["tuesday", "thursday"]
+    lookback_days: 7
+  - pillar: "experiments"
+    days: ["tuesday", "thursday"]
+    lookback_days: 7

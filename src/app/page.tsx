@@ -89,7 +89,7 @@ export default function Home() {
           <FadeIn delay={0.1}>
             <Link href="/private-ai-setup" className="block mb-8">
               <AnimatedCard>
-                <Card className="relative bg-gradient-to-br from-[#0EA5E9]/10 via-[#1c1c26] to-[#06B6D4]/10 border-[#0EA5E9]/30 hover:border-[#0EA5E9]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
+                <Card className="relative bg-linear-to-br from-[#0EA5E9]/10 via-[#1c1c26] to-[#06B6D4]/10 border-[#0EA5E9]/30 hover:border-[#0EA5E9]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
                   {/* Most Popular badge */}
                   <div className="absolute top-4 right-4 px-3 py-1 bg-[#0EA5E9]/20 rounded-full text-[#0EA5E9] text-sm font-medium z-10">
                     Most Popular
@@ -363,7 +363,7 @@ export default function Home() {
                   href={tech.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
+                  className="shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
                 >
                   <img
                     src={tech.logo}
@@ -393,7 +393,7 @@ export default function Home() {
                   href={tech.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
+                  className="shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
                 >
                   <img
                     src={tech.logo}

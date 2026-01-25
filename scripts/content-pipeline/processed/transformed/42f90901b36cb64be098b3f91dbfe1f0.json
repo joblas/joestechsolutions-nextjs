@@ -1,0 +1,60 @@
+{
+    "id": "42f90901b36cb64be098b3f91dbfe1f0",
+    "source_type": "manual",
+    "source_url": "manual",
+    "title": "The Future of AI Content Pipelines",
+    "author": "Manual Injection",
+    "publish_date": "2026-01-24T00:00:00",
+    "raw_content": "Topic: The Future of AI Content Pipelines",
+    "metadata": {
+        "manual_topic": true,
+        "forced_pillar": "news"
+    },
+    "status": "transformed",
+    "blog_content": {
+        "title_options": [
+            "The Future of AI Content Pipelines",
+            "How to Automate Your Blog with AI",
+            "Building the Infinite Content Machine"
+        ],
+        "content_pillar": "news",
+        "content_type": "article",
+        "target_audience": "Tech Enthusiasts",
+        "tone": "Professional",
+        "outline": [
+            "1. Introduction",
+            "2. Why Automation?",
+            "3. The Tech Stack",
+            "4. Conclusion"
+        ],
+        "full_draft": "# The Future of AI Content Pipelines\n\nAutomating technical education isn't just about speed; it's about consistency and voice. In this post, we explore how Joe's Tech Solutions is using a tiered approach to ingestion and transformation.\n\n## Why Pipelines Matter\n\n1. **Scalability**: Ingesting dozens of sources daily.\n2. **Quality**: Transforming raw data into structured insights.\n3. **Consistency**: Maintaining a verified voice across channels.\n\nStay tuned for more updates on our automated architecture!",
+        "meta_description": "Exploring how automated agents and tiered LLMs are transforming technical content strategy.",
+        "key_takeaways": [
+            "Automation scales content",
+            "Pipelines ensure consistency",
+            "AI is the future"
+        ]
+    },
+    "social_content": {
+        "instagram_caption": "🚀 ready to scale your content? #AI #Tech",
+        "short_caption": "🚀 Scaling AI content",
+        "long_caption": "Here is how we automate our blog...",
+        "carousel_slides": [
+            "Slide 1: Intro",
+            "Slide 2: Details"
+        ],
+        "hashtags": [
+            "#AI",
+            "#Automation"
+        ],
+        "tiktok_script": "Hook: Are you tired of writing manually?...",
+        "tiktok_on_screen_text": [
+            "AI Pipelines",
+            "Scale Content"
+        ]
+    },
+    "featured_image": "/images/blog/the-future-of-ai-content-pipelines.png",
+    "voice_warnings": [],
+    "created_at": "2026-01-24T10:00:00",
+    "updated_at": "2026-01-24T10:05:00"
+}

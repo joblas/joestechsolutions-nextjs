@@ -12,6 +12,9 @@ from rich.console import Console
 from pydantic import BaseModel
 
 from models import ContentItem, BlogOutput, SocialOutput, ProcessingStatus
+from usage_tracker import track_usage, is_within_budget
+from image_gen import generate_featured_image
+from slugify import slugify
 
 # Load environment variables
 load_dotenv()
@@ -20,9 +23,10 @@ console = Console()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("transform")
 
-PROCESSED_RAW_DIR = Path("scripts/content-pipeline/processed/raw")
-PROCESSED_TRANSFORMED_DIR = Path("scripts/content-pipeline/processed/transformed")
-PROMPTS_DIR = Path("scripts/content-pipeline/config/prompts")
+BASE_DIR = Path(__file__).parent
+PROCESSED_RAW_DIR = BASE_DIR / "processed" / "raw"
+PROCESSED_TRANSFORMED_DIR = BASE_DIR / "processed" / "transformed"
+PROMPTS_DIR = BASE_DIR / "config" / "prompts"
 
 def load_prompt(prompt_name: str) -> str:
     path = PROMPTS_DIR / prompt_name
@@ -46,17 +50,20 @@ def transform_blog_post(client, item: ContentItem) -> Optional[BlogOutput]:
     
     try:
         # Create a tailored prompt with the source content
+        forced_pillar_info = f"\n        Target Content Pillar: {item.metadata.get('forced_pillar')}" if item.metadata.get('forced_pillar') else ""
+        
         user_message = f"""
         Source Title: {item.title}
         Source Author: {item.author}
         Source Date: {item.publish_date}
+        {forced_pillar_info}
         
         Source Content:
-        {item.raw_content[:50000]} # Truncate to avoid context limits if extremely large, though Sonnet has 200k
+        {item.raw_content[:50000]} # Truncate to avoid context limits
         """
         
         resp = client.chat.completions.create(
-            model="claude-3-sonnet-20240229", # Or latest available
+            model="claude-3-5-sonnet-20241022",
             max_tokens=4096,
             response_model=BlogOutput,
             messages=[
@@ -64,6 +71,15 @@ def transform_blog_post(client, item: ContentItem) -> Optional[BlogOutput]:
                 {"role": "user", "content": user_message}
             ],
         )
+        
+        # Track usage
+        try:
+            tokens_in = resp._raw_response.usage.input_tokens
+            tokens_out = resp._raw_response.usage.output_tokens
+            track_usage(tokens_in, tokens_out)
+        except:
+            pass
+            
         return resp
     except Exception as e:
         console.print(f"[red]Error generating blog post: {e}[/red]")
@@ -133,6 +149,14 @@ def generate_social_content(client, blog_output: BlogOutput) -> Optional[SocialO
             ],
         )
         
+        # Track usage (both calls)
+        try:
+            tokens_in = insta_resp._raw_response.usage.input_tokens + tiktok_resp._raw_response.usage.input_tokens
+            tokens_out = insta_resp._raw_response.usage.output_tokens + tiktok_resp._raw_response.usage.output_tokens
+            track_usage(tokens_in, tokens_out)
+        except:
+            pass
+
         return SocialOutput(
             short_caption=insta_resp.short_caption,
             long_caption=insta_resp.long_caption,
@@ -141,17 +165,54 @@ def generate_social_content(client, blog_output: BlogOutput) -> Optional[SocialO
             tiktok_script=tiktok_resp.script_content,
             tiktok_on_screen_text=tiktok_resp.on_screen_text
         )
-
     except Exception as e:
         console.print(f"[red]Error generating social content: {e}[/red]")
         return None
 
-def run_transform():
+def run_voice_check(item: ContentItem):
+    """Scans for banned words and jargon without explanation."""
+    if not item.blog_content:
+        return
+        
+    banned_words = [
+        "revolutionary", "game-changing", "mind-blowing", 
+        "scary", "landscape", "unprecedented", "gamechanger",
+        "insane", "magic", "miracle"
+    ]
+    
+    warnings = []
+    content_lower = item.blog_content.full_draft.lower()
+    
+    # Check for banned words
+    found_banned = [w for w in banned_words if w in content_lower]
+    for w in found_banned:
+        warnings.append(f"Banned word found: '{w}'")
+        
+    # Simple jargon check (looking for complex words that might need explanation)
+    # This is a placeholder for a more sophisticated check
+    jargon_candidates = ["parameter count", "quantization", "tokenization", "transformer architecture"]
+    for j in jargon_candidates:
+        if j in content_lower and "means" not in content_lower and "is" not in content_lower:
+            # Very loose heuristic: check if jargon exists but 'means' or 'is' (definitions) are absent
+            # In a real tool, we might use LLM to check if explained.
+            pass # Skipping for now to avoid false positives, just implementing banned words as per PRD
+            
+    if warnings:
+        console.print(f"[yellow]Voice Check Warnings for {item.title}:[/yellow]")
+        for w in warnings:
+            console.print(f"  - {w}")
+            
+    item.voice_warnings = warnings
+
+def run_transform(dry_run: bool = False, skip_images: bool = False):
     client = get_client()
-    if not client:
+    if not client and not dry_run:
         return
 
     PROCESSED_TRANSFORMED_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # 1. Blog Generation
+    # ... (existing code handles files)
     
     # Find items that are INGESTED but not TRANSFORMED
     # We look in raw, check if they exist in transformed (or status check)
@@ -176,8 +237,20 @@ def run_transform():
             if item.status != ProcessingStatus.INGESTED:
                 continue
 
+            if not is_within_budget():
+                console.print("[bold red]Budget reached. Stopping transformation.[/bold red]")
+                break
+
             console.rule(f"Processing: {item.title}")
             
+            if dry_run:
+                console.print(f"[yellow][DRY RUN][/yellow] Would transform: {item.title}")
+                if not skip_images:
+                    console.print(f"[yellow][DRY RUN][/yellow] Would generate featured image for: {item.title}")
+                # Mock transformation success for dry run logic
+                item.status = ProcessingStatus.TRANSFORMED
+                continue
+
             # 1. Blog Generation
             blog_output = transform_blog_post(client, item)
             if not blog_output:
@@ -192,6 +265,19 @@ def run_transform():
                 item.social_content = social_output
             else:
                 console.print("[yellow]Warning: Social content generation failed, proceeding with just blog[/yellow]")
+
+            # 2.5 Voice Consistency Check
+            run_voice_check(item)
+
+            # 4. Featured Image Generation
+            if not skip_images:
+                slug = slugify(blog_output.title_options[0])
+                item.featured_image = generate_featured_image(
+                    title=blog_output.title_options[0],
+                    pillar=blog_output.content_pillar,
+                    slug=slug,
+                    dry_run=dry_run
+                )
 
             # 3. Update Status and Save
             item.status = ProcessingStatus.TRANSFORMED

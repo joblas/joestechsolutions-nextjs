@@ -581,7 +581,7 @@
         "Script compiles without errors (`python -m py_compile`)"
       ],
       "priority": 36,
-      "passes": false,
+      "passes": true,
       "notes": "Pipeline foundation"
     },
     {
@@ -597,7 +597,7 @@
         "Script compiles without errors"
       ],
       "priority": 37,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -612,7 +612,7 @@
         "Script compiles without errors"
       ],
       "priority": 38,
-      "passes": false,
+      "passes": true,
       "notes": "Optional - can be deferred"
     },
     {
@@ -627,7 +627,7 @@
         "Script compiles without errors"
       ],
       "priority": 39,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -643,7 +643,7 @@
         "Script compiles without errors"
       ],
       "priority": 40,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -660,7 +660,7 @@
         "Script compiles without errors"
       ],
       "priority": 41,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -676,7 +676,7 @@
         "Script compiles without errors"
       ],
       "priority": 42,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -692,7 +692,7 @@
         "Script compiles without errors"
       ],
       "priority": 43,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -709,7 +709,7 @@
         "Script compiles without errors"
       ],
       "priority": 44,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -724,7 +724,7 @@
         "Script compiles without errors"
       ],
       "priority": 45,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -742,7 +742,7 @@
         "Script compiles without errors"
       ],
       "priority": 46,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -758,7 +758,7 @@
         "Script compiles without errors"
       ],
       "priority": 47,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -772,7 +772,7 @@
         "Script compiles without errors"
       ],
       "priority": 48,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -787,7 +787,7 @@
         "Script compiles without errors"
       ],
       "priority": 49,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -802,7 +802,7 @@
         "Script compiles without errors"
       ],
       "priority": 50,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -817,7 +817,7 @@
         "Script compiles without errors"
       ],
       "priority": 51,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -831,7 +831,7 @@
         "Script compiles without errors"
       ],
       "priority": 52,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -851,7 +851,7 @@
         "Script compiles without errors"
       ],
       "priority": 53,
-      "passes": false,
+      "passes": true,
       "notes": "Creates weekly/monthly roundups from multiple sources"
     },
     {
@@ -866,7 +866,7 @@
         "Script compiles without errors"
       ],
       "priority": 54,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -883,7 +883,7 @@
         "Script compiles without errors"
       ],
       "priority": 55,
-      "passes": false,
+      "passes": true,
       "notes": "Twice-weekly (Tues/Thurs) roundups for: Tech News, Self-Hosted AI, LLMs & Prompting, Fun AI Content"
     },
     {
@@ -901,7 +901,7 @@
         "Script compiles without errors"
       ],
       "priority": 56,
-      "passes": false,
+      "passes": true,
       "notes": "Uses Google Nano Banana Pro for professional AI-generated images"
     },
     {
@@ -917,7 +917,7 @@
         "Script compiles without errors"
       ],
       "priority": 57,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -932,7 +932,7 @@
         "Script compiles without errors"
       ],
       "priority": 58,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -948,7 +948,7 @@
         "Script compiles without errors"
       ],
       "priority": 59,
-      "passes": false,
+      "passes": true,
       "notes": ""
     }
   ]

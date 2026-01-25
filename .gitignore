@@ -54,3 +54,16 @@ screenshot/
 
 # Data storage (intakes, etc.)
 /data
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Local tooling state
+.ralph-last-branch
+.ralph-tui/
+
+# Content pipeline temp files
+scripts/content-pipeline/out.txt

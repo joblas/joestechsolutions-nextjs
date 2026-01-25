@@ -35,9 +35,10 @@ load_dotenv()
 console = Console()
 
 # Directories
-PROCESSED_DRAFTED_DIR = Path("scripts/content-pipeline/processed/drafted")
-PROCESSED_PUBLISHED_DIR = Path("scripts/content-pipeline/processed/published")
-CONTENT_BLOG_DIR = Path("content/blog")
+BASE_DIR = Path(__file__).parent
+PROCESSED_DRAFTED_DIR = BASE_DIR / "processed" / "drafted"
+PROCESSED_PUBLISHED_DIR = BASE_DIR / "processed" / "published"
+CONTENT_BLOG_DIR = BASE_DIR.parent.parent / "content" / "blog"
 
 # Google API Scopes
 SCOPES = [
@@ -254,16 +255,18 @@ def create_mdx_file(parsed: dict, content_type: str) -> Tuple[str, str]:
     reading_time = max(1, round(word_count / 200))
 
     # Build frontmatter
+    image = parsed.get("featured_image", "/images/blog/placeholder.jpg")
+    
     frontmatter = f"""---
-title: "{title}"
-date: "{date}"
-description: "{parsed['meta_description']}"
-pillar: "{parsed['pillar'] or 'tutorials'}"
+title: "{title.replace('"', '\\"')}"
+date: "{date_str}"
+description: "{parsed.get('meta_description', '').replace('"', '\\"')}"
+pillar: "{parsed.get('pillar', 'tutorials')}"
 type: "{content_type.rstrip('s')}"
 author: "Joe"
+featuredImage: "{image}"
 readingTime: {reading_time}
 featured: false
-image: "/images/blog/placeholder.jpg"
 tags: []
 ---
 
@@ -370,7 +373,7 @@ def append_to_social_queue(parsed: dict, title: str, mdx_path: Path):
     Appends social content to a Social Queue file for easy access.
     Creates a simple markdown file with all social assets.
     """
-    queue_file = Path("scripts/content-pipeline/social-queue.md")
+    queue_file = BASE_DIR / "social-queue.md"
 
     entry = f"""
 ---
@@ -407,7 +410,7 @@ def append_to_social_queue(parsed: dict, title: str, mdx_path: Path):
     console.print(f"[cyan]Added to social queue:[/cyan] {queue_file}")
 
 
-def run_publish(auto_commit: bool = True, auto_push: bool = False, interactive: bool = True):
+def run_publish(auto_commit: bool = True, auto_push: bool = False, interactive: bool = True, dry_run: bool = False):
     """
     Main publish function.
 
@@ -415,9 +418,10 @@ def run_publish(auto_commit: bool = True, auto_push: bool = False, interactive: 
         auto_commit: Automatically commit MDX files to git
         auto_push: Automatically push commits to remote
         interactive: Ask for confirmation before publishing each item
+        dry_run: Simulate publishing without modification
     """
     creds = get_credentials()
-    if not creds:
+    if not creds and not dry_run:
         return
 
     service = build('docs', 'v1', credentials=creds)
@@ -491,6 +495,11 @@ def run_publish(auto_commit: bool = True, auto_push: bool = False, interactive: 
         # Generate MDX
         filename, mdx_content = create_mdx_file(parsed, content_type)
         console.print(f"  Generated: [cyan]{filename}[/cyan]")
+
+        if dry_run:
+            console.print(f"  [yellow][DRY RUN][/yellow] Would save MDX, commit to git, and update Doc status")
+            published_count += 1
+            continue
 
         # Save MDX file
         mdx_path = save_mdx_file(filename, mdx_content, content_type)

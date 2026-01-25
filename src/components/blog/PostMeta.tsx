@@ -34,7 +34,7 @@ export function PostMeta({ post, className }: PostMetaProps) {
       )}
 
       {/* Meta Info Row */}
-      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
+      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
         {/* Author */}
         <span className="flex items-center gap-2">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -73,7 +73,7 @@ export function PostMeta({ post, className }: PostMetaProps) {
         </span>
 
         {/* Content Type */}
-        <span className="inline-flex items-center rounded-md bg-muted px-2.5 py-1 text-xs font-medium capitalize">
+        <span className="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium capitalize text-gray-900 dark:text-white">
           {post.type}
         </span>
       </div>

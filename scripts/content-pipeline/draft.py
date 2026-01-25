@@ -20,8 +20,9 @@ console = Console()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("draft")
 
-PROCESSED_TRANSFORMED_DIR = Path("scripts/content-pipeline/processed/transformed")
-PROCESSED_DRAFTED_DIR = Path("scripts/content-pipeline/processed/drafted")
+BASE_DIR = Path(__file__).parent
+PROCESSED_TRANSFORMED_DIR = BASE_DIR / "processed" / "transformed"
+PROCESSED_DRAFTED_DIR = BASE_DIR / "processed" / "drafted"
 
 # Scopes required for Google Docs/Drive
 SCOPES = [
@@ -33,16 +34,21 @@ def get_credentials():
     """Authenticates using the service account JSON file."""
     service_account_file = os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON")
     if not service_account_file:
-        # Check if the file path is directly provided or if it's content
-        # For simplicity in this script, we expect a path to the json file
-        # relative to project root or absolute.
-        # Fallback to a default location
-        default_path = "service-account.json"
-        if os.path.exists(default_path):
-            service_account_file = default_path
+        service_account_file = "service-account.json"
+
+    # Resolve path if it's relative
+    if not os.path.isabs(service_account_file):
+        # Try finding it in project root (2 levels up from scripts/content-pipeline)
+        project_root = BASE_DIR.parent.parent
+        possible_path = project_root / service_account_file
+        if possible_path.exists():
+            service_account_file = str(possible_path)
+        elif os.path.exists(service_account_file):
+            # Fallback to CWD
+            pass
         else:
-            console.print("[red]Error: GOOGLE_SERVICE_ACCOUNT_JSON env var not set and service-account.json not found[/red]")
-            return None
+             console.print(f"[red]Error: Service account file not found at {possible_path} or {service_account_file}[/red]")
+             return None
             
     try:
         creds = Credentials.from_service_account_file(service_account_file, scopes=SCOPES)
@@ -136,7 +142,7 @@ def insert_text(requests, index, text, style="NORMAL_TEXT"):
         
     return end_index
 
-def write_content_to_doc(service, doc_id: str, item: ContentItem):
+def write_content_to_doc(service, doc_id: str, item: ContentItem, image_url: Optional[str] = None):
     """Writes the blog and social content to the Google Doc."""
     
     requests = []
@@ -144,6 +150,9 @@ def write_content_to_doc(service, doc_id: str, item: ContentItem):
     
     # 1. Meta Info (Internal)
     meta_text = f"STATUS: READY FOR REVIEW\nSOURCE: {item.source_url}\nPILLAR: {item.blog_content.content_pillar}\n"
+    if image_url:
+        meta_text += f"IMAGE: {image_url}\n"
+    
     index = insert_text(requests, index, meta_text)
     
     # 2. Title Options
@@ -182,9 +191,9 @@ def write_content_to_doc(service, doc_id: str, item: ContentItem):
     except HttpError as e:
         console.print(f"[red]Error writing to doc: {e}[/red]")
 
-def run_draft():
+def run_draft(dry_run: bool = False):
     creds = get_credentials()
-    if not creds:
+    if not creds and not dry_run:
         return
         
     service = build('docs', 'v1', credentials=creds)
@@ -217,14 +226,46 @@ def run_draft():
 
             console.rule(f"Drafting: {item.title}")
             
+            if dry_run:
+                console.print(f"[yellow][DRY RUN][/yellow] Would create Google Doc for: {item.title}")
+                item.status = ProcessingStatus.DRAFTED
+                continue
+
             # Create Doc
-            doc_title = f"{datetime.now().strftime('%Y-%m-%d')} - {item.blog_content.title_options[0]} - DRAFT"
+            date_str = datetime.now().strftime('%Y-%m-%d')
+            doc_title = f"[REVIEW] {item.blog_content.title_options[0]} - {date_str}"
             doc_id = create_google_doc(service, drive_service, doc_title, folder_id)
             
             console.print(f"Created Doc: https://docs.google.com/document/d/{doc_id}")
             
+            # Upload Image if exists
+            image_url = None
+            if item.featured_image:
+                # Resolve local path: /images/blog/xyz.png -> public/images/blog/xyz.png
+                # relative to script: ../../public
+                local_path = item.featured_image.lstrip("/")
+                full_image_path = BASE_DIR.parent.parent / "public" / local_path
+                
+                if full_image_path.exists():
+                    try:
+                        file_metadata = {
+                            'name': full_image_path.name,
+                            'parents': ['1ArYx74pjTJzko_uIssYO_GOV8OBq3_qe'] # AI Blog Images Folder
+                        }
+                        from googleapiclient.http import MediaFileUpload
+                        media = MediaFileUpload(str(full_image_path), mimetype='image/png')
+                        img_file = drive_service.files().create(
+                            body=file_metadata,
+                            media_body=media,
+                            fields='id, webViewLink'
+                        ).execute()
+                        image_url = img_file.get('webViewLink')
+                        console.print(f"Uploaded Image: {image_url}")
+                    except Exception as e:
+                        console.print(f"[red]Failed to upload image: {e}[/red]")
+
             # Write Content
-            write_content_to_doc(service, doc_id, item)
+            write_content_to_doc(service, doc_id, item, image_url)
             
             # Update Item
             item.google_doc_id = doc_id

@@ -77,17 +77,17 @@ export function TableOfContents({ content, className }: TableOfContentsProps) {
       {/* Mobile Toggle */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 w-full lg:hidden p-3 rounded-lg bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors mb-4"
+        className="flex items-center gap-2 w-full lg:hidden p-3 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/10 transition-colors mb-4"
         aria-expanded={isOpen}
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
         <span className="text-sm font-medium">Table of Contents</span>
-        <svg 
-          className={cn('w-4 h-4 ml-auto transition-transform', isOpen && 'rotate-180')} 
-          fill="none" 
-          viewBox="0 0 24 24" 
+        <svg
+          className={cn('w-4 h-4 ml-auto transition-transform', isOpen && 'rotate-180')}
+          fill="none"
+          viewBox="0 0 24 24"
           stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -100,7 +100,7 @@ export function TableOfContents({ content, className }: TableOfContentsProps) {
         'lg:block',
         isOpen ? 'block' : 'hidden'
       )}>
-        <h4 className="hidden lg:block text-sm font-semibold text-white mb-3">
+        <h4 className="hidden lg:block text-sm font-semibold text-gray-900 dark:text-white mb-3">
           On this page
         </h4>
         <ul className="space-y-1">
@@ -113,7 +113,7 @@ export function TableOfContents({ content, className }: TableOfContentsProps) {
                   heading.level === 3 && 'pl-4',
                   activeId === heading.id
                     ? 'text-primary font-medium'
-                    : 'text-white/60 hover:text-white'
+                    : 'text-gray-600 dark:text-white/60 hover:text-gray-900 dark:hover:text-white'
                 )}
               >
                 {heading.text}

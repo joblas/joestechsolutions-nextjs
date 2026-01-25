@@ -1,0 +1,19 @@
+{
+  "id": "99999ebcfdb78df077ad2727fd00969f",
+  "source_type": "article",
+  "source_url": "https://google.com",
+  "title": "Google",
+  "author": "Manual Ingest",
+  "publish_date": "2026-01-01T00:00:00",
+  "raw_content": "---\ntitle: Google\ndescription: Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking for.\ndate: 2026-01-01\n---\nSearch\nImages\nMaps\nPlay\nYouTube\nNews\nGmail\nDrive\nMore\n»\nWeb History\n|\nSettings\n|\nSign in\nAdvanced search\nAdvertising\nBusiness Solutions\nAbout Google\n© 2026 -\nPrivacy\n-\nTerms",
+  "metadata": {
+    "site": null
+  },
+  "status": "ingested",
+  "blog_content": null,
+  "social_content": null,
+  "google_doc_id": null,
+  "error_message": null,
+  "created_at": "2026-01-24T09:05:59.439343",
+  "updated_at": "2026-01-24T09:05:59.439343"
+}

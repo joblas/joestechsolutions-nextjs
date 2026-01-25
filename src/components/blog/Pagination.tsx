@@ -27,7 +27,7 @@ export function Pagination({ currentPage, totalPages, basePath, className }: Pag
       {prevPage ? (
         <Link
           href={getPageUrl(prevPage)}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -35,7 +35,7 @@ export function Pagination({ currentPage, totalPages, basePath, className }: Pag
           <span className="text-sm font-medium">Previous</span>
         </Link>
       ) : (
-        <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/30 cursor-not-allowed">
+        <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-400 dark:text-white/30 cursor-not-allowed">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -44,7 +44,7 @@ export function Pagination({ currentPage, totalPages, basePath, className }: Pag
       )}
 
       {/* Page Info */}
-      <span className="px-4 py-2 text-sm text-white/60">
+      <span className="px-4 py-2 text-sm text-gray-600 dark:text-white/60">
         Page {currentPage} of {totalPages}
       </span>
 
@@ -52,7 +52,7 @@ export function Pagination({ currentPage, totalPages, basePath, className }: Pag
       {nextPage ? (
         <Link
           href={getPageUrl(nextPage)}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
         >
           <span className="text-sm font-medium">Next</span>
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +60,7 @@ export function Pagination({ currentPage, totalPages, basePath, className }: Pag
           </svg>
         </Link>
       ) : (
-        <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/30 cursor-not-allowed">
+        <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-400 dark:text-white/30 cursor-not-allowed">
           <span className="text-sm font-medium">Next</span>
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

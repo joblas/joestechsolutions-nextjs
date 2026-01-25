@@ -104,6 +104,8 @@ All content must align with one or more pillars:
 ### Design Inspiration
 - [artificial-intelligence.blog](https://www.artificial-intelligence.blog/) — Card grid, category navigation, dark theme option
 - [Forward Future by Matthew Berman](https://www.forwardfuture.ai/) — Guides vs Articles split, resource hub feel
+- [Late Checkout](https://www.latecheckout.agency/) — Premium agency aesthetic, bold typography, "Design-led" vibe
+- [Greg Isenberg](https://www.gregisenberg.com/blog) — Personal brand authority, community-led growth, and high-signal insights
 
 ### Core Design Patterns
 
@@ -653,11 +655,11 @@ All content must align with one or more pillars:
 **Description:** As a developer, I want validated config loading so the pipeline fails fast on bad configuration.
 
 **Acceptance Criteria:**
-- [ ] `config/sources.yaml` validated with Pydantic model on load
-- [ ] `config/pillars.yaml` created with pillar definitions (slug, name, color, description)
-- [ ] Clear error messages for missing/invalid config
-- [ ] `python main.py status` shows loaded sources count
-- [ ] Script compiles without errors
+- [x] `config/sources.yaml` validated with Pydantic model on load
+- [x] `config/pillars.yaml` created with pillar definitions (slug, name, color, description)
+- [x] Clear error messages for missing/invalid config
+- [x] `python main.py status` shows loaded sources count
+- [x] Script compiles without errors
 
 ---
 
@@ -665,12 +667,12 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want to ingest YouTube video transcripts so I can transform them into blog content.
 
 **Acceptance Criteria:**
-- [ ] `python main.py ingest --url "https://youtube.com/..."` fetches transcript
-- [ ] Uses `youtube-transcript-api` for caption extraction
-- [ ] Saves to `processed/{video_id}.json` with ContentItem schema
-- [ ] Skips already-processed videos (idempotent)
-- [ ] Logs warning if no transcript available
-- [ ] Script compiles without errors
+- [x] `python main.py ingest --url "https://youtube.com/..."` fetches transcript
+- [x] Uses `youtube-transcript-api` for caption extraction
+- [x] Saves to `processed/{video_id}.json` with ContentItem schema
+- [x] Skips already-processed videos (idempotent)
+- [x] Logs warning if no transcript available
+- [x] Script compiles without errors
 
 ---
 
@@ -678,11 +680,11 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want audio transcription fallback so videos without captions can still be processed.
 
 **Acceptance Criteria:**
-- [ ] If no transcript available, downloads audio via `yt-dlp`
-- [ ] Transcribes with `faster-whisper` (local) or AssemblyAI (cloud fallback)
-- [ ] Stores transcription in same ContentItem format
-- [ ] `--skip-whisper` flag to disable fallback
-- [ ] Script compiles without errors
+- [x] If no transcript available, downloads audio via `yt-dlp`
+- [x] Transcribes with `faster-whisper` (local) or AssemblyAI (cloud fallback)
+- [x] Stores transcription in same ContentItem format
+- [x] `--skip-whisper` flag to disable fallback
+- [x] Script compiles without errors
 
 ---
 
@@ -690,11 +692,11 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want to ingest web articles so I can transform news/blog posts into content.
 
 **Acceptance Criteria:**
-- [ ] `python main.py ingest --url "https://example.com/article"` extracts text
-- [ ] Uses `trafilatura` for clean text extraction
-- [ ] Saves to `processed/{url_hash}.json` with ContentItem schema
-- [ ] Skips already-processed URLs (idempotent)
-- [ ] Script compiles without errors
+- [x] `python main.py ingest --url "https://example.com/article"` extracts text
+- [x] Uses `trafilatura` for clean text extraction
+- [x] Saves to `processed/{url_hash}.json` with ContentItem schema
+- [x] Skips already-processed URLs (idempotent)
+- [x] Script compiles without errors
 
 ---
 
@@ -702,12 +704,12 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want to ingest all new content from my approved sources automatically.
 
 **Acceptance Criteria:**
-- [ ] `python main.py ingest` (no URL) processes all sources in `sources.yaml`
-- [ ] For YouTube channels: fetches latest N videos not yet processed
-- [ ] For RSS feeds: fetches latest N articles not yet processed
-- [ ] `--limit N` flag to control how many items per source
-- [ ] Summary output: "Ingested 3 new items, skipped 5 existing"
-- [ ] Script compiles without errors
+- [x] `python main.py ingest` (no URL) processes all sources in `sources.yaml`
+- [x] For YouTube channels: fetches latest N videos not yet processed
+- [x] For RSS feeds: fetches latest N articles not yet processed
+- [x] `--limit N` flag to control how many items per source
+- [x] Summary output: "Ingested 3 new items, skipped 5 existing"
+- [x] Script compiles without errors
 
 ---
 
@@ -715,13 +717,13 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want AI to transform source content into original blog posts.
 
 **Acceptance Criteria:**
-- [ ] `python main.py transform` processes all `status=ingested` items
-- [ ] Uses Claude API with `blog_transform.md` prompt
-- [ ] Generates: title options, outline, full draft, key takeaways
-- [ ] Auto-classifies as Guide or Article based on content
-- [ ] Tags with content pillar from `pillars.yaml`
-- [ ] Updates item to `status=transformed`
-- [ ] Script compiles without errors
+- [x] `python main.py transform` processes all `status=ingested` items
+- [x] Uses Claude API with `blog_transform.md` prompt
+- [x] Generates: title options, outline, full draft, key takeaways
+- [x] Auto-classifies as Guide or Article based on content
+- [x] Tags with content pillar from `pillars.yaml`
+- [x] Updates item to `status=transformed`
+- [x] Script compiles without errors
 
 ---
 
@@ -729,12 +731,12 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want AI to generate Instagram and TikTok content from each blog post.
 
 **Acceptance Criteria:**
-- [ ] Runs after blog transformation (same `transform` command)
-- [ ] Uses `instagram_generate.md` prompt for IG content
-- [ ] Uses `tiktok_generate.md` prompt for TikTok script
-- [ ] Generates: short caption, long caption, carousel slides, hashtags, TikTok script
-- [ ] Stored in ContentItem.social_content
-- [ ] Script compiles without errors
+- [x] Runs after blog transformation (same `transform` command)
+- [x] Uses `instagram_generate.md` prompt for IG content
+- [x] Uses `tiktok_generate.md` prompt for TikTok script
+- [x] Generates: short caption, long caption, carousel slides, hashtags, TikTok script
+- [x] Stored in ContentItem.social_content
+- [x] Script compiles without errors
 
 ---
 
@@ -742,12 +744,12 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want the system to flag content that doesn't match my voice.
 
 **Acceptance Criteria:**
-- [ ] Voice check runs after transformation
-- [ ] Scans for banned words: "revolutionary", "game-changing", "mind-blowing", "scary", etc.
-- [ ] Scans for jargon without explanation
-- [ ] Adds `voice_warnings` list to ContentItem
-- [ ] Logs warnings but doesn't block (human review catches)
-- [ ] Script compiles without errors
+- [x] Voice check runs after transformation
+- [x] Scans for banned words: "revolutionary", "game-changing", "mind-blowing", "scary", etc.
+- [x] Scans for jargon without explanation
+- [x] Adds `voice_warnings` list to ContentItem
+- [x] Logs warnings but doesn't block (human review catches)
+- [x] Script compiles without errors
 
 ---
 
@@ -755,13 +757,13 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want drafts created in Google Docs so I can review and edit before publishing.
 
 **Acceptance Criteria:**
-- [ ] `python main.py draft` processes all `status=transformed` items
-- [ ] Creates Google Doc using service account
-- [ ] Doc includes: blog content, IG content, TikTok script (all sections)
-- [ ] Doc title format: `[REVIEW] {title} - {date}`
-- [ ] First line: `STATUS: READY FOR REVIEW`
-- [ ] Updates item with `google_doc_id` and `status=drafted`
-- [ ] Script compiles without errors
+- [x] `python main.py draft` processes all `status=transformed` items
+- [x] Creates Google Doc using service account
+- [x] Doc includes: blog content, IG content, TikTok script (all sections)
+- [x] Doc title format: `[REVIEW] {title} - {date}`
+- [x] First line: `STATUS: READY FOR REVIEW`
+- [x] Updates item with `google_doc_id` and `status=drafted`
+- [x] Script compiles without errors
 
 ---
 
@@ -769,11 +771,11 @@ All content must align with one or more pillars:
 **Description:** As a developer, I want the system to detect when Joe approves a draft.
 
 **Acceptance Criteria:**
-- [ ] `python main.py publish --check` scans all drafted items
-- [ ] Reads Google Doc, checks if first line says `STATUS: APPROVED`
-- [ ] Lists approved docs ready for publish
-- [ ] Does NOT modify anything (read-only check)
-- [ ] Script compiles without errors
+- [x] `python main.py publish --check` scans all drafted items
+- [x] Reads Google Doc, checks if first line says `STATUS: APPROVED`
+- [x] Lists approved docs ready for publish
+- [x] Does NOT modify anything (read-only check)
+- [x] Script compiles without errors
 
 ---
 
@@ -781,14 +783,14 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want approved content published as MDX files in the correct folder.
 
 **Acceptance Criteria:**
-- [ ] `python main.py publish` processes approved docs
-- [ ] Extracts blog content from Google Doc
-- [ ] Creates MDX file with frontmatter (title, date, pillar, type, excerpt, etc.)
-- [ ] Saves to `content/blog/guides/` or `content/blog/articles/` based on type
-- [ ] Filename format: `YYYY-MM-DD-slug.mdx`
-- [ ] Updates item to `status=published`
-- [ ] Updates Google Doc: `STATUS: PUBLISHED`
-- [ ] Script compiles without errors
+- [x] `python main.py publish` processes approved docs
+- [x] Extracts blog content from Google Doc
+- [x] Creates MDX file with frontmatter (title, date, pillar, type, excerpt, etc.)
+- [x] Saves to `content/blog/guides/` or `content/blog/articles/` based on type
+- [x] Filename format: `YYYY-MM-DD-slug.mdx`
+- [x] Updates item to `status=published`
+- [x] Updates Google Doc: `STATUS: PUBLISHED`
+- [x] Script compiles without errors
 
 ---
 
@@ -796,12 +798,12 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want published content auto-committed so it deploys automatically.
 
 **Acceptance Criteria:**
-- [ ] After MDX file created, runs `git add` + `git commit`
-- [ ] Commit message: `content: {title}`
-- [ ] `--auto-push` flag to also push to remote
-- [ ] `--no-commit` flag to skip git operations
-- [ ] Never commits if MDX file is empty/invalid
-- [ ] Script compiles without errors
+- [x] After MDX file created, runs `git add` + `git commit`
+- [x] Commit message: `content: {title}`
+- [x] `--auto-push` flag to also push to remote
+- [x] `--no-commit` flag to skip git operations
+- [x] Never commits if MDX file is empty/invalid
+- [x] Script compiles without errors
 
 ---
 
@@ -809,10 +811,10 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want source attribution tracked internally for my records.
 
 **Acceptance Criteria:**
-- [ ] ContentItem stores: source_url, source_type, original_title, original_author
-- [ ] Attribution NOT included in published MDX (per PRD non-goal)
-- [ ] `python main.py status --sources` lists all processed sources
-- [ ] Script compiles without errors
+- [x] ContentItem stores: source_url, source_type, original_title, original_author
+- [x] Attribution NOT included in published MDX (per PRD non-goal)
+- [x] `python main.py status --sources` lists all processed sources
+- [x] Script compiles without errors
 
 ---
 
@@ -820,11 +822,11 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want logs of all pipeline runs so I can debug failures.
 
 **Acceptance Criteria:**
-- [ ] All commands log to `logs/pipeline-{date}.log`
-- [ ] Log includes: timestamp, command, items processed, success/failure
-- [ ] Errors include full stack trace
-- [ ] `python main.py status` shows last 5 runs summary
-- [ ] Script compiles without errors
+- [x] All commands log to `logs/pipeline-{date}.log`
+- [x] Log includes: timestamp, command, items processed, success/failure
+- [x] Errors include full stack trace
+- [x] `python main.py status` shows last 5 runs summary
+- [x] Script compiles without errors
 
 ---
 
@@ -832,11 +834,11 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want a dry-run mode so I can preview changes without side effects.
 
 **Acceptance Criteria:**
-- [ ] `--dry-run` flag available on all commands
-- [ ] Dry run: no API calls, no file writes, no git commits
-- [ ] Logs what WOULD happen
-- [ ] Exit code 0 if dry run would succeed
-- [ ] Script compiles without errors
+- [x] `--dry-run` flag available on all commands
+- [x] Dry run: no API calls, no file writes, no git commits
+- [x] Logs what WOULD happen
+- [x] Exit code 0 if dry run would succeed
+- [x] Script compiles without errors
 
 ---
 
@@ -844,11 +846,11 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want API budget controls so I don't accidentally overspend.
 
 **Acceptance Criteria:**
-- [ ] Config option: `daily_claude_budget: 5.00` (USD)
-- [ ] Tracks token usage per day in `logs/usage.json`
-- [ ] Warns at 80% budget, stops at 100%
-- [ ] `python main.py status --usage` shows current spend
-- [ ] Script compiles without errors
+- [x] Config option: `daily_claude_budget: 5.00` (USD)
+- [x] Tracks token usage per day in `logs/usage.json`
+- [x] Warns at 80% budget, stops at 100%
+- [x] `python main.py status --usage` shows current spend
+- [x] Script compiles without errors
 
 ---
 
@@ -856,10 +858,84 @@ All content must align with one or more pillars:
 **Description:** As Joe, I want to manually add topics so I'm not dependent on external sources.
 
 **Acceptance Criteria:**
-- [ ] `python main.py ingest --topic "How to use Claude for X" --pillar prompting`
-- [ ] Creates ContentItem with `source_type=manual`
-- [ ] Skips ingestion, goes straight to transformation
-- [ ] Script compiles without errors
+- [x] `python main.py ingest --topic "How to use Claude for X" --pillar prompting`
+- [x] Creates ContentItem with `source_type=manual`
+- [x] Skips ingestion, goes straight to transformation
+- [x] Script compiles without errors
+
+---
+
+### CP-018: Aggregated Roundup Posts
+**Description:** As Joe, I want to combine multiple sources into a single roundup post.
+
+**Acceptance Criteria:**
+- [x] `python main.py roundup --pillar news --days 7` aggregates recent sources
+- [x] Each source gets a section with key takeaways and link
+- [x] Includes synthesis section at the end
+- [x] Script compiles without errors
+
+---
+
+### CP-019: Roundup Prompt Templates
+**Description:** As Joe, I want dedicated prompts for roundup posts.
+
+**Acceptance Criteria:**
+- [x] Create `config/prompts/roundup_transform.md`
+- [x] Prompt instructs Claude to synthesize (not summarize)
+- [x] Script compiles without errors
+
+---
+
+### CP-020: Scheduled Roundup Generation
+**Description:** As Joe, I want roundups auto-generated on a schedule.
+
+**Acceptance Criteria:**
+- [x] Config option in sources.yaml: `roundups:` section
+- [x] `python main.py roundup --scheduled` runs all due roundups
+- [x] Script compiles without errors
+
+---
+
+### CP-021: AI Featured Image Generation
+**Description:** As Joe, I want AI-generated featured images for each blog post.
+
+**Acceptance Criteria:**
+- [x] Integrate Google Gemini API (Imagen 3)
+- [x] Saves image to `public/images/blog/{slug}.png`
+- [x] Update ContentItem with `featured_image` path
+- [x] Script compiles without errors
+
+---
+
+### CP-022: Featured Image Prompt Templates
+**Description:** As Joe, I want consistent image styles that match my brand.
+
+**Acceptance Criteria:**
+- [x] Create `config/prompts/featured_image.md`
+- [x] Style: modern, clean, tech-focused, vibrant colors matching pillar
+- [x] Script compiles without errors
+
+---
+
+### CP-023: Roundup Post Images
+**Description:** As Joe, I want unique featured images for roundup posts.
+
+**Acceptance Criteria:**
+- [x] Roundup posts get distinct visual style
+- [x] Script compiles without errors
+
+---
+
+### CP-024: Image Generation API Config
+**Description:** As a developer, I want configurable image generation settings.
+
+**Acceptance Criteria:**
+- [x] Config option: `image_provider: gemini`
+- [x] Environment variable: `GOOGLE_API_KEY`
+- [x] Fallback: uses placeholder if generation fails
+- [x] Script compiles without errors
+
+---
 
 ---
 

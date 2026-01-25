@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { PostMeta } from '@/lib/blog/types';
 import { getPillarBySlug } from '@/lib/blog/pillars';
 import { cn } from '@/lib/utils';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface BlogHeroProps {
   posts: PostMeta[];
@@ -15,49 +17,84 @@ function HeroCard({ post, isMain = false }: { post: PostMeta; isMain?: boolean }
     <Link
       href={`/blog/${post.slug}`}
       className={cn(
-        'group relative flex flex-col rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-6 transition-all hover:border-white/20 hover:bg-white/[0.08]',
-        isMain && 'lg:p-8'
+        'group relative flex flex-col justify-end overflow-hidden rounded-2xl border transition-all duration-500',
+        'border-gray-200 dark:border-white/10 bg-white dark:bg-white/5',
+        // Hover State: Deep Space
+        'hover:bg-[#0A1628] hover:border-[#0EA5E9]/50 hover:shadow-2xl hover:shadow-[#0EA5E9]/20 hover:-translate-y-1',
+        isMain ? 'min-h-[400px] lg:min-h-[500px]' : 'min-h-[240px]'
       )}
     >
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span
-          className={cn(
-            'inline-block rounded-full px-2.5 py-0.5 text-xs font-medium',
-            pillar.bgClass,
-            pillar.textClass,
-            pillar.darkBgClass,
-            pillar.darkTextClass
-          )}
-        >
-          {pillar.name}
-        </span>
-        <span className="inline-block rounded-md bg-white/10 px-2 py-0.5 text-xs font-medium text-white/70 capitalize">
-          {post.type}
-        </span>
+      {/* Background Image / Ambient Gradient */}
+      <div className="absolute inset-0 z-0">
+        {post.featuredImage ? (
+          <>
+            <Image
+              src={post.featuredImage}
+              alt={post.title}
+              fill
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-90 dark:opacity-60 group-hover:opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent" />
+          </>
+        ) : (
+          <div
+            className="absolute inset-0 transition-opacity duration-500 opacity-20 dark:opacity-10 group-hover:opacity-30"
+            style={{
+              background: `linear-gradient(135deg, ${pillar.color}40 0%, ${pillar.color}10 100%)`,
+            }}
+          />
+        )}
       </div>
 
-      <h3
-        className={cn(
-          'font-semibold text-white group-hover:text-[#0EA5E9] transition-colors',
-          isMain ? 'text-2xl lg:text-3xl mb-3' : 'text-lg mb-2'
-        )}
-      >
-        {post.title}
-      </h3>
+      {/* Content Container */}
+      <div className={cn(
+        'relative z-10 flex flex-col p-6 lg:p-8 transition-transform duration-500 ease-out',
+        isMain ? 'lg:p-10' : ''
+      )}>
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          <span
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-md shadow-sm',
+              pillar.bgClass,
+              pillar.textClass,
+              pillar.darkBgClass,
+              pillar.darkTextClass,
+              'bg-white/90 text-gray-900' // Override for consistency over images
+            )}
+          >
+            {isMain && <Sparkles className="w-3 h-3" />}
+            {pillar.name}
+          </span>
+        </div>
 
-      <p
-        className={cn(
-          'text-white/70 line-clamp-2',
-          isMain ? 'text-base lg:text-lg' : 'text-sm'
-        )}
-      >
-        {post.excerpt}
-      </p>
+        <h3
+          className={cn(
+            'font-bold font-space-grotesk text-gray-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-white',
+            // If image is present, text is white by default due to overlay
+            post.featuredImage && 'text-white',
+            isMain ? 'text-3xl lg:text-5xl lg:leading-tight' : 'text-xl lg:text-2xl'
+          )}
+        >
+          {post.title}
+        </h3>
 
-      <div className="mt-auto pt-4">
-        <span className="text-sm text-[#0EA5E9] group-hover:underline">
-          Read more →
-        </span>
+        <p
+          className={cn(
+            'line-clamp-2 text-gray-600 dark:text-gray-300 mb-6 max-w-2xl transition-colors duration-300 group-hover:text-gray-300',
+            post.featuredImage && 'text-gray-200',
+            isMain ? 'text-lg lg:text-xl' : 'text-sm'
+          )}
+        >
+          {post.excerpt}
+        </p>
+
+        <div className={cn(
+          'flex items-center text-sm font-bold text-[#0EA5E9] group-hover:text-[#38BDF8] transition-colors',
+          post.featuredImage ? 'text-white group-hover:text-[#38BDF8]' : ''
+        )}>
+          Read Full Article
+          <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
       </div>
     </Link>
   );
@@ -71,20 +108,22 @@ export function BlogHero({ posts, className }: BlogHeroProps) {
   const [mainPost, ...sidePosts] = posts.slice(0, 3);
 
   return (
-    <div className={cn('grid gap-4 lg:gap-6', className)}>
+    <div className={cn('grid gap-6', className)}>
       {posts.length === 1 ? (
         <HeroCard post={mainPost} isMain />
       ) : posts.length === 2 ? (
-        <div className="grid gap-4 lg:gap-6 md:grid-cols-2">
-          <HeroCard post={mainPost} isMain />
+        <div className="grid gap-6 md:grid-cols-2">
+          <HeroCard post={mainPost} />
           <HeroCard post={sidePosts[0]} />
         </div>
       ) : (
-        <div className="grid gap-4 lg:gap-6 lg:grid-cols-2">
-          <HeroCard post={mainPost} isMain />
-          <div className="grid gap-4 lg:gap-6">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <div className="lg:col-span-7 flex flex-col">
+            <HeroCard post={mainPost} isMain className="h-full" />
+          </div>
+          <div className="lg:col-span-5 flex flex-col gap-6">
             {sidePosts.map((post) => (
-              <HeroCard key={post.slug} post={post} />
+              <HeroCard key={post.slug} post={post} className="flex-1" />
             ))}
           </div>
         </div>

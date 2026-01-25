@@ -8,11 +8,11 @@ export function BlogCTA({ variant = 'both' }: BlogCTAProps) {
   return (
     <div className="my-12 space-y-6">
       {(variant === 'newsletter' || variant === 'both') && (
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-primary/10 to-primary/5 p-6 text-center">
-          <h3 className="text-xl font-semibold text-white mb-2">
+        <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-primary/10 dark:to-primary/5 p-6 text-center">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
             Stay Updated
           </h3>
-          <p className="text-white/70 mb-4">
+          <p className="text-gray-600 dark:text-white/70 mb-4">
             Get the latest AI guides and insights delivered to your inbox.
           </p>
           <Link
@@ -28,11 +28,11 @@ export function BlogCTA({ variant = 'both' }: BlogCTAProps) {
       )}
 
       {(variant === 'consultation' || variant === 'both') && (
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-6 text-center">
-          <h3 className="text-xl font-semibold text-white mb-2">
+        <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-500/10 dark:to-emerald-500/5 p-6 text-center">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
             Need Help With AI?
           </h3>
-          <p className="text-white/70 mb-4">
+          <p className="text-gray-600 dark:text-white/70 mb-4">
             Book a free consultation to discuss your AI and automation needs.
           </p>
           <Link

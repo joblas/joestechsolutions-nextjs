@@ -11,8 +11,9 @@ Your goal is to transform the provided source content into a high-quality, educa
 ## Output Structure
 Return a JSON object with:
 - title_options: List[str] (3 options)
-- content_pillar: str (from approved list)
-- meta_description: str
+- content_pillar: str (MUST BE ONE OF: local-ai, prompting, tutorials, news, experiments)
+- content_type: str (Choose "guide" for evergreen how-tos, or "article" for timely news/commentary)
+- meta_description: str (SEO friendly excerpt)
 - outline: List[str]
-- full_draft: str (Markdown format, H2/H3 headers)
+- full_draft: str (Markdown format, H2/H3 headers, educational and practical)
 - key_takeaways: List[str]
