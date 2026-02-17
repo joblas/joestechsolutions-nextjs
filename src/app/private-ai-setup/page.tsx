@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { ArrowRight, CaretDown, Check, Briefcase, ShieldCheck, Rocket, Server, CodeBranch, CalendarCheck } from "@phosphor-icons/react";
+import { ArrowRight, CaretDown, Check, Briefcase, ShieldCheck, Rocket, HardDrive, GitBranch, CalendarCheck } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
@@ -412,7 +412,7 @@ export default function PrivateAISetup() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
                   <div className="w-15 h-15 bg-[#0EA5E9]/10 border border-[#0EA5E9]/18 rounded-lg flex items-center justify-center text-2xl text-[#0EA5E9] mx-auto mb-5">
-                    <Server weight="duotone" />
+                    <HardDrive weight="duotone" />
                   </div>
                   <h4 className="text-lg font-bold text-white font-space-grotesk mb-2">On-Premise Control</h4>
                   <p className="text-sm text-white/60 leading-relaxed">Your AI runs on your own hardware. No third-party servers ever touch your data or conversations.</p>
@@ -436,7 +436,7 @@ export default function PrivateAISetup() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
                   <div className="w-15 h-15 bg-[#0EA5E9]/10 border border-[#0EA5E9]/18 rounded-lg flex items-center justify-center text-2xl text-[#0EA5E9] mx-auto mb-5">
-                    <CodeBranch weight="duotone" />
+                    <GitBranch weight="duotone" />
                   </div>
                   <h4 className="text-lg font-bold text-white font-space-grotesk mb-2">Open Source Models</h4>
                   <p className="text-sm text-white/60 leading-relaxed">Built on fully auditable, open-source AI. Inspect exactly what's running — no black boxes, ever.</p>
