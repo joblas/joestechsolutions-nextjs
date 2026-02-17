@@ -10,7 +10,7 @@ interface BlogHeroProps {
   className?: string;
 }
 
-function HeroCard({ post, isMain = false }: { post: PostMeta; isMain?: boolean }) {
+function HeroCard({ post, isMain = false, className = "" }: { post: PostMeta; isMain?: boolean; className?: string }) {
   const pillar = getPillarBySlug(post.pillar);
 
   return (
