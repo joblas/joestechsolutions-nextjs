@@ -8,10 +8,7 @@ export function getStripe(): Stripe {
     if (!process.env.STRIPE_SECRET_KEY) {
       throw new Error("STRIPE_SECRET_KEY is not configured");
     }
-    stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: "2025-12-15.clover",
-      typescript: true,
-    });
+    stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
   }
   return stripeInstance;
 }
@@ -61,7 +58,7 @@ export const VPS_SETUP_PRICE_ID = CLOUD_SETUP_PRICE_ID;
 export const VPS_MONTHLY_PRICE_ID = CLOUD_MONTHLY_PRICE_ID;
 
 // Base URL for redirects
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://www.joestechsolutions.com");
 
 // Setup type definitions
 export type SetupType = "local" | "cloud" | "managed";
