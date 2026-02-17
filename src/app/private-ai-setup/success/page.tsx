@@ -11,7 +11,7 @@ interface PaymentInfo {
   valid: boolean;
   email?: string;
   name?: string;
-  type?: "local" | "vps";
+  type?: "local" | "vps" | "cloud" | "managed";
   sessionId?: string;
   error?: string;
 }
@@ -19,7 +19,7 @@ interface PaymentInfo {
 function SuccessContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
-  const urlType = searchParams.get("type") as "local" | "vps" | null;
+  const urlType = searchParams.get("type") as "local" | "vps" | "cloud" | "managed" | null;
   const isDemo = searchParams.get("demo") === "true";
 
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo | null>(null);
@@ -39,7 +39,7 @@ function SuccessContent() {
     specs: "",
   });
 
-  const isVPS = paymentInfo?.type === "vps" || urlType === "vps";
+  const isVPS = ["vps", "cloud", "managed"].includes(paymentInfo?.type || urlType || "");
 
   // Verify payment on mount (or bypass in demo mode)
   useEffect(() => {
