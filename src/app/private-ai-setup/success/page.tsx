@@ -103,42 +103,10 @@ function SuccessContent() {
 
   const handleIntakeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
-    try {
-      // Get qualification data from session storage
-      const qualifyData = sessionStorage.getItem("privateAIQualify");
-      const qualifyParsed = qualifyData ? JSON.parse(qualifyData) : {};
-
-      // Save the intake data
-      const response = await fetch("/api/intakes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          ...qualifyParsed,
-          setupType: paymentInfo?.type || urlType || "local",
-          sessionId: paymentInfo?.sessionId || sessionId,
-          status: "paid",
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to save your information");
-      }
-
-      // Clear session storage
-      sessionStorage.removeItem("privateAIQualify");
-
-      // Move to scheduling step
-      setStep("scheduling");
-    } catch (err) {
-      console.error("Intake error:", err);
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Skip server-side save (Vercel has read-only filesystem)
+    // Customer info is already captured by Stripe
+    sessionStorage.removeItem("privateAIQualify");
+    setStep("scheduling");
   };
 
   // Loading state
