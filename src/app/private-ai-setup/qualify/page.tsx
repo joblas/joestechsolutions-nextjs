@@ -48,27 +48,46 @@ function QualifyForm() {
     }
   }, [qualifyData.operatingSystem, qualifyData.ramAmount, needsVPS]);
 
-  const handleBookCall = async () => {
+  const handleProceedToPayment = async () => {
     setIsSubmitting(true);
     setError(null);
 
     try {
-      const response = await fetch("/api/intakes", {
+      // Save qualification data
+      const intakeResponse = await fetch("/api/intakes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...qualifyData,
-          status: "pending_call",
+          status: "pending_payment",
         }),
       });
 
-      if (!response.ok) {
+      if (!intakeResponse.ok) {
         throw new Error("Failed to save your information");
       }
 
-      window.location.href = "https://calendly.com/joe-joestechsolutions/private-ai-setup-call";
+      const intakeData = await intakeResponse.json();
+
+      // Create Stripe checkout session
+      const checkoutResponse = await fetch("/api/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: qualifyData.setupType === "local" ? "local" : qualifyData.setupType,
+          includeMonthly: qualifyData.setupType !== "local",
+          intakeId: intakeData.id,
+        }),
+      });
+
+      if (!checkoutResponse.ok) {
+        throw new Error("Failed to create checkout session");
+      }
+
+      const { url } = await checkoutResponse.json();
+      window.location.href = url;
     } catch (err) {
-      console.error("Booking error:", err);
+      console.error("Checkout error:", err);
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setIsSubmitting(false);
     }
@@ -264,7 +283,7 @@ function QualifyForm() {
 
               {/* Submit */}
               <Button
-                onClick={handleBookCall}
+                onClick={handleProceedToPayment}
                 disabled={!canProceed || isSubmitting}
                 className="w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50"
                 style={{
@@ -275,18 +294,18 @@ function QualifyForm() {
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
                     <Spinner className="h-5 w-5 animate-spin" />
-                    Saving...
+                    Processing...
                   </span>
                 ) : (
                   <span className="flex items-center justify-center gap-2">
-                    Book Discovery Call
+                    Proceed to Payment — {tierPrice.setup}
                     <ArrowRight className="h-5 w-5" />
                   </span>
                 )}
               </Button>
 
               <p className="text-center text-white/50 text-sm">
-                Free discovery call — no payment until we chat
+                Secure checkout via Stripe &middot; Setup call scheduled after payment
               </p>
             </CardContent>
           </Card>
