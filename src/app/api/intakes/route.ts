@@ -25,9 +25,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate setupType
-    if (!["local", "vps"].includes(body.setupType)) {
+    if (!["local", "vps", "cloud", "managed"].includes(body.setupType)) {
       return NextResponse.json(
-        { error: "Invalid setupType. Must be 'local' or 'vps'." },
+        { error: "Invalid setupType. Must be 'local', 'cloud', or 'managed'." },
         { status: 400 }
       );
     }
@@ -43,8 +43,8 @@ export async function POST(request: NextRequest) {
       useCases: body.useCases || "", // Optional for pending_call
     };
 
-    // Add VPS-specific fields if applicable
-    if (body.setupType === "vps") {
+    // Add server-specific fields if applicable
+    if (["vps", "cloud", "managed"].includes(body.setupType)) {
       intakeData.domainPreference = body.domainPreference || "";
       intakeData.modelSizePreference = body.modelSizePreference || "small";
     }
