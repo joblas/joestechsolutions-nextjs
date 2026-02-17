@@ -1,22 +1,26 @@
 export const privateAiFaqs = [
   {
-    question: "What VPS specs do I get?",
-    answer: "Hostinger KVM 1: 1 vCPU, 4GB RAM, 50GB NVMe SSD. I've found this handles 7B parameter models (Mistral 7B, Llama3 8B) really well for most use cases. If you need to run larger models down the road, we can always upgrade — I'll help you scale when you're ready."
+    question: "Why should I choose a private AI solution over public models like ChatGPT?",
+    answer: "Public AI services often use your data to train their models, which can be a huge privacy and security risk for sensitive business information. A private AI solution ensures your data never leaves your control, offering complete confidentiality and customizability without compromising on intelligence."
   },
   {
-    question: "What hardware do I need for local install?",
-    answer: "8GB RAM minimum, though I recommend 16GB for a smoother experience. Any modern CPU from 2020 or later works great. GPU isn't required, but if you have one, I'll configure it for faster responses. During our call, I'll check your specs and make sure you're set up for success."
+    question: "What kind of hardware is required for a local private AI setup?",
+    answer: "For a local setup, a modern computer with at least 16GB of RAM is recommended. While a dedicated GPU can significantly speed up processing, it's not strictly necessary for many models. We'll assess your existing hardware during our discovery call to ensure it meets the requirements or advise on any necessary upgrades."
   },
   {
-    question: "Can I cancel VPS hosting anytime?",
-    answer: "Absolutely — no contracts, no penalties. Cancel anytime through Hostinger. Your $29/mo covers the VPS, domain, and my ongoing support. I want this to work for you, and if it's ever not the right fit, you're free to go."
+    question: "Can I access my private AI from multiple devices or locations?",
+    answer: "Yes, with the VPS Managed setup, your private AI server is accessible from anywhere with an internet connection, on any device. We configure it with a custom domain and secure HTTPS access. For local setups, access is typically limited to the machine where it's installed, but we can discuss options for secure remote access if needed."
   },
   {
-    question: "Is my data really private?",
-    answer: "Yes, and this is the whole point. With local install, everything runs on your machine — your prompts, outputs, and data never leave your computer. With VPS, you get your own dedicated server — no shared resources, no third-party access. You own the hardware and data completely. I set this up for clients specifically because they want that control back."
+    question: "What open-source AI models are supported?",
+    answer: "We primarily work with powerful open-source models like Mistral 7B, Llama 3 8B, CodeLlama, and Phi-2, which offer GPT-4 level intelligence for many tasks. We'll help you select the best model tailored to your specific use cases and can integrate other compatible open-source models as your needs evolve."
   },
   {
-    question: "What open-source models can I run?",
-    answer: "Mistral 7B, Llama3 8B, CodeLlama, Phi-2, and many more. During our call, I'll ask about what you want to use AI for, then recommend the best model for your specific needs. Most clients start with Mistral or Llama and we can always add more later."
+    question: "What's the difference between 'Local Install' and 'VPS Managed'?",
+    answer: "Local Install puts your AI directly on your computer, offering ultimate data privacy as nothing ever leaves your machine. It's a one-time setup fee. VPS Managed provides a dedicated server that we host and maintain for you, accessible from anywhere, with ongoing updates and support for a monthly fee. Both ensure your data remains private and under your control."
+  },
+  {
+    question: "Is there ongoing support after the initial setup?",
+    answer: "For Local Install, you receive 7 days of email support after our setup session. For the VPS Managed plan, ongoing monthly support, monitoring, and updates are included in the monthly fee. Our goal is to ensure you're confident and productive with your private AI."
   }
 ];
