@@ -401,7 +401,7 @@ function SuccessContent() {
                   Pick a 90-minute slot that works for you. I'll walk you through everything.
                 </p>
                 <a
-                  href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call"
+                  href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block"
