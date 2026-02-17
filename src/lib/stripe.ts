@@ -32,26 +32,26 @@ export const stripe = {
   },
 };
 
-// ── Price IDs for Private AI Setup products ──
-// Replace with actual Stripe price IDs in Vercel env vars
+// ── Price IDs for Private AI Setup products (LIVE MODE) ──
+// Override via env vars for different environments
 
 // Tier 1: "Local AI Setup" — $199 one-time
-export const LOCAL_PRICE_ID = process.env.STRIPE_LOCAL_PRICE_ID || "price_1T1w5REPUVHldjzRFYyftUQZ";
+export const LOCAL_PRICE_ID = process.env.STRIPE_LOCAL_PRICE_ID || "price_1T1xVpCc9Mv5B9O0n6C6Muyd";
 
 // Tier 2: "Cloud AI Server" — $499 one-time setup fee
-export const CLOUD_SETUP_PRICE_ID = process.env.STRIPE_CLOUD_SETUP_PRICE_ID || "price_1T1w5SEPUVHldjzRy3WCPIzF";
+export const CLOUD_SETUP_PRICE_ID = process.env.STRIPE_CLOUD_SETUP_PRICE_ID || "price_1T1xVpCc9Mv5B9O0Iqbu5SKA";
 
 // Tier 2: "Cloud AI Monthly" — $29/mo subscription
-export const CLOUD_MONTHLY_PRICE_ID = process.env.STRIPE_CLOUD_MONTHLY_PRICE_ID || "price_1T1w5TEPUVHldjzRix8wQQ5i";
+export const CLOUD_MONTHLY_PRICE_ID = process.env.STRIPE_CLOUD_MONTHLY_PRICE_ID || "price_1T1xVqCc9Mv5B9O0mLu8Mnsa";
 
 // Tier 3: "Managed AI + Automation" — $999 one-time setup fee
-export const MANAGED_SETUP_PRICE_ID = process.env.STRIPE_MANAGED_SETUP_PRICE_ID || "price_1T1w5UEPUVHldjzRdGuJTcGa";
+export const MANAGED_SETUP_PRICE_ID = process.env.STRIPE_MANAGED_SETUP_PRICE_ID || "price_1T1xVqCc9Mv5B9O0u2nknZJF";
 
 // Tier 3: "Managed AI Monthly" — $79/mo subscription
-export const MANAGED_MONTHLY_PRICE_ID = process.env.STRIPE_MANAGED_MONTHLY_PRICE_ID || "price_1T1w5UEPUVHldjzRd5TlawBn";
+export const MANAGED_MONTHLY_PRICE_ID = process.env.STRIPE_MANAGED_MONTHLY_PRICE_ID || "price_1T1xVrCc9Mv5B9O0nXzPcsxd";
 
 // Compliance add-on — +$100 one-time (Healthcare, Legal, Financial, Therapy)
-export const COMPLIANCE_ADDON_PRICE_ID = process.env.STRIPE_COMPLIANCE_ADDON_PRICE_ID || "price_1T1w5VEPUVHldjzRFINbdvav";
+export const COMPLIANCE_ADDON_PRICE_ID = process.env.STRIPE_COMPLIANCE_ADDON_PRICE_ID || "price_1T1xVrCc9Mv5B9O061tH3Tpo";
 
 // Legacy aliases (backwards compat)
 export const VPS_SETUP_PRICE_ID = CLOUD_SETUP_PRICE_ID;
