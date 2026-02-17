@@ -109,7 +109,7 @@ export default function PrivateAISetup() {
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 mb-6">
                 <span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full animate-pulse" />
-                <span className="text-[#0EA5E9] font-medium text-sm tracking-wider uppercase">Private AI — Built for San Diego Businesses</span>
+                <span className="text-[#0EA5E9] font-medium text-sm tracking-wider uppercase">Private AI — Built for Your Business</span>
               </div>
             </FadeIn>
             <FadeIn delay={0.15}>
