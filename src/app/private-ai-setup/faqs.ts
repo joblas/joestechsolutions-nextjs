@@ -1,26 +1,34 @@
 export const privateAiFaqs = [
   {
-    question: "Why should I choose a private AI solution over public models like ChatGPT?",
-    answer: "Public AI services often use your data to train their models, which can be a huge privacy and security risk for sensitive business information. A private AI solution ensures your data never leaves your control, offering complete confidentiality and customizability without compromising on intelligence."
+    question: "What AI models can I run?",
+    answer: "You get access to the latest open-source models including Qwen3, Gemma3, DeepSeek-R1, and Llama — many of which rival GPT-4 in quality. We select the optimal model for your hardware and use case during setup, and you can switch or add models anytime."
   },
   {
-    question: "What kind of hardware is required for a local private AI setup?",
-    answer: "For a local setup, a modern computer with at least 16GB of RAM is recommended. While a dedicated GPU can significantly speed up processing, it's not strictly necessary for many models. We'll assess your existing hardware during our discovery call to ensure it meets the requirements or advise on any necessary upgrades."
+    question: "Do I need any technical knowledge?",
+    answer: "None at all. We handle the entire installation, configuration, and model selection. You get a clean, ChatGPT-style interface — just open your browser and start chatting. If you can use a web browser, you can use your private AI."
   },
   {
-    question: "Can I access my private AI from multiple devices or locations?",
-    answer: "Yes, with the VPS Managed setup, your private AI server is accessible from anywhere with an internet connection, on any device. We configure it with a custom domain and secure HTTPS access. For local setups, access is typically limited to the machine where it's installed, but we can discuss options for secure remote access if needed."
+    question: "What's the difference between Local, Cloud, and Managed?",
+    answer: "Local runs entirely on your computer — free forever after the one-time setup. Cloud gives you a dedicated server accessible from anywhere with automatic backups, HTTPS, and a custom domain. Managed adds workflow automation, document Q&A, private web search, and hands-on strategy support."
   },
   {
-    question: "What open-source AI models are supported?",
-    answer: "We primarily work with powerful open-source models like Mistral 7B, Llama 3 8B, CodeLlama, and Phi-2, which offer GPT-4 level intelligence for many tasks. We'll help you select the best model tailored to your specific use cases and can integrate other compatible open-source models as your needs evolve."
+    question: "What hardware do I need for a local install?",
+    answer: "Minimum 8GB RAM to run smaller models like Qwen3 4B. We recommend 16GB for the best experience with models like Qwen3 8B or Gemma3 12B. We auto-detect your hardware and pick the optimal model — no guesswork required."
   },
   {
-    question: "What's the difference between 'Local Install' and 'VPS Managed'?",
-    answer: "Local Install puts your AI directly on your computer, offering ultimate data privacy as nothing ever leaves your machine. It's a one-time setup fee. VPS Managed provides a dedicated server that we host and maintain for you, accessible from anywhere, with ongoing updates and support for a monthly fee. Both ensure your data remains private and under your control."
+    question: "Is my data really private?",
+    answer: "Yes, 100%. Everything runs on your hardware or your dedicated server. No data ever touches OpenAI, Google, or any third-party servers. No telemetry, no usage tracking, no model training on your conversations. Your data is yours — period."
   },
   {
-    question: "Is there ongoing support after the initial setup?",
-    answer: "For Local Install, you receive 7 days of email support after our setup session. For the VPS Managed plan, ongoing monthly support, monitoring, and updates are included in the monthly fee. Our goal is to ensure you're confident and productive with your private AI."
+    question: "What industries do you support?",
+    answer: "We offer tailored starter kits for 9 industries: Healthcare (HIPAA-aware), Legal (attorney-privilege safe), Financial, Therapy, Education (FERPA-safe), Real Estate, Construction, Creative, and Small Business. Each kit includes industry-specific prompts, model recommendations, and compliance guidance."
+  },
+  {
+    question: "What's included in the Managed tier?",
+    answer: "Everything in Cloud, plus n8n workflow automation, document Q&A with RAG (upload your business docs and ask questions), private web search via SearXNG, 3 custom AI workflows built for your business, quarterly strategy calls, and priority same-day support."
+  },
+  {
+    question: "Can I cancel anytime?",
+    answer: "Yes. No contracts, no commitments. Cloud and Managed subscriptions can be cancelled any month. Local installs are yours forever — one payment, done. We believe the service should keep you, not the contract."
   }
 ];
