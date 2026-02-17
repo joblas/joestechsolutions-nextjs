@@ -53,35 +53,22 @@ function QualifyForm() {
     setError(null);
 
     try {
-      // Save qualification data
-      const intakeResponse = await fetch("/api/intakes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...qualifyData,
-          status: "pending_payment",
-        }),
-      });
+      // Store qualification data in sessionStorage for the success page
+      sessionStorage.setItem("privateAIQualify", JSON.stringify(qualifyData));
 
-      if (!intakeResponse.ok) {
-        throw new Error("Failed to save your information");
-      }
-
-      const intakeData = await intakeResponse.json();
-
-      // Create Stripe checkout session
+      // Go straight to Stripe checkout — intake data collected after payment
       const checkoutResponse = await fetch("/api/create-checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type: qualifyData.setupType === "local" ? "local" : qualifyData.setupType,
+          type: qualifyData.setupType,
           includeMonthly: qualifyData.setupType !== "local",
-          intakeId: intakeData.id,
         }),
       });
 
       if (!checkoutResponse.ok) {
-        throw new Error("Failed to create checkout session");
+        const errorData = await checkoutResponse.json().catch(() => ({}));
+        throw new Error(errorData.error || "Failed to create checkout session");
       }
 
       const { url } = await checkoutResponse.json();
