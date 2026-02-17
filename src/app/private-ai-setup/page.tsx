@@ -75,7 +75,7 @@ export default function PrivateAISetup() {
   );
 
   const PersonaCard = ({ icon: Icon, pillColorClass, pillText, title, role, description, delay }: { icon: React.ElementType, pillColorClass: string, pillText: string, title: string, role: string, description: string, delay: number }) => (
-    <StaggerItem delay={delay}>
+    <StaggerItem>
       <AnimatedCard>
         <Card className="bg-[#1c1c26] border-white/10 rounded-2xl p-6 sm:p-8 relative overflow-hidden transition-transform duration-300 hover:translate-y-[-7px] hover:border-[#0EA5E9]/30">
           <div className={twMerge("absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl", pillColorClass === 'pill-blue' ? 'bg-gradient-to-r from-[#0EA5E9] to-[#38bdf8]' : pillColorClass === 'pill-cyan' ? 'bg-gradient-to-r from-[#06B6D4] to-[#67e8f9]' : 'bg-gradient-to-r from-[#8B5CF6] to-[#c4b5fd]')} />
@@ -261,7 +261,7 @@ export default function PrivateAISetup() {
                 description: "Walk away with powerful, private AI — no platform fees, no vendor lock-in, no data ever leaving your control."
               }
             ].map((step, index) => (
-              <StaggerItem key={index} delay={index * 0.1}>
+              <StaggerItem key={index}>
                 <AnimatedCard>
                   <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 text-center h-full p-6 sm:p-8 relative group">
                     <div className={twMerge(
@@ -299,7 +299,7 @@ export default function PrivateAISetup() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto" staggerDelay={0.15}>
             {/* Local Install */}
-            <StaggerItem delay={0}>
+            <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/30 transition-all duration-300 overflow-hidden h-full p-8 relative flex flex-col hover:translate-y-[-5px]">
                   <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">Local Install</p>
@@ -337,7 +337,7 @@ export default function PrivateAISetup() {
             </StaggerItem>
 
             {/* VPS Hosting */}
-            <StaggerItem delay={0.1}>
+            <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-gradient-to-br from-[#1c1c26] via-[#1c1c26] to-[#0EA5E9]/5 border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-300 overflow-hidden h-full p-8 relative flex flex-col hover:translate-y-[-5px]">
                   <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0EA5E9] to-[#06B6D4]" />
@@ -408,7 +408,7 @@ export default function PrivateAISetup() {
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" staggerDelay={0.15}>
-            <StaggerItem delay={0}>
+            <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
                   <div className="w-15 h-15 bg-[#0EA5E9]/10 border border-[#0EA5E9]/18 rounded-lg flex items-center justify-center text-2xl text-[#0EA5E9] mx-auto mb-5">
@@ -420,7 +420,7 @@ export default function PrivateAISetup() {
               </AnimatedCard>
             </StaggerItem>
 
-            <StaggerItem delay={0.1}>
+            <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
                   <div className="w-15 h-15 bg-[#0EA5E9]/10 border border-[#0EA5E9]/18 rounded-lg flex items-center justify-center text-2xl text-[#0EA5E9] mx-auto mb-5">
@@ -432,7 +432,7 @@ export default function PrivateAISetup() {
               </AnimatedCard>
             </StaggerItem>
 
-            <StaggerItem delay={0.2}>
+            <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
                   <div className="w-15 h-15 bg-[#0EA5E9]/10 border border-[#0EA5E9]/18 rounded-lg flex items-center justify-center text-2xl text-[#0EA5E9] mx-auto mb-5">
