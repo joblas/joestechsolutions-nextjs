@@ -4,62 +4,55 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Desktop, Cloud, Spinner, ArrowLeft, ArrowRight, CheckCircle, Warning } from "@phosphor-icons/react";
+import { Desktop, Cloud, Rocket, Spinner, ArrowLeft, ArrowRight, CheckCircle, Warning } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { SetupType, TIER_LABELS, TIER_PRICES } from "@/lib/stripe";
 
 function QualifyForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const urlType = searchParams.get("type") as "local" | "vps" | null;
+  const urlType = searchParams.get("type") as SetupType | null;
 
   const [qualifyData, setQualifyData] = useState({
-    setupType: (urlType || "local") as "local" | "vps",
+    setupType: (urlType || "local") as SetupType,
     operatingSystem: "",
-    ramAmount: "", // For local only
+    ramAmount: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [qualificationStatus, setQualificationStatus] = useState<"pending" | "qualified" | "needs-review">("pending");
 
-  // Redirect if no type specified
   useEffect(() => {
-    if (!urlType) {
+    if (!urlType || !["local", "cloud", "managed"].includes(urlType)) {
       router.push("/private-ai-setup");
     }
   }, [urlType, router]);
 
-  const isVPS = qualifyData.setupType === "vps";
+  const isLocal = qualifyData.setupType === "local";
+  const isCloud = qualifyData.setupType === "cloud";
+  const isManaged = qualifyData.setupType === "managed";
+  const needsVPS = isCloud || isManaged;
 
-  // Check if system qualifies based on selections
   const checkQualification = () => {
-    if (isVPS) {
-      // VPS always qualifies
-      return "qualified";
-    }
+    if (needsVPS) return "qualified";
 
-    // Local setup requirements
     const ram = qualifyData.ramAmount;
-    if (ram === "less-than-8" || ram === "4gb") {
-      return "needs-review";
-    }
-    if (ram === "8gb" || ram === "16gb" || ram === "32gb-plus") {
-      return "qualified";
-    }
+    if (ram === "less-than-8" || ram === "4gb") return "needs-review";
+    if (ram === "8gb" || ram === "16gb" || ram === "32gb-plus") return "qualified";
     return "pending";
   };
 
   useEffect(() => {
-    if (qualifyData.operatingSystem && (isVPS || qualifyData.ramAmount)) {
+    if (qualifyData.operatingSystem && (needsVPS || qualifyData.ramAmount)) {
       setQualificationStatus(checkQualification());
     }
-  }, [qualifyData.operatingSystem, qualifyData.ramAmount, isVPS]);
+  }, [qualifyData.operatingSystem, qualifyData.ramAmount, needsVPS]);
 
   const handleBookCall = async () => {
     setIsSubmitting(true);
     setError(null);
 
     try {
-      // Save qualification data to intakes API (so Joe has the info before the call)
       const response = await fetch("/api/intakes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -73,7 +66,6 @@ function QualifyForm() {
         throw new Error("Failed to save your information");
       }
 
-      // Redirect to Calendly to book the discovery call
       window.location.href = "https://calendly.com/joe-joestechsolutions/private-ai-setup-call";
     } catch (err) {
       console.error("Booking error:", err);
@@ -90,13 +82,21 @@ function QualifyForm() {
     );
   }
 
-  const isFormComplete = qualifyData.operatingSystem && (isVPS || qualifyData.ramAmount);
+  const tierLabel = TIER_LABELS[qualifyData.setupType];
+  const tierPrice = TIER_PRICES[qualifyData.setupType];
+  const priceDisplay = tierPrice.monthly
+    ? `${tierPrice.setup} setup + ${tierPrice.monthly}`
+    : `${tierPrice.setup} one-time`;
+
+  const TierIcon = isManaged ? Rocket : needsVPS ? Cloud : Desktop;
+  const accentColor = isManaged ? "#8B5CF6" : isCloud ? "#06B6D4" : "#0EA5E9";
+
+  const isFormComplete = qualifyData.operatingSystem && (needsVPS || qualifyData.ramAmount);
   const canProceed = isFormComplete && qualificationStatus !== "pending";
 
   return (
     <div className="min-h-screen py-24">
       <div className="mx-auto max-w-xl px-6">
-        {/* Back Link */}
         <FadeIn>
           <button
             onClick={() => router.push("/private-ai-setup")}
@@ -113,7 +113,9 @@ function QualifyForm() {
               Quick System Check
             </h1>
             <p className="text-xl text-white/70">
-              Let's make sure your {isVPS ? "VPS" : "computer"} is ready for AI.
+              {isLocal
+                ? "Let's make sure your computer is ready for AI."
+                : "Just a couple quick questions before we set you up."}
             </p>
           </div>
         </FadeIn>
@@ -123,29 +125,20 @@ function QualifyForm() {
             <CardContent className="p-8 space-y-6">
               {/* Setup Type Indicator */}
               <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
-                {isVPS ? (
-                  <Cloud weight="duotone" className="h-6 w-6 text-[#06B6D4]" />
-                ) : (
-                  <Desktop weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
-                )}
+                <TierIcon weight="duotone" className="h-6 w-6" style={{ color: accentColor }} />
                 <div className="flex-1">
-                  <span className="text-white font-medium block">
-                    {isVPS ? "VPS Hosting Setup" : "Local Install"}
-                  </span>
-                  <span className="text-white/50 text-sm">
-                    {isVPS ? "$500 setup + $50/mo" : "$150 one-time"}
-                  </span>
+                  <span className="text-white font-medium block">{tierLabel}</span>
+                  <span className="text-white/50 text-sm">{priceDisplay}</span>
                 </div>
                 <button
                   type="button"
-                  onClick={() => router.push("/private-ai-setup")}
-                  className="text-[#0EA5E9] text-sm hover:underline"
+                  onClick={() => router.push("/private-ai-setup#pricing")}
+                  className="text-sm hover:underline" style={{ color: accentColor }}
                 >
                   Change
                 </button>
               </div>
 
-              {/* Error Message */}
               {error && (
                 <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
                   {error}
@@ -155,7 +148,7 @@ function QualifyForm() {
               {/* Operating System */}
               <div>
                 <label htmlFor="os" className="block text-sm font-medium text-white mb-2">
-                  {isVPS ? "Preferred VPS OS" : "Your Operating System"}
+                  {needsVPS ? "Preferred VPS OS" : "Your Operating System"}
                 </label>
                 <select
                   id="os"
@@ -164,16 +157,17 @@ function QualifyForm() {
                   className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
                 >
                   <option value="">Select OS</option>
-                  {isVPS ? (
+                  {needsVPS ? (
                     <>
                       <option value="ubuntu-22">Ubuntu 22.04 LTS (Recommended)</option>
-                      <option value="ubuntu-20">Ubuntu 20.04 LTS</option>
+                      <option value="ubuntu-24">Ubuntu 24.04 LTS</option>
                       <option value="debian-12">Debian 12</option>
                     </>
                   ) : (
                     <>
                       <option value="windows-11">Windows 11</option>
                       <option value="windows-10">Windows 10</option>
+                      <option value="macos-sequoia">macOS Sequoia (15)</option>
                       <option value="macos-sonoma">macOS Sonoma (14)</option>
                       <option value="macos-ventura">macOS Ventura (13)</option>
                       <option value="macos-older">macOS (older)</option>
@@ -185,7 +179,7 @@ function QualifyForm() {
               </div>
 
               {/* RAM Amount (Local only) */}
-              {!isVPS && (
+              {isLocal && (
                 <div>
                   <label className="block text-sm font-medium text-white mb-3">
                     How much RAM does your computer have?
@@ -225,6 +219,15 @@ function QualifyForm() {
                 </div>
               )}
 
+              {/* Managed tier note */}
+              {isManaged && (
+                <div className="p-4 bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 rounded-xl">
+                  <p className="text-[#c4b5fd] text-sm">
+                    <strong>Managed tier includes:</strong> n8n workflow automation, document Q&A (RAG), private web search, 3 custom workflows, quarterly strategy calls, and priority support.
+                  </p>
+                </div>
+              )}
+
               {/* Qualification Status */}
               {isFormComplete && (
                 <div className={`p-4 rounded-xl border ${
@@ -236,10 +239,10 @@ function QualifyForm() {
                     <div className="flex items-center gap-3">
                       <CheckCircle weight="duotone" className="h-6 w-6 text-green-500 shrink-0" />
                       <div>
-                        <p className="text-green-400 font-medium">You're all set!</p>
+                        <p className="text-green-400 font-medium">You&apos;re all set!</p>
                         <p className="text-green-400/70 text-sm">
-                          {isVPS
-                            ? "VPS will be pre-configured and ready for your setup call."
+                          {needsVPS
+                            ? "We'll configure your dedicated server during the setup call."
                             : "Your system meets the requirements for local AI setup."}
                         </p>
                       </div>
@@ -248,10 +251,10 @@ function QualifyForm() {
                     <div className="flex items-center gap-3">
                       <Warning weight="duotone" className="h-6 w-6 text-amber-500 shrink-0" />
                       <div>
-                        <p className="text-amber-400 font-medium">Let's talk first</p>
+                        <p className="text-amber-400 font-medium">Let&apos;s talk first</p>
                         <p className="text-amber-400/70 text-sm">
                           With less than 8GB RAM, we may need to discuss alternatives.
-                          Consider the VPS option, or we can chat during setup.
+                          Consider the Cloud option, or we can chat during the call.
                         </p>
                       </div>
                     </div>
@@ -263,11 +266,11 @@ function QualifyForm() {
               <Button
                 onClick={handleBookCall}
                 disabled={!canProceed || isSubmitting}
-                className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
-                  isVPS
-                    ? "bg-[#06B6D4] hover:bg-[#0891b2] shadow-[#06B6D4]/20"
-                    : "bg-[#0EA5E9] hover:bg-[#0284c7] shadow-[#0EA5E9]/20"
-                }`}
+                className="w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50"
+                style={{
+                  background: `linear-gradient(to right, ${accentColor}, ${accentColor}dd)`,
+                  boxShadow: `0 10px 15px -3px ${accentColor}33`,
+                }}
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
@@ -283,7 +286,7 @@ function QualifyForm() {
               </Button>
 
               <p className="text-center text-white/50 text-sm">
-                Free 15-minute call to discuss your setup
+                Free discovery call — no payment until we chat
               </p>
             </CardContent>
           </Card>
