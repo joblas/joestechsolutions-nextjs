@@ -6,14 +6,16 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Check if this is a pre-call qualification (minimal data)
-    const isPendingCall = body.status === "pending_call";
-
-    // For pending_call, only require setupType and operatingSystem
-    // For full intake, require all fields
-    const requiredFields = isPendingCall
-      ? ["setupType", "operatingSystem"]
-      : ["email", "name", "setupType", "operatingSystem", "useCases"];
+    // Determine required fields based on status
+    let requiredFields: string[];
+    if (body.status === "pending_call") {
+      requiredFields = ["setupType"];
+    } else if (body.status === "paid") {
+      // Post-payment: name/email/useCases from form, OS may be lost after Stripe redirect
+      requiredFields = ["name", "email", "useCases"];
+    } else {
+      requiredFields = ["email", "name", "setupType", "useCases"];
+    }
 
     for (const field of requiredFields) {
       if (!body[field]) {
@@ -49,9 +51,9 @@ export async function POST(request: NextRequest) {
       intakeData.modelSizePreference = body.modelSizePreference || "small";
     }
 
-    const intake = await addIntake(intakeData, isPendingCall ? "pending_call" : undefined);
+    const intake = await addIntake(intakeData, body.status === "pending_call" ? "pending_call" : undefined);
 
-    console.log(`[Intake Created] ${intake.id} - ${intake.setupType} - ${isPendingCall ? "pending_call" : intake.email}`);
+    console.log(`[Intake Created] ${intake.id} - ${intake.setupType} - ${body.status === "pending_call" ? "pending_call" : intake.email}`);
 
     return NextResponse.json({
       success: true,
