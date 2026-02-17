@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
       mode: hasSubscription ? "subscription" : "payment",
       line_items: lineItems,
       success_url: `${BASE_URL}/private-ai-setup/success?session_id={CHECKOUT_SESSION_ID}&type=${type}`,
-      cancel_url: `${BASE_URL}/private-ai-setup/checkout?type=${type}&cancelled=true`,
+      cancel_url: `${BASE_URL}/private-ai-setup/qualify?type=${type}&cancelled=true`,
       metadata: {
         type,
         intakeId: intakeId || "",
