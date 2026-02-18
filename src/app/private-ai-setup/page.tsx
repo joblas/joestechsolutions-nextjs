@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { ArrowRight, CaretDown, Check, Briefcase, ShieldCheck, Rocket, HardDrive, GitBranch, CalendarCheck, CheckCircle, Robot, Desktop, CurrencyDollarSimple, Cloud, Globe, Wrench } from "@phosphor-icons/react";
@@ -164,9 +165,22 @@ export default function PrivateAISetup() {
                 </MagneticButton>
               </div>
             </FadeIn>
+            <FadeIn delay={0.4}>
+              <div className="mt-16 relative mx-auto max-w-4xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#0EA5E9]/10">
+                <Image
+                  src="/images/joe-ai-typing.png"
+                  alt="Joe deploying private AI systems"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-transparent to-transparent" />
+              </div>
+            </FadeIn>
           </div>
         </div>
-        <FadeIn delay={0.4} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs uppercase tracking-widest animate-bounce">
+        <FadeIn delay={0.5} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs uppercase tracking-widest animate-bounce">
           <span>Scroll</span>
           <CaretDown weight="bold" className="h-4 w-4" />
         </FadeIn>
@@ -228,6 +242,19 @@ export default function PrivateAISetup() {
               description="The AI era is unfolding now. Don&apos;t just rent access to someone else&apos;s intelligence — own it. Be at the forefront of private, self-hosted AI."
             />
           </StaggerContainer>
+
+          <FadeIn delay={0.3}>
+            <div className="mt-16 relative mx-auto max-w-5xl rounded-2xl overflow-hidden border border-white/10">
+              <Image
+                src="/images/joe-presenting-ai.png"
+                alt="Joe presenting AI analytics dashboard to a client"
+                width={1024}
+                height={1024}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-transparent to-transparent opacity-60" />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -287,6 +314,19 @@ export default function PrivateAISetup() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <FadeIn delay={0.3}>
+            <div className="mt-16 relative mx-auto max-w-5xl rounded-2xl overflow-hidden border border-white/10">
+              <Image
+                src="/images/joe-deploying-server.png"
+                alt="Joe installing and configuring a private AI server"
+                width={1024}
+                height={1024}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-transparent to-transparent opacity-60" />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
