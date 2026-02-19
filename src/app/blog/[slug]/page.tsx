@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, Clock, Calendar, User } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -133,10 +134,56 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="relative py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn delay={0.2}>
-            <div
-              className="prose-blog"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            <div className="prose-blog">
+              {(() => {
+                const videoRegex = /<video[^>]*>[\s\S]*?<source\s+src="([^"]+)"[^>]*\/>[\s\S]*?<\/video>/g;
+                const parts: React.ReactNode[] = [];
+                let lastIndex = 0;
+                let match;
+                let i = 0;
+
+                while ((match = videoRegex.exec(post.content)) !== null) {
+                  // Add HTML before the video
+                  if (match.index > lastIndex) {
+                    parts.push(
+                      <div
+                        key={`html-${i}`}
+                        dangerouslySetInnerHTML={{
+                          __html: post.content.slice(lastIndex, match.index),
+                        }}
+                      />
+                    );
+                  }
+                  // Add the React video component
+                  parts.push(
+                    <BlogVideoPlayer key={`video-${i}`} src={match[1]} />
+                  );
+                  lastIndex = match.index + match[0].length;
+                  i++;
+                }
+
+                // If no videos found, render normally
+                if (parts.length === 0) {
+                  return (
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                  );
+                }
+
+                // Add remaining HTML after last video
+                if (lastIndex < post.content.length) {
+                  parts.push(
+                    <div
+                      key={`html-${i}`}
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.slice(lastIndex),
+                      }}
+                    />
+                  );
+                }
+
+                return parts;
+              })()}
+            </div>
           </FadeIn>
         </div>
       </section>
