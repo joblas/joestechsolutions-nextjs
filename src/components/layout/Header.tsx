@@ -10,6 +10,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
+    { name: "Private AI", href: "/private-ai-setup" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
@@ -49,9 +50,9 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/services">
+              <Link href="/private-ai-setup">
                 <Button size="sm" className="bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full shadow-lg shadow-[#0099ff]/20">
-                  Get Started
+                  Get Private AI
                 </Button>
               </Link>
             </div>
@@ -85,9 +86,9 @@ export function Header() {
               </Link>
             ))}
             <div className="px-4 pt-2">
-              <Link href="/services" className="block" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/private-ai-setup" className="block" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0099ff]/20">
-                  Get Started
+                  Get Private AI
                 </Button>
               </Link>
             </div>

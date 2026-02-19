@@ -11,33 +11,32 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-bold text-white mb-4 font-space-grotesk">Joe's Tech Solutions</h3>
             <p className="text-white/60 text-sm max-w-md leading-relaxed">
-              Boutique development studio specializing in mobile apps, web platforms,
-              and private AI infrastructure for ambitious SMBs.
+              Private AI. Agent systems. Custom software. Joe runs a 22-agent AI team for his own business — and builds the same for yours.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Services</h4>
+            <h4 className="text-sm font-semibold text-white mb-4">Products</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/services#mobile" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
-                  Mobile Apps
+                <Link href="/private-ai-setup" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                  Joe&apos;s AI Server
                 </Link>
               </li>
               <li>
-                <Link href="/services#web" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
-                  Web Development
+                <Link href="/services#agent-systems" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                  OpenClaw Agent Systems
                 </Link>
               </li>
               <li>
-                <Link href="/services#ai" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
-                  AI Infrastructure
+                <Link href="/services#custom-ai" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                  Custom AI Teams
                 </Link>
               </li>
               <li>
-                <Link href="/services#consulting" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
-                  Consulting
+                <Link href="/services" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                  All Services
                 </Link>
               </li>
             </ul>

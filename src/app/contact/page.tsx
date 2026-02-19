@@ -8,13 +8,13 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
 export const metadata: Metadata = {
   title: "Contact | Joe's Tech Solutions",
-  description: "Get in touch to discuss your mobile app, website, e-commerce platform, or custom software needs. Schedule a free discovery call.",
+  description: "Book a free discovery call to discuss private AI setup, agent systems, or custom software. No pitch, no pressure — just a straight conversation.",
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: "Contact | Joe's Tech Solutions",
-    description: "Get in touch to discuss your mobile app, website, e-commerce platform, or custom software needs.",
+    description: "Book a free discovery call to discuss private AI setup, agent systems, or custom software.",
     url: 'https://joestechsolutions.com/contact',
   },
 };
@@ -33,16 +33,15 @@ export default function Contact() {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Let's Discuss</span>
+                <span className="block text-white mb-3">Let&apos;s Talk</span>
                 <span className="block text-[#0EA5E9]">
-                  Your Project
+                  Real Talk.
                 </span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                Free 30-minute discovery call. No pitch, no pressure—just a conversation about
-                what you need and how we can help.
+                Free 30-minute discovery call. No pitch, no pressure — just a straight conversation about what you need and whether JTS is the right fit.
               </p>
             </FadeIn>
           </div>
@@ -171,17 +170,17 @@ export default function Contact() {
                 What We Can Help With
               </h2>
               <p className="text-xl text-white/70 font-light">
-                Our core services for your business
+                Private AI to full agent systems — pick your starting point
               </p>
             </div>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
             {[
-              { title: "Mobile Apps", desc: "iOS & Android", price: "$25K-150K", color: "#0EA5E9" },
-              { title: "Web Development", desc: "React & Next.js", price: "$30K-250K", color: "#06B6D4" },
-              { title: "E-commerce", desc: "Online stores", price: "$5K-50K", color: "#0EA5E9" },
-              { title: "Custom Solutions", desc: "APIs & integrations", price: "Contact", color: "#06B6D4" }
+              { title: "Joe's AI Server", desc: "Private AI on your hardware", price: "from $199", color: "#0EA5E9" },
+              { title: "Agent Systems", desc: "24/7 automated operations", price: "Contact", color: "#06B6D4" },
+              { title: "Custom AI Teams", desc: "Multi-agent architectures", price: "Contact", color: "#8B5CF6" },
+              { title: "Custom Software", desc: "Apps, web, APIs", price: "Contact", color: "#0EA5E9" }
             ].map((service, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>
