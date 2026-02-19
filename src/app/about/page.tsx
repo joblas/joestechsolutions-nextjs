@@ -11,13 +11,13 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "About Joe Blas | Joe's Tech Solutions",
-  description: "Learn about Joe's Tech Solutions - boutique development studio building custom technology solutions for ambitious SMBs.",
+  description: "Joe runs a 22-agent AI team for his own business. He's client zero — everything JTS builds, he uses himself first.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About | Joe's Tech Solutions",
-    description: "Learn about Joe's Tech Solutions - boutique development studio building custom technology solutions for ambitious SMBs.",
+    description: "Joe runs a 22-agent AI team for his own business. He's client zero — everything JTS builds, he uses himself first.",
     url: 'https://joestechsolutions.com/about',
   },
 };
@@ -37,21 +37,27 @@ export default function About() {
             <div className="space-y-8">
               <FadeIn delay={0.1}>
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-space-grotesk">
-                  The Developer Who Speaks Operations
+                  Client Zero.
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                  Most developers don't understand how businesses actually work. I do. From managing
-                  Waymo's technical operations to building custom software today, I know how to bridge
-                  the gap between great technology and practical business needs.
+                  Joe doesn&apos;t sell tools he read about. He runs a 22-agent AI team for his own business —
+                  handling operations, outreach, reporting, and more. Everything JTS builds for clients,
+                  Joe tested on himself first.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.25}>
+                <p className="text-lg text-white/60 leading-relaxed font-light">
+                  Former Waymo ops manager. Full-stack developer. Now building private AI and agent systems
+                  that make SMBs run like companies ten times their size.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20">
-                      Let's Work Together
+                      Let&apos;s Work Together
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </MagneticButton>
@@ -85,7 +91,7 @@ export default function About() {
                 Background
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Technical operations experience applied to practical solutions
+                Operations experience, engineering skills, and a live AI system proving it all works
               </p>
             </div>
           </FadeIn>
@@ -100,7 +106,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Waymo Operations</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Managed critical infrastructure at Waymo—learned how to handle complexity, ensure reliability, and deliver results under pressure
+                      Managed critical infrastructure at Waymo. Learned to handle complexity, ensure reliability, and deliver under pressure — at autonomous vehicle scale.
                     </p>
                   </CardContent>
                 </Card>
@@ -112,11 +118,11 @@ export default function About() {
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
                     <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Image src="/icons/computer-dynamic/premium.png" alt="Full-Stack Developer" width={40} height={40} className="object-contain" />
+                      <Image src="/icons/computer-dynamic/premium.png" alt="AI Agent Systems" width={40} height={40} className="object-contain" />
                     </div>
-                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Full-Stack Developer</h3>
+                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Agent Systems</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Building mobile and web applications with modern tech stacks
+                      Runs a 22-agent AI team for JTS operations right now. Not theory — a live system handling real business tasks around the clock.
                     </p>
                   </CardContent>
                 </Card>
@@ -128,11 +134,11 @@ export default function About() {
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
                     <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="E-commerce & Custom Solutions" width={40} height={40} className="object-contain" />
+                      <Image src="/icons/rocket-dynamic/premium.png" alt="Private AI Infrastructure" width={40} height={40} className="object-contain" />
                     </div>
-                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">E-commerce & Custom Solutions</h3>
+                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Private AI Infrastructure</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Online stores, payment integration, and custom software tailored to your business needs
+                      Deploys private AI systems for SMBs — from local setups to full cloud servers. No Big Tech dependency, no data leaving your environment.
                     </p>
                   </CardContent>
                 </Card>
@@ -147,27 +153,27 @@ export default function About() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-16 font-space-grotesk">
-              Why Work With Joe's Tech Solutions?
+              Why Work With Joe&apos;s Tech Solutions?
             </h2>
           </FadeIn>
 
           <StaggerContainer className="space-y-6" staggerDelay={0.1}>
             {[
               {
-                title: "Hands-On Experience",
-                description: "Not just a consultant—an actual builder who's managed complex technical operations and writes code daily."
+                title: "He&apos;s Client Zero",
+                description: "Joe runs a 22-agent AI team for JTS right now. Every system he sells to clients, he battle-tested on his own business first. No vapor, no demos — real production systems."
               },
               {
-                title: "Flexible Approach",
-                description: "Tailored solutions for businesses of all sizes, from startups to established companies."
+                title: "Outcomes, Not Tools",
+                description: "Most AI consultants hand you a stack and charge by the hour. Joe sells outcomes: your business runs faster, leaner, and smarter. The how is his problem."
               },
               {
                 title: "End-to-End Delivery",
-                description: "From concept to deployment, we handle the full stack so you don't need to coordinate multiple vendors."
+                description: "Private AI setup, agent system design, workflow automation, custom dev — all under one roof. No vendor juggling."
               },
               {
-                title: "Practical Solutions",
-                description: "Technology choices based on what actually works, not what's trendy. Reliable tech that solves real problems."
+                title: "No Corporate BS",
+                description: "Direct communication, honest timelines, no fluff. If something isn&apos;t right for your business, Joe will tell you instead of upselling you."
               }
             ].map((item, index) => (
               <StaggerItem key={index}>
@@ -218,11 +224,10 @@ export default function About() {
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Modern Technology Stack
+                Tools We Actually Use
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                Leveraging cutting-edge tools from leading technology companies
-                to deliver reliable, scalable solutions
+                Tools Joe actually runs in production — no bias, no sponsored picks, just what makes private AI work.
               </p>
             </FadeIn>
           </div>
@@ -304,7 +309,7 @@ export default function About() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Let's discuss how we can help bring your vision to life
+              Book a free discovery call. No pitch, no pressure — just a straight conversation about what you need and whether JTS is the right fit.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
