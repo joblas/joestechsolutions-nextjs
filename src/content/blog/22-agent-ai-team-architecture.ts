@@ -25,6 +25,10 @@ export const post: BlogPost = {
 
 <p>Here's how the whole thing is wired together.</p>
 
+<video autoplay loop muted playsinline style="width:100%;border-radius:12px;margin:2rem 0;">
+  <source src="/images/blog/22-agent-video.mp4" type="video/mp4" />
+</video>
+
 <h2>The Org Chart</h2>
 
 <img src="/images/blog/22-agent-org-chart.png" alt="JTS 22-Agent Architecture — Org Chart showing Joe, Lurkr CTO, 4 Directors, and 18 team agents across Operations, Business, Engineering, and Skate Workshop divisions" loading="lazy" />
