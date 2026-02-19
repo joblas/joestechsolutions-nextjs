@@ -11,23 +11,23 @@ const ADMIN_PASSWORD = "joeadmin2026";
 const PAYMENT_LINKS = {
   local: {
     name: "Private AI Local Setup",
-    price: "$150",
+    price: "$199",
     description: "One-time payment",
     url: "https://buy.stripe.com/9B6eVc58E5Fvb9reAJ0x200",
     icon: Desktop,
     color: "#0EA5E9",
   },
   vps: {
-    name: "Private AI VPS Setup",
-    price: "$500 + $50/mo",
+    name: "Private AI Cloud Server Setup",
+    price: "$499 + $29/mo",
     description: "Setup + Monthly hosting",
     url: "https://buy.stripe.com/8x200i30w3xna5n2S10x201",
     icon: Cloud,
     color: "#06B6D4",
   },
   vpsMonthly: {
-    name: "VPS Monthly Hosting",
-    price: "$50/mo",
+    name: "Cloud AI Server Monthly",
+    price: "$29/mo",
     description: "Monthly subscription only",
     url: "https://buy.stripe.com/4gM14mfNi2tjcdv0JT0x202",
     icon: Cloud,
@@ -44,10 +44,12 @@ Great chatting with you! As discussed, here's the payment link for your Private 
 
 [PAYMENT_LINK]
 
-Once payment is complete, I'll reach out to schedule our 75-minute setup session where we'll:
-• Go over how everything works (15 min)
-• Install and configure your private AI (45 min)
-• Demo and hands-on practice (15 min)
+Once payment is complete, I'll reach out to schedule our 30-minute walkthrough call where we'll:
+• Review your hardware and configure the right model
+• Walk through using your private AI day-to-day
+• Answer any questions you have
+
+You'll have 30 days of email support after the call. No recurring charges — it's yours forever.
 
 Looking forward to getting you set up!
 
@@ -56,16 +58,17 @@ Joe
 Joe's Tech Solutions`,
   },
   vps: {
-    subject: "Your Private AI VPS Setup - Payment Link",
+    subject: "Your Private AI Cloud Server Setup - Payment Link",
     body: `Hi [NAME],
 
-Great chatting with you! As discussed, here's the payment link for your Private AI VPS Setup:
+Great chatting with you! As discussed, here's the payment link for your Private AI Cloud Server Setup:
 
 [PAYMENT_LINK]
 
 This includes:
-• $500 one-time setup fee
-• $50/month for hosting, domain, and ongoing support
+• $499 one-time setup fee
+• $29/month for hosting, domain, and ongoing support
+• Daily automated backups, monthly health checks, multi-user access
 
 Once payment is complete, I'll reach out to schedule our setup session and get your private AI server running.
 
@@ -76,14 +79,14 @@ Joe
 Joe's Tech Solutions`,
   },
   vpsMonthly: {
-    subject: "VPS Monthly Hosting - Subscription Link",
+    subject: "Cloud AI Server Monthly - Subscription Link",
     body: `Hi [NAME],
 
-Here's the link to subscribe to VPS Monthly Hosting:
+Here's the link to subscribe to Cloud AI Server Monthly:
 
 [PAYMENT_LINK]
 
-This is $50/month and covers your dedicated server, domain, and ongoing support.
+This is $29/month and covers your dedicated server, domain, and ongoing support.
 
 Let me know if you have any questions!
 
@@ -267,9 +270,11 @@ export default function PaymentLinksAdmin() {
         <div className="mt-12 p-6 bg-[#1c1c26] rounded-xl border border-white/10">
           <h3 className="text-lg font-semibold text-white mb-3">Quick Reference</h3>
           <div className="space-y-2 text-white/70">
-            <p><strong>Local:</strong> $150 one-time → 75-min live session</p>
-            <p><strong>VPS Full:</strong> $500 setup + $50/mo → Setup + hosted server + ongoing support</p>
-            <p><strong>VPS Monthly:</strong> $50/mo → Monthly subscription only (for existing customers)</p>
+            <p><strong>Local:</strong> $199 one-time → 30-min walkthrough + 30 days email support</p>
+            <p><strong>Cloud AI Server:</strong> $499 setup + $29/mo → Dedicated VPS + domain + monthly updates</p>
+            <p><strong>Managed AI + Automation:</strong> $999 setup + $79/mo → Full service with n8n workflows</p>
+            <p><strong>Cloud Monthly:</strong> $29/mo → Monthly subscription only (for existing customers)</p>
+            <p><strong>Compliance add-on:</strong> +$100 → Healthcare, Legal, Financial, Therapy</p>
           </div>
         </div>
       </div>
