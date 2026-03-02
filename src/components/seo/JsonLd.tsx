@@ -10,7 +10,7 @@ export function OrganizationSchema() {
     "alternateName": "JTS",
     "url": "https://joestechsolutions.com",
     "logo": "https://joestechsolutions.com/logo-main.png",
-    "description": "Boutique development studio specializing in mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
+    "description": "Private AI setup, AI agent systems, and custom automation for SMBs. Joe's Tech Solutions deploys private AI on your hardware — no cloud fees, no data leaks.",
     "founder": {
       "@type": "Person",
       "name": "Joe Blas",
@@ -27,11 +27,13 @@ export function OrganizationSchema() {
       "name": "United States"
     },
     "knowsAbout": [
+      "Private AI Infrastructure",
+      "AI Agent Systems",
+      "Workflow Automation",
       "Mobile App Development",
       "Web Development",
       "React Native",
       "Next.js",
-      "Private AI Infrastructure",
       "Custom Software Development"
     ],
     "priceRange": "$$$"
@@ -137,10 +139,10 @@ export function SoftwareProductSchema() {
     "name": "Private AI Setup",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Cloud-based",
-    "description": "Private AI infrastructure setup for businesses - keep your data secure while using GPT-4 level AI capabilities",
+    "description": "Private AI infrastructure setup for businesses — keep your data secure while using GPT-4 level AI capabilities. Local setup, cloud server, or fully managed with automation.",
     "offers": {
       "@type": "Offer",
-      "price": "150.00",
+      "price": "199.00",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     },

@@ -12,8 +12,10 @@ export function Header() {
   const pathname = usePathname();
 
   const navigation = [
+    { name: "Private AI", href: "/private-ai-setup" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -58,9 +60,9 @@ export function Header() {
                   </Link>
                 );
               })}
-              <Link href="/services">
+              <Link href="/private-ai-setup">
                 <Button size="sm" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full shadow-lg shadow-[#0EA5E9]/20">
-                  Get Started
+                  Get Private AI
                 </Button>
               </Link>
             </div>
@@ -102,9 +104,9 @@ export function Header() {
               );
             })}
             <div className="px-4 pt-2">
-              <Link href="/services" className="block" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/private-ai-setup" className="block" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0EA5E9]/20">
-                  Get Started
+                  Get Private AI
                 </Button>
               </Link>
             </div>
