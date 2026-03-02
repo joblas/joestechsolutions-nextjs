@@ -63,10 +63,6 @@ export default function PrivateAISetup() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#06B6D4] rounded-full blur-[100px] animate-glow" style={{ animationDelay: '2s' }} />
-        </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
@@ -346,9 +342,6 @@ export default function PrivateAISetup() {
       {/* Final CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0EA5E9] rounded-full blur-[150px] animate-glow" />
-        </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>

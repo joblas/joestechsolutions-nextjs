@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 export default function SkateWorkshopCaseStudy() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-[#0d0d12]">
       {/* Back Button */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-8">
         <Link href="/portfolio">
-          <Button variant="outline" className="border-slate-700 hover:bg-slate-800">
+          <Button variant="outline" className="border-white/20 hover:bg-white/5">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Portfolio
           </Button>
@@ -33,27 +33,27 @@ export default function SkateWorkshopCaseStudy() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pb-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-sky-900/20 to-pink-900/20" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628]/20 via-[#0d0d12]/20 to-[#0d0d12]/20" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-600/30 rounded-full text-blue-400 text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-[#0EA5E9]/20 border border-[#0EA5E9]/30 rounded-full text-[#0EA5E9] text-sm font-semibold">
                 Mobile App • Web Platform • Subscription SaaS
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-space-grotesk">
                 The Skate Workshop
               </h1>
 
-              <p className="text-xl text-slate-100 leading-relaxed">
+              <p className="text-xl text-white/90 leading-relaxed">
                 Olympic-level skateboarding coaching delivered through a mobile-first platform
                 with video feedback, comprehensive trick database, and multiplayer features.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://www.theskateworkshop.app/" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] rounded-full shadow-lg shadow-[#0EA5E9]/20">
                     Visit Live Site
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </Button>
@@ -62,7 +62,7 @@ export default function SkateWorkshopCaseStudy() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-700">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
                 <Image
                   src="/images/skateboarding-action.jpg"
                   alt="Skateboarding action"
@@ -76,64 +76,64 @@ export default function SkateWorkshopCaseStudy() {
       </section>
 
       {/* Project Overview */}
-      <section className="relative py-20 bg-slate-900/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-[#1c1c26]/30">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-slate-800/50 border-slate-700 text-center">
+            <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Smartphone className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 bg-[#0EA5E9]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Smartphone className="w-6 h-6 text-[#0EA5E9]" />
                 </div>
-                <CardTitle className="text-white">Platform</CardTitle>
+                <CardTitle className="text-xl font-bold text-white font-space-grotesk">Platform</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-200">iOS, Android, Web</p>
+                <p className="text-white/80">iOS, Android, Web</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-800/50 border-slate-700 text-center">
+            <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-cyan-400" />
+                <div className="w-12 h-12 bg-[#06B6D4]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-[#06B6D4]" />
                 </div>
-                <CardTitle className="text-white">Users</CardTitle>
+                <CardTitle className="text-xl font-bold text-white font-space-grotesk">Users</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-200">Beta Testing Phase</p>
+                <p className="text-white/80">Beta Testing Phase</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-800/50 border-slate-700 text-center">
+            <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
                 <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-6 h-6 text-green-400" />
                 </div>
-                <CardTitle className="text-white">Features</CardTitle>
+                <CardTitle className="text-xl font-bold text-white font-space-grotesk">Features</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-200">400+ Tricks, Video Feedback, Multiplayer</p>
+                <p className="text-white/80">400+ Tricks, Video Feedback, Multiplayer</p>
               </CardContent>
             </Card>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">The Challenge</h2>
-              <p className="text-slate-300 text-lg leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">The Challenge</h2>
+              <p className="text-white/70 text-lg leading-relaxed">
                 Create a comprehensive skateboarding coaching platform that brings Olympic-level
                 instruction to skaters of all skill levels. The platform needed to handle video
                 uploads, provide personalized feedback, track progression through hundreds of tricks,
                 and facilitate community engagement through multiplayer features.
               </p>
-              <p className="text-slate-300 text-lg leading-relaxed">
+              <p className="text-white/70 text-lg leading-relaxed">
                 The solution required both mobile apps (iOS & Android) and a web platform, with
                 real-time features, subscription billing, and seamless content delivery.
               </p>
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">The Solution</h2>
-              <p className="text-slate-300 text-lg leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">The Solution</h2>
+              <p className="text-white/70 text-lg leading-relaxed">
                 Built a cross-platform solution using React Native for mobile and Next.js for web,
                 ensuring consistent experience across all devices while maintaining native performance.
               </p>
@@ -149,7 +149,7 @@ export default function SkateWorkshopCaseStudy() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-100">{item}</span>
+                    <span className="text-white/90">{item}</span>
                   </div>
                 ))}
               </div>
@@ -160,8 +160,8 @@ export default function SkateWorkshopCaseStudy() {
 
       {/* Technology Stack */}
       <section className="relative py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Technology Stack</h2>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12 font-space-grotesk">Technology Stack</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -170,14 +170,14 @@ export default function SkateWorkshopCaseStudy() {
               { category: "Backend", tech: ["Supabase", "PostgreSQL", "Real-time DB"] },
               { category: "Integrations", tech: ["Stripe", "Video Processing", "Analytics"] }
             ].map((stack, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700">
+              <Card key={index} className="bg-[#1c1c26] border-white/10">
                 <CardHeader>
-                  <CardTitle className="text-white">{stack.category}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-white font-space-grotesk">{stack.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {stack.tech.map((item, i) => (
-                      <li key={i} className="text-slate-200 text-sm">{item}</li>
+                      <li key={i} className="text-white/80 text-sm">{item}</li>
                     ))}
                   </ul>
                 </CardContent>
@@ -188,9 +188,9 @@ export default function SkateWorkshopCaseStudy() {
       </section>
 
       {/* Key Features */}
-      <section className="relative py-20 bg-slate-900/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Key Features</h2>
+      <section className="relative py-20 bg-[#1c1c26]/30">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12 font-space-grotesk">Key Features</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -215,15 +215,15 @@ export default function SkateWorkshopCaseStudy() {
                 icon: Users
               }
             ].map((feature, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:border-blue-600/50 transition-colors group">
+              <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-colors group">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6 text-blue-400" />
+                  <div className="w-12 h-12 bg-[#0EA5E9]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-[#0EA5E9]" />
                   </div>
-                  <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-white font-space-grotesk">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-100">{feature.description}</p>
+                  <p className="text-white/90">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -233,10 +233,10 @@ export default function SkateWorkshopCaseStudy() {
 
       {/* Results */}
       <section className="relative py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Results & Impact</h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-space-grotesk">Results & Impact</h2>
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Currently in beta testing with positive feedback from early users
             </p>
           </div>
@@ -247,11 +247,11 @@ export default function SkateWorkshopCaseStudy() {
               { label: "Trick Database", value: "400+", desc: "Comprehensive tutorials" },
               { label: "Features", value: "Real-time", desc: "Multiplayer & Feedback" }
             ].map((stat, index) => (
-              <Card key={index} className="bg-gradient-to-br from-blue-900/20 to-sky-900/20 border-blue-600/30 text-center">
+              <Card key={index} className="bg-linear-to-br from-[#0EA5E9]/10 to-[#06B6D4]/10 border-[#0EA5E9]/30 text-center">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">{stat.value}</div>
+                  <div className="text-4xl font-bold text-[#0EA5E9] mb-2">{stat.value}</div>
                   <div className="text-white font-semibold mb-1">{stat.label}</div>
-                  <div className="text-slate-400 text-sm">{stat.desc}</div>
+                  <div className="text-white/60 text-sm">{stat.desc}</div>
                 </CardContent>
               </Card>
             ))}
@@ -260,22 +260,22 @@ export default function SkateWorkshopCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-gradient-to-r from-blue-900/30 via-sky-900/30 to-pink-900/30">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+      <section className="relative py-20 sm:py-32 bg-linear-to-r from-[#0EA5E9]/10 via-[#0d0d12] to-[#06B6D4]/10">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-space-grotesk">
             Ready to Build Your App?
           </h2>
-          <p className="text-xl text-slate-100 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             Let's discuss your mobile or web platform project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] rounded-full shadow-lg shadow-[#0EA5E9]/20">
                 Schedule Discovery Call
               </Button>
             </a>
             <Link href="/portfolio">
-              <Button size="lg" variant="outline" className="border-slate-700 hover:bg-slate-800">
+              <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/5">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Portfolio
               </Button>

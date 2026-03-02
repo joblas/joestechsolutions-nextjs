@@ -25,9 +25,6 @@ export default function Contact() {
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
-        </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
@@ -167,7 +164,7 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
                 What We Can Help With
               </h2>
               <p className="text-xl text-white/70 font-light">

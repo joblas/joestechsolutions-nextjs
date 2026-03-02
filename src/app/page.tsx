@@ -33,7 +33,7 @@ export default function Home() {
 
             {/* Main Heading */}
             <FadeIn delay={0.2}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Technology Built for Your Business</span>
                 <span className="block text-[#0EA5E9]">
                   (Whatever That Looks Like)
@@ -76,7 +76,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-20">
             <FadeIn>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
                 What We Build
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
@@ -256,7 +256,7 @@ export default function Home() {
               <div className="inline-block px-4 py-1 bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 rounded-full text-[#0EA5E9] text-sm font-semibold mb-6">
                 Featured Project
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 font-space-grotesk">
                 Building Real Solutions
               </h2>
               <p className="text-xl text-white/70 font-light">
@@ -272,7 +272,7 @@ export default function Home() {
                   Mobile App • Subscription Platform
                 </div>
 
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-space-grotesk">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-space-grotesk">
                   The Skate Workshop
                 </h3>
 
@@ -335,7 +335,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-20">
             <FadeIn>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
                 Modern Technology Stack
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
@@ -410,13 +410,10 @@ export default function Home() {
       {/* CTA Section */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0EA5E9] rounded-full blur-[150px] animate-glow" />
-        </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
               Ready to Build Something Great?
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">

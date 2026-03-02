@@ -3,11 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigation = [
     { name: "Services", href: "/services" },
@@ -18,7 +20,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-[#0d0d12]/95 backdrop-blur-md border-b border-white/10" role="banner">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <nav className="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="shrink-0">
@@ -39,17 +41,25 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-white/70 hover:text-[#0099ff] transition-colors text-sm font-medium"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`transition-colors text-sm font-medium ${
+                      isActive
+                        ? "text-[#0EA5E9]"
+                        : "text-white/70 hover:text-[#0EA5E9]"
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
               <Link href="/services">
-                <Button size="sm" className="bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full shadow-lg shadow-[#0099ff]/20">
+                <Button size="sm" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full shadow-lg shadow-[#0EA5E9]/20">
                   Get Started
                 </Button>
               </Link>
@@ -60,7 +70,7 @@ export function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white/70 hover:text-[#0099ff]"
+              className="text-white/70 hover:text-[#0EA5E9]"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
@@ -73,19 +83,27 @@ export function Header() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div id="mobile-navigation" className="md:hidden py-4 space-y-2" role="navigation" aria-label="Mobile navigation menu">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="flex items-center px-4 py-2 text-white/70 hover:text-[#0099ff] hover:bg-white/5 rounded transition-colors min-h-[44px]"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`flex items-center px-4 py-2 rounded transition-colors min-h-[44px] ${
+                    isActive
+                      ? "text-[#0EA5E9] bg-white/5"
+                      : "text-white/70 hover:text-[#0EA5E9] hover:bg-white/5"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <div className="px-4 pt-2">
               <Link href="/services" className="block" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0099ff]/20">
+                <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0EA5E9]/20">
                   Get Started
                 </Button>
               </Link>

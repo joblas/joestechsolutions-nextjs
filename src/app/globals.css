@@ -51,14 +51,32 @@
 :root {
   --radius: 0.625rem;
 
-  /* Professional Navy/Blue color system */
-  --color-deep-navy: #0A1628;
-  --color-electric-blue: #0EA5E9;
-  --color-cyan: #06B6D4;
+  /* === UNIFIED COLOR SYSTEM === */
+  /* Primary: Electric Blue — the ONE brand blue used everywhere */
+  --color-primary: #0EA5E9;
+  --color-primary-hover: #0284c7;
+  --color-primary-glow: #0EA5E9;
+
+  /* Accent: Cyan — secondary accent for variety */
+  --color-accent: #06B6D4;
+  --color-accent-hover: #0891b2;
+
+  /* Backgrounds */
+  --color-bg-deep: #0d0d12;
+  --color-bg-card: #1c1c26;
+  --color-bg-hero: #0A1628;
+
+  /* Focus */
+  --color-focus: #0EA5E9;
+
+  /* Legacy aliases (for backward compat during migration) */
+  --color-deep-navy: var(--color-bg-hero);
+  --color-electric-blue: var(--color-primary);
+  --color-cyan: var(--color-accent);
   --color-slate-900: #1E293B;
   --color-slate-100: #F1F5F9;
-  --color-deep-charcoal: #0d0d12;
-  --color-secondary-dark: #1c1c26;
+  --color-deep-charcoal: var(--color-bg-deep);
+  --color-secondary-dark: var(--color-bg-card);
 
   /* Light mode (default) */
   --background: oklch(0.99 0 0);  /* Near white */
@@ -311,7 +329,7 @@
   a:focus-visible,
   button:focus-visible,
   [role="button"]:focus-visible {
-    outline: 2px solid #60D1F6;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
     border-radius: 4px;
   }

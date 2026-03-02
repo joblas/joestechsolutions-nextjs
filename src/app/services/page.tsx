@@ -30,15 +30,11 @@ export default function Services() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#06B6D4] rounded-full blur-[100px] animate-glow" style={{ animationDelay: '2s' }} />
-        </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Full-Stack Technology Partner</span>
                 <span className="block text-[#0EA5E9]">
                   For Your Business
@@ -359,7 +355,7 @@ export default function Services() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-20">
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
                 Our Process
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
@@ -407,13 +403,10 @@ export default function Services() {
       {/* CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0EA5E9] rounded-full blur-[150px] animate-glow" />
-        </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
               Ready to Start Your Project?
             </h2>
           </FadeIn>

@@ -21,22 +21,22 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/services#mobile" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/services#mobile" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   Mobile Apps
                 </Link>
               </li>
               <li>
-                <Link href="/services#web" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/services#web" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services#ai" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/services#ai" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   AI Infrastructure
                 </Link>
               </li>
               <li>
-                <Link href="/services#consulting" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/services#consulting" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   Consulting
                 </Link>
               </li>
@@ -48,17 +48,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/portfolio" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/portfolio" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/about" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white/60 hover:text-[#0099ff] text-sm transition-colors">
+                <Link href="/contact" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   Contact
                 </Link>
               </li>
