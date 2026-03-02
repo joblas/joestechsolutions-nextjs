@@ -53,3 +53,8 @@ screenshot/
 
 # Data storage (intakes, etc.)
 /data
+
+# Service account keys (NEVER commit these)
+service-account.json
+*-service-account.json
+*.keyfile.json
