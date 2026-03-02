@@ -11,7 +11,7 @@ interface PaymentInfo {
   valid: boolean;
   email?: string;
   name?: string;
-  type?: "local" | "vps";
+  type?: "local" | "vps" | "cloud" | "managed";
   sessionId?: string;
   error?: string;
 }
@@ -19,7 +19,7 @@ interface PaymentInfo {
 function SuccessContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
-  const urlType = searchParams.get("type") as "local" | "vps" | null;
+  const urlType = searchParams.get("type") as "local" | "vps" | "cloud" | "managed" | null;
   const isDemo = searchParams.get("demo") === "true";
 
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo | null>(null);
@@ -39,7 +39,7 @@ function SuccessContent() {
     specs: "",
   });
 
-  const isVPS = paymentInfo?.type === "vps" || urlType === "vps";
+  const isVPS = ["vps", "cloud", "managed"].includes(paymentInfo?.type || urlType || "");
 
   // Verify payment on mount (or bypass in demo mode)
   useEffect(() => {
@@ -103,42 +103,10 @@ function SuccessContent() {
 
   const handleIntakeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
-    try {
-      // Get qualification data from session storage
-      const qualifyData = sessionStorage.getItem("privateAIQualify");
-      const qualifyParsed = qualifyData ? JSON.parse(qualifyData) : {};
-
-      // Save the intake data
-      const response = await fetch("/api/intakes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          ...qualifyParsed,
-          setupType: paymentInfo?.type || urlType || "local",
-          sessionId: paymentInfo?.sessionId || sessionId,
-          status: "paid",
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to save your information");
-      }
-
-      // Clear session storage
-      sessionStorage.removeItem("privateAIQualify");
-
-      // Move to scheduling step
-      setStep("scheduling");
-    } catch (err) {
-      console.error("Intake error:", err);
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Skip server-side save (Vercel has read-only filesystem)
+    // Customer info is already captured by Stripe
+    sessionStorage.removeItem("privateAIQualify");
+    setStep("scheduling");
   };
 
   // Loading state
@@ -433,7 +401,7 @@ function SuccessContent() {
                   Pick a 90-minute slot that works for you. I'll walk you through everything.
                 </p>
                 <a
-                  href="https://calendly.com/joe-joestechsolutions/private-ai-setup-call"
+                  href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block"
