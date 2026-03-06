@@ -30,9 +30,9 @@ export function Header() {
               <Image
                 src="/logo-icon.png"
                 alt="Joe's Tech Solutions"
-                width={48}
-                height={48}
-                className="transition-transform group-hover:scale-105 rounded-lg"
+                width={56}
+                height={56}
+                className="transition-transform group-hover:scale-105"
               />
               <span className="text-lg font-bold text-white group-hover:text-[#0EA5E9] transition-colors font-space-grotesk hidden sm:inline">
                 Joe's Tech Solutions
