@@ -36,6 +36,17 @@ export default function Portfolio() {
       liveUrl: "https://www.theskateworkshop.app"
     },
     {
+      id: "renfaire-directory",
+      title: "RenFaire Directory",
+      category: "Content Platform • SEO • Directory",
+      description: "A modern, revenue-generating directory featuring 200+ Renaissance faire listings, rich structured data, and top search rankings.",
+      image: "/images/renfaire-hero.jpg",
+      tags: ["Next.js", "TypeScript", "Supabase", "SEO"],
+      color: "blue",
+      href: "/portfolio/renfaire-directory",
+      liveUrl: "https://www.renfaireguide.com"
+    },
+    {
       id: "cbarrgs",
       title: "Cbarrgs Music",
       category: "Artist Website",
