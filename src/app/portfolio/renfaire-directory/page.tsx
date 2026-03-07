@@ -100,7 +100,7 @@ export default function RenFaireDirectoryCaseStudy() {
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">SEO</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-white/80">#1 Brave Search Ranking</p>
+                <p className="text-white/80">200+ Pages Indexed by Google</p>
               </CardContent>
             </Card>
 
@@ -276,16 +276,16 @@ export default function RenFaireDirectoryCaseStudy() {
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-space-grotesk">Results &amp; Impact</h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              Live in production and generating revenue from organic traffic
+              Live in production with growing organic traffic and active monetization
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { label: "Search Ranking", value: "#1", desc: "Brave Search for 'ren faire directory'" },
               { label: "Indexed Pages", value: "200+", desc: "Pages indexed by Google" },
               { label: "Faire Listings", value: "218", desc: "Across all 50 states" },
-              { label: "Revenue Streams", value: "3", desc: "Affiliates, AdSense, Premium" }
+              { label: "Blog Posts", value: "19", desc: "State-specific SEO content" },
+              { label: "Revenue", value: "Live", desc: "Affiliate partnerships active" }
             ].map((stat, index) => (
               <Card key={index} className="bg-linear-to-br from-[#7C3AED]/10 to-[#A78BFA]/10 border-[#7C3AED]/30 text-center">
                 <CardContent className="pt-6">
