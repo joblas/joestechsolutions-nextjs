@@ -138,6 +138,41 @@ export function BlogContent() {
             </p>
           </FadeIn>
 
+          <FadeIn>
+            <h3>The Single Pane of Glass: Telegram</h3>
+            <p>
+              Here&apos;s the part that makes this actually practical: <strong>I control everything through Telegram</strong>. 
+              No dashboards. No web UIs. No separate apps for each function. Just my phone.
+            </p>
+            <p>
+              The flow is simple: I send a message to Lurkr on Telegram → Lurkr orchestrates the work → sub-agents execute 
+              the tasks → results come back to Telegram. Everything happens in that same thread. Morning briefings, deployment 
+              confirmations, draft proposals, revenue reports — all delivered as Telegram messages.
+            </p>
+            <p>
+              This isn&apos;t just convenient, it&apos;s strategic. When you&apos;re running a business solo, context-switching 
+              kills productivity. Opening 5 different dashboards to check on things means you never actually check on things. 
+              One interface means I actually use the system.
+            </p>
+          </FadeIn>
+
+          <FadeIn>
+            <h3>The Escape Hatch: Claude Code</h3>
+            <p>
+              Real talk: agents are great for 90% of things. But when you hit a gnarly refactor or a complex architectural 
+              decision, you need horsepower. That&apos;s where <strong>Claude Code</strong> comes in.
+            </p>
+            <p>
+              It runs on the same machine as the agent stack, and if Lurkr or any sub-agent gets stuck on a complex coding 
+              task, I can invoke Claude Code directly for the heavy-duty development work. Think of it as the power tool — 
+              the agents handle the day-to-day, but Claude Code is there for deep coding sessions.
+            </p>
+            <p>
+              This is what makes the system practical instead of fragile. It&apos;s not "agents or nothing" — it&apos;s 
+              agents as the default, with a proven escape hatch when things get complicated.
+            </p>
+          </FadeIn>
+
           <Callout variant="tip">
             <p className="font-semibold mb-2">Smart Model Allocation</p>
             <p className="mb-0">
@@ -217,7 +252,7 @@ export function BlogContent() {
           {/* Monday Morning */}
           <FadeIn>
             <h2 id="monday-morning">Real Example: Monday Morning</h2>
-            <p>Here&apos;s what happened last Monday before I even opened my laptop:</p>
+            <p>Here&apos;s what happened last Monday, entirely through Telegram, before I even opened my laptop:</p>
           </FadeIn>
 
           <div className="my-10 border border-white/10 rounded-xl bg-white/[0.02] p-8">
@@ -232,18 +267,26 @@ export function BlogContent() {
               </ul>
             </TimelineStep>
             <TimelineStep time="9:01 AM" index={1}>
-              I reply <span className="text-[#0EA5E9] font-mono text-xs">&quot;send that proposal to Nick&quot;</span> (a client from last week)
+              I reply in Telegram: <span className="text-[#0EA5E9] font-mono text-xs">&quot;send that proposal to Nick&quot;</span> (a client from last week)
             </TimelineStep>
             <TimelineStep time="9:02 AM" index={2}>
-              Agent generates proposal from template, shows me the PDF, asks to send
+              Lurkr orchestrates → Muse (content agent) generates proposal from template → result comes back to my Telegram with the PDF preview, asking permission to send
             </TimelineStep>
             <TimelineStep time="9:02 AM" index={3}>
-              I reply <span className="text-[#0EA5E9] font-mono text-xs">&quot;send it&quot;</span>
+              I reply in Telegram: <span className="text-[#0EA5E9] font-mono text-xs">&quot;send it&quot;</span>
             </TimelineStep>
             <TimelineStep time="9:03 AM" index={4}>
-              <strong>Done.</strong> Coffee&apos;s not even ready. ☕
+              <strong>Done.</strong> Email sent, confirmation delivered back to my Telegram. Coffee&apos;s not even ready. ☕
             </TimelineStep>
           </div>
+
+          <FadeIn>
+            <p>
+              The key here: <strong>every step happened in one Telegram thread.</strong> No switching apps. 
+              No logging into dashboards. No &quot;let me check the CRM.&quot; Just a conversation with an AI 
+              that has access to everything and reports back in the same place.
+            </p>
+          </FadeIn>
 
           {/* Lessons */}
           <FadeIn>
