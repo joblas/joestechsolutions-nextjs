@@ -17,8 +17,9 @@ export interface BlogPost {
 // Import all blog posts
 import { post as privateAiPost } from "@/content/blog/why-your-business-needs-private-ai";
 import { post as agentArchitecturePost } from "@/content/blog/22-agent-ai-team-architecture";
+import { post as replaceSaasPost } from "@/content/blog/replace-saas-with-ai-agents";
 
-export const allPosts: BlogPost[] = [privateAiPost, agentArchitecturePost];
+export const allPosts: BlogPost[] = [privateAiPost, agentArchitecturePost, replaceSaasPost];
 
 export function getAllPosts(): BlogPost[] {
   return allPosts.sort(
