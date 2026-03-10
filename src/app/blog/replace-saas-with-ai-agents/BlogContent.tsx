@@ -51,7 +51,7 @@ export function BlogContent() {
             stats={[
               { value: 24, suffix: "", label: "AI Agents", color: "from-[#0EA5E9]/10 to-transparent" },
               { value: 285, prefix: "$", label: "SaaS Replaced/mo", color: "from-red-500/10 to-transparent" },
-              { value: 20, prefix: "$", label: "New Cost/mo", color: "from-emerald-500/10 to-transparent" },
+              { value: 0, prefix: "$", label: "Marginal Cost", color: "from-emerald-500/10 to-transparent" },
               { value: 8, suffix: "h", label: "Saved Weekly", color: "from-[#8B5CF6]/10 to-transparent" },
             ]}
           />
@@ -77,7 +77,7 @@ export function BlogContent() {
           </FadeIn>
 
           <Callout variant="insight">
-            The whole thing runs on <a href="https://openclaw.com" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>, an open-source agent framework, deployed on a single Linux VPS. Not a cluster. Not Kubernetes. <strong>One box.</strong>
+            The whole thing runs on <a href="https://openclaw.com" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not a cluster. Not Kubernetes. <strong>One box in my house.</strong>
           </Callout>
 
           {/* Comparison Table */}
@@ -90,10 +90,30 @@ export function BlogContent() {
 
           <Callout variant="tip">
             <p className="mb-0">
-              The API costs vary, but even on a heavy month I&apos;m spending less than half what the SaaS stack cost —
-              and getting <strong>10x more automation</strong>.
+              Here&apos;s the kicker: I already pay for Claude Max ($100/mo) for my daily development work — coding, research, phone app, web interface. 
+              The 24 agents run on that <strong>same subscription at zero marginal cost</strong>. So I replaced $285/mo in SaaS with effectively $0 additional spend.
             </p>
           </Callout>
+
+          <FadeIn>
+            <h3>The Economics: Why This Actually Makes Sense</h3>
+            <p>
+              If you&apos;re a developer, you&apos;re probably already paying for an AI subscription. Claude Max, ChatGPT Plus, Cursor Pro — 
+              pick your poison. That cost is a sunk cost for your workflow.
+            </p>
+            <p>
+              The insight here is that <strong>the same API access you use for coding can power an entire automation stack</strong>. 
+              You&apos;re not adding a new expense — you&apos;re maximizing ROI on something you&apos;re already paying for.
+            </p>
+            <p>
+              Compare that to SaaS: every tool is a separate subscription, a separate login, a separate integration. 
+              My old stack had 10+ tools across email, CRM, monitoring, invoicing, SEO, content scheduling. 
+              Each one individually competent, collectively expensive, and none of them talked to each other.
+            </p>
+            <p>
+              With agents, it&apos;s one system, one workspace, one subscription. The marginal cost of adding a new agent is... writing a prompt file.
+            </p>
+          </FadeIn>
 
           {/* Architecture */}
           <FadeIn>
@@ -117,6 +137,17 @@ export function BlogContent() {
               Just agents with clear responsibilities and a shared workspace.
             </p>
           </FadeIn>
+
+          <Callout variant="tip">
+            <p className="font-semibold mb-2">Smart Model Allocation</p>
+            <p className="mb-0">
+              Not every task needs the most powerful model. I use <strong>tiered allocation</strong> to match capability to complexity: 
+              Claude Opus 4.6 runs the main orchestrator (strategic thinking, complex coding). 
+              Sonnet 4.5 handles most sub-agents (practical work, API calls, content). 
+              Haiku 4.5 runs lightweight checks and heartbeats. 
+              All three are included in Claude Max, so it&apos;s about smart usage, not extra cost.
+            </p>
+          </Callout>
 
           {/* 3-Tier Model */}
           <FadeIn>

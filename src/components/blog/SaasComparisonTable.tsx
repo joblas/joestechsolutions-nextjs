@@ -82,8 +82,14 @@ export function SaasComparisonTable() {
           <span className="text-white font-semibold text-sm">Total</span>
           <span />
           <span className="text-right text-red-400 font-bold text-sm line-through decoration-red-400/50">${totalOld}</span>
-          <span className="text-right text-emerald-400 font-bold text-sm">~$20/mo VPS</span>
+          <span className="text-right text-emerald-400 font-bold text-sm">$0 extra*</span>
         </motion.div>
+        {/* Footnote */}
+        <div className="px-6 py-3 bg-white/[0.02] border-t border-white/[0.05]">
+          <p className="text-white/40 text-xs">
+            * Runs on existing Claude Max subscription ($100/mo) used for daily development work — zero marginal cost for the agent system.
+          </p>
+        </div>
       </div>
 
       {/* Mobile cards */}
@@ -124,16 +130,21 @@ export function SaasComparisonTable() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="border border-white/10 rounded-xl bg-gradient-to-r from-[#0EA5E9]/10 to-[#8B5CF6]/10 p-4 flex justify-between items-center"
+          className="border border-white/10 rounded-xl bg-gradient-to-r from-[#0EA5E9]/10 to-[#8B5CF6]/10 p-4"
         >
-          <div>
-            <p className="text-white/50 text-xs">Old SaaS stack</p>
-            <p className="text-red-400 font-bold text-lg line-through decoration-red-400/50">${totalOld}/mo</p>
+          <div className="flex justify-between items-center mb-2">
+            <div>
+              <p className="text-white/50 text-xs">Old SaaS stack</p>
+              <p className="text-red-400 font-bold text-lg line-through decoration-red-400/50">${totalOld}/mo</p>
+            </div>
+            <div className="text-right">
+              <p className="text-white/50 text-xs">AI agents</p>
+              <p className="text-emerald-400 font-bold text-lg">$0 extra*</p>
+            </div>
           </div>
-          <div className="text-right">
-            <p className="text-white/50 text-xs">AI agents</p>
-            <p className="text-emerald-400 font-bold text-lg">~$20/mo</p>
-          </div>
+          <p className="text-white/40 text-xs border-t border-white/10 pt-2">
+            * Runs on existing Claude Max subscription used for daily dev work
+          </p>
         </motion.div>
       </div>
     </div>
