@@ -12,6 +12,7 @@ const tocItems = [
   { id: "the-stack", label: "The Stack: OpenClaw + 24 Agents" },
   { id: "what-it-replaced", label: "What It Actually Replaced" },
   { id: "architecture", label: "The Architecture (KISS)" },
+  { id: "the-toolkit", label: "The Toolkit" },
   { id: "three-tier", label: "The 3-Tier Action Model" },
   { id: "monday-morning", label: "Real Example: Monday Morning" },
   { id: "lessons", label: "What I'd Do Differently" },
@@ -183,6 +184,108 @@ export function BlogContent() {
               All three are included in Claude Max, so it&apos;s about smart usage, not extra cost.
             </p>
           </Callout>
+
+          {/* The Toolkit */}
+          <FadeIn>
+            <h2 id="the-toolkit">The Toolkit</h2>
+            <p>
+              This isn&apos;t just &ldquo;ChatGPT with API access.&rdquo; Lurkr has access to a full production toolkit — 
+              the same tools I use for client work and running the business. Here&apos;s everything in the arsenal:
+            </p>
+          </FadeIn>
+
+          <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                emoji: "🤖",
+                category: "AI Generation",
+                tools: [
+                  "Nano Banana Pro (Gemini) — Image generation",
+                  "Veo 3.1 — Video generation",
+                  "ElevenLabs — Premium text-to-speech",
+                  "Piper TTS — Local offline TTS",
+                ],
+              },
+              {
+                emoji: "📧",
+                category: "Google Workspace",
+                tools: [
+                  "Gmail, Calendar, Drive, Sheets, Docs (multi-account)",
+                ],
+              },
+              {
+                emoji: "💻",
+                category: "Development",
+                tools: [
+                  "GitHub CLI — PRs, issues, CI/CD, reviews",
+                  "Claude Code — Heavy-duty coding sessions",
+                  "Coding Agent — Spawns autonomous coding tasks",
+                ],
+              },
+              {
+                emoji: "💼",
+                category: "Business",
+                tools: [
+                  "Stripe API — Invoicing, revenue, payments",
+                  "Custom CRM (Supabase) — Client pipeline",
+                  "Notion — Strategy docs and databases",
+                  "Google Places — Local business research",
+                ],
+              },
+              {
+                emoji: "💬",
+                category: "Communication",
+                tools: [
+                  "Telegram (primary command interface)",
+                  "Slack workspace integration",
+                ],
+              },
+              {
+                emoji: "🎬",
+                category: "Media & Content",
+                tools: [
+                  "Video extraction (ffmpeg)",
+                  "YouTube video analysis",
+                  "PDF editing",
+                ],
+              },
+              {
+                emoji: "⚙️",
+                category: "Ops & Automation",
+                tools: [
+                  "System diagnostics & health monitoring",
+                  "Security hardening",
+                  "Deploy scripts, backup verification",
+                  "Custom bash scripts (Stripe sync, CRM, invoicing, proposals, revenue reports)",
+                ],
+              },
+            ].map((category, idx) => (
+              <FadeIn key={category.category} delay={0.05 * idx}>
+                <div className="h-full border border-white/10 rounded-xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-6 hover:border-[#0EA5E9]/30 hover:shadow-[0_0_20px_rgba(14,165,233,0.15)] transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-3xl">{category.emoji}</span>
+                    <h3 className="text-lg font-semibold text-white m-0">{category.category}</h3>
+                  </div>
+                  <ul className="space-y-2 list-none p-0 m-0">
+                    {category.tools.map((tool, toolIdx) => (
+                      <li key={toolIdx} className="text-sm text-white/70 leading-relaxed pl-0 m-0">
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn>
+            <p>
+              The power here isn&apos;t any single tool — it&apos;s the <strong>synthesis</strong>. Lurkr can pull 
+              your calendar from Google, check GitHub CI status, query Stripe for revenue, and format it all into 
+              one morning briefing delivered to Telegram. That kind of cross-platform orchestration is what makes 
+              this feel like having a real chief of staff.
+            </p>
+          </FadeIn>
 
           {/* 3-Tier Model */}
           <FadeIn>
