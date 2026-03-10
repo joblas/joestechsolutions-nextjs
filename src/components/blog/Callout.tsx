@@ -31,11 +31,11 @@ export function Callout({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`relative ${style.bg} ${style.border} border rounded-xl p-6 my-8`}
+      className={`relative ${style.bg} ${style.border} border rounded-xl p-8 my-10`}
     >
-      <Icon className={`w-5 h-5 ${style.iconColor} mb-3`} />
-      <div className="text-white/80 text-base leading-relaxed">{children}</div>
-      {attribution && <p className="text-white/40 text-sm mt-3 font-medium">— {attribution}</p>}
+      <Icon className={`w-5 h-5 ${style.iconColor} mb-4`} />
+      <div className="text-gray-200 text-base leading-loose">{children}</div>
+      {attribution && <p className="text-white/50 text-sm mt-4 font-medium">— {attribution}</p>}
     </motion.div>
   );
 }

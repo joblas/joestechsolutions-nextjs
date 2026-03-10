@@ -7,7 +7,7 @@ import { ParallaxSection } from "@/components/animations/ParallaxSection";
 import { BlogContent } from "./BlogContent";
 
 const POST = {
-  title: "How I Replaced $285/mo in SaaS Tools With AI Agents at Zero Marginal Cost",
+  title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
   date: "2026-03-10",
   readTime: 7,
   author: "Joe Blas",
@@ -15,13 +15,13 @@ const POST = {
 };
 
 export const metadata: Metadata = {
-  title: "How I Replaced $285/mo in SaaS Tools With AI Agents at Zero Marginal Cost | Joe's Tech Solutions",
+  title: "How 24 AI Agents Run My Entire Business — No SaaS Required | Joe's Tech Solutions",
   description:
-    "How one developer replaced $285/mo in SaaS subscriptions with 24 AI agents running on his existing Claude subscription — zero additional cost.",
+    "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
   alternates: { canonical: "/blog/replace-saas-with-ai-agents" },
   openGraph: {
-    title: "How I Replaced $285/mo in SaaS Tools With AI Agents at Zero Marginal Cost",
-    description: "How one developer replaced $285/mo in SaaS subscriptions with 24 AI agents running on his existing Claude subscription — zero additional cost.",
+    title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
+    description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
     url: "https://joestechsolutions.com/blog/replace-saas-with-ai-agents",
     type: "article",
     publishedTime: POST.date,
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How I Replaced $285/mo in SaaS Tools With AI Agents at Zero Marginal Cost",
-    description: "How one developer replaced $285/mo in SaaS subscriptions with 24 AI agents running on his existing Claude subscription — zero additional cost.",
+    title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
+    description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
     images: ["/images/blog/replace-saas-og.png"],
   },
 };
@@ -53,7 +53,7 @@ export default function ReplaceSaasPage() {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: POST.title,
-            description: "How one developer replaced $285/mo in SaaS subscriptions with 24 AI agents running on his existing Claude subscription — zero additional cost.",
+            description: "Instead of paying $285/mo for 10+ SaaS tools, one developer built 24 AI agents that handle everything — running on a Claude subscription already used for development.",
             image: "https://joestechsolutions.com/images/blog/replace-saas-og.png",
             author: {
               "@type": "Person",
@@ -124,17 +124,17 @@ export default function ReplaceSaasPage() {
 
           <FadeIn delay={0.1}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-space-grotesk leading-[1.1] mb-6">
-              How I Replaced $285/mo in SaaS Tools With{" "}
+              How 24{" "}
               <span className="bg-gradient-to-r from-[#0EA5E9] to-[#06B6D4] bg-clip-text text-transparent">
                 AI Agents
               </span>{" "}
-              at Zero Marginal Cost
+              Run My Entire Business — No SaaS Required
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.15}>
             <p className="text-white/60 text-lg sm:text-xl max-w-2xl leading-relaxed mb-8">
-              Most &ldquo;AI automation&rdquo; content is someone connecting Zapier to ChatGPT. I wanted Jarvis. So I built it.
+              Instead of paying $285/mo for 10+ SaaS tools, I built agents that handle everything — running on a Claude subscription I already use for development.
             </p>
           </FadeIn>
 
@@ -166,36 +166,37 @@ export default function ReplaceSaasPage() {
           <FadeIn>
             <div className="relative border border-white/10 rounded-2xl bg-[#1c1c26]/50 overflow-hidden">
               {/* Photo strip */}
-              <div className="relative h-48 sm:h-56 overflow-hidden">
+              <div className="relative h-56 sm:h-64 overflow-hidden">
                 <Image
                   src="/images/blog/joe-hot-tub-multitask.jpg"
                   alt="Joe cleaning his hot tub in San Diego while his AI agents handle business operations"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 800px"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c26] via-[#1c1c26]/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c26] via-[#1c1c26]/40 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">
-                  <p className="text-white/50 text-xs italic">
+                  <p className="text-white/70 text-xs italic drop-shadow-lg">
                     While my AI agents built this blog post, I was cleaning my hot tub in San Diego. That&apos;s the point.
                   </p>
                 </div>
               </div>
               {/* Bio content */}
-              <div className="p-6 sm:p-8">
+              <div className="p-8 sm:p-10">
                 <div className="flex flex-col sm:flex-row gap-5">
                   <div className="flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#0EA5E9] mb-1">About the Author</p>
-                    <h3 className="text-xl font-bold text-white font-space-grotesk mb-3">Joe Blas</h3>
-                    <p className="text-white/60 text-sm leading-relaxed mb-4">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#0EA5E9] mb-2">About the Author</p>
+                    <h3 className="text-xl font-bold text-white font-space-grotesk mb-4">Joe Blas</h3>
+                    <p className="text-gray-200 text-sm leading-loose mb-5">
                       Generative AI Full-Stack Developer based in San Diego and founder of Joe&apos;s Tech Solutions LLC. He builds AI-powered applications and private AI systems for businesses that want to own their intelligence stack — not rent it.
                     </p>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
                       <a
                         href="https://joestechsolutions.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-white/40 hover:text-[#0EA5E9] text-sm transition-colors"
+                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0EA5E9] text-sm transition-colors"
                       >
                         <Globe className="w-4 h-4" />
                         Website
@@ -204,7 +205,7 @@ export default function ReplaceSaasPage() {
                         href="https://github.com/joblas"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-white/40 hover:text-[#0EA5E9] text-sm transition-colors"
+                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0EA5E9] text-sm transition-colors"
                       >
                         <Github className="w-4 h-4" />
                         GitHub
@@ -213,7 +214,7 @@ export default function ReplaceSaasPage() {
                         href="https://linkedin.com/in/joe-blas"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-white/40 hover:text-[#0EA5E9] text-sm transition-colors"
+                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0EA5E9] text-sm transition-colors"
                       >
                         <Linkedin className="w-4 h-4" />
                         LinkedIn

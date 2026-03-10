@@ -35,9 +35,9 @@ export function SaasComparisonTable() {
         {/* Header */}
         <div className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 bg-white/[0.03] border-b border-white/10 px-6 py-4">
           <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">What I Needed</span>
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">Old Tool</span>
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider text-right">Cost/mo</span>
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider text-right">Now Handled By</span>
+          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">Typical SaaS Tool</span>
+          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider text-right">Market Rate</span>
+          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider text-right">My Solution</span>
         </div>
         {/* Rows */}
         {rows.map((row, i) => {
@@ -50,18 +50,18 @@ export function SaasComparisonTable() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-3.5 border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors"
+              className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors"
             >
-              <span className="flex items-center gap-3 text-white/80 text-sm">
+              <span className="flex items-center gap-3 text-gray-200 text-sm">
                 <Icon className="w-4 h-4 text-[#0EA5E9] shrink-0" />
                 {row.need}
               </span>
-              <span className="flex items-center gap-2 text-white/40 text-sm">
-                <X className="w-3 h-3 text-red-400/60" />
+              <span className="flex items-center gap-2 text-white/50 text-sm">
+                <X className="w-3 h-3 text-red-400/70" />
                 {row.oldTool}
               </span>
-              <span className="text-right text-white/40 text-sm tabular-nums">
-                {row.cost > 0 ? `$${row.cost}` : <span className="text-white/20">—</span>}
+              <span className="text-right text-white/50 text-sm tabular-nums">
+                {row.cost > 0 ? `$${row.cost}` : <span className="text-white/30">—</span>}
               </span>
               <span className="flex items-center justify-end gap-2 text-[#06B6D4] text-sm font-medium">
                 <Bot className="w-3.5 h-3.5 shrink-0" />
@@ -79,7 +79,7 @@ export function SaasComparisonTable() {
           viewport={{ once: true }}
           className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 bg-white/[0.03]"
         >
-          <span className="text-white font-semibold text-sm">Total</span>
+          <span className="text-white font-semibold text-sm">Total Market Cost</span>
           <span />
           <span className="text-right text-red-400 font-bold text-sm line-through decoration-red-400/50">${totalOld}</span>
           <span className="text-right text-emerald-400 font-bold text-sm">$0 extra*</span>
@@ -87,7 +87,7 @@ export function SaasComparisonTable() {
         {/* Footnote */}
         <div className="px-6 py-3 bg-white/[0.02] border-t border-white/[0.05]">
           <p className="text-white/40 text-xs">
-            * Runs on existing Claude Max subscription ($100/mo) used for daily development work — zero marginal cost for the agent system.
+            * Agent system runs on existing Claude Max subscription ($100/mo) already used for daily development work — zero marginal cost.
           </p>
         </div>
       </div>
@@ -104,16 +104,16 @@ export function SaasComparisonTable() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="border border-white/10 rounded-xl bg-[#0d0d12]/80 p-4"
+              className="border border-white/10 rounded-xl bg-[#0d0d12]/80 p-5"
             >
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-3">
                 <Icon className="w-4 h-4 text-[#0EA5E9]" />
-                <span className="text-white text-sm font-medium">{row.need}</span>
+                <span className="text-gray-200 text-sm font-medium">{row.need}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-white/40 flex items-center gap-1">
-                  <X className="w-3 h-3 text-red-400/60" />
-                  {row.oldTool} {row.cost > 0 && <span className="text-red-400/80">(${row.cost}/mo)</span>}
+                <span className="text-white/50 flex items-center gap-1">
+                  <X className="w-3 h-3 text-red-400/70" />
+                  {row.oldTool} {row.cost > 0 && <span className="text-red-400/90">(${row.cost}/mo)</span>}
                 </span>
                 <span className="text-[#06B6D4] font-medium flex items-center gap-1">
                   <Bot className="w-3 h-3" />
@@ -134,16 +134,16 @@ export function SaasComparisonTable() {
         >
           <div className="flex justify-between items-center mb-2">
             <div>
-              <p className="text-white/50 text-xs">Old SaaS stack</p>
+              <p className="text-white/50 text-xs">Typical SaaS stack</p>
               <p className="text-red-400 font-bold text-lg line-through decoration-red-400/50">${totalOld}/mo</p>
             </div>
             <div className="text-right">
-              <p className="text-white/50 text-xs">AI agents</p>
+              <p className="text-white/50 text-xs">My AI agent system</p>
               <p className="text-emerald-400 font-bold text-lg">$0 extra*</p>
             </div>
           </div>
           <p className="text-white/40 text-xs border-t border-white/10 pt-2">
-            * Runs on existing Claude Max subscription used for daily dev work
+            * Runs on existing Claude Max subscription already used for daily dev work
           </p>
         </motion.div>
       </div>

@@ -27,7 +27,7 @@ export function TimelineStep({
       </div>
       <div className="pb-2">
         <span className="text-[#0EA5E9] text-xs font-mono font-semibold">{time}</span>
-        <div className="text-white/70 text-sm mt-1 leading-relaxed">{children}</div>
+        <div className="text-gray-200 text-sm mt-2 leading-loose">{children}</div>
       </div>
     </motion.div>
   );

@@ -20,7 +20,7 @@ const tocItems = [
 
 export function BlogContent() {
   return (
-    <section className="relative py-12 sm:py-16">
+    <section className="relative py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="prose-blog">
           {/* Table of Contents */}
@@ -32,25 +32,25 @@ export function BlogContent() {
           <FadeIn delay={0.15}>
             <p className="lead">
               Most &ldquo;AI automation&rdquo; content is someone connecting Zapier to ChatGPT and calling it a day.
-              No shade — that works for some people. But when you&apos;re a developer running a real business,
-              you start to feel the ceiling pretty fast.
+              No shade — that works for some people. But when you&apos;re a developer launching a business,
+              you face a choice: buy 10+ SaaS tools at $200-300/mo, or build something smarter.
             </p>
           </FadeIn>
 
           <FadeIn>
             <p>
-              I wanted something different. I wanted Jarvis. Not the Marvel version — the version where I wake up
+              I wanted Jarvis. Not the Marvel version — the version where I wake up
               and my AI has already triaged my inbox, checked my deployments, drafted a proposal for a new client,
               and reminded me that my SSL cert expires in 6 days.
             </p>
-            <p>So I built it.</p>
+            <p>So instead of buying a stack of SaaS subscriptions, I built 24 AI agents to do it all.</p>
           </FadeIn>
 
           {/* Stats block */}
           <StatBlock
             stats={[
               { value: 24, suffix: "", label: "AI Agents", color: "from-[#0EA5E9]/10 to-transparent" },
-              { value: 285, prefix: "$", label: "SaaS Replaced/mo", color: "from-red-500/10 to-transparent" },
+              { value: 285, prefix: "$", label: "Typical SaaS Cost Avoided/mo", color: "from-red-500/10 to-transparent" },
               { value: 0, prefix: "$", label: "Marginal Cost", color: "from-emerald-500/10 to-transparent" },
               { value: 8, suffix: "h", label: "Saved Weekly", color: "from-[#8B5CF6]/10 to-transparent" },
             ]}
@@ -82,8 +82,8 @@ export function BlogContent() {
 
           {/* Comparison Table */}
           <FadeIn>
-            <h2 id="what-it-replaced">What It Actually Replaced</h2>
-            <p>Let me break down the SaaS tools I stopped paying for:</p>
+            <h2 id="what-it-replaced">The SaaS Tools I Never Had to Buy</h2>
+            <p>Here's what running a solo dev business typically costs in SaaS subscriptions. I skipped all of it by building agents instead:</p>
           </FadeIn>
 
           <SaasComparisonTable />
@@ -91,7 +91,7 @@ export function BlogContent() {
           <Callout variant="tip">
             <p className="mb-0">
               Here&apos;s the kicker: I already pay for Claude Max ($100/mo) for my daily development work — coding, research, phone app, web interface. 
-              The 24 agents run on that <strong>same subscription at zero marginal cost</strong>. So I replaced $285/mo in SaaS with effectively $0 additional spend.
+              The 24 agents run on that <strong>same subscription at zero marginal cost</strong>. So I avoided $285/mo in SaaS subscriptions with effectively $0 additional spend.
             </p>
           </Callout>
 
@@ -106,9 +106,9 @@ export function BlogContent() {
               You&apos;re not adding a new expense — you&apos;re maximizing ROI on something you&apos;re already paying for.
             </p>
             <p>
-              Compare that to SaaS: every tool is a separate subscription, a separate login, a separate integration. 
-              My old stack had 10+ tools across email, CRM, monitoring, invoicing, SEO, content scheduling. 
-              Each one individually competent, collectively expensive, and none of them talked to each other.
+              Compare that to the typical SaaS approach: every tool is a separate subscription, a separate login, a separate integration. 
+              A solo dev business usually needs 10+ tools across email, CRM, monitoring, invoicing, SEO, content scheduling. 
+              Each one individually competent, collectively expensive, and none of them talk to each other.
             </p>
             <p>
               With agents, it&apos;s one system, one workspace, one subscription. The marginal cost of adding a new agent is... writing a prompt file.
@@ -158,7 +158,7 @@ export function BlogContent() {
           </FadeIn>
 
           <FadeIn>
-            <div className="space-y-4 my-8">
+            <div className="space-y-5 my-10">
               {[
                 {
                   tier: "AUTO",
@@ -181,7 +181,7 @@ export function BlogContent() {
               ].map((item) => (
                 <div
                   key={item.tier}
-                  className={`border rounded-xl p-5 ${
+                  className={`border rounded-xl p-6 ${
                     item.color === "emerald"
                       ? "border-emerald-500/20 bg-emerald-500/5"
                       : item.color === "amber"
@@ -189,21 +189,21 @@ export function BlogContent() {
                       : "border-red-500/20 bg-red-500/5"
                   }`}
                 >
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center gap-3 mb-3">
                     <span
-                      className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
+                      className={`text-xs font-bold font-mono px-2.5 py-1 rounded ${
                         item.color === "emerald"
-                          ? "bg-emerald-500/20 text-emerald-400"
+                          ? "bg-emerald-500/20 text-emerald-300"
                           : item.color === "amber"
-                          ? "bg-amber-500/20 text-amber-400"
-                          : "bg-red-500/20 text-red-400"
+                          ? "bg-amber-500/20 text-amber-300"
+                          : "bg-red-500/20 text-red-300"
                       }`}
                     >
                       {item.tier}
                     </span>
-                    <span className="text-white/80 text-sm font-medium">{item.desc}</span>
+                    <span className="text-gray-200 text-sm font-medium">{item.desc}</span>
                   </div>
-                  <p className="text-white/50 text-sm ml-0 mb-0">{item.examples}</p>
+                  <p className="text-white/60 text-sm ml-0 mb-0 leading-relaxed">{item.examples}</p>
                 </div>
               ))}
             </div>
@@ -220,10 +220,10 @@ export function BlogContent() {
             <p>Here&apos;s what happened last Monday before I even opened my laptop:</p>
           </FadeIn>
 
-          <div className="my-8 border border-white/10 rounded-xl bg-white/[0.02] p-6">
+          <div className="my-10 border border-white/10 rounded-xl bg-white/[0.02] p-8">
             <TimelineStep time="9:00 AM" index={0}>
               <strong>Lurk Report</strong> drops in my Telegram DM:
-              <ul className="mt-2 space-y-1 text-white/50 text-sm list-disc list-inside">
+              <ul className="mt-3 space-y-2 text-white/60 text-sm list-disc list-inside">
                 <li>3 new emails (1 client inquiry, 1 invoice paid, 1 spam)</li>
                 <li>GitHub: 2 PRs ready for review, CI green across all repos</li>
                 <li>Revenue: $2,400 collected last 7 days, +15% WoW</li>
@@ -285,7 +285,7 @@ export function BlogContent() {
             <h2 id="should-you">Should You Build This?</h2>
             <p>
               If you&apos;re a developer who runs a freelance business or small agency — <strong>absolutely</strong>.
-              The ROI is insane. Not just the money saved on SaaS, but the time. I estimate I save 6-8 hours a week
+              The ROI is insane. Not just avoiding $200-300/mo in SaaS subscriptions, but the time. I estimate I save 6-8 hours a week
               on admin work that the agents handle.
             </p>
             <p>
