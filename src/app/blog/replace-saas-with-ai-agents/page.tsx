@@ -71,7 +71,7 @@ export default function ReplaceSaasPage() {
             dateModified: POST.date,
             mainEntityOfPage: "https://joestechsolutions.com/blog/replace-saas-with-ai-agents",
             keywords: POST.tags.join(", "),
-            wordCount: 1200,
+            wordCount: 1500,
             timeRequired: `PT${POST.readTime}M`,
           }),
         }}
