@@ -79,7 +79,7 @@ export function BlogContent() {
           </FadeIn>
 
           <Callout variant="insight">
-            The whole thing runs on <a href="https://openclaw.com" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
+            The whole thing runs on <a href="https://github.com/openclaw/openclaw" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
           </Callout>
 
           {/* Comparison Table */}
@@ -260,7 +260,7 @@ export function BlogContent() {
             <p className="text-gray-200 text-lg leading-loose mb-6">
               If you&apos;re a developer who runs a freelance business or small agency, the ROI is insane. Not just avoiding $200-300/mo in SaaS, but the time — I save 6-8 hours a week on admin work. 
               If you&apos;re not technical? Wait a year. The tooling will get easier. But if you&apos;re curious, start with{" "}
-              <a href="https://openclaw.com" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>{" "}
+              <a href="https://github.com/openclaw/openclaw" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>{" "}
               and just get one automation working.
             </p>
           </FadeIn>
