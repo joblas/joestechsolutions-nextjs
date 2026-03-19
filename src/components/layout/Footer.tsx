@@ -35,6 +35,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/whisper-walkie" className="text-white/60 hover:text-[#06B6D4] text-sm transition-colors">
+                  Whisper Walkie
+                  <span className="ml-1.5 text-[10px] text-[#06B6D4]/70">FREE</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/services" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
                   All Services
                 </Link>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mic, Download, ExternalLink } from "lucide-react";
 import { CheckCircle, Code, Database, ShieldCheck, Rocket, Robot } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -488,6 +488,58 @@ export default function Services() {
                 </div>
               </Card>
             </AnimatedCard>
+          </FadeIn>
+
+          {/* Free Tools */}
+          <FadeIn delay={0.35}>
+            <div className="mt-20">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 font-space-grotesk">
+                  Free & Open Source
+                </h2>
+                <p className="text-white/60 text-base font-light">
+                  Tools we built and use ourselves — free for everyone.
+                </p>
+              </div>
+
+              <Link href="/whisper-walkie" className="block">
+                <AnimatedCard>
+                  <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#06B6D4]/40 transition-all duration-500 group overflow-hidden">
+                    <div className="relative grid sm:grid-cols-[auto_1fr_auto] items-center gap-6 p-8">
+                      <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#06B6D4]/20 transition-all duration-300 mx-auto sm:mx-0">
+                        <Mic className="h-8 w-8 text-[#06B6D4]" />
+                      </div>
+
+                      <div className="text-center sm:text-left">
+                        <div className="flex items-center gap-3 justify-center sm:justify-start mb-2">
+                          <h3 className="text-xl font-bold text-white font-space-grotesk">Whisper Walkie</h3>
+                          <span className="px-2.5 py-0.5 bg-[#06B6D4]/15 rounded-full text-[#06B6D4] text-xs font-medium">Free</span>
+                        </div>
+                        <p className="text-white/70 text-base leading-relaxed mb-3">
+                          Push-to-talk voice typing for any app. Hold a key, speak, release — text appears wherever your cursor is. 100% local, no cloud, no subscriptions.
+                        </p>
+                        <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                          {["Windows", "macOS", "Linux", "GPU Accelerated", "Offline"].map((tag) => (
+                            <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-white/50 text-xs">{tag}</span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2 items-center">
+                        <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#06B6D4] hover:bg-[#0891b2] text-white text-sm font-medium rounded-full shadow-lg shadow-[#06B6D4]/20 transition-colors">
+                          <Download className="h-4 w-4" />
+                          Download Free
+                        </span>
+                        <span className="text-white/40 text-xs flex items-center gap-1">
+                          <ExternalLink className="h-3 w-3" />
+                          MIT License
+                        </span>
+                      </div>
+                    </div>
+                  </Card>
+                </AnimatedCard>
+              </Link>
+            </div>
           </FadeIn>
 
         </div>

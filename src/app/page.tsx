@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Mic, Download } from "lucide-react";
 import { CheckCircle, Robot } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -219,6 +219,35 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
           </StaggerContainer>
+
+          {/* Free Tool: Whisper Walkie */}
+          <FadeIn delay={0.3}>
+            <Link href="/whisper-walkie" className="block mt-8">
+              <AnimatedCard>
+                <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#06B6D4]/40 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
+                  <div className="flex flex-col sm:flex-row items-center gap-6 p-6">
+                    <div className="w-14 h-14 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#06B6D4]/20 transition-all duration-300">
+                      <Mic className="h-7 w-7 text-[#06B6D4]" />
+                    </div>
+                    <div className="flex-1 text-center sm:text-left">
+                      <div className="flex items-center gap-3 justify-center sm:justify-start mb-1">
+                        <h3 className="text-white text-lg font-semibold font-space-grotesk">Whisper Walkie</h3>
+                        <span className="px-2.5 py-0.5 bg-[#06B6D4]/15 rounded-full text-[#06B6D4] text-xs font-medium">Free & Open Source</span>
+                      </div>
+                      <p className="text-white/60 text-sm">
+                        Push-to-talk voice typing that works in any app. 100% local — your voice never leaves your machine.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#06B6D4] text-sm font-medium shrink-0 group-hover:translate-x-1 transition-transform">
+                      <Download className="h-4 w-4" />
+                      Download Free
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </div>
+                </Card>
+              </AnimatedCard>
+            </Link>
+          </FadeIn>
         </div>
       </section>
 
