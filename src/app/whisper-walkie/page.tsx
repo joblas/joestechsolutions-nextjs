@@ -15,7 +15,11 @@ import {
   Cpu,
   ArrowRight,
   ArrowLeft,
+  Terminal,
+  Settings,
+  Play,
 } from "lucide-react";
+import { FAQ } from "./FAQ";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
@@ -300,6 +304,185 @@ export default function WhisperWalkiePage() {
       {/* Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
+      {/* ── Quickstart Guide ──────────────────────────────────────── */}
+      <section className="relative py-20 sm:py-32 bg-[#1c1c26]/20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <FadeIn>
+              <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+                First time setup
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+                Quickstart Guide
+              </h2>
+              <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
+                Up and running in under five minutes.
+              </p>
+            </FadeIn>
+          </div>
+
+          {/* Vertical timeline */}
+          <div className="max-w-3xl mx-auto relative">
+            {/* Vertical connecting line */}
+            <div className="absolute left-7 top-8 bottom-8 w-px bg-gradient-to-b from-[#0EA5E9]/60 via-[#06B6D4]/30 to-transparent pointer-events-none hidden sm:block" aria-hidden="true" />
+
+            <StaggerContainer className="space-y-6" staggerDelay={0.12}>
+
+              {/* Step 1 — Download */}
+              <StaggerItem>
+                <div className="flex gap-6 items-start">
+                  {/* Circle + icon */}
+                  <div className="relative flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-[#0EA5E9]/15 border-2 border-[#0EA5E9]/50 flex items-center justify-center z-10 relative">
+                      <Download className="w-6 h-6 text-[#0EA5E9]" aria-hidden="true" />
+                    </div>
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0EA5E9] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                      1
+                    </span>
+                  </div>
+                  {/* Content */}
+                  <AnimatedCard>
+                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-500 flex-1">
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Download</h3>
+                        <p className="text-white/60 leading-relaxed text-sm">
+                          Click Download, choose your platform. The installer handles everything.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </AnimatedCard>
+                </div>
+              </StaggerItem>
+
+              {/* Step 2 — Install & Open */}
+              <StaggerItem>
+                <div className="flex gap-6 items-start">
+                  <div className="relative flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-[#06B6D4]/15 border-2 border-[#06B6D4]/50 flex items-center justify-center z-10 relative">
+                      <Monitor className="w-6 h-6 text-[#06B6D4]" aria-hidden="true" />
+                    </div>
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#06B6D4] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                      2
+                    </span>
+                  </div>
+                  <AnimatedCard>
+                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/40 transition-all duration-500 flex-1">
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-3">Install &amp; Open</h3>
+                        <div className="space-y-3">
+                          {/* Windows */}
+                          <details className="group/detail">
+                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
+                              <span className="w-5 h-5 rounded bg-[#0EA5E9]/15 flex items-center justify-center flex-shrink-0">
+                                <Monitor className="w-3 h-3 text-[#0EA5E9]" aria-hidden="true" />
+                              </span>
+                              Windows
+                              <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </summary>
+                            <p className="mt-2 ml-7 text-white/50 text-sm leading-relaxed">
+                              Run the installer. If SmartScreen appears, click &ldquo;More info&rdquo; &rarr; &ldquo;Run anyway&rdquo; — the app is open source and safe.
+                            </p>
+                          </details>
+                          {/* macOS */}
+                          <details className="group/detail">
+                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
+                              <span className="w-5 h-5 rounded bg-[#06B6D4]/15 flex items-center justify-center flex-shrink-0">
+                                <Globe className="w-3 h-3 text-[#06B6D4]" aria-hidden="true" />
+                              </span>
+                              macOS
+                              <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </summary>
+                            <p className="mt-2 ml-7 text-white/50 text-sm leading-relaxed">
+                              Open the .zip, drag to Applications. On first launch, grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
+                            </p>
+                          </details>
+                          {/* Linux */}
+                          <details className="group/detail">
+                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
+                              <span className="w-5 h-5 rounded bg-[#0EA5E9]/15 flex items-center justify-center flex-shrink-0">
+                                <Terminal className="w-3 h-3 text-[#0EA5E9]" aria-hidden="true" />
+                              </span>
+                              Linux
+                              <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </summary>
+                            <div className="mt-2 ml-7 space-y-1.5">
+                              <p className="text-white/50 text-sm leading-relaxed">
+                                Extract the .tar.gz. For best results, install xdotool:
+                              </p>
+                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#06B6D4] px-3 py-2 rounded-lg font-mono">
+                                sudo apt install xdotool
+                              </code>
+                            </div>
+                          </details>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </AnimatedCard>
+                </div>
+              </StaggerItem>
+
+              {/* Step 3 — Choose Your Mic */}
+              <StaggerItem>
+                <div className="flex gap-6 items-start">
+                  <div className="relative flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-[#0EA5E9]/15 border-2 border-[#0EA5E9]/50 flex items-center justify-center z-10 relative">
+                      <Settings className="w-6 h-6 text-[#0EA5E9]" aria-hidden="true" />
+                    </div>
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0EA5E9] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                      3
+                    </span>
+                  </div>
+                  <AnimatedCard>
+                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-500 flex-1">
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Choose Your Mic</h3>
+                        <p className="text-white/60 leading-relaxed text-sm">
+                          Open Settings in the app and select your microphone from the dropdown.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </AnimatedCard>
+                </div>
+              </StaggerItem>
+
+              {/* Step 4 — Try It! */}
+              <StaggerItem>
+                <div className="flex gap-6 items-start">
+                  <div className="relative flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-[#06B6D4]/15 border-2 border-[#06B6D4]/50 flex items-center justify-center z-10 relative">
+                      <Play className="w-6 h-6 text-[#06B6D4]" aria-hidden="true" />
+                    </div>
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#06B6D4] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                      4
+                    </span>
+                  </div>
+                  <AnimatedCard>
+                    <Card className="bg-gradient-to-br from-[#0EA5E9]/8 via-[#1c1c26] to-[#06B6D4]/8 border-[#06B6D4]/25 hover:border-[#06B6D4]/50 transition-all duration-500 flex-1">
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Try It!</h3>
+                        <p className="text-white/60 leading-relaxed text-sm">
+                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-[#0EA5E9]/15 border border-[#0EA5E9]/30 rounded text-[#0EA5E9] font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </AnimatedCard>
+                </div>
+              </StaggerItem>
+
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
       {/* ── Comparison ────────────────────────────────────────────── */}
       <section className="relative py-20 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -537,6 +720,12 @@ export default function WhisperWalkiePage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      {/* ── FAQ ───────────────────────────────────────────────────── */}
+      <FAQ />
 
       {/* Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
