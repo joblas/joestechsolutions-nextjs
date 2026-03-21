@@ -22,11 +22,11 @@ export function TimelineStep({
     >
       {/* Timeline line */}
       <div className="flex flex-col items-center">
-        <div className="w-2.5 h-2.5 rounded-full bg-[#0EA5E9] ring-4 ring-[#0EA5E9]/20 shrink-0 mt-1" />
-        <div className="w-px flex-1 bg-gradient-to-b from-[#0EA5E9]/30 to-transparent" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#0d9488] ring-4 ring-[#0d9488]/20 shrink-0 mt-1" />
+        <div className="w-px flex-1 bg-gradient-to-b from-[#0d9488]/30 to-transparent" />
       </div>
       <div className="pb-2">
-        <span className="text-[#0EA5E9] text-xs font-mono font-semibold">{time}</span>
+        <span className="text-[#0d9488] text-xs font-mono font-semibold">{time}</span>
         <div className="text-gray-200 text-sm mt-2 leading-loose">{children}</div>
       </div>
     </motion.div>

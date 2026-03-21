@@ -60,9 +60,9 @@ export default async function VerticalDetailPage({
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[120px] animate-glow" />
           {vertical.isPremium && (
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#8B5CF6] rounded-full blur-[100px] animate-glow" style={{ animationDelay: '2s' }} />
           )}
@@ -97,7 +97,7 @@ export default async function VerticalDetailPage({
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-xl sm:text-2xl text-[#0EA5E9] font-medium mb-4">
+              <p className="text-xl sm:text-2xl text-[#0d9488] font-medium mb-4">
                 {vertical.tagline}
               </p>
             </FadeIn>
@@ -125,10 +125,10 @@ export default async function VerticalDetailPage({
                 </p>
 
                 {/* Welcome Message */}
-                <div className="p-6 bg-[#0EA5E9]/5 border border-[#0EA5E9]/20 rounded-2xl">
+                <div className="p-6 bg-[#0d9488]/5 border border-[#0d9488]/20 rounded-2xl">
                   <div className="flex items-center gap-2 mb-3">
-                    <Robot weight="duotone" className="h-5 w-5 text-[#0EA5E9]" />
-                    <span className="text-[#0EA5E9] font-medium text-sm">What your AI says when you log in</span>
+                    <Robot weight="duotone" className="h-5 w-5 text-[#0d9488]" />
+                    <span className="text-[#0d9488] font-medium text-sm">What your AI says when you log in</span>
                   </div>
                   <p className="text-white/80 italic leading-relaxed">
                     &ldquo;{vertical.welcomeMessage}&rdquo;
@@ -146,7 +146,7 @@ export default async function VerticalDetailPage({
                 <div className="space-y-4">
                   {vertical.features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-4 p-4 bg-[#1c1c26] rounded-xl border border-white/5">
-                      <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] shrink-0 mt-0.5" />
+                      <CheckCircle weight="duotone" className="h-6 w-6 text-[#0d9488] shrink-0 mt-0.5" />
                       <span className="text-white/80">{feature}</span>
                     </div>
                   ))}
@@ -175,9 +175,9 @@ export default async function VerticalDetailPage({
             {vertical.samplePrompts.map((prompt, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/30 transition-all duration-300 h-full">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/30 transition-all duration-300 h-full">
                     <CardContent className="p-6">
-                      <ChatCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mb-3" />
+                      <ChatCircle weight="duotone" className="h-6 w-6 text-[#0d9488] mb-3" />
                       <p className="text-white/80 leading-relaxed">&ldquo;{prompt}&rdquo;</p>
                     </CardContent>
                   </Card>
@@ -206,10 +206,10 @@ export default async function VerticalDetailPage({
             {vertical.recommendedModels.map((model, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/30 transition-all duration-300 h-full">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/30 transition-all duration-300 h-full">
                     <CardContent className="p-6 text-center">
-                      <Cpu weight="duotone" className="h-8 w-8 text-[#06B6D4] mx-auto mb-3" />
-                      <p className="text-[#06B6D4] font-semibold mb-1">{model.ram} RAM</p>
+                      <Cpu weight="duotone" className="h-8 w-8 text-[#2dd4bf] mx-auto mb-3" />
+                      <p className="text-[#2dd4bf] font-semibold mb-1">{model.ram} RAM</p>
                       <p className="text-white font-mono text-sm mb-2">{model.model}</p>
                       <p className="text-white/50 text-sm">{model.why}</p>
                     </CardContent>
@@ -259,9 +259,9 @@ export default async function VerticalDetailPage({
 
       {/* CTA */}
       <section className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0EA5E9] rounded-full blur-[150px] animate-glow" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0d9488] rounded-full blur-[150px] animate-glow" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -282,7 +282,7 @@ export default async function VerticalDetailPage({
                   <Button size="lg" className={`text-white text-lg px-10 py-7 rounded-full group shadow-2xl ${
                     vertical.isPremium
                       ? "bg-[#8B5CF6] hover:bg-[#7C3AED] shadow-[#8B5CF6]/30"
-                      : "bg-[#0EA5E9] hover:bg-[#0284c7] shadow-[#0EA5E9]/30"
+                      : "bg-[#0d9488] hover:bg-[#0f766e] shadow-[#0d9488]/30"
                   }`}>
                     View Pricing
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

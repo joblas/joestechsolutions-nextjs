@@ -49,13 +49,13 @@ function MyPage() {
 Expanding Gaussian bloom effect behind text.
 
 ```tsx
-<HeroGlow glowColor="#0EA5E9" glowIntensity={0.5}>
+<HeroGlow glowColor="#0d9488" glowIntensity={0.5}>
   <h1>Scale Business with Automation</h1>
 </HeroGlow>
 ```
 
 **Props:**
-- `glowColor`: Hex color for glow (default: `#0EA5E9`)
+- `glowColor`: Hex color for glow (default: `#0d9488`)
 - `glowIntensity`: 0-1 opacity (default: `0.4`)
 
 #### StaggeredNav
@@ -151,7 +151,7 @@ Bézier curve that draws from left to right.
     { x: 150, y: 150, value: "45K" },
     { x: 250, y: 100, value: "78K" },
   ]}
-  strokeColor="#0EA5E9"
+  strokeColor="#0d9488"
   strokeWidth={4}
 />
 ```
@@ -223,8 +223,8 @@ Animated bar charts.
 ```tsx
 <ChartGrid
   data={[
-    { value: 75, label: "Q1", color: "#0EA5E9" },
-    { value: 85, label: "Q2", color: "#06B6D4" },
+    { value: 75, label: "Q1", color: "#0d9488" },
+    { value: 85, label: "Q2", color: "#2dd4bf" },
   ]}
 />
 ```
@@ -258,7 +258,7 @@ Dark gradient with floating glowing orbs.
   orbs={[
     {
       size: 800,
-      color: "#0EA5E9",
+      color: "#0d9488",
       initialX: "30%",
       initialY: "20%",
       blur: 200,
@@ -283,7 +283,7 @@ Dark gradient with floating glowing orbs.
 Frosted glass effect with hover glow.
 
 ```tsx
-<GlassCard glowColor="#0EA5E9">
+<GlassCard glowColor="#0d9488">
   <div className="p-8">Content</div>
 </GlassCard>
 ```
@@ -297,7 +297,7 @@ Frosted glass effect with hover glow.
 Line expands from center outward.
 
 ```tsx
-<SectionDivider color="#0EA5E9" className="w-1/2" />
+<SectionDivider color="#0d9488" className="w-1/2" />
 ```
 
 #### ShadowHalo

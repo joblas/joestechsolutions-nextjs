@@ -21,7 +21,7 @@ interface ParallaxBackgroundProps {
 const defaultOrbs: GradientOrb[] = [
   {
     size: 600,
-    color: "#0EA5E9",
+    color: "#0d9488",
     initialX: "20%",
     initialY: "10%",
     blur: 150,
@@ -30,7 +30,7 @@ const defaultOrbs: GradientOrb[] = [
   },
   {
     size: 500,
-    color: "#06B6D4",
+    color: "#2dd4bf",
     initialX: "80%",
     initialY: "60%",
     blur: 130,
@@ -39,7 +39,7 @@ const defaultOrbs: GradientOrb[] = [
   },
   {
     size: 400,
-    color: "#0EA5E9",
+    color: "#0d9488",
     initialX: "50%",
     initialY: "80%",
     blur: 120,

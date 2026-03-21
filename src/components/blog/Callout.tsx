@@ -9,8 +9,8 @@ type CalloutVariant = "insight" | "warning" | "tip" | "quote";
 const variantStyles: Record<CalloutVariant, { border: string; bg: string; icon: typeof Lightbulb; iconColor: string }> = {
   insight: { border: "border-[#8B5CF6]/30", bg: "bg-[#8B5CF6]/5", icon: Lightbulb, iconColor: "text-[#8B5CF6]" },
   warning: { border: "border-amber-500/30", bg: "bg-amber-500/5", icon: AlertTriangle, iconColor: "text-amber-400" },
-  tip: { border: "border-[#0EA5E9]/30", bg: "bg-[#0EA5E9]/5", icon: Zap, iconColor: "text-[#0EA5E9]" },
-  quote: { border: "border-[#06B6D4]/30", bg: "bg-[#06B6D4]/5", icon: Quote, iconColor: "text-[#06B6D4]" },
+  tip: { border: "border-[#0d9488]/30", bg: "bg-[#0d9488]/5", icon: Zap, iconColor: "text-[#0d9488]" },
+  quote: { border: "border-[#2dd4bf]/30", bg: "bg-[#2dd4bf]/5", icon: Quote, iconColor: "text-[#2dd4bf]" },
 };
 
 export function Callout({

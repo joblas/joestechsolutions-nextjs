@@ -83,7 +83,7 @@ function QualifyForm() {
   if (!urlType) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Spinner className="h-12 w-12 text-[#0EA5E9] animate-spin" />
+        <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
       </div>
     );
   }
@@ -95,7 +95,7 @@ function QualifyForm() {
     : `${tierPrice.setup} one-time`;
 
   const TierIcon = isManaged ? Rocket : needsVPS ? Cloud : Desktop;
-  const accentColor = isManaged ? "#8B5CF6" : isCloud ? "#06B6D4" : "#0EA5E9";
+  const accentColor = isManaged ? "#8B5CF6" : isCloud ? "#2dd4bf" : "#0d9488";
 
   const isFormComplete = qualifyData.operatingSystem && (needsVPS || qualifyData.ramAmount);
   const canProceed = isFormComplete && qualificationStatus !== "pending";
@@ -160,7 +160,7 @@ function QualifyForm() {
                   id="os"
                   value={qualifyData.operatingSystem}
                   onChange={(e) => setQualifyData({ ...qualifyData, operatingSystem: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                 >
                   <option value="">Select OS</option>
                   {needsVPS ? (
@@ -203,7 +203,7 @@ function QualifyForm() {
                           qualifyData.ramAmount === option.value
                             ? option.warn
                               ? "border-amber-500 bg-amber-500/10"
-                              : "border-[#0EA5E9] bg-[#0EA5E9]/10"
+                              : "border-[#0d9488] bg-[#0d9488]/10"
                             : "border-white/10 hover:border-white/20"
                         }`}
                       >
@@ -307,7 +307,7 @@ export default function QualifyPage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center">
-          <Spinner className="h-12 w-12 text-[#0EA5E9] animate-spin" />
+          <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
         </div>
       }
     >

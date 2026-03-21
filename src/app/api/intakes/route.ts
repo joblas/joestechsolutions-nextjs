@@ -68,16 +68,25 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// GET - Get recent intakes (basic admin endpoint)
+// GET - Get recent intakes (admin endpoint, requires ADMIN_API_KEY)
 export async function GET(request: NextRequest) {
   try {
-    // Optional: Add basic auth check here
-    // const authHeader = request.headers.get("authorization");
-    // if (authHeader !== `Bearer ${process.env.ADMIN_API_KEY}`) {
-    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    // }
+    // Require Bearer token authentication
+    const authHeader = request.headers.get("authorization");
+    const adminKey = process.env.ADMIN_API_KEY;
 
-    const limit = parseInt(request.nextUrl.searchParams.get("limit") || "50", 10);
+    if (!adminKey) {
+      // If ADMIN_API_KEY is not configured, deny all access
+      console.error("[Intakes GET] ADMIN_API_KEY not configured - denying access");
+      return NextResponse.json({ error: "Endpoint not configured" }, { status: 503 });
+    }
+
+    if (!authHeader || authHeader !== `Bearer ${adminKey}`) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const limitParam = request.nextUrl.searchParams.get("limit") || "50";
+    const limit = Math.min(Math.max(parseInt(limitParam, 10) || 50, 1), 200);
     const intakes = await getRecentIntakes(limit);
 
     return NextResponse.json({

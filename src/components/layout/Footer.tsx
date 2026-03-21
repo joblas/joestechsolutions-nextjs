@@ -20,28 +20,28 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Products</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/private-ai-setup" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/private-ai-setup" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   Joe&apos;s AI Server
                 </Link>
               </li>
               <li>
-                <Link href="/services#agent-systems" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/services#agent-systems" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   OpenClaw Agent Systems
                 </Link>
               </li>
               <li>
-                <Link href="/services#custom-ai" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/services#custom-ai" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   Custom AI Teams
                 </Link>
               </li>
               <li>
-                <Link href="/whisper-walkie" className="text-white/60 hover:text-[#06B6D4] text-sm transition-colors">
+                <Link href="/whisper-walkie" className="text-white/60 hover:text-[#2dd4bf] text-sm transition-colors">
                   Whisper Walkie
-                  <span className="ml-1.5 text-[10px] text-[#06B6D4]/70">FREE</span>
+                  <span className="ml-1.5 text-[10px] text-[#2dd4bf]/70">FREE</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/services" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   All Services
                 </Link>
               </li>
@@ -53,17 +53,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/portfolio" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/portfolio" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/about" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white/60 hover:text-[#0EA5E9] text-sm transition-colors">
+                <Link href="/contact" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   Contact
                 </Link>
               </li>

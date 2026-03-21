@@ -33,7 +33,7 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: `
       default-src 'self';
-      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://*.googletagmanager.com https://*.google-analytics.com;
+      script-src 'self' 'unsafe-inline' https://vercel.live https://*.googletagmanager.com https://*.google-analytics.com;
       style-src 'self' 'unsafe-inline';
       img-src 'self' data: https: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net;
       font-src 'self' data:;
@@ -54,13 +54,70 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: securityHeaders,
       },
+      // Immutable cache for hashed static assets (JS, CSS, media)
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Long cache for optimized images
+      {
+        source: '/_next/image/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // Cache public static files (icons, logos, images)
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        source: '/icons/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        source: '/logos/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
+          },
+        ],
+      },
     ];
   },
   poweredByHeader: false,
   reactStrictMode: true,
+  // Enable gzip/brotli compression (Vercel does this at CDN layer, but explicit is better)
+  compress: true,
   images: {
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Serve modern formats for smaller payloads
+    formats: ['image/avif', 'image/webp'],
+    // Match common device breakpoints to avoid generating unnecessary sizes
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    // Reduce quality slightly for faster loads (default 75 is fine, 80 is a good balance)
+    minimumCacheTTL: 2592000, // 30 days
   },
 };
 

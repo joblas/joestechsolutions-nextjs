@@ -35,7 +35,7 @@ export function AnimatedGraph({
   dataPoints,
   width = 600,
   height = 300,
-  strokeColor = "#0EA5E9",
+  strokeColor = "#0d9488",
   strokeWidth = 3,
   showNodes = true,
   showValues = true,

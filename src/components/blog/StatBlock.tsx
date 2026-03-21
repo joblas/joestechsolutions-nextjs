@@ -25,7 +25,7 @@ export function StatBlock({ stats }: { stats: Stat[] }) {
           key={i}
           className="relative border border-white/10 rounded-xl bg-[#0d0d12]/80 p-5 text-center overflow-hidden group hover:border-white/20 transition-colors"
         >
-          <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${stat.color || "from-[#0EA5E9]/5 to-transparent"}`} />
+          <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${stat.color || "from-[#0d9488]/5 to-transparent"}`} />
           <div className="relative">
             <p className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">
               <CountUp to={stat.value} prefix={stat.prefix} suffix={stat.suffix} duration={1.5} />

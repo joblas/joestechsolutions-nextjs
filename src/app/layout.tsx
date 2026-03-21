@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ParticleBackground } from "@/components/animations/ParticleBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -71,16 +72,23 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Preconnect to critical third-party origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
         <OrganizationSchema />
         <WebsiteSchema />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased font-sans bg-background text-foreground`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0EA5E9] focus:text-white focus:rounded"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0d9488] focus:text-white focus:rounded"
         >
           Skip to main content
         </a>
+        <ParticleBackground />
         <Header />
         <main id="main-content" className="pt-16 min-h-screen">
           {children}
@@ -88,7 +96,9 @@ export default function RootLayout({
         <Footer />
         <SpeedInsights />
         <Analytics />
-        <GoogleAnalytics gaId="G-MBFJDHF0W9" />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );

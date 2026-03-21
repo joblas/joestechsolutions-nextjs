@@ -29,14 +29,14 @@ export default function Services() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Private AI. Agent Systems.</span>
-                <span className="block text-[#0EA5E9]">
+                <span className="block text-[#0d9488]">
                   Real Outcomes.
                 </span>
               </h1>
@@ -58,22 +58,22 @@ export default function Services() {
           <FadeIn delay={0.1}>
             <div id="ai-setup" className="mb-16">
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-[#0EA5E9]/30 hover:border-[#0EA5E9]/50 transition-all duration-500 overflow-hidden group relative">
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0EA5E9]/20 rounded-full text-[#0EA5E9] text-sm font-medium z-10">
+                <Card className="bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/50 transition-all duration-500 overflow-hidden group relative">
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-medium z-10">
                     Most Popular
                   </div>
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#0EA5E9]/10 to-transparent rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Robot weight="duotone" className="h-10 w-10 text-[#0EA5E9]" />
+                        <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Robot weight="duotone" className="h-10 w-10 text-[#0d9488]" />
                         </div>
                         <div>
                           <h2 className="text-2xl font-bold text-white font-space-grotesk">Private AI Setup</h2>
                           <div className="flex flex-col">
-                            <p className="text-[#0EA5E9] font-semibold text-lg">from $199 one-time</p>
-                            <p className="text-[#06B6D4] font-semibold text-sm">$499 setup + $29/mo (cloud)</p>
+                            <p className="text-[#0d9488] font-semibold text-lg">from $199 one-time</p>
+                            <p className="text-[#2dd4bf] font-semibold text-sm">$499 setup + $29/mo (cloud)</p>
                           </div>
                         </div>
                       </div>
@@ -92,14 +92,14 @@ export default function Services() {
                           "Cloud option: Custom domain + SSL + $29/mo managed hosting"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-start">
-                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mr-3 shrink-0 mt-0.5" />
+                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#0d9488] mr-3 shrink-0 mt-0.5" />
                             <span className="text-white/80">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       <Link href="/private-ai-setup">
-                        <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
+                        <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0d9488]/20">
                           Get Private AI Setup
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
@@ -108,9 +108,9 @@ export default function Services() {
 
                     <div className="relative flex items-center justify-center">
                       <div className="relative w-full max-w-sm">
-                        <div className="absolute inset-0 bg-[#0EA5E9]/20 rounded-3xl blur-2xl" />
+                        <div className="absolute inset-0 bg-[#0d9488]/20 rounded-3xl blur-2xl" />
                         <div className="relative bg-[#0d0d12] rounded-2xl border border-white/10 p-8 text-center">
-                          <Robot weight="duotone" className="h-24 w-24 text-[#0EA5E9] mx-auto mb-6" />
+                          <Robot weight="duotone" className="h-24 w-24 text-[#0d9488] mx-auto mb-6" />
                           <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">Private. Powerful. Yours.</h3>
                           <p className="text-white/60 text-sm">
                             Run AI locally or on your own server. No cloud APIs, no data harvesting.
@@ -128,20 +128,20 @@ export default function Services() {
           <FadeIn delay={0.15}>
             <div id="agent-systems" className="mb-16">
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-[#06B6D4]/30 hover:border-[#06B6D4]/50 transition-all duration-500 overflow-hidden group relative">
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#06B6D4]/20 rounded-full text-[#06B6D4] text-sm font-medium z-10">
+                <Card className="bg-[#1c1c26] border-[#2dd4bf]/30 hover:border-[#2dd4bf]/50 transition-all duration-500 overflow-hidden group relative">
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#2dd4bf]/20 rounded-full text-[#2dd4bf] text-sm font-medium z-10">
                     Most Impactful
                   </div>
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#06B6D4]/10 to-transparent rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={40} height={40} className="object-contain" />
                         </div>
                         <div>
                           <h2 className="text-2xl font-bold text-white font-space-grotesk">OpenClaw Agent Systems</h2>
-                          <p className="text-[#06B6D4] font-semibold text-lg">Contact for pricing</p>
+                          <p className="text-[#2dd4bf] font-semibold text-lg">Contact for pricing</p>
                         </div>
                       </div>
 
@@ -158,14 +158,14 @@ export default function Services() {
                           "Fully monitored — you stay in control"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-start">
-                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#06B6D4] mr-3 shrink-0 mt-0.5" />
+                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#2dd4bf] mr-3 shrink-0 mt-0.5" />
                             <span className="text-white/80">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group/btn shadow-lg shadow-[#06B6D4]/20">
+                        <Button className="w-full bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full group/btn shadow-lg shadow-[#2dd4bf]/20">
                           Discuss Your Agent System
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
@@ -174,23 +174,23 @@ export default function Services() {
 
                     <div className="relative flex items-center justify-center">
                       <div className="relative w-full max-w-sm">
-                        <div className="absolute inset-0 bg-[#06B6D4]/20 rounded-3xl blur-2xl" />
+                        <div className="absolute inset-0 bg-[#2dd4bf]/20 rounded-3xl blur-2xl" />
                         <div className="relative bg-[#0d0d12] rounded-2xl border border-white/10 p-8 text-center">
                           <div className="grid grid-cols-2 gap-3 text-sm mb-4">
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#06B6D4] font-bold text-2xl block">22</span>
+                              <span className="text-[#2dd4bf] font-bold text-2xl block">22</span>
                               <span className="text-white/60 text-xs">AI Agents</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#06B6D4] font-bold text-2xl block">24/7</span>
+                              <span className="text-[#2dd4bf] font-bold text-2xl block">24/7</span>
                               <span className="text-white/60 text-xs">Operations</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#0EA5E9] font-bold text-2xl block">$0</span>
+                              <span className="text-[#0d9488] font-bold text-2xl block">$0</span>
                               <span className="text-white/60 text-xs">API Fees</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#0EA5E9] font-bold text-2xl block">1</span>
+                              <span className="text-[#0d9488] font-bold text-2xl block">1</span>
                               <span className="text-white/60 text-xs">You in Control</span>
                             </div>
                           </div>
@@ -209,7 +209,7 @@ export default function Services() {
             <div id="custom-ai" className="mb-16">
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-[#8B5CF6]/20 hover:border-[#8B5CF6]/40 transition-all duration-500 overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#8B5CF6]/10 to-transparent rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
@@ -271,16 +271,16 @@ export default function Services() {
             {/* Mobile App Development */}
             <StaggerItem>
               <AnimatedCard>
-                <Card id="mobile" className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 overflow-hidden group h-full">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#0EA5E9]/10 to-transparent rounded-full blur-3xl" />
+                <Card id="mobile" className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 overflow-hidden group h-full">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <CardHeader className="relative">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Image src="/icons/mobile-dynamic/premium.png" alt="Mobile Development" width={40} height={40} className="object-contain" />
                       </div>
                       <div>
                         <CardTitle className="text-2xl text-white font-space-grotesk">Mobile App Development</CardTitle>
-                        <p className="text-[#0EA5E9] font-semibold text-lg">$25K - $150K</p>
+                        <p className="text-[#0d9488] font-semibold text-lg">$25K - $150K</p>
                       </div>
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
@@ -300,13 +300,13 @@ export default function Services() {
                         "Analytics & crash reporting setup"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-start">
-                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mr-3 shrink-0 mt-0.5" />
+                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#0d9488] mr-3 shrink-0 mt-0.5" />
                           <span className="text-white/80">{feature}</span>
                         </div>
                       ))}
                     </div>
                     <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
+                      <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0d9488]/20">
                         Get Mobile App Quote
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -319,16 +319,16 @@ export default function Services() {
             {/* Web Development */}
             <StaggerItem>
               <AnimatedCard>
-                <Card id="web" className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 overflow-hidden group h-full">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#06B6D4]/10 to-transparent rounded-full blur-3xl" />
+                <Card id="web" className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 overflow-hidden group h-full">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <CardHeader className="relative">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Image src="/icons/computer-dynamic/premium.png" alt="Web Development" width={40} height={40} className="object-contain" />
                       </div>
                       <div>
                         <CardTitle className="text-2xl text-white font-space-grotesk">Web Development</CardTitle>
-                        <p className="text-[#06B6D4] font-semibold text-lg">$30K - $250K</p>
+                        <p className="text-[#2dd4bf] font-semibold text-lg">$30K - $250K</p>
                       </div>
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
@@ -348,13 +348,13 @@ export default function Services() {
                         "API development & third-party integrations"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-start">
-                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#06B6D4] mr-3 shrink-0 mt-0.5" />
+                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#2dd4bf] mr-3 shrink-0 mt-0.5" />
                           <span className="text-white/80">{feature}</span>
                         </div>
                       ))}
                     </div>
                     <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group/btn shadow-lg shadow-[#06B6D4]/20">
+                      <Button className="w-full bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full group/btn shadow-lg shadow-[#2dd4bf]/20">
                         Get Web Development Quote
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -369,17 +369,17 @@ export default function Services() {
           <FadeIn delay={0.2}>
             <div id="ecommerce" className="mb-20">
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#0EA5E9]/10 to-transparent rounded-full blur-3xl" />
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Image src="/icons/rocket-dynamic/premium.png" alt="E-commerce" width={40} height={40} className="object-contain" />
                         </div>
                         <div>
                           <h2 className="text-2xl font-bold text-white font-space-grotesk">E-commerce Solutions</h2>
-                          <p className="text-[#0EA5E9] font-semibold text-lg">$5K - $50K</p>
+                          <p className="text-[#0d9488] font-semibold text-lg">$5K - $50K</p>
                         </div>
                       </div>
 
@@ -398,14 +398,14 @@ export default function Services() {
                           "SEO optimization for product pages"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-start">
-                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mr-3 shrink-0 mt-0.5" />
+                            <CheckCircle weight="duotone" className="h-6 w-6 text-[#0d9488] mr-3 shrink-0 mt-0.5" />
                             <span className="text-white/80">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group/btn shadow-lg shadow-[#0EA5E9]/20">
+                        <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0d9488]/20">
                           Get E-commerce Quote
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
@@ -413,7 +413,7 @@ export default function Services() {
                     </div>
 
                     <div className="relative">
-                      <div className="relative aspect-4/3 bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
+                      <div className="relative aspect-4/3 bg-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
                         <Image
                           src="/images/tech-monitors-development.jpg"
                           alt="E-commerce Platform"
@@ -431,17 +431,17 @@ export default function Services() {
           {/* Custom Solutions */}
           <FadeIn delay={0.3}>
             <AnimatedCard>
-              <Card id="custom" className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 overflow-hidden group">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#06B6D4]/10 to-transparent rounded-full blur-3xl" />
+              <Card id="custom" className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 overflow-hidden group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                 <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Image src="/icons/tools-dynamic/premium.png" alt="Custom Solutions" width={40} height={40} className="object-contain" />
                       </div>
                       <div>
                         <h2 className="text-2xl font-bold text-white font-space-grotesk">Custom Solutions</h2>
-                        <p className="text-[#06B6D4] font-semibold text-lg">Contact for Quote</p>
+                        <p className="text-[#2dd4bf] font-semibold text-lg">Contact for Quote</p>
                       </div>
                     </div>
 
@@ -461,14 +461,14 @@ export default function Services() {
                         "System migrations & data imports"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-start">
-                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#06B6D4] mr-3 shrink-0 mt-0.5" />
+                          <CheckCircle weight="duotone" className="h-6 w-6 text-[#2dd4bf] mr-3 shrink-0 mt-0.5" />
                           <span className="text-white/80">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full group/btn shadow-lg shadow-[#06B6D4]/20">
+                      <Button className="w-full bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full group/btn shadow-lg shadow-[#2dd4bf]/20">
                         Discuss Your Project
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -476,7 +476,7 @@ export default function Services() {
                   </div>
 
                   <div className="relative">
-                    <div className="relative aspect-4/3 bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
+                    <div className="relative aspect-4/3 bg-[#0d0d12] rounded-2xl border border-white/10 overflow-hidden">
                       <Image
                         src="/images/consulting.jpg"
                         alt="Custom Software Solutions"
@@ -504,16 +504,16 @@ export default function Services() {
 
               <Link href="/whisper-walkie" className="block">
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#06B6D4]/40 transition-all duration-500 group overflow-hidden">
+                  <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#2dd4bf]/40 transition-all duration-500 group overflow-hidden">
                     <div className="relative grid sm:grid-cols-[auto_1fr_auto] items-center gap-6 p-8">
-                      <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#06B6D4]/20 transition-all duration-300 mx-auto sm:mx-0">
-                        <Mic className="h-8 w-8 text-[#06B6D4]" />
+                      <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300 mx-auto sm:mx-0">
+                        <Mic className="h-8 w-8 text-[#2dd4bf]" />
                       </div>
 
                       <div className="text-center sm:text-left">
                         <div className="flex items-center gap-3 justify-center sm:justify-start mb-2">
                           <h3 className="text-xl font-bold text-white font-space-grotesk">Whisper Walkie</h3>
-                          <span className="px-2.5 py-0.5 bg-[#06B6D4]/15 rounded-full text-[#06B6D4] text-xs font-medium">Free</span>
+                          <span className="px-2.5 py-0.5 bg-[#2dd4bf]/15 rounded-full text-[#2dd4bf] text-xs font-medium">Free</span>
                         </div>
                         <p className="text-white/70 text-base leading-relaxed mb-3">
                           Push-to-talk voice typing for any app. Hold a key, speak, release — text appears wherever your cursor is. 100% local, no cloud, no subscriptions.
@@ -526,7 +526,7 @@ export default function Services() {
                       </div>
 
                       <div className="flex flex-col gap-2 items-center">
-                        <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#06B6D4] hover:bg-[#0891b2] text-white text-sm font-medium rounded-full shadow-lg shadow-[#06B6D4]/20 transition-colors">
+                        <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2dd4bf] hover:bg-[#14b8a6] text-white text-sm font-medium rounded-full shadow-lg shadow-[#2dd4bf]/20 transition-colors">
                           <Download className="h-4 w-4" />
                           Download Free
                         </span>
@@ -579,9 +579,9 @@ export default function Services() {
             ].map((step, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 text-center h-full">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 text-center h-full">
                     <CardHeader>
-                      <div className="text-6xl font-bold text-[#0EA5E9] mb-4 font-space-grotesk">{step.number}</div>
+                      <div className="text-6xl font-bold text-[#0d9488] mb-4 font-space-grotesk">{step.number}</div>
                       <CardTitle className="text-white text-xl mb-2 font-space-grotesk">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -597,7 +597,7 @@ export default function Services() {
 
       {/* CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
@@ -613,7 +613,7 @@ export default function Services() {
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30">
+                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

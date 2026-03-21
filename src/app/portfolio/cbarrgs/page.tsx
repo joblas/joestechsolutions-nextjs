@@ -38,7 +38,7 @@ export default function CbarrgsCaseStudy() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-[#06B6D4]/20 border border-[#06B6D4]/30 rounded-full text-[#06B6D4] text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-[#2dd4bf]/20 border border-[#2dd4bf]/30 rounded-full text-[#2dd4bf] text-sm font-semibold">
                 Artist Website • Performance Optimized
               </div>
 
@@ -53,7 +53,7 @@ export default function CbarrgsCaseStudy() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://cbarrgs.com" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-[#06B6D4] hover:bg-[#0891b2] rounded-full shadow-lg shadow-[#06B6D4]/20">
+                  <Button size="lg" className="bg-[#2dd4bf] hover:bg-[#14b8a6] rounded-full shadow-lg shadow-[#2dd4bf]/20">
                     Visit Live Site
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </Button>
@@ -81,8 +81,8 @@ export default function CbarrgsCaseStudy() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#06B6D4]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-6 h-6 text-[#06B6D4]" />
+                <div className="w-12 h-12 bg-[#2dd4bf]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-6 h-6 text-[#2dd4bf]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Platform</CardTitle>
               </CardHeader>
@@ -93,8 +93,8 @@ export default function CbarrgsCaseStudy() {
 
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#0EA5E9]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-6 h-6 text-[#0EA5E9]" />
+                <div className="w-12 h-12 bg-[#0d9488]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-6 h-6 text-[#0d9488]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Performance</CardTitle>
               </CardHeader>
@@ -214,10 +214,10 @@ export default function CbarrgsCaseStudy() {
                 icon: Globe
               }
             ].map((feature, index) => (
-              <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-colors group">
+              <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-colors group">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-[#06B6D4]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6 text-[#06B6D4]" />
+                  <div className="w-12 h-12 bg-[#2dd4bf]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-[#2dd4bf]" />
                   </div>
                   <CardTitle className="text-xl font-bold text-white font-space-grotesk">{feature.title}</CardTitle>
                 </CardHeader>
@@ -246,9 +246,9 @@ export default function CbarrgsCaseStudy() {
               { label: "Platforms", value: "5+", desc: "Streaming integrations" },
               { label: "SEO", value: "Optimized", desc: "Schema & Open Graph" }
             ].map((stat, index) => (
-              <Card key={index} className="bg-linear-to-br from-[#06B6D4]/10 to-[#0EA5E9]/10 border-[#06B6D4]/30 text-center">
+              <Card key={index} className="bg-linear-to-br from-[#2dd4bf]/10 to-[#0d9488]/10 border-[#2dd4bf]/30 text-center">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-[#06B6D4] mb-2">{stat.value}</div>
+                  <div className="text-4xl font-bold text-[#2dd4bf] mb-2">{stat.value}</div>
                   <div className="text-white font-semibold mb-1">{stat.label}</div>
                   <div className="text-white/60 text-sm">{stat.desc}</div>
                 </CardContent>
@@ -259,7 +259,7 @@ export default function CbarrgsCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-linear-to-r from-[#06B6D4]/10 via-[#0d0d12] to-[#0EA5E9]/10">
+      <section className="relative py-20 sm:py-32 bg-linear-to-r from-[#2dd4bf]/10 via-[#0d0d12] to-[#0d9488]/10">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-space-grotesk">
             Need a Professional Website?
@@ -269,7 +269,7 @@ export default function CbarrgsCaseStudy() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-[#06B6D4] hover:bg-[#0891b2] rounded-full shadow-lg shadow-[#06B6D4]/20">
+              <Button size="lg" className="bg-[#2dd4bf] hover:bg-[#14b8a6] rounded-full shadow-lg shadow-[#2dd4bf]/20">
                 Schedule Discovery Call
               </Button>
             </a>

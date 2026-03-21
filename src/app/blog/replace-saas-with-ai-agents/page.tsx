@@ -86,7 +86,7 @@ export default function ReplaceSaasPage() {
             <div className="absolute top-[-100px] right-[-100px] w-[700px] h-[700px] bg-[#8B5CF6] rounded-full blur-[200px]" />
           </ParallaxSection>
           <ParallaxSection speed={0.2} direction="down">
-            <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[180px]" />
+            <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[180px]" />
           </ParallaxSection>
         </div>
         {/* Grid pattern overlay */}
@@ -125,7 +125,7 @@ export default function ReplaceSaasPage() {
           <FadeIn delay={0.1}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-space-grotesk leading-[1.1] mb-6">
               How 24{" "}
-              <span className="bg-gradient-to-r from-[#0EA5E9] to-[#06B6D4] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] bg-clip-text text-transparent">
                 AI Agents
               </span>{" "}
               Run My Entire Business — No SaaS Required
@@ -186,7 +186,7 @@ export default function ReplaceSaasPage() {
               <div className="p-8 sm:p-10">
                 <div className="flex flex-col sm:flex-row gap-5">
                   <div className="flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#0EA5E9] mb-2">About the Author</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#0d9488] mb-2">About the Author</p>
                     <h3 className="text-xl font-bold text-white font-space-grotesk mb-4">Joe Blas</h3>
                     <p className="text-gray-200 text-sm leading-loose mb-5">
                       Generative AI Full-Stack Developer based in San Diego and founder of Joe&apos;s Tech Solutions LLC. He builds AI-powered applications and private AI systems for businesses that want to own their intelligence stack — not rent it.
@@ -196,7 +196,7 @@ export default function ReplaceSaasPage() {
                         href="https://joestechsolutions.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0EA5E9] text-sm transition-colors"
+                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0d9488] text-sm transition-colors"
                       >
                         <Globe className="w-4 h-4" />
                         Website
@@ -205,7 +205,7 @@ export default function ReplaceSaasPage() {
                         href="https://github.com/joblas"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0EA5E9] text-sm transition-colors"
+                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0d9488] text-sm transition-colors"
                       >
                         <Github className="w-4 h-4" />
                         GitHub
@@ -214,7 +214,7 @@ export default function ReplaceSaasPage() {
                         href="https://linkedin.com/in/joe-blas"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0EA5E9] text-sm transition-colors"
+                        className="flex items-center gap-1.5 text-white/50 hover:text-[#0d9488] text-sm transition-colors"
                       >
                         <Linkedin className="w-4 h-4" />
                         LinkedIn
@@ -232,13 +232,13 @@ export default function ReplaceSaasPage() {
       <section className="relative py-16 sm:py-24 overflow-hidden">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
-            <div className="relative bg-gradient-to-br from-[#0EA5E9]/10 via-[#1c1c26] to-[#8B5CF6]/10 border border-white/10 rounded-3xl p-10 sm:p-14 overflow-hidden">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#0EA5E9] rounded-full blur-[100px] opacity-10" />
+            <div className="relative bg-gradient-to-br from-[#0d9488]/10 via-[#1c1c26] to-[#8B5CF6]/10 border border-white/10 rounded-3xl p-10 sm:p-14 overflow-hidden">
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#0d9488] rounded-full blur-[100px] opacity-10" />
               <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-[#8B5CF6] rounded-full blur-[80px] opacity-10" />
               <div className="relative">
-                <div className="inline-flex items-center gap-2 bg-[#0EA5E9]/10 border border-[#0EA5E9]/30 rounded-full px-4 py-1.5 mb-6">
-                  <span className="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse" />
-                  <span className="text-[#0EA5E9] text-sm font-medium">Want This For Your Business?</span>
+                <div className="inline-flex items-center gap-2 bg-[#0d9488]/10 border border-[#0d9488]/30 rounded-full px-4 py-1.5 mb-6">
+                  <span className="w-2 h-2 rounded-full bg-[#0d9488] animate-pulse" />
+                  <span className="text-[#0d9488] text-sm font-medium">Want This For Your Business?</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-space-grotesk">
                   Stop Renting Intelligence. Start Owning It.
@@ -249,7 +249,7 @@ export default function ReplaceSaasPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/private-ai-setup"
-                    className="inline-flex items-center justify-center gap-2 bg-[#0EA5E9] hover:bg-[#0284c7] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0EA5E9]/20"
+                    className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0d9488]/20"
                   >
                     See the Setup Package
                     <ArrowRight className="w-4 h-4" />

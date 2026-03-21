@@ -63,14 +63,14 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-b from-[#0A1628] via-[#0d0d12] to-[#0d0d12]">
       {/* Hero */}
       <section className="relative overflow-hidden py-20 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0EA5E9]/20 via-[#06B6D4]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0d9488]/20 via-[#2dd4bf]/10 to-transparent" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-6">
             <FadeIn delay={0.1}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-2">Our Work</span>
-                <span className="block text-[#0EA5E9] font-bold">
+                <span className="block text-[#0d9488] font-bold">
                   Building Real Solutions
                 </span>
               </h1>
@@ -92,7 +92,7 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <StaggerItem key={project.id}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300 overflow-hidden group h-full">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-300 overflow-hidden group h-full">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image}
@@ -102,7 +102,7 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-[#0d0d12]/50 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 bg-[#0EA5E9]/20 text-[#0EA5E9] backdrop-blur-sm rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-[#0d9488]/20 text-[#0d9488] backdrop-blur-sm rounded-full text-sm font-medium">
                       {project.category}
                     </span>
                   </div>
@@ -129,7 +129,7 @@ export default function Portfolio() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href={project.href} className="flex-1">
-                      <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] group/btn">
+                      <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] group/btn">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -157,7 +157,7 @@ export default function Portfolio() {
                     More case studies coming soon. Working on something exciting?
                   </p>
                   <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7]">
+                    <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e]">
                       Start Your Project
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -185,7 +185,7 @@ export default function Portfolio() {
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-lg px-10 py-6 group">
+                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-lg px-10 py-6 group">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
