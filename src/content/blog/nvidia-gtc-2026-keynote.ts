@@ -14,7 +14,7 @@ export const post: BlogPost = {
       "NVIDIA GTC 2026: What Jensen Huang Just Told the World About AI's Future | Joe's Tech Solutions",
     description:
       "Breaking down NVIDIA GTC 2026: Vera Rubin, Groq 3, NemoClaw AI agents, 110 robots, and what it all means for businesses investing in AI infrastructure.",
-    ogImage: "/images/blog/nvidia-gtc-2026-og.png",
+    ogImage: "/images/blog/nvidia-gtc-2026-og.jpg",
   },
   content: "", // Content is rendered by the custom page component
 };

@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     publishedTime: POST.date,
     authors: [POST.author],
     tags: POST.tags,
-    images: [{ url: "/images/blog/nvidia-gtc-2026-og.png", width: 1200, height: 630, alt: POST.title }],
+    images: [{ url: "/images/blog/nvidia-gtc-2026-og.jpg", width: 1200, height: 630, alt: POST.title }],
   },
   twitter: {
     card: "summary_large_image",
     title: "NVIDIA GTC 2026: What Jensen Huang Just Told the World About AI's Future",
     description: "Breaking down NVIDIA GTC 2026: Vera Rubin, Groq 3, NemoClaw AI agents, 110 robots, and what it all means for businesses investing in AI infrastructure.",
-    images: ["/images/blog/nvidia-gtc-2026-og.png"],
+    images: ["/images/blog/nvidia-gtc-2026-og.jpg"],
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   headline: POST.title,
   description: "Breaking down NVIDIA GTC 2026: Vera Rubin, Groq 3, NemoClaw AI agents, 110 robots, and what it all means for businesses investing in AI infrastructure.",
-  image: "https://joestechsolutions.com/images/blog/nvidia-gtc-2026-og.png",
+  image: "https://joestechsolutions.com/images/blog/nvidia-gtc-2026-og.jpg",
   author: {
     "@type": "Person",
     name: "Joe Blas",
@@ -152,6 +152,24 @@ export default function NvidiaGtc2026Page() {
                 <Clock className="w-4 h-4" />
                 {POST.readTime} min read
               </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ═══════════ HERO IMAGE ═══════════ */}
+      <section className="relative -mt-8 sm:-mt-12 pb-8">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <FadeIn delay={0.25}>
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#10B981]/10">
+              <Image
+                src="/images/blog/nvidia-gtc-2026-og.jpg"
+                alt="NVIDIA GTC 2026 - AI infrastructure visualization with data center and neural network patterns"
+                width={1200}
+                height={630}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </FadeIn>
         </div>
