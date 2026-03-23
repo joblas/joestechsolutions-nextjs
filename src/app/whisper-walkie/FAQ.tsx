@@ -6,6 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const faqs = [
   {
+    question: "Windows shows a SmartScreen warning. Is it safe?",
+    answer:
+      "Yes! SmartScreen warns about apps from new publishers — this is normal for any independent software. Whisper Walkie is fully open source, so you can read every line of code on GitHub. Just click \u2018More info\u2019 \u2192 \u2018Run anyway\u2019 to proceed.",
+  },
+  {
     question: "Is it really free?",
     answer:
       "Yes, completely free and open source under the MIT license. No trials, no premium tier, no subscriptions. Forever.",
@@ -14,11 +19,6 @@ const faqs = [
     question: "Is my audio sent to any server?",
     answer:
       "Never. Whisper Walkie runs the AI model entirely on your machine. Your audio is processed locally and never touches a network. No accounts, no telemetry, no cloud.",
-  },
-  {
-    question: "Windows shows a SmartScreen warning. Is it safe?",
-    answer:
-      "Yes! SmartScreen warns about apps from new publishers. Since Whisper Walkie is open source, you can read every line of code on GitHub. Click \u2018More info\u2019 \u2192 \u2018Run anyway\u2019 to proceed.",
   },
   {
     question: "Do I need a powerful computer?",

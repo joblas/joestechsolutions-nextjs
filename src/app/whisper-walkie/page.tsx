@@ -680,6 +680,13 @@ export default function WhisperWalkiePage() {
               </a>
               . Whisper AI model bundled — no internet needed after download.
             </p>
+            <p className="text-center text-sm text-white/50 mt-3">
+              <span className="text-[#2dd4bf] font-medium">Windows users:</span>{" "}
+              If SmartScreen says &ldquo;Windows protected your PC,&rdquo; click{" "}
+              <span className="text-white/80 font-medium">&ldquo;More info&rdquo;</span> &rarr;{" "}
+              <span className="text-white/80 font-medium">&ldquo;Run anyway.&rdquo;</span>{" "}
+              The app is fully open source — inspect every line on GitHub.
+            </p>
           </FadeIn>
         </div>
       </section>
