@@ -20,6 +20,7 @@ import {
   Play,
 } from "lucide-react";
 import { FAQ } from "./FAQ";
+import { HeroDownloadButton, PlatformDownloadCards, CtaDownloadButton } from "./DownloadButton";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
@@ -98,29 +99,6 @@ const features = [
   },
 ];
 
-const platforms = [
-  {
-    name: "Windows",
-    icon: Monitor,
-    formats: [".exe installer", "Portable .zip"],
-    note: "CUDA GPU acceleration supported",
-    accent: "#0d9488",
-  },
-  {
-    name: "macOS",
-    icon: Monitor,
-    formats: [".zip download"],
-    note: "Requires Accessibility permissions",
-    accent: "#2dd4bf",
-  },
-  {
-    name: "Linux",
-    icon: Monitor,
-    formats: [".tar.gz download"],
-    note: "X11 fully supported; Wayland experimental",
-    accent: "#0d9488",
-  },
-];
 
 export default function WhisperWalkiePage() {
   return (
@@ -188,19 +166,8 @@ export default function WhisperWalkiePage() {
 
             {/* CTAs */}
             <FadeIn delay={0.35}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <a href={GITHUB_RELEASES} target="_blank" rel="noopener noreferrer">
-                  <MagneticButton strength={0.2}>
-                    <Button
-                      size="lg"
-                      className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0d9488]/20 transition-all"
-                    >
-                      <Download className="mr-2 h-5 w-5" aria-hidden="true" />
-                      Download Free
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Button>
-                  </MagneticButton>
-                </a>
+              <div className="flex flex-col items-center gap-4 pt-4">
+                <HeroDownloadButton />
                 <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
@@ -625,53 +592,7 @@ export default function WhisperWalkiePage() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" staggerDelay={0.1}>
-            {platforms.map((platform) => (
-              <StaggerItem key={platform.name}>
-                <AnimatedCard>
-                  <a
-                    href={GITHUB_RELEASES}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-full"
-                    aria-label={`Download Whisper Walkie for ${platform.name}`}
-                  >
-                    <Card
-                      className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full group cursor-pointer"
-                    >
-                      <CardContent className="p-8 text-center space-y-5">
-                        <div
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
-                          style={{ backgroundColor: `${platform.accent}15` }}
-                        >
-                          <Monitor
-                            className="w-7 h-7"
-                            style={{ color: platform.accent }}
-                            aria-hidden="true"
-                          />
-                        </div>
-                        <h3 className="text-xl font-bold text-white font-space-grotesk">{platform.name}</h3>
-                        <ul className="space-y-1" role="list">
-                          {platform.formats.map((format) => (
-                            <li key={format} className="text-white/60 text-sm">{format}</li>
-                          ))}
-                        </ul>
-                        <p className="text-xs text-white/40 leading-relaxed">{platform.note}</p>
-                        <div
-                          className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
-                          style={{ color: platform.accent }}
-                        >
-                          <Download className="w-4 h-4" aria-hidden="true" />
-                          Download
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
-                </AnimatedCard>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <PlatformDownloadCards />
 
           <FadeIn delay={0.3}>
             <p className="text-center text-sm text-white/40 mt-8">
@@ -783,19 +704,8 @@ export default function WhisperWalkiePage() {
             </p>
           </FadeIn>
           <FadeIn delay={0.25}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={GITHUB_RELEASES} target="_blank" rel="noopener noreferrer">
-                <MagneticButton strength={0.25}>
-                  <Button
-                    size="lg"
-                    className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30 transition-all"
-                  >
-                    <Download className="mr-2 h-5 w-5" aria-hidden="true" />
-                    Download Free
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                  </Button>
-                </MagneticButton>
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <CtaDownloadButton />
               <a href={`${GITHUB_REPO}/stargazers`} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
