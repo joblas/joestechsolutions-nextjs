@@ -363,15 +363,15 @@ export default function WhisperWalkiePage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
-                            <div className="mt-2 ml-7 space-y-2.5">
-                              <p className="text-white/50 text-sm leading-relaxed">
-                                Open Terminal and paste this — it downloads, installs, and opens the app:
-                              </p>
-                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                rm -rf ~/Downloads/WhisperWalkie && curl -sL https://github.com/joestechsolutions/whisper-walkie/releases/latest/download/WhisperWalkie-macos.zip -o /tmp/ww.zip && unzip -o /tmp/ww.zip -d ~/Downloads && cd ~/Downloads/WhisperWalkie && ./install-macos.sh
-                              </code>
+                            <div className="mt-2 ml-7 space-y-2">
+                              <ol className="text-white/50 text-sm leading-relaxed space-y-1.5 list-decimal list-inside">
+                                <li>Open the downloaded <code className="text-[#2dd4bf]/80 bg-white/5 px-1 py-0.5 rounded text-xs">.zip</code> — it extracts automatically</li>
+                                <li>Open the <span className="text-white/70">WhisperWalkie</span> folder</li>
+                                <li>Right-click <span className="text-white/70">WhisperWalkie</span> &rarr; <span className="text-white/70">Open</span></li>
+                                <li>Click <span className="text-white/70">&ldquo;Open&rdquo;</span> when macOS asks to confirm</li>
+                              </ol>
                               <p className="text-white/40 text-xs">
-                                Installs to /Applications, clears Gatekeeper, and adds to Launchpad. Then grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
+                                Grant Accessibility permissions when prompted: System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
                               </p>
                             </div>
                           </details>
@@ -386,15 +386,14 @@ export default function WhisperWalkiePage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
-                            <div className="mt-2 ml-7 space-y-2.5">
-                              <p className="text-white/50 text-sm leading-relaxed">
-                                Open a terminal and paste this — it downloads, installs, and launches:
-                              </p>
-                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                rm -rf ~/Downloads/WhisperWalkie && curl -sL https://github.com/joestechsolutions/whisper-walkie/releases/latest/download/WhisperWalkie-linux.tar.gz | tar xz -C ~/Downloads && cd ~/Downloads/WhisperWalkie && ./install-linux.sh && ./WhisperWalkie
-                              </code>
+                            <div className="mt-2 ml-7 space-y-2">
+                              <ol className="text-white/50 text-sm leading-relaxed space-y-1.5 list-decimal list-inside">
+                                <li>Extract the downloaded <code className="text-[#2dd4bf]/80 bg-white/5 px-1 py-0.5 rounded text-xs">.tar.gz</code> file</li>
+                                <li>Open the <span className="text-white/70">WhisperWalkie</span> folder</li>
+                                <li>Double-click <span className="text-white/70">WhisperWalkie</span> to launch</li>
+                              </ol>
                               <p className="text-white/40 text-xs mt-1">
-                                Creates a desktop shortcut and launches the app. Always downloads the latest version.
+                                Optional: run <code className="text-[#2dd4bf]/80 bg-white/5 px-1 py-0.5 rounded text-xs">./install-linux.sh</code> to add a desktop shortcut to your app menu.
                               </p>
                             </div>
                           </details>
@@ -678,15 +677,11 @@ export default function WhisperWalkiePage() {
               </p>
               <p>
                 <span className="text-[#2dd4bf] font-medium">macOS:</span>{" "}
-                Run{" "}
-                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">./install-macos.sh</code>{" "}
-                to install to /Applications and add to Launchpad.
+                Right-click the app and choose &ldquo;Open&rdquo; on first launch. Grant Accessibility access when prompted.
               </p>
               <p>
                 <span className="text-[#2dd4bf] font-medium">Linux:</span>{" "}
-                Run{" "}
-                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">./install-linux.sh</code>{" "}
-                to add to your app launcher.
+                Extract the folder and double-click WhisperWalkie to launch.
               </p>
               <p className="text-white/40 text-xs pt-1">
                 These warnings are normal for independent software. Whisper Walkie is fully open source — inspect every line on GitHub.
