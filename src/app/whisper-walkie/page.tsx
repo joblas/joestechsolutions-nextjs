@@ -365,13 +365,13 @@ export default function WhisperWalkiePage() {
                             </summary>
                             <div className="mt-2 ml-7 space-y-2.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Extract and install:
+                                Open Terminal and paste this one-liner:
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                unzip WhisperWalkie-macos.zip{"\n"}cd WhisperWalkie{"\n"}./install-macos.sh
+                                cd ~/Downloads && unzip WhisperWalkie-macos.zip && cd WhisperWalkie && ./install-macos.sh
                               </code>
                               <p className="text-white/40 text-xs">
-                                This installs to /Applications, clears the Gatekeeper warning, and adds Whisper Walkie to Launchpad &amp; Spotlight. Then grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
+                                Installs to /Applications, clears Gatekeeper, and adds to Launchpad. Then grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
                               </p>
                             </div>
                           </details>
@@ -388,13 +388,13 @@ export default function WhisperWalkiePage() {
                             </summary>
                             <div className="mt-2 ml-7 space-y-2.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Extract and run the installer (handles everything):
+                                Open a terminal and paste this one-liner:
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                tar xzf WhisperWalkie-linux.tar.gz{"\n"}cd WhisperWalkie{"\n"}./install-linux.sh
+                                cd ~/Downloads && tar xzf WhisperWalkie-linux.tar.gz && cd WhisperWalkie && ./install-linux.sh
                               </code>
                               <p className="text-white/40 text-xs mt-1">
-                                The installer automatically installs PortAudio and xdotool, creates a desktop shortcut, and makes the app ready to launch from your application menu.
+                                Creates a desktop shortcut so you can launch from your app menu. You can also run directly: ./WhisperWalkie
                               </p>
                             </div>
                           </details>
