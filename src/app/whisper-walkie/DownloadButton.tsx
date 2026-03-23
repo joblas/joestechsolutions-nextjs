@@ -5,7 +5,7 @@ import { Download, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
-const DOWNLOAD_BASE = "https://github.com/joestechsolutions/whisper-walkie/releases/download/v1.1.0";
+const DOWNLOAD_BASE = "https://github.com/joestechsolutions/whisper-walkie/releases/download/v1.1.1";
 const GITHUB_RELEASES = "https://github.com/joestechsolutions/whisper-walkie/releases/latest";
 
 type Platform = "windows" | "macos" | "linux" | "unknown";
