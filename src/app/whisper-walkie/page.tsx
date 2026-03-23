@@ -388,25 +388,13 @@ export default function WhisperWalkiePage() {
                             </summary>
                             <div className="mt-2 ml-7 space-y-2.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Extract and launch:
+                                Extract and run the installer (handles everything):
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                tar xzf WhisperWalkie-linux.tar.gz{"\n"}cd WhisperWalkie{"\n"}./WhisperWalkie
-                              </code>
-                              <p className="text-white/50 text-sm leading-relaxed">
-                                For best results, install xdotool:
-                              </p>
-                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
-                                sudo apt install xdotool
-                              </code>
-                              <p className="text-white/60 text-sm font-medium mt-3">
-                                Add to your app launcher:
-                              </p>
-                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
-                                ./install-linux.sh
+                                tar xzf WhisperWalkie-linux.tar.gz{"\n"}cd WhisperWalkie{"\n"}./install-linux.sh
                               </code>
                               <p className="text-white/40 text-xs mt-1">
-                                This creates a desktop shortcut so Whisper Walkie appears in your application menu.
+                                The installer automatically installs PortAudio and xdotool, creates a desktop shortcut, and makes the app ready to launch from your application menu.
                               </p>
                             </div>
                           </details>
