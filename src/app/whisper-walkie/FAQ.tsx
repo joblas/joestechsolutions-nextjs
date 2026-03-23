@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "What languages does it support?",
     answer:
-      "Whisper supports 99+ languages. It auto-detects the spoken language, or you can set a specific one.",
+      "Whisper supports 99 languages. It auto-detects the spoken language, or you can set a specific one. Accuracy varies — English is the strongest, with about 10 other languages performing well.",
   },
   {
     question: "Can I change the push-to-talk key?",
