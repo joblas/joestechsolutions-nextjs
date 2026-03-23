@@ -363,9 +363,17 @@ export default function WhisperWalkiePage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
-                            <p className="mt-2 ml-7 text-white/50 text-sm leading-relaxed">
-                              Open the .zip, drag to Applications. macOS may say &ldquo;can&rsquo;t be opened because the developer cannot be verified.&rdquo; Go to System Settings &rarr; Privacy &amp; Security, scroll down, and click &ldquo;Open Anyway.&rdquo; Then grant Accessibility permissions in Privacy &amp; Security &rarr; Accessibility.
-                            </p>
+                            <div className="mt-2 ml-7 space-y-2.5">
+                              <p className="text-white/50 text-sm leading-relaxed">
+                                Extract and install:
+                              </p>
+                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
+                                unzip WhisperWalkie-macos.zip{"\n"}cd WhisperWalkie{"\n"}./install-macos.sh
+                              </code>
+                              <p className="text-white/40 text-xs">
+                                This installs to /Applications, clears the Gatekeeper warning, and adds Whisper Walkie to Launchpad &amp; Spotlight. Then grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
+                              </p>
+                            </div>
                           </details>
                           {/* Linux */}
                           <details className="group/detail">
@@ -682,15 +690,15 @@ export default function WhisperWalkiePage() {
               </p>
               <p>
                 <span className="text-[#2dd4bf] font-medium">macOS:</span>{" "}
-                If you see &ldquo;developer cannot be verified,&rdquo; go to{" "}
-                <span className="text-white/80 font-medium">System Settings &rarr; Privacy &amp; Security</span>{" "}
-                and click <span className="text-white/80 font-medium">&ldquo;Open Anyway.&rdquo;</span>
+                Run{" "}
+                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">./install-macos.sh</code>{" "}
+                to install to /Applications and add to Launchpad.
               </p>
               <p>
                 <span className="text-[#2dd4bf] font-medium">Linux:</span>{" "}
-                Extract, then run{" "}
-                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">cd WhisperWalkie &amp;&amp; ./WhisperWalkie</code>.
-                See install instructions above for a desktop shortcut.
+                Run{" "}
+                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">./install-linux.sh</code>{" "}
+                to add to your app launcher.
               </p>
               <p className="text-white/40 text-xs pt-1">
                 These warnings are normal for independent software. Whisper Walkie is fully open source — inspect every line on GitHub.
