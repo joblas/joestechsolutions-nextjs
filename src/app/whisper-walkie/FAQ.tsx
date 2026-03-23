@@ -11,6 +11,11 @@ const faqs = [
       "Yes! SmartScreen warns about apps from new publishers — this is normal for any independent software. Whisper Walkie is fully open source, so you can read every line of code on GitHub. Just click \u2018More info\u2019 \u2192 \u2018Run anyway\u2019 to proceed.",
   },
   {
+    question: "macOS says the developer cannot be verified. What do I do?",
+    answer:
+      "This is Apple\u2019s Gatekeeper blocking unsigned apps — normal for independent software. Go to System Settings \u2192 Privacy & Security, scroll down, and click \u2018Open Anyway\u2019 next to the Whisper Walkie message. You only need to do this once.",
+  },
+  {
     question: "Is it really free?",
     answer:
       "Yes, completely free and open source under the MIT license. No trials, no premium tier, no subscriptions. Forever.",

@@ -397,7 +397,7 @@ export default function WhisperWalkiePage() {
                               </svg>
                             </summary>
                             <p className="mt-2 ml-7 text-white/50 text-sm leading-relaxed">
-                              Open the .zip, drag to Applications. On first launch, grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
+                              Open the .zip, drag to Applications. macOS may say &ldquo;can&rsquo;t be opened because the developer cannot be verified.&rdquo; Go to System Settings &rarr; Privacy &amp; Security, scroll down, and click &ldquo;Open Anyway.&rdquo; Then grant Accessibility permissions in Privacy &amp; Security &rarr; Accessibility.
                             </p>
                           </details>
                           {/* Linux */}
@@ -413,7 +413,13 @@ export default function WhisperWalkiePage() {
                             </summary>
                             <div className="mt-2 ml-7 space-y-1.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Extract the .tar.gz. For best results, install xdotool:
+                                Extract the .tar.gz and make it executable:
+                              </p>
+                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
+                                tar xzf WhisperWalkie-linux.tar.gz &amp;&amp; chmod +x WhisperWalkie
+                              </code>
+                              <p className="text-white/50 text-sm leading-relaxed mt-1.5">
+                                For best results, install xdotool:
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
                                 sudo apt install xdotool
@@ -680,13 +686,29 @@ export default function WhisperWalkiePage() {
               </a>
               . Whisper AI model bundled — no internet needed after download.
             </p>
-            <p className="text-center text-sm text-white/50 mt-3">
-              <span className="text-[#2dd4bf] font-medium">Windows users:</span>{" "}
-              If SmartScreen says &ldquo;Windows protected your PC,&rdquo; click{" "}
-              <span className="text-white/80 font-medium">&ldquo;More info&rdquo;</span> &rarr;{" "}
-              <span className="text-white/80 font-medium">&ldquo;Run anyway.&rdquo;</span>{" "}
-              The app is fully open source — inspect every line on GitHub.
-            </p>
+            <div className="text-center text-sm text-white/50 mt-4 max-w-2xl mx-auto space-y-2">
+              <p>
+                <span className="text-[#2dd4bf] font-medium">Windows:</span>{" "}
+                If SmartScreen says &ldquo;Windows protected your PC,&rdquo; click{" "}
+                <span className="text-white/80 font-medium">&ldquo;More info&rdquo;</span> &rarr;{" "}
+                <span className="text-white/80 font-medium">&ldquo;Run anyway.&rdquo;</span>
+              </p>
+              <p>
+                <span className="text-[#2dd4bf] font-medium">macOS:</span>{" "}
+                If you see &ldquo;developer cannot be verified,&rdquo; go to{" "}
+                <span className="text-white/80 font-medium">System Settings &rarr; Privacy &amp; Security</span>{" "}
+                and click <span className="text-white/80 font-medium">&ldquo;Open Anyway.&rdquo;</span>
+              </p>
+              <p>
+                <span className="text-[#2dd4bf] font-medium">Linux:</span>{" "}
+                After extracting, run{" "}
+                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">chmod +x WhisperWalkie</code>{" "}
+                to make it executable.
+              </p>
+              <p className="text-white/40 text-xs pt-1">
+                These warnings are normal for independent software. Whisper Walkie is fully open source — inspect every line on GitHub.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
