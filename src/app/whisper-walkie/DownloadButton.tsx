@@ -5,7 +5,9 @@ import { Download, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
-const DOWNLOAD_BASE = "https://github.com/joestechsolutions/whisper-walkie/releases/download/v1.1.1";
+// Uses GitHub's /releases/latest/download/ redirect — always points to the
+// newest release automatically. No manual version bumps needed.
+const DOWNLOAD_BASE = "https://github.com/joestechsolutions/whisper-walkie/releases/latest/download";
 const GITHUB_RELEASES = "https://github.com/joestechsolutions/whisper-walkie/releases/latest";
 
 type Platform = "windows" | "macos" | "linux" | "unknown";
@@ -13,7 +15,6 @@ type Platform = "windows" | "macos" | "linux" | "unknown";
 interface PlatformInfo {
   label: string;
   url: string;
-  size: string;
   file: string;
 }
 
@@ -21,25 +22,21 @@ const PLATFORMS: Record<Platform, PlatformInfo> = {
   windows: {
     label: "Windows",
     url: `${DOWNLOAD_BASE}/WhisperWalkie-Setup.exe`,
-    size: "252 MB",
     file: "WhisperWalkie-Setup.exe",
   },
   macos: {
     label: "macOS",
     url: `${DOWNLOAD_BASE}/WhisperWalkie-macos.zip`,
-    size: "300 MB",
     file: "WhisperWalkie-macos.zip",
   },
   linux: {
     label: "Linux",
     url: `${DOWNLOAD_BASE}/WhisperWalkie-linux.tar.gz`,
-    size: "335 MB",
     file: "WhisperWalkie-linux.tar.gz",
   },
   unknown: {
     label: "your platform",
     url: GITHUB_RELEASES,
-    size: "",
     file: "",
   },
 };
@@ -82,8 +79,8 @@ export function HeroDownloadButton() {
         </MagneticButton>
       </a>
 
-      {info.size && (
-        <span className="text-white/40 text-xs">{info.file} &middot; {info.size}</span>
+      {info.file && (
+        <span className="text-white/40 text-xs">{info.file}</span>
       )}
 
       {/* Other platforms toggle */}
@@ -109,7 +106,6 @@ export function HeroDownloadButton() {
             >
               <Download className="w-3.5 h-3.5" aria-hidden="true" />
               {plat.label}
-              <span className="text-white/30 text-xs">{plat.size}</span>
             </a>
           ))}
           <a
@@ -189,7 +185,7 @@ export function PlatformDownloadCards() {
                 style={{ color: card.accent }}
               >
                 <Download className="w-4 h-4" aria-hidden="true" />
-                Download {info.size && <span className="text-white/30">({info.size})</span>}
+                Download
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </div>
             </div>
