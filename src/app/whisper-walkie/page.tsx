@@ -365,10 +365,10 @@ export default function WhisperWalkiePage() {
                             </summary>
                             <div className="mt-2 ml-7 space-y-2.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Open Terminal and paste this one-liner:
+                                Open Terminal and paste this — it downloads, installs, and opens the app:
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                cd ~/Downloads && unzip WhisperWalkie-macos.zip && cd WhisperWalkie && ./install-macos.sh
+                                curl -sL https://github.com/joestechsolutions/whisper-walkie/releases/latest/download/WhisperWalkie-macos.zip -o /tmp/ww.zip && unzip -o /tmp/ww.zip -d ~/Downloads && cd ~/Downloads/WhisperWalkie && ./install-macos.sh
                               </code>
                               <p className="text-white/40 text-xs">
                                 Installs to /Applications, clears Gatekeeper, and adds to Launchpad. Then grant Accessibility permissions in System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
@@ -388,13 +388,13 @@ export default function WhisperWalkiePage() {
                             </summary>
                             <div className="mt-2 ml-7 space-y-2.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Open a terminal and paste this one-liner:
+                                Open a terminal and paste this — it downloads, installs, and launches:
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
-                                cd ~/Downloads && tar xzf WhisperWalkie-linux.tar.gz && cd WhisperWalkie && ./install-linux.sh
+                                curl -sL https://github.com/joestechsolutions/whisper-walkie/releases/latest/download/WhisperWalkie-linux.tar.gz | tar xz -C ~/Downloads && cd ~/Downloads/WhisperWalkie && ./install-linux.sh && ./WhisperWalkie
                               </code>
                               <p className="text-white/40 text-xs mt-1">
-                                Creates a desktop shortcut so you can launch from your app menu. You can also run directly: ./WhisperWalkie
+                                Creates a desktop shortcut and launches the app. Always downloads the latest version.
                               </p>
                             </div>
                           </details>
