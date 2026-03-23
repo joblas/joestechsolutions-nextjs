@@ -575,6 +575,63 @@ export default function WhisperWalkiePage() {
       {/* Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
+      {/* ── Why I Built This ─────────────────────────────────────── */}
+      <section className="relative py-20 sm:py-32">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+                The story
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+                Why I Built This
+              </h2>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.15}>
+            <div className="space-y-6 text-white/70 leading-relaxed text-lg">
+              <p>
+                I was using tools like{" "}
+                <a href="https://heywillow.io" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Willow</a>
+                {" "}and{" "}
+                <a href="https://openwhispr.com" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">OpenWhispr</a>
+                {" "}for voice transcription. They worked — but every word I spoke was going to the cloud,
+                where other companies could use it to train their models. That didn&apos;t sit right with me.
+              </p>
+              <p>
+                I was already running{" "}
+                <a href="https://ollama.com" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Ollama</a>
+                {" "}and{" "}
+                <a href="https://openwebui.com" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Open WebUI</a>
+                {" "}for local LLMs. I wanted the same thing for voice: fast, private, and completely offline.
+                So I built it.
+              </p>
+              <p>
+                Whisper Walkie was built entirely using the agentic AI workflow with{" "}
+                <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Claude Code</a>
+                {" "}from Anthropic — proving that one developer with the right tools can ship production-quality,
+                cross-platform software that stands up against anything built by a traditional engineering team.
+              </p>
+              <p>
+                I&apos;m giving it away for free because I built it for people like me who care about privacy.
+                And because I want to contribute something real to the open source community — working software
+                for Windows, macOS, and Linux that anyone can use, inspect, and build on.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.25}>
+            <p className="mt-8 text-center text-white/40 text-sm">
+              &mdash; Joe, <a href="/" className="text-[#0d9488] hover:underline">Joe&apos;s Tech Solutions</a>
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
       {/* ── Download ──────────────────────────────────────────────── */}
       <section className="relative py-20 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
