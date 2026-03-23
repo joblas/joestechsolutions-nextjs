@@ -21,19 +21,19 @@ const PLATFORMS: Record<Platform, PlatformInfo> = {
   windows: {
     label: "Windows",
     url: `${DOWNLOAD_BASE}/WhisperWalkie-Setup.exe`,
-    size: "224 MB",
+    size: "252 MB",
     file: "WhisperWalkie-Setup.exe",
   },
   macos: {
     label: "macOS",
     url: `${DOWNLOAD_BASE}/WhisperWalkie-macos.zip`,
-    size: "251 MB",
+    size: "300 MB",
     file: "WhisperWalkie-macos.zip",
   },
   linux: {
     label: "Linux",
     url: `${DOWNLOAD_BASE}/WhisperWalkie-linux.tar.gz`,
-    size: "313 MB",
+    size: "335 MB",
     file: "WhisperWalkie-linux.tar.gz",
   },
   unknown: {
