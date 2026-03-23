@@ -49,7 +49,7 @@ export function BlogContent() {
           {/* Stats block */}
           <StatBlock
             stats={[
-              { value: 24, suffix: "", label: "AI Agents", color: "from-[#0EA5E9]/10 to-transparent" },
+              { value: 24, suffix: "", label: "AI Agents", color: "from-[#0d9488]/10 to-transparent" },
               { value: 285, prefix: "$", label: "Typical SaaS Cost Avoided/mo", color: "from-red-500/10 to-transparent" },
               { value: 0, prefix: "$", label: "Marginal Cost", color: "from-emerald-500/10 to-transparent" },
               { value: 8, suffix: "h", label: "Saved Weekly", color: "from-[#8B5CF6]/10 to-transparent" },
@@ -79,7 +79,7 @@ export function BlogContent() {
           </FadeIn>
 
           <Callout variant="insight">
-            The whole thing runs on <a href="https://openclaw.ai" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
+            The whole thing runs on <a href="https://openclaw.ai" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
           </Callout>
 
           {/* Comparison Table */}
@@ -189,13 +189,13 @@ export function BlogContent() {
               </ul>
             </TimelineStep>
             <TimelineStep time="9:01 AM" index={1}>
-              I reply in Telegram: <span className="text-[#0EA5E9] font-mono text-xs">&quot;send that proposal to Nick&quot;</span> (a client from last week)
+              I reply in Telegram: <span className="text-[#0d9488] font-mono text-xs">&quot;send that proposal to Nick&quot;</span> (a client from last week)
             </TimelineStep>
             <TimelineStep time="9:02 AM" index={2}>
               Lurkr orchestrates → Muse (content agent) generates proposal from template → result comes back to my Telegram with the PDF preview, asking permission to send
             </TimelineStep>
             <TimelineStep time="9:02 AM" index={3}>
-              I reply in Telegram: <span className="text-[#0EA5E9] font-mono text-xs">&quot;send it&quot;</span>
+              I reply in Telegram: <span className="text-[#0d9488] font-mono text-xs">&quot;send it&quot;</span>
             </TimelineStep>
             <TimelineStep time="9:03 AM" index={4}>
               <strong>Done.</strong> Email sent, confirmation delivered back to my Telegram. Coffee&apos;s not even ready. ☕
@@ -260,7 +260,7 @@ export function BlogContent() {
             <p className="text-gray-200 text-lg leading-loose mb-6">
               If you&apos;re a developer who runs a freelance business or small agency, the ROI is insane. Not just avoiding $200-300/mo in SaaS, but the time — I save 6-8 hours a week on admin work. 
               If you&apos;re not technical? Wait a year. The tooling will get easier. But if you&apos;re curious, start with{" "}
-              <a href="https://openclaw.ai" className="text-[#0EA5E9] underline underline-offset-2 hover:text-[#06B6D4]">OpenClaw</a>{" "}
+              <a href="https://openclaw.ai" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">OpenClaw</a>{" "}
               and just get one automation working.
             </p>
           </FadeIn>

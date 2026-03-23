@@ -83,7 +83,7 @@ export function ToggleSwitch({
         onClick={handleToggle}
         className={`
           relative w-12 h-6 rounded-full transition-colors duration-300
-          ${isOn ? "bg-[#0EA5E9]" : "bg-white/10"}
+          ${isOn ? "bg-[#0d9488]" : "bg-white/10"}
         `}
         aria-label={label || "Toggle switch"}
       >
@@ -114,7 +114,7 @@ export function ChartBar({
   value,
   maxValue,
   label,
-  color = "#0EA5E9",
+  color = "#0d9488",
   delay = 0,
   className = "",
 }: ChartBarProps) {

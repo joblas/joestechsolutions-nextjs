@@ -29,7 +29,7 @@ export function PremiumBackground({
   orbs = [
     {
       size: 800,
-      color: "#0EA5E9",
+      color: "#0d9488",
       initialX: "30%",
       initialY: "20%",
       blur: 200,
@@ -39,7 +39,7 @@ export function PremiumBackground({
     },
     {
       size: 600,
-      color: "#06B6D4",
+      color: "#2dd4bf",
       initialX: "70%",
       initialY: "60%",
       blur: 180,
@@ -128,7 +128,7 @@ interface SectionDividerProps {
 }
 
 export function SectionDivider({
-  color = "#0EA5E9",
+  color = "#0d9488",
   className = "",
 }: SectionDividerProps) {
   return (
@@ -159,7 +159,7 @@ interface GlassCardProps {
 export function GlassCard({
   children,
   className = "",
-  glowColor = "#0EA5E9",
+  glowColor = "#0d9488",
 }: GlassCardProps) {
   return (
     <div className={`relative group ${className}`}>

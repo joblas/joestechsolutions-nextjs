@@ -18,7 +18,7 @@ interface HeroGlowProps {
  */
 export function HeroGlow({
   children,
-  glowColor = "#0EA5E9",
+  glowColor = "#0d9488",
   glowIntensity = 0.4,
   className = "",
 }: HeroGlowProps) {

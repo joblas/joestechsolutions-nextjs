@@ -40,10 +40,10 @@ export default function AnimationsDemo() {
 
   // Sample chart data
   const chartData = [
-    { value: 75, label: "Q1", color: "#0EA5E9" },
-    { value: 85, label: "Q2", color: "#06B6D4" },
-    { value: 95, label: "Q3", color: "#0EA5E9" },
-    { value: 100, label: "Q4", color: "#06B6D4" },
+    { value: 75, label: "Q1", color: "#0d9488" },
+    { value: 85, label: "Q2", color: "#2dd4bf" },
+    { value: 95, label: "Q3", color: "#0d9488" },
+    { value: 100, label: "Q4", color: "#2dd4bf" },
   ];
 
   return (
@@ -55,10 +55,10 @@ export default function AnimationsDemo() {
         {/* Hero Content */}
         <div className="relative px-8 py-32">
           <div className="max-w-4xl mx-auto text-center space-y-12">
-            <HeroGlow glowColor="#0EA5E9" glowIntensity={0.4}>
+            <HeroGlow glowColor="#0d9488" glowIntensity={0.4}>
               <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight">
                 <span className="block mb-4 text-white">Premium Animation</span>
-                <span className="block bg-gradient-to-r from-[#0EA5E9] to-[#06B6D4] bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] bg-clip-text text-transparent">
                   Components
                 </span>
               </h1>
@@ -83,8 +83,8 @@ export default function AnimationsDemo() {
             <FeatureCard>
               <GlassCard className="p-10 h-full">
                 <FeatureIcon>
-                  <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-8">
-                    <Target className="w-8 h-8 text-[#0EA5E9]" />
+                  <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-8">
+                    <Target className="w-8 h-8 text-[#0d9488]" />
                   </div>
                 </FeatureIcon>
                 <FeatureHeadline className="text-2xl font-bold mb-4 text-white">
@@ -99,8 +99,8 @@ export default function AnimationsDemo() {
             <FeatureCard delay={0.15}>
               <GlassCard className="p-10 h-full">
                 <FeatureIcon>
-                  <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center mb-8">
-                    <TrendingUp className="w-8 h-8 text-[#06B6D4]" />
+                  <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-8">
+                    <TrendingUp className="w-8 h-8 text-[#2dd4bf]" />
                   </div>
                 </FeatureIcon>
                 <FeatureHeadline className="text-2xl font-bold mb-4 text-white">
@@ -140,7 +140,7 @@ export default function AnimationsDemo() {
                   dataPoints={graphData}
                   width={600}
                   height={200}
-                  strokeColor="#0EA5E9"
+                  strokeColor="#0d9488"
                   strokeWidth={3}
                 />
               </div>
@@ -163,8 +163,8 @@ export default function AnimationsDemo() {
             <AICard>
               <GlassCard className="p-8 h-full">
                 <PulsingIcon>
-                  <div className="w-14 h-14 bg-[#0EA5E9]/10 rounded-xl flex items-center justify-center mb-6">
-                    <Zap className="w-7 h-7 text-[#0EA5E9]" />
+                  <div className="w-14 h-14 bg-[#0d9488]/10 rounded-xl flex items-center justify-center mb-6">
+                    <Zap className="w-7 h-7 text-[#0d9488]" />
                   </div>
                 </PulsingIcon>
                 <h3 className="text-xl font-bold mb-6 text-white">Toggle Switches</h3>

@@ -64,37 +64,37 @@ const features = [
     icon: Lock,
     title: "100% Local",
     description: "Audio is transcribed entirely on your device using faster-whisper. Nothing is sent to any server, ever.",
-    accent: "#0EA5E9",
+    accent: "#0d9488",
   },
   {
     icon: Globe,
     title: "Works Everywhere",
     description: "Browser, Slack, VS Code, Word, games — if your OS can focus it, Whisper Walkie can type into it.",
-    accent: "#06B6D4",
+    accent: "#2dd4bf",
   },
   {
     icon: Cpu,
     title: "GPU Accelerated",
     description: "CUDA support on Windows and Linux for near-instant transcription. Falls back to CPU automatically.",
-    accent: "#0EA5E9",
+    accent: "#0d9488",
   },
   {
     icon: Monitor,
     title: "Cross-Platform",
     description: "Native support for Windows, macOS, and Linux. One codebase, three platforms, zero compromises.",
-    accent: "#06B6D4",
+    accent: "#2dd4bf",
   },
   {
     icon: Mic,
     title: "Push-to-Talk",
     description: "Hold Right Alt (customizable), speak, release. It only records when you tell it to — total control.",
-    accent: "#0EA5E9",
+    accent: "#0d9488",
   },
   {
     icon: Shield,
     title: "Open Source",
     description: "MIT licensed. Read every line of code. Fork it, modify it, ship it. Free now and always.",
-    accent: "#06B6D4",
+    accent: "#2dd4bf",
   },
 ];
 
@@ -104,21 +104,21 @@ const platforms = [
     icon: Monitor,
     formats: [".exe installer", "Portable .zip"],
     note: "CUDA GPU acceleration supported",
-    accent: "#0EA5E9",
+    accent: "#0d9488",
   },
   {
     name: "macOS",
     icon: Monitor,
     formats: [".zip download"],
     note: "Requires Accessibility permissions",
-    accent: "#06B6D4",
+    accent: "#2dd4bf",
   },
   {
     name: "Linux",
     icon: Monitor,
     formats: [".tar.gz download"],
     note: "X11 fully supported; Wayland experimental",
-    accent: "#0EA5E9",
+    accent: "#0d9488",
   },
 ];
 
@@ -129,12 +129,12 @@ export default function WhisperWalkiePage() {
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
         {/* Gradient background */}
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
         {/* Animated blobs */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[120px] animate-glow" />
           <div
-            className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#06B6D4] rounded-full blur-[100px] animate-glow"
+            className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#2dd4bf] rounded-full blur-[100px] animate-glow"
             style={{ animationDelay: "2s" }}
           />
         </div>
@@ -154,8 +154,8 @@ export default function WhisperWalkiePage() {
           <div className="mx-auto max-w-4xl text-center space-y-10">
             {/* Badge */}
             <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0EA5E9] text-sm font-medium backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 bg-[#0d9488] rounded-full" aria-hidden="true" />
                 Open Source &middot; Privacy First
               </div>
             </FadeIn>
@@ -164,7 +164,7 @@ export default function WhisperWalkiePage() {
             <FadeIn delay={0.15}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Whisper Walkie</span>
-                <span className="block bg-gradient-to-r from-[#0EA5E9] via-[#06B6D4] to-[#7dd3fc] text-transparent bg-clip-text">
+                <span className="block bg-gradient-to-r from-[#0d9488] via-[#2dd4bf] to-[#7dd3fc] text-transparent bg-clip-text">
                   Your voice, your machine.
                 </span>
               </h1>
@@ -193,7 +193,7 @@ export default function WhisperWalkiePage() {
                   <MagneticButton strength={0.2}>
                     <Button
                       size="lg"
-                      className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0EA5E9]/20 transition-all"
+                      className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0d9488]/20 transition-all"
                     >
                       <Download className="mr-2 h-5 w-5" aria-hidden="true" />
                       Download Free
@@ -222,7 +222,7 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
                 Simple by design
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -236,7 +236,7 @@ export default function WhisperWalkiePage() {
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8 relative" staggerDelay={0.12}>
             {/* Connector line — visible on md+ */}
-            <div className="hidden md:block absolute top-[2.75rem] left-[calc(16.667%+1.5rem)] right-[calc(16.667%+1.5rem)] h-px bg-gradient-to-r from-[#0EA5E9]/40 via-[#06B6D4]/40 to-transparent pointer-events-none" />
+            <div className="hidden md:block absolute top-[2.75rem] left-[calc(16.667%+1.5rem)] right-[calc(16.667%+1.5rem)] h-px bg-gradient-to-r from-[#0d9488]/40 via-[#2dd4bf]/40 to-transparent pointer-events-none" />
 
             {[
               {
@@ -244,7 +244,7 @@ export default function WhisperWalkiePage() {
                 icon: Mic,
                 label: "Hold",
                 description: "Press and hold the push-to-talk hotkey (default: Right Alt). The app starts recording immediately.",
-                color: "#0EA5E9",
+                color: "#0d9488",
                 shadowColor: "rgba(14,165,233,0.25)",
               },
               {
@@ -252,7 +252,7 @@ export default function WhisperWalkiePage() {
                 icon: Zap,
                 label: "Speak",
                 description: "Talk naturally into your microphone for as long as you need. No time limit, no wake word.",
-                color: "#06B6D4",
+                color: "#2dd4bf",
                 shadowColor: "rgba(6,182,212,0.25)",
               },
               {
@@ -260,13 +260,13 @@ export default function WhisperWalkiePage() {
                 icon: Monitor,
                 label: "Done",
                 description: "Release the key. Whisper transcribes locally and types the text directly into your focused window.",
-                color: "#0EA5E9",
+                color: "#0d9488",
                 shadowColor: "rgba(14,165,233,0.25)",
               },
             ].map((item) => (
               <StaggerItem key={item.step}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-500 text-center h-full p-8 relative group">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 text-center h-full p-8 relative group">
                     {/* Step number circle */}
                     <div
                       className="w-16 h-16 rounded-full flex items-center justify-center font-space-grotesk text-xl font-bold mx-auto mb-6 border-2 transition-shadow duration-300 group-hover:shadow-[0_0_40px_var(--step-glow)]"
@@ -309,7 +309,7 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
                 First time setup
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -324,7 +324,7 @@ export default function WhisperWalkiePage() {
           {/* Vertical timeline */}
           <div className="max-w-3xl mx-auto relative">
             {/* Vertical connecting line */}
-            <div className="absolute left-7 top-8 bottom-8 w-px bg-gradient-to-b from-[#0EA5E9]/60 via-[#06B6D4]/30 to-transparent pointer-events-none hidden sm:block" aria-hidden="true" />
+            <div className="absolute left-7 top-8 bottom-8 w-px bg-gradient-to-b from-[#0d9488]/60 via-[#2dd4bf]/30 to-transparent pointer-events-none hidden sm:block" aria-hidden="true" />
 
             <StaggerContainer className="space-y-6" staggerDelay={0.12}>
 
@@ -333,16 +333,16 @@ export default function WhisperWalkiePage() {
                 <div className="flex gap-6 items-start">
                   {/* Circle + icon */}
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#0EA5E9]/15 border-2 border-[#0EA5E9]/50 flex items-center justify-center z-10 relative">
-                      <Download className="w-6 h-6 text-[#0EA5E9]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-full bg-[#0d9488]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
+                      <Download className="w-6 h-6 text-[#0d9488]" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0EA5E9] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0d9488] text-white text-[10px] font-bold flex items-center justify-center z-20">
                       1
                     </span>
                   </div>
                   {/* Content */}
                   <AnimatedCard>
-                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-500 flex-1">
+                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
                         <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Download</h3>
                         <p className="text-white/60 leading-relaxed text-sm">
@@ -358,23 +358,23 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#06B6D4]/15 border-2 border-[#06B6D4]/50 flex items-center justify-center z-10 relative">
-                      <Monitor className="w-6 h-6 text-[#06B6D4]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-full bg-[#2dd4bf]/15 border-2 border-[#2dd4bf]/50 flex items-center justify-center z-10 relative">
+                      <Monitor className="w-6 h-6 text-[#2dd4bf]" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#06B6D4] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#2dd4bf] text-white text-[10px] font-bold flex items-center justify-center z-20">
                       2
                     </span>
                   </div>
                   <AnimatedCard>
-                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/40 transition-all duration-500 flex-1">
+                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/40 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
                         <h3 className="text-lg font-bold text-white font-space-grotesk mb-3">Install &amp; Open</h3>
                         <div className="space-y-3">
                           {/* Windows */}
                           <details className="group/detail">
                             <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#0EA5E9]/15 flex items-center justify-center flex-shrink-0">
-                                <Monitor className="w-3 h-3 text-[#0EA5E9]" aria-hidden="true" />
+                              <span className="w-5 h-5 rounded bg-[#0d9488]/15 flex items-center justify-center flex-shrink-0">
+                                <Monitor className="w-3 h-3 text-[#0d9488]" aria-hidden="true" />
                               </span>
                               Windows
                               <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -388,8 +388,8 @@ export default function WhisperWalkiePage() {
                           {/* macOS */}
                           <details className="group/detail">
                             <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#06B6D4]/15 flex items-center justify-center flex-shrink-0">
-                                <Globe className="w-3 h-3 text-[#06B6D4]" aria-hidden="true" />
+                              <span className="w-5 h-5 rounded bg-[#2dd4bf]/15 flex items-center justify-center flex-shrink-0">
+                                <Globe className="w-3 h-3 text-[#2dd4bf]" aria-hidden="true" />
                               </span>
                               macOS
                               <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -403,8 +403,8 @@ export default function WhisperWalkiePage() {
                           {/* Linux */}
                           <details className="group/detail">
                             <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#0EA5E9]/15 flex items-center justify-center flex-shrink-0">
-                                <Terminal className="w-3 h-3 text-[#0EA5E9]" aria-hidden="true" />
+                              <span className="w-5 h-5 rounded bg-[#0d9488]/15 flex items-center justify-center flex-shrink-0">
+                                <Terminal className="w-3 h-3 text-[#0d9488]" aria-hidden="true" />
                               </span>
                               Linux
                               <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -415,7 +415,7 @@ export default function WhisperWalkiePage() {
                               <p className="text-white/50 text-sm leading-relaxed">
                                 Extract the .tar.gz. For best results, install xdotool:
                               </p>
-                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#06B6D4] px-3 py-2 rounded-lg font-mono">
+                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
                                 sudo apt install xdotool
                               </code>
                             </div>
@@ -431,15 +431,15 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#0EA5E9]/15 border-2 border-[#0EA5E9]/50 flex items-center justify-center z-10 relative">
-                      <Settings className="w-6 h-6 text-[#0EA5E9]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-full bg-[#0d9488]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
+                      <Settings className="w-6 h-6 text-[#0d9488]" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0EA5E9] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0d9488] text-white text-[10px] font-bold flex items-center justify-center z-20">
                       3
                     </span>
                   </div>
                   <AnimatedCard>
-                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-500 flex-1">
+                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
                         <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Choose Your Mic</h3>
                         <p className="text-white/60 leading-relaxed text-sm">
@@ -455,19 +455,19 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#06B6D4]/15 border-2 border-[#06B6D4]/50 flex items-center justify-center z-10 relative">
-                      <Play className="w-6 h-6 text-[#06B6D4]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-full bg-[#2dd4bf]/15 border-2 border-[#2dd4bf]/50 flex items-center justify-center z-10 relative">
+                      <Play className="w-6 h-6 text-[#2dd4bf]" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#06B6D4] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#2dd4bf] text-white text-[10px] font-bold flex items-center justify-center z-20">
                       4
                     </span>
                   </div>
                   <AnimatedCard>
-                    <Card className="bg-gradient-to-br from-[#0EA5E9]/8 via-[#1c1c26] to-[#06B6D4]/8 border-[#06B6D4]/25 hover:border-[#06B6D4]/50 transition-all duration-500 flex-1">
+                    <Card className="bg-gradient-to-br from-[#0d9488]/8 via-[#1c1c26] to-[#2dd4bf]/8 border-[#2dd4bf]/25 hover:border-[#2dd4bf]/50 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
                         <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Try It!</h3>
                         <p className="text-white/60 leading-relaxed text-sm">
-                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-[#0EA5E9]/15 border border-[#0EA5E9]/30 rounded text-[#0EA5E9] font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
+                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-[#0d9488]/15 border border-[#0d9488]/30 rounded text-[#0d9488] font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
                         </p>
                       </CardContent>
                     </Card>
@@ -488,7 +488,7 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
                 Why switch
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -528,17 +528,17 @@ export default function WhisperWalkiePage() {
 
             {/* Whisper Walkie — positive */}
             <FadeIn delay={0.2} direction="left">
-              <Card className="bg-gradient-to-br from-[#0EA5E9]/8 via-[#1c1c26] to-[#06B6D4]/8 border-[#0EA5E9]/25 hover:border-[#0EA5E9]/50 transition-all duration-500 h-full">
+              <Card className="bg-gradient-to-br from-[#0d9488]/8 via-[#1c1c26] to-[#2dd4bf]/8 border-[#0d9488]/25 hover:border-[#0d9488]/50 transition-all duration-500 h-full">
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#0EA5E9]">Whisper Walkie</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">Whisper Walkie</span>
                     <h3 className="text-xl font-bold text-white font-space-grotesk mt-1">What you actually get</h3>
                   </div>
                   <ul className="space-y-4" role="list">
                     {whisperwalkieBenefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-3">
                         <CheckCircle
-                          className="mt-0.5 w-5 h-5 flex-shrink-0 text-[#06B6D4]"
+                          className="mt-0.5 w-5 h-5 flex-shrink-0 text-[#2dd4bf]"
                           aria-hidden="true"
                         />
                         <span className="text-white/80 leading-relaxed">{benefit}</span>
@@ -560,7 +560,7 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
                 What&apos;s inside
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -576,7 +576,7 @@ export default function WhisperWalkiePage() {
             {features.map((feature) => (
               <StaggerItem key={feature.title}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/40 transition-all duration-500 h-full group">
+                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 h-full group">
                     <CardContent className="p-6 sm:p-8 space-y-4">
                       <div
                         className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
@@ -607,7 +607,7 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
                 Get started
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -631,7 +631,7 @@ export default function WhisperWalkiePage() {
                     aria-label={`Download Whisper Walkie for ${platform.name}`}
                   >
                     <Card
-                      className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 h-full group cursor-pointer"
+                      className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full group cursor-pointer"
                     >
                       <CardContent className="p-8 text-center space-y-5">
                         <div
@@ -674,7 +674,7 @@ export default function WhisperWalkiePage() {
                 href={GITHUB_RELEASES}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0EA5E9] hover:underline"
+                className="text-[#0d9488] hover:underline"
               >
                 GitHub Releases
               </a>
@@ -691,7 +691,7 @@ export default function WhisperWalkiePage() {
       <section className="relative py-20 sm:py-32 bg-[#1c1c26]/20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-6">
+            <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-6">
               Human + AI collaboration
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-space-grotesk">
@@ -712,7 +712,7 @@ export default function WhisperWalkiePage() {
               href={GITHUB_REPO}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#0EA5E9] hover:text-[#38bdf8] font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-[#0d9488] hover:text-[#38bdf8] font-medium transition-colors"
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
               Read the source on GitHub
@@ -732,12 +732,12 @@ export default function WhisperWalkiePage() {
 
       {/* ── Final CTA ─────────────────────────────────────────────── */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
         {/* Blobs */}
         <div className="absolute inset-0 opacity-25 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0EA5E9] rounded-full blur-[130px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0d9488] rounded-full blur-[130px] animate-glow" />
           <div
-            className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#06B6D4] rounded-full blur-[110px] animate-glow"
+            className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#2dd4bf] rounded-full blur-[110px] animate-glow"
             style={{ animationDelay: "1.5s" }}
           />
         </div>
@@ -759,7 +759,7 @@ export default function WhisperWalkiePage() {
                 <MagneticButton strength={0.25}>
                   <Button
                     size="lg"
-                    className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30 transition-all"
+                    className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30 transition-all"
                   >
                     <Download className="mr-2 h-5 w-5" aria-hidden="true" />
                     Download Free

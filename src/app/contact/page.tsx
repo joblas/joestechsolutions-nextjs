@@ -24,14 +24,14 @@ export default function Contact() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Let&apos;s Talk</span>
-                <span className="block text-[#0EA5E9]">
+                <span className="block text-[#0d9488]">
                   Real Talk.
                 </span>
               </h1>
@@ -52,9 +52,9 @@ export default function Contact() {
             {/* Email */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 group h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Image src="/icons/mail-dynamic/premium.png" alt="Email" width={32} height={32} className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Email</CardTitle>
@@ -65,7 +65,7 @@ export default function Contact() {
                   <CardContent>
                     <a
                       href="mailto:joe@joestechsolutions.com"
-                      className="text-[#0EA5E9] hover:text-[#0284c7] text-lg font-medium transition-colors"
+                      className="text-[#0d9488] hover:text-[#0f766e] text-lg font-medium transition-colors"
                     >
                       joe@joestechsolutions.com
                     </a>
@@ -77,9 +77,9 @@ export default function Contact() {
             {/* Calendar */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 group h-full">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Image src="/icons/calender-dynamic/premium.png" alt="Calendar" width={32} height={32} className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Schedule a Call</CardTitle>
@@ -91,7 +91,7 @@ export default function Contact() {
                     <p className="text-white/70 mb-4">
                       Pick a time that works for you and let's chat about your project.
                     </p>
-                    <Button asChild className="bg-[#06B6D4] hover:bg-[#0891b2] text-white rounded-full">
+                    <Button asChild className="bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full">
                       <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
                         <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                         Book a Call
@@ -109,7 +109,7 @@ export default function Contact() {
               <Card className="bg-[#1c1c26] border-white/10">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center">
                       <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Message" width={32} height={32} className="object-contain" />
                     </div>
                     <div>
@@ -125,7 +125,7 @@ export default function Contact() {
                     For now, please email us directly at{" "}
                     <a
                       href="mailto:joe@joestechsolutions.com"
-                      className="text-[#0EA5E9] hover:text-[#0284c7] font-medium transition-colors"
+                      className="text-[#0d9488] hover:text-[#0f766e] font-medium transition-colors"
                     >
                       joe@joestechsolutions.com
                     </a>
@@ -133,19 +133,19 @@ export default function Contact() {
                   </p>
                   <ul className="space-y-4 text-white/80">
                     <li className="flex items-start">
-                      <span className="text-[#0EA5E9] mr-3 text-xl">•</span>
+                      <span className="text-[#0d9488] mr-3 text-xl">•</span>
                       <span>Brief project description</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#0EA5E9] mr-3 text-xl">•</span>
+                      <span className="text-[#0d9488] mr-3 text-xl">•</span>
                       <span>Timeline and budget (if known)</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#0EA5E9] mr-3 text-xl">•</span>
+                      <span className="text-[#0d9488] mr-3 text-xl">•</span>
                       <span>Any specific questions or requirements</span>
                     </li>
                   </ul>
-                  <Button asChild className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white mt-6 rounded-full shadow-lg shadow-[#0EA5E9]/20">
+                  <Button asChild className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white mt-6 rounded-full shadow-lg shadow-[#0d9488]/20">
                     <a href="mailto:joe@joestechsolutions.com?subject=Project%20Inquiry&body=Hi%20Joe%2C%0A%0AI%27m%20interested%20in%20discussing%20a%20project.%0A%0AProject%20description%3A%0A%0ATimeline%2Fbudget%3A%0A%0AQuestions%3A">
                       <Image src="/icons/mail-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                       Send Email
@@ -174,10 +174,10 @@ export default function Contact() {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
             {[
-              { title: "Joe's AI Server", desc: "Private AI on your hardware", price: "from $199", color: "#0EA5E9" },
-              { title: "Agent Systems", desc: "24/7 automated operations", price: "Contact", color: "#06B6D4" },
+              { title: "Joe's AI Server", desc: "Private AI on your hardware", price: "from $199", color: "#0d9488" },
+              { title: "Agent Systems", desc: "24/7 automated operations", price: "Contact", color: "#2dd4bf" },
               { title: "Custom AI Teams", desc: "Multi-agent architectures", price: "Contact", color: "#8B5CF6" },
-              { title: "Custom Software", desc: "Apps, web, APIs", price: "Contact", color: "#0EA5E9" }
+              { title: "Custom Software", desc: "Apps, web, APIs", price: "Contact", color: "#0d9488" }
             ].map((service, index) => (
               <StaggerItem key={index}>
                 <AnimatedCard>

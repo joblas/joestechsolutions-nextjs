@@ -114,7 +114,7 @@ function SuccessContent() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <Spinner className="h-12 w-12 text-[#0EA5E9] animate-spin mx-auto mb-4" />
+          <Spinner className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
           <p className="text-white/70">Verifying your payment...</p>
         </div>
       </div>
@@ -140,7 +140,7 @@ function SuccessContent() {
               <CardContent className="text-center">
                 <Button
                   onClick={() => (window.location.href = "/private-ai-setup")}
-                  className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full"
+                  className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full"
                 >
                   Return to Private AI Setup
                 </Button>
@@ -185,9 +185,9 @@ function SuccessContent() {
                   {/* Setup Type Indicator */}
                   <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
                     {isVPS ? (
-                      <Cloud weight="duotone" className="h-6 w-6 text-[#06B6D4]" />
+                      <Cloud weight="duotone" className="h-6 w-6 text-[#2dd4bf]" />
                     ) : (
-                      <Desktop weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
+                      <Desktop weight="duotone" className="h-6 w-6 text-[#0d9488]" />
                     )}
                     <span className="text-white font-medium">
                       {isVPS ? "VPS Hosting Setup" : "Local Install"} — Paid ✓
@@ -212,7 +212,7 @@ function SuccessContent() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                       placeholder="John Smith"
                     />
                   </div>
@@ -228,7 +228,7 @@ function SuccessContent() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -244,7 +244,7 @@ function SuccessContent() {
                         id="domain"
                         value={formData.domainPreference}
                         onChange={(e) => setFormData({ ...formData, domainPreference: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                         placeholder="myai.yourdomain.com or leave blank for suggestions"
                       />
                       <p className="text-white/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
@@ -267,7 +267,7 @@ function SuccessContent() {
                             key={option.value}
                             className={`flex flex-col items-center p-3 rounded-xl border cursor-pointer transition-all text-center ${
                               formData.modelSizePreference === option.value
-                                ? "border-[#06B6D4] bg-[#06B6D4]/10"
+                                ? "border-[#2dd4bf] bg-[#2dd4bf]/10"
                                 : "border-white/10 hover:border-white/20"
                             }`}
                           >
@@ -303,7 +303,7 @@ function SuccessContent() {
                         value={formData.specs}
                         onChange={(e) => setFormData({ ...formData, specs: e.target.value })}
                         rows={2}
-                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
                         placeholder="e.g., 16GB RAM, Intel i7, no dedicated GPU"
                       />
                     </div>
@@ -320,7 +320,7 @@ function SuccessContent() {
                       value={formData.useCases}
                       onChange={(e) => setFormData({ ...formData, useCases: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
                       placeholder="e.g., Writing assistance, coding help, analyzing documents, brainstorming ideas..."
                     />
                   </div>
@@ -331,8 +331,8 @@ function SuccessContent() {
                     disabled={isSubmitting}
                     className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
                       isVPS
-                        ? "bg-[#06B6D4] hover:bg-[#0891b2] shadow-[#06B6D4]/20"
-                        : "bg-[#0EA5E9] hover:bg-[#0284c7] shadow-[#0EA5E9]/20"
+                        ? "bg-[#2dd4bf] hover:bg-[#14b8a6] shadow-[#2dd4bf]/20"
+                        : "bg-[#0d9488] hover:bg-[#0f766e] shadow-[#0d9488]/20"
                     }`}
                   >
                     {isSubmitting ? (
@@ -370,9 +370,9 @@ function SuccessContent() {
         )}
 
         <FadeIn>
-          <Card className="bg-[#1c1c26] border-[#0EA5E9]/50">
+          <Card className="bg-[#1c1c26] border-[#0d9488]/50">
             <CardHeader className="text-center">
-              <CheckCircle weight="duotone" className="h-16 w-16 text-[#0EA5E9] mx-auto mb-4" />
+              <CheckCircle weight="duotone" className="h-16 w-16 text-[#0d9488] mx-auto mb-4" />
               <h1 className="text-3xl font-bold text-white font-space-grotesk mb-2">
                 You're All Set!
               </h1>
@@ -384,9 +384,9 @@ function SuccessContent() {
               {/* Setup Type Confirmation */}
               <div className="flex items-center justify-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
                 {isVPS ? (
-                  <Cloud weight="duotone" className="h-6 w-6 text-[#06B6D4]" />
+                  <Cloud weight="duotone" className="h-6 w-6 text-[#2dd4bf]" />
                 ) : (
-                  <Desktop weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
+                  <Desktop weight="duotone" className="h-6 w-6 text-[#0d9488]" />
                 )}
                 <span className="text-white font-medium">
                   {isVPS ? "VPS Hosting Setup" : "Local Install"} — Ready to schedule
@@ -395,7 +395,7 @@ function SuccessContent() {
 
               {/* Calendly Embed Placeholder */}
               <div className="bg-[#0d0d12] rounded-xl p-8 text-center border border-white/10">
-                <CalendarCheck weight="duotone" className="h-12 w-12 text-[#0EA5E9] mx-auto mb-4" />
+                <CalendarCheck weight="duotone" className="h-12 w-12 text-[#0d9488] mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Schedule Your Setup Call</h3>
                 <p className="text-white/60 mb-6">
                   Pick a 90-minute slot that works for you. I'll walk you through everything.
@@ -406,7 +406,7 @@ function SuccessContent() {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full px-8">
+                  <Button className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full px-8">
                     Open Scheduler
                   </Button>
                 </a>
@@ -417,26 +417,26 @@ function SuccessContent() {
                 <h4 className="text-white font-medium mb-3">What happens next:</h4>
                 <ol className="space-y-2 text-white/70 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0EA5E9] font-bold">1.</span>
+                    <span className="text-[#0d9488] font-bold">1.</span>
                     <span>Book a time slot that works for you</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0EA5E9] font-bold">2.</span>
+                    <span className="text-[#0d9488] font-bold">2.</span>
                     <span>I'll review your setup details before our call</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0EA5E9] font-bold">3.</span>
+                    <span className="text-[#0d9488] font-bold">3.</span>
                     <span>We'll do the installation together via screen share</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0EA5E9] font-bold">4.</span>
+                    <span className="text-[#0d9488] font-bold">4.</span>
                     <span>You'll have your private AI running by the end of the call!</span>
                   </li>
                 </ol>
               </div>
 
               <div className="text-center text-white/50 text-sm">
-                <p>Questions? Email me at <a href="mailto:joe@joestechsolutions.com" className="text-[#0EA5E9] hover:underline">joe@joestechsolutions.com</a></p>
+                <p>Questions? Email me at <a href="mailto:joe@joestechsolutions.com" className="text-[#0d9488] hover:underline">joe@joestechsolutions.com</a></p>
               </div>
             </CardContent>
           </Card>
@@ -452,7 +452,7 @@ export default function SuccessPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <Spinner className="h-12 w-12 text-[#0EA5E9] animate-spin mx-auto mb-4" />
+            <Spinner className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
             <p className="text-white/70">Loading...</p>
           </div>
         </div>

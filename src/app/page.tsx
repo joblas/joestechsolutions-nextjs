@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Mic, Download } from "lucide-react";
-import { CheckCircle, Robot } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "lucide-react";
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
@@ -14,19 +14,17 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[120px] animate-glow" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#06B6D4] rounded-full blur-[100px] animate-glow" style={{ animationDelay: '2s' }} />
-        </div>
+        {/* Transparent -- particles come from global ThreeBackground behind this */}
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center space-y-10">
             {/* Badge */}
             <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0EA5E9] text-sm font-medium backdrop-blur-sm">
-                <Sparkles className="w-4 h-4" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
+                <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]" />
+                </span>
                 <span>Private AI for SMBs — built and battle-tested in-house</span>
               </div>
             </FadeIn>
@@ -35,7 +33,7 @@ export default function Home() {
             <FadeIn delay={0.2}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
                 <span className="block text-white mb-3">Your Business Runs</span>
-                <span className="block text-[#0EA5E9]">
+                <span className="block text-[#0d9488]">
                   While You Sleep.
                 </span>
               </h1>
@@ -54,7 +52,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link href="/private-ai-setup">
                   <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0EA5E9]/20 transition-all">
+                    <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0d9488]/20 transition-all">
                       Get Private AI Setup
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Button>
@@ -89,16 +87,16 @@ export default function Home() {
           <FadeIn delay={0.1}>
             <Link href="/private-ai-setup" className="block mb-8">
               <AnimatedCard>
-                <Card className="relative bg-gradient-to-br from-[#0EA5E9]/10 via-[#1c1c26] to-[#06B6D4]/10 border-[#0EA5E9]/30 hover:border-[#0EA5E9]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
+                <Card className="relative bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
                   {/* Most Popular badge */}
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0EA5E9]/20 rounded-full text-[#0EA5E9] text-sm font-medium z-10">
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-medium z-10">
                     Most Popular
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6 p-6">
                     <div className="space-y-4">
-                      <div className="w-14 h-14 bg-[#0EA5E9]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0EA5E9]/30 transition-all duration-300">
-                        <Robot weight="duotone" className="h-8 w-8 text-[#0EA5E9]" />
+                      <div className="w-14 h-14 bg-[#0d9488]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0d9488]/30 transition-all duration-300">
+                        <Image src="/icons/computer-dynamic/premium.png" alt="Private AI Setup" width={36} height={36} sizes="36px" className="object-contain" />
                       </div>
                       <div>
                         <CardTitle className="text-white text-2xl font-space-grotesk mb-2">Private AI Setup</CardTitle>
@@ -109,7 +107,7 @@ export default function Home() {
                       <p className="text-white/60 leading-relaxed">
                         Run ChatGPT-level AI on your own computer or private server. Keep sensitive data in-house while getting the same powerful capabilities. Starting at $199.
                       </p>
-                      <div className="flex items-center gap-2 text-[#0EA5E9] font-medium group/link">
+                      <div className="flex items-center gap-2 text-[#0d9488] font-medium group/link">
                         Get Started
                         <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                       </div>
@@ -117,19 +115,19 @@ export default function Home() {
                     <div className="hidden md:flex items-center justify-center">
                       <div className="grid grid-cols-2 gap-3 text-sm">
                         <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#0EA5E9] font-semibold">100%</span>
+                          <span className="text-[#0d9488] font-semibold">100%</span>
                           <span className="text-white/60 block">Private</span>
                         </div>
                         <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#06B6D4] font-semibold">$0/mo</span>
+                          <span className="text-[#2dd4bf] font-semibold">$0/mo</span>
                           <span className="text-white/60 block">After Setup</span>
                         </div>
                         <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#0EA5E9] font-semibold">75 min</span>
+                          <span className="text-[#0d9488] font-semibold">75 min</span>
                           <span className="text-white/60 block">Live Session</span>
                         </div>
                         <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#06B6D4] font-semibold">GPT-4</span>
+                          <span className="text-[#2dd4bf] font-semibold">GPT-4</span>
                           <span className="text-white/60 block">Level AI</span>
                         </div>
                       </div>
@@ -144,10 +142,10 @@ export default function Home() {
             {/* Joe's AI Server */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 group h-full backdrop-blur-sm">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0EA5E9]/20 transition-all duration-300">
-                      <Robot weight="duotone" className="h-8 w-8 text-[#0EA5E9]" aria-hidden="true" />
+                    <div className="w-14 h-14 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0d9488]/20 transition-all duration-300">
+                      <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Joe's AI Server" width={36} height={36} sizes="36px" className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-xl font-space-grotesk">Joe&apos;s AI Server</CardTitle>
                     <CardDescription className="text-white/60 text-base">
@@ -158,7 +156,7 @@ export default function Home() {
                     <p className="text-white/70 mb-6 leading-relaxed">
                       Your own ChatGPT-level AI. No subscriptions, no data leaks, no Big Tech. Local setup or cloud server — both 100% yours.
                     </p>
-                    <Link href="/private-ai-setup" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
+                    <Link href="/private-ai-setup" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
                       Get started
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
@@ -170,10 +168,10 @@ export default function Home() {
             {/* OpenClaw Agent Systems */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#06B6D4]/50 transition-all duration-500 group h-full backdrop-blur-sm">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#06B6D4]/20 transition-all duration-300">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={32} height={32} className="object-contain" />
+                    <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
+                      <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-xl font-space-grotesk">OpenClaw Agent Systems</CardTitle>
                     <CardDescription className="text-white/60 text-base">
@@ -184,7 +182,7 @@ export default function Home() {
                     <p className="text-white/70 mb-6 leading-relaxed">
                       Not one AI. A whole team of them. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
                     </p>
-                    <Link href="/services#agent-systems" className="text-[#06B6D4] text-sm font-medium hover:text-[#0891b2] inline-flex items-center group/link transition-colors">
+                    <Link href="/services#agent-systems" className="text-[#2dd4bf] text-sm font-medium hover:text-[#14b8a6] inline-flex items-center group/link transition-colors">
                       Learn more
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
@@ -196,10 +194,10 @@ export default function Home() {
             {/* Custom AI Teams */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-500 group h-full backdrop-blur-sm">
+                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0EA5E9]/20 transition-all duration-300">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={32} height={32} className="object-contain" />
+                    <div className="w-14 h-14 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0d9488]/20 transition-all duration-300">
+                      <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-xl font-space-grotesk">Custom AI Teams</CardTitle>
                     <CardDescription className="text-white/60 text-base">
@@ -210,7 +208,7 @@ export default function Home() {
                     <p className="text-white/70 mb-6 leading-relaxed">
                       Got a complex workflow? We design multi-agent AI systems from scratch, tailored to your exact business logic and stack.
                     </p>
-                    <Link href="/services#custom-ai" className="text-[#0EA5E9] text-sm font-medium hover:text-[#0284c7] inline-flex items-center group/link transition-colors">
+                    <Link href="/services#custom-ai" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
                       Learn more
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
@@ -224,24 +222,23 @@ export default function Home() {
           <FadeIn delay={0.3}>
             <Link href="/whisper-walkie" className="block mt-8">
               <AnimatedCard>
-                <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#06B6D4]/40 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
+                <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#2dd4bf]/40 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
                   <div className="flex flex-col sm:flex-row items-center gap-6 p-6">
-                    <div className="w-14 h-14 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#06B6D4]/20 transition-all duration-300">
-                      <Mic className="h-7 w-7 text-[#06B6D4]" />
+                    <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
+                      <Image src="/icons/chat-text-dynamic/premium.png" alt="Whisper Walkie" width={36} height={36} sizes="36px" className="object-contain" />
                     </div>
                     <div className="flex-1 text-center sm:text-left">
                       <div className="flex items-center gap-3 justify-center sm:justify-start mb-1">
                         <h3 className="text-white text-lg font-semibold font-space-grotesk">Whisper Walkie</h3>
-                        <span className="px-2.5 py-0.5 bg-[#06B6D4]/15 rounded-full text-[#06B6D4] text-xs font-medium">Free & Open Source</span>
+                        <span className="px-2.5 py-0.5 bg-[#2dd4bf]/15 rounded-full text-[#2dd4bf] text-xs font-medium">Free & Open Source</span>
                       </div>
                       <p className="text-white/60 text-sm">
                         Push-to-talk voice typing that works in any app. 100% local — your voice never leaves your machine.
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 text-[#06B6D4] text-sm font-medium shrink-0 group-hover:translate-x-1 transition-transform">
-                      <Download className="h-4 w-4" />
+                    <div className="flex items-center gap-2 text-[#2dd4bf] text-sm font-medium shrink-0 group-hover:translate-x-1 transition-transform">
                       Download Free
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </div>
                 </Card>
@@ -251,12 +248,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Case Study - The Skate Workshop */}
+      {/* Featured Case Study - RenFaire Directory */}
       <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <div className="inline-block px-4 py-1 bg-[#0EA5E9]/10 border border-[#0EA5E9]/20 rounded-full text-[#0EA5E9] text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-1 bg-[#0d9488]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold mb-6">
                 Featured Project
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -271,43 +268,43 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeIn delay={0.2}>
               <div className="space-y-8">
-                <div className="inline-block px-4 py-1.5 bg-[#06B6D4]/10 border border-[#06B6D4]/20 rounded-full text-[#06B6D4] text-sm font-semibold">
-                  Mobile App • Subscription Platform
+                <div className="inline-block px-4 py-1.5 bg-[#0d9488]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold">
+                  Content Platform • SEO • Directory
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-space-grotesk">
-                  The Skate Workshop
+                  RenFaire Directory
                 </h3>
 
                 <p className="text-lg text-white/70 leading-relaxed font-light">
-                  Olympic-level skateboarding coaching platform with video feedback,
-                  400+ trick database, and multiplayer game modes. Built with Next.js,
-                  React Native for iOS/Android, with subscription billing and real-time features.
+                  The modern guide to Renaissance faires across America. A revenue-generating
+                  directory with 200+ event listings, rich structured data, affiliate monetization,
+                  and top search engine rankings — live and serving thousands of visitors.
                 </p>
 
                 <div className="space-y-4">
                   {[
-                    "Cross-platform mobile app (iOS & Android)",
-                    "Video feedback and progress tracking system",
-                    "400+ trick database with detailed tutorials",
-                    "Subscription billing with Stripe integration",
-                    "Multiplayer SKATE game competition mode"
+                    "200+ Renaissance faire listings nationwide",
+                    "SEO-first architecture with structured data",
+                    "Affiliate revenue and monetization built in",
+                    "Top Google rankings for target keywords",
+                    "Interactive maps and location-based search"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-start group">
-                      <CheckCircle weight="duotone" className="h-6 w-6 text-[#0EA5E9] mr-3 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                      <CheckCircle weight="duotone" className="h-6 w-6 text-[#0d9488] mr-3 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" aria-hidden="true" />
                       <span className="text-white/80 text-base">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Link href="/portfolio/skate-workshop">
-                    <Button className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full group shadow-lg shadow-[#0EA5E9]/20">
+                  <Link href="/portfolio/renfaire-directory">
+                    <Button className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0d9488]/20">
                       View Case Study
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Button>
                   </Link>
-                  <Link href="https://www.theskateworkshop.app/" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://www.renfaireguide.com" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/5 hover:border-white/30">
                       Visit Live Site
                     </Button>
@@ -318,18 +315,58 @@ export default function Home() {
 
             <FadeIn delay={0.4}>
               <div className="relative group">
-                <div className="absolute inset-0 bg-linear-to-r from-[#0EA5E9] to-[#06B6D4] rounded-3xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity animate-glow" />
-                <div className="relative aspect-square bg-linear-to-br from-[#1c1c26] to-[#0d0d12] rounded-3xl border border-white/10 overflow-hidden hover:border-[#0EA5E9]/30 transition-all duration-500">
+                <div className="relative aspect-[4/3] bg-[#1c1c26] rounded-3xl border border-white/10 overflow-hidden hover:border-[#0d9488]/30 transition-all duration-500">
                   <Image
-                    src="/images/skate-workshop-hero.png"
-                    alt="The Skate Workshop App"
+                    src="/images/renfaire-hero.jpg"
+                    alt="RenFaire Directory — Renaissance faire listings"
                     fill
-                    className="object-cover p-8"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
             </FadeIn>
           </div>
+
+          {/* Secondary: The Skate Workshop */}
+          <FadeIn delay={0.3}>
+            <div className="mt-16 pt-16 border-t border-white/10">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="order-2 lg:order-1">
+                  <div className="relative aspect-square bg-[#1c1c26] rounded-3xl border border-white/10 overflow-hidden hover:border-[#2dd4bf]/30 transition-all duration-500">
+                    <Image
+                      src="/images/skate-workshop-hero.png"
+                      alt="The Skate Workshop App"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover p-8"
+                    />
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 space-y-6">
+                  <div className="inline-block px-4 py-1.5 bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 rounded-full text-[#2dd4bf] text-sm font-semibold">
+                    Mobile App • iOS & Android • Beta
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">
+                    The Skate Workshop
+                  </h3>
+                  <p className="text-lg text-white/70 leading-relaxed font-light">
+                    Cross-platform skateboarding coaching app with video feedback,
+                    400+ trick database, and multiplayer game modes. Built with React Native
+                    for iOS and Android with subscription billing.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/portfolio/skate-workshop">
+                      <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 group">
+                        View Case Study
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -370,6 +407,10 @@ export default function Home() {
                   <img
                     src={tech.logo}
                     alt={`${tech.name} logo`}
+                    loading="lazy"
+                    decoding="async"
+                    width={48}
+                    height={48}
                     className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
                   />
                 </a>
@@ -400,6 +441,10 @@ export default function Home() {
                   <img
                     src={tech.logo}
                     alt={`${tech.name} logo`}
+                    loading="lazy"
+                    decoding="async"
+                    width={48}
+                    height={48}
                     className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
                   />
                 </a>
@@ -411,7 +456,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-[#0d0d12]" />
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
@@ -423,7 +468,7 @@ export default function Home() {
             </p>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0EA5E9]/30 transition-all">
+                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30 transition-all">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>

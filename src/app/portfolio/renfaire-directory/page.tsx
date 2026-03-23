@@ -94,8 +94,8 @@ export default function RenFaireDirectoryCaseStudy() {
 
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#06B6D4]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-[#06B6D4]" />
+                <div className="w-12 h-12 bg-[#2dd4bf]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-[#2dd4bf]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">SEO</CardTitle>
               </CardHeader>

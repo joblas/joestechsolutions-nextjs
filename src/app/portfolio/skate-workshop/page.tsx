@@ -38,7 +38,7 @@ export default function SkateWorkshopCaseStudy() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-[#0EA5E9]/20 border border-[#0EA5E9]/30 rounded-full text-[#0EA5E9] text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-[#0d9488]/20 border border-[#0d9488]/30 rounded-full text-[#0d9488] text-sm font-semibold">
                 Mobile App • Web Platform • Subscription SaaS
               </div>
 
@@ -53,7 +53,7 @@ export default function SkateWorkshopCaseStudy() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://www.theskateworkshop.app/" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] rounded-full shadow-lg shadow-[#0EA5E9]/20">
+                  <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0d9488]/20">
                     Visit Live Site
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </Button>
@@ -81,8 +81,8 @@ export default function SkateWorkshopCaseStudy() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#0EA5E9]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Smartphone className="w-6 h-6 text-[#0EA5E9]" />
+                <div className="w-12 h-12 bg-[#0d9488]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Smartphone className="w-6 h-6 text-[#0d9488]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Platform</CardTitle>
               </CardHeader>
@@ -93,8 +93,8 @@ export default function SkateWorkshopCaseStudy() {
 
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#06B6D4]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-[#06B6D4]" />
+                <div className="w-12 h-12 bg-[#2dd4bf]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-[#2dd4bf]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Users</CardTitle>
               </CardHeader>
@@ -215,10 +215,10 @@ export default function SkateWorkshopCaseStudy() {
                 icon: Users
               }
             ].map((feature, index) => (
-              <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#0EA5E9]/50 transition-colors group">
+              <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-colors group">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-[#0EA5E9]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6 text-[#0EA5E9]" />
+                  <div className="w-12 h-12 bg-[#0d9488]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-[#0d9488]" />
                   </div>
                   <CardTitle className="text-xl font-bold text-white font-space-grotesk">{feature.title}</CardTitle>
                 </CardHeader>
@@ -247,9 +247,9 @@ export default function SkateWorkshopCaseStudy() {
               { label: "Trick Database", value: "400+", desc: "Comprehensive tutorials" },
               { label: "Features", value: "Real-time", desc: "Multiplayer & Feedback" }
             ].map((stat, index) => (
-              <Card key={index} className="bg-linear-to-br from-[#0EA5E9]/10 to-[#06B6D4]/10 border-[#0EA5E9]/30 text-center">
+              <Card key={index} className="bg-linear-to-br from-[#0d9488]/10 to-[#2dd4bf]/10 border-[#0d9488]/30 text-center">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-[#0EA5E9] mb-2">{stat.value}</div>
+                  <div className="text-4xl font-bold text-[#0d9488] mb-2">{stat.value}</div>
                   <div className="text-white font-semibold mb-1">{stat.label}</div>
                   <div className="text-white/60 text-sm">{stat.desc}</div>
                 </CardContent>
@@ -260,7 +260,7 @@ export default function SkateWorkshopCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-linear-to-r from-[#0EA5E9]/10 via-[#0d0d12] to-[#06B6D4]/10">
+      <section className="relative py-20 sm:py-32 bg-linear-to-r from-[#0d9488]/10 via-[#0d0d12] to-[#2dd4bf]/10">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-space-grotesk">
             Ready to Build Your App?
@@ -270,7 +270,7 @@ export default function SkateWorkshopCaseStudy() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-[#0EA5E9] hover:bg-[#0284c7] rounded-full shadow-lg shadow-[#0EA5E9]/20">
+              <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0d9488]/20">
                 Schedule Discovery Call
               </Button>
             </a>

@@ -92,9 +92,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ url: session.url });
   } catch (error) {
     console.error("Checkout error:", error);
+    // Log the full error server-side but never leak details to the client
     const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Checkout error detail:", message);
     return NextResponse.json(
-      { error: "Failed to create checkout session", detail: message },
+      { error: "Failed to create checkout session" },
       { status: 500 }
     );
   }

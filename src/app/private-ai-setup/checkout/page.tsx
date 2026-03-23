@@ -84,7 +84,7 @@ function CheckoutForm() {
   if (!urlType) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Spinner className="h-12 w-12 text-[#0EA5E9] animate-spin" />
+        <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
       </div>
     );
   }
@@ -121,9 +121,9 @@ function CheckoutForm() {
                 {/* Setup Type Indicator */}
                 <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10 mb-6">
                   {isVPS ? (
-                    <Cloud weight="duotone" className="h-6 w-6 text-[#06B6D4]" />
+                    <Cloud weight="duotone" className="h-6 w-6 text-[#2dd4bf]" />
                   ) : (
-                    <Desktop weight="duotone" className="h-6 w-6 text-[#0EA5E9]" />
+                    <Desktop weight="duotone" className="h-6 w-6 text-[#0d9488]" />
                   )}
                   <div className="flex-1">
                     <span className="text-white font-medium block">
@@ -136,7 +136,7 @@ function CheckoutForm() {
                   <button
                     type="button"
                     onClick={() => router.push("/private-ai-setup")}
-                    className="text-[#0EA5E9] text-sm hover:underline"
+                    className="text-[#0d9488] text-sm hover:underline"
                   >
                     Change
                   </button>
@@ -160,7 +160,7 @@ function CheckoutForm() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                     placeholder="John Smith"
                   />
                 </div>
@@ -176,7 +176,7 @@ function CheckoutForm() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -192,7 +192,7 @@ function CheckoutForm() {
                       id="domain"
                       value={formData.domainPreference}
                       onChange={(e) => setFormData({ ...formData, domainPreference: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                       placeholder="myai.yourdomain.com or leave blank for suggestions"
                     />
                     <p className="text-white/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
@@ -215,7 +215,7 @@ function CheckoutForm() {
                           key={option.value}
                           className={`flex flex-col items-center p-3 rounded-xl border cursor-pointer transition-all text-center ${
                             formData.modelSizePreference === option.value
-                              ? "border-[#06B6D4] bg-[#06B6D4]/10"
+                              ? "border-[#2dd4bf] bg-[#2dd4bf]/10"
                               : "border-white/10 hover:border-white/20"
                           }`}
                         >
@@ -250,7 +250,7 @@ function CheckoutForm() {
                     required
                     value={formData.operatingSystem}
                     onChange={(e) => setFormData({ ...formData, operatingSystem: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
                   >
                     <option value="">Select OS</option>
                     {isVPS ? (
@@ -286,7 +286,7 @@ function CheckoutForm() {
                       value={formData.specs}
                       onChange={(e) => setFormData({ ...formData, specs: e.target.value })}
                       rows={3}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
                       placeholder="e.g., 16GB RAM, Intel i7, no dedicated GPU&#10;(Leave blank if unsure - I'll help figure it out)"
                     />
                   </div>
@@ -303,7 +303,7 @@ function CheckoutForm() {
                     value={formData.useCases}
                     onChange={(e) => setFormData({ ...formData, useCases: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:ring-1 focus:ring-[#0EA5E9] outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
                     placeholder="e.g., Writing assistance, coding help, analyzing documents, brainstorming ideas..."
                   />
                 </div>
@@ -314,8 +314,8 @@ function CheckoutForm() {
                   disabled={isSubmitting}
                   className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
                     isVPS
-                      ? "bg-[#06B6D4] hover:bg-[#0891b2] shadow-[#06B6D4]/20"
-                      : "bg-[#0EA5E9] hover:bg-[#0284c7] shadow-[#0EA5E9]/20"
+                      ? "bg-[#2dd4bf] hover:bg-[#14b8a6] shadow-[#2dd4bf]/20"
+                      : "bg-[#0d9488] hover:bg-[#0f766e] shadow-[#0d9488]/20"
                   }`}
                 >
                   {isSubmitting ? (
@@ -348,7 +348,7 @@ export default function CheckoutPage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center">
-          <Spinner className="h-12 w-12 text-[#0EA5E9] animate-spin" />
+          <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
         </div>
       }
     >

@@ -59,7 +59,7 @@ export function FAQ() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
-          <span className="block text-[#0EA5E9] font-bold text-xs tracking-wider uppercase mb-3">
+          <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
             Common questions
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -79,7 +79,7 @@ export function FAQ() {
                 key={index}
                 className={`bg-[#1c1c26] transition-all duration-300 ${
                   isOpen
-                    ? "border-[#0EA5E9]/40 shadow-[0_0_30px_rgba(14,165,233,0.08)]"
+                    ? "border-[#0d9488]/40 shadow-[0_0_30px_rgba(14,165,233,0.08)]"
                     : "border-white/10 hover:border-white/20"
                 }`}
                 role="listitem"
@@ -87,19 +87,19 @@ export function FAQ() {
                 <CardContent className="p-0">
                   <button
                     onClick={() => toggle(index)}
-                    className="w-full text-left flex items-center gap-4 px-6 py-5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5E9] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d0d12] rounded-xl"
+                    className="w-full text-left flex items-center gap-4 px-6 py-5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0d9488] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d0d12] rounded-xl"
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                   >
                     {/* Icon */}
                     <div
                       className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
-                        isOpen ? "bg-[#0EA5E9]/20" : "bg-white/5 group-hover:bg-[#0EA5E9]/10"
+                        isOpen ? "bg-[#0d9488]/20" : "bg-white/5 group-hover:bg-[#0d9488]/10"
                       }`}
                     >
                       <HelpCircle
                         className={`w-4 h-4 transition-colors duration-200 ${
-                          isOpen ? "text-[#0EA5E9]" : "text-white/40 group-hover:text-[#0EA5E9]/70"
+                          isOpen ? "text-[#0d9488]" : "text-white/40 group-hover:text-[#0d9488]/70"
                         }`}
                         aria-hidden="true"
                       />
@@ -118,7 +118,7 @@ export function FAQ() {
                     <ChevronDown
                       className={`w-5 h-5 flex-shrink-0 transition-all duration-300 ${
                         isOpen
-                          ? "text-[#0EA5E9] rotate-180"
+                          ? "text-[#0d9488] rotate-180"
                           : "text-white/30 group-hover:text-white/60"
                       }`}
                       aria-hidden="true"

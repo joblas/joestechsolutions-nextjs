@@ -40,7 +40,7 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B5CF6] rounded-full blur-[140px] animate-glow" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#0EA5E9] rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#0d9488] rounded-full blur-[100px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -129,7 +129,7 @@ export default function BlogPage() {
       <section className="relative py-24 sm:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0EA5E9] rounded-full blur-[150px] animate-glow" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[150px] animate-glow" />
         </div>
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
@@ -141,7 +141,7 @@ export default function BlogPage() {
             </p>
             <Link
               href="/private-ai-setup"
-              className="inline-flex items-center gap-2 bg-[#0EA5E9] hover:bg-[#0284c7] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0EA5E9]/20"
+              className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0d9488]/20"
             >
               Learn About Private AI Setup
               <ArrowRight className="w-4 h-4" />

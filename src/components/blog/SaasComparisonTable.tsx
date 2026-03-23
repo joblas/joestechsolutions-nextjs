@@ -53,7 +53,7 @@ export function SaasComparisonTable() {
               className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors"
             >
               <span className="flex items-center gap-3 text-gray-200 text-sm">
-                <Icon className="w-4 h-4 text-[#0EA5E9] shrink-0" />
+                <Icon className="w-4 h-4 text-[#0d9488] shrink-0" />
                 {row.need}
               </span>
               <span className="flex items-center gap-2 text-white/50 text-sm">
@@ -63,7 +63,7 @@ export function SaasComparisonTable() {
               <span className="text-right text-white/50 text-sm tabular-nums">
                 {row.cost > 0 ? `$${row.cost}` : <span className="text-white/30">—</span>}
               </span>
-              <span className="flex items-center justify-end gap-2 text-[#06B6D4] text-sm font-medium">
+              <span className="flex items-center justify-end gap-2 text-[#2dd4bf] text-sm font-medium">
                 <Bot className="w-3.5 h-3.5 shrink-0" />
                 {row.agent}
               </span>
@@ -107,7 +107,7 @@ export function SaasComparisonTable() {
               className="border border-white/10 rounded-xl bg-[#0d0d12]/80 p-5"
             >
               <div className="flex items-center gap-2 mb-3">
-                <Icon className="w-4 h-4 text-[#0EA5E9]" />
+                <Icon className="w-4 h-4 text-[#0d9488]" />
                 <span className="text-gray-200 text-sm font-medium">{row.need}</span>
               </div>
               <div className="flex justify-between text-xs">
@@ -115,7 +115,7 @@ export function SaasComparisonTable() {
                   <X className="w-3 h-3 text-red-400/70" />
                   {row.oldTool} {row.cost > 0 && <span className="text-red-400/90">(${row.cost}/mo)</span>}
                 </span>
-                <span className="text-[#06B6D4] font-medium flex items-center gap-1">
+                <span className="text-[#2dd4bf] font-medium flex items-center gap-1">
                   <Bot className="w-3 h-3" />
                   {row.agent}
                 </span>
@@ -130,7 +130,7 @@ export function SaasComparisonTable() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="border border-white/10 rounded-xl bg-gradient-to-r from-[#0EA5E9]/10 to-[#8B5CF6]/10 p-4"
+          className="border border-white/10 rounded-xl bg-gradient-to-r from-[#0d9488]/10 to-[#8B5CF6]/10 p-4"
         >
           <div className="flex justify-between items-center mb-2">
             <div>

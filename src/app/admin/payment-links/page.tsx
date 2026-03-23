@@ -15,7 +15,7 @@ const PAYMENT_LINKS = {
     description: "One-time payment",
     url: "https://buy.stripe.com/9B6eVc58E5Fvb9reAJ0x200",
     icon: Desktop,
-    color: "#0EA5E9",
+    color: "#0d9488",
   },
   vps: {
     name: "Private AI Cloud Server Setup",
@@ -23,7 +23,7 @@ const PAYMENT_LINKS = {
     description: "Setup + Monthly hosting",
     url: "https://buy.stripe.com/8x200i30w3xna5n2S10x201",
     icon: Cloud,
-    color: "#06B6D4",
+    color: "#2dd4bf",
   },
   vpsMonthly: {
     name: "Cloud AI Server Monthly",
@@ -147,8 +147,8 @@ export default function PaymentLinksAdmin() {
       <div className="min-h-screen flex items-center justify-center px-6">
         <Card className="bg-[#1c1c26] border-white/10 w-full max-w-sm">
           <CardHeader className="text-center">
-            <div className="w-16 h-16 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Lock weight="duotone" className="h-8 w-8 text-[#0EA5E9]" />
+            <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Lock weight="duotone" className="h-8 w-8 text-[#0d9488]" />
             </div>
             <h1 className="text-2xl font-bold text-white">Admin Access</h1>
             <p className="text-white/60 text-sm">Enter password to continue</p>
@@ -160,13 +160,13 @@ export default function PaymentLinksAdmin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0EA5E9] focus:outline-none"
+                className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:outline-none"
                 autoFocus
               />
               {error && <p className="text-red-400 text-sm">{error}</p>}
               <Button
                 type="submit"
-                className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white py-6 rounded-xl"
+                className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white py-6 rounded-xl"
               >
                 Access Admin
               </Button>

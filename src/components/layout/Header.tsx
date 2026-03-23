@@ -34,7 +34,7 @@ export function Header() {
                 height={56}
                 className="transition-transform group-hover:scale-105"
               />
-              <span className="text-lg font-bold text-white group-hover:text-[#0EA5E9] transition-colors font-space-grotesk hidden sm:inline">
+              <span className="text-lg font-bold text-white group-hover:text-[#0d9488] transition-colors font-space-grotesk hidden sm:inline">
                 Joe's Tech Solutions
               </span>
             </Link>
@@ -51,8 +51,8 @@ export function Header() {
                     href={item.href}
                     className={`transition-colors text-sm font-medium ${
                       isActive
-                        ? "text-[#0EA5E9]"
-                        : "text-white/70 hover:text-[#0EA5E9]"
+                        ? "text-[#0d9488]"
+                        : "text-white/70 hover:text-[#0d9488]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -61,7 +61,7 @@ export function Header() {
                 );
               })}
               <Link href="/private-ai-setup">
-                <Button size="sm" className="bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full shadow-lg shadow-[#0EA5E9]/20">
+                <Button size="sm" className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full shadow-lg shadow-[#0d9488]/20">
                   Get Private AI
                 </Button>
               </Link>
@@ -72,7 +72,7 @@ export function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white/70 hover:text-[#0EA5E9]"
+              className="text-white/70 hover:text-[#0d9488]"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
@@ -93,8 +93,8 @@ export function Header() {
                   href={item.href}
                   className={`flex items-center px-4 py-2 rounded transition-colors min-h-[44px] ${
                     isActive
-                      ? "text-[#0EA5E9] bg-white/5"
-                      : "text-white/70 hover:text-[#0EA5E9] hover:bg-white/5"
+                      ? "text-[#0d9488] bg-white/5"
+                      : "text-white/70 hover:text-[#0d9488] hover:bg-white/5"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive ? "page" : undefined}
@@ -105,7 +105,7 @@ export function Header() {
             })}
             <div className="px-4 pt-2">
               <Link href="/private-ai-setup" className="block" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-[#0EA5E9] hover:bg-[#0284c7] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0EA5E9]/20">
+                <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0d9488]/20">
                   Get Private AI
                 </Button>
               </Link>
