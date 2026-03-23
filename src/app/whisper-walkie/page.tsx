@@ -378,19 +378,28 @@ export default function WhisperWalkiePage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
-                            <div className="mt-2 ml-7 space-y-1.5">
+                            <div className="mt-2 ml-7 space-y-2.5">
                               <p className="text-white/50 text-sm leading-relaxed">
-                                Extract the .tar.gz and make it executable:
+                                Extract and launch:
                               </p>
-                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
-                                tar xzf WhisperWalkie-linux.tar.gz &amp;&amp; chmod +x WhisperWalkie
+                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono whitespace-pre-wrap">
+                                tar xzf WhisperWalkie-linux.tar.gz{"\n"}cd WhisperWalkie{"\n"}./WhisperWalkie
                               </code>
-                              <p className="text-white/50 text-sm leading-relaxed mt-1.5">
+                              <p className="text-white/50 text-sm leading-relaxed">
                                 For best results, install xdotool:
                               </p>
                               <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
                                 sudo apt install xdotool
                               </code>
+                              <p className="text-white/60 text-sm font-medium mt-3">
+                                Add to your app launcher:
+                              </p>
+                              <code className="block text-xs bg-[#0d0d12] border border-white/10 text-[#2dd4bf] px-3 py-2 rounded-lg font-mono">
+                                ./install-linux.sh
+                              </code>
+                              <p className="text-white/40 text-xs mt-1">
+                                This creates a desktop shortcut so Whisper Walkie appears in your application menu.
+                              </p>
                             </div>
                           </details>
                         </div>
@@ -679,9 +688,9 @@ export default function WhisperWalkiePage() {
               </p>
               <p>
                 <span className="text-[#2dd4bf] font-medium">Linux:</span>{" "}
-                After extracting, run{" "}
-                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">chmod +x WhisperWalkie</code>{" "}
-                to make it executable.
+                Extract, then run{" "}
+                <code className="text-[#2dd4bf]/80 bg-white/5 px-1.5 py-0.5 rounded text-xs font-mono">cd WhisperWalkie &amp;&amp; ./WhisperWalkie</code>.
+                See install instructions above for a desktop shortcut.
               </p>
               <p className="text-white/40 text-xs pt-1">
                 These warnings are normal for independent software. Whisper Walkie is fully open source — inspect every line on GitHub.
