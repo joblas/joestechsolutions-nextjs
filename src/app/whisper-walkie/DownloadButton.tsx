@@ -143,7 +143,7 @@ export function PlatformDownloadCards() {
       name: "Linux",
       platform: "linux",
       formats: [".tar.gz download"],
-      note: "X11 fully supported; Wayland experimental",
+      note: "Works on X11 and Wayland",
       accent: "#0d9488",
     },
   ];
