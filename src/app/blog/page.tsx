@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { TextReveal } from "@/components/animations/TextReveal";
+// StaggerContainer available if needed
+
 
 export const metadata: Metadata = {
   title: "Blog | Joe's Tech Solutions",
@@ -39,24 +41,32 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-[#0d0d12]" />
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
-          <FadeIn>
-            <div>
+          <div>
+            <FadeIn delay={0} direction="right">
               <div className="inline-flex items-center gap-2 mb-6">
                 <span className="h-px w-8 bg-[#8B5CF6]" />
                 <span className="text-[#8B5CF6] text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest">
                   Engineering Notes
                 </span>
               </div>
+            </FadeIn>
+            <TextReveal delay={0.1}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-[family-name:var(--font-jetbrains-mono)] leading-tight tracking-tight">
-                Building with AI,<br />
-                <span className="text-white/60">in the open.</span>
+                Building with AI,
               </h1>
+            </TextReveal>
+            <TextReveal delay={0.2}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white/60 font-[family-name:var(--font-jetbrains-mono)] leading-tight tracking-tight">
+                in the open.
+              </h1>
+            </TextReveal>
+            <FadeIn delay={0.4}>
               <p className="mt-6 text-lg text-white/50 leading-relaxed max-w-xl">
                 How we build private AI systems, ship real products, and automate
                 the boring stuff. Field notes from the trenches of modern development.
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -77,11 +87,11 @@ export default function BlogPage() {
                 </p>
               </FadeIn>
 
-              <StaggerContainer className="flex flex-col" staggerDelay={0.08}>
-                {posts.map((post) => (
-                  <StaggerItem key={post.slug}>
+              <div className="flex flex-col">
+                {posts.map((post, i) => (
+                  <FadeIn key={post.slug} delay={i * 0.1} direction="left">
                     <Link href={`/blog/${post.slug}`} className="group block">
-                      <article className="py-6 border-b border-white/5 hover:border-[#8B5CF6]/30 transition-colors">
+                      <article className="py-6 border-b border-white/5 hover:border-[#8B5CF6]/30 transition-all duration-300 hover:pl-2">
                         <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
                           <time className="text-sm text-white/30 font-[family-name:var(--font-jetbrains-mono)] shrink-0 tabular-nums">
                             {formatDate(post.date)}
@@ -100,9 +110,9 @@ export default function BlogPage() {
                         </p>
                       </article>
                     </Link>
-                  </StaggerItem>
+                  </FadeIn>
                 ))}
-              </StaggerContainer>
+              </div>
             </>
           )}
         </div>

@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { TextReveal } from "@/components/animations/TextReveal";
+import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
 
 interface Props {
@@ -69,6 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
       {/* Header */}
       <section className="relative overflow-hidden py-20 sm:py-28">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
@@ -90,11 +93,11 @@ export default async function BlogPostPage({ params }: Props) {
           </FadeIn>
 
           {/* Title */}
-          <FadeIn delay={0.1}>
+          <TextReveal delay={0.1}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[family-name:var(--font-jetbrains-mono)] leading-tight mb-6">
               {post.title}
             </h1>
-          </FadeIn>
+          </TextReveal>
 
           {/* Meta bar */}
           <FadeIn delay={0.15}>
