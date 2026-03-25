@@ -57,3 +57,5 @@ export { CountUp } from "./CountUp";
 export { MagneticButton } from "./MagneticButton";
 export { ParallaxSection } from "./ParallaxSection";
 export { ParallaxBackground } from "./ParallaxBackground";
+export { ScrollProgress } from "./ScrollProgress";
+export { TextReveal } from "./TextReveal";
