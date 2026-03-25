@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, Clock, Calendar, User } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
@@ -54,7 +54,7 @@ function formatDate(dateStr: string): string {
   const date = new Date(dateStr + "T00:00:00");
   return date.toLocaleDateString("en-US", {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   });
 }
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
+      {/* Header */}
       <section className="relative overflow-hidden py-20 sm:py-28">
         <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
         <div className="absolute inset-0 opacity-15">
@@ -82,49 +82,42 @@ export default async function BlogPostPage({ params }: Props) {
           <FadeIn delay={0}>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm mb-10 transition-colors group"
+              className="inline-flex items-center gap-2 text-white/40 hover:text-white text-sm font-[family-name:var(--font-jetbrains-mono)] mb-10 transition-colors group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              All Posts
+              cd ../blog
             </Link>
-          </FadeIn>
-
-          {/* Tags */}
-          <FadeIn delay={0.05}>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs font-medium text-[#8B5CF6] bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 rounded-full px-3 py-1"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
           </FadeIn>
 
           {/* Title */}
           <FadeIn delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-space-grotesk leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[family-name:var(--font-jetbrains-mono)] leading-tight mb-6">
               {post.title}
             </h1>
           </FadeIn>
 
-          {/* Meta */}
+          {/* Meta bar */}
           <FadeIn delay={0.15}>
-            <div className="flex flex-wrap items-center gap-5 text-white/50 text-sm border-t border-b border-white/10 py-4">
-              <span className="flex items-center gap-1.5">
-                <User className="w-4 h-4" />
-                {post.author}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4" />
-                {formatDate(post.date)}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                {post.readTime} min read
-              </span>
+            <div className="flex flex-wrap items-center gap-4 text-white/40 text-sm font-[family-name:var(--font-jetbrains-mono)] border-t border-white/5 pt-4">
+              <span>{post.author}</span>
+              <span className="text-white/15">·</span>
+              <time>{formatDate(post.date)}</time>
+              <span className="text-white/15">·</span>
+              <span>{post.readTime} min read</span>
+            </div>
+          </FadeIn>
+
+          {/* Tags */}
+          <FadeIn delay={0.2}>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs text-white/30 border border-white/10 rounded px-2 py-0.5 font-[family-name:var(--font-jetbrains-mono)]"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </FadeIn>
         </div>
@@ -133,7 +126,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Content */}
       <section className="relative py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.25}>
             <div className="prose-blog">
               {(() => {
                 const videoRegex = /<video[^>]*>[\s\S]*?<source\s+src="([^"]+)"[^>]*\/>[\s\S]*?<\/video>/g;
@@ -143,7 +136,6 @@ export default async function BlogPostPage({ params }: Props) {
                 let i = 0;
 
                 while ((match = videoRegex.exec(post.content)) !== null) {
-                  // Add HTML before the video
                   if (match.index > lastIndex) {
                     parts.push(
                       <div
@@ -154,7 +146,6 @@ export default async function BlogPostPage({ params }: Props) {
                       />
                     );
                   }
-                  // Add the React video component
                   parts.push(
                     <BlogVideoPlayer key={`video-${i}`} src={match[1]} />
                   );
@@ -162,14 +153,12 @@ export default async function BlogPostPage({ params }: Props) {
                   i++;
                 }
 
-                // If no videos found, render normally
                 if (parts.length === 0) {
                   return (
                     <div dangerouslySetInnerHTML={{ __html: post.content }} />
                   );
                 }
 
-                // Add remaining HTML after last video
                 if (lastIndex < post.content.length) {
                   parts.push(
                     <div
@@ -200,11 +189,11 @@ export default async function BlogPostPage({ params }: Props) {
                   <span className="w-2 h-2 rounded-full bg-[#0d9488]" />
                   <span className="text-[#0d9488] text-sm font-medium">Private AI Setup Service</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-space-grotesk">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-jetbrains-mono)]">
                   Keep Your Data Where It Belongs
                 </h2>
                 <p className="text-white/70 text-lg mb-8 max-w-xl leading-relaxed">
-                  I'll set up a fully private AI on your hardware — Ollama, Open WebUI, model configuration, and team onboarding. One flat fee. No monthly subscriptions. Your data never leaves your building.
+                  I&apos;ll set up a fully private AI on your hardware — Ollama, Open WebUI, model configuration, and team onboarding. One flat fee. No monthly subscriptions. Your data never leaves your building.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
