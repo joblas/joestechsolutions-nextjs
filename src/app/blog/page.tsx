@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { TextReveal } from "@/components/animations/TextReveal";
-// StaggerContainer available if needed
+import { ScrollBackground } from "@/components/animations/ScrollBackground";
 
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function BlogPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <ScrollBackground />
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <div>
