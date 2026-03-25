@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
@@ -36,20 +35,10 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        {/* Hero Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/blog-hero.png"
-            alt=""
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d12]/60 via-[#0d0d12]/80 to-[#0d0d12]" />
-        </div>
+      <section className="relative overflow-hidden py-24 sm:py-32">
+        <div className="absolute inset-0 bg-[#0d0d12]" />
 
-        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 pt-28 pb-20 sm:pt-36 sm:pb-28">
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
