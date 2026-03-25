@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
@@ -35,22 +36,35 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B5CF6] rounded-full blur-[140px] animate-glow" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#0d9488] rounded-full blur-[100px]" />
+      <section className="relative overflow-hidden">
+        {/* Hero Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/blog-hero.png"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d12]/60 via-[#0d0d12]/80 to-[#0d0d12]" />
         </div>
 
-        <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 pt-28 pb-20 sm:pt-36 sm:pb-28">
           <FadeIn>
             <div>
+              <div className="inline-flex items-center gap-2 mb-6">
+                <span className="h-px w-8 bg-[#8B5CF6]" />
+                <span className="text-[#8B5CF6] text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest">
+                  Engineering Notes
+                </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-[family-name:var(--font-jetbrains-mono)] leading-tight tracking-tight">
-                blog_
+                Building with AI,<br />
+                <span className="text-white/60">in the open.</span>
               </h1>
-              <p className="mt-4 text-lg text-white/50 leading-relaxed max-w-xl">
-                Practical guides on private AI, web development, and modern tech.
-                No hype — just things that work.
+              <p className="mt-6 text-lg text-white/50 leading-relaxed max-w-xl">
+                How we build private AI systems, ship real products, and automate
+                the boring stuff. Field notes from the trenches of modern development.
               </p>
             </div>
           </FadeIn>
