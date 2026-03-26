@@ -1,9 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CountUpProps {
   from?: number;
@@ -22,26 +19,38 @@ export function CountUp({
   prefix = "",
   className = "",
 }: CountUpProps) {
-  const count = useMotionValue(from);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const [value, setValue] = useState(from);
 
   useEffect(() => {
-    if (isInView) {
-      const controls = animate(count, to, {
-        duration,
-        ease: [0.21, 0.47, 0.32, 0.98],
-      });
-      return controls.stop;
-    }
-  }, [isInView, count, to, duration]);
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.unobserve(el);
+          const start = performance.now();
+          const tick = (now: number) => {
+            const t = Math.min((now - start) / (duration * 1000), 1);
+            // cubic-bezier(0.21, 0.47, 0.32, 0.98) approximation
+            const eased = t < 1 ? t * (2 - t) : 1;
+            setValue(Math.round(from + (to - from) * eased));
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [from, to, duration]);
 
   return (
     <span ref={ref} className={className}>
-      {prefix}
-      <motion.span>{rounded}</motion.span>
-      {suffix}
+      {prefix}{value}{suffix}
     </span>
   );
 }
