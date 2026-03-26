@@ -1,6 +1,7 @@
 "use client";
 
-import { ReactNode, useRef, useEffect, useState, Children, isValidElement, cloneElement, ReactElement } from "react";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface StaggerContainerProps {
   children: ReactNode;
@@ -13,51 +14,42 @@ export function StaggerContainer({
   staggerDelay = 0.1,
   className = "",
 }: StaggerContainerProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { rootMargin: "-100px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className={className}>
-      {Children.map(children, (child, index) => {
-        if (isValidElement(child)) {
-          return cloneElement(child as ReactElement<{ isVisible?: boolean; delay?: number }>, {
-            isVisible,
-            delay: index * staggerDelay,
-          });
-        }
-        return child;
-      })}
-    </div>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: staggerDelay,
+          },
+        },
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
 
-export function StaggerItem({ children, className = "", isVisible, delay = 0 }: { children: ReactNode; className?: string; isVisible?: boolean; delay?: number }) {
+export function StaggerItem({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div
-      className={className}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: `opacity 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98) ${delay}s, transform 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98) ${delay}s`,
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          },
+        },
       }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
