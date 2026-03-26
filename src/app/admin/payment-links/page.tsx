@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Desktop, Cloud, Copy, Check, EnvelopeSimple, Lock } from "@phosphor-icons/react";
+import { Desktop, Cloud, Copy, Check, EnvelopeSimple, Lock } from "@phosphor-icons/react/dist/ssr";
 
 // Simple password protection - change this to your secret password
 const ADMIN_PASSWORD = "joeadmin2026";

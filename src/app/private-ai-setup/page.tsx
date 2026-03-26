@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { ArrowRight, CaretDown, Check, Briefcase, ShieldCheck, Rocket, HardDrive, GitBranch, CalendarCheck, CheckCircle, Robot, Desktop, CurrencyDollarSimple, Cloud, Globe, Wrench } from "@phosphor-icons/react";
+import { ArrowRight, CaretDown, Check, Briefcase, ShieldCheck, Rocket, HardDrive, GitBranch, CalendarCheck, CheckCircle, Robot, Desktop, CurrencyDollarSimple, Cloud, Globe, Wrench } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";

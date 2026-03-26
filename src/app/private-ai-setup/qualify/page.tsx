@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Desktop, Cloud, Rocket, Spinner, ArrowLeft, ArrowRight, CheckCircle, Warning } from "@phosphor-icons/react";
+import { Desktop, Cloud, Rocket, Spinner, ArrowLeft, ArrowRight, CheckCircle, Warning } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { SetupType, TIER_LABELS, TIER_PRICES } from "@/lib/pricing";
 

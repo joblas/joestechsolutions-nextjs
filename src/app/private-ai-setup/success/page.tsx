@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { CheckCircle, Warning, Spinner, CalendarCheck, Desktop, Cloud, ArrowRight } from "@phosphor-icons/react";
+import { CheckCircle, Warning, Spinner, CalendarCheck, Desktop, Cloud, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 interface PaymentInfo {

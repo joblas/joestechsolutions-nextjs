@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Desktop, Cloud, Spinner, ArrowLeft, LockSimple } from "@phosphor-icons/react";
+import { Desktop, Cloud, Spinner, ArrowLeft, LockSimple } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 function CheckoutForm() {
