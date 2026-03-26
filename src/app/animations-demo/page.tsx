@@ -1,32 +1,24 @@
-"use client";
-
-import { HeroGlow } from "@/components/animations/HeroGlow";
-import { FloatingCard } from "@/components/animations/FloatingCards";
-import {
-  FeatureCard,
-  FeatureCardGrid,
-  FeatureHeadline,
-  FeatureSubtext,
-  FeatureIcon,
-} from "@/components/animations/FeatureCard";
-import {
-  AnimatedGraph,
-  StarRating,
-  AnimatedCounter,
-} from "@/components/animations/AnimatedGraph";
-import {
-  AICard,
-  AICardGrid,
-  ToggleSwitch,
-  ChartGrid,
-  PulsingIcon,
-} from "@/components/animations/AICard";
-import {
-  PremiumBackground,
-  SectionDivider,
-  GlassCard,
-} from "@/components/animations/PremiumBackground";
+import dynamic from "next/dynamic";
 import { Zap, Target, TrendingUp } from "lucide-react";
+
+const HeroGlow = dynamic(() => import("@/components/animations/HeroGlow").then(m => ({ default: m.HeroGlow })), { ssr: true });
+const FloatingCard = dynamic(() => import("@/components/animations/FloatingCards").then(m => ({ default: m.FloatingCard })), { ssr: true });
+const FeatureCard = dynamic(() => import("@/components/animations/FeatureCard").then(m => ({ default: m.FeatureCard })), { ssr: true });
+const FeatureCardGrid = dynamic(() => import("@/components/animations/FeatureCard").then(m => ({ default: m.FeatureCardGrid })), { ssr: true });
+const FeatureHeadline = dynamic(() => import("@/components/animations/FeatureCard").then(m => ({ default: m.FeatureHeadline })), { ssr: true });
+const FeatureSubtext = dynamic(() => import("@/components/animations/FeatureCard").then(m => ({ default: m.FeatureSubtext })), { ssr: true });
+const FeatureIcon = dynamic(() => import("@/components/animations/FeatureCard").then(m => ({ default: m.FeatureIcon })), { ssr: true });
+const AnimatedGraph = dynamic(() => import("@/components/animations/AnimatedGraph").then(m => ({ default: m.AnimatedGraph })), { ssr: true });
+const StarRating = dynamic(() => import("@/components/animations/AnimatedGraph").then(m => ({ default: m.StarRating })), { ssr: true });
+const AnimatedCounter = dynamic(() => import("@/components/animations/AnimatedGraph").then(m => ({ default: m.AnimatedCounter })), { ssr: true });
+const AICard = dynamic(() => import("@/components/animations/AICard").then(m => ({ default: m.AICard })), { ssr: true });
+const AICardGrid = dynamic(() => import("@/components/animations/AICard").then(m => ({ default: m.AICardGrid })), { ssr: true });
+const ToggleSwitch = dynamic(() => import("@/components/animations/AICard").then(m => ({ default: m.ToggleSwitch })), { ssr: true });
+const ChartGrid = dynamic(() => import("@/components/animations/AICard").then(m => ({ default: m.ChartGrid })), { ssr: true });
+const PulsingIcon = dynamic(() => import("@/components/animations/AICard").then(m => ({ default: m.PulsingIcon })), { ssr: true });
+const PremiumBackground = dynamic(() => import("@/components/animations/PremiumBackground").then(m => ({ default: m.PremiumBackground })), { ssr: true });
+const SectionDivider = dynamic(() => import("@/components/animations/PremiumBackground").then(m => ({ default: m.SectionDivider })), { ssr: true });
+const GlassCard = dynamic(() => import("@/components/animations/PremiumBackground").then(m => ({ default: m.GlassCard })), { ssr: true });
 
 export default function AnimationsDemo() {
   // Sample graph data
