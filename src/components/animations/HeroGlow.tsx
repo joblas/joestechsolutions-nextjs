@@ -1,8 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { heroGlowVariants } from "@/lib/animations";
 
 interface HeroGlowProps {
   children: ReactNode;
@@ -15,6 +11,7 @@ interface HeroGlowProps {
  * Hero Glow Component
  * Creates an expanding Gaussian bloom effect behind headline text
  * Mimics Apple-style premium hero animations
+ * Pure CSS animation — no framer-motion needed
  */
 export function HeroGlow({
   children,
@@ -25,11 +22,8 @@ export function HeroGlow({
   return (
     <div className={`relative ${className}`}>
       {/* Glow layer behind text */}
-      <motion.div
-        className="absolute inset-0 -z-10"
-        variants={heroGlowVariants}
-        initial="hidden"
-        animate="visible"
+      <div
+        className="absolute inset-0 -z-10 animate-[hero-glow_1.2s_cubic-bezier(0.16,1,0.3,1)_forwards] opacity-0 scale-[0.8]"
         style={{
           background: `radial-gradient(circle, ${glowColor}${Math.floor(glowIntensity * 255).toString(16).padStart(2, '0')} 0%, transparent 70%)`,
           filter: "blur(60px)",
