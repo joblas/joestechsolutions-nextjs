@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 interface Orb {
   size: number;
@@ -52,10 +52,30 @@ export function PremiumBackground({
   className = "",
 }: PremiumBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+  const orbRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const onScroll = () => {
+      const rect = container.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      const progress = Math.min(Math.max((viewH - rect.top) / (viewH + rect.height), 0), 1);
+
+      orbs.forEach((orb, index) => {
+        const el = orbRefs.current[index];
+        if (!el) return;
+        const xOff = progress * (orb.speedX || 0) * 200;
+        const yOff = progress * (orb.speedY || 0) * 200;
+        el.style.transform = `translate(calc(-50% + ${xOff}px), calc(-50% + ${yOff}px))`;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [orbs]);
 
   return (
     <div
@@ -66,46 +86,33 @@ export function PremiumBackground({
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#050505] to-[#000]" />
 
       {/* Floating orbs with parallax */}
-      {orbs.map((orb, index) => {
-        const xOffset = useTransform(
-          scrollYProgress,
-          [0, 1],
-          [0, (orb.speedX || 0) * 200]
-        );
-        const yOffset = useTransform(
-          scrollYProgress,
-          [0, 1],
-          [0, (orb.speedY || 0) * 200]
-        );
-
-        return (
-          <motion.div
-            key={index}
-            className="absolute rounded-full"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              left: orb.initialX,
-              top: orb.initialY,
-              x: xOffset,
-              y: yOffset,
-              background: `radial-gradient(circle, ${orb.color}${Math.floor((orb.opacity || 0.3) * 255).toString(16).padStart(2, '0')}, transparent 70%)`,
-              filter: `blur(${orb.blur}px)`,
-              opacity: opacity,
-              transform: "translate(-50%, -50%)",
-            }}
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [orb.opacity || 0.3, (orb.opacity || 0.3) * 1.2, orb.opacity || 0.3],
-            }}
-            transition={{
-              duration: 8 + index * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        );
-      })}
+      {orbs.map((orb, index) => (
+        <motion.div
+          key={index}
+          ref={(el) => { orbRefs.current[index] = el; }}
+          className="absolute rounded-full"
+          style={{
+            width: orb.size,
+            height: orb.size,
+            left: orb.initialX,
+            top: orb.initialY,
+            background: `radial-gradient(circle, ${orb.color}${Math.floor((orb.opacity || 0.3) * 255).toString(16).padStart(2, '0')}, transparent 70%)`,
+            filter: `blur(${orb.blur}px)`,
+            opacity: opacity,
+            transform: "translate(-50%, -50%)",
+            willChange: "transform",
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [orb.opacity || 0.3, (orb.opacity || 0.3) * 1.2, orb.opacity || 0.3],
+          }}
+          transition={{
+            duration: 8 + index * 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
 
       {/* Noise texture overlay */}
       <div
