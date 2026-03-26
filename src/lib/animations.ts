@@ -3,7 +3,7 @@
  * Based on Apple-style smooth, spring-based animations
  */
 
-import { Variants, Transition } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 
 // ============================================
 // EASING FUNCTIONS
