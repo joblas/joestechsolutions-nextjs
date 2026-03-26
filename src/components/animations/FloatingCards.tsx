@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ReactNode, useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ReactNode, useRef } from "react";
 import { stackedCardVariants, floatingCardVariants } from "@/lib/animations";
 
 interface FloatingCardsProps {
@@ -26,31 +26,22 @@ export function FloatingCards({
   className = "",
 }: FloatingCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    if (!parallax) return;
-    const container = containerRef.current;
-    if (!container) return;
-
-    const onScroll = () => {
-      const rect = container.getBoundingClientRect();
-      const viewH = window.innerHeight;
-      const progress = Math.min(Math.max((viewH - rect.top) / (viewH + rect.height), 0), 1);
-      cards.forEach((_, index) => {
-        const el = cardRefs.current[index];
-        if (el) el.style.transform = `translateY(${progress * -(index + 1) * 30}px)`;
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [parallax, cards]);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
   return (
     <div ref={containerRef} className={`relative ${className}`}>
       {cards.map((card, index) => {
+        // Parallax effect - foreground moves faster than background
+        const yOffset = parallax
+          ? useTransform(
+              scrollYProgress,
+              [0, 1],
+              [0, -(index + 1) * 30]
+            )
+          : undefined;
 
         const variants = stacked
           ? stackedCardVariants(index)
@@ -59,11 +50,11 @@ export function FloatingCards({
         return (
           <motion.div
             key={index}
-            ref={(el) => { cardRefs.current[index] = el; }}
             variants={variants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
+            style={parallax ? { y: yOffset } : undefined}
             className={`
               ${stacked ? "absolute inset-0" : ""}
               ${card.className || ""}
@@ -107,22 +98,12 @@ export function FloatingCard({
   parallaxSpeed = -20,
 }: SingleFloatingCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
 
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
-
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect();
-      const viewH = window.innerHeight;
-      const progress = Math.min(Math.max((viewH - rect.top) / (viewH + rect.height), 0), 1);
-      el.style.transform = `translateY(${progress * parallaxSpeed}px)`;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [parallaxSpeed]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, parallaxSpeed]);
 
   return (
     <motion.div
@@ -131,6 +112,7 @@ export function FloatingCard({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
+      style={{ y }}
       className={`relative ${className}`}
     >
       {/* Shadow for depth */}

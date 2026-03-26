@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 interface GradientOrb {
   size: number;
@@ -52,51 +53,45 @@ export function ParallaxBackground({
   opacity = 0.3,
 }: ParallaxBackgroundProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const orbRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    const container = ref.current;
-    if (!container) return;
-
-    const onScroll = () => {
-      const rect = container.getBoundingClientRect();
-      const viewH = window.innerHeight;
-      const progress = Math.min(Math.max((viewH - rect.top) / (viewH + rect.height), 0), 1);
-
-      orbs.forEach((orb, index) => {
-        const el = orbRefs.current[index];
-        if (!el) return;
-        const xOff = progress * (orb.speedX || 0) * 200;
-        const yOff = progress * (orb.speedY || 0) * 300;
-        el.style.transform = `translate(${xOff}px, ${yOff}px)`;
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [orbs]);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
   return (
     <div ref={ref} className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
       <div className="absolute inset-0" style={{ opacity }}>
-        {orbs.map((orb, index) => (
-          <div
-            key={index}
-            ref={(el) => { orbRefs.current[index] = el; }}
-            className="absolute rounded-full"
-            style={{
-              width: orb.size,
-              height: orb.size,
-              left: orb.initialX,
-              top: orb.initialY,
-              backgroundColor: orb.color,
-              filter: `blur(${orb.blur}px)`,
-              willChange: "transform",
-            }}
-          />
-        ))}
+        {orbs.map((orb, index) => {
+          const x = useTransform(
+            scrollYProgress,
+            [0, 1],
+            [0, (orb.speedX || 0) * 200]
+          );
+          const y = useTransform(
+            scrollYProgress,
+            [0, 1],
+            [0, (orb.speedY || 0) * 300]
+          );
+
+          return (
+            <motion.div
+              key={index}
+              className="absolute rounded-full"
+              style={{
+                width: orb.size,
+                height: orb.size,
+                left: orb.initialX,
+                top: orb.initialY,
+                backgroundColor: orb.color,
+                filter: `blur(${orb.blur}px)`,
+                x,
+                y,
+              }}
+            />
+          );
+        })}
       </div>
     </div>
   );
