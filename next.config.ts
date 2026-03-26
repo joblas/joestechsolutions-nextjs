@@ -48,6 +48,11 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+    },
+  },
   async headers() {
     return [
       {
