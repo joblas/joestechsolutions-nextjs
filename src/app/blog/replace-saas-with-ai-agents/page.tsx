@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Clock, Calendar, User, Github, Linkedin, Globe } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ParallaxSection } from "@/components/animations/ParallaxSection";
+import dynamic from "next/dynamic";
+const ParallaxSection = dynamic(() => import("@/components/animations/ParallaxSection").then(m => ({ default: m.ParallaxSection })));
 import { BlogContent } from "./BlogContent";
 
 const POST = {
