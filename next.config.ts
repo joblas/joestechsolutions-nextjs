@@ -48,6 +48,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'lucide-react', '@phosphor-icons/react'],
+  },
   async headers() {
     return [
       {
