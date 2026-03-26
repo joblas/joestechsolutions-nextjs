@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Desktop, Cloud, Rocket, Spinner, ArrowLeft, ArrowRight, CheckCircle, Warning } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { SetupType, TIER_LABELS, TIER_PRICES } from "@/lib/stripe";
+import { SetupType, TIER_LABELS, TIER_PRICES } from "@/lib/pricing";
 
 function QualifyForm() {
   const searchParams = useSearchParams();

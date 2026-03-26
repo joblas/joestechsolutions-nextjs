@@ -1,6 +1,33 @@
 // Centralized pricing data — single source of truth for all pages
 // Update prices here and they propagate everywhere
 
+// ── Stripe Price IDs (LIVE MODE) ──
+// Override via env vars for different environments
+export const LOCAL_PRICE_ID = process.env.STRIPE_LOCAL_PRICE_ID || "price_1T1xVpCc9Mv5B9O0n6C6Muyd";
+export const CLOUD_SETUP_PRICE_ID = process.env.STRIPE_CLOUD_SETUP_PRICE_ID || "price_1T1xVpCc9Mv5B9O0Iqbu5SKA";
+export const CLOUD_MONTHLY_PRICE_ID = process.env.STRIPE_CLOUD_MONTHLY_PRICE_ID || "price_1T1xVqCc9Mv5B9O0mLu8Mnsa";
+export const MANAGED_SETUP_PRICE_ID = process.env.STRIPE_MANAGED_SETUP_PRICE_ID || "price_1T1xVqCc9Mv5B9O0u2nknZJF";
+export const MANAGED_MONTHLY_PRICE_ID = process.env.STRIPE_MANAGED_MONTHLY_PRICE_ID || "price_1T1xVrCc9Mv5B9O0nXzPcsxd";
+export const COMPLIANCE_ADDON_PRICE_ID = process.env.STRIPE_COMPLIANCE_ADDON_PRICE_ID || "price_1T1xVrCc9Mv5B9O061tH3Tpo";
+export const VPS_SETUP_PRICE_ID = CLOUD_SETUP_PRICE_ID;
+export const VPS_MONTHLY_PRICE_ID = CLOUD_MONTHLY_PRICE_ID;
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://www.joestechsolutions.com");
+
+// Setup type used across client and server
+export type SetupType = "local" | "cloud" | "managed";
+
+export const TIER_LABELS: Record<SetupType, string> = {
+  local: "Local AI Setup",
+  cloud: "Cloud AI Server",
+  managed: "Managed AI + Automation",
+};
+
+export const TIER_PRICES: Record<SetupType, { setup: string; monthly?: string }> = {
+  local: { setup: "$199" },
+  cloud: { setup: "$499", monthly: "$29/mo" },
+  managed: { setup: "$999", monthly: "$79/mo" },
+};
+
 export const PRICING = {
   local: {
     name: "Local Install",
