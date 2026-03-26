@@ -8,8 +8,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import { privateAiFaqs } from "./faqs";
 import { twMerge } from 'tailwind-merge';
 
@@ -18,6 +17,14 @@ const faqs = privateAiFaqs;
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
 
   return (
     <div className="border-b border-white/10 last:border-0">
@@ -28,28 +35,28 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         <span className="text-lg font-medium text-white group-hover:text-[#0d9488] transition-colors font-space-grotesk">
           {question}
         </span>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
+        <div
+          style={{
+            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.2s ease",
+          }}
         >
           <CaretDown className="h-5 w-5 text-white/60" weight="bold" />
-        </motion.div>
+        </div>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-5 text-white/70 leading-relaxed text-base">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        ref={contentRef}
+        style={{
+          height,
+          opacity: isOpen ? 1 : 0,
+          overflow: "hidden",
+          transition: "height 0.2s ease, opacity 0.2s ease",
+        }}
+      >
+        <p className="pb-5 text-white/70 leading-relaxed text-base">
+          {answer}
+        </p>
+      </div>
     </div>
   );
 }
