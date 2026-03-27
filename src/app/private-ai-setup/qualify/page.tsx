@@ -83,7 +83,10 @@ function QualifyForm() {
   if (!urlType) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
+        <div role="status" aria-label="Loading">
+          <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+          <span className="sr-only">Loading...</span>
+        </div>
       </div>
     );
   }
@@ -146,7 +149,7 @@ function QualifyForm() {
               </div>
 
               {error && (
-                <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
+                <div role="alert" aria-live="assertive" className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
                   {error}
                 </div>
               )}
@@ -186,10 +189,10 @@ function QualifyForm() {
 
               {/* RAM Amount (Local only) */}
               {isLocal && (
-                <div>
-                  <label className="block text-sm font-medium text-white mb-3">
+                <fieldset>
+                  <legend className="block text-sm font-medium text-white mb-3">
                     How much RAM does your computer have?
-                  </label>
+                  </legend>
                   <div className="grid grid-cols-2 gap-3">
                     {[
                       { value: "less-than-8", label: "Less than 8GB", warn: true },
@@ -222,7 +225,7 @@ function QualifyForm() {
                   <p className="text-white/50 text-sm mt-2">
                     8GB minimum required. 16GB+ recommended for best performance.
                   </p>
-                </div>
+                </fieldset>
               )}
 
               {/* Managed tier note */}
@@ -280,7 +283,10 @@ function QualifyForm() {
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
-                    <Spinner className="h-5 w-5 animate-spin" />
+                    <div role="status" aria-label="Loading">
+                      <Spinner aria-hidden="true" className="h-5 w-5 animate-spin" />
+                      <span className="sr-only">Loading...</span>
+                    </div>
                     Processing...
                   </span>
                 ) : (
@@ -307,7 +313,10 @@ export default function QualifyPage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center">
-          <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
+          <div role="status" aria-label="Loading">
+            <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>
       }
     >

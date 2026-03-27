@@ -114,7 +114,10 @@ function SuccessContent() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <Spinner className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
+          <div role="status" aria-label="Loading">
+            <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
+            <span className="sr-only">Loading...</span>
+          </div>
           <p className="text-white/70">Verifying your payment...</p>
         </div>
       </div>
@@ -196,7 +199,7 @@ function SuccessContent() {
 
                   {/* Error Message */}
                   {error && (
-                    <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
+                    <div role="alert" className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
                       {error}
                     </div>
                   )}
@@ -253,10 +256,10 @@ function SuccessContent() {
 
                   {/* VPS-specific: Model Size */}
                   {isVPS && (
-                    <div>
-                      <label className="block text-sm font-medium text-white mb-3">
+                    <fieldset>
+                      <legend className="block text-sm font-medium text-white mb-3">
                         Expected Model Size
-                      </label>
+                      </legend>
                       <div className="grid grid-cols-3 gap-3">
                         {[
                           { value: "small", label: "Small (7B)", desc: "Mistral 7B, Llama3 8B" },
@@ -289,7 +292,7 @@ function SuccessContent() {
                           </label>
                         ))}
                       </div>
-                    </div>
+                    </fieldset>
                   )}
 
                   {/* Specs (only for local) */}
@@ -337,7 +340,10 @@ function SuccessContent() {
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center gap-2">
-                        <Spinner className="h-5 w-5 animate-spin" />
+                        <div role="status" aria-label="Loading">
+                          <Spinner aria-hidden="true" className="h-5 w-5 animate-spin" />
+                          <span className="sr-only">Loading...</span>
+                        </div>
                         Saving...
                       </span>
                     ) : (
@@ -452,7 +458,10 @@ export default function SuccessPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <Spinner className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
+            <div role="status" aria-label="Loading">
+              <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
+              <span className="sr-only">Loading...</span>
+            </div>
             <p className="text-white/70">Loading...</p>
           </div>
         </div>

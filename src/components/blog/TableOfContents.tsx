@@ -19,10 +19,10 @@ export function TableOfContents({ items }: { items: TOCItem[] }) {
       aria-label="Table of contents"
     >
       <div className="flex items-center gap-2 mb-3">
-        <List className="w-4 h-4 text-[#0d9488]" />
+        <List className="w-4 h-4 text-[#0d9488]" aria-hidden="true" />
         <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">In this article</span>
       </div>
-      <ol className="space-y-1.5 list-none p-0 m-0">
+      <ol className="space-y-1.5 list-none p-0 m-0" role="list">
         {items.map((item, i) => (
           <li key={item.id}>
             <a

@@ -91,7 +91,7 @@ export default function BlogPage() {
                     <Link href={`/blog/${post.slug}`} className="group block">
                       <article className="py-6 border-b border-white/5 hover:border-[#8B5CF6]/30 transition-all duration-300 hover:pl-2">
                         <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                          <time className="text-sm text-white/30 font-[family-name:var(--font-jetbrains-mono)] shrink-0 tabular-nums">
+                          <time dateTime={post.date} className="text-sm text-white/30 font-[family-name:var(--font-jetbrains-mono)] shrink-0 tabular-nums">
                             {formatDate(post.date)}
                           </time>
                           <div className="flex items-baseline gap-3 min-w-0">

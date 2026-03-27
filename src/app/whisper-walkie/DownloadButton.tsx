@@ -87,6 +87,7 @@ export function HeroDownloadButton() {
       <button
         onClick={() => setShowOthers(!showOthers)}
         className="text-white/50 hover:text-white/70 text-sm flex items-center gap-1 transition-colors mt-1"
+        aria-expanded={showOthers}
       >
         Other platforms
         <ChevronDown

@@ -12,7 +12,6 @@ export function Header() {
   const pathname = usePathname();
 
   const navigation = [
-    { name: "Private AI", href: "/private-ai-setup" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
@@ -72,7 +71,7 @@ export function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white/70 hover:text-[#0d9488]"
+              className="text-white/70 hover:text-[#0d9488] min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"

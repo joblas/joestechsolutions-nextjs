@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-4 text-white/40 text-sm font-[family-name:var(--font-jetbrains-mono)] border-t border-white/5 pt-4">
               <span>{post.author}</span>
               <span className="text-white/15">·</span>
-              <time>{formatDate(post.date)}</time>
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
               <span className="text-white/15">·</span>
               <span>{post.readTime} min read</span>
             </div>

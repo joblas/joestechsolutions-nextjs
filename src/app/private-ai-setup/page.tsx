@@ -15,7 +15,7 @@ import { twMerge } from 'tailwind-merge';
 // FAQ data
 const faqs = privateAiFaqs;
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer, id }: { question: string; answer: string; id: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -26,16 +26,21 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
     }
   }, [isOpen]);
 
+  const panelId = `faq-panel-${id}`;
+
   return (
     <div className="border-b border-white/10 last:border-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
         <span className="text-lg font-medium text-white group-hover:text-[#0d9488] transition-colors font-space-grotesk">
           {question}
         </span>
         <div
+          aria-hidden="true"
           style={{
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
             transition: "transform 0.2s ease",
@@ -45,6 +50,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         </div>
       </button>
       <div
+        id={panelId}
         ref={contentRef}
         style={{
           height,
@@ -405,9 +411,9 @@ export default function PrivateAISetup() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/30 transition-all duration-300 overflow-hidden h-full p-8 relative flex flex-col hover:translate-y-[-5px]">
                   <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">Local AI Setup</p>
-                  <h2 className="text-5xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none mb-1.5">
+                  <h3 className="text-5xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none mb-1.5">
                     $199 <span className="text-lg font-light text-white/40">one-time</span>
-                  </h2>
+                  </h3>
                   <p className="text-sm text-white/40 mb-8">No recurring charges &middot; Yours forever</p>
                   <div className="h-px bg-white/10 mb-7" />
                   <ul className="space-y-3 mb-8 flex-1">
@@ -449,9 +455,9 @@ export default function PrivateAISetup() {
                     Most Popular
                   </div>
                   <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">Cloud AI Server</p>
-                  <h2 className="text-5xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none mb-1.5">
+                  <h3 className="text-5xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none mb-1.5">
                     $499 <span className="text-lg font-light text-white/40">setup</span>
-                  </h2>
+                  </h3>
                   <p className="text-sm text-white/40 mb-8">+ $29/month &middot; Fully managed</p>
                   <div className="h-px bg-white/10 mb-7" />
                   <ul className="space-y-3 mb-8 flex-1">
@@ -493,9 +499,9 @@ export default function PrivateAISetup() {
                     Best Value
                   </div>
                   <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">Managed AI + Automation</p>
-                  <h2 className="text-5xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none mb-1.5">
+                  <h3 className="text-5xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none mb-1.5">
                     $999 <span className="text-lg font-light text-white/40">setup</span>
-                  </h2>
+                  </h3>
                   <p className="text-sm text-white/40 mb-8">+ $79/month &middot; Full service</p>
                   <div className="h-px bg-white/10 mb-7" />
                   <ul className="space-y-3 mb-8 flex-1">
@@ -661,7 +667,7 @@ export default function PrivateAISetup() {
             <Card className="bg-[#1c1c26] border-white/10 overflow-hidden rounded-xl">
               <CardContent className="p-6 sm:p-8">
                 {faqs.map((faq, index) => (
-                  <FAQItem key={index} question={faq.question} answer={faq.answer} />
+                  <FAQItem key={index} id={String(index)} question={faq.question} answer={faq.answer} />
                 ))}
               </CardContent>
             </Card>

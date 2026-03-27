@@ -84,7 +84,10 @@ function CheckoutForm() {
   if (!urlType) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
+        <div role="status" aria-label="Loading">
+          <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+          <span className="sr-only">Loading...</span>
+        </div>
       </div>
     );
   }
@@ -144,7 +147,7 @@ function CheckoutForm() {
 
                 {/* Error Message */}
                 {error && (
-                  <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
+                  <div role="alert" className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400">
                     {error}
                   </div>
                 )}
@@ -201,10 +204,10 @@ function CheckoutForm() {
 
                 {/* VPS-specific: Model Size */}
                 {isVPS && (
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-3">
+                  <fieldset>
+                    <legend className="block text-sm font-medium text-white mb-3">
                       Expected Model Size
-                    </label>
+                    </legend>
                     <div className="grid grid-cols-3 gap-3">
                       {[
                         { value: "small", label: "Small (7B)", desc: "Mistral 7B, Llama3 8B" },
@@ -237,7 +240,7 @@ function CheckoutForm() {
                         </label>
                       ))}
                     </div>
-                  </div>
+                  </fieldset>
                 )}
 
                 {/* Operating System */}
@@ -320,7 +323,10 @@ function CheckoutForm() {
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
-                      <Spinner className="h-5 w-5 animate-spin" />
+                      <div role="status" aria-label="Loading">
+                        <Spinner aria-hidden="true" className="h-5 w-5 animate-spin" />
+                        <span className="sr-only">Loading...</span>
+                      </div>
                       Processing...
                     </span>
                   ) : (
@@ -348,7 +354,10 @@ export default function CheckoutPage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center">
-          <Spinner className="h-12 w-12 text-[#0d9488] animate-spin" />
+          <div role="status" aria-label="Loading">
+            <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>
       }
     >
