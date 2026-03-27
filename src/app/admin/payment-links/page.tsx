@@ -155,7 +155,9 @@ export default function PaymentLinksAdmin() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
+              <label htmlFor="admin-password" className="sr-only">Password</label>
               <input
+                id="admin-password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

@@ -18,8 +18,15 @@ export async function GET(request: NextRequest) {
       expand: ["customer", "line_items"],
     });
 
-    // Check if payment was successful
-    if (session.payment_status !== "paid") {
+    // Check if the Checkout Session completed successfully.
+    // For one-time payments, payment_status is "paid".
+    // For subscriptions, payment_status may be "no_payment_required" while
+    // session.status is "complete" — so we check both.
+    const isComplete =
+      session.status === "complete" ||
+      session.payment_status === "paid";
+
+    if (!isComplete) {
       return NextResponse.json(
         { valid: false, error: "Payment not completed" },
         { status: 400 }

@@ -102,16 +102,4 @@ export async function GET(request: NextRequest) {
   }
 }
 
-/*
- * STRIPE WEBHOOK (Future enhancement)
- *
- * To automatically log payments even if user doesn't complete intake form,
- * set up a Stripe webhook for the checkout.session.completed event:
- *
- * 1. Create /api/webhooks/stripe/route.ts
- * 2. Configure webhook in Stripe Dashboard → Developers → Webhooks
- * 3. Listen for checkout.session.completed
- * 4. Log payment to database with session metadata
- *
- * See: https://stripe.com/docs/webhooks
- */
+/* Stripe webhook handler is at /api/webhooks/stripe/route.ts */

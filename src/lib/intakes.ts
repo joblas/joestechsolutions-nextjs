@@ -9,7 +9,7 @@ export interface IntakeData {
   sessionId: string;
   email: string;
   name: string;
-  setupType: "local" | "vps";
+  setupType: "local" | "vps" | "cloud" | "managed";
   operatingSystem: string;
   specs: string;
   useCases: string;
@@ -60,7 +60,12 @@ export async function addIntake(
   };
 
   intakes.push(newIntake);
-  await fs.writeFile(INTAKES_FILE, JSON.stringify(intakes, null, 2));
+  try {
+    await fs.writeFile(INTAKES_FILE, JSON.stringify(intakes, null, 2));
+  } catch (err) {
+    // Vercel has a read-only filesystem — log but don't crash
+    console.warn("[intakes] Could not persist to disk (expected on Vercel):", err);
+  }
 
   return newIntake;
 }

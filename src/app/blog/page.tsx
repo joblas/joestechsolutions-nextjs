@@ -50,16 +50,14 @@ export default function BlogPage() {
                 </span>
               </div>
             </FadeIn>
-            <TextReveal delay={0.1}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-[family-name:var(--font-jetbrains-mono)] leading-tight tracking-tight">
-                Building with AI,
-              </h1>
-            </TextReveal>
-            <TextReveal delay={0.2}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white/60 font-[family-name:var(--font-jetbrains-mono)] leading-tight tracking-tight">
-                in the open.
-              </h1>
-            </TextReveal>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-jetbrains-mono)] leading-tight tracking-tight">
+              <TextReveal delay={0.1}>
+                <span className="block text-white">Building with AI,</span>
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                <span className="block text-white/60">in the open.</span>
+              </TextReveal>
+            </h1>
             <FadeIn delay={0.4}>
               <p className="mt-6 text-lg text-white/50 leading-relaxed max-w-xl">
                 How we build private AI systems, ship real products, and automate

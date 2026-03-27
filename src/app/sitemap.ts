@@ -4,6 +4,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://joestechsolutions.com';
   const currentDate = new Date();
 
+  // Blog post slugs
+  const blogSlugs = [
+    'why-your-business-needs-private-ai',
+    '22-agent-ai-team-architecture',
+    'replace-saas-with-ai-agents',
+    'nvidia-gtc-2026-keynote',
+  ];
+
+  // Industry vertical slugs
+  const verticalSlugs = [
+    'healthcare',
+    'legal',
+    'financial',
+    'therapy',
+    'education',
+    'realestate',
+    'construction',
+    'creative',
+    'smallbusiness',
+  ];
+
   return [
     // Homepage - Highest Priority
     {
@@ -22,6 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Services
     {
       url: `${baseUrl}/services`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    // Whisper Walkie - Free Tool / Lead Gen
+    {
+      url: `${baseUrl}/whisper-walkie`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -48,11 +76,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/portfolio/renfaire-directory`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/portfolio/cbarrgs`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    // Blog
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    // Blog Posts
+    ...blogSlugs.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    // Industry Verticals
+    {
+      url: `${baseUrl}/private-ai-setup/industries`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    ...verticalSlugs.map((slug) => ({
+      url: `${baseUrl}/private-ai-setup/industries/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    })),
     // About
     {
       url: `${baseUrl}/about`,

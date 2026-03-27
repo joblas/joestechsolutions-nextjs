@@ -396,7 +396,7 @@ function SuccessContent() {
               {/* Calendly Embed Placeholder */}
               <div className="bg-[#0d0d12] rounded-xl p-8 text-center border border-white/10">
                 <CalendarCheck weight="duotone" className="h-12 w-12 text-[#0d9488] mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">Schedule Your Setup Call</h3>
+                <h2 className="text-xl font-semibold text-white mb-2">Schedule Your Setup Call</h2>
                 <p className="text-white/60 mb-6">
                   Pick a 90-minute slot that works for you. I'll walk you through everything.
                 </p>
@@ -414,7 +414,7 @@ function SuccessContent() {
 
               {/* What to expect */}
               <div className="bg-[#0d0d12] rounded-xl p-6 border border-white/10">
-                <h4 className="text-white font-medium mb-3">What happens next:</h4>
+                <h3 className="text-white font-medium mb-3">What happens next:</h3>
                 <ol className="space-y-2 text-white/70 text-sm">
                   <li className="flex items-start gap-2">
                     <span className="text-[#0d9488] font-bold">1.</span>
