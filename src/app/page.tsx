@@ -352,11 +352,11 @@ export default function Home() {
                 <div className="order-2 lg:order-1">
                   <div className="relative aspect-square bg-[#1c1c26] rounded-3xl border border-white/10 overflow-hidden hover:border-[#2dd4bf]/30 transition-all duration-500">
                     <Image
-                      src="/images/skate-workshop-hero.png"
-                      alt="The Skate Workshop App"
+                      src="/images/the-skate-workshop.png"
+                      alt="The Skate Workshop icon"
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover p-8"
+                      className="object-contain p-12"
                     />
                   </div>
                 </div>

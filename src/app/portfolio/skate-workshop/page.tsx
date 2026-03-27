@@ -62,12 +62,12 @@ export default function SkateWorkshopCaseStudy() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#1c1c26] flex items-center justify-center">
                 <Image
-                  src="/images/skateboarding-action.jpg"
-                  alt="Skateboarding action"
+                  src="/images/the-skate-workshop.png"
+                  alt="The Skate Workshop icon"
                   fill
-                  className="object-cover"
+                  className="object-contain p-12"
                 />
               </div>
             </div>

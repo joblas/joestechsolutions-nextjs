@@ -29,7 +29,8 @@ export default function Portfolio() {
       title: "The Skate Workshop",
       category: "Mobile App • Web Platform",
       description: "Olympic-level skateboarding coaching platform with video feedback, 400+ trick database, and multiplayer features.",
-      image: "/images/skate-workshop-hero.png",
+      image: "/images/the-skate-workshop.png",
+      imageContain: true,
       tags: ["React Native", "Next.js", "Stripe", "Real-time"],
       color: "blue",
       href: "/portfolio/skate-workshop",
@@ -93,12 +94,12 @@ export default function Portfolio() {
               <StaggerItem key={project.id}>
                 <AnimatedCard>
                   <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-300 overflow-hidden group h-full">
-                <div className="relative aspect-video overflow-hidden">
+                <div className={`relative aspect-video overflow-hidden ${project.imageContain ? 'bg-[#1c1c26]' : ''}`}>
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className={`${project.imageContain ? 'object-contain p-8' : 'object-cover'} group-hover:scale-105 transition-transform duration-300`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-[#0d0d12]/50 to-transparent" />
                   <div className="absolute top-4 left-4">
