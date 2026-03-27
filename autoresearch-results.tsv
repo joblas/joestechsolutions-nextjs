@@ -1,0 +1,23 @@
+# metric_direction: lower_is_better
+iteration	commit	metric	delta	guard	status	description
+0	e6a8f571	1225744	0.0	pass	baseline	initial state — 1225744 bytes total client JS
+1	91b9eac3	1224766	-978	pass	keep	replace AnimatedCard framer-motion with pure CSS transitions
+2	517f679f	1224703	-63	pass	keep	replace HeroGlow framer-motion with CSS keyframes
+3	-	1228503	+3800	-	discard	replace FadeIn with IntersectionObserver — added more code than it saved
+4	-	1225000	+297	-	discard	replace MagneticButton with DOM transforms — hooks overhead offset savings
+5	-	1225983	+1280	-	discard	replace StaggerContainer with IntersectionObserver — same pattern, hooks overhead
+6	f6db9604	1219328	-5375	pass	keep	lazy-load all heavy animation components on animations-demo with next/dynamic
+7	-	1222222	+2894	-	discard	lazy-load ParallaxSection on blog pages — dynamic wrapper overhead exceeded savings
+8	-	1219328	0	-	discard	enable optimizePackageImports — no effect with Turbopack
+9	-	1219332	+4	-	discard	modularizeImports for lucide-react — Turbopack already tree-shakes
+10	9a1e2883	1207422	-11906	pass	keep	replace ParallaxSection useScroll/useTransform with vanilla scroll listener
+11	-	1207602	+180	-	discard	replace PremiumBackground useScroll — already behind dynamic import, no net savings
+12	ace43d69	1188476	-18946	pass	keep	replace CountUp useMotionValue/animate/useInView with vanilla rAF
+13	5a613916	1184416	-4060	pass	keep	replace AnimatePresence FAQ accordion with CSS height transitions
+14	1799f65e	1184416	0	pass	keep	type-only import for Variants/Transition — code quality, no size change
+15	-	1184669	+253	pass	discard	replace FloatingCards+ParallaxBackground useScroll — vanilla JS overhead exceeded shared chunk savings
+16	-	1188654	+4238	pass	discard	replace framer-motion with motion package — motion/react actually larger with Turbopack tree-shaking
+17	146a2d3a	1098914	-85502	pass	keep	move pricing constants from stripe.ts to pricing.ts — prevents 85KB Stripe SDK from bundling into client
+18	a89c4320	1097988	-926	pass	keep	standardize @phosphor-icons imports to /dist/ssr path — skips IconContext provider overhead
+19	-	1097988	0	pass	discard	lazy-load GoogleAnalytics via next/dynamic — wrapper overhead offset savings
+20	-	1097945	-43	pass	discard	compiler.removeConsole — negligible savings (43 bytes)
