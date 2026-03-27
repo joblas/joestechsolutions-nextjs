@@ -398,7 +398,7 @@ function SuccessContent() {
                 <CalendarCheck weight="duotone" className="h-12 w-12 text-[#0d9488] mx-auto mb-4" />
                 <h2 className="text-xl font-semibold text-white mb-2">Schedule Your Setup Call</h2>
                 <p className="text-white/60 mb-6">
-                  Pick a 90-minute slot that works for you. I'll walk you through everything.
+                  Pick a time that works for you. I'll walk you through everything.
                 </p>
                 <a
                   href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call"
