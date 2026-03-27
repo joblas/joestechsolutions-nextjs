@@ -5,8 +5,8 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Desktop, Cloud, Copy, Check, EnvelopeSimple, Lock } from "@phosphor-icons/react/dist/ssr";
 
-// Simple password protection - change this to your secret password
-const ADMIN_PASSWORD = "joeadmin2026";
+// Simple client-side gate — set NEXT_PUBLIC_ADMIN_PASSWORD in your .env.local
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "";
 
 const PAYMENT_LINKS = {
   local: {
