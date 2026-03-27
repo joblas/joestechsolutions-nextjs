@@ -7,6 +7,8 @@ export interface BlogPost {
   author: string;
   tags: string[];
   content: string; // HTML or markdown string
+  /** Optional map of image src paths to { width, height } for next/image optimization */
+  images?: Record<string, { width: number; height: number }>;
   seo: {
     title: string;
     description: string;

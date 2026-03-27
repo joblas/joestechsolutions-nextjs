@@ -16,6 +16,12 @@ export const post: BlogPost = {
       "How I built a 22-agent AI system that handles ops, sales, engineering, and marketing for my one-man consultancy. Not a concept — running in production on OpenClaw.",
     ogImage: "/images/blog/22-agent-architecture-og.png",
   },
+  images: {
+    "/images/blog/22-agent-org-chart.png": { width: 2000, height: 1776 },
+    "/images/blog/22-agent-architecture.png": { width: 2200, height: 2050 },
+    "/images/blog/22-agent-standup.png": { width: 900, height: 870 },
+    "/images/blog/22-agent-workflow.png": { width: 2200, height: 3250 },
+  },
   content: `
 <p class="lead">I run a one-man AI consultancy out of San Diego. No employees, no contractors, no VA. Just me.</p>
 

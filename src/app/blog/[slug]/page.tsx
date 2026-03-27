@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
+import { BlogImage } from "@/components/BlogImage";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -132,13 +133,18 @@ export default async function BlogPostPage({ params }: Props) {
           <FadeIn delay={0.25}>
             <div className="prose-blog">
               {(() => {
-                const videoRegex = /<video[^>]*>[\s\S]*?<source\s+src="([^"]+)"[^>]*\/>[\s\S]*?<\/video>/g;
+                // Match <video> blocks and <img> tags so they can be replaced
+                // with optimized React components instead of raw HTML.
+                const tokenRegex =
+                  /(<video[^>]*>[\s\S]*?<source\s+src="([^"]+)"[^>]*\/>[\s\S]*?<\/video>)|(<img\s[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*\/?>)/g;
+
                 const parts: React.ReactNode[] = [];
                 let lastIndex = 0;
                 let match;
                 let i = 0;
 
-                while ((match = videoRegex.exec(post.content)) !== null) {
+                while ((match = tokenRegex.exec(post.content)) !== null) {
+                  // Flush any raw HTML before this token
                   if (match.index > lastIndex) {
                     parts.push(
                       <div
@@ -148,10 +154,40 @@ export default async function BlogPostPage({ params }: Props) {
                         }}
                       />
                     );
+                    i++;
                   }
-                  parts.push(
-                    <BlogVideoPlayer key={`video-${i}`} src={match[1]} />
-                  );
+
+                  if (match[1]) {
+                    // <video> token — match[2] is the src
+                    parts.push(
+                      <BlogVideoPlayer key={`video-${i}`} src={match[2]} />
+                    );
+                  } else if (match[3]) {
+                    // <img> token — match[4] is src, match[5] is alt
+                    const src = match[4];
+                    const alt = match[5] ?? "";
+                    const dims = post.images?.[src];
+                    if (dims) {
+                      parts.push(
+                        <BlogImage
+                          key={`img-${i}`}
+                          src={src}
+                          alt={alt}
+                          width={dims.width}
+                          height={dims.height}
+                        />
+                      );
+                    } else {
+                      // No dimension metadata — fall back to raw HTML for this img
+                      parts.push(
+                        <div
+                          key={`img-${i}`}
+                          dangerouslySetInnerHTML={{ __html: match[3] }}
+                        />
+                      );
+                    }
+                  }
+
                   lastIndex = match.index + match[0].length;
                   i++;
                 }

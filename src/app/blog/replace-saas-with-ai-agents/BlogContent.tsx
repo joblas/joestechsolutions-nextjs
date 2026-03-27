@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { SaasComparisonTable } from "@/components/blog/SaasComparisonTable";
 import { ArchitectureDiagram } from "@/components/blog/ArchitectureDiagram";
@@ -219,10 +220,13 @@ export function BlogContent() {
           </FadeIn>
 
           <div className="my-12">
-            <img 
-              src="/images/blog/ai-control-panel.png" 
-              alt="AI Control Panel and Safety Systems" 
+            <Image
+              src="/images/blog/ai-control-panel.png"
+              alt="AI Control Panel and Safety Systems"
+              width={1920}
+              height={1072}
               className="w-full rounded-xl border border-white/10 shadow-2xl"
+              style={{ height: "auto" }}
             />
           </div>
 
