@@ -64,10 +64,10 @@ export default function SkateWorkshopCaseStudy() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#1c1c26] flex items-center justify-center">
                 <Image
-                  src="/images/the-skate-workshop.png"
-                  alt="The Skate Workshop icon"
+                  src="/images/skate-workshop-hero.png"
+                  alt="The Skate Workshop app icon"
                   fill
-                  className="object-contain p-12"
+                  className="object-contain p-8"
                 />
               </div>
             </div>
