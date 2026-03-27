@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/JsonLd";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import { ParticleBackground } from "@/components/animations/ParticleBackground";
 
 const inter = Inter({
@@ -101,7 +101,15 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+              strategy="lazyOnload"
+            />
+            <Script id="_next-ga-init" strategy="lazyOnload">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}')`}
+            </Script>
+          </>
         )}
       </body>
     </html>

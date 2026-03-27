@@ -5,22 +5,23 @@
  * Just CSS-animated dots with Ocean palette teal accents.
  * Turbopack-safe. Zero JS animation overhead.
  *
- * Optimized: reduced from 80 to 40 particles to cut DOM nodes and
- * animation cost by 50%. CSS containment prevents layout recalc
- * from leaking into the rest of the page.
+ * Optimized: reduced from 80→40→15 particles. Lighthouse showed 40 particles
+ * caused 3,035ms of style/layout work dominating LCP and TBT.
+ * 15 particles preserves the ambient feel while cutting paint cost ~60%.
+ * CSS containment prevents layout recalc from leaking into the page.
  */
 
 export function ParticleBackground() {
-  // Generate deterministic particle positions — 40 particles (was 80)
-  const particles = Array.from({ length: 40 }, (_, i) => {
-    const seed = i * 137.508; // golden angle for distribution
+  // 15 particles (was 40) — golden angle distribution for even spread
+  const particles = Array.from({ length: 15 }, (_, i) => {
+    const seed = i * 137.508;
     return {
       id: i,
       x: ((seed * 7) % 100),
       y: ((seed * 13) % 100),
       size: 1 + (i % 3),
-      delay: (i % 10) * 1,
-      duration: 15 + (i % 10) * 3,
+      delay: (i % 8) * 1.5,
+      duration: 18 + (i % 6) * 4,
       isTeal: i % 3 !== 0,
     };
   });
@@ -64,7 +65,6 @@ export function ParticleBackground() {
             backgroundColor: p.isTeal ? '#0d9488' : '#475569',
             opacity: p.isTeal ? 0.4 : 0.15,
             animation: `particle-drift ${p.duration}s ease-in-out ${p.delay}s infinite`,
-            willChange: 'transform',
             contain: 'layout style',
           }}
         />

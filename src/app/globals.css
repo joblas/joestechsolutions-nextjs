@@ -121,7 +121,7 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: #1c1c26;
   --popover-foreground: oklch(0.98 0 0);
-  --primary: #0d9488;  /* Ocean teal */
+  --primary: #0b7f73;  /* Ocean teal — darkened from #0d9488 for WCAG AA 4.5:1 white-on-teal contrast */
   --primary-foreground: oklch(1 0 0);
   --secondary: #1c1c26;
   --secondary-foreground: oklch(0.98 0 0);

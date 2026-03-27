@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Private AI for Small Business | Joe's Tech Solutions",
+  description:
+    "Private AI setup, AI agent teams, and custom software for ambitious SMBs. Your business runs while you sleep — no subscriptions, no data leaks.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Private AI for Small Business | Joe's Tech Solutions",
+    description:
+      "Private AI setup, AI agent teams, and custom software for ambitious SMBs.",
+    url: "https://joestechsolutions.com",
+  },
+};
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -299,7 +315,7 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Link href="/portfolio/renfaire-directory">
-                    <Button className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0d9488]/20">
+                    <Button className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
                       View Case Study
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Button>
@@ -320,6 +336,7 @@ export default function Home() {
                     src="/images/renfaire-hero.jpg"
                     alt="RenFaire Directory — Renaissance faire listings"
                     fill
+                    priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
