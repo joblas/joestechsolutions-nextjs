@@ -110,7 +110,7 @@ export default function WhisperWalkiePage() {
         <div className="absolute inset-0 bg-[#0d0d12]" />
         {/* Animated blobs */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0b7f73] rounded-full blur-[120px] animate-glow" />
           <div
             className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#2dd4bf] rounded-full blur-[100px] animate-glow"
             style={{ animationDelay: "2s" }}
@@ -133,7 +133,7 @@ export default function WhisperWalkiePage() {
             {/* Badge */}
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 bg-[#0d9488] rounded-full" aria-hidden="true" />
+                <span className="w-1.5 h-1.5 bg-[#0b7f73] rounded-full" aria-hidden="true" />
                 Open Source &middot; Privacy First
               </div>
             </FadeIn>
@@ -300,10 +300,10 @@ export default function WhisperWalkiePage() {
                 <div className="flex gap-6 items-start">
                   {/* Circle + icon */}
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#0d9488]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
+                    <div className="w-14 h-14 rounded-full bg-[#0b7f73]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
                       <Download className="w-6 h-6 text-[#0d9488]" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0d9488] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0b7f73] text-white text-[10px] font-bold flex items-center justify-center z-20">
                       1
                     </span>
                   </div>
@@ -340,7 +340,7 @@ export default function WhisperWalkiePage() {
                           {/* Windows */}
                           <details className="group/detail">
                             <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#0d9488]/15 flex items-center justify-center flex-shrink-0">
+                              <span className="w-5 h-5 rounded bg-[#0b7f73]/15 flex items-center justify-center flex-shrink-0">
                                 <Monitor className="w-3 h-3 text-[#0d9488]" aria-hidden="true" />
                               </span>
                               Windows
@@ -378,7 +378,7 @@ export default function WhisperWalkiePage() {
                           {/* Linux */}
                           <details className="group/detail">
                             <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#0d9488]/15 flex items-center justify-center flex-shrink-0">
+                              <span className="w-5 h-5 rounded bg-[#0b7f73]/15 flex items-center justify-center flex-shrink-0">
                                 <Terminal className="w-3 h-3 text-[#0d9488]" aria-hidden="true" />
                               </span>
                               Linux
@@ -408,10 +408,10 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#0d9488]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
+                    <div className="w-14 h-14 rounded-full bg-[#0b7f73]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
                       <Settings className="w-6 h-6 text-[#0d9488]" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0d9488] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0b7f73] text-white text-[10px] font-bold flex items-center justify-center z-20">
                       3
                     </span>
                   </div>
@@ -444,7 +444,7 @@ export default function WhisperWalkiePage() {
                       <CardContent className="p-6">
                         <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Try It!</h3>
                         <p className="text-white/60 leading-relaxed text-sm">
-                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-[#0d9488]/15 border border-[#0d9488]/30 rounded text-[#0d9488] font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
+                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-[#0b7f73]/15 border border-[#0d9488]/30 rounded text-[#0d9488] font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
                         </p>
                       </CardContent>
                     </Card>
@@ -742,7 +742,7 @@ export default function WhisperWalkiePage() {
         <div className="absolute inset-0 bg-[#0d0d12]" />
         {/* Blobs */}
         <div className="absolute inset-0 opacity-25 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0d9488] rounded-full blur-[130px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0b7f73] rounded-full blur-[130px] animate-glow" />
           <div
             className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#2dd4bf] rounded-full blur-[110px] animate-glow"
             style={{ animationDelay: "1.5s" }}

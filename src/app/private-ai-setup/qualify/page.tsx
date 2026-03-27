@@ -203,7 +203,7 @@ function QualifyForm() {
                           qualifyData.ramAmount === option.value
                             ? option.warn
                               ? "border-amber-500 bg-amber-500/10"
-                              : "border-[#0d9488] bg-[#0d9488]/10"
+                              : "border-[#0d9488] bg-[#0b7f73]/10"
                             : "border-white/10 hover:border-white/20"
                         }`}
                       >

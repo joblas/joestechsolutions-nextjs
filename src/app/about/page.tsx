@@ -53,7 +53,7 @@ export default function About() {
               <FadeIn delay={0.3}>
                 <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
                   <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0d9488]/20">
+                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
                       Let&apos;s Work Together
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -64,7 +64,7 @@ export default function About() {
 
             <FadeIn delay={0.4} direction="left">
               <div className="relative">
-                <div className="absolute inset-0 bg-[#0d9488] rounded-3xl blur-2xl opacity-20" />
+                <div className="absolute inset-0 bg-[#0b7f73] rounded-3xl blur-2xl opacity-20" />
                 <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
                   <Image
                     src="/images/joe-profile.jpg"
@@ -98,7 +98,7 @@ export default function About() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Image src="/icons/tools-dynamic/premium.png" alt="Waymo Operations" width={40} height={40} className="object-contain" />
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Waymo Operations</h3>
@@ -130,7 +130,7 @@ export default function About() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full">
                   <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Image src="/icons/rocket-dynamic/premium.png" alt="Private AI Infrastructure" width={40} height={40} className="object-contain" />
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Private AI Infrastructure</h3>
@@ -309,7 +309,7 @@ export default function About() {
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30">
+                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

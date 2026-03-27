@@ -38,7 +38,7 @@ export default function SkateWorkshopCaseStudy() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-[#0d9488]/20 border border-[#0d9488]/30 rounded-full text-[#0d9488] text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-[#0b7f73]/20 border border-[#0d9488]/30 rounded-full text-[#0d9488] text-sm font-semibold">
                 Mobile App • Web Platform • Subscription SaaS
               </div>
 
@@ -53,7 +53,7 @@ export default function SkateWorkshopCaseStudy() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://www.theskateworkshop.app/" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0d9488]/20">
+                  <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0b7f73]/20">
                     Visit Live Site
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </Button>
@@ -81,7 +81,7 @@ export default function SkateWorkshopCaseStudy() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#0d9488]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-[#0b7f73]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Smartphone className="w-6 h-6 text-[#0d9488]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Platform</CardTitle>
@@ -217,7 +217,7 @@ export default function SkateWorkshopCaseStudy() {
             ].map((feature, index) => (
               <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-colors group">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-[#0d9488]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-[#0b7f73]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <feature.icon className="w-6 h-6 text-[#0d9488]" />
                   </div>
                   <CardTitle className="text-xl font-bold text-white font-space-grotesk">{feature.title}</CardTitle>
@@ -270,7 +270,7 @@ export default function SkateWorkshopCaseStudy() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0d9488]/20">
+              <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0b7f73]/20">
                 Schedule Discovery Call
               </Button>
             </a>

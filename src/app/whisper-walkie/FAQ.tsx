@@ -99,7 +99,7 @@ export function FAQ() {
                     {/* Icon */}
                     <div
                       className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
-                        isOpen ? "bg-[#0d9488]/20" : "bg-white/5 group-hover:bg-[#0d9488]/10"
+                        isOpen ? "bg-[#0b7f73]/20" : "bg-white/5 group-hover:bg-[#0b7f73]/10"
                       }`}
                     >
                       <HelpCircle

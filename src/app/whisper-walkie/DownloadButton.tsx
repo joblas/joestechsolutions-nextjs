@@ -70,7 +70,7 @@ export function HeroDownloadButton() {
         <MagneticButton strength={0.2}>
           <Button
             size="lg"
-            className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0d9488]/20 transition-all"
+            className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all"
           >
             <Download className="mr-2 h-5 w-5" aria-hidden="true" />
             Download for {info.label}
@@ -211,7 +211,7 @@ export function CtaDownloadButton() {
       <MagneticButton strength={0.15}>
         <Button
           size="lg"
-          className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0d9488]/20 transition-all"
+          className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all"
         >
           <Download className="mr-2 h-5 w-5" aria-hidden="true" />
           Download for {info.label}

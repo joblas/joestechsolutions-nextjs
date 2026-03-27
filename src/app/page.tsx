@@ -38,7 +38,7 @@ export default function Home() {
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
                 <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0b7f73] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]" />
                 </span>
                 <span>Private AI for SMBs — built and battle-tested in-house</span>
@@ -68,7 +68,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link href="/private-ai-setup">
                   <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0d9488]/20 transition-all">
+                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all">
                       Get Private AI Setup
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Button>
@@ -105,13 +105,13 @@ export default function Home() {
               <AnimatedCard>
                 <Card className="relative bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
                   {/* Most Popular badge */}
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-medium z-10">
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0b7f73]/20 rounded-full text-[#2dd4bf] text-sm font-medium z-10">
                     Most Popular
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6 p-6">
                     <div className="space-y-4">
-                      <div className="w-14 h-14 bg-[#0d9488]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0d9488]/30 transition-all duration-300">
+                      <div className="w-14 h-14 bg-[#0b7f73]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0b7f73]/30 transition-all duration-300">
                         <Image src="/icons/computer-dynamic/premium.png" alt="Private AI Setup" width={36} height={36} sizes="36px" className="object-contain" />
                       </div>
                       <div>
@@ -160,7 +160,7 @@ export default function Home() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0d9488]/20 transition-all duration-300">
+                    <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
                       <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Joe's AI Server" width={36} height={36} sizes="36px" className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-xl font-space-grotesk">Joe&apos;s AI Server</CardTitle>
@@ -199,7 +199,7 @@ export default function Home() {
                       Not one AI. A whole team of them. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
                     </p>
                     <Link href="/services#agent-systems" className="text-[#2dd4bf] text-sm font-medium hover:text-[#14b8a6] inline-flex items-center group/link transition-colors">
-                      Learn more
+                      Explore agent systems
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>
@@ -212,7 +212,7 @@ export default function Home() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0d9488]/20 transition-all duration-300">
+                    <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
                       <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-xl font-space-grotesk">Custom AI Teams</CardTitle>
@@ -225,7 +225,7 @@ export default function Home() {
                       Got a complex workflow? We design multi-agent AI systems from scratch, tailored to your exact business logic and stack.
                     </p>
                     <Link href="/services#custom-ai" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
-                      Learn more
+                      Explore custom AI teams
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>
@@ -269,7 +269,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <div className="inline-block px-4 py-1 bg-[#0d9488]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-1 bg-[#0b7f73]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold mb-6">
                 Featured Project
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 font-space-grotesk">
@@ -284,7 +284,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeIn delay={0.2}>
               <div className="space-y-8">
-                <div className="inline-block px-4 py-1.5 bg-[#0d9488]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold">
+                <div className="inline-block px-4 py-1.5 bg-[#0b7f73]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold">
                   Content Platform • SEO • Directory
                 </div>
 
@@ -485,7 +485,7 @@ export default function Home() {
             </p>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30 transition-all">
+                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 transition-all">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>

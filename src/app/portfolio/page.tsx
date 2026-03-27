@@ -102,7 +102,7 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-[#0d0d12]/50 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 bg-[#0d9488]/20 text-[#0d9488] backdrop-blur-sm rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-[#0b7f73]/20 text-[#0d9488] backdrop-blur-sm rounded-full text-sm font-medium">
                       {project.category}
                     </span>
                   </div>
@@ -129,7 +129,7 @@ export default function Portfolio() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href={project.href} className="flex-1">
-                      <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] group/btn">
+                      <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] group/btn">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -157,7 +157,7 @@ export default function Portfolio() {
                     More case studies coming soon. Working on something exciting?
                   </p>
                   <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e]">
+                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e]">
                       Start Your Project
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -185,7 +185,7 @@ export default function Portfolio() {
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-lg px-10 py-6 group">
+                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-lg px-10 py-6 group">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

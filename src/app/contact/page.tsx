@@ -54,7 +54,7 @@ export default function Contact() {
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Image src="/icons/mail-dynamic/premium.png" alt="Email" width={32} height={32} className="object-contain" />
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Email</CardTitle>
@@ -109,7 +109,7 @@ export default function Contact() {
               <Card className="bg-[#1c1c26] border-white/10">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center">
                       <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Message" width={32} height={32} className="object-contain" />
                     </div>
                     <div>
@@ -145,7 +145,7 @@ export default function Contact() {
                       <span>Any specific questions or requirements</span>
                     </li>
                   </ul>
-                  <Button asChild className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white mt-6 rounded-full shadow-lg shadow-[#0d9488]/20">
+                  <Button asChild className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white mt-6 rounded-full shadow-lg shadow-[#0b7f73]/20">
                     <a href="mailto:joe@joestechsolutions.com?subject=Project%20Inquiry&body=Hi%20Joe%2C%0A%0AI%27m%20interested%20in%20discussing%20a%20project.%0A%0AProject%20description%3A%0A%0ATimeline%2Fbudget%3A%0A%0AQuestions%3A">
                       <Image src="/icons/mail-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                       Send Email

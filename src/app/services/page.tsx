@@ -59,14 +59,14 @@ export default function Services() {
             <div id="ai-setup" className="mb-16">
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/50 transition-all duration-500 overflow-hidden group relative">
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-medium z-10">
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0b7f73]/20 rounded-full text-[#2dd4bf] text-sm font-medium z-10">
                     Most Popular
                   </div>
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Robot weight="duotone" className="h-10 w-10 text-[#0d9488]" />
                         </div>
                         <div>
@@ -99,7 +99,7 @@ export default function Services() {
                       </div>
 
                       <Link href="/private-ai-setup">
-                        <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0d9488]/20">
+                        <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0b7f73]/20">
                           Get Private AI Setup
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
@@ -108,7 +108,7 @@ export default function Services() {
 
                     <div className="relative flex items-center justify-center">
                       <div className="relative w-full max-w-sm">
-                        <div className="absolute inset-0 bg-[#0d9488]/20 rounded-3xl blur-2xl" />
+                        <div className="absolute inset-0 bg-[#0b7f73]/20 rounded-3xl blur-2xl" />
                         <div className="relative bg-[#0d0d12] rounded-2xl border border-white/10 p-8 text-center">
                           <Robot weight="duotone" className="h-24 w-24 text-[#0d9488] mx-auto mb-6" />
                           <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">Private. Powerful. Yours.</h3>
@@ -275,7 +275,7 @@ export default function Services() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
                   <CardHeader className="relative">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Image src="/icons/mobile-dynamic/premium.png" alt="Mobile Development" width={40} height={40} className="object-contain" />
                       </div>
                       <div>
@@ -306,7 +306,7 @@ export default function Services() {
                       ))}
                     </div>
                     <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0d9488]/20">
+                      <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0b7f73]/20">
                         Get Mobile App Quote
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -374,7 +374,7 @@ export default function Services() {
                   <div className="relative grid lg:grid-cols-2 gap-8 p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Image src="/icons/rocket-dynamic/premium.png" alt="E-commerce" width={40} height={40} className="object-contain" />
                         </div>
                         <div>
@@ -405,7 +405,7 @@ export default function Services() {
                       </div>
 
                       <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0d9488]/20">
+                        <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0b7f73]/20">
                           Get E-commerce Quote
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
@@ -613,7 +613,7 @@ export default function Services() {
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30">
+                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
                   Schedule Discovery Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

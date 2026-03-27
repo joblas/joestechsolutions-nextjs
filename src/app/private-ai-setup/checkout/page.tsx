@@ -315,7 +315,7 @@ function CheckoutForm() {
                   className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
                     isVPS
                       ? "bg-[#2dd4bf] hover:bg-[#14b8a6] shadow-[#2dd4bf]/20"
-                      : "bg-[#0d9488] hover:bg-[#0f766e] shadow-[#0d9488]/20"
+                      : "bg-[#0b7f73] hover:bg-[#0f766e] shadow-[#0b7f73]/20"
                   }`}
                 >
                   {isSubmitting ? (

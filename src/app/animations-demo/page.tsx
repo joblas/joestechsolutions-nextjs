@@ -75,7 +75,7 @@ export default function AnimationsDemo() {
             <FeatureCard>
               <GlassCard className="p-10 h-full">
                 <FeatureIcon>
-                  <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center mb-8">
+                  <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-8">
                     <Target className="w-8 h-8 text-[#0d9488]" />
                   </div>
                 </FeatureIcon>
@@ -155,7 +155,7 @@ export default function AnimationsDemo() {
             <AICard>
               <GlassCard className="p-8 h-full">
                 <PulsingIcon>
-                  <div className="w-14 h-14 bg-[#0d9488]/10 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-xl flex items-center justify-center mb-6">
                     <Zap className="w-7 h-7 text-[#0d9488]" />
                   </div>
                 </PulsingIcon>

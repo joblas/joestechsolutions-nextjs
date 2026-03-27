@@ -66,7 +66,7 @@ export function ScrollBackground() {
 
       {/* Teal orb — bottom left, drifts up-left */}
       <motion.div
-        className="absolute bottom-[-10%] -left-20 w-[400px] h-[400px] rounded-full blur-[140px] bg-[#0d9488]"
+        className="absolute bottom-[-10%] -left-20 w-[400px] h-[400px] rounded-full blur-[140px] bg-[#0b7f73]"
         style={{
           y: orbTwoY,
           x: orbTwoX,

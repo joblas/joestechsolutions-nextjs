@@ -86,7 +86,7 @@ export default function ReplaceSaasPage() {
             <div className="absolute top-[-100px] right-[-100px] w-[700px] h-[700px] bg-[#8B5CF6] rounded-full blur-[200px]" />
           </ParallaxSection>
           <ParallaxSection speed={0.2} direction="down">
-            <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[180px]" />
+            <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#0b7f73] rounded-full blur-[180px]" />
           </ParallaxSection>
         </div>
         {/* Grid pattern overlay */}
@@ -233,11 +233,11 @@ export default function ReplaceSaasPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
             <div className="relative bg-gradient-to-br from-[#0d9488]/10 via-[#1c1c26] to-[#8B5CF6]/10 border border-white/10 rounded-3xl p-10 sm:p-14 overflow-hidden">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#0d9488] rounded-full blur-[100px] opacity-10" />
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#0b7f73] rounded-full blur-[100px] opacity-10" />
               <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-[#8B5CF6] rounded-full blur-[80px] opacity-10" />
               <div className="relative">
-                <div className="inline-flex items-center gap-2 bg-[#0d9488]/10 border border-[#0d9488]/30 rounded-full px-4 py-1.5 mb-6">
-                  <span className="w-2 h-2 rounded-full bg-[#0d9488] animate-pulse" />
+                <div className="inline-flex items-center gap-2 bg-[#0b7f73]/10 border border-[#0d9488]/30 rounded-full px-4 py-1.5 mb-6">
+                  <span className="w-2 h-2 rounded-full bg-[#0b7f73] animate-pulse" />
                   <span className="text-[#0d9488] text-sm font-medium">Want This For Your Business?</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-space-grotesk">
@@ -249,7 +249,7 @@ export default function ReplaceSaasPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/private-ai-setup"
-                    className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0d9488]/20"
+                    className="inline-flex items-center justify-center gap-2 bg-[#0b7f73] hover:bg-[#0f766e] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0b7f73]/20"
                   >
                     See the Setup Package
                     <ArrowRight className="w-4 h-4" />

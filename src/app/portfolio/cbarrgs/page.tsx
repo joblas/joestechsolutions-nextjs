@@ -93,7 +93,7 @@ export default function CbarrgsCaseStudy() {
 
             <Card className="bg-[#1c1c26] border-white/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#0d9488]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-[#0b7f73]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-6 h-6 text-[#0d9488]" />
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Performance</CardTitle>

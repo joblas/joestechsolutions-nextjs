@@ -127,8 +127,8 @@ export default function PrivateAISetup() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0d9488]/10 border border-[#0d9488]/20 mb-6">
-                <span className="w-1.5 h-1.5 bg-[#0d9488] rounded-full animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0b7f73]/10 border border-[#0d9488]/20 mb-6">
+                <span className="w-1.5 h-1.5 bg-[#0b7f73] rounded-full animate-pulse" />
                 <span className="text-[#0d9488] font-medium text-sm tracking-wider uppercase">Private AI — Built for Your Business</span>
               </div>
             </FadeIn>
@@ -149,7 +149,7 @@ export default function PrivateAISetup() {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white text-lg px-8 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30 font-space-grotesk font-semibold"
+                    className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white text-lg px-8 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 font-space-grotesk font-semibold"
                   >
                     <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                       <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />
@@ -162,7 +162,7 @@ export default function PrivateAISetup() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="bg-[#1c1c26]/50 border-white/20 hover:border-[#0d9488]/50 text-white hover:text-[#0d9488] text-lg px-8 py-7 rounded-full group shadow-2xl shadow-transparent hover:shadow-[#0d9488]/10 font-space-grotesk font-semibold transition-all duration-300 backdrop-blur-sm"
+                    className="bg-[#1c1c26]/50 border-white/20 hover:border-[#0d9488]/50 text-white hover:text-[#0d9488] text-lg px-8 py-7 rounded-full group shadow-2xl shadow-transparent hover:shadow-[#0b7f73]/10 font-space-grotesk font-semibold transition-all duration-300 backdrop-blur-sm"
                   >
                     <a href="#pricing">
                       See Pricing
@@ -173,7 +173,7 @@ export default function PrivateAISetup() {
               </div>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <div className="mt-16 relative mx-auto max-w-4xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#0d9488]/10">
+              <div className="mt-16 relative mx-auto max-w-4xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#0b7f73]/10">
                 <Image
                   src="/images/joe-ai-typing.png"
                   alt="Joe deploying private AI systems"
@@ -308,7 +308,7 @@ export default function PrivateAISetup() {
                   <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 text-center h-full p-6 sm:p-8 relative group">
                     <div className={twMerge(
                       "w-16 h-16 rounded-full flex items-center justify-center font-space-grotesk text-2xl font-bold mx-auto mb-7 relative z-10 transition-shadow duration-300",
-                      index === 0 && "bg-[#0d9488]/10 text-[#0d9488] border-2 border-[#0d9488]/30 shadow-[0_0_28px_rgba(14,165,233,0.18)] group-hover:shadow-[0_0_50px_#0d9488]",
+                      index === 0 && "bg-[#0b7f73]/10 text-[#0d9488] border-2 border-[#0d9488]/30 shadow-[0_0_28px_rgba(14,165,233,0.18)] group-hover:shadow-[0_0_50px_#0d9488]",
                       index === 1 && "bg-[#2dd4bf]/10 text-[#2dd4bf] border-2 border-[#2dd4bf]/30 shadow-[0_0_28px_rgba(6,182,212,0.18)] group-hover:shadow-[0_0_50px_#2dd4bf]",
                       index === 2 && "bg-[#8B5CF6]/10 text-[#8B5CF6] border-2 border-[#8B5CF6]/30 shadow-[0_0_28px_rgba(139,92,246,0.18)] group-hover:shadow-[0_0_50px_#8B5CF6]"
                     )}>
@@ -464,7 +464,7 @@ export default function PrivateAISetup() {
                       "Email support included"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-start gap-3 text-base text-white/60">
-                        <div className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] bg-[#0d9488]/10 text-[#0d9488] flex-shrink-0 mt-1">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] bg-[#0b7f73]/10 text-[#0d9488] flex-shrink-0 mt-1">
                           <Check weight="bold" />
                         </div>
                         <span className={index === 0 ? "font-semibold text-white/80" : ""}>{feature}</span>
@@ -474,7 +474,7 @@ export default function PrivateAISetup() {
                   <MagneticButton strength={0.2} className="w-full">
                     <Button
                       onClick={() => handleGetStarted("cloud")}
-                      className="w-full bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white rounded-full group shadow-lg shadow-[#0d9488]/30 py-6 text-lg font-space-grotesk font-semibold"
+                      className="w-full bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white rounded-full group shadow-lg shadow-[#0b7f73]/30 py-6 text-lg font-space-grotesk font-semibold"
                     >
                       Get Started — $499 + $29/mo
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -562,10 +562,10 @@ export default function PrivateAISetup() {
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
-                  <div className="w-15 h-15 bg-[#0d9488]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-2xl text-[#0d9488] mx-auto mb-5">
+                  <div className="w-15 h-15 bg-[#0b7f73]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-2xl text-[#0d9488] mx-auto mb-5">
                     <HardDrive weight="duotone" />
                   </div>
-                  <h4 className="text-lg font-bold text-white font-space-grotesk mb-2">On-Premise Control</h4>
+                  <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">On-Premise Control</h3>
                   <p className="text-sm text-white/60 leading-relaxed">Your AI runs on your own hardware. No third-party servers ever touch your data or conversations.</p>
                 </Card>
               </AnimatedCard>
@@ -574,10 +574,10 @@ export default function PrivateAISetup() {
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
-                  <div className="w-15 h-15 bg-[#0d9488]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-2xl text-[#0d9488] mx-auto mb-5">
+                  <div className="w-15 h-15 bg-[#0b7f73]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-2xl text-[#0d9488] mx-auto mb-5">
                     <ShieldCheck weight="duotone" />
                   </div>
-                  <h4 className="text-lg font-bold text-white font-space-grotesk mb-2">Zero Tracking</h4>
+                  <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Zero Tracking</h3>
                   <p className="text-sm text-white/60 leading-relaxed">No usage telemetry, no training data collection, no analytics shared with anyone. Absolute zero.</p>
                 </Card>
               </AnimatedCard>
@@ -586,10 +586,10 @@ export default function PrivateAISetup() {
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/20 transition-all duration-300 text-center h-full p-6 sm:p-8 hover:translate-y-[-4px]">
-                  <div className="w-15 h-15 bg-[#0d9488]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-2xl text-[#0d9488] mx-auto mb-5">
+                  <div className="w-15 h-15 bg-[#0b7f73]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-2xl text-[#0d9488] mx-auto mb-5">
                     <GitBranch weight="duotone" />
                   </div>
-                  <h4 className="text-lg font-bold text-white font-space-grotesk mb-2">Open Source Models</h4>
+                  <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Open Source Models</h3>
                   <p className="text-sm text-white/60 leading-relaxed">Built on fully auditable, open-source AI. Inspect exactly what&apos;s running — no black boxes, ever.</p>
                 </Card>
               </AnimatedCard>
@@ -621,10 +621,10 @@ export default function PrivateAISetup() {
               <StaggerItem key={i}>
                 <AnimatedCard>
                   <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/20 transition-all duration-300 p-5 sm:p-6 text-center hover:translate-y-[-3px]">
-                    <div className="w-10 h-10 bg-[#0d9488]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-lg text-[#0d9488] mx-auto mb-3">
+                    <div className="w-10 h-10 bg-[#0b7f73]/10 border border-[#0d9488]/18 rounded-lg flex items-center justify-center text-lg text-[#0d9488] mx-auto mb-3">
                       <v.icon weight="duotone" />
                     </div>
-                    <h4 className="text-sm font-bold text-white font-space-grotesk mb-1">{v.title}</h4>
+                    <h3 className="text-sm font-bold text-white font-space-grotesk mb-1">{v.title}</h3>
                     <p className="text-xs text-white/50">{v.desc}</p>
                   </Card>
                 </AnimatedCard>
@@ -693,7 +693,7 @@ export default function PrivateAISetup() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30 font-space-grotesk font-semibold"
+                className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white text-lg px-10 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 font-space-grotesk font-semibold"
               >
                 <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                   <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />

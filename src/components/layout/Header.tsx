@@ -61,7 +61,7 @@ export function Header() {
                 );
               })}
               <Link href="/private-ai-setup">
-                <Button size="sm" className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full shadow-lg shadow-[#0d9488]/20">
+                <Button size="sm" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full shadow-lg shadow-[#0b7f73]/20">
                   Get Private AI
                 </Button>
               </Link>
@@ -105,7 +105,7 @@ export function Header() {
             })}
             <div className="px-4 pt-2">
               <Link href="/private-ai-setup" className="block" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0d9488]/20">
+                <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0b7f73]/20">
                   Get Private AI
                 </Button>
               </Link>

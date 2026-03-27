@@ -22,7 +22,7 @@ export function TimelineStep({
     >
       {/* Timeline line */}
       <div className="flex flex-col items-center">
-        <div className="w-2.5 h-2.5 rounded-full bg-[#0d9488] ring-4 ring-[#0d9488]/20 shrink-0 mt-1" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#0b7f73] ring-4 ring-[#0d9488]/20 shrink-0 mt-1" />
         <div className="w-px flex-1 bg-gradient-to-b from-[#0d9488]/30 to-transparent" />
       </div>
       <div className="pb-2">

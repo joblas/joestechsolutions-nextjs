@@ -140,7 +140,7 @@ function SuccessContent() {
               <CardContent className="text-center">
                 <Button
                   onClick={() => (window.location.href = "/private-ai-setup")}
-                  className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full"
+                  className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full"
                 >
                   Return to Private AI Setup
                 </Button>
@@ -332,7 +332,7 @@ function SuccessContent() {
                     className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
                       isVPS
                         ? "bg-[#2dd4bf] hover:bg-[#14b8a6] shadow-[#2dd4bf]/20"
-                        : "bg-[#0d9488] hover:bg-[#0f766e] shadow-[#0d9488]/20"
+                        : "bg-[#0b7f73] hover:bg-[#0f766e] shadow-[#0b7f73]/20"
                     }`}
                   >
                     {isSubmitting ? (
@@ -406,7 +406,7 @@ function SuccessContent() {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button className="bg-[#0d9488] hover:bg-[#0f766e] text-white rounded-full px-8">
+                  <Button className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full px-8">
                     Open Scheduler
                   </Button>
                 </a>

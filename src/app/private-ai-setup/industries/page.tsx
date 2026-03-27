@@ -28,14 +28,14 @@ export default function IndustriesPage() {
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div className="absolute inset-0 bg-[#0d0d12]" />
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0d9488] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0b7f73] rounded-full blur-[120px] animate-glow" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#8B5CF6] rounded-full blur-[100px] animate-glow" style={{ animationDelay: '2s' }} />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0d9488]/10 border border-[#0d9488]/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0b7f73]/10 border border-[#0d9488]/20 mb-6">
                 <Robot weight="duotone" className="h-5 w-5 text-[#0d9488]" />
                 <span className="text-[#0d9488] font-medium">9 Industry Assistants</span>
               </div>
@@ -69,7 +69,7 @@ export default function IndustriesPage() {
                         <div className="absolute top-0 right-0 w-48 h-48 bg-linear-to-br from-[#0d9488]/5 to-transparent rounded-full blur-3xl" />
                         <CardContent className="p-8 relative">
                           <div className="flex items-start justify-between mb-6">
-                            <div className="w-14 h-14 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                               {IconComponent && <IconComponent weight="duotone" className="h-7 w-7 text-[#0d9488]" />}
                             </div>
                             {vertical.isPremium && (
@@ -107,7 +107,7 @@ export default function IndustriesPage() {
       <section className="relative py-24 sm:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[#0d0d12]" />
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0d9488] rounded-full blur-[150px] animate-glow" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0b7f73] rounded-full blur-[150px] animate-glow" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -122,7 +122,7 @@ export default function IndustriesPage() {
           <FadeIn delay={0.2}>
             <Link href="/private-ai-setup">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0d9488] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0d9488]/30">
+                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
                   View Pricing
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
