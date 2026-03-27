@@ -23,7 +23,7 @@ export function HeroGlow({
     <div className={`relative ${className}`}>
       {/* Glow layer behind text */}
       <div
-        className="absolute inset-0 -z-10 animate-[hero-glow_1.2s_cubic-bezier(0.16,1,0.3,1)_forwards] opacity-0 scale-[0.8]"
+        className="absolute inset-0 -z-10 animate-[hero-glow_1.2s_cubic-bezier(0.16,1,0.3,1)_forwards]"
         style={{
           background: `radial-gradient(circle, ${glowColor}${Math.floor(glowIntensity * 255).toString(16).padStart(2, '0')} 0%, transparent 70%)`,
           filter: "blur(60px)",

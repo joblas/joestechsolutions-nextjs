@@ -48,7 +48,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         ref={contentRef}
         style={{
           height,
-          opacity: isOpen ? 1 : 0,
+          opacity: height > 0 ? 1 : 0,
           overflow: "hidden",
           transition: "height 0.2s ease, opacity 0.2s ease",
         }}

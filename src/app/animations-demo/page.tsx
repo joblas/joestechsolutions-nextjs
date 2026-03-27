@@ -265,7 +265,7 @@ export default function AnimationsDemo() {
 
       {/* Footer */}
       <footer className="relative py-12 px-8 border-t border-white/10 text-center text-white/50">
-        <p>Premium animations powered by Framer Motion</p>
+        <p>Premium animations — CSS, vanilla JS &amp; Framer Motion</p>
       </footer>
     </div>
   );

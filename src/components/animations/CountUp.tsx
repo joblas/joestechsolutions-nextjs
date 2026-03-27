@@ -20,6 +20,7 @@ export function CountUp({
   className = "",
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
+  const rafRef = useRef<number>(0);
   const [value, setValue] = useState(from);
 
   useEffect(() => {
@@ -33,19 +34,22 @@ export function CountUp({
           const start = performance.now();
           const tick = (now: number) => {
             const t = Math.min((now - start) / (duration * 1000), 1);
-            // cubic-bezier(0.21, 0.47, 0.32, 0.98) approximation
+            // ease-out quad approximation of cubic-bezier(0.21, 0.47, 0.32, 0.98)
             const eased = t < 1 ? t * (2 - t) : 1;
             setValue(Math.round(from + (to - from) * eased));
-            if (t < 1) requestAnimationFrame(tick);
+            if (t < 1) rafRef.current = requestAnimationFrame(tick);
           };
-          requestAnimationFrame(tick);
+          rafRef.current = requestAnimationFrame(tick);
         }
       },
       { threshold: 0.1 }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(rafRef.current);
+    };
   }, [from, to, duration]);
 
   return (

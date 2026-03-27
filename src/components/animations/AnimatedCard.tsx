@@ -8,7 +8,7 @@ interface AnimatedCardProps {
 export function AnimatedCard({ children, className = "" }: AnimatedCardProps) {
   return (
     <div
-      className={`transition-transform duration-300 ease-[cubic-bezier(0.21,0.47,0.32,0.98)] hover:scale-[1.02] hover:-translate-y-2 active:scale-[0.98] ${className}`}
+      className={`transition-transform ease-[cubic-bezier(0.21,0.47,0.32,0.98)] duration-300 hover:[transform:scale(1.02)_translateY(-0.5rem)] active:[transform:scale(0.98)] active:duration-100 ${className}`}
     >
       {children}
     </div>
