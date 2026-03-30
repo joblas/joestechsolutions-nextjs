@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { ArticleSchema } from "@/components/seo/JsonLd";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
@@ -72,6 +73,14 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
+      <ArticleSchema
+        headline={post.title}
+        description={post.seo.description}
+        datePublished={post.date}
+        image={post.seo.ogImage || "https://joestechsolutions.com/logo-main.png"}
+        url={`https://joestechsolutions.com/blog/${post.slug}`}
+        keywords={post.tags}
+      />
       <ScrollProgress />
       {/* Header */}
       <section className="relative overflow-hidden py-20 sm:py-28">

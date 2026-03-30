@@ -48,6 +48,20 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/ai-infrastructure-checklist',
+        destination: '/private-ai-setup',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

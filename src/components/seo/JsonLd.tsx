@@ -5,16 +5,28 @@
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
     "name": "Joe's Tech Solutions",
     "alternateName": "JTS",
     "url": "https://joestechsolutions.com",
     "logo": "https://joestechsolutions.com/logo-main.png",
+    "image": "https://joestechsolutions.com/logo-main.png",
     "description": "Private AI setup, AI agent systems, and custom automation for SMBs. Joe's Tech Solutions deploys private AI on your hardware — no cloud fees, no data leaks.",
     "founder": {
       "@type": "Person",
       "name": "Joe Blas",
       "jobTitle": "Founder & Lead Developer"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Diego",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 32.7157,
+      "longitude": -117.1611
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -150,6 +162,57 @@ export function SoftwareProductSchema() {
       "@type": "Organization",
       "name": "Joe's Tech Solutions"
     }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Article Schema for blog posts
+export function ArticleSchema({
+  headline,
+  description,
+  datePublished,
+  dateModified,
+  image,
+  url,
+  keywords,
+}: {
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+  url: string;
+  keywords?: string[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": headline,
+    "description": description,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "image": image || "https://joestechsolutions.com/logo-main.png",
+    "url": url,
+    "author": {
+      "@type": "Person",
+      "name": "Joe Blas",
+      "url": "https://joestechsolutions.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Joe's Tech Solutions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://joestechsolutions.com/logo-main.png"
+      }
+    },
+    ...(keywords && keywords.length > 0 ? { "keywords": keywords.join(", ") } : {})
   };
 
   return (
