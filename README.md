@@ -141,6 +141,25 @@ Environment‑specific configuration (analytics, logging, integrations, etc.) sh
 
 ---
 
+## Lurkr AI Operations Center
+
+Our development is powered by **Lurkr**, a 30-agent AI team built on OpenClaw that handles engineering, business development, client operations, and infrastructure autonomously.
+
+<p align="center">
+  <img src="./lurkr-architecture.png" alt="Lurkr AI Operations Architecture" width="100%" />
+</p>
+
+| Component | Details |
+|-----------|---------|
+| **Orchestrator** | Lurkr (Claude Opus 4.6) — AI Chief of Staff |
+| **Agents** | 30 specialized agents across 4 divisions |
+| **Divisions** | Engineering, Business & Growth, Client Ops, Skate Workshop |
+| **Infrastructure** | OpenClaw Gateway, Telegram, Slack, Tailscale |
+| **Knowledge** | Supabase pgvector + Knowledge Graph (327 entities, 635 relationships) |
+| **MCP Servers** | Supabase, Tavily, Notion, Figma, 21st.dev, Stitch |
+
+---
+
 ## Working With Joe's Tech Solutions LLC
 
 If you're reviewing this repository as a potential client or partner and want to:
