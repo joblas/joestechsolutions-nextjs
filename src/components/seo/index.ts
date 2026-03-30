@@ -5,7 +5,8 @@ export {
   ServiceSchema,
   FAQSchema,
   SoftwareProductSchema,
-  BreadcrumbSchema
+  BreadcrumbSchema,
+  ArticleSchema
 } from './JsonLd';
 
 // Event tracking utilities (GA script loaded via @next/third-parties in layout.tsx)
