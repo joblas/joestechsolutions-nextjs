@@ -141,22 +141,25 @@ Environment‑specific configuration (analytics, logging, integrations, etc.) sh
 
 ---
 
-## Lurkr AI Operations Center
+<details>
+<summary>🤖 <strong>Powered by Lurkr</strong> — AI-augmented development with a 30-agent team</summary>
 
-Our development is powered by **Lurkr**, a 30-agent AI team built on OpenClaw that handles engineering, business development, client operations, and infrastructure autonomously.
+### Lurkr AI Operations Center
+
+This project and all Joe's Tech Solutions work is built with the help of **Lurkr**, a 30-agent AI team on OpenClaw. Lurkr (Claude Opus 4.6) acts as AI Chief of Staff — orchestrating engineering, business, client ops, and infrastructure across specialized divisions.
 
 <p align="center">
   <img src="./lurkr-architecture.png" alt="Lurkr AI Operations Architecture" width="100%" />
 </p>
 
-| Component | Details |
-|-----------|---------|
-| **Orchestrator** | Lurkr (Claude Opus 4.6) — AI Chief of Staff |
-| **Agents** | 30 specialized agents across 4 divisions |
-| **Divisions** | Engineering, Business & Growth, Client Ops, Skate Workshop |
-| **Infrastructure** | OpenClaw Gateway, Telegram, Slack, Tailscale |
-| **Knowledge** | Supabase pgvector + Knowledge Graph (327 entities, 635 relationships) |
-| **MCP Servers** | Supabase, Tavily, Notion, Figma, 21st.dev, Stitch |
+| | |
+|---|---|
+| **30 Agents** | Engineering, Business & Growth, Client Ops, Skate Workshop |
+| **6 MCP Servers** | Supabase, Tavily, Notion, Figma, 21st.dev, Stitch |
+| **Knowledge Graph** | Supabase pgvector + 327 entities, 635 relationships |
+| **Channels** | Telegram, Slack, Tailscale HTTPS |
+
+</details>
 
 ---
 
