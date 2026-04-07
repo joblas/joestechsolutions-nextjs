@@ -19,7 +19,9 @@ export const post: BlogPost = {
   content: `
 <p class="lead">Elite skate coaching is visual, fast-paced, and happens on the concrete. In early 2026, it became clear that the industry was outgrowing generic coaching platforms. Coaches like Willy Santos and his Olympic roster were forced to use corporate apps that didn't fit the speed of the skatepark. We built The Skate Workshop App to solve that.</p>
 
-<h2>🧭 WHY: The Vision</h2>
+<div class="flex items-center gap-2 mb-4">
+  <h2 class="m-0">WHY: The Vision</h2>
+</div>
 <p>We identified three critical pain points that were holding back high-performance coaching:</p>
 <ul>
   <li><strong>The Lag:</strong> Athletes couldn't get feedback fast enough mid-session.</li>
@@ -28,7 +30,9 @@ export const post: BlogPost = {
 </ul>
 <p>Our goal was to build a mobile experience that feels like Instagram but works like a high-performance lab.</p>
 
-<h2>🏗️ WHAT: The High-Performance Stack</h2>
+<div class="flex items-center gap-2 mb-4">
+  <h2 class="m-0">WHAT: The High-Performance Stack</h2>
+</div>
 <p>We didn't just build a web wrapper; we built a native-first coaching lab from the ground up.</p>
 
 <h3>1. The Mobile Core (React Native & Expo SDK 52)</h3>
@@ -38,9 +42,11 @@ export const post: BlogPost = {
 <p>Everything in the app is live. We utilized <strong>Supabase</strong> for real-time Postgres subscriptions. When a coach in San Diego draws an annotation on a video frame, an athlete training in Paris sees that mark instantly. No refreshing, no waiting—just seamless collaboration.</p>
 
 <h3>3. The Video Logic (MediaPipe & Transcoding)</h3>
-<p>Handling high-bitrate skate clips requires serious compute. Our backend handles raw clips by transcoding them on-the-fly, optimizing for mobile viewing while preserving the frame data needed for slow-motion analysis. We've also integrated <strong>MediaPipe (BlazePose)</strong> to map joint angles, providing the foundation for our upcoming AI trick-detection engine.</p>
+<p>Handling high-FPS skate clips requires serious compute. Our backend handles raw clips by transcoding them on-the-fly, optimizing for mobile viewing while preserving the frame data needed for slow-motion analysis. We've also integrated <strong>MediaPipe (BlazePose)</strong> to map joint angles, providing the foundation for our upcoming AI trick-detection engine.</p>
 
-<h2>🚀 WHEN & HOW: The Play Store Pipeline</h2>
+<div class="flex items-center gap-2 mb-4">
+  <h2 class="m-0">WHEN & HOW: The Play Store Pipeline</h2>
+</div>
 <p>Deployment was handled as a professional CI/CD operation in <strong>March 2026</strong>. One of the biggest hurdles in mobile dev is the "Store" barrier, which we automated entirely.</p>
 
 <h3>Certificates & Provisioning</h3>
