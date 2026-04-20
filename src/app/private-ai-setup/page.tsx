@@ -72,7 +72,7 @@ export default function PrivateAISetup() {
     window.location.href = `/private-ai-setup/qualify?type=${type}`;
   };
 
-  const calendlyLink = "https://joestechsolutions.com";
+  const calendlyLink = "https://calendly.com/joe-joestechsolutions/30min";
 
   const HeroBlob = ({ className }: { className?: string }) => (
     <div className={twMerge("absolute rounded-full blur-[130px] opacity-0 animate-blob-show pointer-events-none", className)}></div>
@@ -371,7 +371,7 @@ export default function PrivateAISetup() {
                   <span className="ml-3 text-xs text-white/30 font-mono">terminal</span>
                 </div>
                 <code className="block text-[#0d9488] font-mono text-sm sm:text-base leading-relaxed break-all">
-                  <span className="text-white/40">$ </span>curl -fsSL https://joestechsolutions.com/install | bash
+                  <span className="text-white/40">$ </span>curl -fsSL https://calendly.com/joe-joestechsolutions/30min/install | bash
                 </code>
               </CardContent>
             </Card>

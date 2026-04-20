@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Private AI Setup | Joe's Tech Solutions",
     description: "Your own private AI workspace. Secure, no data leaks, no monthly fees.",
-    url: 'https://joestechsolutions.com/private-ai-setup',
+    url: 'https://calendly.com/joe-joestechsolutions/30min/private-ai-setup',
     images: ['/images/tech-monitors-development.jpg'],
   },
 };

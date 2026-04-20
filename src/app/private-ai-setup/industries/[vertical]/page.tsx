@@ -39,7 +39,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${vertical.name} AI Assistant | Joe's Tech Solutions`,
       description: vertical.tagline + " — " + vertical.description,
-      url: `https://joestechsolutions.com/private-ai-setup/industries/${slug}`,
+      url: `https://calendly.com/joe-joestechsolutions/30min/private-ai-setup/industries/${slug}`,
     },
   };
 }

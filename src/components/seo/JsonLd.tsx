@@ -8,9 +8,9 @@ export function OrganizationSchema() {
     "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
     "name": "Joe's Tech Solutions",
     "alternateName": "JTS",
-    "url": "https://joestechsolutions.com",
-    "logo": "https://joestechsolutions.com/logo-main.png",
-    "image": "https://joestechsolutions.com/logo-main.png",
+    "url": "https://calendly.com/joe-joestechsolutions/30min",
+    "logo": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
+    "image": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
     "description": "Private AI setup, AI agent systems, and custom automation for SMBs. Joe's Tech Solutions deploys private AI on your hardware — no cloud fees, no data leaks.",
     "founder": {
       "@type": "Person",
@@ -64,7 +64,7 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Joe's Tech Solutions",
-    "url": "https://joestechsolutions.com",
+    "url": "https://calendly.com/joe-joestechsolutions/30min",
     "description": "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
     "publisher": {
       "@type": "Organization",
@@ -97,7 +97,7 @@ export function ServiceSchema({
     "provider": {
       "@type": "Organization",
       "name": "Joe's Tech Solutions",
-      "url": "https://joestechsolutions.com"
+      "url": "https://calendly.com/joe-joestechsolutions/30min"
     },
     "name": name,
     "description": description,
@@ -197,19 +197,19 @@ export function ArticleSchema({
     "description": description,
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
-    "image": image || "https://joestechsolutions.com/logo-main.png",
+    "image": image || "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
     "url": url,
     "author": {
       "@type": "Person",
       "name": "Joe Blas",
-      "url": "https://joestechsolutions.com"
+      "url": "https://calendly.com/joe-joestechsolutions/30min"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Joe's Tech Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://joestechsolutions.com/logo-main.png"
+        "url": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png"
       }
     },
     ...(keywords && keywords.length > 0 ? { "keywords": keywords.join(", ") } : {})

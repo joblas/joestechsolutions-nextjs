@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Skate Workshop Case Study | Joe's Tech Solutions",
     description: "Olympic-level skateboarding coaching platform built with React Native, Next.js, and real-time features.",
-    url: 'https://joestechsolutions.com/portfolio/skate-workshop',
+    url: 'https://calendly.com/joe-joestechsolutions/30min/portfolio/skate-workshop',
   },
 };
 
@@ -269,7 +269,7 @@ export default function SkateWorkshopCaseStudy() {
             Let's discuss your mobile or web platform project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://joestechsolutions.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0b7f73]/20">
                 Schedule Discovery Call
               </Button>

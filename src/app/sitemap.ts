@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://joestechsolutions.com';
+  const baseUrl = 'https://calendly.com/joe-joestechsolutions/30min';
   const currentDate = new Date();
 
   // Blog post slugs

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI for Your Industry | Joe's Tech Solutions",
     description: "Private AI assistants pre-configured for 9 industries. HIPAA-ready healthcare, privilege-protected legal, and more.",
-    url: 'https://joestechsolutions.com/private-ai-setup/industries',
+    url: 'https://calendly.com/joe-joestechsolutions/30min/private-ai-setup/industries',
   },
 };
 

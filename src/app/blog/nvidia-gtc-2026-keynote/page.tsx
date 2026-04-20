@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NVIDIA GTC 2026: What Jensen Huang Just Told the World About AI's Future",
     description: "Breaking down NVIDIA GTC 2026: Vera Rubin, Groq 3, NemoClaw AI agents, 110 robots, and what it all means for businesses investing in AI infrastructure.",
-    url: "https://joestechsolutions.com/blog/nvidia-gtc-2026-keynote",
+    url: "https://calendly.com/joe-joestechsolutions/30min/blog/nvidia-gtc-2026-keynote",
     type: "article",
     publishedTime: POST.date,
     authors: [POST.author],
@@ -48,22 +48,22 @@ const jsonLd = {
   "@type": "BlogPosting",
   headline: POST.title,
   description: "Breaking down NVIDIA GTC 2026: Vera Rubin, Groq 3, NemoClaw AI agents, 110 robots, and what it all means for businesses investing in AI infrastructure.",
-  image: "https://joestechsolutions.com/images/blog/nvidia-gtc-2026-og.jpg",
+  image: "https://calendly.com/joe-joestechsolutions/30min/images/blog/nvidia-gtc-2026-og.jpg",
   author: {
     "@type": "Person",
     name: "Joe Blas",
-    url: "https://joestechsolutions.com",
+    url: "https://calendly.com/joe-joestechsolutions/30min",
     jobTitle: "Generative AI Full-Stack Developer",
   },
   publisher: {
     "@type": "Organization",
     name: "Joe's Tech Solutions",
-    url: "https://joestechsolutions.com",
-    logo: { "@type": "ImageObject", url: "https://joestechsolutions.com/logo-main.png" },
+    url: "https://calendly.com/joe-joestechsolutions/30min",
+    logo: { "@type": "ImageObject", url: "https://calendly.com/joe-joestechsolutions/30min/logo-main.png" },
   },
   datePublished: POST.date,
   dateModified: POST.date,
-  mainEntityOfPage: "https://joestechsolutions.com/blog/nvidia-gtc-2026-keynote",
+  mainEntityOfPage: "https://calendly.com/joe-joestechsolutions/30min/blog/nvidia-gtc-2026-keynote",
   keywords: POST.tags.join(", "),
   wordCount: 2200,
   timeRequired: `PT${POST.readTime}M`,
@@ -211,7 +211,7 @@ export default function NvidiaGtc2026Page() {
                     </p>
                     <div className="flex items-center gap-4">
                       <a
-                        href="https://joestechsolutions.com"
+                        href="https://calendly.com/joe-joestechsolutions/30min"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 text-white/50 hover:text-[#10B981] text-sm transition-colors"

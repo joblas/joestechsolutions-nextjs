@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://joestechsolutions.com'),
+  metadataBase: new URL('https://calendly.com/joe-joestechsolutions/30min'),
   title: "Joe's Tech Solutions | Boutique Development Studio",
   description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs. From Olympic-level coaching apps to custom web solutions.",
   keywords: ["mobile app development", "web development", "AI infrastructure", "React Native", "Next.js", "consulting", "private AI", "custom software development", "boutique development studio"],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joe's Tech Solutions | Boutique Development Studio",
     description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
-    url: 'https://joestechsolutions.com',
+    url: 'https://calendly.com/joe-joestechsolutions/30min',
     siteName: "Joe's Tech Solutions",
     images: [
       {

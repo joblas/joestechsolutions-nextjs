@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Whisper Walkie — Local Push-to-Talk Transcription",
     description:
       "Hold a key. Speak. Release. Your words appear in any app — instantly, privately, with no internet connection required. Free and open source.",
-    url: "https://joestechsolutions.com/whisper-walkie",
+    url: "https://calendly.com/joe-joestechsolutions/30min/whisper-walkie",
   },
 };
 

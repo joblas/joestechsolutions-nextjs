@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.seo.title,
       description: post.seo.description,
-      url: `https://joestechsolutions.com/blog/${post.slug}`,
+      url: `https://calendly.com/joe-joestechsolutions/30min/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
@@ -77,8 +77,8 @@ export default async function BlogPostPage({ params }: Props) {
         headline={post.title}
         description={post.seo.description}
         datePublished={post.date}
-        image={post.seo.ogImage || "https://joestechsolutions.com/logo-main.png"}
-        url={`https://joestechsolutions.com/blog/${post.slug}`}
+        image={post.seo.ogImage || "https://calendly.com/joe-joestechsolutions/30min/logo-main.png"}
+        url={`https://calendly.com/joe-joestechsolutions/30min/blog/${post.slug}`}
         keywords={post.tags}
       />
       <ScrollProgress />
