@@ -268,7 +268,7 @@ export default function CbarrgsCaseStudy() {
             Let's build your online presence
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
+            <a href="https://joestechsolutions.com" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-[#2dd4bf] hover:bg-[#14b8a6] rounded-full shadow-lg shadow-[#2dd4bf]/20">
                 Schedule Discovery Call
               </Button>

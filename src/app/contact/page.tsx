@@ -92,7 +92,7 @@ export default function Contact() {
                       Pick a time that works for you and let's chat about your project.
                     </p>
                     <Button asChild className="bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full">
-                      <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
+                      <a href="https://joestechsolutions.com" target="_blank" rel="noopener noreferrer">
                         <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                         Book a Call
                       </a>

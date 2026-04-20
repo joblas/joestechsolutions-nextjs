@@ -407,7 +407,7 @@ function SuccessContent() {
                   Pick a time that works for you. I'll walk you through everything.
                 </p>
                 <a
-                  href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call"
+                  href="https://joestechsolutions.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block"

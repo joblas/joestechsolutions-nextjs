@@ -355,7 +355,7 @@ export default function RenFaireDirectoryCaseStudy() {
             We build SEO-first content platforms with real revenue models — not just pretty pages.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
+            <a href="https://joestechsolutions.com" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] rounded-full shadow-lg shadow-[#7C3AED]/20">
                 Schedule Discovery Call
               </Button>

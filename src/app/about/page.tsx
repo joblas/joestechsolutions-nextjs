@@ -51,7 +51,7 @@ export default function About() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
+                <a href="https://joestechsolutions.com" target="_blank" rel="noopener noreferrer">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
                       Let&apos;s Work Together
@@ -307,7 +307,7 @@ export default function About() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <a href="https://calendly.com/joe-joestechsolutions/30-minute-discovery-call" target="_blank" rel="noopener noreferrer">
+            <a href="https://joestechsolutions.com" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
                   Schedule Discovery Call

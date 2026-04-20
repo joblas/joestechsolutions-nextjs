@@ -72,7 +72,7 @@ export default function PrivateAISetup() {
     window.location.href = `/private-ai-setup/qualify?type=${type}`;
   };
 
-  const calendlyLink = "https://calendly.com/joe-joestechsolutions/30-minute-discovery-call";
+  const calendlyLink = "https://joestechsolutions.com";
 
   const HeroBlob = ({ className }: { className?: string }) => (
     <div className={twMerge("absolute rounded-full blur-[130px] opacity-0 animate-blob-show pointer-events-none", className)}></div>
