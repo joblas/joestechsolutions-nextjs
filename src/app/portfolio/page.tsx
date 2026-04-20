@@ -187,7 +187,7 @@ export default function Portfolio() {
             <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-lg px-10 py-6 group">
-                  Schedule Discovery Call
+                  Schedule 30min Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>

@@ -186,7 +186,7 @@ export default function PaymentLinksAdmin() {
           Payment Links
         </h1>
         <p className="text-white/60 mb-8">
-          Copy and send these to customers after discovery calls.
+          Copy and send these to customers after 30min calls.
         </p>
 
         {/* Payment Link Cards */}

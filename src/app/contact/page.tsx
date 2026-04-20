@@ -8,13 +8,13 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
 export const metadata: Metadata = {
   title: "Contact | Joe's Tech Solutions",
-  description: "Book a free discovery call to discuss private AI setup, agent systems, or custom software. No pitch, no pressure — just a straight conversation.",
+  description: "Book a free 30min call to discuss private AI setup, agent systems, or custom software. No pitch, no pressure — just a straight conversation.",
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: "Contact | Joe's Tech Solutions",
-    description: "Book a free discovery call to discuss private AI setup, agent systems, or custom software.",
+    description: "Book a free 30min call to discuss private AI setup, agent systems, or custom software.",
     url: 'https://calendly.com/joe-joestechsolutions/30min/contact',
   },
 };
@@ -38,7 +38,7 @@ export default function Contact() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                Free 30-minute discovery call. No pitch, no pressure — just a straight conversation about what you need and whether JTS is the right fit.
+                Free 30-minute 30min call. No pitch, no pressure — just a straight conversation about what you need and whether JTS is the right fit.
               </p>
             </FadeIn>
           </div>
@@ -84,7 +84,7 @@ export default function Contact() {
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Schedule a Call</CardTitle>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
-                      Book a free 30-minute discovery call at a time that works for you
+                      Book a free 30-minute 30min call at a time that works for you
                     </CardDescription>
                   </CardHeader>
                   <CardContent>

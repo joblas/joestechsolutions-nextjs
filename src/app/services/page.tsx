@@ -607,14 +607,14 @@ export default function Services() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Schedule a free discovery call to discuss your project and get a custom quote.
+              Schedule a free 30min call to discuss your project and get a custom quote.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
-                  Schedule Discovery Call
+                  Schedule 30min Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>

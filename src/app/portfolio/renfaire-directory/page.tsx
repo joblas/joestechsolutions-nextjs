@@ -357,7 +357,7 @@ export default function RenFaireDirectoryCaseStudy() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] rounded-full shadow-lg shadow-[#7C3AED]/20">
-                Schedule Discovery Call
+                Schedule 30min Call
               </Button>
             </a>
             <Link href="/portfolio">

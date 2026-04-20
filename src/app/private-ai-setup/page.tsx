@@ -159,7 +159,7 @@ export default function PrivateAISetup() {
                   >
                     <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                       <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />
-                      Schedule Discovery Call
+                      Schedule 30min Call
                     </a>
                   </Button>
                 </MagneticButton>
@@ -539,7 +539,7 @@ export default function PrivateAISetup() {
           <FadeIn delay={0.2} className="text-center mt-8 text-sm text-white/40">
             Not sure which plan is right?{" "}
             <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-[#0d9488] underline hover:no-underline">
-              Book a free discovery call
+              Book a free 30min call
             </a>{" "}
             — we&apos;ll figure it out together.
           </FadeIn>
@@ -691,7 +691,7 @@ export default function PrivateAISetup() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/60 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Book a free discovery call. We&apos;ll assess your needs, walk you through options, and get you set up — usually in under an hour.
+              Book a free 30min call. We&apos;ll assess your needs, walk you through options, and get you set up — usually in under an hour.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -711,7 +711,7 @@ export default function PrivateAISetup() {
           <FadeIn delay={0.4}>
             <div className="mt-5 flex items-center justify-center gap-2 text-white/40 text-sm">
               <ShieldCheck weight="duotone" className="h-4 w-4" />
-              <span className="text-sm">Free discovery call &nbsp;&middot;&nbsp; No commitment required</span>
+              <span className="text-sm">Free 30min call &nbsp;&middot;&nbsp; No commitment required</span>
             </div>
           </FadeIn>
         </div>
