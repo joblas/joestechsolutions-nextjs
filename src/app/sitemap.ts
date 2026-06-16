@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog post slugs
   const blogSlugs = [
     'why-your-business-needs-private-ai',
-    '22-agent-ai-team-architecture',
+    'ai-agent-team-architecture',
     'replace-saas-with-ai-agents',
     'nvidia-gtc-2026-keynote',
   ];

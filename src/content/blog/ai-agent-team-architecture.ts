@@ -1,7 +1,7 @@
 import type { BlogPost } from "@/lib/blog";
 
 export const post: BlogPost = {
-  slug: "22-agent-ai-team-architecture",
+  slug: "ai-agent-team-architecture",
   title: "I Built an AI Agent Team to Run My Business — Here's the Architecture",
   excerpt:
     "I run a one-man AI consultancy with a multi-agent team that works 24/7. They hold standups, find leads, write proposals, build code, and send invoices. This isn't a demo — it's running in production right now.",

@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
         destination: '/private-ai-setup',
         permanent: true,
       },
+      {
+        source: '/blog/22-agent-ai-team-architecture',
+        destination: '/blog/ai-agent-team-architecture',
+        permanent: true,
+      },
     ];
   },
   async headers() {
