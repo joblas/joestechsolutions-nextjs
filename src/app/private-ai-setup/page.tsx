@@ -146,7 +146,7 @@ export default function PrivateAISetup() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed font-light">
-                Deploy GPT-4 level intelligence on your own hardware. No monthly API fees, no data harvesting, no compromises.
+                Deploy a private AI on your own hardware. No monthly API fees, no data harvesting, no compromises.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -159,7 +159,7 @@ export default function PrivateAISetup() {
                   >
                     <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                       <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />
-                      Schedule 30min Call
+                      Get in touch
                     </a>
                   </Button>
                 </MagneticButton>
@@ -236,7 +236,7 @@ export default function PrivateAISetup() {
               pillText="Business Owner"
               title="Keep Your Edge Private"
               role="For small & mid-size businesses"
-              description="Automate customer support, generate leads, and streamline documentation — without sharing sensitive business data with Big Tech platforms."
+              description="Automate customer support, generate leads, and cut documentation time — without sharing sensitive business data with Big Tech platforms."
             />
             <PersonaCard
               icon={ShieldCheck}
@@ -252,7 +252,7 @@ export default function PrivateAISetup() {
               pillText="Early Adopter"
               title="Own the Revolution"
               role="For tech-forward builders"
-              description="The AI era is unfolding now. Don&apos;t just rent access to someone else&apos;s intelligence — own it. Be at the forefront of private, self-hosted AI."
+              description="The AI era is unfolding now. Don&apos;t rent access to someone else&apos;s model — own the stack. Be at the forefront of private, self-hosted AI."
             />
           </StaggerContainer>
 
@@ -703,7 +703,7 @@ export default function PrivateAISetup() {
               >
                 <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                   <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />
-                  Schedule Your Discovery Call
+                  Get in touch
                 </a>
               </Button>
             </MagneticButton>

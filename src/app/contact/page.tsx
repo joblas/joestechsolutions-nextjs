@@ -82,7 +82,7 @@ export default function Contact() {
                     <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Image src="/icons/calender-dynamic/premium.png" alt="Calendar" width={32} height={32} className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-2xl font-space-grotesk">Schedule a Call</CardTitle>
+                    <CardTitle className="text-white text-2xl font-space-grotesk">Get in touch</CardTitle>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
                       Book a free 30-minute 30min call at a time that works for you
                     </CardDescription>
@@ -94,7 +94,7 @@ export default function Contact() {
                     <Button asChild className="bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full">
                       <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
                         <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
-                        Book a Call
+                        Get in touch
                       </a>
                     </Button>
                   </CardContent>
