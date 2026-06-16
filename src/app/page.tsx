@@ -58,8 +58,7 @@ export default function Home() {
             {/* Subheading */}
             <FadeIn delay={0.3}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Most AI consultants sell you tools. We sell outcomes. Joe runs a 22-agent AI team
-                for his own business — now he builds the same for yours.
+                Most AI consultants sell you tools. Joe sells outcomes. He runs an AI agent team for his own business — and builds the same for yours.
               </p>
             </FadeIn>
 

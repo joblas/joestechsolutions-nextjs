@@ -10,7 +10,7 @@ import { TableOfContents } from "@/components/blog/TableOfContents";
 import { TimelineStep } from "@/components/blog/TimelineStep";
 
 const tocItems = [
-  { id: "the-stack", label: "The Stack: OpenClaw + 24 Agents" },
+  { id: "the-stack", label: "The Stack: OpenClaw + Specialized Agents" },
   { id: "what-it-replaced", label: "What It Actually Replaced" },
   { id: "architecture", label: "The Architecture" },
   { id: "three-tier", label: "The 3-Tier Action Model" },
@@ -44,13 +44,13 @@ export function BlogContent() {
               and my AI has already triaged my inbox, checked my deployments, drafted a proposal for a new client,
               and reminded me that my SSL cert expires in 6 days.
             </p>
-            <p className="text-gray-200 text-lg leading-loose mb-8">So instead of buying a stack of SaaS subscriptions, I built 24 AI agents to do it all.</p>
+            <p className="text-gray-200 text-lg leading-loose mb-8">So instead of buying a stack of SaaS subscriptions, I built an agent team to do it all.</p>
           </FadeIn>
 
           {/* Stats block */}
           <StatBlock
             stats={[
-              { value: 24, suffix: "", label: "AI Agents", color: "from-[#0d9488]/10 to-transparent" },
+              { value: 1, suffix: "", label: "Agent Team", color: "from-[#0d9488]/10 to-transparent" },
               { value: 285, prefix: "$", label: "Typical SaaS Cost Avoided/mo", color: "from-red-500/10 to-transparent" },
               { value: 0, prefix: "$", label: "Marginal Cost", color: "from-emerald-500/10 to-transparent" },
               { value: 8, suffix: "h", label: "Saved Weekly", color: "from-[#8B5CF6]/10 to-transparent" },
@@ -59,9 +59,9 @@ export function BlogContent() {
 
           {/* The Stack */}
           <FadeIn>
-            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: OpenClaw + 24 Specialized Agents</h2>
+            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: OpenClaw + Specialized Agents</h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
-              One orchestrator agent (Lurkr) that sits on top of 24 sub-agents. Each one has a lane:
+              One orchestrator agent (Lurkr) that sits on top of a roster of specialized sub-agents. Each one has a lane:
             </p>
           </FadeIn>
 
@@ -75,7 +75,7 @@ export function BlogContent() {
               <li><strong className="text-white">Ledger</strong> — revenue, invoicing</li>
               <li><strong className="text-white">Bridge</strong> — email triage, drafts</li>
               <li><strong className="text-white">Scout</strong> — calendar, reminders</li>
-              <li>...and 16 more covering everything from video generation to backup verification.</li>
+              <li>...and a dozen more covering everything from video generation to backup verification.</li>
             </ul>
           </FadeIn>
 
@@ -94,7 +94,7 @@ export function BlogContent() {
           <Callout variant="tip">
             <p className="mb-0">
               Here&apos;s the kicker: I already pay for Claude Max ($100/mo) for daily development work. 
-              The 24 agents run on that <strong>same subscription at zero marginal cost</strong>. So I avoided $285/mo in SaaS subscriptions with effectively $0 additional spend. Not every task needs the most powerful model — Opus runs the orchestrator, Sonnet handles most sub-agents, Haiku runs lightweight checks. All included.
+              The agents run on that <strong>same subscription at zero marginal cost</strong>. So I avoided $285/mo in SaaS subscriptions with effectively $0 additional spend. Not every task needs the most powerful model — Opus runs the orchestrator, Sonnet handles most sub-agents, Haiku runs lightweight checks. All included.
             </p>
           </Callout>
 
@@ -215,7 +215,7 @@ export function BlogContent() {
           <FadeIn>
             <h2 id="safety-guardrails" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">Safety &amp; Guardrails</h2>
             <p className="text-gray-200 text-lg leading-loose mb-10">
-              &ldquo;24 AI agents with access to your business tools&rdquo; sounds dangerous. Here&apos;s how it&apos;s not:
+              &ldquo;An agent team with access to your business tools&rdquo; sounds dangerous. Here&apos;s how it&apos;s not:
             </p>
           </FadeIn>
 

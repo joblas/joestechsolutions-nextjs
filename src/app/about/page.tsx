@@ -11,13 +11,13 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "About Joe Blas | Joe's Tech Solutions",
-  description: "Joe runs a 22-agent AI team for his own business. He's client zero — everything JTS builds, he uses himself first.",
+  description: "Joe runs an AI agent team for his own business. He's client zero — everything JTS builds, he uses himself first.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About | Joe's Tech Solutions",
-    description: "Joe runs a 22-agent AI team for his own business. He's client zero — everything JTS builds, he uses himself first.",
+    description: "Joe runs an AI agent team for his own business. He's client zero — everything JTS builds, he uses himself first.",
     url: 'https://calendly.com/joe-joestechsolutions/30min/about',
   },
 };
@@ -39,7 +39,7 @@ export default function About() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                  Joe doesn&apos;t sell tools he read about. He runs a 22-agent AI team for his own business —
+                  Joe doesn&apos;t sell tools he read about. He runs an AI agent team for his own business —
                   handling operations, outreach, reporting, and more. Everything JTS builds for clients,
                   Joe tested on himself first.
                 </p>
@@ -119,7 +119,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Agent Systems</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Runs a 22-agent AI team for JTS operations right now. Not theory — a live system handling real business tasks around the clock.
+                      Runs an AI agent team for JTS operations right now. Not theory — a live system handling real business tasks around the clock.
                     </p>
                   </CardContent>
                 </Card>
@@ -158,7 +158,7 @@ export default function About() {
             {[
               {
                 title: "He&apos;s Client Zero",
-                description: "Joe runs a 22-agent AI team for JTS right now. Every system he sells to clients, he battle-tested on his own business first. No vapor, no demos — real production systems."
+                description: "Joe runs an AI agent team for JTS right now. Every system he sells to clients, he battle-tested on his own business first. No vapor, no demos — real production systems."
               },
               {
                 title: "Outcomes, Not Tools",

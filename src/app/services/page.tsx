@@ -43,7 +43,7 @@ export default function Services() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Joe runs a 22-agent AI team for his own business. He builds the same for yours —
+                Joe runs an AI agent team for his own business. He builds the same for yours —
                 from a private AI setup to a full automated operation.
               </p>
             </FadeIn>
@@ -151,7 +151,7 @@ export default function Services() {
 
                       <div className="space-y-3">
                         {[
-                          "Multi-agent architectures (Joe runs 22 himself)",
+                          "Multi-agent architectures — battle-tested on Joe's own business",
                           "24/7 automated business operations",
                           "n8n workflow automation + private AI backbone",
                           "Agents for sales, ops, content, and support",
@@ -178,7 +178,7 @@ export default function Services() {
                         <div className="relative bg-[#0d0d12] rounded-2xl border border-white/10 p-8 text-center">
                           <div className="grid grid-cols-2 gap-3 text-sm mb-4">
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#2dd4bf] font-bold text-2xl block">22</span>
+                              <span className="text-[#2dd4bf] font-bold text-2xl block">16</span>
                               <span className="text-white/60 text-xs">AI Agents</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
@@ -223,7 +223,7 @@ export default function Services() {
                       </div>
 
                       <p className="text-white/80 text-lg leading-relaxed font-light">
-                        Full custom multi-agent architectures for complex workflows. When off-the-shelf isn&apos;t good enough, we design the whole system from scratch — models, agents, integrations, and all.
+                        Full custom multi-agent architectures for complex workflows. When off-the-shelf isn&apos;t good enough, Joe designs the whole system from scratch — models, agents, integrations, and all.
                       </p>
 
                       <div className="space-y-3">
@@ -285,7 +285,7 @@ export default function Services() {
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
                       iOS and Android apps that your customers will love. Whether you need subscription billing,
-                      real-time features, or offline functionality, we build mobile-first solutions that engage users.
+                      real-time features, or offline functionality, Joe builds mobile-first solutions that engage users.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
@@ -333,7 +333,7 @@ export default function Services() {
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
                       Beautiful, fast websites that convert visitors into customers. From startup landing pages
-                      to complex web applications, we build with SEO, mobile responsiveness, and user experience in mind.
+                      to complex web applications, Joe builds with SEO, mobile responsiveness, and user experience in mind.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
@@ -446,7 +446,7 @@ export default function Services() {
                     </div>
 
                     <p className="text-white/80 text-lg leading-relaxed font-light">
-                      Have a unique business need? We build custom software solutions, APIs, and integrations
+                      Have a unique business need? Joe builds custom software solutions, APIs, and integrations
                       that solve your specific challenges and connect your systems.
                     </p>
 
@@ -498,7 +498,7 @@ export default function Services() {
                   Free & Open Source
                 </h2>
                 <p className="text-white/60 text-base font-light">
-                  Tools we built and use ourselves — free for everyone.
+                  Tools Joe built and uses himself — free for everyone.
                 </p>
               </div>
 
@@ -554,7 +554,7 @@ export default function Services() {
                 Our Process
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                From discovery to deployment, we follow a proven process
+                From discovery to deployment, Joe follows a proven process
               </p>
             </div>
           </FadeIn>
@@ -564,7 +564,7 @@ export default function Services() {
               {
                 number: "1",
                 title: "Discovery Call",
-                description: "We discuss your project goals, technical requirements, and timeline. Free 30-minute consultation to explore fit."
+                description: "Joe walks you through your project goals, technical requirements, and timeline. Free 30-minute consultation to explore fit."
               },
               {
                 number: "2",
@@ -574,7 +574,7 @@ export default function Services() {
               {
                 number: "3",
                 title: "Build & Deploy",
-                description: "Agile development with regular check-ins. We deliver working software incrementally and deploy to production."
+                description: "Agile development with regular check-ins. Joe delivers working software incrementally and deploys to production."
               }
             ].map((step, index) => (
               <StaggerItem key={index}>

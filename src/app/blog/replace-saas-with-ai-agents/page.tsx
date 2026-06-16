@@ -7,7 +7,7 @@ import { ParallaxSection } from "@/components/animations/ParallaxSection";
 import { BlogContent } from "./BlogContent";
 
 const POST = {
-  title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
+  title: "How an AI Agent Team Runs My Entire Business — No SaaS Required",
   date: "2026-03-10",
   readTime: 7,
   author: "Joe Blas",
@@ -15,13 +15,13 @@ const POST = {
 };
 
 export const metadata: Metadata = {
-  title: "How 24 AI Agents Run My Entire Business — No SaaS Required | Joe's Tech Solutions",
+  title: "How an AI Agent Team Runs My Entire Business — No SaaS Required | Joe's Tech Solutions",
   description:
-    "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
+    "Instead of paying $285/mo for 10+ SaaS tools, I built an agent team that handles everything — running on a Claude subscription I already use for development.",
   alternates: { canonical: "/blog/replace-saas-with-ai-agents" },
   openGraph: {
-    title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
-    description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
+    title: "How an AI Agent Team Runs My Entire Business — No SaaS Required",
+    description: "Instead of paying $285/mo for 10+ SaaS tools, I built an agent team that handles everything — running on a Claude subscription I already use for development.",
     url: "https://calendly.com/joe-joestechsolutions/30min/blog/replace-saas-with-ai-agents",
     type: "article",
     publishedTime: POST.date,
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
-    description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
+    title: "How an AI Agent Team Runs My Entire Business — No SaaS Required",
+    description: "Instead of paying $285/mo for 10+ SaaS tools, I built an agent team that handles everything — running on a Claude subscription I already use for development.",
     images: ["/images/blog/replace-saas-og.png"],
   },
 };
@@ -53,7 +53,7 @@ export default function ReplaceSaasPage() {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: POST.title,
-            description: "Instead of paying $285/mo for 10+ SaaS tools, one developer built 24 AI agents that handle everything — running on a Claude subscription already used for development.",
+            description: "Instead of paying $285/mo for 10+ SaaS tools, one developer built an agent team that handles everything — running on a Claude subscription already used for development.",
             image: "https://calendly.com/joe-joestechsolutions/30min/images/blog/replace-saas-og.png",
             author: {
               "@type": "Person",
@@ -124,11 +124,11 @@ export default function ReplaceSaasPage() {
 
           <FadeIn delay={0.1}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-space-grotesk leading-[1.1] mb-6">
-              How 24{" "}
+              How an{" "}
               <span className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] bg-clip-text text-transparent">
-                AI Agents
+                AI Agent Team
               </span>{" "}
-              Run My Entire Business — No SaaS Required
+              Runs My Entire Business — No SaaS Required
             </h1>
           </FadeIn>
 
@@ -189,7 +189,7 @@ export default function ReplaceSaasPage() {
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#0d9488] mb-2">About the Author</p>
                     <h3 className="text-xl font-bold text-white font-space-grotesk mb-4">Joe Blas</h3>
                     <p className="text-gray-200 text-sm leading-loose mb-5">
-                      Generative AI Full-Stack Developer based in San Diego and founder of Joe&apos;s Tech Solutions LLC. He builds AI-powered applications and private AI systems for businesses that want to own their intelligence stack — not rent it.
+                      Generative AI Full-Stack Developer based in San Diego and founder of Joe&apos;s Tech Solutions LLC. He builds private AI systems for businesses that want to own their stack — not rent it.
                     </p>
                     <div className="flex items-center gap-4">
                       <a
@@ -241,7 +241,7 @@ export default function ReplaceSaasPage() {
                   <span className="text-[#0d9488] text-sm font-medium">Want This For Your Business?</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-space-grotesk">
-                  Stop Renting Intelligence. Start Owning It.
+                  Stop Renting. Start Owning.
                 </h2>
                 <p className="text-white/70 text-lg mb-8 max-w-xl leading-relaxed">
                   I build private AI systems and agent architectures for businesses that want the same competitive edge. One setup. Your hardware. Your data. No monthly SaaS drain.

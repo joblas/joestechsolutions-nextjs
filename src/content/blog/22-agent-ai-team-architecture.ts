@@ -2,18 +2,18 @@ import type { BlogPost } from "@/lib/blog";
 
 export const post: BlogPost = {
   slug: "22-agent-ai-team-architecture",
-  title: "I Built a 22-Agent AI Team to Run My Business — Here's the Architecture",
+  title: "I Built an AI Agent Team to Run My Business — Here's the Architecture",
   excerpt:
-    "I run a one-man AI consultancy with a 22-agent team that works 24/7. They hold standups, find leads, write proposals, build code, and send invoices. This isn't a demo — it's running in production right now.",
+    "I run a one-man AI consultancy with a multi-agent team that works 24/7. They hold standups, find leads, write proposals, build code, and send invoices. This isn't a demo — it's running in production right now.",
   date: "2026-02-18",
   readTime: 8,
   author: "Joe Blas",
   tags: ["AI Agents", "Automation", "OpenClaw", "Architecture", "Small Business"],
   seo: {
     title:
-      "I Built a 22-Agent AI Team to Run My Business — Here's the Architecture | Joe's Tech Solutions",
+      "I Built an AI Agent Team to Run My Business — Here's the Architecture | Joe's Tech Solutions",
     description:
-      "How I built a 22-agent AI system that handles ops, sales, engineering, and marketing for my one-man consultancy. Not a concept — running in production on OpenClaw.",
+      "How I built a multi-agent AI system that handles ops, sales, engineering, and marketing for my one-man consultancy. Not a concept — running in production on OpenClaw.",
     ogImage: "/images/blog/22-agent-architecture-og.png",
   },
   images: {
@@ -25,7 +25,7 @@ export const post: BlogPost = {
   content: `
 <p class="lead">I run a one-man AI consultancy out of San Diego. No employees, no contractors, no VA. Just me.</p>
 
-<p>But I have a 22-agent team that works 24/7. They hold morning standups. They find leads, write proposals, build code, review PRs, deploy services, send invoices, and create marketing content. They report to four directors, who report to a CTO, who reports to me.</p>
+<p>But I have a multi-agent team that works 24/7. They hold morning standups. They find leads, write proposals, build code, review PRs, deploy services, send invoices, and create marketing content. They report to four directors, who report to a CTO, who reports to me.</p>
 
 <p>This isn't a demo. It's not a proof of concept I built over a weekend. It's running in production <em>right now</em> on <a href="https://openclaw.com">OpenClaw</a>, handling real client work for Joe's Tech Solutions.</p>
 
@@ -37,7 +37,7 @@ export const post: BlogPost = {
 
 <h2>The Org Chart</h2>
 
-<img src="/images/blog/22-agent-org-chart.png" alt="JTS 22-Agent Architecture — Org Chart showing Joe, Lurkr CTO, 4 Directors, and 18 team agents across Operations, Business, Engineering, and Skate Workshop divisions" loading="lazy" />
+<img src="/images/blog/22-agent-org-chart.png" alt="JTS Multi-Agent Architecture — Org Chart showing Joe, Lurkr CTO, 4 Directors, and team agents across Operations, Business, Engineering, and Skate Workshop divisions" loading="lazy" />
 
 <p>At the top, there's me. Below me is <strong>Lurkr</strong>, the CTO and orchestrator, running on Claude Opus 4.6. Lurkr is the brain — it coordinates everything, makes judgment calls, and is the only agent that talks to me directly unless I go looking.</p>
 
@@ -208,6 +208,6 @@ Claude Haiku 4.5   → Fast/simple tasks, classification, routing, summaries</co
 
 <hr />
 
-<p><em>Joe is the founder of Joe's Tech Solutions LLC, a generative AI consultancy based in San Diego. He builds AI agent systems for businesses that want to do more with less. When he's not wrangling 22 AI agents, he's probably skateboarding.</em></p>
+<p><em>Joe is the founder of Joe's Tech Solutions LLC, a generative AI consultancy based in San Diego. He builds AI agent systems for businesses that want to do more with less. When he's not running the team, he's probably skateboarding.</em></p>
 `,
 };
