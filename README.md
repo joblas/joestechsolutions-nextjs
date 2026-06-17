@@ -146,7 +146,7 @@ Environment‑specific configuration (analytics, logging, integrations, etc.) sh
 
 ### Lurkr AI Operations Center
 
-This project and all Joe's Tech Solutions work is built with the help of **Lurkr**, a 30-agent AI team on OpenClaw. Lurkr (Claude Opus 4.6) acts as AI Chief of Staff — orchestrating engineering, business, client ops, and infrastructure across specialized divisions.
+This project and all Joe's Tech Solutions work is built with the help of **Lurkr**, a 16-agent production AI system on Hermes. Lurkr (minimax-m3:cloud by default, with glm-5.2:cloud for long-horizon work) acts as AI Chief of Staff — orchestrating engineering, business, client ops, and infrastructure across specialized divisions.
 
 <p align="center">
   <img src="./lurkr-architecture.png" alt="Lurkr AI Operations Architecture" width="100%" />

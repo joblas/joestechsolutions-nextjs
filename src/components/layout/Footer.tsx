@@ -11,7 +11,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-bold text-white mb-4 font-space-grotesk">Joe's Tech Solutions</h3>
             <p className="text-white/60 text-sm max-w-md leading-relaxed">
-              Private AI. Agent systems. Custom software. Joe runs a 22-agent AI team for his own business — and builds the same for yours.
+              Private AI. Agent systems. Custom software. Joe runs a 16-agent production AI system for his own business — and builds the same for yours.
             </p>
           </div>
 
@@ -26,7 +26,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/services#agent-systems" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  OpenClaw Agent Systems
+                  Hermes Agent Systems
                 </Link>
               </li>
               <li>

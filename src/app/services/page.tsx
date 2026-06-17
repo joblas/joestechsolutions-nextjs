@@ -43,7 +43,7 @@ export default function Services() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Joe runs a 22-agent AI team for his own business. He builds the same for yours —
+                Joe runs a 16-agent production AI system for his own business. He builds the same for yours —
                 from a private AI setup to a full automated operation.
               </p>
             </FadeIn>
@@ -124,7 +124,7 @@ export default function Services() {
             </div>
           </FadeIn>
 
-          {/* OpenClaw Agent Systems */}
+          {/* Hermes Agent Systems */}
           <FadeIn delay={0.15}>
             <div id="agent-systems" className="mb-16">
               <AnimatedCard>
@@ -137,24 +137,24 @@ export default function Services() {
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={40} height={40} className="object-contain" />
+                          <Image src="/icons/tools-dynamic/premium.png" alt="Hermes Agent Systems" width={40} height={40} className="object-contain" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-bold text-white font-space-grotesk">OpenClaw Agent Systems</h2>
+                          <h2 className="text-2xl font-bold text-white font-space-grotesk">Hermes Agent Systems</h2>
                           <p className="text-[#2dd4bf] font-semibold text-lg">Contact for pricing</p>
                         </div>
                       </div>
 
                       <p className="text-white/80 text-lg leading-relaxed font-light">
-                        Not just AI assistance — an AI team running your business operations. Agents that handle outreach, scheduling, reporting, content, and more. 24/7, without you touching a thing.
+                        Not just AI assistance — a multi-agent system running your business operations. Sixteen specialized agents that compose via delegation, handling outreach, scheduling, reporting, content, and more. 24/7, without you touching a thing.
                       </p>
 
                       <div className="space-y-3">
                         {[
-                          "Multi-agent architectures (Joe runs 22 himself)",
+                          "Multi-agent architectures (Joe runs 16 in production)",
                           "24/7 automated business operations",
                           "n8n workflow automation + private AI backbone",
-                          "Agents for sales, ops, content, and support",
+                          "Delegation over silos — fewer handoffs, more capable agents",
                           "Fully monitored — you stay in control"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-start">
