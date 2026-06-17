@@ -58,7 +58,7 @@ export default function Home() {
             {/* Subheading */}
             <FadeIn delay={0.3}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Most AI consultants sell you tools. We sell outcomes. Joe runs a 22-agent AI team
+                Most AI consultants sell you tools. We sell outcomes. Joe runs a 16-agent production AI system
                 for his own business — now he builds the same for yours.
               </p>
             </FadeIn>
@@ -181,22 +181,22 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* OpenClaw Agent Systems */}
+            {/* Hermes Agent Systems */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
+                      <Image src="/icons/tools-dynamic/premium.png" alt="Hermes Agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">OpenClaw Agent Systems</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">Hermes Agent Systems</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      AI agent teams that run your operations
+                      Multi-agent systems that run your operations
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Not one AI. A whole team of them. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
+                      Not one AI. A whole team of them. Sixteen specialized agents composing via delegation — handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
                     </p>
                     <Link href="/services#agent-systems" className="text-[#2dd4bf] text-sm font-medium hover:text-[#14b8a6] inline-flex items-center group/link transition-colors">
                       Explore agent systems

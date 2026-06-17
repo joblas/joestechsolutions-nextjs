@@ -10,7 +10,7 @@ import { TableOfContents } from "@/components/blog/TableOfContents";
 import { TimelineStep } from "@/components/blog/TimelineStep";
 
 const tocItems = [
-  { id: "the-stack", label: "The Stack: OpenClaw + 24 Agents" },
+  { id: "the-stack", label: "The Stack: 16 Composing Agents" },
   { id: "what-it-replaced", label: "What It Actually Replaced" },
   { id: "architecture", label: "The Architecture" },
   { id: "three-tier", label: "The 3-Tier Action Model" },
@@ -59,9 +59,9 @@ export function BlogContent() {
 
           {/* The Stack */}
           <FadeIn>
-            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: OpenClaw + 24 Specialized Agents</h2>
+            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: 16 Agents That Compose</h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
-              One orchestrator agent (Lurkr) that sits on top of 24 sub-agents. Each one has a lane:
+              A multi-agent system with 16 specialized agents. Each one has a lane — and they compose via delegation, so a single workflow can chain through 3-4 agents without humans in the loop:
             </p>
           </FadeIn>
 
@@ -80,7 +80,7 @@ export function BlogContent() {
           </FadeIn>
 
           <Callout variant="insight">
-            The whole thing runs on <a href="https://openclaw.ai" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
+            The whole thing runs on Hermes, a multi-agent runtime, deployed on my own hardware and a small fleet of cloud VMs I control. Not a SaaS subscription. Not Kubernetes. <strong>Infrastructure I own.</strong>
           </Callout>
 
           {/* Comparison Table */}
@@ -262,10 +262,8 @@ export function BlogContent() {
 
           <FadeIn>
             <p className="text-gray-200 text-lg leading-loose mb-6">
-              If you&apos;re a developer who runs a freelance business or small agency, the ROI is insane. Not just avoiding $200-300/mo in SaaS, but the time — I save 6-8 hours a week on admin work. 
-              If you&apos;re not technical? Wait a year. The tooling will get easier. But if you&apos;re curious, start with{" "}
-              <a href="https://openclaw.ai" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">OpenClaw</a>{" "}
-              and just get one automation working.
+              If you&apos;re a developer who runs a freelance business or small agency, the ROI is insane. Not just avoiding $200-300/mo in SaaS, but the time — I save 6-8 hours a week on admin work.
+              If you&apos;re not technical? Wait a year. The tooling will get easier. But if you&apos;re curious, start with one automation and see how it feels.
             </p>
           </FadeIn>
 

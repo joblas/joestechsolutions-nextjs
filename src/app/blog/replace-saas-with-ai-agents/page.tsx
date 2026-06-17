@@ -7,21 +7,21 @@ import { ParallaxSection } from "@/components/animations/ParallaxSection";
 import { BlogContent } from "./BlogContent";
 
 const POST = {
-  title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
+  title: "How a 16-Agent Production AI System Replaced 10 SaaS Tools",
   date: "2026-03-10",
   readTime: 7,
   author: "Joe Blas",
-  tags: ["AI Agents", "Automation", "SaaS", "OpenClaw", "Cost Savings"],
+  tags: ["AI Agents", "Automation", "SaaS", "Hermes", "Cost Savings"],
 };
 
 export const metadata: Metadata = {
-  title: "How 24 AI Agents Run My Entire Business — No SaaS Required | Joe's Tech Solutions",
+  title: "How a 16-Agent Production AI System Replaced 10 SaaS Tools | Joe's Tech Solutions",
   description:
-    "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
+    "Instead of paying $285/mo for 10+ SaaS tools, I built a 16-agent production AI system that handles everything — running on infrastructure I own.",
   alternates: { canonical: "/blog/replace-saas-with-ai-agents" },
   openGraph: {
-    title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
-    description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
+    title: "How a 16-Agent Production AI System Replaced 10 SaaS Tools",
+    description: "Instead of paying $285/mo for 10+ SaaS tools, I built a 16-agent production AI system that handles everything — running on infrastructure I own.",
     url: "https://calendly.com/joe-joestechsolutions/30min/blog/replace-saas-with-ai-agents",
     type: "article",
     publishedTime: POST.date,
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
-    description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
+    title: "How a 16-Agent Production AI System Replaced 10 SaaS Tools",
+    description: "Instead of paying $285/mo for 10+ SaaS tools, I built a 16-agent production AI system that handles everything — running on infrastructure I own.",
     images: ["/images/blog/replace-saas-og.png"],
   },
 };
