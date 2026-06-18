@@ -5,14 +5,14 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Private AI for Small Business | Joe's Tech Solutions",
   description:
-    "Private AI setup, AI agent teams, and custom software for ambitious SMBs. Your business runs while you sleep — no subscriptions, no data leaks.",
+    "Private AI setup, custom systems, and built-in tooling for ambitious SMBs. Your business runs while you sleep — no subscriptions, no data leaks.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Private AI for Small Business | Joe's Tech Solutions",
     description:
-      "Private AI setup, AI agent teams, and custom software for ambitious SMBs.",
+      "Private AI setup, custom systems, and built-in tooling for ambitious SMBs.",
     url: "https://calendly.com/joe-joestechsolutions/30min",
   },
 };
@@ -58,7 +58,7 @@ export default function Home() {
             {/* Subheading */}
             <FadeIn delay={0.3}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Most AI consultants sell you tools. Joe sells outcomes. He runs an AI agent team for his own business — and builds the same for yours.
+                Most AI consultants sell you tools. Joe ships systems. He runs a 16-agent production stack for his own business — and builds the same for yours.
               </p>
             </FadeIn>
 
@@ -93,7 +93,7 @@ export default function Home() {
                 What We Do
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Private AI. Agent systems. Custom software. All battle-tested on Joe's own business first.
+                Private AI. Custom systems. Built-in tooling. All battle-tested on Joe's own business first.
               </p>
             </FadeIn>
           </div>
@@ -180,25 +180,25 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* OpenClaw Agent Systems */}
+            {/* Custom Operations Systems */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
+                      <Image src="/icons/tools-dynamic/premium.png" alt="Custom Operations Systems" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">OpenClaw Agent Systems</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">Custom Operations Systems</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      AI agent teams that run your operations
+                      Built-in tooling that runs your operations
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Not one AI. A whole team of them. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
+                      Not one AI. A whole production stack. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
                     </p>
                     <Link href="/services#agent-systems" className="text-[#2dd4bf] text-sm font-medium hover:text-[#14b8a6] inline-flex items-center group/link transition-colors">
-                      Explore agent systems
+                      Explore operations systems
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>
@@ -214,9 +214,9 @@ export default function Home() {
                     <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
                       <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">Custom AI Teams</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">Custom AI Systems</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      Full custom multi-agent architectures
+                      Full custom production architectures
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -224,7 +224,7 @@ export default function Home() {
                       Got a complex workflow? We design multi-agent AI systems from scratch, tailored to your exact business logic and stack.
                     </p>
                     <Link href="/services#custom-ai" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
-                      Explore custom AI teams
+                      Explore custom AI systems
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>

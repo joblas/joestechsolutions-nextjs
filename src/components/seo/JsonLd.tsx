@@ -11,7 +11,7 @@ export function OrganizationSchema() {
     "url": "https://calendly.com/joe-joestechsolutions/30min",
     "logo": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
     "image": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
-    "description": "Private AI setup, AI agent systems, and custom automation for SMBs. Joe's Tech Solutions deploys private AI on your hardware — no cloud fees, no data leaks.",
+    "description": "Private AI setup, custom systems, and built-in tooling for SMBs. Joe's Tech Solutions deploys private AI on your hardware — no cloud fees, no data leaks.",
     "founder": {
       "@type": "Person",
       "name": "Joe Blas",

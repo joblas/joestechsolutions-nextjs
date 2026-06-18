@@ -13,13 +13,13 @@ import { ServiceSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Services | Joe's Tech Solutions",
-  description: "Private AI setup, AI agent systems, and custom multi-agent architectures for SMBs. From $199 local setup to full 24/7 automated operations.",
+  description: "Private AI setup, custom systems, and built-in tooling for SMBs. From $199 local setup to full 24/7 automated operations.",
   alternates: {
     canonical: '/services',
   },
   openGraph: {
     title: "Services | Joe's Tech Solutions",
-    description: "Private AI setup, AI agent systems, and custom multi-agent architectures for SMBs.",
+    description: "Private AI setup, custom systems, and built-in tooling for SMBs.",
     url: 'https://calendly.com/joe-joestechsolutions/30min/services',
   },
 };
@@ -43,7 +43,7 @@ export default function Services() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Joe runs an AI agent team for his own business. He builds the same for yours —
+                Joe runs a 16-agent production stack for his own business. He builds the same for yours —
                 from a private AI setup to a full automated operation.
               </p>
             </FadeIn>
