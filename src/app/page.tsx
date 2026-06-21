@@ -59,9 +59,9 @@ export default function Home() {
 
               <FadeIn delay={0.3}>
                 <p className="text-base sm:text-lg text-white/55 max-w-lg leading-[1.65] font-normal pt-2">
-                  Solo operation. No team of account managers, no offshore dev
-                  shop, no markup. Just me — building the same kind of systems I
-                  run on my own business every day, then handing them to you.
+                  Solo operation. No account managers, no offshore team, no
+                  markup. I build the same systems I run on my own business,
+                  then hand them to you.
                 </p>
               </FadeIn>
 
@@ -109,8 +109,8 @@ export default function Home() {
               <FadeIn>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1]">
                   <span className="block text-white">I don&apos;t just build</span>
-                  <span className="block text-white">things.</span>
-                  <span className="block text-[#2DD4BF] mt-1">I run them.</span>
+                  <span className="block text-white">things. I run them.</span>
+                  <span className="block text-[#2DD4BF] mt-1">Every day.</span>
                 </h2>
               </FadeIn>
             </div>
@@ -118,9 +118,8 @@ export default function Home() {
             <div className="space-y-6">
               <FadeIn delay={0.2}>
                 <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light max-w-lg">
-                  Every tool I&apos;ve ever handed to a client was tested on my
-                  own business first. Not in a sandbox. Not in a demo. In
-                  production, against real work, every day.
+                  Every tool I hand to a client gets tested on my own business
+                  first. In production, against real work, every day.
                 </p>
               </FadeIn>
 
@@ -187,21 +186,19 @@ export default function Home() {
               <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
                 Most of what I build falls into three buckets.{" "}
                 <span className="text-white/80 font-medium">Automation</span> —
-                taking repetitive work off your plate so you can do the part
-                that actually matters.{" "}
+                taking repetitive work off your plate.{" "}
                 <span className="text-white/80 font-medium">Custom tools</span> —
-                web apps, internal dashboards, client portals, the thing
-                you&apos;ve been doing in a spreadsheet that deserves to be its
-                own tool.{" "}
+                web apps, dashboards, client portals, the spreadsheet that
+                deserves to be its own tool.{" "}
                 <span className="text-white/80 font-medium">Content pipelines</span>{" "}
-                — automated systems that research, draft, and publish so
-                you&apos;re not staring at a blank page every morning.
+                — systems that research, draft, and publish so you&apos;re not
+                staring at a blank page every morning.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <p className="text-[#2DD4BF] text-lg font-medium mb-8 leading-[1.5]">
-                If it doesn&apos;t save you at least an hour a day, I probably
+              <p className="text-[#2DD4BF] text-base font-medium mb-8 leading-[1.5]">
+                If it doesn&apos;t save you at least an hour a day, I
                 wouldn&apos;t build it.
               </p>
             </FadeIn>
@@ -236,7 +233,7 @@ export default function Home() {
               <FadeIn delay={0.2}>
                 <p className="text-white/45 text-base leading-[1.65] font-light mt-6 max-w-sm">
                   Everything I build for you, I&apos;ve already built and run
-                  for myself. Here&apos;s what that looks like.
+                  for myself.
                 </p>
               </FadeIn>
             </div>
@@ -246,17 +243,17 @@ export default function Home() {
                 {
                   num: "01",
                   title: "I run it on my business first",
-                  body: "Every system — content pipelines, monitoring, daily briefings — gets built for my own operations and run in production. If it breaks at 2am, I'm the one who gets the alert.",
+                  body: "Every system gets built for my own operations first and run in production. If it breaks at 2am, I'm the one who gets the alert.",
                 },
                 {
                   num: "02",
                   title: "I figure out what actually matters",
-                  body: "Running things on myself tells me what's genuinely useful versus what looks good in a demo. The stuff that wastes my time gets cut. The stuff that saves time gets hardened.",
+                  body: "Running things on myself tells me what's useful versus what looks good in a demo. The stuff that wastes my time gets cut. The stuff that saves time gets hardened.",
                 },
                 {
                   num: "03",
                   title: "I build the same for you",
-                  body: "Once it works for me — reliably, not just on a good day — I adapt it for your business. Same patterns, same approach, configured for what you actually need.",
+                  body: "Once it works for me — reliably, not just on a good day — I adapt it for your business. Same patterns, same approach, configured for what you need.",
                 },
                 {
                   num: "04",
@@ -310,12 +307,12 @@ export default function Home() {
                     Skate Workshop
                   </Link>
                 </h3>
-                <p className="text-white/30 text-[12px]">Web app · Active · Solo build</p>
+                <p className="text-white/30 text-[12px]">Mobile app · In development</p>
               </div>
               <p className="text-white/55 leading-[1.65] text-[15px]">
-                A coaching app for skateboarding instructors — lesson plans,
-                student tracking, progress milestones. Built for people who
-                teach on ramps, not behind desks.
+                A coaching app for skateboarding instructors. Still building —
+                lesson plans, student tracking, progress milestones. Not ready
+                for users yet, but the architecture is real.
               </p>
             </div>
           </FadeIn>
@@ -332,12 +329,12 @@ export default function Home() {
                     Fairway Roll
                   </Link>
                 </h3>
-                <p className="text-white/30 text-[12px]">Mobile web · Active · Solo build</p>
+                <p className="text-white/30 text-[12px]">Web app · In development</p>
               </div>
               <p className="text-white/55 leading-[1.65] text-[15px]">
-                A map-based app for finding skate spots and golf courses. Two
-                things that don&apos;t seem related until you meet the person
-                who built it.
+                A map-based app for finding skate spots and golf courses.
+                Currently in development — not public yet. Two things that
+                don&apos;t seem related until you meet the person who built it.
               </p>
             </div>
           </FadeIn>
@@ -354,13 +351,12 @@ export default function Home() {
                     RenFaire Directory
                   </Link>
                 </h3>
-                <p className="text-white/30 text-[12px]">Web app · Active · Solo build</p>
+                <p className="text-white/30 text-[12px]">Web app · Live</p>
               </div>
               <p className="text-white/55 leading-[1.65] text-[15px]">
-                A full directory of Renaissance Faires — dates, locations,
-                vendors, maps. Because sometimes the niche project is the one
-                people actually need. Built, maintained, and used by someone
-                who goes to these things.
+                A directory of Renaissance Faires — dates, locations, vendors,
+                maps. The niche project that actually gets traffic. Live and
+                serving visitors.
               </p>
             </div>
           </FadeIn>
@@ -382,39 +378,33 @@ export default function Home() {
 
           <FadeIn delay={0.2}>
             <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
-              I don&apos;t sell plans. I don&apos;t have a &ldquo;Starter&rdquo;
-              and a &ldquo;Pro&rdquo; and an &ldquo;Enterprise.&rdquo;
-              That&apos;s not how building custom tools works, and pretending it
-              does would be lying to you.
+              I don&apos;t sell plans. No &ldquo;Starter&rdquo; and
+              &ldquo;Pro&rdquo; tiers. That&apos;s not how building custom tools
+              works.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3}>
             <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
-              Here&apos;s what happens instead: you tell me what you&apos;re
-              trying to fix. The thing that&apos;s eating your time, the
-              spreadsheet that&apos;s become a monster, the process you know
-              could be automated but haven&apos;t gotten to. I tell you whether
-              I can build it, how long it&apos;ll take, and what it&apos;ll
-              cost. Then I build it.
+              You tell me what you&apos;re trying to fix. The thing eating your
+              time, the spreadsheet that became a monster, the process you know
+              could be automated. I tell you whether I can build it, how long
+              it&apos;ll take, and what it&apos;ll cost. Then I build it.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <p className="text-[#2DD4BF] text-lg font-medium mb-6 leading-[1.5]">
-              I run everything on my own business first.
-              <br />
-              If it works for me, it&apos;ll work for you.
+            <p className="text-[#2DD4BF] text-base font-medium mb-6 leading-[1.5]">
+              I run everything on my own business first. If it works for me,
+              it&apos;ll work for you.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.5}>
             <p className="text-white/35 text-[13px] leading-[1.65] mb-6">
-              Sometimes that means a week of work. Sometimes it means a month.
-              Sometimes it means I tell you the thing you want isn&apos;t worth
-              building and there&apos;s a simpler way. That happens more than
-              you&apos;d think, and I&apos;d rather say that than sell you
-              something you don&apos;t need.
+              Sometimes that means a week. Sometimes a month. Sometimes I tell
+              you the thing you want isn&apos;t worth building and there&apos;s a
+              simpler way. That happens more than you&apos;d think.
             </p>
           </FadeIn>
 
@@ -422,8 +412,7 @@ export default function Home() {
             <p className="text-white/35 text-[13px] leading-[1.65]">
               After it&apos;s built, you own it. The code, the configs, the keys.
               If you want me to maintain it, I will. If you want to take it
-              in-house, it&apos;s yours. No lock-in, no licensing fees, no
-              &ldquo;platform.&rdquo;
+              in-house, it&apos;s yours. No lock-in, no licensing fees.
             </p>
           </FadeIn>
         </div>
