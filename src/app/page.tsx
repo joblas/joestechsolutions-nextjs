@@ -19,29 +19,46 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0A0A0B] text-white">
+    <div className="min-h-screen bg-[#0A0A0B] text-white antialiased">
+      <style>{`
+        @media (min-width: 1024px) {
+          .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: start; }
+          .numbers-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+          .work-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start; }
+          .how-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+        }
+        .step-row { display: flex; gap: 2rem; }
+        .step-num { flex-shrink: 0; width: 3rem; }
+        .project-row { display: grid; gap: 2rem; }
+        @media (min-width: 1024px) {
+          .project-row { grid-template-columns: 1fr 1.5fr; align-items: start; }
+          .project-row-reverse { grid-template-columns: 1.5fr 1fr; }
+          .project-row-reverse .project-text { order: 2; }
+        }
+      `}</style>
+
       {/* ─── Hero ─── */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-start">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+          <div className="hero-grid">
             {/* Left: text */}
-            <div className="space-y-8">
-              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-white/40">
-                <span className="inline-block w-2 h-2 rounded-full bg-[#2DD4BF]" />
-                Joe&apos;s Tech Solutions — San Diego
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#2DD4BF]" />
+                Joe&apos;s Tech Solutions
               </div>
 
               <FadeIn delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] font-space-grotesk">
-                  <span className="block text-white">I build custom tools</span>
-                  <span className="block text-white">and </span>
+                <h1 className="text-[2.5rem] sm:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-bold tracking-[-0.02em] leading-[1.08] font-space-grotesk">
+                  <span className="block text-white">I build custom</span>
+                  <span className="block text-white">tools and </span>
                   <span className="block text-[#2DD4BF]">automation</span>
                   <span className="block text-white">for small businesses.</span>
                 </h1>
               </FadeIn>
 
               <FadeIn delay={0.3}>
-                <p className="text-lg sm:text-xl text-white/60 max-w-xl leading-relaxed font-light">
+                <p className="text-base sm:text-lg text-white/55 max-w-lg leading-[1.65] font-normal pt-2">
                   Solo operation. No team of account managers, no offshore dev
                   shop, no markup. Just me — building the same kind of systems I
                   run on my own business every day, then handing them to you.
@@ -51,31 +68,29 @@ export default function Home() {
               <FadeIn delay={0.4}>
                 <a
                   href="mailto:joe@joestechsolutions.com"
-                  className="inline-flex items-center gap-2 text-lg text-[#2DD4BF] hover:text-[#14b8a6] transition-colors font-medium group"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 mt-2 text-[15px] font-semibold text-[#0A0A0B] bg-[#2DD4BF] rounded-full hover:bg-[#14b8a6] transition-all hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2DD4BF] focus:ring-offset-2 focus:ring-offset-[#0A0A0B]"
                 >
                   Let&apos;s talk
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
+                  <span aria-hidden="true">→</span>
                 </a>
               </FadeIn>
 
-              <p className="text-sm text-white/30">
+              <p className="text-[13px] text-white/30 pt-1">
                 Currently building — last shipped June 2026
               </p>
             </div>
 
-            {/* Right: live counter card */}
-            <div className="lg:mt-12">
-              <div className="border border-white/10 rounded-lg p-8 bg-[#0F0F12]">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-4">
+            {/* Right: live counter */}
+            <div className="lg:mt-8">
+              <div className="border border-white/10 rounded-xl p-7 bg-[#0F0F12] hover:border-white/15 transition-colors">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
                   Running right now
                 </div>
-                <div className="text-6xl sm:text-7xl font-bold text-white font-space-grotesk tracking-tight">
+                <div className="text-5xl sm:text-6xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none">
                   16
                 </div>
-                <p className="text-white/50 mt-3 text-sm leading-relaxed">
-                  automated systems on my own business, 24/7
+                <p className="text-white/45 mt-4 text-sm leading-[1.6]">
+                  automated systems on my own business, running 24/7
                 </p>
               </div>
             </div>
@@ -84,57 +99,59 @@ export default function Home() {
       </section>
 
       {/* ─── Numbers ─── */}
-      <section className="border-t border-white/5">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
-            <FadeIn>
-              <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-6">
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="numbers-grid">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
                 The numbers
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-space-grotesk leading-tight">
-                <span className="block text-white">I don&apos;t just build</span>
-                <span className="block text-white">things.</span>
-                <span className="block text-[#2DD4BF]">I run them.</span>
-              </h2>
-            </FadeIn>
+              <FadeIn>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1]">
+                  <span className="block text-white">I don&apos;t just build</span>
+                  <span className="block text-white">things.</span>
+                  <span className="block text-[#2DD4BF] mt-1">I run them.</span>
+                </h2>
+              </FadeIn>
+            </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <FadeIn delay={0.2}>
-                <p className="text-white/60 text-lg leading-relaxed font-light max-w-lg">
+                <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light max-w-lg">
                   Every tool I&apos;ve ever handed to a client was tested on my
                   own business first. Not in a sandbox. Not in a demo. In
                   production, against real work, every day.
                 </p>
               </FadeIn>
 
-              <div className="grid grid-cols-3 gap-6 sm:gap-8 pt-4 border-t border-white/5">
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-white/[0.06]">
                 <div>
-                  <div className="text-4xl sm:text-5xl font-bold text-[#2DD4BF] font-space-grotesk tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-bold text-[#2DD4BF] font-space-grotesk tracking-[-0.03em] leading-none">
                     16
                   </div>
-                  <p className="text-white/40 text-sm mt-2 leading-relaxed">
-                    systems running 24/7 on my own operations
+                  <p className="text-white/35 text-[13px] mt-2.5 leading-[1.5]">
+                    systems running 24/7
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none">
                     5+
                   </div>
-                  <p className="text-white/40 text-sm mt-2 leading-relaxed">
-                    apps shipped and actively maintained
+                  <p className="text-white/35 text-[13px] mt-2.5 leading-[1.5]">
+                    apps shipped and maintained
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none">
                     365
                   </div>
-                  <p className="text-white/40 text-sm mt-2 leading-relaxed">
-                    days a year — morning briefing, automated
+                  <p className="text-white/35 text-[13px] mt-2.5 leading-[1.5]">
+                    days a year — automated
                   </p>
                 </div>
               </div>
 
-              <p className="text-white/40 text-sm leading-relaxed max-w-lg pt-4">
+              <p className="text-white/35 text-[13px] leading-[1.6] max-w-lg pt-2">
                 16 automated systems running on my business right now. Content
                 pipelines, data collection, daily briefings, monitoring. If it
                 breaks, I fix it — because it&apos;s mine too.
@@ -145,21 +162,21 @@ export default function Home() {
       </section>
 
       {/* ─── What I Build ─── */}
-      <section className="border-t border-white/5">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-6">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
               What I build
             </div>
             <FadeIn>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-space-grotesk leading-tight mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-8">
                 <span className="text-white">Tools that actually </span>
                 <span className="text-[#2DD4BF]">get used.</span>
               </h2>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <p className="text-white/60 text-lg leading-relaxed font-light mb-6">
+              <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
                 Not dashboards nobody opens. Not reports nobody reads. Custom
                 tools that fit into how you already work — or change how you
                 work for the better.
@@ -167,29 +184,30 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <p className="text-white/50 leading-relaxed mb-6">
+              <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
                 Most of what I build falls into three buckets.{" "}
-                <span className="text-white/80">Automation</span> — taking
-                repetitive work off your plate so you can do the part that
-                actually matters. <span className="text-white/80">Custom tools</span>{" "}
-                — web apps, internal dashboards, client portals, the thing
+                <span className="text-white/80 font-medium">Automation</span> —
+                taking repetitive work off your plate so you can do the part
+                that actually matters.{" "}
+                <span className="text-white/80 font-medium">Custom tools</span> —
+                web apps, internal dashboards, client portals, the thing
                 you&apos;ve been doing in a spreadsheet that deserves to be its
                 own tool.{" "}
-                <span className="text-white/80">Content pipelines</span> —
-                automated systems that research, draft, and publish so
+                <span className="text-white/80 font-medium">Content pipelines</span>{" "}
+                — automated systems that research, draft, and publish so
                 you&apos;re not staring at a blank page every morning.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <p className="text-[#2DD4BF] text-lg font-medium mb-8">
+              <p className="text-[#2DD4BF] text-lg font-medium mb-8 leading-[1.5]">
                 If it doesn&apos;t save you at least an hour a day, I probably
                 wouldn&apos;t build it.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.5}>
-              <p className="text-white/40 text-sm leading-relaxed max-w-2xl">
+              <p className="text-white/35 text-[13px] leading-[1.65] max-w-2xl">
                 The work ranges from a single script that runs once a week to a
                 full multi-service system with dashboards, alerts, and
                 automated reporting. The scale depends on what you need. The
@@ -202,28 +220,28 @@ export default function Home() {
       </section>
 
       {/* ─── How I Work ─── */}
-      <section className="border-t border-white/5 bg-[#0F0F12]">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20">
+      <section className="border-t border-white/[0.06] bg-[#0F0F12]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="how-grid">
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-6">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
                 How I work
               </div>
               <FadeIn>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-space-grotesk leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1]">
                   <span className="block text-white">I eat my own</span>
                   <span className="block text-[#2DD4BF]">cooking.</span>
                 </h2>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="text-white/50 text-lg leading-relaxed font-light mt-6 max-w-sm">
+                <p className="text-white/45 text-base leading-[1.65] font-light mt-6 max-w-sm">
                   Everything I build for you, I&apos;ve already built and run
                   for myself. Here&apos;s what that looks like.
                 </p>
               </FadeIn>
             </div>
 
-            <div className="space-y-10">
+            <div className="space-y-8">
               {[
                 {
                   num: "01",
@@ -247,15 +265,15 @@ export default function Home() {
                 },
               ].map((step, i) => (
                 <FadeIn key={step.num} delay={0.1 * (i + 1)}>
-                  <div className="flex gap-6">
-                    <div className="text-2xl font-bold text-white/20 font-space-grotesk tracking-tight shrink-0 w-12">
+                  <div className="step-row">
+                    <div className="step-num text-xl font-bold text-white/20 font-space-grotesk tracking-tight">
                       {step.num}
                     </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold text-white">
+                    <div className="space-y-1.5">
+                      <h3 className="text-base font-semibold text-white">
                         {step.title}
                       </h3>
-                      <p className="text-white/50 leading-relaxed text-sm">
+                      <p className="text-white/45 leading-[1.6] text-[14px]">
                         {step.body}
                       </p>
                     </div>
@@ -268,33 +286,33 @@ export default function Home() {
       </section>
 
       {/* ─── Recent Work ─── */}
-      <section className="border-t border-white/5">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-6">
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
             Recent work
           </div>
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-space-grotesk leading-tight mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-12">
               <span className="text-white">Things I&apos;ve </span>
               <span className="text-[#2DD4BF]">shipped.</span>
             </h2>
           </FadeIn>
 
-          {/* Project 1 — Skate Workshop */}
+          {/* Skate Workshop */}
           <FadeIn delay={0.1}>
-            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 py-8 border-t border-white/5">
+            <div className="project-row py-7 border-t border-white/[0.06]">
               <div className="space-y-2">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
                   Coaching platform
                 </div>
-                <h3 className="text-2xl font-bold text-white font-space-grotesk">
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
                   <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
                     Skate Workshop
                   </Link>
                 </h3>
-                <p className="text-white/30 text-sm">Web app · Active · Solo build</p>
+                <p className="text-white/30 text-[12px]">Web app · Active · Solo build</p>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/55 leading-[1.65] text-[15px]">
                 A coaching app for skateboarding instructors — lesson plans,
                 student tracking, progress milestones. Built for people who
                 teach on ramps, not behind desks.
@@ -302,43 +320,43 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          {/* Project 2 — Fairway Roll */}
+          {/* Fairway Roll */}
           <FadeIn delay={0.2}>
-            <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 py-8 border-t border-white/5">
-              <p className="text-white/60 leading-relaxed lg:order-2">
-                A map-based app for finding skate spots and golf courses. Two
-                things that don&apos;t seem related until you meet the person
-                who built it.
-              </p>
-              <div className="space-y-2 lg:order-1">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30">
+            <div className="project-row project-row-reverse py-7 border-t border-white/[0.06]">
+              <div className="project-text space-y-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
                   Map + discovery
                 </div>
-                <h3 className="text-2xl font-bold text-white font-space-grotesk">
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
                   <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
                     Fairway Roll
                   </Link>
                 </h3>
-                <p className="text-white/30 text-sm">Mobile web · Active · Solo build</p>
+                <p className="text-white/30 text-[12px]">Mobile web · Active · Solo build</p>
               </div>
+              <p className="text-white/55 leading-[1.65] text-[15px]">
+                A map-based app for finding skate spots and golf courses. Two
+                things that don&apos;t seem related until you meet the person
+                who built it.
+              </p>
             </div>
           </FadeIn>
 
-          {/* Project 3 — RenFaire Directory */}
+          {/* RenFaire Directory */}
           <FadeIn delay={0.3}>
-            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 py-8 border-t border-white/5">
+            <div className="project-row py-7 border-t border-b border-white/[0.06]">
               <div className="space-y-2">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
                   Directory
                 </div>
-                <h3 className="text-2xl font-bold text-white font-space-grotesk">
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
                   <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
                     RenFaire Directory
                   </Link>
                 </h3>
-                <p className="text-white/30 text-sm">Web app · Active · Solo build</p>
+                <p className="text-white/30 text-[12px]">Web app · Active · Solo build</p>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/55 leading-[1.65] text-[15px]">
                 A full directory of Renaissance Faires — dates, locations,
                 vendors, maps. Because sometimes the niche project is the one
                 people actually need. Built, maintained, and used by someone
@@ -350,20 +368,20 @@ export default function Home() {
       </section>
 
       {/* ─── Approach ─── */}
-      <section className="border-t border-white/5 bg-[#0F0F12]">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-20 sm:py-28">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-6">
+      <section className="border-t border-white/[0.06] bg-[#0F0F12]">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
             How I work with people
           </div>
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-space-grotesk leading-tight mb-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-8">
               <span className="block text-white">No tiers. No packages.</span>
               <span className="block text-[#2DD4BF]">Just a conversation.</span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-white/60 text-lg leading-relaxed font-light mb-6">
+            <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
               I don&apos;t sell plans. I don&apos;t have a &ldquo;Starter&rdquo;
               and a &ldquo;Pro&rdquo; and an &ldquo;Enterprise.&rdquo;
               That&apos;s not how building custom tools works, and pretending it
@@ -372,7 +390,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="text-white/50 leading-relaxed mb-6">
+            <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
               Here&apos;s what happens instead: you tell me what you&apos;re
               trying to fix. The thing that&apos;s eating your time, the
               spreadsheet that&apos;s become a monster, the process you know
@@ -383,7 +401,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <p className="text-[#2DD4BF] text-lg font-medium mb-6">
+            <p className="text-[#2DD4BF] text-lg font-medium mb-6 leading-[1.5]">
               I run everything on my own business first.
               <br />
               If it works for me, it&apos;ll work for you.
@@ -391,7 +409,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.5}>
-            <p className="text-white/40 text-sm leading-relaxed mb-6">
+            <p className="text-white/35 text-[13px] leading-[1.65] mb-6">
               Sometimes that means a week of work. Sometimes it means a month.
               Sometimes it means I tell you the thing you want isn&apos;t worth
               building and there&apos;s a simpler way. That happens more than
@@ -401,7 +419,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <p className="text-white/40 text-sm leading-relaxed">
+            <p className="text-white/35 text-[13px] leading-[1.65]">
               After it&apos;s built, you own it. The code, the configs, the keys.
               If you want me to maintain it, I will. If you want to take it
               in-house, it&apos;s yours. No lock-in, no licensing fees, no
@@ -412,17 +430,17 @@ export default function Home() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="border-t border-white/5">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-24 sm:py-32 text-left">
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-20 sm:py-24 lg:py-32 text-left">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-space-grotesk leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-5">
               <span className="block text-white">Got something</span>
               <span className="block text-[#2DD4BF]">that needs building?</span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-white/60 text-lg leading-relaxed font-light mb-10 max-w-lg">
+            <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-8 max-w-lg">
               Email me. Tell me what you&apos;re trying to fix. I&apos;ll tell
               you if I can help — usually within a day.
             </p>
@@ -431,21 +449,19 @@ export default function Home() {
           <FadeIn delay={0.3}>
             <a
               href="mailto:joe@joestechsolutions.com"
-              className="inline-flex items-center gap-2 text-2xl text-[#2DD4BF] hover:text-[#14b8a6] transition-colors font-medium group"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 text-[15px] font-semibold text-[#0A0A0B] bg-[#2DD4BF] rounded-full hover:bg-[#14b8a6] transition-all hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2DD4BF] focus:ring-offset-2 focus:ring-offset-[#0A0A0B]"
             >
               Let&apos;s talk
-              <span className="group-hover:translate-x-1 transition-transform">
-                →
-              </span>
+              <span aria-hidden="true">→</span>
             </a>
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <p className="text-white/40 text-sm mt-6">
+            <p className="text-white/35 text-[13px] mt-6">
               Or just email me directly at{" "}
               <a
                 href="mailto:joe@joestechsolutions.com"
-                className="text-white/60 hover:text-[#2DD4BF] transition-colors underline underline-offset-2 decoration-white/20"
+                className="text-white/55 hover:text-[#2DD4BF] transition-colors underline underline-offset-2 decoration-white/20"
               >
                 joe@joestechsolutions.com
               </a>
