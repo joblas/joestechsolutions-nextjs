@@ -283,62 +283,18 @@ export default function Home() {
       <section className="border-t border-white/[0.06]">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
-            Recent work
+            What I&apos;m working on
           </div>
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-12">
-              <span className="text-white">Things I&apos;ve </span>
-              <span className="text-[#2DD4BF]">shipped.</span>
+              <span className="text-white">Things I&apos;m </span>
+              <span className="text-[#2DD4BF]">building.</span>
             </h2>
           </FadeIn>
 
-          {/* Skate Workshop */}
+          {/* RenFaire Directory — actually live */}
           <FadeIn delay={0.1}>
             <div className="project-row py-7 border-t border-white/[0.06]">
-              <div className="space-y-2">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
-                  Coaching platform
-                </div>
-                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
-                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
-                    Skate Workshop
-                  </Link>
-                </h3>
-                <p className="text-white/30 text-[12px]">Mobile app · In development</p>
-              </div>
-              <p className="text-white/55 leading-[1.65] text-[15px]">
-                A coaching app for skateboarding instructors. Still building —
-                lesson plans, student tracking, progress milestones. Not ready
-                for users yet, but the architecture is real.
-              </p>
-            </div>
-          </FadeIn>
-
-          {/* Fairway Roll */}
-          <FadeIn delay={0.2}>
-            <div className="project-row project-row-reverse py-7 border-t border-white/[0.06]">
-              <div className="project-text space-y-2">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
-                  Map + discovery
-                </div>
-                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
-                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
-                    Fairway Roll
-                  </Link>
-                </h3>
-                <p className="text-white/30 text-[12px]">Web app · In development</p>
-              </div>
-              <p className="text-white/55 leading-[1.65] text-[15px]">
-                A map-based app for finding skate spots and golf courses.
-                Currently in development — not public yet. Two things that
-                don&apos;t seem related until you meet the person who built it.
-              </p>
-            </div>
-          </FadeIn>
-
-          {/* RenFaire Directory */}
-          <FadeIn delay={0.3}>
-            <div className="project-row py-7 border-t border-b border-white/[0.06]">
               <div className="space-y-2">
                 <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
                   Directory
@@ -348,12 +304,56 @@ export default function Home() {
                     RenFaire Directory
                   </Link>
                 </h3>
-                <p className="text-white/30 text-[12px]">Web app · Live</p>
+                <p className="text-white/30 text-[12px]">Live — serving visitors</p>
               </div>
               <p className="text-white/55 leading-[1.65] text-[15px]">
                 A directory of Renaissance Faires — dates, locations, vendors,
-                maps. The niche project that actually gets traffic. Live and
-                serving visitors.
+                maps. The one project that&apos;s actually live and getting
+                traffic right now.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Skate Workshop — in development */}
+          <FadeIn delay={0.2}>
+            <div className="project-row project-row-reverse py-7 border-t border-white/[0.06]">
+              <div className="project-text space-y-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                  Coaching platform
+                </div>
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
+                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
+                    Skate Workshop
+                  </Link>
+                </h3>
+                <p className="text-white/30 text-[12px]">In development — not public yet</p>
+              </div>
+              <p className="text-white/55 leading-[1.65] text-[15px]">
+                A coaching app for skateboarding instructors. Early days —
+                lesson plans, student tracking, progress milestones. Still
+                figuring it out.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Fairway Roll — in development */}
+          <FadeIn delay={0.3}>
+            <div className="project-row py-7 border-t border-b border-white/[0.06]">
+              <div className="space-y-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                  Map + discovery
+                </div>
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
+                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
+                    Fairway Roll
+                  </Link>
+                </h3>
+                <p className="text-white/30 text-[12px]">In development — not public yet</p>
+              </div>
+              <p className="text-white/55 leading-[1.65] text-[15px]">
+                A map app for finding skate spots and golf courses. Two things
+                that don&apos;t seem related until you meet the person building
+                it. Still early.
               </p>
             </div>
           </FadeIn>
