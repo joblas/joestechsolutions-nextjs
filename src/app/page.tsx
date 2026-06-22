@@ -50,18 +50,17 @@ export default function Home() {
 
               <FadeIn delay={0.1}>
                 <h1 className="text-[2.5rem] sm:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-bold tracking-[-0.02em] leading-[1.08] font-space-grotesk">
-                  <span className="block text-white">I build custom</span>
-                  <span className="block text-white">tools and </span>
-                  <span className="block text-[#2DD4BF]">automation</span>
-                  <span className="block text-white">for small businesses.</span>
+                  <span className="block text-white">I help my friends</span>
+                  <span className="block text-white">fix their </span>
+                  <span className="block text-[#2DD4BF]">businesses.</span>
                 </h1>
               </FadeIn>
 
               <FadeIn delay={0.3}>
                 <p className="text-base sm:text-lg text-white/55 max-w-lg leading-[1.65] font-normal pt-2">
-                  Solo operation. No account managers, no offshore team, no
-                  markup. I build the same systems I run on my own business,
-                  then hand them to you.
+                  Websites, automation, the tech stuff that eats your evenings.
+                  I build it, test it on my own business first, then hand it
+                  over. No jargon, no fluff — just stuff that works.
                 </p>
               </FadeIn>
 
