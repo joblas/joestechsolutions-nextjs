@@ -117,8 +117,8 @@ export default function Home() {
             <div className="space-y-6">
               <FadeIn delay={0.2}>
                 <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light max-w-lg">
-                  Every tool I hand to a client gets tested on my own business
-                  first. In production, against real work, every day.
+                  Everything I build for someone else, I test on my own business
+                  first. If it breaks, I deal with it — not you.
                 </p>
               </FadeIn>
 
@@ -150,9 +150,9 @@ export default function Home() {
               </div>
 
               <p className="text-white/35 text-[13px] leading-[1.6] max-w-lg pt-2">
-                16 automated systems running on my business right now. Content
-                pipelines, data collection, daily briefings, monitoring. If it
-                breaks, I fix it — because it&apos;s mine too.
+                Stuff running right now: content pipelines, data collection,
+                daily briefings, monitoring. 16 systems, 24/7, on my own
+                business. If something breaks at 2am, I&apos;m the one fixing it.
               </p>
             </div>
           </div>
@@ -168,47 +168,45 @@ export default function Home() {
             </div>
             <FadeIn>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-8">
-                <span className="text-white">Tools that actually </span>
-                <span className="text-[#2DD4BF]">get used.</span>
+                <span className="text-white">Stuff that actually </span>
+                <span className="text-[#2DD4BF]">gets used.</span>
               </h2>
             </FadeIn>
 
             <FadeIn delay={0.2}>
               <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
-                Not dashboards nobody opens. Not reports nobody reads. Custom
-                tools that fit into how you already work — or change how you
-                work for the better.
+                Not dashboards nobody opens. Not reports nobody reads. Just
+                tools that fit into how you already work.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.3}>
               <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
-                Most of what I build falls into three buckets.{" "}
+                Mostly falls into three buckets.{" "}
                 <span className="text-white/80 font-medium">Automation</span> —
-                taking repetitive work off your plate.{" "}
+                taking the repetitive stuff off your plate.{" "}
                 <span className="text-white/80 font-medium">Custom tools</span> —
-                web apps, dashboards, client portals, the spreadsheet that
-                deserves to be its own tool.{" "}
+                web apps, dashboards, that spreadsheet that should probably be
+                its own thing.{" "}
                 <span className="text-white/80 font-medium">Content pipelines</span>{" "}
-                — systems that research, draft, and publish so you&apos;re not
-                staring at a blank page every morning.
+                — systems that research and draft so you&apos;re not staring at a
+                blank page every morning.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.4}>
               <p className="text-[#2DD4BF] text-base font-medium mb-8 leading-[1.5]">
-                If it doesn&apos;t save you at least an hour a day, I
-                wouldn&apos;t build it.
+                If it doesn&apos;t save you at least an hour a day, probably not
+                worth building.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.5}>
               <p className="text-white/35 text-[13px] leading-[1.65] max-w-2xl">
-                The work ranges from a single script that runs once a week to a
-                full multi-service system with dashboards, alerts, and
-                automated reporting. The scale depends on what you need. The
-                approach is always the same: build it, run it on my business,
-                fix what breaks, then hand it over.
+                Could be a single script that runs once a week. Could be a full
+                system with dashboards, alerts, the works. Depends on what you
+                need. Same approach either way: build it, run it on my business,
+                fix what breaks, hand it over.
               </p>
             </FadeIn>
           </div>
@@ -225,14 +223,14 @@ export default function Home() {
               </div>
               <FadeIn>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1]">
-                  <span className="block text-white">I eat my own</span>
-                  <span className="block text-[#2DD4BF]">cooking.</span>
+                  <span className="block text-white">I test everything</span>
+                  <span className="block text-[#2DD4BF]">on myself first.</span>
                 </h2>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-white/45 text-base leading-[1.65] font-light mt-6 max-w-sm">
-                  Everything I build for you, I&apos;ve already built and run
-                  for myself.
+                  Before I build something for you, I build it for me. Run it,
+                  break it, fix it. Then bring it to you.
                 </p>
               </FadeIn>
             </div>
@@ -241,23 +239,23 @@ export default function Home() {
               {[
                 {
                   num: "01",
-                  title: "I run it on my business first",
-                  body: "Every system gets built for my own operations first and run in production. If it breaks at 2am, I'm the one who gets the alert.",
+                  title: "I build it for myself first",
+                  body: "Every system gets built for my own business and run in production. If it breaks at 2am, I get the alert.",
                 },
                 {
                   num: "02",
-                  title: "I figure out what actually matters",
-                  body: "Running things on myself tells me what's useful versus what looks good in a demo. The stuff that wastes my time gets cut. The stuff that saves time gets hardened.",
+                  title: "I figure out what's actually useful",
+                  body: "Running things on myself tells me what matters versus what just looks good in a demo. Stuff that wastes time gets cut. Stuff that saves time gets kept.",
                 },
                 {
                   num: "03",
-                  title: "I build the same for you",
-                  body: "Once it works for me — reliably, not just on a good day — I adapt it for your business. Same patterns, same approach, configured for what you need.",
+                  title: "I bring it to you",
+                  body: "Once it works for me — not just on a good day, reliably — I adapt it for your business. Same patterns, just configured for what you need.",
                 },
                 {
                   num: "04",
                   title: "You own it",
-                  body: 'No black boxes. No "proprietary platform." You get the code, the configs, the keys. If you want to run it yourself, you can. If you want me to keep running it, I will.',
+                  body: "No black boxes. You get the code, the configs, the keys. Run it yourself if you want. Or I can keep running it for you. Either way, it's yours.",
                 },
               ].map((step, i) => (
                 <FadeIn key={step.num} delay={0.1 * (i + 1)}>
@@ -371,24 +369,24 @@ export default function Home() {
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-8">
               <span className="block text-white">No tiers. No packages.</span>
-              <span className="block text-[#2DD4BF]">Just a conversation.</span>
+              <span className="block text-[#2DD4BF]">Just tell me what you need.</span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
               I don&apos;t sell plans. No &ldquo;Starter&rdquo; and
-              &ldquo;Pro&rdquo; tiers. That&apos;s not how building custom tools
-              works.
+              &ldquo;Pro&rdquo; tiers. Just tell me what you&apos;re trying to
+              fix and we go from there.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3}>
             <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
-              You tell me what you&apos;re trying to fix. The thing eating your
-              time, the spreadsheet that became a monster, the process you know
-              could be automated. I tell you whether I can build it, how long
-              it&apos;ll take, and what it&apos;ll cost. Then I build it.
+              The thing eating your time. The spreadsheet that became a monster.
+              The process you know could be automated. Tell me about it — I&apos;ll
+              tell you if I can build it, how long it&apos;ll take, and what it
+              costs. Then we build it.
             </p>
           </FadeIn>
 
@@ -401,17 +399,16 @@ export default function Home() {
 
           <FadeIn delay={0.5}>
             <p className="text-white/35 text-[13px] leading-[1.65] mb-6">
-              Sometimes that means a week. Sometimes a month. Sometimes I tell
-              you the thing you want isn&apos;t worth building and there&apos;s a
-              simpler way. That happens more than you&apos;d think.
+              Sometimes it takes a week. Sometimes a month. Sometimes I tell you
+              it&apos;s not worth building and there&apos;s an easier way.
+              Happens more than you&apos;d think.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.6}>
             <p className="text-white/35 text-[13px] leading-[1.65]">
-              After it&apos;s built, you own it. The code, the configs, the keys.
-              If you want me to maintain it, I will. If you want to take it
-              in-house, it&apos;s yours. No lock-in, no licensing fees.
+              When it&apos;s done, you own it. Code, configs, keys. I can keep
+              running it for you or you take it in-house. No lock-in.
             </p>
           </FadeIn>
         </div>
@@ -422,15 +419,15 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8 py-20 sm:py-24 lg:py-32 text-left">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-5">
-              <span className="block text-white">Got something</span>
-              <span className="block text-[#2DD4BF]">that needs building?</span>
+              <span className="block text-white">So what do you</span>
+              <span className="block text-[#2DD4BF]">want to build?</span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-8 max-w-lg">
-              Email me. Tell me what you&apos;re trying to fix. I&apos;ll tell
-              you if I can help — usually within a day.
+              Email me. Tell me what you&apos;re thinking. I&apos;ll let you know
+              if I can help — usually within a day.
             </p>
           </FadeIn>
 
