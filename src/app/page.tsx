@@ -1,496 +1,456 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Private AI for Small Business | Joe's Tech Solutions",
+  title: "Joe's Tech Solutions — Custom tools and automation",
   description:
-    "Private AI setup, AI agent teams, and custom software for ambitious SMBs. Your business runs while you sleep — no subscriptions, no data leaks.",
+    "I build custom tools and automation for small businesses. Solo operation — building the same systems I run on my own business, then handing them to you.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Private AI for Small Business | Joe's Tech Solutions",
+    title: "Joe's Tech Solutions — Custom tools and automation",
     description:
-      "Private AI setup, AI agent teams, and custom software for ambitious SMBs.",
-    url: "https://calendly.com/joe-joestechsolutions/30min",
+      "I build custom tools and automation for small businesses. Solo operation — building the same systems I run on my own business, then handing them to you.",
+    url: "https://www.joestechsolutions.com",
   },
 };
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
-import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
-import { FadeIn } from "@/components/animations/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
-import { AnimatedCard } from "@/components/animations/AnimatedCard";
-import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
-        {/* Transparent -- particles come from global ThreeBackground behind this */}
+    <div className="min-h-screen bg-[#0A0A0B] text-white antialiased">
+      <style>{`
+        @media (min-width: 1024px) {
+          .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: start; }
+          .numbers-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+          .work-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start; }
+          .how-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+        }
+        .step-row { display: flex; gap: 2rem; }
+        .step-num { flex-shrink: 0; width: 3rem; }
+        .project-row { display: grid; gap: 2rem; }
+        @media (min-width: 1024px) {
+          .project-row { grid-template-columns: 1fr 1.5fr; align-items: start; }
+          .project-row-reverse { grid-template-columns: 1.5fr 1fr; }
+          .project-row-reverse .project-text { order: 2; }
+        }
+      `}</style>
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center space-y-10">
-            {/* Badge */}
-            <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
-                <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0b7f73] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]" />
-                </span>
-                <span>Private AI for SMBs — built and battle-tested in-house</span>
+      {/* ─── Hero ─── */}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+          <div className="hero-grid">
+            {/* Left: text */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#2DD4BF]" />
+                Joe&apos;s Tech Solutions
               </div>
-            </FadeIn>
 
-            {/* Main Heading */}
-            <FadeIn delay={0.2}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Your Business Runs</span>
-                <span className="block text-[#0d9488]">
-                  While You Sleep.
-                </span>
-              </h1>
-            </FadeIn>
+              <FadeIn delay={0.1}>
+                <h1 className="text-[2.5rem] sm:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-bold tracking-[-0.02em] leading-[1.08] font-space-grotesk">
+                  <span className="block text-white">Got something</span>
+                  <span className="block text-white">you&apos;ve always </span>
+                  <span className="block text-[#2DD4BF]">wanted to build?</span>
+                </h1>
+              </FadeIn>
 
-            {/* Subheading */}
-            <FadeIn delay={0.3}>
-              <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Most AI consultants sell you tools. We sell outcomes. Joe runs a 22-agent AI team
-                for his own business — now he builds the same for yours.
-              </p>
-            </FadeIn>
-
-            {/* CTA Buttons */}
-            <FadeIn delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link href="/private-ai-setup">
-                  <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all">
-                      Get Private AI Setup
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Button>
-                  </MagneticButton>
-                </Link>
-                <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all">
-                    Schedule 30min Call
-                  </Button>
-                </a>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <FadeIn>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-                What We Do
-              </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Private AI. Agent systems. Custom software. All battle-tested on Joe's own business first.
-              </p>
-            </FadeIn>
-          </div>
-
-          {/* Featured: Private AI Setup */}
-          <FadeIn delay={0.1}>
-            <Link href="/private-ai-setup" className="block mb-8">
-              <AnimatedCard>
-                <Card className="relative bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/60 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
-                  {/* Most Popular badge */}
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#0b7f73]/20 rounded-full text-[#2dd4bf] text-sm font-medium z-10">
-                    Most Popular
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6 p-6">
-                    <div className="space-y-4">
-                      <div className="w-14 h-14 bg-[#0b7f73]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0b7f73]/30 transition-all duration-300">
-                        <Image src="/icons/computer-dynamic/premium.png" alt="Private AI Setup" width={36} height={36} sizes="36px" className="object-contain" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-white text-2xl font-space-grotesk mb-2">Private AI Setup</CardTitle>
-                        <CardDescription className="text-white/70 text-base">
-                          Your own AI assistant. No data leaks. No subscriptions.
-                        </CardDescription>
-                      </div>
-                      <p className="text-white/60 leading-relaxed">
-                        Run ChatGPT-level AI on your own computer or private server. Keep sensitive data in-house while getting the same powerful capabilities. Starting at $199.
-                      </p>
-                      <div className="flex items-center gap-2 text-[#0d9488] font-medium group/link">
-                        Get Started
-                        <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-                      </div>
-                    </div>
-                    <div className="hidden md:flex items-center justify-center">
-                      <div className="grid grid-cols-2 gap-3 text-sm">
-                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#0d9488] font-semibold">100%</span>
-                          <span className="text-white/60 block">Private</span>
-                        </div>
-                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#2dd4bf] font-semibold">$0/mo</span>
-                          <span className="text-white/60 block">After Setup</span>
-                        </div>
-                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#0d9488] font-semibold">75 min</span>
-                          <span className="text-white/60 block">Live Session</span>
-                        </div>
-                        <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#2dd4bf] font-semibold">GPT-4</span>
-                          <span className="text-white/60 block">Level AI</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </AnimatedCard>
-            </Link>
-          </FadeIn>
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {/* Joe's AI Server */}
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
-                  <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
-                      <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Joe's AI Server" width={36} height={36} sizes="36px" className="object-contain" />
-                    </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">Joe&apos;s AI Server</CardTitle>
-                    <CardDescription className="text-white/60 text-base">
-                      Private AI on your hardware — from $199
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-white/70 mb-6 leading-relaxed">
-                      Your own ChatGPT-level AI. No subscriptions, no data leaks, no Big Tech. Local setup or cloud server — both 100% yours.
-                    </p>
-                    <Link href="/private-ai-setup" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
-                      Get started
-                      <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-
-            {/* OpenClaw Agent Systems */}
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full backdrop-blur-sm">
-                  <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
-                    </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">OpenClaw Agent Systems</CardTitle>
-                    <CardDescription className="text-white/60 text-base">
-                      AI agent teams that run your operations
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-white/70 mb-6 leading-relaxed">
-                      Not one AI. A whole team of them. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
-                    </p>
-                    <Link href="/services#agent-systems" className="text-[#2dd4bf] text-sm font-medium hover:text-[#14b8a6] inline-flex items-center group/link transition-colors">
-                      Explore agent systems
-                      <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-
-            {/* Custom AI Teams */}
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
-                  <CardHeader className="space-y-4">
-                    <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={32} height={32} sizes="32px" className="object-contain" />
-                    </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">Custom AI Teams</CardTitle>
-                    <CardDescription className="text-white/60 text-base">
-                      Full custom multi-agent architectures
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-white/70 mb-6 leading-relaxed">
-                      Got a complex workflow? We design multi-agent AI systems from scratch, tailored to your exact business logic and stack.
-                    </p>
-                    <Link href="/services#custom-ai" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
-                      Explore custom AI teams
-                      <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-          </StaggerContainer>
-
-          {/* Free Tool: Whisper Walkie */}
-          <FadeIn delay={0.3}>
-            <Link href="/whisper-walkie" className="block mt-8">
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#2dd4bf]/40 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
-                  <div className="flex flex-col sm:flex-row items-center gap-6 p-6">
-                    <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
-                      <Image src="/icons/chat-text-dynamic/premium.png" alt="Whisper Walkie" width={36} height={36} sizes="36px" className="object-contain" />
-                    </div>
-                    <div className="flex-1 text-center sm:text-left">
-                      <div className="flex items-center gap-3 justify-center sm:justify-start mb-1">
-                        <h3 className="text-white text-lg font-semibold font-space-grotesk">Whisper Walkie</h3>
-                        <span className="px-2.5 py-0.5 bg-[#2dd4bf]/15 rounded-full text-[#2dd4bf] text-xs font-medium">Free & Open Source</span>
-                      </div>
-                      <p className="text-white/60 text-sm">
-                        Push-to-talk voice typing that works in any app. 100% local — your voice never leaves your machine.
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#2dd4bf] text-sm font-medium shrink-0 group-hover:translate-x-1 transition-transform">
-                      Download Free
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </div>
-                  </div>
-                </Card>
-              </AnimatedCard>
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Featured Case Study - RenFaire Directory */}
-      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <FadeIn>
-              <div className="inline-block px-4 py-1 bg-[#0b7f73]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold mb-6">
-                Featured Project
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 font-space-grotesk">
-                Building Real Solutions
-              </h2>
-              <p className="text-xl text-white/70 font-light">
-                For real businesses with real impact
-              </p>
-            </FadeIn>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <FadeIn delay={0.2}>
-              <div className="space-y-8">
-                <div className="inline-block px-4 py-1.5 bg-[#0b7f73]/10 border border-[#0d9488]/20 rounded-full text-[#0d9488] text-sm font-semibold">
-                  Content Platform • SEO • Directory
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-space-grotesk">
-                  RenFaire Directory
-                </h3>
-
-                <p className="text-lg text-white/70 leading-relaxed font-light">
-                  The modern guide to Renaissance faires across America. A revenue-generating
-                  directory with 200+ event listings, rich structured data, affiliate monetization,
-                  and top search engine rankings — live and serving thousands of visitors.
+              <FadeIn delay={0.3}>
+                <p className="text-base sm:text-lg text-white/55 max-w-lg leading-[1.65] font-normal pt-2">
+                  I&apos;m building stuff myself and learning as I go. It&apos;s
+                  not as hard as people make it seem — anyone can do it. If
+                  you&apos;ve got an idea, I&apos;ll help you get it going.
                 </p>
+              </FadeIn>
 
-                <div className="space-y-4">
-                  {[
-                    "200+ Renaissance faire listings nationwide",
-                    "SEO-first architecture with structured data",
-                    "Affiliate revenue and monetization built in",
-                    "Top Google rankings for target keywords",
-                    "Interactive maps and location-based search"
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-start group">
-                      <CheckCircle weight="duotone" className="h-6 w-6 text-[#0d9488] mr-3 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                      <span className="text-white/80 text-base">{feature}</span>
-                    </div>
-                  ))}
+              <FadeIn delay={0.4}>
+                <a
+                  href="mailto:joe@joestechsolutions.com"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 mt-2 text-[15px] font-semibold text-[#0A0A0B] bg-[#2DD4BF] rounded-full hover:bg-[#14b8a6] transition-all hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2DD4BF] focus:ring-offset-2 focus:ring-offset-[#0A0A0B]"
+                >
+                  Let&apos;s talk
+                  <span aria-hidden="true">→</span>
+                </a>
+              </FadeIn>
+
+              <p className="text-[13px] text-white/30 pt-1">
+                Currently building — last shipped June 2026
+              </p>
+            </div>
+
+            {/* Right: live counter */}
+            <div className="lg:mt-8">
+              <div className="border border-white/10 rounded-xl p-7 bg-[#0F0F12] hover:border-white/15 transition-colors">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
+                  Running right now
                 </div>
+                <div className="text-5xl sm:text-6xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none">
+                  16
+                </div>
+                <p className="text-white/45 mt-4 text-sm leading-[1.6]">
+                  automated systems on my own business, running 24/7
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Link href="/portfolio/renfaire-directory">
-                    <Button className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
-                      View Case Study
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Button>
-                  </Link>
-                  <Link href="https://www.renfaireguide.com" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/5 hover:border-white/30">
-                      Visit Live Site
-                    </Button>
-                  </Link>
+      {/* ─── Numbers ─── */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="numbers-grid">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
+                The numbers
+              </div>
+              <FadeIn>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1]">
+                  <span className="block text-white">I don&apos;t just build</span>
+                  <span className="block text-white">things. I run them.</span>
+                  <span className="block text-[#2DD4BF] mt-1">Every day.</span>
+                </h2>
+              </FadeIn>
+            </div>
+
+            <div className="space-y-6">
+              <FadeIn delay={0.2}>
+                <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light max-w-lg">
+                  Everything I build for someone else, I test on my own business
+                  first. If it breaks, I deal with it — not you.
+                </p>
+              </FadeIn>
+
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-white/[0.06]">
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#2DD4BF] font-space-grotesk tracking-[-0.03em] leading-none">
+                    16
+                  </div>
+                  <p className="text-white/35 text-[13px] mt-2.5 leading-[1.5]">
+                    systems running 24/7
+                  </p>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none">
+                    5+
+                  </div>
+                  <p className="text-white/35 text-[13px] mt-2.5 leading-[1.5]">
+                    apps shipped and maintained
+                  </p>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-white font-space-grotesk tracking-[-0.03em] leading-none">
+                    365
+                  </div>
+                  <p className="text-white/35 text-[13px] mt-2.5 leading-[1.5]">
+                    days a year — automated
+                  </p>
                 </div>
               </div>
+
+              <p className="text-white/35 text-[13px] leading-[1.6] max-w-lg pt-2">
+                Stuff running right now: content pipelines, data collection,
+                daily briefings, monitoring. 16 systems, 24/7, on my own
+                business. If something breaks at 2am, I&apos;m the one fixing it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── What I Build ─── */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="max-w-3xl">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
+              What I build
+            </div>
+            <FadeIn>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-8">
+                <span className="text-white">Stuff that actually </span>
+                <span className="text-[#2DD4BF]">gets used.</span>
+              </h2>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
+                Not dashboards nobody opens. Not reports nobody reads. Just
+                tools that fit into how you already work.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
+                Mostly falls into three buckets.{" "}
+                <span className="text-white/80 font-medium">Automation</span> —
+                taking the repetitive stuff off your plate.{" "}
+                <span className="text-white/80 font-medium">Custom tools</span> —
+                web apps, dashboards, that spreadsheet that should probably be
+                its own thing.{" "}
+                <span className="text-white/80 font-medium">Content pipelines</span>{" "}
+                — systems that research and draft so you&apos;re not staring at a
+                blank page every morning.
+              </p>
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <div className="relative group">
-                <div className="relative aspect-[4/3] bg-[#1c1c26] rounded-3xl border border-white/10 overflow-hidden hover:border-[#0d9488]/30 transition-all duration-500">
-                  <Image
-                    src="/images/renfaire-hero.jpg"
-                    alt="RenFaire Directory — Renaissance faire listings"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+              <p className="text-[#2DD4BF] text-base font-medium mb-8 leading-[1.5]">
+                If it doesn&apos;t save you at least an hour a day, probably not
+                worth building.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.5}>
+              <p className="text-white/35 text-[13px] leading-[1.65] max-w-2xl">
+                Could be a single script that runs once a week. Could be a full
+                system with dashboards, alerts, the works. Depends on what you
+                need. Same approach either way: build it, run it on my business,
+                fix what breaks, hand it over.
+              </p>
             </FadeIn>
           </div>
+        </div>
+      </section>
 
-          {/* Secondary: The Skate Workshop */}
-          <FadeIn delay={0.3}>
-            <div className="mt-16 pt-16 border-t border-white/10">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="order-2 lg:order-1">
-                  <div className="relative aspect-square bg-[#1c1c26] rounded-3xl border border-white/10 overflow-hidden hover:border-[#2dd4bf]/30 transition-all duration-500">
-                    <Image
-                      src="/images/skate-workshop-hero.png"
-                      alt="The Skate Workshop app icon"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-contain p-8"
-                    />
-                  </div>
-                </div>
-                <div className="order-1 lg:order-2 space-y-6">
-                  <div className="inline-block px-4 py-1.5 bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 rounded-full text-[#2dd4bf] text-sm font-semibold">
-                    Mobile App • iOS & Android • Beta
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">
-                    The Skate Workshop
-                  </h3>
-                  <p className="text-lg text-white/70 leading-relaxed font-light">
-                    Cross-platform skateboarding coaching app with video feedback,
-                    400+ trick database, and multiplayer game modes. Built with React Native
-                    for iOS and Android with subscription billing.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="/portfolio/skate-workshop">
-                      <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 group">
-                        View Case Study
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
+      {/* ─── How I Work ─── */}
+      <section className="border-t border-white/[0.06] bg-[#0F0F12]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="how-grid">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
+                How I work
               </div>
+              <FadeIn>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1]">
+                  <span className="block text-white">I test everything</span>
+                  <span className="block text-[#2DD4BF]">on myself first.</span>
+                </h2>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <p className="text-white/45 text-base leading-[1.65] font-light mt-6 max-w-sm">
+                  Before I build something for you, I build it for me. Run it,
+                  break it, fix it. Then bring it to you.
+                </p>
+              </FadeIn>
+            </div>
+
+            <div className="space-y-8">
+              {[
+                {
+                  num: "01",
+                  title: "I build it for myself first",
+                  body: "Every system gets built for my own business and run in production. If it breaks at 2am, I get the alert.",
+                },
+                {
+                  num: "02",
+                  title: "I figure out what's actually useful",
+                  body: "Running things on myself tells me what matters versus what just looks good in a demo. Stuff that wastes time gets cut. Stuff that saves time gets kept.",
+                },
+                {
+                  num: "03",
+                  title: "I bring it to you",
+                  body: "Once it works for me — not just on a good day, reliably — I adapt it for your business. Same patterns, just configured for what you need.",
+                },
+                {
+                  num: "04",
+                  title: "You own it",
+                  body: "No black boxes. You get the code, the configs, the keys. Run it yourself if you want. Or I can keep running it for you. Either way, it's yours.",
+                },
+              ].map((step, i) => (
+                <FadeIn key={step.num} delay={0.1 * (i + 1)}>
+                  <div className="step-row">
+                    <div className="step-num text-xl font-bold text-white/20 font-space-grotesk tracking-tight">
+                      {step.num}
+                    </div>
+                    <div className="space-y-1.5">
+                      <h3 className="text-base font-semibold text-white">
+                        {step.title}
+                      </h3>
+                      <p className="text-white/45 leading-[1.6] text-[14px]">
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Recent Work ─── */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
+            What I&apos;m working on
+          </div>
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-12">
+              <span className="text-white">Things I&apos;m </span>
+              <span className="text-[#2DD4BF]">building.</span>
+            </h2>
+          </FadeIn>
+
+          {/* RenFaire Directory — actually live */}
+          <FadeIn delay={0.1}>
+            <div className="project-row py-7 border-t border-white/[0.06]">
+              <div className="space-y-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                  Directory
+                </div>
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
+                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
+                    RenFaire Directory
+                  </Link>
+                </h3>
+                <p className="text-white/30 text-[12px]">Live — serving visitors</p>
+              </div>
+              <p className="text-white/55 leading-[1.65] text-[15px]">
+                A directory of Renaissance Faires — dates, locations, vendors,
+                maps. The one project that&apos;s actually live and getting
+                traffic right now.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Skate Workshop — in development */}
+          <FadeIn delay={0.2}>
+            <div className="project-row project-row-reverse py-7 border-t border-white/[0.06]">
+              <div className="project-text space-y-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                  Coaching platform
+                </div>
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
+                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
+                    Skate Workshop
+                  </Link>
+                </h3>
+                <p className="text-white/30 text-[12px]">In development — not public yet</p>
+              </div>
+              <p className="text-white/55 leading-[1.65] text-[15px]">
+                A coaching app for skateboarding instructors. Early days —
+                lesson plans, student tracking, progress milestones. Still
+                figuring it out.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Fairway Roll — in development */}
+          <FadeIn delay={0.3}>
+            <div className="project-row py-7 border-t border-b border-white/[0.06]">
+              <div className="space-y-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium">
+                  Map + discovery
+                </div>
+                <h3 className="text-xl font-bold text-white font-space-grotesk tracking-[-0.01em]">
+                  <Link href="#" className="hover:text-[#2DD4BF] transition-colors">
+                    Fairway Roll
+                  </Link>
+                </h3>
+                <p className="text-white/30 text-[12px]">In development — not public yet</p>
+              </div>
+              <p className="text-white/55 leading-[1.65] text-[15px]">
+                A map app for finding skate spots and golf courses. Two things
+                that don&apos;t seem related until you meet the person building
+                it. Still early.
+              </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Technology Stack Section */}
-      <section className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <FadeIn>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Tools We Actually Use
-              </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                No vendor bias. Just the stack that makes private AI work in production — on real businesses, right now.
-              </p>
-            </FadeIn>
+      {/* ─── Approach ─── */}
+      <section className="border-t border-white/[0.06] bg-[#0F0F12]">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="text-[10px] uppercase tracking-[0.25em] text-white/35 font-medium mb-5">
+            How I work with people
           </div>
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-8">
+              <span className="block text-white">No tiers. No packages.</span>
+              <span className="block text-[#2DD4BF]">Just tell me what you need.</span>
+            </h2>
+          </FadeIn>
 
-          {/* Top Row - Scrolling Left */}
-          <div className="relative mb-8 overflow-hidden">
-            <div className="flex gap-8 animate-scroll-left">
-              {[
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
-                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
-                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
-                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
-                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
-                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
-                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
-              ].map((tech, index) => (
-                <a
-                  key={index}
-                  href={tech.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
-                >
-                  <img
-                    src={tech.logo}
-                    alt={`${tech.name} logo`}
-                    loading="lazy"
-                    decoding="async"
-                    width={48}
-                    height={48}
-                    className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+          <FadeIn delay={0.2}>
+            <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-6">
+              I don&apos;t sell plans. No &ldquo;Starter&rdquo; and
+              &ldquo;Pro&rdquo; tiers. Just tell me what you&apos;re trying to
+              fix and we go from there.
+            </p>
+          </FadeIn>
 
-          {/* Bottom Row - Scrolling Right */}
-          <div className="relative overflow-hidden">
-            <div className="flex gap-8 animate-scroll-right">
-              {[
-                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
-                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
-                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
-                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
-                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
-                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
-              ].map((tech, index) => (
-                <a
-                  key={index}
-                  href={tech.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
-                >
-                  <img
-                    src={tech.logo}
-                    alt={`${tech.name} logo`}
-                    loading="lazy"
-                    decoding="async"
-                    width={48}
-                    height={48}
-                    className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+          <FadeIn delay={0.3}>
+            <p className="text-white/45 leading-[1.65] text-[15px] mb-6">
+              The thing eating your time. The spreadsheet that became a monster.
+              The process you know could be automated. Tell me about it — I&apos;ll
+              tell you if I can build it, how long it&apos;ll take, and what it
+              costs. Then we build it.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <p className="text-[#2DD4BF] text-base font-medium mb-6 leading-[1.5]">
+              I run everything on my own business first. If it works for me,
+              it&apos;ll work for you.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.5}>
+            <p className="text-white/35 text-[13px] leading-[1.65] mb-6">
+              Sometimes it takes a week. Sometimes a month. Sometimes I tell you
+              it&apos;s not worth building and there&apos;s an easier way.
+              Happens more than you&apos;d think.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.6}>
+            <p className="text-white/35 text-[13px] leading-[1.65]">
+              When it&apos;s done, you own it. Code, configs, keys. I can keep
+              running it for you or you take it in-house. No lock-in.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
-
-        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      {/* ─── CTA ─── */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-20 sm:py-24 lg:py-32 text-left">
           <FadeIn>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-              Ready to Own Your AI?
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.02em] font-space-grotesk leading-[1.1] mb-5">
+              <span className="block text-white">So what do you</span>
+              <span className="block text-[#2DD4BF]">want to build?</span>
             </h2>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Book a free 30min call. We&apos;ll figure out which setup fits your business — local, cloud, or a full agent system — and get you running.
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <p className="text-white/55 text-base sm:text-lg leading-[1.65] font-light mb-8 max-w-lg">
+              Email me. Tell me what you&apos;re thinking. I&apos;ll let you know
+              if I can help — usually within a day.
             </p>
-            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
-              <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 transition-all">
-                  Schedule 30min Call
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </Button>
-              </MagneticButton>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
+            <a
+              href="mailto:joe@joestechsolutions.com"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 text-[15px] font-semibold text-[#0A0A0B] bg-[#2DD4BF] rounded-full hover:bg-[#14b8a6] transition-all hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#2DD4BF] focus:ring-offset-2 focus:ring-offset-[#0A0A0B]"
+            >
+              Let&apos;s talk
+              <span aria-hidden="true">→</span>
             </a>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <p className="text-white/35 text-[13px] mt-6">
+              Or just email me directly at{" "}
+              <a
+                href="mailto:joe@joestechsolutions.com"
+                className="text-white/55 hover:text-[#2DD4BF] transition-colors underline underline-offset-2 decoration-white/20"
+              >
+                joe@joestechsolutions.com
+              </a>
+            </p>
           </FadeIn>
         </div>
       </section>
