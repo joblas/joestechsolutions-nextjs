@@ -50,17 +50,17 @@ export default function Home() {
 
               <FadeIn delay={0.1}>
                 <h1 className="text-[2.5rem] sm:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-bold tracking-[-0.02em] leading-[1.08] font-space-grotesk">
-                  <span className="block text-white">Let&apos;s figure out</span>
-                  <span className="block text-white">the tech stuff </span>
-                  <span className="block text-[#2DD4BF]">together.</span>
+                  <span className="block text-white">Got something</span>
+                  <span className="block text-white">you&apos;ve always </span>
+                  <span className="block text-[#2DD4BF]">wanted to build?</span>
                 </h1>
               </FadeIn>
 
               <FadeIn delay={0.3}>
                 <p className="text-base sm:text-lg text-white/55 max-w-lg leading-[1.65] font-normal pt-2">
-                  Websites, automation, whatever&apos;s eating your evenings.
-                  I build things for my own business all day — happy to do the
-                  same for yours. No pressure, no jargon.
+                  I&apos;m building stuff myself and learning as I go. It&apos;s
+                  not as hard as people make it seem — anyone can do it. If
+                  you&apos;ve got an idea, I&apos;ll help you get it going.
                 </p>
               </FadeIn>
 
