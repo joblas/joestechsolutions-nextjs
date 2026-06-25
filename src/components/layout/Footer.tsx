@@ -41,6 +41,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/stack" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
+                  The Stack
+                </Link>
+              </li>
+              <li>
                 <Link href="/services" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   All Services
                 </Link>
