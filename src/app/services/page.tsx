@@ -13,13 +13,13 @@ import { ServiceSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Services | Joe's Tech Solutions",
-  description: "Private AI setup, AI agent systems, and custom multi-agent architectures for SMBs. From $199 local setup to full 24/7 automated operations.",
+  description: "Custom apps, automation, and AI tools for small businesses. From a $199 Quick Start to full multi-agent systems. Built on the same stack I run myself.",
   alternates: {
     canonical: '/services',
   },
   openGraph: {
     title: "Services | Joe's Tech Solutions",
-    description: "Private AI setup, AI agent systems, and custom multi-agent architectures for SMBs.",
+    description: "Custom apps, automation, and AI tools for small businesses. From a $199 Quick Start to full multi-agent systems.",
     url: 'https://calendly.com/joe-joestechsolutions/30min/services',
   },
 };
@@ -35,16 +35,16 @@ export default function Services() {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Private AI. Agent Systems.</span>
+                <span className="block text-white mb-3">Apps. Automation.</span>
                 <span className="block text-[#0d9488]">
-                  Real Outcomes.
+                  AI Tools.
                 </span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Joe runs a 22-agent AI team for his own business. He builds the same for yours —
-                from a private AI setup to a full automated operation.
+                I run a real AI stack for my own business — an orchestrator with sub-agents for coding,
+                research, and content. I build the same for yours.
               </p>
             </FadeIn>
           </div>
@@ -70,7 +70,7 @@ export default function Services() {
                           <Robot weight="duotone" className="h-10 w-10 text-[#0d9488]" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-bold text-white font-space-grotesk">Private AI Setup</h2>
+                          <h2 className="text-2xl font-bold text-white font-space-grotesk">The Quick Start</h2>
                           <div className="flex flex-col">
                             <p className="text-[#0d9488] font-semibold text-lg">from $199 one-time</p>
                             <p className="text-[#2dd4bf] font-semibold text-sm">$499 setup + $29/mo (cloud)</p>
@@ -79,15 +79,15 @@ export default function Services() {
                       </div>
 
                       <p className="text-white/80 text-lg leading-relaxed font-light">
-                        Your own private AI workspace — ChatGPT-like interface running on your computer or dedicated cloud server.
-                        No OpenAI subscriptions, no data leaving your environment. You own everything, forever.
+                        Your own private AI workspace — a chat interface running on your computer or dedicated cloud server.
+                        No subscriptions, no data leaving your environment. You own everything, forever.
                       </p>
 
                       <div className="space-y-3">
                         {[
-                          "ChatGPT-style interface, runs 100% privately",
+                          "Chat interface, runs 100% privately",
                           "30-min walkthrough: hardware check, install, hands-on demo",
-                          "Optimal AI model selected for your hardware and use case",
+                          "24 cloud models available (GLM-5.2, Kimi, MiniMax, and more)",
                           "30 days email support after setup",
                           "Cloud option: Custom domain + SSL + $29/mo managed hosting"
                         ].map((feature, index) => (
@@ -100,7 +100,7 @@ export default function Services() {
 
                       <Link href="/private-ai-setup">
                         <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group/btn shadow-lg shadow-[#0b7f73]/20">
-                          Get Private AI Setup
+                          Get Started
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
@@ -124,7 +124,7 @@ export default function Services() {
             </div>
           </FadeIn>
 
-          {/* OpenClaw Agent Systems */}
+          {/* Multi-agent Systems */}
           <FadeIn delay={0.15}>
             <div id="agent-systems" className="mb-16">
               <AnimatedCard>
@@ -137,24 +137,26 @@ export default function Services() {
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={40} height={40} className="object-contain" />
+                          <Image src="/icons/tools-dynamic/premium.png" alt="Multi-agent Systems" width={40} height={40} className="object-contain" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-bold text-white font-space-grotesk">OpenClaw Agent Systems</h2>
-                          <p className="text-[#2dd4bf] font-semibold text-lg">Contact for pricing</p>
+                          <h2 className="text-2xl font-bold text-white font-space-grotesk">Multi-agent Systems</h2>
+                          <p className="text-[#2dd4bf] font-semibold text-lg">$8K - $40K+</p>
                         </div>
                       </div>
 
                       <p className="text-white/80 text-lg leading-relaxed font-light">
-                        Not just AI assistance — an AI team running your business operations. Agents that handle outreach, scheduling, reporting, content, and more. 24/7, without you touching a thing.
+                        Not just one AI — an orchestrator that delegates to specialized sub-agents.
+                        Coding, research, content, memory across sessions. The same architecture I run
+                        for my own business. <Link href="/stack" className="text-[#2dd4bf] hover:underline">See the live stack</Link>.
                       </p>
 
                       <div className="space-y-3">
                         {[
-                          "Multi-agent architectures (Joe runs 22 himself)",
+                          "Multi-agent architecture (orchestrator + specialized sub-agents)",
                           "24/7 automated business operations",
-                          "n8n workflow automation + private AI backbone",
-                          "Agents for sales, ops, content, and support",
+                          "Persistent memory across sessions (MemPalace)",
+                          "Code knowledge graph for surgical refactoring",
                           "Fully monitored — you stay in control"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-start">
@@ -166,7 +168,7 @@ export default function Services() {
 
                       <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full group/btn shadow-lg shadow-[#2dd4bf]/20">
-                          Discuss Your Agent System
+                          Let&apos;s Talk
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
                       </a>
@@ -178,23 +180,23 @@ export default function Services() {
                         <div className="relative bg-[#0d0d12] rounded-2xl border border-white/10 p-8 text-center">
                           <div className="grid grid-cols-2 gap-3 text-sm mb-4">
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#2dd4bf] font-bold text-2xl block">22</span>
-                              <span className="text-white/60 text-xs">AI Agents</span>
+                              <span className="text-[#2dd4bf] font-bold text-2xl block">24</span>
+                              <span className="text-white/60 text-xs">Cloud Models</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
                               <span className="text-[#2dd4bf] font-bold text-2xl block">24/7</span>
                               <span className="text-white/60 text-xs">Operations</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#0d9488] font-bold text-2xl block">$0</span>
-                              <span className="text-white/60 text-xs">API Fees</span>
+                              <span className="text-[#0d9488] font-bold text-2xl block">60K+</span>
+                              <span className="text-white/60 text-xs">Code Nodes</span>
                             </div>
                             <div className="p-3 bg-[#1c1c26] rounded-xl border border-white/5 text-center">
-                              <span className="text-[#0d9488] font-bold text-2xl block">1</span>
-                              <span className="text-white/60 text-xs">You in Control</span>
+                              <span className="text-[#0d9488] font-bold text-2xl block">7</span>
+                              <span className="text-white/60 text-xs">Fallback Tiers</span>
                             </div>
                           </div>
-                          <p className="text-white/50 text-xs">Joe&apos;s actual setup — running his own business right now.</p>
+                          <p className="text-white/50 text-xs">My actual setup — running right now. <Link href="/stack" className="text-[#2dd4bf] hover:underline">See it live</Link>.</p>
                         </div>
                       </div>
                     </div>
@@ -204,9 +206,9 @@ export default function Services() {
             </div>
           </FadeIn>
 
-          {/* Custom AI Teams */}
+          {/* Custom App Build */}
           <FadeIn delay={0.2}>
-            <div id="custom-ai" className="mb-16">
+            <div id="custom-app" className="mb-16">
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-[#8B5CF6]/20 hover:border-[#8B5CF6]/40 transition-all duration-500 overflow-hidden group">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d0d12] rounded-full blur-3xl" />
@@ -214,25 +216,26 @@ export default function Services() {
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-[#8B5CF6]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={40} height={40} className="object-contain" />
+                          <Image src="/icons/rocket-dynamic/premium.png" alt="Custom App Build" width={40} height={40} className="object-contain" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-bold text-white font-space-grotesk">Custom AI Teams</h2>
-                          <p className="text-[#8B5CF6] font-semibold text-lg">Contact for pricing</p>
+                          <h2 className="text-2xl font-bold text-white font-space-grotesk">Custom App Build</h2>
+                          <p className="text-[#8B5CF6] font-semibold text-lg">$5K - $25K</p>
                         </div>
                       </div>
 
                       <p className="text-white/80 text-lg leading-relaxed font-light">
-                        Full custom multi-agent architectures for complex workflows. When off-the-shelf isn&apos;t good enough, we design the whole system from scratch — models, agents, integrations, and all.
+                        Got a complex workflow or app idea? I design and build custom apps with AI-assisted
+                        development — mobile, web, automation. No templates. Just stuff built for your exact needs.
                       </p>
 
                       <div className="space-y-3">
                         {[
-                          "Architecture design tailored to your business logic",
-                          "Custom model fine-tuning and RAG setups",
+                          "React Native (iOS + Android from single codebase)",
+                          "Next.js web apps with proper SEO",
+                          "AI-assisted development (I use the same stack I sell)",
                           "Integration with your existing tools and APIs",
-                          "Agent orchestration and monitoring built-in",
-                          "Handoff training so your team runs it independently"
+                          "Handoff training so you can run it yourself"
                         ].map((feature, index) => (
                           <div key={index} className="flex items-start">
                             <CheckCircle weight="duotone" className="h-6 w-6 text-[#8B5CF6] mr-3 shrink-0 mt-0.5" />
@@ -243,7 +246,7 @@ export default function Services() {
 
                       <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-[#8B5CF6] hover:bg-[#7c3aed] text-white rounded-full group/btn shadow-lg shadow-[#8B5CF6]/20">
-                          Design Your AI Team
+                          Start a Project
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
                       </a>
@@ -280,12 +283,12 @@ export default function Services() {
                       </div>
                       <div>
                         <CardTitle className="text-2xl text-white font-space-grotesk">Mobile App Development</CardTitle>
-                        <p className="text-[#0d9488] font-semibold text-lg">$25K - $150K</p>
+                        <p className="text-[#0d9488] font-semibold text-lg">$5K - $25K</p>
                       </div>
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
                       iOS and Android apps that your customers will love. Whether you need subscription billing,
-                      real-time features, or offline functionality, we build mobile-first solutions that engage users.
+                      real-time features, or offline functionality, I build mobile-first solutions that engage users.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
@@ -328,12 +331,12 @@ export default function Services() {
                       </div>
                       <div>
                         <CardTitle className="text-2xl text-white font-space-grotesk">Web Development</CardTitle>
-                        <p className="text-[#2dd4bf] font-semibold text-lg">$30K - $250K</p>
+                        <p className="text-[#2dd4bf] font-semibold text-lg">$5K - $25K</p>
                       </div>
                     </div>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
                       Beautiful, fast websites that convert visitors into customers. From startup landing pages
-                      to complex web applications, we build with SEO, mobile responsiveness, and user experience in mind.
+                      to complex web applications, I build with SEO, mobile responsiveness, and user experience in mind.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative space-y-6">
@@ -385,7 +388,7 @@ export default function Services() {
 
                       <p className="text-white/80 text-lg leading-relaxed font-light">
                         Turn browsers into buyers. Custom-built stores or Shopify setups with everything you need:
-                        secure payments, inventory management, mobile optimization, and analytics that tell you what's working.
+                        secure payments, inventory management, mobile optimization, and analytics that tell you what&apos;s working.
                       </p>
 
                       <div className="space-y-3">
@@ -446,7 +449,7 @@ export default function Services() {
                     </div>
 
                     <p className="text-white/80 text-lg leading-relaxed font-light">
-                      Have a unique business need? We build custom software solutions, APIs, and integrations
+                      Have a unique business need? I build custom software solutions, APIs, and integrations
                       that solve your specific challenges and connect your systems.
                     </p>
 

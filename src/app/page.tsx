@@ -3,17 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Private AI for Small Business | Joe's Tech Solutions",
+  title: "Joe's Tech Solutions — Custom Apps, Automation, and AI Infrastructure",
   description:
-    "Private AI setup, AI agent teams, and custom software for ambitious SMBs. Your business runs while you sleep — no subscriptions, no data leaks.",
+    "I help my friends fix their businesses. Custom apps, automation, and private AI tools — built and battle-tested on my own business first.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Private AI for Small Business | Joe's Tech Solutions",
+    title: "Joe's Tech Solutions — Custom Apps, Automation, and AI Infrastructure",
     description:
-      "Private AI setup, AI agent teams, and custom software for ambitious SMBs.",
-    url: "https://calendly.com/joe-joestechsolutions/30min",
+      "I help my friends fix their businesses. Custom apps, automation, and private AI tools — built and battle-tested on my own business first.",
+    url: "https://joestechsolutions.com",
   },
 };
 import { Button } from "@/components/ui/button";
@@ -41,16 +41,16 @@ export default function Home() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0b7f73] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]" />
                 </span>
-                <span>Private AI for SMBs — built and battle-tested in-house</span>
+                <span>Building stuff myself and learning as I go — not as hard as people make it seem</span>
               </div>
             </FadeIn>
 
             {/* Main Heading */}
             <FadeIn delay={0.2}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Your Business Runs</span>
+                <span className="block text-white mb-3">I Help My Friends</span>
                 <span className="block text-[#0d9488]">
-                  While You Sleep.
+                  Fix Their Businesses.
                 </span>
               </h1>
             </FadeIn>
@@ -58,25 +58,25 @@ export default function Home() {
             {/* Subheading */}
             <FadeIn delay={0.3}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Most AI consultants sell you tools. We sell outcomes. Joe runs a 22-agent AI team
-                for his own business — now he builds the same for yours.
+                Custom apps, automation, and AI tools — built on the same stack I run for my own business.
+                No hype. Just stuff that works.
               </p>
             </FadeIn>
 
             {/* CTA Buttons */}
             <FadeIn delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link href="/private-ai-setup">
+                <Link href="/services">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all">
-                      Get Private AI Setup
+                      See What I Do
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Button>
                   </MagneticButton>
                 </Link>
                 <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all">
-                    Schedule 30min Call
+                    Let&apos;s Talk
                   </Button>
                 </a>
               </div>
@@ -91,15 +91,15 @@ export default function Home() {
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-                What We Do
+                What I Do
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Private AI. Agent systems. Custom software. All battle-tested on Joe's own business first.
+                Apps, automation, and AI tools. All tested on my own business first.
               </p>
             </FadeIn>
           </div>
 
-          {/* Featured: Private AI Setup */}
+          {/* Featured: The Quick Start */}
           <FadeIn delay={0.1}>
             <Link href="/private-ai-setup" className="block mb-8">
               <AnimatedCard>
@@ -112,16 +112,17 @@ export default function Home() {
                   <div className="grid md:grid-cols-2 gap-6 p-6">
                     <div className="space-y-4">
                       <div className="w-14 h-14 bg-[#0b7f73]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0b7f73]/30 transition-all duration-300">
-                        <Image src="/icons/computer-dynamic/premium.png" alt="Private AI Setup" width={36} height={36} sizes="36px" className="object-contain" />
+                        <Image src="/icons/computer-dynamic/premium.png" alt="The Quick Start" width={36} height={36} sizes="36px" className="object-contain" />
                       </div>
                       <div>
-                        <CardTitle className="text-white text-2xl font-space-grotesk mb-2">Private AI Setup</CardTitle>
+                        <CardTitle className="text-white text-2xl font-space-grotesk mb-2">The Quick Start</CardTitle>
                         <CardDescription className="text-white/70 text-base">
-                          Your own AI assistant. No data leaks. No subscriptions.
+                          Your own AI tools. No data leaks. No subscriptions.
                         </CardDescription>
                       </div>
                       <p className="text-white/60 leading-relaxed">
-                        Run ChatGPT-level AI on your own computer or private server. Keep sensitive data in-house while getting the same powerful capabilities. Starting at $199.
+                        Run powerful AI on your own computer or private server. Keep sensitive data in-house.
+                        I set it up, show you how it works, and you own it. Starting at $199.
                       </p>
                       <div className="flex items-center gap-2 text-[#0d9488] font-medium group/link">
                         Get Started
@@ -143,8 +144,8 @@ export default function Home() {
                           <span className="text-white/60 block">Live Session</span>
                         </div>
                         <div className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#2dd4bf] font-semibold">GPT-4</span>
-                          <span className="text-white/60 block">Level AI</span>
+                          <span className="text-[#2dd4bf] font-semibold">24</span>
+                          <span className="text-white/60 block">Models</span>
                         </div>
                       </div>
                     </div>
@@ -155,25 +156,26 @@ export default function Home() {
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {/* Joe's AI Server */}
+            {/* The Back Office */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
-                      <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Joe's AI Server" width={36} height={36} sizes="36px" className="object-contain" />
+                      <Image src="/icons/chat-bubble-dynamic/premium.png" alt="The Back Office" width={36} height={36} sizes="36px" className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">Joe&apos;s AI Server</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">The Back Office</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      Private AI on your hardware — from $199
+                      Recurring automation — $200-$1,200/mo
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Your own ChatGPT-level AI. No subscriptions, no data leaks, no Big Tech. Local setup or cloud server — both 100% yours.
+                      I set up an AI assistant on your server that handles the boring stuff —
+                      outreach, scheduling, reporting. Then I keep it tuned up every month.
                     </p>
-                    <Link href="/private-ai-setup" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
-                      Get started
+                    <Link href="/services#back-office" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
+                      Learn more
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>
@@ -181,25 +183,26 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* OpenClaw Agent Systems */}
+            {/* Multi-agent Systems */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="OpenClaw Agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
+                      <Image src="/icons/tools-dynamic/premium.png" alt="Multi-agent Systems" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">OpenClaw Agent Systems</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">Multi-agent Systems</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      AI agent teams that run your operations
+                      Full automation — $8K-$40K+
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Not one AI. A whole team of them. Agents handling outreach, scheduling, reporting, and more — 24/7, without you lifting a finger.
+                      An AI orchestrator that delegates to specialized sub-agents — coding, research, content.
+                      The same architecture I run for my own business. See the <Link href="/stack" className="text-[#2dd4bf] hover:underline">live stack</Link>.
                     </p>
                     <Link href="/services#agent-systems" className="text-[#2dd4bf] text-sm font-medium hover:text-[#14b8a6] inline-flex items-center group/link transition-colors">
-                      Explore agent systems
+                      Explore systems
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>
@@ -207,25 +210,26 @@ export default function Home() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* Custom AI Teams */}
+            {/* Custom App Build */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full backdrop-blur-sm">
                   <CardHeader className="space-y-4">
                     <div className="w-14 h-14 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#0b7f73]/20 transition-all duration-300">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="Custom AI Teams" width={32} height={32} sizes="32px" className="object-contain" />
+                      <Image src="/icons/rocket-dynamic/premium.png" alt="Custom App Build" width={32} height={32} sizes="32px" className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-xl font-space-grotesk">Custom AI Teams</CardTitle>
+                    <CardTitle className="text-white text-xl font-space-grotesk">Custom App Build</CardTitle>
                     <CardDescription className="text-white/60 text-base">
-                      Full custom multi-agent architectures
+                      Mobile + web apps — $5K-$25K
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                      Got a complex workflow? We design multi-agent AI systems from scratch, tailored to your exact business logic and stack.
+                      Got an app idea? I build mobile and web apps with the same tools I use every day —
+                      React Native, Next.js, and AI-assisted development.
                     </p>
-                    <Link href="/services#custom-ai" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
-                      Explore custom AI teams
+                    <Link href="/services#custom-app" className="text-[#0d9488] text-sm font-medium hover:text-[#0f766e] inline-flex items-center group/link transition-colors">
+                      Explore custom apps
                       <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </CardContent>
@@ -273,10 +277,10 @@ export default function Home() {
                 Featured Project
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 font-space-grotesk">
-                Building Real Solutions
+                Real Stuff I Built
               </h2>
               <p className="text-xl text-white/70 font-light">
-                For real businesses with real impact
+                Not mockups. Not concepts. Things people actually use.
               </p>
             </FadeIn>
           </div>
@@ -362,7 +366,7 @@ export default function Home() {
                 </div>
                 <div className="order-1 lg:order-2 space-y-6">
                   <div className="inline-block px-4 py-1.5 bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 rounded-full text-[#2dd4bf] text-sm font-semibold">
-                    Mobile App • iOS & Android • Beta
+                    Mobile App • iOS & Android • In Development
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">
                     The Skate Workshop
@@ -393,24 +397,38 @@ export default function Home() {
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Tools We Actually Use
+                The Stack
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                No vendor bias. Just the stack that makes private AI work in production — on real businesses, right now.
+                This is what I actually run. Not a list of logos — the real tools, models, and services powering my business right now.
               </p>
             </FadeIn>
           </div>
 
+          <div className="text-center">
+            <FadeIn delay={0.2}>
+              <Link href="/stack">
+                <MagneticButton strength={0.2}>
+                  <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
+                    See the Live Stack
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </Button>
+                </MagneticButton>
+              </Link>
+            </FadeIn>
+          </div>
+
+          {/* Logo scroll rows kept for visual continuity */}
           {/* Top Row - Scrolling Left */}
-          <div className="relative mb-8 overflow-hidden">
+          <div className="relative mb-8 mt-12 overflow-hidden">
             <div className="flex gap-8 animate-scroll-left">
               {[
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
-                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+                { name: "Ollama Cloud", logo: "/logos/ollama.png", url: "https://ollama.com" },
+                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
                 { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
                 { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
-                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+                { name: "Ollama Cloud", logo: "/logos/ollama.png", url: "https://ollama.com" },
+                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
                 { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
                 { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
               ].map((tech, index) => (
@@ -439,14 +457,14 @@ export default function Home() {
           <div className="relative overflow-hidden">
             <div className="flex gap-8 animate-scroll-right">
               {[
-                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
                 { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
                 { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
-                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
+                { name: "Next.js", logo: "/logos/nextjs.svg", url: "https://nextjs.org" },
+                { name: "React Native", logo: "/logos/react.svg", url: "https://reactnative.dev" },
                 { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
                 { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
+                { name: "Next.js", logo: "/logos/nextjs.svg", url: "https://nextjs.org" },
+                { name: "React Native", logo: "/logos/react.svg", url: "https://reactnative.dev" },
               ].map((tech, index) => (
                 <a
                   key={index}
@@ -478,15 +496,16 @@ export default function Home() {
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-              Ready to Own Your AI?
+              Got Something That Needs Fixing?
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Book a free 30min call. We&apos;ll figure out which setup fits your business — local, cloud, or a full agent system — and get you running.
+              Book a free 30min call. No pitch, no pressure — just a straight conversation about
+              what you need and whether I can help.
             </p>
             <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 transition-all">
-                  Schedule 30min Call
+                  Let&apos;s Talk
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </MagneticButton>

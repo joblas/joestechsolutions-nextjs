@@ -10,14 +10,14 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
-  title: "About Joe Blas | Joe's Tech Solutions",
-  description: "Joe runs a 22-agent AI team for his own business. He's client zero — everything JTS builds, he uses himself first.",
+  title: "About Joe | Joe's Tech Solutions",
+  description: "Joe runs a real AI stack for his own business. He's client zero — everything JTS builds, he uses himself first.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About | Joe's Tech Solutions",
-    description: "Joe runs a 22-agent AI team for his own business. He's client zero — everything JTS builds, he uses himself first.",
+    description: "Joe runs a real AI stack for his own business. He's client zero — everything JTS builds, he uses himself first.",
     url: 'https://calendly.com/joe-joestechsolutions/30min/about',
   },
 };
@@ -39,15 +39,15 @@ export default function About() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                  Joe doesn&apos;t sell tools he read about. He runs a 22-agent AI team for his own business —
-                  handling operations, outreach, reporting, and more. Everything JTS builds for clients,
-                  Joe tested on himself first.
+                  Joe doesn&apos;t sell tools he read about. He runs a real AI stack for his own business —
+                  an orchestrator with sub-agents handling coding, research, content, and memory across
+                  sessions. Everything JTS builds, he tested on himself first.
                 </p>
               </FadeIn>
               <FadeIn delay={0.25}>
                 <p className="text-lg text-white/60 leading-relaxed font-light">
-                  Former Waymo ops manager. Full-stack developer. Now building private AI and agent systems
-                  that make SMBs run like companies ten times their size.
+                  Former Waymo ops manager. Full-stack developer. Building apps, automation, and AI tools
+                  for small businesses — stuff that actually works, not hype.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
@@ -85,7 +85,7 @@ export default function About() {
           <FadeIn>
             <div className="text-center mb-20">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Joe's Journey
+                Joe&apos;s Journey
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
                 Operations experience, engineering skills, and a live AI system proving it all works
@@ -119,7 +119,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Agent Systems</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Runs a 22-agent AI team for JTS operations right now. Not theory — a live system handling real business tasks around the clock.
+                      Runs a multi-agent AI stack for JTS operations right now — an orchestrator delegating to specialized sub-agents for coding, research, and content. Not theory. A live system you can see at <Link href="/stack" className="text-[#2dd4bf] hover:underline">/stack</Link>.
                     </p>
                   </CardContent>
                 </Card>
@@ -135,7 +135,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Private AI Infrastructure</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Deploys private AI systems for SMBs — from local setups to full cloud servers. No Big Tech dependency, no data leaving your environment.
+                      Sets up private AI tools for SMBs — local or cloud. Your data stays yours.
                     </p>
                   </CardContent>
                 </Card>
@@ -158,7 +158,7 @@ export default function About() {
             {[
               {
                 title: "He&apos;s Client Zero",
-                description: "Joe runs a 22-agent AI team for JTS right now. Every system he sells to clients, he battle-tested on his own business first. No vapor, no demos — real production systems."
+                description: "Joe runs an AI orchestrator with specialized sub-agents — coding, research, content, memory — for JTS right now. Every system he sells to clients, he battle-tested on his own business first. No vapor, no demos — real production systems."
               },
               {
                 title: "Outcomes, Not Tools",
@@ -197,7 +197,7 @@ export default function About() {
                 Credentials
               </h2>
               <p className="text-xl text-white/70 font-light">
-                From autonomous vehicles to custom software
+                From autonomous vehicles to custom apps
               </p>
             </div>
           </FadeIn>
@@ -224,7 +224,7 @@ export default function About() {
                 Tools We Actually Use
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                Tools Joe actually runs in production — no bias, no sponsored picks, just what makes private AI work.
+                The actual tools, models, and services running right now. <Link href="/stack" className="text-[#2dd4bf] hover:underline">See the live stack</Link>.
               </p>
             </FadeIn>
           </div>
@@ -303,14 +303,14 @@ export default function About() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Book a free 30min call. No pitch, no pressure — just a straight conversation about what you need and whether JTS is the right fit.
+              Book a free 30min call. No pitch, no pressure — just a straight conversation about what you need and whether I can help.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
-                  Schedule 30min Call
+                  Let&apos;s Talk
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
