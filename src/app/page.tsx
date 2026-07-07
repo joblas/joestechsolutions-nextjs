@@ -25,6 +25,7 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 import { CountUp } from "@/components/animations/CountUp";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { AngleBand } from "@/components/ui/AngleBand";
+import { WorkflowComparison } from "@/components/ui/WorkflowComparison";
 import { TIERS, type Tier } from "@/lib/tiers";
 
 type Stat = {
@@ -251,6 +252,9 @@ export default function Home() {
 
       {/* Approved angle */}
       <AngleBand />
+
+      {/* Before & after workflow — visual, not an info dump */}
+      <WorkflowComparison />
 
       {/* Services */}
       <section className="relative py-24 sm:py-32">
