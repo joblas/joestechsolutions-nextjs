@@ -36,7 +36,7 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { value: 25, suffix: "", label: "AI agents in production", count: true },
+  { value: 14, suffix: "", label: "AI agents in production", count: true },
   { value: 0, suffix: "", label: "24/7 unattended operation", count: false, display: "24/7" },
   { value: 32, suffix: "", label: "Scheduled cron jobs", count: true },
   { value: 100, suffix: "%", label: "Local & private by default", count: true },
@@ -102,7 +102,7 @@ const portfolio = [
   },
   {
     name: "Hermes Agent System",
-    tag: "In prod • 25 agents",
+    tag: "In prod • 14 agents",
     desc: "My own 24/7 multi-agent system — coding, research, content, ops.",
     href: "/stack",
     image: "/images/blog/22-agent-architecture.png",
@@ -171,7 +171,7 @@ export default function Home() {
               <div className="flex flex-col items-center gap-4">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-[#0d9488]/30 shadow-lg shadow-[#0b7f73]/20">
                   <Image
-                    src="/images/joe-corporate-headshot.png"
+                    src="/images/joe-profile.jpg"
                     alt="Joe Blas — Founder of Joe's Tech Solutions"
                     fill
                     priority
@@ -185,7 +185,7 @@ export default function Home() {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]" />
                   </span>
                   <span className="text-white/80">
-                    Currently operating <span className="text-[#2dd4bf]">Hermes</span> — 25 agents, 24/7
+                    Currently operating <span className="text-[#2dd4bf]">Hermes</span> — 14 agents, 24/7
                   </span>
                 </div>
               </div>

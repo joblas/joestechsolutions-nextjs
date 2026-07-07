@@ -112,7 +112,7 @@ export const tools = [
 ];
 
 export const stats = [
-  { label: "AI Agents", value: "25" },
+  { label: "AI Agents", value: "14" },
   { label: "Cron Jobs", value: "32" },
   { label: "Ollama Cloud Models", value: "21" },
   { label: "Indexed Code Nodes", value: "60K+" },

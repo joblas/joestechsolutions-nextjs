@@ -8,13 +8,13 @@ import { Cpu, Database, Wrench, GitBranch, Brain, Cloud, Desktop } from "@phosph
 
 export const metadata: Metadata = {
   title: "The Stack | Joe's Tech Solutions",
-  description: "The actual AI infrastructure powering Joe's Tech Solutions — 25 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes. Updated live.",
+  description: "The actual AI infrastructure powering Joe's Tech Solutions — 14 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes. Updated live.",
   alternates: {
     canonical: '/stack',
   },
   openGraph: {
     title: "The Stack | Joe's Tech Solutions",
-    description: "The actual AI infrastructure powering JTS — 25 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes.",
+    description: "The actual AI infrastructure powering JTS — 14 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes.",
     url: 'https://www.joestechsolutions.com/stack',
   },
 };

@@ -230,7 +230,7 @@ export default function AgentSystem() {
                   "Orchestrator AI (CTO-level)",
                   "6 C-Suite: CTO, Chief of Staff, CFO, COO, CMO + more",
                   "6 VPs: Engineering, Infrastructure, Product + more",
-                  "25 specialized agents",
+                  "14 specialized agents",
                 ],
               },
               {
@@ -420,7 +420,7 @@ export default function AgentSystem() {
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Multi-agent hierarchy (orchestrator + 25 agents)",
+                    "Multi-agent hierarchy (orchestrator + 14 agents)",
                     "100+ custom skills library",
                     "Memory system (semantic search + knowledge graph)",
                     "Telegram, Gmail, Instagram, Stripe integrations",
