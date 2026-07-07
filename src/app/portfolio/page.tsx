@@ -11,14 +11,14 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "Portfolio | Joe's Tech Solutions",
-  description: "See our work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
+  description: "See my work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
   alternates: {
     canonical: '/portfolio',
   },
   openGraph: {
     title: "Portfolio | Joe's Tech Solutions",
-    description: "See our work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min/portfolio',
+    description: "See my work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
+    url: 'https://www.joestechsolutions.com/portfolio',
   },
 };
 
@@ -70,7 +70,7 @@ export default function Portfolio() {
           <div className="text-center space-y-6">
             <FadeIn delay={0.1}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-2">Our Work</span>
+                <span className="block text-white mb-2">My Work</span>
                 <span className="block text-[#0d9488] font-bold">
                   Building Real Solutions
                 </span>
@@ -78,7 +78,7 @@ export default function Portfolio() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                From Olympic coaching apps to artist portfolios—see how we help
+                From Olympic coaching apps to artist portfolios—see how I help
                 businesses bring their vision to life.
               </p>
             </FadeIn>
@@ -157,12 +157,12 @@ export default function Portfolio() {
                   <p className="text-white/70 text-lg mb-6">
                     More case studies coming soon. Working on something exciting?
                   </p>
-                  <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e]">
                       Start Your Project
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
@@ -180,18 +180,18 @@ export default function Portfolio() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/70 mb-10">
-              Have a project in mind? Let's discuss how we can help bring it to life.
+              Have a project in mind? Let's talk about how I can bring it to life.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-lg px-10 py-6 group">
                   Schedule 30min Call
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
-            </a>
+            </Link>
           </FadeIn>
         </div>
       </section>

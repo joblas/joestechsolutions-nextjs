@@ -371,7 +371,7 @@ export default function PrivateAISetup() {
                   <span className="ml-3 text-xs text-white/30 font-mono">terminal</span>
                 </div>
                 <code className="block text-[#0d9488] font-mono text-sm sm:text-base leading-relaxed break-all">
-                  <span className="text-white/40">$ </span>curl -fsSL https://calendly.com/joe-joestechsolutions/30min/install | bash
+                  <span className="text-white/40">$ </span>curl -fsSL https://www.joestechsolutions.com/install | bash
                 </code>
               </CardContent>
             </Card>

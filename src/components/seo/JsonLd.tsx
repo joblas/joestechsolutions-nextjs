@@ -2,20 +2,22 @@
 // These schemas help search engines understand your site and enable rich snippets
 // Note: dangerouslySetInnerHTML is safe here because we only serialize our own static data
 
+import { TIERS } from "@/lib/tiers";
+
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
     "name": "Joe's Tech Solutions",
     "alternateName": "JTS",
-    "url": "https://calendly.com/joe-joestechsolutions/30min",
-    "logo": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
-    "image": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
+    "url": "https://www.joestechsolutions.com",
+    "logo": "https://www.joestechsolutions.com/logo-main.png",
+    "image": "https://www.joestechsolutions.com/logo-main.png",
     "description": "Private AI setup, AI agent systems, and custom automation for SMBs. Joe's Tech Solutions deploys private AI on your hardware — no cloud fees, no data leaks.",
     "founder": {
       "@type": "Person",
       "name": "Joe Blas",
-      "jobTitle": "Founder & Lead Developer"
+      "jobTitle": "Founder & Builder"
     },
     "address": {
       "@type": "PostalAddress",
@@ -64,7 +66,7 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Joe's Tech Solutions",
-    "url": "https://calendly.com/joe-joestechsolutions/30min",
+    "url": "https://www.joestechsolutions.com",
     "description": "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
     "publisher": {
       "@type": "Organization",
@@ -97,7 +99,7 @@ export function ServiceSchema({
     "provider": {
       "@type": "Organization",
       "name": "Joe's Tech Solutions",
-      "url": "https://calendly.com/joe-joestechsolutions/30min"
+      "url": "https://www.joestechsolutions.com"
     },
     "name": name,
     "description": description,
@@ -106,6 +108,46 @@ export function ServiceSchema({
       "@type": "Offer",
       "priceRange": priceRange
     }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// OfferCatalog driven by the canonical tier ladder in lib/tiers.ts
+export function OfferCatalogSchema() {
+  const baseUrl = "https://www.joestechsolutions.com";
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Joe's Tech Solutions — Services",
+    "url": `${baseUrl}/solutions`,
+    "itemListElement": TIERS.map((tier, index) => ({
+      "@type": "Offer",
+      "position": index + 1,
+      "name": tier.name,
+      "description": tier.blurb,
+      "url": `${baseUrl}${tier.href.startsWith("/") ? tier.href : `/${tier.href}`}`,
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": tier.price,
+        "priceCurrency": "USD",
+      },
+      "itemOffered": {
+        "@type": "Service",
+        "name": tier.name,
+        "serviceType": tier.category,
+        "provider": {
+          "@type": "Organization",
+          "name": "Joe's Tech Solutions",
+          "url": baseUrl,
+        },
+      },
+    })),
   };
 
   return (
@@ -197,19 +239,19 @@ export function ArticleSchema({
     "description": description,
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
-    "image": image || "https://calendly.com/joe-joestechsolutions/30min/logo-main.png",
+    "image": image || "https://www.joestechsolutions.com/logo-main.png",
     "url": url,
     "author": {
       "@type": "Person",
       "name": "Joe Blas",
-      "url": "https://calendly.com/joe-joestechsolutions/30min"
+      "url": "https://www.joestechsolutions.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Joe's Tech Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://calendly.com/joe-joestechsolutions/30min/logo-main.png"
+        "url": "https://www.joestechsolutions.com/logo-main.png"
       }
     },
     ...(keywords && keywords.length > 0 ? { "keywords": keywords.join(", ") } : {})

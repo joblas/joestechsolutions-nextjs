@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RenFaire Directory Case Study | Joe's Tech Solutions",
     description: "SEO-first Renaissance faire directory with 200+ listings, structured data, affiliate revenue, and top search rankings.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min/portfolio/renfaire-directory',
+    url: 'https://www.joestechsolutions.com/portfolio/renfaire-directory',
   },
 };
 
@@ -352,14 +352,14 @@ export default function RenFaireDirectoryCaseStudy() {
             Want a Directory That Ranks and Earns?
           </h2>
           <p className="text-xl text-white/90 mb-10">
-            We build SEO-first content platforms with real revenue models — not just pretty pages.
+            I build SEO-first content platforms with real revenue models — not just pretty pages.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] rounded-full shadow-lg shadow-[#7C3AED]/20">
                 Schedule 30min Call
               </Button>
-            </a>
+            </Link>
             <Link href="/portfolio">
               <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/5">
                 <ArrowLeft className="mr-2 h-4 w-4" />

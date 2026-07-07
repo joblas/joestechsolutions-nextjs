@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cbarrgs Music Case Study | Joe's Tech Solutions",
     description: "Music artist portfolio website with streaming integrations, performance optimization, and SEO.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min/portfolio/cbarrgs',
+    url: 'https://www.joestechsolutions.com/portfolio/cbarrgs',
   },
 };
 
@@ -268,11 +268,11 @@ export default function CbarrgsCaseStudy() {
             Let's build your online presence
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <Button size="lg" className="bg-[#2dd4bf] hover:bg-[#14b8a6] rounded-full shadow-lg shadow-[#2dd4bf]/20">
                 Schedule 30min Call
               </Button>
-            </a>
+            </Link>
             <Link href="/portfolio">
               <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/5">
                 <ArrowLeft className="mr-2 h-4 w-4" />

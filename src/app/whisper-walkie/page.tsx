@@ -29,15 +29,15 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 export const metadata: Metadata = {
   title: "Whisper Walkie — Local Push-to-Talk Transcription | Joe's Tech Solutions",
   description:
-    "Hold a key. Speak. Release. Your words appear in any app — instantly, privately, with no internet connection required. Free and open source.",
+    "Hold a key. Speak. Release. Your words appear in any app — instantly, privately, with no internet connection required. Free, open source (MIT), and maintained as an archive.",
   alternates: {
     canonical: "/whisper-walkie",
   },
   openGraph: {
     title: "Whisper Walkie — Local Push-to-Talk Transcription",
     description:
-      "Hold a key. Speak. Release. Your words appear in any app — instantly, privately, with no internet connection required. Free and open source.",
-    url: "https://calendly.com/joe-joestechsolutions/30min/whisper-walkie",
+      "Hold a key. Speak. Release. Your words appear in any app — instantly, privately, with no internet connection required. Free, open source (MIT), and maintained as an archive.",
+    url: "https://www.joestechsolutions.com/whisper-walkie",
   },
 };
 
@@ -134,7 +134,7 @@ export default function WhisperWalkiePage() {
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
                 <span className="w-1.5 h-1.5 bg-[#0b7f73] rounded-full" aria-hidden="true" />
-                Open Source &middot; Privacy First
+                Archive &middot; Open Source (MIT) &middot; Privacy First
               </div>
             </FadeIn>
 
@@ -615,7 +615,7 @@ export default function WhisperWalkiePage() {
                 Whisper Walkie was built entirely using the agentic AI workflow with{" "}
                 <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Claude Code</a>
                 {" "}from Anthropic — proving that one developer with the right tools can ship production-quality,
-                cross-platform software that stands up against anything built by a traditional engineering team.
+                cross-platform software that stands up against anything built by a traditional dev team.
               </p>
               <p>
                 I&apos;m giving it away for free because I built it for people like me who care about privacy.

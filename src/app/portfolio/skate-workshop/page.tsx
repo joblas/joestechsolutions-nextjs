@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Skate Workshop Case Study | Joe's Tech Solutions",
     description: "Olympic-level skateboarding coaching platform built with React Native, Next.js, and real-time features.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min/portfolio/skate-workshop',
+    url: 'https://www.joestechsolutions.com/portfolio/skate-workshop',
   },
 };
 
@@ -99,7 +99,7 @@ export default function SkateWorkshopCaseStudy() {
                 <CardTitle className="text-xl font-bold text-white font-space-grotesk">Users</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-white/80">Beta Testing Phase</p>
+                <p className="text-white/80">Paused</p>
               </CardContent>
             </Card>
 
@@ -237,13 +237,13 @@ export default function SkateWorkshopCaseStudy() {
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-space-grotesk">Results & Impact</h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              Currently in beta testing with positive feedback from early users
+              Development is paused — beta testing drew positive feedback from early users
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { label: "Platform Launch", value: "Beta Testing", desc: "iOS, Android & Web" },
+              { label: "Project Status", value: "Paused", desc: "iOS, Android & Web" },
               { label: "Trick Database", value: "400+", desc: "Comprehensive tutorials" },
               { label: "Features", value: "Real-time", desc: "Multiplayer & Feedback" }
             ].map((stat, index) => (
@@ -269,11 +269,11 @@ export default function SkateWorkshopCaseStudy() {
             Let's discuss your mobile or web platform project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0b7f73]/20">
                 Schedule 30min Call
               </Button>
-            </a>
+            </Link>
             <Link href="/portfolio">
               <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/5">
                 <ArrowLeft className="mr-2 h-4 w-4" />

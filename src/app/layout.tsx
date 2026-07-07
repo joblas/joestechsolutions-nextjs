@@ -7,7 +7,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/JsonLd";
 import Script from "next/script";
-import { ParticleBackground } from "@/components/animations/ParticleBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://calendly.com/joe-joestechsolutions/30min'),
+  metadataBase: new URL('https://www.joestechsolutions.com'),
   title: "Joe's Tech Solutions | Boutique Development Studio",
   description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs. From Olympic-level coaching apps to custom web solutions.",
   keywords: ["mobile app development", "web development", "AI infrastructure", "React Native", "Next.js", "consulting", "private AI", "custom software development", "boutique development studio"],
@@ -49,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joe's Tech Solutions | Boutique Development Studio",
     description: "Mobile apps, web platforms, and private AI infrastructure for ambitious SMBs.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min',
+    url: 'https://www.joestechsolutions.com',
     siteName: "Joe's Tech Solutions",
     images: [
       {
@@ -92,7 +91,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ParticleBackground />
         <Header />
         <main id="main-content" className="pt-16 min-h-screen">
           {children}

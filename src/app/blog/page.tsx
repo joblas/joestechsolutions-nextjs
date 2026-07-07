@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Blog | Joe's Tech Solutions",
     description:
       "Practical guides and straight talk on private AI, web development, and technology for small businesses.",
-    url: "https://calendly.com/joe-joestechsolutions/30min/blog",
+    url: "https://www.joestechsolutions.com/blog",
   },
 };
 

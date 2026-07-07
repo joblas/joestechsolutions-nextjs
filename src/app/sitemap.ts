@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://calendly.com/joe-joestechsolutions/30min';
+  const baseUrl = 'https://www.joestechsolutions.com';
   const currentDate = new Date();
 
   // Blog post slugs
@@ -40,12 +40,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+    // Agent System - Full Multi-Agent Stack
+    {
+      url: `${baseUrl}/agent-system`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    // Solutions - Hub for the 6-tier ladder
+    {
+      url: `${baseUrl}/solutions`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     // Services
     {
       url: `${baseUrl}/services`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    // Prompt Library - Lead Magnet
+    {
+      url: `${baseUrl}/prompt-library`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     // Whisper Walkie - Free Tool / Lead Gen
     {

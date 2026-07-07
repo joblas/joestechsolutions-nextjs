@@ -8,7 +8,7 @@ export const post: BlogPost = {
   date: "2026-03-10",
   readTime: 7,
   author: "Joe Blas",
-  tags: ["AI Agents", "Automation", "SaaS", "OpenClaw", "Cost Savings"],
+  tags: ["AI Agents", "Automation", "SaaS", "Cost Savings"],
   seo: {
     title:
       "How I Replaced 10 SaaS Tools With 24 AI Agents on a $20/mo Server | Joe's Tech Solutions",
@@ -16,5 +16,5 @@ export const post: BlogPost = {
       "How one developer replaced $285/mo in SaaS subscriptions with 24 AI agents running on a single Linux VPS. Architecture, real examples, and lessons learned.",
     ogImage: "/images/blog/replace-saas-og.png",
   },
-  content: "", // Content is rendered by the custom page component
+  content: "Custom content rendered by the dedicated page component at src/app/blog/replace-saas-with-ai-agents/",
 };

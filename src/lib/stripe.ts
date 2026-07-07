@@ -8,8 +8,6 @@ export {
   MANAGED_SETUP_PRICE_ID,
   MANAGED_MONTHLY_PRICE_ID,
   COMPLIANCE_ADDON_PRICE_ID,
-  VPS_SETUP_PRICE_ID,
-  VPS_MONTHLY_PRICE_ID,
   BASE_URL,
   TIER_LABELS,
   TIER_PRICES,
@@ -28,22 +26,3 @@ export function getStripe(): Stripe {
   }
   return stripeInstance;
 }
-
-// For backwards compatibility, export as stripe
-export const stripe = {
-  get checkout() {
-    return getStripe().checkout;
-  },
-  get customers() {
-    return getStripe().customers;
-  },
-  get prices() {
-    return getStripe().prices;
-  },
-  get products() {
-    return getStripe().products;
-  },
-  get subscriptions() {
-    return getStripe().subscriptions;
-  },
-};

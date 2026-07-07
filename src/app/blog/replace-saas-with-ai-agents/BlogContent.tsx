@@ -10,7 +10,7 @@ import { TableOfContents } from "@/components/blog/TableOfContents";
 import { TimelineStep } from "@/components/blog/TimelineStep";
 
 const tocItems = [
-  { id: "the-stack", label: "The Stack: OpenClaw + 24 Agents" },
+  { id: "the-stack", label: "The Stack: Hermes + 24 Agents" },
   { id: "what-it-replaced", label: "What It Actually Replaced" },
   { id: "architecture", label: "The Architecture" },
   { id: "three-tier", label: "The 3-Tier Action Model" },
@@ -59,7 +59,7 @@ export function BlogContent() {
 
           {/* The Stack */}
           <FadeIn>
-            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: OpenClaw + 24 Specialized Agents</h2>
+            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: Hermes + 24 Specialized Agents</h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
               One orchestrator agent (Lurkr) that sits on top of 24 sub-agents. Each one has a lane:
             </p>
@@ -80,7 +80,7 @@ export function BlogContent() {
           </FadeIn>
 
           <Callout variant="insight">
-            The whole thing runs on <a href="https://openclaw.ai" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">OpenClaw</a>, an open-source agent framework, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
+            The whole thing runs on <a href="/stack" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">Hermes</a>, my agent runtime, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
           </Callout>
 
           {/* Comparison Table */}
@@ -264,7 +264,7 @@ export function BlogContent() {
             <p className="text-gray-200 text-lg leading-loose mb-6">
               If you&apos;re a developer who runs a freelance business or small agency, the ROI is insane. Not just avoiding $200-300/mo in SaaS, but the time — I save 6-8 hours a week on admin work. 
               If you&apos;re not technical? Wait a year. The tooling will get easier. But if you&apos;re curious, start with{" "}
-              <a href="https://openclaw.ai" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">OpenClaw</a>{" "}
+              <a href="/stack" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">the stack I run</a>{" "}
               and just get one automation working.
             </p>
           </FadeIn>

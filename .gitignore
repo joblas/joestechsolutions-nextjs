@@ -58,3 +58,6 @@ screenshot/
 service-account.json
 *-service-account.json
 *.keyfile.json
+scripts/content-pipeline/venv/
+__pycache__/
+*.pyc

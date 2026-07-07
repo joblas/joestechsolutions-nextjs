@@ -1,8 +1,8 @@
 // Stack data — updated when the real tool stack changes.
-// Source: ~/.hermes/config.yaml, ~/free-claude-code/.env, ollama list
-// Last updated: 2026-06-25
+// Source: ~/.hermes/config.yaml, ~/free-claude-code/.env, ollama list, ~/.gitnexus/registry.json
+// Last updated: 2026-07-07
 
-export const lastUpdated = "June 25, 2026";
+export const lastUpdated = "July 7, 2026";
 
 export const models = [
   {
@@ -77,7 +77,7 @@ export const services = [
   {
     name: "GitNexus",
     port: "—",
-    purpose: "Code knowledge graph (29K+ nodes indexed)",
+    purpose: "Code knowledge graph (60K+ nodes indexed)",
     tech: "Node.js, CLI",
   },
   {
@@ -103,7 +103,7 @@ export const tools = [
   },
   {
     category: "Models",
-    items: ["24 Ollama Cloud models", "NVIDIA NIM (fallback)", "7-model fallback chain"],
+    items: ["21 Ollama Cloud models", "NVIDIA NIM (fallback)", "7-model fallback chain"],
   },
   {
     category: "Infrastructure",
@@ -112,7 +112,9 @@ export const tools = [
 ];
 
 export const stats = [
-  { label: "Ollama Cloud Models", value: "24" },
+  { label: "AI Agents", value: "25" },
+  { label: "Cron Jobs", value: "32" },
+  { label: "Ollama Cloud Models", value: "21" },
   { label: "Indexed Code Nodes", value: "60K+" },
   { label: "Active Services", value: "6" },
   { label: "Fallback Tiers", value: "7" },

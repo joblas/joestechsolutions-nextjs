@@ -5,13 +5,14 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, User, Github, Linkedin, Globe }
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ParallaxSection } from "@/components/animations/ParallaxSection";
 import { BlogContent } from "./BlogContent";
+import { post } from "@/content/blog/replace-saas-with-ai-agents";
 
 const POST = {
-  title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
-  date: "2026-03-10",
-  readTime: 7,
-  author: "Joe Blas",
-  tags: ["AI Agents", "Automation", "SaaS", "OpenClaw", "Cost Savings"],
+  title: post.title,
+  date: post.date,
+  readTime: post.readTime,
+  author: post.author,
+  tags: post.tags,
 };
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How 24 AI Agents Run My Entire Business — No SaaS Required",
     description: "Instead of paying $285/mo for 10+ SaaS tools, I built 24 AI agents that handle everything — running on a Claude subscription I already use for development.",
-    url: "https://calendly.com/joe-joestechsolutions/30min/blog/replace-saas-with-ai-agents",
+    url: "https://www.joestechsolutions.com/blog/replace-saas-with-ai-agents",
     type: "article",
     publishedTime: POST.date,
     authors: [POST.author],
@@ -54,22 +55,22 @@ export default function ReplaceSaasPage() {
             "@type": "BlogPosting",
             headline: POST.title,
             description: "Instead of paying $285/mo for 10+ SaaS tools, one developer built 24 AI agents that handle everything — running on a Claude subscription already used for development.",
-            image: "https://calendly.com/joe-joestechsolutions/30min/images/blog/replace-saas-og.png",
+            image: "https://www.joestechsolutions.com/images/blog/replace-saas-og.png",
             author: {
               "@type": "Person",
               name: "Joe Blas",
-              url: "https://calendly.com/joe-joestechsolutions/30min",
+              url: "https://www.joestechsolutions.com",
               jobTitle: "Generative AI Full-Stack Developer",
             },
             publisher: {
               "@type": "Organization",
               name: "Joe's Tech Solutions",
-              url: "https://calendly.com/joe-joestechsolutions/30min",
-              logo: { "@type": "ImageObject", url: "https://calendly.com/joe-joestechsolutions/30min/logo-main.png" },
+              url: "https://www.joestechsolutions.com",
+              logo: { "@type": "ImageObject", url: "https://www.joestechsolutions.com/logo-main.png" },
             },
             datePublished: POST.date,
             dateModified: POST.date,
-            mainEntityOfPage: "https://calendly.com/joe-joestechsolutions/30min/blog/replace-saas-with-ai-agents",
+            mainEntityOfPage: "https://www.joestechsolutions.com/blog/replace-saas-with-ai-agents",
             keywords: POST.tags.join(", "),
             wordCount: 1500,
             timeRequired: `PT${POST.readTime}M`,
@@ -193,9 +194,7 @@ export default function ReplaceSaasPage() {
                     </p>
                     <div className="flex items-center gap-4">
                       <a
-                        href="https://calendly.com/joe-joestechsolutions/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/"
                         className="flex items-center gap-1.5 text-white/50 hover:text-[#0d9488] text-sm transition-colors"
                       >
                         <Globe className="w-4 h-4" />

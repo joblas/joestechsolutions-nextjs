@@ -9,8 +9,6 @@ export const CLOUD_MONTHLY_PRICE_ID = process.env.STRIPE_CLOUD_MONTHLY_PRICE_ID 
 export const MANAGED_SETUP_PRICE_ID = process.env.STRIPE_MANAGED_SETUP_PRICE_ID || "price_1T1xVqCc9Mv5B9O0u2nknZJF";
 export const MANAGED_MONTHLY_PRICE_ID = process.env.STRIPE_MANAGED_MONTHLY_PRICE_ID || "price_1T1xVrCc9Mv5B9O0nXzPcsxd";
 export const COMPLIANCE_ADDON_PRICE_ID = process.env.STRIPE_COMPLIANCE_ADDON_PRICE_ID || "price_1T1xVrCc9Mv5B9O061tH3Tpo";
-export const VPS_SETUP_PRICE_ID = CLOUD_SETUP_PRICE_ID;
-export const VPS_MONTHLY_PRICE_ID = CLOUD_MONTHLY_PRICE_ID;
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://www.joestechsolutions.com");
 
 // Setup type used across client and server

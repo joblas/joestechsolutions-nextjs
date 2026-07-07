@@ -8,14 +8,14 @@ import { Cpu, Database, Wrench, GitBranch, Brain, Cloud, Desktop } from "@phosph
 
 export const metadata: Metadata = {
   title: "The Stack | Joe's Tech Solutions",
-  description: "The actual AI infrastructure powering Joe's Tech Solutions — 24 cloud models, 6 services, 60K+ indexed code nodes. Updated live.",
+  description: "The actual AI infrastructure powering Joe's Tech Solutions — 25 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes. Updated live.",
   alternates: {
     canonical: '/stack',
   },
   openGraph: {
     title: "The Stack | Joe's Tech Solutions",
-    description: "The actual AI infrastructure powering JTS — 24 cloud models, 6 services, 60K+ indexed code nodes.",
-    url: 'https://joestechsolutions.com/stack',
+    description: "The actual AI infrastructure powering JTS — 25 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes.",
+    url: 'https://www.joestechsolutions.com/stack',
   },
 };
 
@@ -55,7 +55,7 @@ export default function StackPage() {
       {/* Stats Bar */}
       <section className="relative py-12 bg-[#1c1c26]/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
             {stats.map((stat) => (
               <StaggerItem key={stat.label}>
                 <Card className="bg-[#1c1c26] border-white/10 text-center">

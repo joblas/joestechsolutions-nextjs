@@ -16,5 +16,5 @@ export const post: BlogPost = {
       "Breaking down NVIDIA GTC 2026: Vera Rubin, Groq 3, NemoClaw AI agents, 110 robots, and what it all means for businesses investing in AI infrastructure.",
     ogImage: "/images/blog/nvidia-gtc-2026-og.jpg",
   },
-  content: "", // Content is rendered by the custom page component
+  content: "Custom content rendered by the dedicated page component at src/app/blog/nvidia-gtc-2026-keynote/",
 };

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About | Joe's Tech Solutions",
     description: "Joe runs a real AI stack for his own business. He's client zero — everything JTS builds, he uses himself first.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min/about',
+    url: 'https://www.joestechsolutions.com/about',
   },
 };
 
@@ -46,19 +46,19 @@ export default function About() {
               </FadeIn>
               <FadeIn delay={0.25}>
                 <p className="text-lg text-white/60 leading-relaxed font-light">
-                  Former Waymo ops manager. Full-stack developer. Building apps, automation, and AI tools
-                  for small businesses — stuff that actually works, not hype.
+                  A background in large-scale operations. Full-stack builder. Building apps,
+                  automation, and AI tools for small businesses — stuff that actually works, not hype.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+                <Link href="/contact">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
                       Let&apos;s Work Together
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </MagneticButton>
-                </a>
+                </Link>
               </FadeIn>
             </div>
 
@@ -68,7 +68,7 @@ export default function About() {
                 <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
                   <Image
                     src="/images/joe-profile.jpg"
-                    alt="Joe Blasiola, Founder of Joe's Tech Solutions, former Waymo operations manager"
+                    alt="Joe Blasiola, Founder of Joe's Tech Solutions"
                     fill
                     className="object-cover"
                   />
@@ -88,7 +88,7 @@ export default function About() {
                 Joe&apos;s Journey
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Operations experience, engineering skills, and a live AI system proving it all works
+                Operations experience, hands-on build experience, and a live AI system proving it all works
               </p>
             </div>
           </FadeIn>
@@ -103,7 +103,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Waymo Operations</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Managed critical infrastructure at Waymo. Learned to handle complexity, ensure reliability, and deliver under pressure — at autonomous vehicle scale.
+                      Worked on critical infrastructure at Waymo. Learned to handle complexity, ensure reliability, and deliver under pressure — at autonomous vehicle scale.
                     </p>
                   </CardContent>
                 </Card>
@@ -145,7 +145,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why Work With Us */}
+      {/* Why Work With Joe */}
       <section className="relative py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
@@ -221,7 +221,7 @@ export default function About() {
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Tools We Actually Use
+                Tools I Actually Use
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
                 The actual tools, models, and services running right now. <Link href="/stack" className="text-[#2dd4bf] hover:underline">See the live stack</Link>.
@@ -307,14 +307,14 @@ export default function About() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
                   Let&apos;s Talk
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
-            </a>
+            </Link>
           </FadeIn>
         </div>
       </section>

@@ -8,12 +8,12 @@ export const post: BlogPost = {
   date: "2026-02-18",
   readTime: 8,
   author: "Joe Blas",
-  tags: ["AI Agents", "Automation", "OpenClaw", "Architecture", "Small Business"],
+  tags: ["AI Agents", "Automation", "Hermes", "Architecture", "Small Business"],
   seo: {
     title:
       "I Built a 22-Agent AI Team to Run My Business — Here's the Architecture | Joe's Tech Solutions",
     description:
-      "How I built a 22-agent AI system that handles ops, sales, engineering, and marketing for my one-man consultancy. Not a concept — running in production on OpenClaw.",
+      "How I built a 22-agent AI system that handles ops, sales, engineering, and marketing for my one-man consultancy. Not a concept — running in production on Hermes.",
     ogImage: "/images/blog/22-agent-architecture-og.png",
   },
   images: {
@@ -23,11 +23,13 @@ export const post: BlogPost = {
     "/images/blog/22-agent-workflow.png": { width: 2200, height: 3250 },
   },
   content: `
+<p><em>Editor's note (July 2026): this post is a snapshot from February. The team has since grown to 25 agents — see the live setup at <a href="/stack">/stack</a>.</em></p>
+
 <p class="lead">I run a one-man AI consultancy out of San Diego. No employees, no contractors, no VA. Just me.</p>
 
 <p>But I have a 22-agent team that works 24/7. They hold morning standups. They find leads, write proposals, build code, review PRs, deploy services, send invoices, and create marketing content. They report to four directors, who report to a CTO, who reports to me.</p>
 
-<p>This isn't a demo. It's not a proof of concept I built over a weekend. It's running in production <em>right now</em> on <a href="https://openclaw.com">OpenClaw</a>, handling real client work for Joe's Tech Solutions.</p>
+<p>This isn't a demo. It's not a proof of concept I built over a weekend. It's running in production <em>right now</em> on <a href="/stack">Hermes</a>, handling real client work for Joe's Tech Solutions.</p>
 
 <p>Here's how the whole thing is wired together.</p>
 
@@ -102,12 +104,12 @@ Claude Haiku 4.5   → Fast/simple tasks, classification, routing, summaries</co
 
 <h2>The Infrastructure</h2>
 
-<img src="/images/blog/22-agent-architecture.png" alt="JTS Agent Architecture — 5-layer diagram showing External Inputs, OpenClaw Gateway, Agent Runtime, Skills & Tools, and Infrastructure layers" loading="lazy" />
+<img src="/images/blog/22-agent-architecture.png" alt="JTS Agent Architecture — 5-layer diagram showing External Inputs, Hermes Gateway, Agent Runtime, Skills & Tools, and Infrastructure layers" loading="lazy" />
 
 <p>None of this works without the plumbing. Here's what connects everything:</p>
 
 <ul>
-<li><strong>OpenClaw</strong> — The agent runtime. Handles agent lifecycle, messaging, tool access, scheduling. This is the backbone.</li>
+<li><strong>Hermes</strong> — The agent runtime. Handles agent lifecycle, messaging, tool access, scheduling. This is the backbone.</li>
 <li><strong>Telegram</strong> — Primary communication channel. Directors post standups here. I read them over coffee.</li>
 <li><strong>Slack</strong> — Internal agent-to-agent coordination for engineering workflows.</li>
 <li><strong>GitHub</strong> — Code lives here. Forge pushes branches, Sentinel reviews PRs, Helm merges and deploys.</li>

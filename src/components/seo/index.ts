@@ -3,6 +3,7 @@ export {
   OrganizationSchema,
   WebsiteSchema,
   ServiceSchema,
+  OfferCatalogSchema,
   FAQSchema,
   SoftwareProductSchema,
   BreadcrumbSchema,

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact | Joe's Tech Solutions",
     description: "Book a free 30min call to discuss private AI setup, agent systems, or custom software.",
-    url: 'https://calendly.com/joe-joestechsolutions/30min/contact',
+    url: 'https://www.joestechsolutions.com/contact',
   },
 };
 
