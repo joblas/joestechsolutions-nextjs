@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import {
   Gear,
@@ -143,6 +144,19 @@ export default function PromptLibrary() {
               );
             })}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Founder proof — one line, not an info dump */}
+      <section className="relative py-12 border-y border-white/5 bg-[#0d0d12]">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+          <FadeIn>
+            <p className="text-lg text-white/60 font-light">
+              These prompts run my business — 14 agents, 32 cron jobs, every day. I didn&apos;t
+              curate them from a blog post. I wrote them because I needed them.{" "}
+              <Link href="/stack" className="text-[#2dd4bf] hover:underline">See the live stack</Link>.
+            </p>
+          </FadeIn>
         </div>
       </section>
 

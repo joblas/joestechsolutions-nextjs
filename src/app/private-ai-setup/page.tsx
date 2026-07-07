@@ -296,7 +296,7 @@ export default function PrivateAISetup() {
               {
                 number: "01",
                 title: "Choose Your Setup",
-                description: "Local machine, cloud server, or fully managed — we walk you through which option best fits your needs, budget, and workflow."
+                description: "Local machine, cloud server, or fully managed — I walk you through which option best fits your needs, budget, and workflow."
               },
               {
                 number: "02",

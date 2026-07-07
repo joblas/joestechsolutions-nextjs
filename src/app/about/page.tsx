@@ -10,14 +10,14 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
-  title: "About Joe | Joe's Tech Solutions",
-  description: "Joe runs a real AI stack for his own business. He's client zero — everything JTS builds, he uses himself first.",
+  title: "About | Joe's Tech Solutions",
+  description: "I run a real AI stack for my own business. I'm client zero — everything JTS builds, I use myself first.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About | Joe's Tech Solutions",
-    description: "Joe runs a real AI stack for his own business. He's client zero — everything JTS builds, he uses himself first.",
+    description: "I run a real AI stack for my own business. I'm client zero — everything JTS builds, I use myself first.",
     url: 'https://www.joestechsolutions.com/about',
   },
 };
@@ -39,14 +39,14 @@ export default function About() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                  Joe doesn&apos;t sell tools he read about. He runs a real AI stack for his own business —
+                  I don&apos;t sell tools I read about. I run a real AI stack for my own business —
                   an orchestrator with sub-agents handling coding, research, content, and memory across
-                  sessions. Everything JTS builds, he tested on himself first.
+                  sessions. Everything JTS builds, I tested on myself first.
                 </p>
               </FadeIn>
               <FadeIn delay={0.25}>
                 <p className="text-lg text-white/60 leading-relaxed font-light">
-                  A background in large-scale operations. Full-stack builder. Building apps,
+                  A background in large-scale operations. Full-stack builder. I build apps,
                   automation, and AI tools for small businesses — stuff that actually works, not hype.
                 </p>
               </FadeIn>
@@ -85,7 +85,7 @@ export default function About() {
           <FadeIn>
             <div className="text-center mb-20">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Joe&apos;s Journey
+                My Journey
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
                 Operations experience, hands-on build experience, and a live AI system proving it all works
@@ -119,7 +119,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Agent Systems</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Runs a multi-agent AI stack for JTS operations right now — an orchestrator delegating to specialized sub-agents for coding, research, and content. Not theory. A live system you can see at <Link href="/stack" className="text-[#2dd4bf] hover:underline">/stack</Link>.
+                      I run a multi-agent AI stack for JTS operations right now — an orchestrator delegating to specialized sub-agents for coding, research, and content. Not theory. A live system you can see at <Link href="/stack" className="text-[#2dd4bf] hover:underline">/stack</Link>.
                     </p>
                   </CardContent>
                 </Card>
@@ -135,7 +135,7 @@ export default function About() {
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Private AI Infrastructure</h3>
                     <p className="text-white/70 leading-relaxed">
-                      Sets up private AI tools for SMBs — local or cloud. Your data stays yours.
+                      I set up private AI tools for SMBs — local or cloud. Your data stays yours.
                     </p>
                   </CardContent>
                 </Card>
@@ -150,19 +150,19 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-16 font-space-grotesk">
-              Why Work With Joe&apos;s Tech Solutions?
+              Why Work With Me
             </h2>
           </FadeIn>
 
           <StaggerContainer className="grid lg:grid-cols-2 gap-8" staggerDelay={0.1}>
             {[
               {
-                title: "He&apos;s Client Zero",
-                description: "Joe runs an AI orchestrator with specialized sub-agents — coding, research, content, memory — for JTS right now. Every system he sells to clients, he battle-tested on his own business first. No vapor, no demos — real production systems."
+                title: "I&apos;m Client Zero",
+                description: "I run an AI orchestrator with specialized sub-agents — coding, research, content, memory — for JTS right now. Every system I sell to clients, I battle-tested on my own business first. No vapor, no demos — real production systems."
               },
               {
                 title: "Outcomes, Not Tools",
-                description: "Most AI consultants hand you a stack and charge by the hour. Joe sells outcomes: your business runs faster, leaner, and smarter. The how is his problem."
+                description: "Most AI consultants hand you a stack and charge by the hour. I sell outcomes: your business runs faster, leaner, and smarter. The how is my problem."
               },
               {
                 title: "End-to-End Delivery",
@@ -170,7 +170,7 @@ export default function About() {
               },
               {
                 title: "No Corporate BS",
-                description: "Direct communication, honest timelines, no fluff. If something isn&apos;t right for your business, Joe will tell you instead of upselling you."
+                description: "Direct communication, honest timelines, no fluff. If something isn&apos;t right for your business, I&apos;ll tell you instead of upselling you."
               }
             ].map((item, index) => (
               <StaggerItem key={index}>

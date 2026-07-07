@@ -21,7 +21,7 @@ const agentFaqs = [
   },
   {
     question: "How does the Ollama Cloud model routing work?",
-    answer: "Instead of paying Anthropic $200/mo with usage caps, we route through Ollama Cloud at $100/mo with zero caps. Three tiers mirror Claude's structure: a heavy reasoning model (Opus equivalent), a balanced coding model (Sonnet equivalent), and a fast lightweight model (Haiku equivalent). Same workload routing, half the cost, no walls."
+    answer: "Instead of paying Anthropic $200/mo with usage caps, I route through Ollama Cloud at $100/mo with zero caps. Three tiers mirror Claude's structure: a heavy reasoning model (Opus equivalent), a balanced coding model (Sonnet equivalent), and a fast lightweight model (Haiku equivalent). Same workload routing, half the cost, no walls."
   },
   {
     question: "What integrations are included?",

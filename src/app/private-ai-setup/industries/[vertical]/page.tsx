@@ -271,7 +271,7 @@ export default async function VerticalDetailPage({
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
               {vertical.isPremium
-                ? `The ${vertical.name} assistant is included with every tier. For compliance features, we recommend the Enterprise plan ($999 + $79/mo).`
+                ? `The ${vertical.name} assistant is included with every tier. For compliance features, I recommend the Enterprise plan ($999 + $79/mo).`
                 : `The ${vertical.name} assistant is included with every Private AI Setup — starting at $199.`}
             </p>
           </FadeIn>

@@ -68,7 +68,7 @@ const tierMedia: Record<Tier["id"], { image: string; alt: string }> = {
   },
   "agent-system": {
     image: "/images/blog/22-agent-architecture.png",
-    alt: "25-agent architecture diagram",
+    alt: "14-agent architecture diagram",
   },
 };
 
@@ -107,7 +107,7 @@ const portfolio = [
     desc: "My own 24/7 multi-agent system — coding, research, content, ops.",
     href: "/stack",
     image: "/images/blog/22-agent-architecture.png",
-    alt: "25-agent architecture",
+    alt: "14-agent architecture",
     span: "",
   },
   {

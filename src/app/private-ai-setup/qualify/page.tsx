@@ -124,7 +124,7 @@ function QualifyForm() {
             <p className="text-xl text-white/70">
               {isLocal
                 ? "Let's make sure your computer is ready for AI."
-                : "Just a couple quick questions before we set you up."}
+                : "Just a couple quick questions before I set you up."}
             </p>
           </div>
         </FadeIn>
@@ -262,8 +262,8 @@ function QualifyForm() {
                       <div>
                         <p className="text-amber-400 font-medium">Let&apos;s talk first</p>
                         <p className="text-amber-400/70 text-sm">
-                          With less than 8GB RAM, we may need to discuss alternatives.
-                          Consider the Cloud option, or we can chat during the call.
+                          With less than 8GB RAM, I may need to discuss alternatives.
+                          Consider the Cloud option, or we can chat during your call.
                         </p>
                       </div>
                     </div>

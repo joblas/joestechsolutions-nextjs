@@ -65,7 +65,7 @@ const solutions = [
     icon: TreeStructure,
     accent: "#8B5CF6",
     description:
-      "An orchestrator delegating to specialized sub-agents — the same 25-agent architecture running my business right now.",
+      "An orchestrator delegating to specialized sub-agents — the same 14-agent architecture running my business right now.",
     href: "/agent-system",
     cta: "Explore the System",
   },
