@@ -1,22 +1,19 @@
 import { FadeIn } from "@/components/animations/FadeIn";
 
-// ponytail: static data, not props — one use case, one place
+// Agency workflow vs JTS workflow — see the copy doc "The Difference" section.
 const oldSteps = [
-  "Research trends manually",
-  "Write outline",
-  "Draft from scratch",
-  "Editor reviews",
-  "Find images",
-  "Final review",
-  "Publish",
+  "Discovery sprint",
+  "Strategy deck",
+  "Alignment sessions",
+  "Team assigned",
+  "PowerPoint delivered",
+  "No working software",
 ];
 
 const newSteps = [
-  { label: "AI researches trends", ai: true },
-  { label: "AI generates first draft", ai: true },
-  { label: "Human refines + fact-checks", ai: false },
-  { label: "AI generates images", ai: true },
-  { label: "Review + publish", ai: false },
+  { label: "Tell me what's not working", ai: false },
+  { label: "I build the fix", ai: false },
+  { label: "Leave it running", ai: false },
 ];
 
 export function WorkflowComparison() {
@@ -26,10 +23,10 @@ export function WorkflowComparison() {
         <FadeIn>
           <div className="text-center mb-12">
             <p className="text-[#2dd4bf] text-sm font-semibold uppercase tracking-wider mb-3">
-              Before &amp; after
+              The difference
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white font-space-grotesk">
-              One step becomes five. Five becomes two.
+              The agency way vs my way.
             </h2>
           </div>
         </FadeIn>
@@ -37,7 +34,7 @@ export function WorkflowComparison() {
         {/* Old workflow */}
         <FadeIn delay={0.1}>
           <div className="mb-6">
-            <p className="text-white/50 text-sm font-medium mb-4 pl-1">Old workflow</p>
+            <p className="text-white/50 text-sm font-medium mb-4 pl-1">The agency way</p>
             <div className="flex flex-wrap items-center gap-2">
               {oldSteps.map((step, i) => (
                 <div key={i} className="flex items-center gap-2">
@@ -50,26 +47,20 @@ export function WorkflowComparison() {
                 </div>
               ))}
             </div>
+            <p className="text-white/50 text-sm mt-3 pl-1">
+              Six weeks in, you&apos;ve got a PowerPoint and no working software.
+            </p>
           </div>
         </FadeIn>
 
         {/* New workflow */}
         <FadeIn delay={0.2}>
           <div>
-            <p className="text-[#2dd4bf] text-sm font-medium mb-4 pl-1">
-              With AI <span className="text-white/30">— teal steps are automated</span>
-            </p>
+            <p className="text-[#2dd4bf] text-sm font-medium mb-4 pl-1">My way</p>
             <div className="flex flex-wrap items-center gap-2">
               {newSteps.map((step, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span
-                    className={`px-3 py-2 rounded-lg text-sm whitespace-nowrap border ${
-                      step.ai
-                        ? "bg-[#0d9488]/15 border-[#0d9488]/40 text-[#2dd4bf]"
-                        : "bg-[#1c1c26] border-white/10 text-white/80"
-                    }`}
-                  >
-                    {step.ai && <span className="mr-1.5 text-[10px]">●</span>}
+                  <span className="px-3 py-2 rounded-lg text-sm whitespace-nowrap border bg-[#0d9488]/15 border-[#0d9488]/40 text-[#2dd4bf]">
                     {step.label}
                   </span>
                   {i < newSteps.length - 1 && (
@@ -78,6 +69,10 @@ export function WorkflowComparison() {
                 </div>
               ))}
             </div>
+            <p className="text-white/70 text-sm mt-3 pl-1">
+              You&apos;ll see something working in days, not quarters. And the person you talked to is
+              the person who built it.
+            </p>
           </div>
         </FadeIn>
       </div>

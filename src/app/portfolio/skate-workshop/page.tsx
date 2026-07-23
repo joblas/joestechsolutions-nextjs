@@ -271,7 +271,7 @@ export default function SkateWorkshopCaseStudy() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] rounded-full shadow-lg shadow-[#0b7f73]/20">
-                Schedule 30min Call
+                Get in touch →
               </Button>
             </Link>
             <Link href="/portfolio">

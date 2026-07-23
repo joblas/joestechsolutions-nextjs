@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -11,16 +11,22 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "About | Joe's Tech Solutions",
-  description: "I run a real AI stack for my own business. I'm client zero — everything JTS builds, I use myself first.",
+  description: "I'm what you get when you skip the agency, skip the discovery sprint, and just hire the person who's going to build your thing. Forward Deployed Engineer — I show up where the work is.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About | Joe's Tech Solutions",
-    description: "I run a real AI stack for my own business. I'm client zero — everything JTS builds, I use myself first.",
+    description: "I'm what you get when you skip the agency and hire the person who's going to build your thing.",
     url: 'https://www.joestechsolutions.com/about',
   },
 };
+
+const proofPoints = [
+  "An orchestrator with 14 sub-agents handling coding, research, content, and memory across sessions",
+  "32 automations on a schedule — daily briefings, content drafts, health checks, backups",
+  "Everything local, everything private, everything on my own infrastructure",
+];
 
 export default function About() {
   return (
@@ -34,27 +40,27 @@ export default function About() {
             <div className="space-y-8">
               <FadeIn delay={0.1}>
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-space-grotesk">
-                  Client Zero.
+                  I&apos;m Joe. I build the tools your business runs on.
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                  I don&apos;t sell tools I read about. I run a real AI stack for my own business —
-                  an orchestrator with sub-agents handling coding, research, content, and memory across
-                  sessions. Everything JTS builds, I tested on myself first.
+                  I&apos;m what you get when you skip the agency, skip the discovery sprint, and just hire
+                  the person who&apos;s going to build your thing. Forward Deployed Engineer — I show up
+                  where the work is, figure out what&apos;s broken, and leave it running.
                 </p>
               </FadeIn>
               <FadeIn delay={0.25}>
                 <p className="text-lg text-white/60 leading-relaxed font-light">
-                  A background in large-scale operations. Full-stack builder. I build apps,
-                  automation, and AI tools for small businesses — stuff that actually works, not hype.
+                  I run the same stack for my own business that I build for clients. If it doesn&apos;t
+                  survive me, it doesn&apos;t ship to you.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <Link href="/contact">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
-                      Let&apos;s Work Together
+                      Get in touch
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </MagneticButton>
@@ -79,214 +85,90 @@ export default function About() {
         </div>
       </section>
 
-      {/* Career Timeline */}
+      {/* Why I do this */}
       <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-20">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                My Journey
-              </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-                Operations experience, hands-on build experience, and a live AI system proving it all works
-              </p>
-            </div>
-          </FadeIn>
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full">
-                  <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Image src="/icons/tools-dynamic/premium.png" alt="Waymo Operations" width={40} height={40} className="object-contain" />
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Waymo Operations</h3>
-                    <p className="text-white/70 leading-relaxed">
-                      Worked on critical infrastructure at Waymo. Learned to handle complexity, ensure reliability, and deliver under pressure — at autonomous vehicle scale.
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 h-full">
-                  <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Image src="/icons/computer-dynamic/premium.png" alt="AI Agent Systems" width={40} height={40} className="object-contain" />
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">AI Agent Systems</h3>
-                    <p className="text-white/70 leading-relaxed">
-                      I run a multi-agent AI stack for JTS operations right now — an orchestrator delegating to specialized sub-agents for coding, research, and content. Not theory. A live system you can see at <Link href="/stack" className="text-[#2dd4bf] hover:underline">/stack</Link>.
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full">
-                  <CardContent className="pt-8 pb-8 text-center">
-                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Image src="/icons/rocket-dynamic/premium.png" alt="Private AI Infrastructure" width={40} height={40} className="object-contain" />
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">Private AI Infrastructure</h3>
-                    <p className="text-white/70 leading-relaxed">
-                      I set up private AI tools for SMBs — local or cloud. Your data stays yours.
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Why Work With Joe */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-16 font-space-grotesk">
-              Why Work With Me
-            </h2>
-          </FadeIn>
-
-          <StaggerContainer className="grid lg:grid-cols-2 gap-8" staggerDelay={0.1}>
-            {[
-              {
-                title: "I&apos;m Client Zero",
-                description: "I run an AI orchestrator with specialized sub-agents — coding, research, content, memory — for JTS right now. Every system I sell to clients, I battle-tested on my own business first. No vapor, no demos — real production systems."
-              },
-              {
-                title: "Outcomes, Not Tools",
-                description: "Most AI consultants hand you a stack and charge by the hour. I sell outcomes: your business runs faster, leaner, and smarter. The how is my problem."
-              },
-              {
-                title: "End-to-End Delivery",
-                description: "Private AI setup, agent system design, workflow automation, custom dev — all under one roof. No vendor juggling."
-              },
-              {
-                title: "No Corporate BS",
-                description: "Direct communication, honest timelines, no fluff. If something isn&apos;t right for your business, I&apos;ll tell you instead of upselling you."
-              }
-            ].map((item, index) => (
-              <StaggerItem key={index}>
-                <AnimatedCard>
-                  <Card className={`bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full ${index % 2 === 1 ? 'lg:mt-12' : ''}`}>
-                    <CardContent className="p-8">
-                      <h3 className="text-white font-bold text-2xl mb-4 font-space-grotesk">{item.title}</h3>
-                      <p className="text-white/70 text-lg leading-relaxed">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </AnimatedCard>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Credentials */}
-      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Credentials
-              </h2>
-              <p className="text-xl text-white/70 font-light">
-                From autonomous vehicles to custom apps
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="relative aspect-4/3 max-w-4xl mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image
-                src="/images/credentials-google-waymo.jpg"
-                alt="Waymo Google Credentials"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Technology Stack Section */}
-      <section className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <FadeIn>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                Tools I Actually Use
+              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk">
+                Why I do this
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-                The actual tools, models, and services running right now. <Link href="/stack" className="text-[#2dd4bf] hover:underline">See the live stack</Link>.
-              </p>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light">
+                <p>
+                  I spent years watching small businesses get sold "AI solutions" by people who&apos;d
+                  never run a business. Strategy decks. Retainers. "Alignment sessions." Six weeks in,
+                  the client has a PowerPoint and no working software.
+                </p>
+                <p>
+                  I started JTS because I wanted to build the thing I wish existed when I needed help
+                  running my own operation. No deck. No theater. Just someone who knows what they&apos;re
+                  doing, building the fix and leaving it running.
+                </p>
+              </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
 
-          {/* Top Row - Scrolling Left */}
-          <div className="relative mb-8 overflow-hidden">
-            <div className="flex gap-8 animate-scroll-left">
-              {[
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
-                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
-                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
-                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
-                { name: "Anthropic Claude", logo: "/logos/claude-color.png", url: "https://www.anthropic.com" },
-                { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
-                { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
-                { name: "Flux AI", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
-              ].map((tech, index) => (
-                <a
-                  key={index}
-                  href={tech.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
-                >
-                  <img
-                    src={tech.logo}
-                    alt={`${tech.name} logo`}
-                    className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
-                  />
-                </a>
-              ))}
-            </div>
+      {/* The proof */}
+      <section className="relative py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <FadeIn>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk">
+                The proof
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="space-y-6">
+                <p className="text-lg text-white/70 leading-relaxed font-light">
+                  Here&apos;s what I run for myself right now:
+                </p>
+                <ul className="space-y-4">
+                  {proofPoints.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-white/80">
+                      <CheckCircle className="h-6 w-6 text-[#0d9488] shrink-0 mt-0.5" />
+                      <span className="leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-lg text-white/70 leading-relaxed font-light pt-2">
+                  I don&apos;t read about this stuff. I use it. Every day. The same stack I build for clients
+                  is the stack that runs my business. That&apos;s why it works.
+                </p>
+              </div>
+            </FadeIn>
           </div>
+        </div>
+      </section>
 
-          {/* Bottom Row - Scrolling Right */}
-          <div className="relative overflow-hidden">
-            <div className="flex gap-8 animate-scroll-right">
-              {[
-                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
-                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
-                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
-                { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-                { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
-                { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
-                { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
-              ].map((tech, index) => (
-                <a
-                  key={index}
-                  href={tech.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 w-48 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl flex items-center justify-center p-6 hover:border-white/20 hover:bg-[#1c1c26]/80 transition-colors backdrop-blur-sm"
-                >
-                  <img
-                    src={tech.logo}
-                    alt={`${tech.name} logo`}
-                    className="max-h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
-                  />
-                </a>
-              ))}
-            </div>
+      {/* Who I am */}
+      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <FadeIn>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk">
+                Who I am
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light">
+                <p className="text-white font-medium">
+                  I&apos;m not a consultant. I&apos;m not an agency. I&apos;m a builder who deploys forward.
+                </p>
+                <p>
+                  My background is in large-scale operations — autonomous vehicles, robotics, field
+                  deployments. I learned to make complex systems work in the real world, not just in a
+                  lab. Now I bring that to small businesses that need someone who can actually ship.
+                </p>
+                <p>
+                  I&apos;m also a lifelong skater, a golfer who doesn&apos;t take himself seriously, and someone
+                  who believes the best tools are the ones you forget about because they just work.
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -298,19 +180,14 @@ export default function About() {
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-              Ready to Start Your Project?
+              If you&apos;ve read this far and you&apos;re thinking "yeah, this guy gets it" — let&apos;s talk.
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Book a free 30min call. No pitch, no pressure — just a straight conversation about what you need and whether I can help.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.3}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
-                  Let&apos;s Talk
+                  Get in touch
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>

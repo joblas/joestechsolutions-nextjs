@@ -72,7 +72,7 @@ export default function PrivateAISetup() {
     window.location.href = `/private-ai-setup/qualify?type=${type}`;
   };
 
-  const calendlyLink = "https://calendly.com/joe-joestechsolutions/30min";
+  const calendlyLink = "/contact";
 
   const HeroBlob = ({ className }: { className?: string }) => (
     <div className={twMerge("absolute rounded-full blur-[130px] opacity-0 animate-blob-show pointer-events-none", className)}></div>
@@ -159,7 +159,7 @@ export default function PrivateAISetup() {
                   >
                     <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                       <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />
-                      Schedule 30min Call
+                      Get in touch →
                     </a>
                   </Button>
                 </MagneticButton>
@@ -422,7 +422,7 @@ export default function PrivateAISetup() {
                       "No Docker required — runs on your hardware",
                       "Hardware auto-detection + optimal model",
                       "Industry-specific starter kit",
-                      "30-minute walkthrough call",
+                      "Setup session",
                       "30 days email support"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-start gap-3 text-base text-white/60">
@@ -539,7 +539,7 @@ export default function PrivateAISetup() {
           <FadeIn delay={0.2} className="text-center mt-8 text-sm text-white/40">
             Not sure which plan is right?{" "}
             <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-[#0d9488] underline hover:no-underline">
-              Book a free 30min call
+              Get in touch →
             </a>{" "}
             — we&apos;ll figure it out together.
           </FadeIn>
@@ -691,7 +691,7 @@ export default function PrivateAISetup() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl text-white/60 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Book a free 30min call. We&apos;ll assess your needs, walk you through options, and get you set up — usually in under an hour.
+              Get in touch →
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -703,7 +703,7 @@ export default function PrivateAISetup() {
               >
                 <a href={calendlyLink} target="_blank" rel="noopener noreferrer">
                   <CalendarCheck weight="duotone" className="mr-2 h-5 w-5" />
-                  Schedule Your Discovery Call
+                  Get in touch →
                 </a>
               </Button>
             </MagneticButton>

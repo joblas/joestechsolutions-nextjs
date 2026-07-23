@@ -3,16 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Joe's Tech Solutions — Custom AI Infrastructure & Apps for SMBs",
+  title: "Joe's Tech Solutions — Custom Software, Automation & AI for SMBs",
   description:
-    "Multi-agent AI running 24/7 on my own stack. Private LLMs for clients. Production apps in React Native and Next.js. No hype — just things I've shipped.",
+    "Custom software, automation, and AI — built for small businesses that just need things to work. I test everything on myself first. If it survives me, it'll survive you.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Joe's Tech Solutions — Custom AI Infrastructure & Apps for SMBs",
+    title: "Joe's Tech Solutions — Custom Software, Automation & AI for SMBs",
     description:
-      "Multi-agent AI running 24/7 on my own stack. Private LLMs for clients. Production apps in React Native and Next.js. No hype — just things I've shipped.",
+      "Custom software, automation, and AI — built for small businesses that just need things to work. I test everything on myself first.",
     url: "https://www.joestechsolutions.com",
   },
 };
@@ -37,19 +37,15 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { value: 14, suffix: "", label: "AI agents in production", count: true },
-  { value: 0, suffix: "", label: "24/7 unattended operation", count: false, display: "24/7" },
-  { value: 32, suffix: "", label: "Scheduled cron jobs", count: true },
-  { value: 100, suffix: "%", label: "Local & private by default", count: true },
+  { value: 14, suffix: "", label: "systems running 24/7", count: true },
+  { value: 0, suffix: "", label: "downtime since launch", count: false, display: "0" },
+  { value: 32, suffix: "", label: "automations on a schedule", count: true },
+  { value: 100, suffix: "%", label: "local and private by default", count: true },
 ];
 
 // Services preview — data comes from the canonical tier ladder in lib/tiers.ts.
 // Images/metrics are homepage presentation only.
 const tierMedia: Record<Tier["id"], { image: string; alt: string }> = {
-  "morning-brief": {
-    image: "/images/joe-presenting-ai.png",
-    alt: "Joe presenting a daily AI briefing",
-  },
   "quick-start": {
     image: "/images/joe-launch-private-ai.png",
     alt: "Joe launching a private AI setup for a client",
@@ -58,17 +54,9 @@ const tierMedia: Record<Tier["id"], { image: string; alt: string }> = {
     image: "/images/joe-deploying-server.png",
     alt: "Joe deploying a server for back-office automation",
   },
-  "business-os": {
-    image: "/images/tech-monitors-development.jpg",
-    alt: "Operations monitors running business automation",
-  },
   "custom-build": {
     image: "/images/skate-workshop-hero.png",
     alt: "The Skate Workshop mobile app",
-  },
-  "agent-system": {
-    image: "/images/blog/22-agent-architecture.png",
-    alt: "14-agent architecture diagram",
   },
 };
 
@@ -77,12 +65,7 @@ const tierTag = (t: Tier) =>
 
 // Stripe-blocked tiers route to /contact until their pages + price IDs exist.
 const tierHref = (t: Tier) =>
-  ["morning-brief", "business-os"].includes(t.id) && !t.stripeReady
-    ? `/contact?tier=${t.id}`
-    : t.href;
-
-const featuredTier = TIERS.find((t) => t.id === "quick-start")!;
-const otherTiers = TIERS.filter((t) => t.id !== "quick-start");
+  t.stripeReady ? t.href : `/contact?tier=${t.id}`;
 
 const featuredMetrics = [
   { v: "100%", l: "Private" },
@@ -94,7 +77,7 @@ const featuredMetrics = [
 const portfolio = [
   {
     name: "RenFaire Directory",
-    tag: "Live • Revenue-generating",
+    tag: "Paused • Revenue-generating",
     desc: "The modern guide to Renaissance faires across America. 200+ listings, SEO-first architecture, affiliate monetization, top Google rankings.",
     href: "/portfolio/renfaire-directory",
     image: "/images/renfaire-hero.jpg",
@@ -112,7 +95,7 @@ const portfolio = [
   },
   {
     name: "The Skate Workshop",
-    tag: "Paused • React Native",
+    tag: "In Development • React Native",
     desc: "Cross-platform coaching app. 400+ trick DB, video feedback, multiplayer.",
     href: "/portfolio/skate-workshop",
     image: "/images/skate-workshop-hero.png",
@@ -195,33 +178,40 @@ export default function Home() {
             {/* Headline */}
             <FadeIn delay={0.2}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Custom AI Infrastructure</span>
-                <span className="block text-[#0d9488]">&amp; Apps That Actually Ship.</span>
+                <span className="block text-white mb-3">I build the tools your</span>
+                <span className="block text-[#0d9488]">business runs on.</span>
               </h1>
             </FadeIn>
 
             {/* Subheadline */}
             <FadeIn delay={0.3}>
               <p className="text-xl sm:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
-                Multi-agent AI running 24/7 on my own stack. Private LLMs for clients. Production
-                apps in React Native and Next.js. No hype — just things I&apos;ve shipped.
+                Custom software, automation, and AI — built for small businesses that just need things
+                to work. I test everything on myself first. If it survives me, it&apos;ll survive you.
               </p>
             </FadeIn>
 
-            {/* CTAs — fixed: /services and /contact, not back to homepage */}
+            <FadeIn delay={0.35}>
+              <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed font-light">
+                No discovery calls, no 40-page proposals. Tell me what&apos;s not working. I&apos;ll build the
+                fix and leave it running.
+              </p>
+            </FadeIn>
+
+            {/* CTAs */}
             <FadeIn delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link href="/services">
+                <Link href="/contact">
                   <MagneticButton strength={0.2}>
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all">
-                      See What I Do
+                      Get in touch
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Button>
                   </MagneticButton>
                 </Link>
-                <Link href="/contact">
+                <Link href="/services">
                   <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all">
-                    Let&apos;s Talk
+                    See what I do
                   </Button>
                 </Link>
               </div>
@@ -262,26 +252,26 @@ export default function Home() {
           <div className="mb-16 max-w-2xl">
             <p className="text-[#2dd4bf] text-sm font-semibold uppercase tracking-wider mb-3">Services</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk mb-4">
-              Six ways I work with you.
+              Three ways I work with you.
             </h2>
             <p className="text-lg text-white/60 font-light">
-              From a one-off private AI setup to a full multi-agent system — all battle-tested on
-              my own business first.
+              From a one-time setup to a full operations layer. Start where you need to, move up
+              when you&apos;re ready.
             </p>
           </div>
 
           {/* Featured: Quick Start */}
           <AnimatedCard>
-            <Link href={tierHref(featuredTier)} className="block mb-6">
+            <Link href={tierHref(TIERS[0])} className="block mb-6">
               <Card className="relative bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/60 transition-all duration-500 group overflow-hidden">
                 <div className="absolute top-4 right-4 px-3 py-1 bg-[#0b7f73]/20 rounded-full text-[#2dd4bf] text-sm font-medium z-10">
-                  {featuredTier.badge}
+                  {TIERS[0].badge}
                 </div>
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className="space-y-4 p-6 sm:p-8">
-                    <p className="text-[#0d9488] text-sm font-semibold">{tierTag(featuredTier)}</p>
-                    <CardTitle className="text-white text-2xl font-space-grotesk">{featuredTier.name}</CardTitle>
-                    <p className="text-white/70 leading-relaxed">{featuredTier.blurb}</p>
+                    <p className="text-[#0d9488] text-sm font-semibold">{tierTag(TIERS[0])}</p>
+                    <CardTitle className="text-white text-2xl font-space-grotesk">{TIERS[0].name}</CardTitle>
+                    <p className="text-white/70 leading-relaxed">{TIERS[0].blurb}</p>
                     <div className="grid grid-cols-2 gap-3 pt-2">
                       {featuredMetrics.map((m) => (
                         <div key={m.l} className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
@@ -297,8 +287,8 @@ export default function Home() {
                   </div>
                   <div className="relative min-h-[240px] bg-[#0d0d12]">
                     <Image
-                      src={tierMedia[featuredTier.id].image}
-                      alt={tierMedia[featuredTier.id].alt}
+                      src={tierMedia[TIERS[0].id].image}
+                      alt={tierMedia[TIERS[0].id].alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
@@ -309,9 +299,9 @@ export default function Home() {
             </Link>
           </AnimatedCard>
 
-          {/* Five remaining tiers */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {otherTiers.map((t) => (
+          {/* Remaining two tiers */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {TIERS.slice(1).map((t) => (
               <AnimatedCard key={t.id}>
                 <Link href={tierHref(t)}>
                   <Card className="relative bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full overflow-hidden">
@@ -459,7 +449,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA — fixed link to /contact */}
+      {/* CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0 bg-[#0d0d12]" />
         <div
@@ -472,17 +462,13 @@ export default function Home() {
         />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-            Got something that needs fixing?
+            If you made it this far, you probably already know if you want to talk. So let&apos;s talk.
           </h2>
-          <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-            Book a free 30-min call. No pitch, no pressure — just a straight conversation about
-            what you need and whether I can help.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 transition-all">
-                  Let&apos;s Talk
+                  Get in touch
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </MagneticButton>

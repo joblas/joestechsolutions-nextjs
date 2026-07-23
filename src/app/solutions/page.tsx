@@ -6,8 +6,7 @@ import { ArrowRight } from "lucide-react";
 import {
   Robot,
   Gear,
-  Buildings,
-  TreeStructure,
+  Rocket,
 } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -20,54 +19,48 @@ import { OfferCatalogSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Solutions | Joe's Tech Solutions",
   description:
-    "Private AI, back-office automation, a full Business OS, and multi-agent systems. Six ways I work with you — all built on the stack I run for my own business.",
+    "What I can build for you. Three entry points: Setup, Operations, Custom Build. Start small, go big, or skip straight to custom.",
   alternates: {
     canonical: "/solutions",
   },
   openGraph: {
     title: "Solutions | Joe's Tech Solutions",
     description:
-      "Private AI, back-office automation, a full Business OS, and multi-agent systems. Six ways I work with you.",
+      "What I can build for you. Three entry points: Setup, Operations, Custom Build.",
     url: "https://www.joestechsolutions.com/solutions",
   },
 };
 
 const solutions = [
   {
-    name: "Private AI Setup",
+    name: "Setup",
+    price: "$199",
     icon: Robot,
     accent: "#0d9488",
     description:
-      "Your own AI running on your machine or server. No subscriptions, no data leaving your environment. You own it forever.",
+      "Private AI on your machine or server. A 75-minute session, live, one on one. When we're done, you own it — no subscriptions, no data leaving your setup.",
     href: "/private-ai-setup",
-    cta: "Get Private AI",
+    cta: "Get setup",
   },
   {
-    name: "Back Office Automation",
+    name: "Operations",
+    price: "$499/mo",
     icon: Gear,
+    accent: "#0d9488",
+    description:
+      "An AI assistant running on your server, handling the stuff you don't want to think about — scheduling, outreach, reporting, daily briefings. I tune it every month so it gets better.",
+    href: "/services#back-office",
+    cta: "See Operations",
+  },
+  {
+    name: "Custom Build",
+    price: "from $2,500",
+    icon: Rocket,
     accent: "#2dd4bf",
     description:
-      "An AI assistant on your own server handling outreach, scheduling, and reporting — tuned and maintained every month.",
-    href: "/services#back-office",
-    cta: "See Back Office",
-  },
-  {
-    name: "Business OS",
-    icon: Buildings,
-    accent: "#8B5CF6",
-    description:
-      "The full operations layer: daily briefings, automation, reporting, and a light agent org working your workflows.",
-    href: "/contact?tier=business-os",
-    cta: "Talk Business OS",
-  },
-  {
-    name: "Agent System",
-    icon: TreeStructure,
-    accent: "#8B5CF6",
-    description:
-      "An orchestrator delegating to specialized sub-agents — the same 14-agent architecture running my business right now.",
-    href: "/agent-system",
-    cta: "Explore the System",
+      "Mobile apps, web apps, full agent systems — built with the stack I use daily. React Native, Next.js, AI-assisted development, human-verified.",
+    href: "/services#custom-build",
+    cta: "Start a build",
   },
 ] as const;
 
@@ -110,24 +103,23 @@ export default function Solutions() {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Solutions I build.</span>
-                <span className="block text-[#0d9488]">Tested on my own business first.</span>
+                <span className="block text-white mb-3">What I can build for you.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                Private AI, automation, and agent systems. Everything here runs for JTS before it
-                ships to you — no demos, no vaporware.
+                Three entry points. Start small, go big, or skip straight to custom. You don&apos;t have
+                to know which one you need — that&apos;s what the first conversation is for.
               </p>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* 4-Solution Grid */}
+      {/* 3-Solution Grid */}
       <section className="relative py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <StaggerContainer className="grid sm:grid-cols-2 gap-8" staggerDelay={0.15}>
+          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
             {solutions.map((solution) => {
               const accent = solutionAccent[solution.accent];
               const Icon = solution.icon;
@@ -147,6 +139,7 @@ export default function Solutions() {
                         <h2 className="text-2xl font-bold text-white font-space-grotesk">
                           {solution.name}
                         </h2>
+                        <p className={`font-semibold text-lg ${accent.iconText}`}>{solution.price}</p>
                         <p className="text-white/70 leading-relaxed">{solution.description}</p>
                         <Link
                           href={solution.href}
@@ -165,7 +158,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* Full 6-Tier Ladder */}
+      {/* Full 3-Tier Ladder */}
       <PricingLadder />
 
       <AngleBand />
@@ -175,24 +168,18 @@ export default function Solutions() {
         <div className="absolute inset-0 bg-[#0d0d12]" />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-              Not sure which one fits?
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.2}>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Tell me what's eating your time. I'll tell you what I'd automate first — free 30min
-              call, no pitch deck.
+              Not sure which fits? Tell me what&apos;s not working and I&apos;ll tell you.
             </p>
           </FadeIn>
-          <FadeIn delay={0.3}>
+          <FadeIn delay={0.2}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button
                   size="lg"
                   className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30"
                 >
-                  Schedule 30min Call
+                  Get in touch
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>

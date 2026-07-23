@@ -15,38 +15,23 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links — mirrors the 6-tier ladder in lib/tiers.ts */}
+          {/* Quick Links — mirrors the 3-tier ladder in lib/tiers.ts */}
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Products</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/contact?tier=morning-brief" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  Morning Brief
-                </Link>
-              </li>
-              <li>
                 <Link href="/private-ai-setup" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  Quick Start
+                  Setup
                 </Link>
               </li>
               <li>
                 <Link href="/services#back-office" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  Back Office
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact?tier=business-os" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  Business OS
+                  Operations
                 </Link>
               </li>
               <li>
                 <Link href="/services#custom-build" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
                   Custom Build
-                </Link>
-              </li>
-              <li>
-                <Link href="/agent-system" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  Enterprise Agent System
                 </Link>
               </li>
               <li>

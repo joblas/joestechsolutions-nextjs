@@ -81,7 +81,7 @@ function FAQItem({ question, answer, id }: { question: string; answer: string; i
 }
 
 export default function AgentSystem() {
-  const calendlyLink = "https://calendly.com/joe-joestechsolutions/30min";
+  const calendlyLink = "/contact";
 
   const HeroBlob = ({ className }: { className?: string }) => (
     <div
@@ -464,7 +464,7 @@ export default function AgentSystem() {
               rel="noopener noreferrer"
               className="text-[#0d9488] underline hover:no-underline"
             >
-              Book a free 30min call
+              Get in touch →
             </a>{" "}
             — we'll figure it out together.
           </FadeIn>
@@ -490,7 +490,7 @@ export default function AgentSystem() {
               {
                 step: "01",
                 title: "Strategy Call",
-                desc: "30 minutes. We map your workflow, identify which tasks the agent takes over, and plan the integrations.",
+                desc: "A quick call. We map your workflow, identify which tasks the agent takes over, and plan the integrations.",
                 icon: ChatTeardropDots,
               },
               {
@@ -579,14 +579,14 @@ export default function AgentSystem() {
               </span>
             </h2>
             <p className="text-xl text-white/60 mb-10 font-light leading-relaxed">
-              Book a free 30-minute call. We'll map your workflow and see if the Agent System fits.
+              Get in touch →
             </p>
             <MagneticButton strength={0.2}>
               <Button
                 onClick={() => (window.location.href = calendlyLink)}
                 className="bg-gradient-to-r from-[#0d9488] to-[#2dd4bf] hover:from-[#0f766e] hover:to-[#14b8a6] text-white rounded-full group shadow-lg shadow-[#0b7f73]/30 px-10 py-6 text-lg font-space-grotesk font-semibold"
               >
-                Book Your Strategy Call
+                Get in touch →
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </MagneticButton>

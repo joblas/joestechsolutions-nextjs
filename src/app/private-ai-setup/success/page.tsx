@@ -402,12 +402,12 @@ function SuccessContent() {
               {/* Calendly Embed Placeholder */}
               <div className="bg-[#0d0d12] rounded-xl p-8 text-center border border-white/10">
                 <CalendarCheck weight="duotone" className="h-12 w-12 text-[#0d9488] mx-auto mb-4" />
-                <h2 className="text-xl font-semibold text-white mb-2">Schedule Your Setup Call</h2>
+                <h2 className="text-xl font-semibold text-white mb-2">Get in touch →</h2>
                 <p className="text-white/60 mb-6">
                   Pick a time that works for you. I'll walk you through everything.
                 </p>
                 <a
-                  href="https://calendly.com/joe-joestechsolutions/30min"
+                  href="/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block"

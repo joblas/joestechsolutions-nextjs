@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, ExternalLink, Smartphone, Globe } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -11,13 +11,13 @@ import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const metadata: Metadata = {
   title: "Portfolio | Joe's Tech Solutions",
-  description: "See my work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
+  description: "Not a portfolio of pitch decks. Real apps, real sites, real people using them.",
   alternates: {
     canonical: '/portfolio',
   },
   openGraph: {
     title: "Portfolio | Joe's Tech Solutions",
-    description: "See my work building mobile apps, web platforms, and custom solutions for ambitious businesses.",
+    description: "Not a portfolio of pitch decks. Real apps, real sites, real people using them.",
     url: 'https://www.joestechsolutions.com/portfolio',
   },
 };
@@ -28,7 +28,8 @@ export default function Portfolio() {
       id: "skate-workshop",
       title: "The Skate Workshop",
       category: "Mobile App • Web Platform",
-      description: "Olympic-level skateboarding coaching platform with video feedback, 400+ trick database, and multiplayer features.",
+      tag: "In Development",
+      description: "Olympic-level skate coaching — video feedback, 400+ trick database, multiplayer sessions. Built for a coach who trained Olympic athletes. React Native, Stripe, real-time video.",
       image: "/images/skate-workshop-hero.png",
       imageContain: true,
       tags: ["React Native", "Next.js", "Stripe", "Real-time"],
@@ -40,7 +41,8 @@ export default function Portfolio() {
       id: "renfaire-directory",
       title: "RenFaire Directory",
       category: "Content Platform • SEO • Directory",
-      description: "A modern, revenue-generating directory featuring 200+ Renaissance faire listings, rich structured data, and top search rankings.",
+      tag: "Paused",
+      description: "848 pages, 200+ Renaissance faire listings, top search rankings. A directory that actually makes money. Next.js, Supabase, structured data done right.",
       image: "/images/renfaire-hero.jpg",
       tags: ["Next.js", "TypeScript", "Supabase", "SEO"],
       color: "blue",
@@ -51,7 +53,8 @@ export default function Portfolio() {
       id: "cbarrgs",
       title: "Cbarrgs Music",
       category: "Artist Website",
-      description: "Music artist portfolio with streaming integrations, performance optimization, and SEO for discoverability.",
+      tag: "Live",
+      description: "Music artist portfolio with streaming integrations and performance optimization. Fast, discoverable, built for an artist who needed to be found.",
       image: "/images/cbarrgs-logo.jpeg",
       tags: ["Next.js", "SEO", "Performance"],
       color: "blue",
@@ -70,16 +73,12 @@ export default function Portfolio() {
           <div className="text-center space-y-6">
             <FadeIn delay={0.1}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-2">My Work</span>
-                <span className="block text-[#0d9488] font-bold">
-                  Building Real Solutions
-                </span>
+                <span className="block text-white mb-2">Things I&apos;ve built.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                From Olympic coaching apps to artist portfolios—see how I help
-                businesses bring their vision to life.
+                Not a portfolio of pitch decks. Real apps, real sites, real people using them.
               </p>
             </FadeIn>
           </div>
@@ -90,7 +89,7 @@ export default function Portfolio() {
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <StaggerContainer className="grid lg:grid-cols-2 gap-8" staggerDelay={0.2}>
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <StaggerItem key={project.id}>
                 <AnimatedCard>
                   <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-300 overflow-hidden group h-full">
@@ -107,6 +106,13 @@ export default function Portfolio() {
                       {project.category}
                     </span>
                   </div>
+                  {project.tag && (
+                    <div className="absolute top-4 right-4">
+                      <span className="inline-block px-3 py-1 bg-[#1c1c26]/80 text-white/80 backdrop-blur-sm rounded-full text-sm font-medium">
+                        {project.tag}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <CardHeader>
@@ -151,15 +157,16 @@ export default function Portfolio() {
 
           {/* More Projects Coming */}
           <FadeIn delay={0.4}>
-            <div className="mt-16 text-center">
+            <div className="mt-16">
               <Card className="bg-[#1c1c26]/30 border-white/10 border-dashed">
                 <CardContent className="py-12">
                   <p className="text-white/70 text-lg mb-6">
-                    More case studies coming soon. Working on something exciting?
+                    Working on a salon management app, a golf + skate course directory, and a few things
+                    I can&apos;t talk about yet. Want to be next?
                   </p>
                   <Link href="/contact">
                     <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e]">
-                      Start Your Project
+                      Get in touch
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
@@ -174,20 +181,15 @@ export default function Portfolio() {
       <section className="relative py-20 sm:py-32 bg-[#1c1c26]/30">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-              Let's Build Something Together
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <p className="text-xl text-white/70 mb-10">
-              Have a project in mind? Let's talk about how I can bring it to life.
+            <p className="text-xl text-white/80 mb-8 font-light">
+              Don&apos;t see your industry here? Doesn&apos;t matter. I build for the problem, not the vertical.
             </p>
           </FadeIn>
-          <FadeIn delay={0.3}>
+          <FadeIn delay={0.2}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-lg px-10 py-6 group">
-                  Schedule 30min Call
+                  Tell me what you need
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>

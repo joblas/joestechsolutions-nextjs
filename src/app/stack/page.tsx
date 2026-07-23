@@ -5,6 +5,9 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Cpu, Database, Wrench, GitBranch, Brain, Cloud, Desktop } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "The Stack | Joe's Tech Solutions",
@@ -207,6 +210,25 @@ export default function StackPage() {
                 surgical, not guesswork. All inference runs through Ollama Cloud — 24 models, no per-token costs.
               </p>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+          <FadeIn>
+            <p className="text-xl text-white/80 mb-8 font-light">
+              This is what's running right now. Want to see what it can do for your business?
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <Link href="/contact">
+              <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group">
+                Get in touch
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </FadeIn>
         </div>
       </section>

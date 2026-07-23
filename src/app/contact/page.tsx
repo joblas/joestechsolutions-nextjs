@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
@@ -8,13 +10,13 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 
 export const metadata: Metadata = {
   title: "Contact | Joe's Tech Solutions",
-  description: "Book a free 30min call to discuss private AI setup, agent systems, or custom software. No pitch, no pressure — just a straight conversation.",
+  description: "No pitch, no pressure, no discovery call. Just tell me what you're dealing with and I'll tell you if I can help. If I can't, I'll tell you that too.",
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: "Contact | Joe's Tech Solutions",
-    description: "Book a free 30min call to discuss private AI setup, agent systems, or custom software.",
+    description: "No pitch, no pressure, no discovery call. Just tell me what you're dealing with and I'll tell you if I can help.",
     url: 'https://www.joestechsolutions.com/contact',
   },
 };
@@ -30,15 +32,13 @@ export default function Contact() {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Let&apos;s Talk</span>
-                <span className="block text-[#0d9488]">
-                  Real Talk.
-                </span>
+                <span className="block text-white mb-3">Tell me what&apos;s not working.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
-                Free 30-minute 30min call. No pitch, no pressure — just a straight conversation about what you need and whether JTS is the right fit.
+                No pitch, no pressure, no "discovery call." Just tell me what you&apos;re dealing with and
+                I&apos;ll tell you if I can help. If I can&apos;t, I&apos;ll tell you that too.
               </p>
             </FadeIn>
           </div>
@@ -59,7 +59,7 @@ export default function Contact() {
                     </div>
                     <CardTitle className="text-white text-2xl font-space-grotesk">Email</CardTitle>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
-                      Send us a message and we'll get back to you within 24 hours
+                      Send me a message and I&apos;ll get back to you within 24 hours
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -74,29 +74,28 @@ export default function Contact() {
               </AnimatedCard>
             </StaggerItem>
 
-            {/* Calendar */}
+            {/* Telegram */}
             <StaggerItem>
               <AnimatedCard>
                 <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full">
                   <CardHeader>
                     <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                      <Image src="/icons/calender-dynamic/premium.png" alt="Calendar" width={32} height={32} className="object-contain" />
+                      <Image src="/icons/telegram-dynamic/premium.png" alt="Telegram" width={32} height={32} className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-2xl font-space-grotesk">Schedule a Call</CardTitle>
+                    <CardTitle className="text-white text-2xl font-space-grotesk">Telegram</CardTitle>
                     <CardDescription className="text-white/70 text-base leading-relaxed">
-                      Book a free 30-minute 30min call at a time that works for you
+                      DM me on Telegram for quick, direct messages
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-white/70 mb-4">
-                      Pick a time that works for you and let's chat about your project.
-                    </p>
-                    <Button asChild className="bg-[#2dd4bf] hover:bg-[#14b8a6] text-white rounded-full">
-                      <a href="https://calendly.com/joe-joestechsolutions/30min" target="_blank" rel="noopener noreferrer">
-                        <Image src="/icons/calender-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
-                        Book a Call
-                      </a>
-                    </Button>
+                    <a
+                      href="https://t.me/joblasio"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#2dd4bf] hover:text-[#14b8a6] text-lg font-medium transition-colors"
+                    >
+                      @joblasio
+                    </a>
                   </CardContent>
                 </Card>
               </AnimatedCard>
@@ -115,14 +114,14 @@ export default function Contact() {
                     <div>
                       <CardTitle className="text-white text-2xl font-space-grotesk">Quick Message</CardTitle>
                       <CardDescription className="text-white/70">
-                        Tell us about your project
+                        Tell me about your project
                       </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-white/80 text-lg">
-                    For now, please email us directly at{" "}
+                    For now, please email me directly at{" "}
                     <a
                       href="mailto:joe@joestechsolutions.com"
                       className="text-[#0d9488] hover:text-[#0f766e] font-medium transition-colors"
@@ -158,40 +157,20 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Services Reminder */}
+      {/* Close */}
       <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-                What We Can Help With
-              </h2>
-              <p className="text-xl text-white/70 font-light">
-                Private AI to full agent systems — pick your starting point
-              </p>
-            </div>
+            <p className="text-xl text-white/80 mb-8 font-light">
+              Not ready to talk yet? Browse the work first.
+            </p>
+            <Link href="/portfolio">
+              <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group">
+                See what I&apos;ve built
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </FadeIn>
-
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
-            {[
-              { title: "Joe's AI Server", desc: "Private AI on your hardware", price: "from $199", color: "#0d9488" },
-              { title: "Agent Systems", desc: "24/7 automated operations", price: "Contact", color: "#2dd4bf" },
-              { title: "Custom AI Teams", desc: "Multi-agent architectures", price: "Contact", color: "#8B5CF6" },
-              { title: "Custom Software", desc: "Apps, web, APIs", price: "Contact", color: "#0d9488" }
-            ].map((service, index) => (
-              <StaggerItem key={index}>
-                <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-white/20 transition-all duration-500 text-center h-full group">
-                    <CardContent className="pt-8 pb-8">
-                      <h3 className="text-white font-bold text-xl mb-3 font-space-grotesk">{service.title}</h3>
-                      <p className="text-white/70 text-sm mb-3">{service.desc}</p>
-                      <p style={{color: service.color}} className="font-semibold text-base">{service.price}</p>
-                    </CardContent>
-                  </Card>
-                </AnimatedCard>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
     </div>

@@ -3,7 +3,7 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { TierCard } from "@/components/ui/TierCard";
 import { TIERS } from "@/lib/tiers";
 
-// The full 6-tier ladder, cheapest to biggest. Data comes from lib/tiers.ts.
+// The full 3-tier ladder, cheapest to biggest. Data comes from lib/tiers.ts.
 export function PricingLadder() {
   return (
     <section className="relative py-24 sm:py-32">
@@ -11,11 +11,11 @@ export function PricingLadder() {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-              Six ways I work with you.
+              Three ways I work with you.
             </h2>
             <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-              From a $199 daily brief to a full agent system. Every tier runs on the same stack I
-              run for my own business.
+              From a one-time setup to a full operations layer. Start where you need to, move up
+              when you&apos;re ready.
             </p>
           </div>
         </FadeIn>

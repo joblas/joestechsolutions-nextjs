@@ -7,21 +7,21 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { AngleBand } from "@/components/ui/AngleBand";
-import { TierCard, tierPriceLabel } from "@/components/ui/TierCard";
+import { TierCard } from "@/components/ui/TierCard";
 import { OfferCatalogSchema } from "@/components/seo/JsonLd";
 import { TIERS } from "@/lib/tiers";
 
 export const metadata: Metadata = {
   title: "Services | Joe's Tech Solutions",
   description:
-    "Six ways I work with you — from a $199 Morning Brief to a full Enterprise Agent System. Every service runs on the same stack I run for my own business.",
+    "Three ways I work with you — from a $199 Setup to a full Custom Build. From a one-time setup to a full operations layer. Start where you need to, move up when you're ready.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: "Services | Joe's Tech Solutions",
     description:
-      "Six ways I work with you — from a $199 Morning Brief to a full Enterprise Agent System.",
+      "Three ways I work with you — from a $199 Setup to a full Custom Build. Start where you need to, move up when you're ready.",
     url: "https://www.joestechsolutions.com/services",
   },
 };
@@ -38,15 +38,14 @@ export default function Services() {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Six ways I</span>
+                <span className="block text-white mb-3">Three ways I</span>
                 <span className="block text-[#0d9488]">work with you.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-                I run a real AI stack for my own business — an orchestrator with sub-agents for
-                coding, research, and content. Every service below is something I run for JTS
-                first, then build for yours.
+                From a one-time setup to a full operations layer. Start where you need to, move up
+                when you&apos;re ready.
               </p>
             </FadeIn>
           </div>
@@ -56,7 +55,7 @@ export default function Services() {
       {/* One anchored section per tier */}
       <section className="relative py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TIERS.map((tier, index) => (
               <FadeIn key={tier.id} delay={0.1 + index * 0.05} className="h-full">
                 {/* scroll-mt keeps anchor targets clear of the fixed header */}
@@ -138,24 +137,18 @@ export default function Services() {
         <div className="absolute inset-0 bg-[#0d0d12]" />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
-              Ready to start?
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.2}>
             <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              Schedule a free 30min call. I&apos;ll tell you what I&apos;d automate first — from{" "}
-              {tierPriceLabel(TIERS[0])} up.
+              Don&apos;t know which one you need? Tell me what&apos;s not working and I&apos;ll tell you.
             </p>
           </FadeIn>
-          <FadeIn delay={0.3}>
+          <FadeIn delay={0.2}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
                 <Button
                   size="lg"
                   className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30"
                 >
-                  Schedule 30min Call
+                  Get in touch
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </MagneticButton>
