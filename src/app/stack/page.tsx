@@ -11,13 +11,13 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "The Stack | Joe's Tech Solutions",
-  description: "The actual AI infrastructure powering Joe's Tech Solutions — 14 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes. Updated live.",
+  description: "The actual AI infrastructure powering Joe's Tech Solutions — 14 AI agents, 24 cloud models, 7 services, 60K+ indexed code nodes. Updated live.",
   alternates: {
     canonical: '/stack',
   },
   openGraph: {
     title: "The Stack | Joe's Tech Solutions",
-    description: "The actual AI infrastructure powering JTS — 14 AI agents, 21 cloud models, 6 services, 60K+ indexed code nodes.",
+    description: "The actual AI infrastructure powering JTS — 14 AI agents, 24 cloud models, 7 services, 60K+ indexed code nodes.",
     url: 'https://www.joestechsolutions.com/stack',
   },
 };
@@ -83,7 +83,7 @@ export default function StackPage() {
               </div>
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white font-space-grotesk">Models</h2>
-                <p className="text-white/60 mt-1">24 Ollama Cloud models, routed by task type</p>
+                <p className="text-white/60 mt-1">24 cloud models, routed by task type</p>
               </div>
             </div>
           </FadeIn>
@@ -207,7 +207,7 @@ export default function StackPage() {
                 A message comes in via Telegram. Hermes (the orchestrator) reads it, decides what to do,
                 and either handles it directly or delegates to a coding subagent running through the FCC proxy.
                 MemPalace remembers everything across sessions. GitNexus maps the codebase so changes are
-                surgical, not guesswork. All inference runs through Ollama Cloud — 24 models, no per-token costs.
+                surgical, not guesswork. All inference runs through cloud models — 24 models, no per-token costs.
               </p>
             </div>
           </FadeIn>

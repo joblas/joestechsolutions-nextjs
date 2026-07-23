@@ -38,7 +38,7 @@ type Stat = {
 
 const stats: Stat[] = [
   { value: 14, suffix: "", label: "systems running 24/7", count: true },
-  { value: 0, suffix: "", label: "downtime since launch", count: false, display: "0" },
+  { value: 0, suffix: "", label: "downtime since launch", count: true },
   { value: 32, suffix: "", label: "automations on a schedule", count: true },
   { value: 100, suffix: "%", label: "local and private by default", count: true },
 ];
@@ -77,7 +77,7 @@ const featuredMetrics = [
 const portfolio = [
   {
     name: "RenFaire Directory",
-    tag: "Paused • Revenue-generating",
+    tag: "Paused",
     desc: "The modern guide to Renaissance faires across America. 200+ listings, SEO-first architecture, affiliate monetization, top Google rankings.",
     href: "/portfolio/renfaire-directory",
     image: "/images/renfaire-hero.jpg",
@@ -114,7 +114,7 @@ const portfolio = [
   {
     name: "Private AI Setup",
     tag: "Client work",
-    desc: "Self-hosted LLMs for SMBs who don't want their data in someone else's cloud.",
+    desc: "Self-hosted AI for small businesses that don't want their data in someone else's cloud.",
     href: "/private-ai-setup",
     image: "/images/joe-launch-private-ai.png",
     alt: "Private AI setup",
@@ -320,7 +320,7 @@ export default function Home() {
                       />
                     </div>
                     <CardHeader className="space-y-2">
-                      <p className="text-[#2dd4bf] text-xs font-semibold">{tierTag(t)}</p>
+                      <p className="text-[#0d9488] text-xs font-semibold">{tierTag(t)}</p>
                       <CardTitle className="text-white text-xl font-space-grotesk">{t.name}</CardTitle>
                       <CardDescription className="text-white/60 text-sm leading-relaxed">{t.blurb}</CardDescription>
                     </CardHeader>

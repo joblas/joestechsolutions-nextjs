@@ -23,7 +23,7 @@ export const TIERS: Tier[] = [
     price: "$199",
     cadence: "one-time",
     href: "/private-ai-setup",
-    category: "Private AI",
+    category: "One-time setup",
     blurb:
       "Private AI on your machine or server. A 75-minute session, live, one on one. When we're done, you own it — no subscriptions, no data leaving your setup.",
     features: [
@@ -42,7 +42,7 @@ export const TIERS: Tier[] = [
     price: "$499",
     cadence: "monthly",
     href: "/services#back-office",
-    category: "Automation",
+    category: "Monthly retainer",
     blurb:
       "An AI assistant running on your server, handling the stuff you don't want to think about — scheduling, outreach, reporting, daily briefings. I tune it every month so it gets better.",
     features: [
@@ -60,7 +60,7 @@ export const TIERS: Tier[] = [
     price: "$2,500+",
     cadence: "from",
     href: "/services#custom-build",
-    category: "Mobile + web",
+    category: "Project-based",
     blurb:
       "Mobile apps, web apps, full agent systems — built with the stack I use daily. React Native, Next.js, AI-assisted development, human-verified.",
     features: [
@@ -69,7 +69,7 @@ export const TIERS: Tier[] = [
       "Scoped and priced before I write a line",
       "You own the code and the repo",
     ],
-    accent: "#2dd4bf",
+    accent: "#0d9488",
     stripeReady: false,
   },
 ];

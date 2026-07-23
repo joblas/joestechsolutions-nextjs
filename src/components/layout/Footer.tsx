@@ -36,7 +36,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/solutions" className="text-white/60 hover:text-[#0d9488] text-sm transition-colors">
-                  All Solutions
+                  Solutions
                 </Link>
               </li>
             </ul>

@@ -7,10 +7,8 @@ export function AngleBand() {
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <FadeIn>
           <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light text-center">
-            Look around — businesses are automating scheduling, content, lead routing, project
-            updates. It&apos;s not future talk, it&apos;s happening now. I build the same
-            automations for JTS first, then ship them to clients. Same play, same stack, same 2am
-            break I found for myself.
+            I test everything on myself first. 14 agents, 32 automations, all running 24/7 on my
+            own infrastructure. If it doesn&apos;t survive me, it doesn&apos;t ship to you.
           </p>
         </FadeIn>
       </div>

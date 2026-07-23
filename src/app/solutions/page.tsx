@@ -56,7 +56,7 @@ const solutions = [
     name: "Custom Build",
     price: "from $2,500",
     icon: Rocket,
-    accent: "#2dd4bf",
+    accent: "#0d9488",
     description:
       "Mobile apps, web apps, full agent systems — built with the stack I use daily. React Native, Next.js, AI-assisted development, human-verified.",
     href: "/services#custom-build",

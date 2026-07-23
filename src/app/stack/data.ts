@@ -1,13 +1,19 @@
 // Stack data — updated when the real tool stack changes.
 // Source: ~/.hermes/config.yaml, ~/free-claude-code/.env, ollama list, ~/.gitnexus/registry.json
-// Last updated: 2026-07-07
+// Last updated: 2026-07-22
 
-export const lastUpdated = "July 7, 2026";
+export const lastUpdated = "July 22, 2026";
 
 export const models = [
   {
+    name: "Step 3.5 Flash",
+    role: "Primary — main conversation + interactive tasks",
+    provider: "NVIDIA NIM",
+    capabilities: ["tools", "thinking"],
+  },
+  {
     name: "GLM-5.2",
-    role: "Flagship — main conversation + heavy reasoning",
+    role: "Cron jobs + background tasks + code",
     provider: "Ollama Cloud",
     capabilities: ["tools", "thinking"],
   },
@@ -18,34 +24,22 @@ export const models = [
     capabilities: ["vision", "tools", "thinking"],
   },
   {
-    name: "MiniMax M3",
-    role: "Fast tier — quick lookups, simple tasks",
-    provider: "Ollama Cloud",
-    capabilities: ["vision", "tools", "thinking"],
-  },
-  {
     name: "Gemma 4",
-    role: "Vision + image analysis",
+    role: "Vision + image analysis + goal-mode judge",
     provider: "Ollama Cloud",
     capabilities: ["vision", "tools", "thinking", "audio"],
   },
   {
-    name: "DeepSeek V4 Pro",
-    role: "Fallback — coding",
-    provider: "Ollama Cloud",
+    name: "DeepSeek V4 Flash",
+    role: "Fallback — coding + robust tasks",
+    provider: "NVIDIA NIM",
     capabilities: ["tools", "thinking"],
   },
   {
-    name: "Nemotron 3 Super",
-    role: "Fallback — reasoning",
-    provider: "Ollama Cloud",
+    name: "Granite 4.1",
+    role: "Local — offline + emergency",
+    provider: "Ollama Local",
     capabilities: ["tools", "thinking"],
-  },
-  {
-    name: "Qwen 3.5",
-    role: "Fallback — multimodal",
-    provider: "Ollama Cloud",
-    capabilities: ["vision", "tools", "thinking"],
   },
 ];
 
@@ -59,7 +53,7 @@ export const services = [
   {
     name: "FCC Proxy",
     port: "8082",
-    purpose: "Claude Code → Ollama Cloud routing",
+    purpose: "Claude Code → cloud model routing",
     tech: "Python, uvicorn",
   },
   {
@@ -86,16 +80,22 @@ export const services = [
     purpose: "Browser-based chat interface",
     tech: "Docker",
   },
+  {
+    name: "Open Design",
+    port: "4000",
+    purpose: "Design AI stack + daemon",
+    tech: "Node.js, systemd",
+  },
 ];
 
 export const tools = [
   {
     category: "Orchestration",
-    items: ["Hermes Agent", "delegate_task subagents", "Kanban multi-agent boards"],
+    items: ["Hermes Agent", "delegate_task subagents", "Loop + Goal Mode"],
   },
   {
     category: "Coding",
-    items: ["Claude Code (via FCC proxy)", "GitNexus code graph", "Superpowers skills"],
+    items: ["Claude Code (via FCC proxy)", "GitNexus code graph", "Agent-Skills (24 SDLC skills)"],
   },
   {
     category: "Memory",
@@ -103,7 +103,7 @@ export const tools = [
   },
   {
     category: "Models",
-    items: ["21 Ollama Cloud models", "NVIDIA NIM (fallback)", "7-model fallback chain"],
+    items: ["24 Ollama Cloud models", "NVIDIA NIM (primary)", "6-model fallback chain"],
   },
   {
     category: "Infrastructure",
@@ -113,9 +113,9 @@ export const tools = [
 
 export const stats = [
   { label: "AI Agents", value: "14" },
-  { label: "Cron Jobs", value: "32" },
-  { label: "Ollama Cloud Models", value: "21" },
+  { label: "Scheduled Automations", value: "32" },
+  { label: "Cloud Models", value: "24" },
   { label: "Indexed Code Nodes", value: "60K+" },
-  { label: "Active Services", value: "6" },
-  { label: "Fallback Tiers", value: "7" },
+  { label: "Active Services", value: "7" },
+  { label: "Skills Library", value: "100+" },
 ];
