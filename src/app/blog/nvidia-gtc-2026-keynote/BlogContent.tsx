@@ -52,7 +52,7 @@ export function BlogContent() {
 
           {/* Tool to Worker */}
           <FadeIn>
-            <h2 id="tool-to-worker" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">
+            <h2 id="tool-to-worker" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">
               The Biggest Takeaway: AI is Going From &ldquo;Tool&rdquo; to &ldquo;Worker&rdquo;
             </h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -72,19 +72,19 @@ export function BlogContent() {
 
           {/* New Hardware */}
           <FadeIn>
-            <h2 id="new-hardware" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">
+            <h2 id="new-hardware" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">
               The New Hardware: Faster, Cheaper, Smarter
             </h2>
           </FadeIn>
 
           {/* Vera Rubin */}
           <FadeIn>
-            <h3 className="text-white text-2xl font-bold mb-4 font-space-grotesk">
+            <h3 className="text-foreground text-2xl font-bold mb-4 font-mono">
               Vera Rubin (Shipping Late 2026)
             </h3>
             <p className="text-gray-200 text-lg leading-loose mb-6">
               The main announcement was a new platform called Vera Rubin. Without getting too deep into the specs,
-              here&apos;s what matters: it makes running AI <strong className="text-white">10 times cheaper</strong> than
+              here&apos;s what matters: it makes running AI <strong className="text-foreground">10 times cheaper</strong> than
               the current generation.
             </p>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -105,7 +105,7 @@ export function BlogContent() {
 
           {/* Groq 3 */}
           <FadeIn>
-            <h3 className="text-white text-2xl font-bold mb-4 font-space-grotesk">
+            <h3 className="text-foreground text-2xl font-bold mb-4 font-mono">
               Groq 3: The Speed Chip
             </h3>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -121,7 +121,7 @@ export function BlogContent() {
 
           {/* Feynman */}
           <FadeIn>
-            <h3 className="text-white text-2xl font-bold mb-4 font-space-grotesk">
+            <h3 className="text-foreground text-2xl font-bold mb-4 font-mono">
               Feynman: What&apos;s Coming in 2028
             </h3>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -137,7 +137,7 @@ export function BlogContent() {
 
           {/* AI Agents */}
           <FadeIn>
-            <h2 id="ai-agents" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">
+            <h2 id="ai-agents" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">
               AI Agents: Your Future Digital Employees
             </h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -165,7 +165,7 @@ export function BlogContent() {
 
           {/* Robots */}
           <FadeIn>
-            <h2 id="robots" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">
+            <h2 id="robots" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">
               Robots Are No Longer Science Fiction
             </h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -176,10 +176,10 @@ export function BlogContent() {
 
           <FadeIn>
             <ul className="space-y-3 mb-10 text-gray-200 text-lg leading-loose">
-              <li><strong className="text-white">Uber</strong> announced they&apos;ll integrate self-driving taxis powered by NVIDIA&apos;s platform</li>
-              <li><strong className="text-white">BYD, Hyundai, and Nissan</strong> signed on for autonomous driving tech</li>
-              <li><strong className="text-white">Johnson &amp; Johnson</strong> is using NVIDIA-powered systems for surgical robotics</li>
-              <li><strong className="text-white">Disney</strong> had Olaf from Frozen literally walking around the stage, powered by NVIDIA&apos;s physics engine</li>
+              <li><strong className="text-foreground">Uber</strong> announced they&apos;ll integrate self-driving taxis powered by NVIDIA&apos;s platform</li>
+              <li><strong className="text-foreground">BYD, Hyundai, and Nissan</strong> signed on for autonomous driving tech</li>
+              <li><strong className="text-foreground">Johnson &amp; Johnson</strong> is using NVIDIA-powered systems for surgical robotics</li>
+              <li><strong className="text-foreground">Disney</strong> had Olaf from Frozen literally walking around the stage, powered by NVIDIA&apos;s physics engine</li>
             </ul>
           </FadeIn>
 
@@ -189,7 +189,7 @@ export function BlogContent() {
 
           {/* Reality Check */}
           <FadeIn>
-            <h2 id="reality-check" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">
+            <h2 id="reality-check" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">
               The Reality Check
             </h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
@@ -229,7 +229,7 @@ export function BlogContent() {
                   }`}>
                     {item.title}
                   </h4>
-                  <p className="text-white/60 text-sm mb-0 leading-relaxed">{item.desc}</p>
+                  <p className="text-foreground/60 text-sm mb-0 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -244,7 +244,7 @@ export function BlogContent() {
 
           {/* What This Means */}
           <FadeIn>
-            <h2 id="what-this-means" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">
+            <h2 id="what-this-means" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">
               What This Means for Your Business
             </h2>
             <p className="text-gray-200 text-lg leading-loose mb-8">
@@ -254,29 +254,29 @@ export function BlogContent() {
 
           <FadeIn>
             <div className="space-y-6 mb-10">
-              <div className="border border-[#10B981]/20 bg-[#10B981]/5 rounded-xl p-6">
-                <h4 className="text-[#10B981] font-bold text-lg mb-2">1. Revisit your AI budget.</h4>
+              <div className="border border-[var(--ok)]/20 bg-[var(--ok)]/5 rounded-xl p-6">
+                <h4 className="text-[var(--ok)] font-bold text-lg mb-2">1. Revisit your AI budget.</h4>
                 <p className="text-gray-200 text-base leading-loose mb-0">
                   If you&apos;ve looked at AI tools before and the cost didn&apos;t make sense, prices are dropping fast.
                   What wasn&apos;t affordable six months ago might work now, and will definitely work in a year.
                 </p>
               </div>
-              <div className="border border-[#10B981]/20 bg-[#10B981]/5 rounded-xl p-6">
-                <h4 className="text-[#10B981] font-bold text-lg mb-2">2. Think about &ldquo;always-on&rdquo; AI.</h4>
+              <div className="border border-[var(--ok)]/20 bg-[var(--ok)]/5 rounded-xl p-6">
+                <h4 className="text-[var(--ok)] font-bold text-lg mb-2">2. Think about &ldquo;always-on&rdquo; AI.</h4>
                 <p className="text-gray-200 text-base leading-loose mb-0">
                   Where in your business do you have people doing repetitive monitoring, triage, or processing? Those are
                   the first candidates for AI agents that work around the clock.
                 </p>
               </div>
-              <div className="border border-[#10B981]/20 bg-[#10B981]/5 rounded-xl p-6">
-                <h4 className="text-[#10B981] font-bold text-lg mb-2">3. Don&apos;t sleep on edge AI.</h4>
+              <div className="border border-[var(--ok)]/20 bg-[var(--ok)]/5 rounded-xl p-6">
+                <h4 className="text-[var(--ok)] font-bold text-lg mb-2">3. Don&apos;t sleep on edge AI.</h4>
                 <p className="text-gray-200 text-base leading-loose mb-0">
                   If your business has physical locations (stores, warehouses, clinics, job sites), NVIDIA&apos;s new edge
                   platform means you can run AI directly on-site for real-time decision making — no cloud connection required.
                 </p>
               </div>
-              <div className="border border-[#10B981]/20 bg-[#10B981]/5 rounded-xl p-6">
-                <h4 className="text-[#10B981] font-bold text-lg mb-2">4. Start small, but start now.</h4>
+              <div className="border border-[var(--ok)]/20 bg-[var(--ok)]/5 rounded-xl p-6">
+                <h4 className="text-[var(--ok)] font-bold text-lg mb-2">4. Start small, but start now.</h4>
                 <p className="text-gray-200 text-base leading-loose mb-0">
                   You don&apos;t need a million-dollar AI strategy. Start with one workflow, one agent, one process. The
                   companies that experiment now will be ready when the technology hits its stride.

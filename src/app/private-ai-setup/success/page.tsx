@@ -115,10 +115,10 @@ function SuccessContent() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div role="status" aria-label="Loading">
-            <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
+            <Spinner aria-hidden="true" className="h-12 w-12 text-primary animate-spin mx-auto mb-4" />
             <span className="sr-only">Loading...</span>
           </div>
-          <p className="text-white/70">Verifying your payment...</p>
+          <p className="text-foreground/70">Verifying your payment...</p>
         </div>
       </div>
     );
@@ -130,20 +130,20 @@ function SuccessContent() {
       <div className="min-h-screen py-24">
         <div className="mx-auto max-w-2xl px-6">
           <FadeIn>
-            <Card className="bg-[#1c1c26] border-red-500/50">
+            <Card className="bg-card border-red-500/50">
               <CardHeader className="text-center">
                 <Warning weight="duotone" className="h-16 w-16 text-red-500 mx-auto mb-4" />
-                <h1 className="text-3xl font-bold text-white font-space-grotesk mb-2">
+                <h1 className="text-3xl font-bold text-foreground font-mono mb-2">
                   Payment Verification Failed
                 </h1>
-                <p className="text-white/70">
+                <p className="text-foreground/70">
                   {paymentInfo.error || "We couldn't verify your payment. Please try again or contact support."}
                 </p>
               </CardHeader>
               <CardContent className="text-center">
                 <Button
                   onClick={() => (window.location.href = "/private-ai-setup")}
-                  className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full"
+                  className="bg-primary hover:bg-primary/85 text-foreground rounded-none"
                 >
                   Return to Private AI Setup
                 </Button>
@@ -172,27 +172,27 @@ function SuccessContent() {
           <FadeIn>
             <div className="text-center mb-8">
               <CheckCircle weight="duotone" className="h-16 w-16 text-green-500 mx-auto mb-4" />
-              <h1 className="text-3xl font-bold text-white font-space-grotesk mb-2">
+              <h1 className="text-3xl font-bold text-foreground font-mono mb-2">
                 Payment Successful!
               </h1>
-              <p className="text-white/70">
+              <p className="text-foreground/70">
                 Now tell me a bit more so I can prepare for your setup.
               </p>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <Card className="bg-[#1c1c26] border-white/10">
+            <Card className="bg-card border-foreground/10">
               <CardContent className="p-8">
                 <form onSubmit={handleIntakeSubmit} className="space-y-6">
                   {/* Setup Type Indicator */}
-                  <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
+                  <div className="flex items-center gap-3 p-4 bg-background rounded-xl border border-foreground/10">
                     {isVPS ? (
-                      <Cloud weight="duotone" className="h-6 w-6 text-[#2dd4bf]" />
+                      <Cloud weight="duotone" className="h-6 w-6 text-primary" />
                     ) : (
-                      <Desktop weight="duotone" className="h-6 w-6 text-[#0d9488]" />
+                      <Desktop weight="duotone" className="h-6 w-6 text-primary" />
                     )}
-                    <span className="text-white font-medium">
+                    <span className="text-foreground font-medium">
                       {isVPS ? "VPS Hosting Setup" : "Local Install"} — Paid ✓
                     </span>
                   </div>
@@ -206,7 +206,7 @@ function SuccessContent() {
 
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                       Your Name *
                     </label>
                     <input
@@ -215,14 +215,14 @@ function SuccessContent() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                       placeholder="John Smith"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                       Email Address *
                     </label>
                     <input
@@ -231,7 +231,7 @@ function SuccessContent() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -239,7 +239,7 @@ function SuccessContent() {
                   {/* VPS-specific: Domain Preference */}
                   {isVPS && (
                     <div>
-                      <label htmlFor="domain" className="block text-sm font-medium text-white mb-2">
+                      <label htmlFor="domain" className="block text-sm font-medium text-foreground mb-2">
                         Preferred Domain (optional)
                       </label>
                       <input
@@ -247,17 +247,17 @@ function SuccessContent() {
                         id="domain"
                         value={formData.domainPreference}
                         onChange={(e) => setFormData({ ...formData, domainPreference: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                        className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                         placeholder="myai.yourdomain.com or leave blank for suggestions"
                       />
-                      <p className="text-white/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
+                      <p className="text-foreground/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
                     </div>
                   )}
 
                   {/* VPS-specific: Model Size */}
                   {isVPS && (
                     <fieldset>
-                      <legend className="block text-sm font-medium text-white mb-3">
+                      <legend className="block text-sm font-medium text-foreground mb-3">
                         Expected Model Size
                       </legend>
                       <div className="grid grid-cols-3 gap-3">
@@ -270,8 +270,8 @@ function SuccessContent() {
                             key={option.value}
                             className={`flex flex-col items-center p-3 rounded-xl border cursor-pointer transition-all text-center ${
                               formData.modelSizePreference === option.value
-                                ? "border-[#2dd4bf] bg-[#2dd4bf]/10"
-                                : "border-white/10 hover:border-white/20"
+                                ? "border-primary bg-primary/10"
+                                : "border-foreground/10 hover:border-foreground/20"
                             }`}
                           >
                             <input
@@ -287,8 +287,8 @@ function SuccessContent() {
                               }
                               className="sr-only"
                             />
-                            <span className="text-white font-medium text-sm">{option.label}</span>
-                            <span className="text-white/50 text-xs">{option.desc}</span>
+                            <span className="text-foreground font-medium text-sm">{option.label}</span>
+                            <span className="text-foreground/50 text-xs">{option.desc}</span>
                           </label>
                         ))}
                       </div>
@@ -298,7 +298,7 @@ function SuccessContent() {
                   {/* Specs (only for local) */}
                   {!isVPS && (
                     <div>
-                      <label htmlFor="specs" className="block text-sm font-medium text-white mb-2">
+                      <label htmlFor="specs" className="block text-sm font-medium text-foreground mb-2">
                         Computer Specs (RAM, CPU, GPU if any)
                       </label>
                       <textarea
@@ -306,7 +306,7 @@ function SuccessContent() {
                         value={formData.specs}
                         onChange={(e) => setFormData({ ...formData, specs: e.target.value })}
                         rows={2}
-                        className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                         placeholder="e.g., 16GB RAM, Intel i7, no dedicated GPU"
                       />
                     </div>
@@ -314,7 +314,7 @@ function SuccessContent() {
 
                   {/* Use Cases */}
                   <div>
-                    <label htmlFor="useCases" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="useCases" className="block text-sm font-medium text-foreground mb-2">
                       What do you want to use AI for? *
                     </label>
                     <textarea
@@ -323,7 +323,7 @@ function SuccessContent() {
                       value={formData.useCases}
                       onChange={(e) => setFormData({ ...formData, useCases: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                       placeholder="e.g., Writing assistance, coding help, analyzing documents, brainstorming ideas..."
                     />
                   </div>
@@ -332,10 +332,10 @@ function SuccessContent() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
+                    className={`w-full text-foreground text-lg py-6 rounded-none shadow-lg disabled:opacity-50 ${
                       isVPS
-                        ? "bg-[#2dd4bf] hover:bg-[#14b8a6] shadow-[#2dd4bf]/20"
-                        : "bg-[#0b7f73] hover:bg-[#0f766e] shadow-[#0b7f73]/20"
+                        ? "bg-primary hover:bg-primary/85 shadow-primary/20"
+                        : "bg-primary hover:bg-primary/85 shadow-primary/20"
                     }`}
                   >
                     {isSubmitting ? (
@@ -376,34 +376,34 @@ function SuccessContent() {
         )}
 
         <FadeIn>
-          <Card className="bg-[#1c1c26] border-[#0d9488]/50">
+          <Card className="bg-card border-primary/50">
             <CardHeader className="text-center">
-              <CheckCircle weight="duotone" className="h-16 w-16 text-[#0d9488] mx-auto mb-4" />
-              <h1 className="text-3xl font-bold text-white font-space-grotesk mb-2">
+              <CheckCircle weight="duotone" className="h-16 w-16 text-primary mx-auto mb-4" />
+              <h1 className="text-3xl font-bold text-foreground font-mono mb-2">
                 You're All Set!
               </h1>
-              <p className="text-white/70">
+              <p className="text-foreground/70">
                 One last step — pick a time for your setup call.
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Setup Type Confirmation */}
-              <div className="flex items-center justify-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
+              <div className="flex items-center justify-center gap-3 p-4 bg-background rounded-xl border border-foreground/10">
                 {isVPS ? (
-                  <Cloud weight="duotone" className="h-6 w-6 text-[#2dd4bf]" />
+                  <Cloud weight="duotone" className="h-6 w-6 text-primary" />
                 ) : (
-                  <Desktop weight="duotone" className="h-6 w-6 text-[#0d9488]" />
+                  <Desktop weight="duotone" className="h-6 w-6 text-primary" />
                 )}
-                <span className="text-white font-medium">
+                <span className="text-foreground font-medium">
                   {isVPS ? "VPS Hosting Setup" : "Local Install"} — Ready to schedule
                 </span>
               </div>
 
               {/* Calendly Embed Placeholder */}
-              <div className="bg-[#0d0d12] rounded-xl p-8 text-center border border-white/10">
-                <CalendarCheck weight="duotone" className="h-12 w-12 text-[#0d9488] mx-auto mb-4" />
-                <h2 className="text-xl font-semibold text-white mb-2">Get in touch →</h2>
-                <p className="text-white/60 mb-6">
+              <div className="bg-background rounded-xl p-8 text-center border border-foreground/10">
+                <CalendarCheck weight="duotone" className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h2 className="text-xl font-semibold text-foreground mb-2">Get in touch →</h2>
+                <p className="text-foreground/60 mb-6">
                   Pick a time that works for you. I'll walk you through everything.
                 </p>
                 <a
@@ -412,37 +412,37 @@ function SuccessContent() {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full px-8">
+                  <Button className="bg-primary hover:bg-primary/85 text-foreground rounded-none px-8">
                     Open Scheduler
                   </Button>
                 </a>
               </div>
 
               {/* What to expect */}
-              <div className="bg-[#0d0d12] rounded-xl p-6 border border-white/10">
-                <h3 className="text-white font-medium mb-3">What happens next:</h3>
-                <ol className="space-y-2 text-white/70 text-sm">
+              <div className="bg-background rounded-xl p-6 border border-foreground/10">
+                <h3 className="text-foreground font-medium mb-3">What happens next:</h3>
+                <ol className="space-y-2 text-foreground/70 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0d9488] font-bold">1.</span>
+                    <span className="text-primary font-bold">1.</span>
                     <span>Book a time slot that works for you</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0d9488] font-bold">2.</span>
+                    <span className="text-primary font-bold">2.</span>
                     <span>I'll review your setup details before our call</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0d9488] font-bold">3.</span>
+                    <span className="text-primary font-bold">3.</span>
                     <span>We'll do the installation together via screen share</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#0d9488] font-bold">4.</span>
+                    <span className="text-primary font-bold">4.</span>
                     <span>You'll have your private AI running by the end of the call!</span>
                   </li>
                 </ol>
               </div>
 
-              <div className="text-center text-white/50 text-sm">
-                <p>Questions? Email me at <a href="mailto:joe@joestechsolutions.com" className="text-[#0d9488] hover:underline">joe@joestechsolutions.com</a></p>
+              <div className="text-center text-foreground/50 text-sm">
+                <p>Questions? Email me at <a href="mailto:joe@joestechsolutions.com" className="text-primary hover:underline">joe@joestechsolutions.com</a></p>
               </div>
             </CardContent>
           </Card>
@@ -459,10 +459,10 @@ export default function SuccessPage() {
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <div role="status" aria-label="Loading">
-              <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin mx-auto mb-4" />
+              <Spinner aria-hidden="true" className="h-12 w-12 text-primary animate-spin mx-auto mb-4" />
               <span className="sr-only">Loading...</span>
             </div>
-            <p className="text-white/70">Loading...</p>
+            <p className="text-foreground/70">Loading...</p>
           </div>
         </div>
       }

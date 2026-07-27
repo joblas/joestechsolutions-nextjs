@@ -31,13 +31,13 @@ export function SaasComparisonTable() {
   return (
     <div className="my-10">
       {/* Desktop / tablet */}
-      <div className="hidden sm:block relative border border-white/10 rounded-2xl overflow-hidden bg-[#0d0d12]/80 backdrop-blur-sm">
+      <div className="hidden sm:block relative border border-foreground/10 rounded-none overflow-hidden bg-background/80 backdrop-blur-sm">
         {/* Header */}
-        <div className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 bg-white/[0.03] border-b border-white/10 px-6 py-4">
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">What I Needed</span>
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">Typical SaaS Tool</span>
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider text-right">Market Rate</span>
-          <span className="text-white/50 text-xs font-semibold uppercase tracking-wider text-right">My Solution</span>
+        <div className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 bg-foreground/[0.03] border-b border-foreground/10 px-6 py-4">
+          <span className="text-foreground/50 text-xs font-semibold uppercase tracking-wider">What I Needed</span>
+          <span className="text-foreground/50 text-xs font-semibold uppercase tracking-wider">Typical SaaS Tool</span>
+          <span className="text-foreground/50 text-xs font-semibold uppercase tracking-wider text-right">Market Rate</span>
+          <span className="text-foreground/50 text-xs font-semibold uppercase tracking-wider text-right">My Solution</span>
         </div>
         {/* Rows */}
         {rows.map((row, i) => {
@@ -50,20 +50,20 @@ export function SaasComparisonTable() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors"
+              className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 border-b border-foreground/[0.05] hover:bg-foreground/[0.02] transition-colors"
             >
               <span className="flex items-center gap-3 text-gray-200 text-sm">
-                <Icon className="w-4 h-4 text-[#0d9488] shrink-0" />
+                <Icon className="w-4 h-4 text-primary shrink-0" />
                 {row.need}
               </span>
-              <span className="flex items-center gap-2 text-white/50 text-sm">
+              <span className="flex items-center gap-2 text-foreground/50 text-sm">
                 <X className="w-3 h-3 text-red-400/70" />
                 {row.oldTool}
               </span>
-              <span className="text-right text-white/50 text-sm tabular-nums">
-                {row.cost > 0 ? `$${row.cost}` : <span className="text-white/30">—</span>}
+              <span className="text-right text-foreground/50 text-sm tabular-nums">
+                {row.cost > 0 ? `$${row.cost}` : <span className="text-foreground/30">—</span>}
               </span>
-              <span className="flex items-center justify-end gap-2 text-[#2dd4bf] text-sm font-medium">
+              <span className="flex items-center justify-end gap-2 text-primary text-sm font-medium">
                 <Bot className="w-3.5 h-3.5 shrink-0" />
                 {row.agent}
               </span>
@@ -77,16 +77,16 @@ export function SaasComparisonTable() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 bg-white/[0.03]"
+          className="grid grid-cols-[1fr_140px_80px_1fr] gap-0 px-6 py-4 bg-foreground/[0.03]"
         >
-          <span className="text-white font-semibold text-sm">Total Market Cost</span>
+          <span className="text-foreground font-semibold text-sm">Total Market Cost</span>
           <span />
           <span className="text-right text-red-400 font-bold text-sm line-through decoration-red-400/50">${totalOld}</span>
           <span className="text-right text-emerald-400 font-bold text-sm">$0 extra*</span>
         </motion.div>
         {/* Footnote */}
-        <div className="px-6 py-3 bg-white/[0.02] border-t border-white/[0.05]">
-          <p className="text-white/40 text-xs">
+        <div className="px-6 py-3 bg-foreground/[0.02] border-t border-foreground/[0.05]">
+          <p className="text-foreground/40 text-xs">
             * Agent system runs on existing Claude Max subscription ($100/mo) already used for daily development work — zero marginal cost.
           </p>
         </div>
@@ -104,18 +104,18 @@ export function SaasComparisonTable() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="border border-white/10 rounded-xl bg-[#0d0d12]/80 p-5"
+              className="border border-foreground/10 rounded-xl bg-background/80 p-5"
             >
               <div className="flex items-center gap-2 mb-3">
-                <Icon className="w-4 h-4 text-[#0d9488]" />
+                <Icon className="w-4 h-4 text-primary" />
                 <span className="text-gray-200 text-sm font-medium">{row.need}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-white/50 flex items-center gap-1">
+                <span className="text-foreground/50 flex items-center gap-1">
                   <X className="w-3 h-3 text-red-400/70" />
                   {row.oldTool} {row.cost > 0 && <span className="text-red-400/90">(${row.cost}/mo)</span>}
                 </span>
-                <span className="text-[#2dd4bf] font-medium flex items-center gap-1">
+                <span className="text-primary font-medium flex items-center gap-1">
                   <Bot className="w-3 h-3" />
                   {row.agent}
                 </span>
@@ -130,19 +130,19 @@ export function SaasComparisonTable() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="border border-white/10 rounded-xl bg-gradient-to-r from-[#0d9488]/10 to-[#8B5CF6]/10 p-4"
+          className="border border-foreground/10 rounded-xl bg-gradient-to-r from-primary/10 to-primary/10 p-4"
         >
           <div className="flex justify-between items-center mb-2">
             <div>
-              <p className="text-white/50 text-xs">Typical SaaS stack</p>
+              <p className="text-foreground/50 text-xs">Typical SaaS stack</p>
               <p className="text-red-400 font-bold text-lg line-through decoration-red-400/50">${totalOld}/mo</p>
             </div>
             <div className="text-right">
-              <p className="text-white/50 text-xs">My AI agent system</p>
+              <p className="text-foreground/50 text-xs">My AI agent system</p>
               <p className="text-emerald-400 font-bold text-lg">$0 extra*</p>
             </div>
           </div>
-          <p className="text-white/40 text-xs border-t border-white/10 pt-2">
+          <p className="text-foreground/40 text-xs border-t border-foreground/10 pt-2">
             * Runs on existing Claude Max subscription already used for daily dev work
           </p>
         </motion.div>

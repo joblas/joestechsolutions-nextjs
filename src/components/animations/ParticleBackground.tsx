@@ -37,8 +37,8 @@ export function ParticleBackground() {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(13, 148, 136, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(13, 148, 136, 0.3) 1px, transparent 1px)
+            linear-gradient(rgba(212, 84, 30, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(212, 84, 30, 0.3) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px',
         }}
@@ -56,13 +56,13 @@ export function ParticleBackground() {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full"
+          className="absolute rounded-none"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
-            backgroundColor: p.isTeal ? '#0d9488' : '#475569',
+            backgroundColor: p.isTeal ? '#d4541e' : '#475569',
             opacity: p.isTeal ? 0.4 : 0.15,
             animation: `particle-drift ${p.duration}s ease-in-out ${p.delay}s infinite`,
             contain: 'layout style',

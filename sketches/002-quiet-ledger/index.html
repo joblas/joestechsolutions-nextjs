@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JTS — Quiet Ledger</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #faf8f3;
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  nav { border-bottom: 1px solid #1a1a1a; padding: 20px 0; }
+  nav .container { display: flex; justify-content: space-between; align-items: baseline; }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .logo em { font-style: italic; color: #666; font-weight: 400; }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav a { color: #1a1a1a; text-decoration: none; font-size: 15px; font-family: Georgia, serif; }
+  nav a:hover { font-style: italic; }
+  .nav-cta { font-size: 15px; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+
+  /* Layout */
+  .layout { display: grid; grid-template-columns: 180px 1fr; gap: 48px; padding: 48px 0; }
+  .index { position: sticky; top: 48px; align-self: start; }
+  .index ul { list-style: none; }
+  .index li { font-size: 13px; padding: 6px 0; border-bottom: 1px solid #ddd; }
+  .index a { color: #666; text-decoration: none; }
+  .index a:hover { color: #1a1a1a; }
+  .index .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 12px; }
+
+  /* Hero */
+  .hero { padding: 32px 0 48px; border-bottom: 1px solid #1a1a1a; }
+  .hero .kicker { font-size: 13px; color: #666; font-style: italic; margin-bottom: 16px; }
+  .hero h1 { font-size: 42px; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 24px; max-width: 640px; }
+  .hero h1 em { font-style: italic; }
+  .hero .lede { font-size: 18px; line-height: 1.6; max-width: 560px; margin-bottom: 16px; color: #333; }
+  .hero .actions { display: flex; gap: 24px; margin-top: 32px; }
+  .hero a { font-size: 15px; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; }
+  .hero a:hover { font-style: italic; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); padding: 24px 0; border-bottom: 1px solid #1a1a1a; }
+  .stat { text-align: left; padding-right: 16px; border-right: 1px solid #ccc; }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-size: 28px; font-weight: 700; }
+  .stat .label { font-size: 12px; color: #666; font-style: italic; }
+
+  /* Section */
+  .section { padding: 48px 0; border-bottom: 1px solid #ccc; }
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #999; margin-bottom: 8px; }
+  .section-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; letter-spacing: -0.01em; }
+  .section-title em { font-style: italic; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid #1a1a1a; }
+  .service { padding: 32px 24px; border-right: 1px solid #ccc; border-bottom: 1px solid #1a1a1a; }
+  .service:last-child { border-right: none; }
+  .service .tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 8px; }
+  .service h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .service .price { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+  .service .price em { font-style: italic; font-weight: 400; font-size: 16px; color: #666; }
+  .service p { font-size: 15px; color: #333; margin-bottom: 16px; line-height: 1.6; }
+  .service ul { list-style: none; margin-bottom: 16px; }
+  .service li { font-size: 14px; padding: 6px 0; border-bottom: 1px dotted #ddd; display: flex; justify-content: space-between; }
+  .service li span { color: #666; font-style: italic; }
+  .service a { font-size: 14px; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; }
+  .service.featured { background: #1a1a1a; color: #faf8f3; }
+  .service.featured .tag { color: #999; }
+  .service.featured p { color: #ccc; }
+  .service.featured li { border-color: #333; }
+  .service.featured li span { color: #999; }
+  .service.featured a { color: #faf8f3; border-color: #faf8f3; }
+
+  /* Portfolio */
+  .portfolio { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid #1a1a1a; }
+  .project { padding: 24px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+  .project:nth-child(even) { border-right: none; }
+  .project .status { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 8px; }
+  .project h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .project p { font-size: 14px; color: #444; line-height: 1.5; }
+  .project a { font-size: 13px; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; margin-top: 12px; display: inline-block; }
+
+  /* Stack */
+  .stack-list { font-size: 15px; line-height: 2; color: #333; }
+  .stack-list .tool { font-weight: 700; }
+  .stack-list .desc { color: #666; font-style: italic; }
+
+  /* CTA */
+  .final-cta { padding: 64px 0; text-align: center; border-top: 1px solid #1a1a1a; }
+  .final-cta h2 { font-size: 26px; font-weight: 700; margin-bottom: 24px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.3; }
+  .final-cta h2 em { font-style: italic; }
+  .final-cta .actions { display: flex; gap: 24px; justify-content: center; }
+
+  /* Footer */
+  footer { border-top: 1px solid #1a1a1a; padding: 24px 0; font-size: 13px; color: #666; }
+  footer .container { display: flex; justify-content: space-between; }
+
+  @media (max-width: 768px) {
+    .layout { grid-template-columns: 1fr; }
+    .index { display: none; }
+    .hero h1 { font-size: 28px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .services { grid-template-columns: 1fr; }
+    .portfolio { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Joe's Tech Solutions <em>LLC</em></div>
+    <ul>
+      <li><a href="#services">Solutions</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="layout">
+    <aside class="index">
+      <div class="label">Contents</div>
+      <ul>
+        <li><a href="#top">— The Pitch</a></li>
+        <li><a href="#services">— Services</a></li>
+        <li><a href="#portfolio">— Proof of Work</a></li>
+        <li><a href="#stack">— The Stack</a></li>
+        <li><a href="#contact">— Contact</a></li>
+      </ul>
+    </aside>
+
+    <div class="main" id="top">
+
+      <div class="hero">
+        <div class="kicker">Currently operating — 14 agents, 24/7</div>
+        <h1>I build the tools your <em>business</em> runs on.</h1>
+        <p class="lede">Custom software, automation, and AI — built for small businesses that just need things to work. I test everything on myself first. If it survives me, it'll survive you.</p>
+        <p class="lede">No discovery calls, no 40-page proposals. Tell me what's not working. I'll build the fix and leave it running.</p>
+        <div class="actions">
+          <a href="#contact">Get in touch →</a>
+          <a href="#portfolio">See what I do</a>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="num">14</div><div class="label">agents, 24/7</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">downtime</div></div>
+        <div class="stat"><div class="num">32</div><div class="label">automations</div></div>
+        <div class="stat"><div class="num">100%</div><div class="label">private</div></div>
+      </div>
+
+      <div class="section" id="services">
+        <div class="section-label">Services</div>
+        <div class="section-title">Three ways I work with you.</div>
+        <p style="font-size:16px;color:#444;margin-bottom:24px;max-width:560px;">From a one-time setup to a full operations layer. Start where you need to, move up when you're ready.</p>
+        <div class="services">
+          <div class="service featured">
+            <div class="tag">Most Popular</div>
+            <h3>Setup</h3>
+            <div class="price">$199 <em>one-time</em></div>
+            <p>Private AI on your machine or server. A 75-minute session, live, one on one. When we're done, you own it.</p>
+            <ul>
+              <li>Privacy <span>100%</span></li>
+              <li>After <span>$0/mo</span></li>
+              <li>Session <span>75 min</span></li>
+              <li>Models <span>24</span></li>
+            </ul>
+            <a href="#">Get started →</a>
+          </div>
+          <div class="service">
+            <div class="tag">Monthly Retainer</div>
+            <h3>Operations</h3>
+            <div class="price">$499<em>/mo</em></div>
+            <p>An AI assistant on your server, handling scheduling, outreach, reporting, daily briefings. Tuned monthly.</p>
+            <a href="#">Learn more →</a>
+          </div>
+          <div class="service">
+            <div class="tag">Project-Based</div>
+            <h3>Custom Build</h3>
+            <div class="price">$2,500<em>+</em></div>
+            <p>Mobile apps, web apps, full agent systems. Built with the stack I use daily. Human-verified.</p>
+            <a href="#">Learn more →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="portfolio">
+        <div class="section-label">Proof of Work</div>
+        <div class="section-title">Real things I've <em>built</em>.</div>
+        <div class="portfolio">
+          <div class="project">
+            <div class="status">Paused</div>
+            <h3>RenFaire Directory</h3>
+            <p>The modern guide to Renaissance faires across America. 200+ listings, SEO-first architecture.</p>
+            <a href="#">View →</a>
+          </div>
+          <div class="project">
+            <div class="status">In Prod · 14 Agents</div>
+            <h3>Hermes Agent System</h3>
+            <p>My own 24/7 multi-agent system — coding, research, content, ops. The thing running this site.</p>
+            <a href="#">View →</a>
+          </div>
+          <div class="project">
+            <div class="status">In Development</div>
+            <h3>The Skate Workshop</h3>
+            <p>Cross-platform coaching app. 400+ trick DB, video feedback, multiplayer.</p>
+            <a href="#">View →</a>
+          </div>
+          <div class="project">
+            <div class="status">Archive · MIT</div>
+            <h3>Whisper Walkie</h3>
+            <p>Push-to-talk voice typing that works in any app. Your voice never leaves your machine.</p>
+            <a href="#">View →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="stack">
+        <div class="section-label">The Stack</div>
+        <div class="section-title">What I <em>actually</em> run.</div>
+        <div class="stack-list">
+          <span class="tool">Ollama</span> <span class="desc">— local model inference</span><br>
+          <span class="tool">Open WebUI</span> <span class="desc">— chat interface</span><br>
+          <span class="tool">Replicate</span> <span class="desc">— cloud model API</span><br>
+          <span class="tool">Flux</span> <span class="desc">— image generation</span><br>
+          <span class="tool">n8n</span> <span class="desc">— workflow automation</span><br>
+          <span class="tool">Cloudflare</span> <span class="desc">— DNS, CDN, tunnels</span><br>
+          <span class="tool">Anthropic</span> <span class="desc">— Claude API</span><br>
+          <span class="tool">OpenAI</span> <span class="desc">— GPT API</span><br>
+          <span class="tool">Next.js</span> <span class="desc">— web framework</span><br>
+          <span class="tool">React Native</span> <span class="desc">— mobile apps</span><br>
+          <span class="tool">Supabase</span> <span class="desc">— database + auth</span><br>
+          <span class="tool">Docker</span> <span class="desc">— containerization</span>
+        </div>
+      </div>
+
+      <div class="final-cta" id="contact">
+        <h2>If you made it this far, you probably already know if you want to <em>talk</em>.</h2>
+        <div class="actions">
+          <a href="#">Get in touch →</a>
+          <a href="mailto:joe@joestechsolutions.com">Email me</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Joe's Tech Solutions LLC</div>
+    <div>joestechsolutions.com</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -15,7 +15,7 @@ const PAYMENT_LINKS = {
     description: "One-time payment",
     url: "https://buy.stripe.com/9B6eVc58E5Fvb9reAJ0x200",
     icon: Desktop,
-    color: "#0d9488",
+    color: "#d4541e",
   },
   vps: {
     name: "Private AI Cloud Server Setup",
@@ -23,7 +23,7 @@ const PAYMENT_LINKS = {
     description: "Setup + Monthly hosting",
     url: "https://buy.stripe.com/8x200i30w3xna5n2S10x201",
     icon: Cloud,
-    color: "#2dd4bf",
+    color: "#e8703f",
   },
   vpsMonthly: {
     name: "Cloud AI Server Monthly",
@@ -109,7 +109,7 @@ function CopyButton({ text, label }: { text: string; label: string }) {
     <Button
       onClick={handleCopy}
       variant="outline"
-      className={`gap-2 ${copied ? "bg-green-500/20 border-green-500 text-green-400" : "border-white/20 hover:bg-white/10"}`}
+      className={`gap-2 ${copied ? "bg-green-500/20 border-green-500 text-green-400" : "border-foreground/20 hover:bg-foreground/10"}`}
     >
       {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
       {copied ? "Copied!" : label}
@@ -145,13 +145,13 @@ export default function PaymentLinksAdmin() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center px-6">
-        <Card className="bg-[#1c1c26] border-white/10 w-full max-w-sm">
+        <Card className="bg-card border-foreground/10 w-full max-w-sm">
           <CardHeader className="text-center">
-            <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Lock weight="duotone" className="h-8 w-8 text-[#0d9488]" />
+            <div className="w-16 h-16 bg-primary/10 rounded-none flex items-center justify-center mx-auto mb-4">
+              <Lock weight="duotone" className="h-8 w-8 text-primary" />
             </div>
-            <h1 className="text-2xl font-bold text-white">Admin Access</h1>
-            <p className="text-white/60 text-sm">Enter password to continue</p>
+            <h1 className="text-2xl font-bold text-foreground">Admin Access</h1>
+            <p className="text-foreground/60 text-sm">Enter password to continue</p>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -162,13 +162,13 @@ export default function PaymentLinksAdmin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:outline-none"
+                className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:outline-none"
                 autoFocus
               />
               {error && <p className="text-red-400 text-sm">{error}</p>}
               <Button
                 type="submit"
-                className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white py-6 rounded-xl"
+                className="w-full bg-primary hover:bg-primary/85 text-foreground py-6 rounded-xl"
               >
                 Access Admin
               </Button>
@@ -182,17 +182,17 @@ export default function PaymentLinksAdmin() {
   return (
     <div className="min-h-screen py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-white mb-2 font-space-grotesk">
+        <h1 className="text-4xl font-bold text-foreground mb-2 font-mono">
           Payment Links
         </h1>
-        <p className="text-white/60 mb-8">
+        <p className="text-foreground/60 mb-8">
           Copy and send these to customers after 30min calls.
         </p>
 
         {/* Payment Link Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {Object.entries(PAYMENT_LINKS).map(([key, link]) => (
-            <Card key={key} className="bg-[#1c1c26] border-white/10">
+            <Card key={key} className="bg-card border-foreground/10">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div
@@ -206,16 +206,16 @@ export default function PaymentLinksAdmin() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-white">{link.name}</h2>
-                    <p className="text-white/60">
+                    <h2 className="text-xl font-bold text-foreground">{link.name}</h2>
+                    <p className="text-foreground/60">
                       {link.price} — {link.description}
                     </p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="p-3 bg-[#0d0d12] rounded-lg border border-white/10">
-                  <code className="text-sm text-white/80 break-all">{link.url}</code>
+                <div className="p-3 bg-background rounded-lg border border-foreground/10">
+                  <code className="text-sm text-foreground/80 break-all">{link.url}</code>
                 </div>
                 <div className="flex gap-3">
                   <CopyButton text={link.url} label="Copy Link" />
@@ -230,17 +230,17 @@ export default function PaymentLinksAdmin() {
         </div>
 
         {/* Email Templates */}
-        <h2 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
+        <h2 className="text-2xl font-bold text-foreground mb-4 font-mono">
           Email Templates
         </h2>
         <div className="space-y-6">
           {Object.entries(EMAIL_TEMPLATES).map(([key, template]) => (
-            <Card key={key} className="bg-[#1c1c26] border-white/10">
+            <Card key={key} className="bg-card border-foreground/10">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <EnvelopeSimple weight="duotone" className="h-5 w-5 text-white/60" />
-                    <h3 className="text-lg font-semibold text-white">
+                    <EnvelopeSimple weight="duotone" className="h-5 w-5 text-foreground/60" />
+                    <h3 className="text-lg font-semibold text-foreground">
                       {key === "local" ? "Local Setup" : key === "vps" ? "VPS Setup" : "VPS Monthly"} Email
                     </h3>
                   </div>
@@ -252,12 +252,12 @@ export default function PaymentLinksAdmin() {
                     label="Copy"
                   />
                 </div>
-                <p className="text-white/60 text-sm">
+                <p className="text-foreground/60 text-sm">
                   Subject: {template.subject}
                 </p>
               </CardHeader>
               <CardContent>
-                <pre className="p-4 bg-[#0d0d12] rounded-lg border border-white/10 text-sm text-white/70 whitespace-pre-wrap font-sans">
+                <pre className="p-4 bg-background rounded-lg border border-foreground/10 text-sm text-foreground/70 whitespace-pre-wrap font-sans">
                   {template.body.replace(
                     "[PAYMENT_LINK]",
                     PAYMENT_LINKS[key as keyof typeof PAYMENT_LINKS].url
@@ -269,9 +269,9 @@ export default function PaymentLinksAdmin() {
         </div>
 
         {/* Quick Reference */}
-        <div className="mt-12 p-6 bg-[#1c1c26] rounded-xl border border-white/10">
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Reference</h3>
-          <div className="space-y-2 text-white/70">
+        <div className="mt-12 p-6 bg-card rounded-xl border border-foreground/10">
+          <h3 className="text-lg font-semibold text-foreground mb-3">Quick Reference</h3>
+          <div className="space-y-2 text-foreground/70">
             <p><strong>Local:</strong> $199 one-time → 30-min walkthrough + 30 days email support</p>
             <p><strong>Cloud AI Server:</strong> $499 setup + $29/mo → Dedicated VPS + domain + monthly updates</p>
             <p><strong>Managed AI + Automation:</strong> $999 setup + $79/mo → Full service with n8n workflows</p>

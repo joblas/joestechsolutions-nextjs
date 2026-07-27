@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JTS — Terminal Zen</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    background: #000;
+    color: #e0e0e0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { border-bottom: 1px solid #222; padding: 12px 0; }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 13px; font-weight: 700; }
+  .logo .cursor { color: #00ff88; animation: blink 1s infinite; }
+  @keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+  nav ul { display: flex; gap: 20px; list-style: none; }
+  nav a { color: #666; text-decoration: none; font-size: 13px; }
+  nav a:hover { color: #00ff88; }
+  .cta { color: #00ff88; text-decoration: none; font-size: 13px; border: 1px solid #00ff88; padding: 4px 12px; }
+  .cta:hover { background: #00ff88; color: #000; }
+
+  /* Terminal hero */
+  .terminal { padding: 48px 0 32px; }
+  .terminal .line { margin-bottom: 8px; }
+  .terminal .prompt { color: #00ff88; }
+  .terminal .cmd { color: #e0e0e0; }
+  .terminal .out { color: #666; margin-left: 16px; }
+  .terminal .out em { color: #00ff88; font-style: normal; }
+  .terminal h1 { font-size: 28px; font-weight: 700; margin: 24px 0 16px; line-height: 1.3; }
+  .terminal h1 .accent { color: #00ff88; }
+  .terminal p { color: #888; margin-bottom: 8px; max-width: 560px; }
+  .terminal .actions { display: flex; gap: 12px; margin-top: 24px; }
+  .terminal a { font-size: 13px; padding: 8px 20px; text-decoration: none; }
+  .btn-primary { background: #00ff88; color: #000; font-weight: 700; }
+  .btn-primary:hover { background: #fff; }
+  .btn-secondary { border: 1px solid #333; color: #e0e0e0; }
+  .btn-secondary:hover { border-color: #00ff88; color: #00ff88; }
+
+  /* Stats — as system output */
+  .stats { padding: 24px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+  .stat { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+  .stat .key { color: #666; }
+  .stat .val { color: #00ff88; font-weight: 700; }
+
+  /* Sections */
+  section { padding: 48px 0; border-bottom: 1px solid #1a1a1a; }
+  .section-label { color: #00ff88; font-size: 12px; margin-bottom: 4px; }
+  .section-label::before { content: '$ '; color: #666; }
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+
+  /* Services — as output blocks */
+  .services { display: flex; flex-direction: column; gap: 24px; }
+  .service { border: 1px solid #222; padding: 20px; position: relative; }
+  .service.featured { border-color: #00ff88; }
+  .service .tag { font-size: 11px; color: #666; margin-bottom: 8px; }
+  .service .tag .hot { color: #00ff88; }
+  .service h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .service h3::before { content: '▸ '; color: #00ff88; }
+  .service .price { font-size: 20px; font-weight: 700; color: #00ff88; margin-bottom: 12px; }
+  .service p { font-size: 13px; color: #888; margin-bottom: 12px; }
+  .service .specs { font-size: 12px; color: #666; margin-bottom: 16px; }
+  .service .specs span { color: #00ff88; }
+  .service a { font-size: 12px; color: #00ff88; text-decoration: none; border-bottom: 1px solid #00ff88; }
+
+  /* Portfolio — as ls output */
+  .portfolio { font-size: 13px; }
+  .project { padding: 12px 0; border-bottom: 1px solid #1a1a1a; }
+  .project .row { display: flex; gap: 16px; align-items: baseline; }
+  .project .status { color: #00ff88; font-size: 11px; min-width: 120px; }
+  .project h3 { font-size: 15px; font-weight: 700; color: #e0e0e0; min-width: 200px; }
+  .project p { font-size: 12px; color: #666; flex: 1; }
+  .project a { font-size: 11px; color: #00ff88; text-decoration: none; }
+
+  /* Stack — as installed packages */
+  .stack { font-size: 13px; line-height: 2; }
+  .stack .pkg { color: #00ff88; }
+  .stack .desc { color: #666; }
+
+  /* CTA */
+  .final-cta { padding: 48px 0; text-align: center; }
+  .final-cta h2 { font-size: 18px; font-weight: 700; margin-bottom: 24px; }
+  .final-cta h2 .accent { color: #00ff88; }
+  .final-cta .actions { justify-content: center; }
+
+  /* Footer */
+  footer { border-top: 1px solid #222; padding: 16px 0; font-size: 12px; color: #444; }
+  footer .container { display: flex; justify-content: space-between; }
+
+  @media (max-width: 768px) {
+    .terminal h1 { font-size: 22px; }
+    nav ul { display: none; }
+    .project .row { flex-direction: column; gap: 4px; }
+    .project h3 { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">jts<span class="cursor">_</span></div>
+    <ul>
+      <li><a href="#services">solutions</a></li>
+      <li><a href="#portfolio">portfolio</a></li>
+      <li><a href="#stack">stack</a></li>
+      <li><a href="#contact" class="cta">get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="terminal">
+  <div class="container">
+    <div class="line"><span class="prompt">joe@jts:~$</span> <span class="cmd">whoami</span></div>
+    <div class="out">joe blas — ai developer, multi-agent systems builder</div>
+
+    <div class="line" style="margin-top:16px;"><span class="prompt">joe@jts:~$</span> <span class="cmd">status</span></div>
+    <div class="out">currently operating — <em>14 agents, 24/7</em></div>
+
+    <div class="line" style="margin-top:16px;"><span class="prompt">joe@jts:~$</span> <span class="cmd">cat pitch.txt</span></div>
+    <h1>I build the tools<br>your <span class="accent">business</span> runs on.</h1>
+    <p>Custom software, automation, and AI — built for small businesses that just need things to work. I test everything on myself first. If it survives me, it'll survive you.</p>
+    <p>No discovery calls. No 40-page proposals. Tell me what's not working. I'll build the fix and leave it running.</p>
+    <div class="actions">
+      <a href="#contact" class="btn-primary">get in touch</a>
+      <a href="#portfolio" class="btn-secondary">see what I do</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><span class="key">agents_running</span><span class="val">14</span></div>
+    <div class="stat"><span class="key">downtime</span><span class="val">0</span></div>
+    <div class="stat"><span class="key">automations_scheduled</span><span class="val">32</span></div>
+    <div class="stat"><span class="key">local_and_private</span><span class="val">100%</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label">cat services.md</div>
+    <div class="section-title">Three ways I work with you.</div>
+    <div class="services">
+      <div class="service featured">
+        <div class="tag">[ <span class="hot">MOST POPULAR</span> ] one-time setup</div>
+        <h3>Setup</h3>
+        <div class="price">$199</div>
+        <p>Private AI on your machine or server. A 75-minute session, live, one on one. When we're done, you own it — no subscriptions, no data leaving your setup.</p>
+        <div class="specs">privacy: <span>100%</span> · ongoing: <span>$0/mo</span> · session: <span>75 min</span> · models: <span>24</span></div>
+        <a href="#">get started →</a>
+      </div>
+      <div class="service">
+        <div class="tag">[ monthly retainer ]</div>
+        <h3>Operations</h3>
+        <div class="price">$499/mo</div>
+        <p>An AI assistant running on your server, handling the stuff you don't want to think about — scheduling, outreach, reporting, daily briefings. I tune it every month so it gets better.</p>
+        <a href="#">learn more →</a>
+      </div>
+      <div class="service">
+        <div class="tag">[ project-based ]</div>
+        <h3>Custom Build</h3>
+        <div class="price">$2,500+</div>
+        <p>Mobile apps, web apps, full agent systems — built with the stack I use daily. React Native, Next.js, AI-assisted development, human-verified.</p>
+        <a href="#">learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-label">ls -la /proof_of_work/</div>
+    <div class="section-title">Real things I've built.</div>
+    <div class="portfolio">
+      <div class="project">
+        <div class="row">
+          <div class="status">[PAUSED]</div>
+          <h3>RenFaire Directory</h3>
+          <p>The modern guide to Renaissance faires across America. 200+ listings, SEO-first architecture.</p>
+          <a href="#">view →</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="row">
+          <div class="status">[IN_PROD]</div>
+          <h3>Hermes Agent System</h3>
+          <p>My own 24/7 multi-agent system — coding, research, content, ops. The thing running this site.</p>
+          <a href="#">view →</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="row">
+          <div class="status">[IN_DEV]</div>
+          <h3>The Skate Workshop</h3>
+          <p>Cross-platform coaching app. 400+ trick DB, video feedback, multiplayer.</p>
+          <a href="#">view →</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="row">
+          <div class="status">[ARCHIVE]</div>
+          <h3>Whisper Walkie</h3>
+          <p>Push-to-talk voice typing that works in any app. Your voice never leaves your machine.</p>
+          <a href="#">view →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+    <div class="section-label">cat /etc/stack.txt</div>
+    <div class="section-title">What I actually run.</div>
+    <div class="stack">
+      <span class="pkg">ollama</span> <span class="desc">— local model inference</span><br>
+      <span class="pkg">open_webui</span> <span class="desc">— chat interface</span><br>
+      <span class="pkg">replicate</span> <span class="desc">— cloud model api</span><br>
+      <span class="pkg">flux</span> <span class="desc">— image generation</span><br>
+      <span class="pkg">n8n</span> <span class="desc">— workflow automation</span><br>
+      <span class="pkg">cloudflare</span> <span class="desc">— dns, cdn, tunnels</span><br>
+      <span class="pkg">anthropic</span> <span class="desc">— claude api</span><br>
+      <span class="pkg">openai</span> <span class="desc">— gpt api</span><br>
+      <span class="pkg">next_js</span> <span class="desc">— web framework</span><br>
+      <span class="pkg">react_native</span> <span class="desc">— mobile apps</span><br>
+      <span class="pkg">supabase</span> <span class="desc">— database + auth</span><br>
+      <span class="pkg">docker</span> <span class="desc">— containerization</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="final-cta">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">echo "ready?"</div>
+    <h2>If you made it this far,<br>you probably already know if you want to <span class="accent">talk</span>.</h2>
+    <div class="actions">
+      <a href="#" class="btn-primary">get in touch</a>
+      <a href="mailto:joe@joestechsolutions.com" class="btn-secondary">email me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 joe's tech solutions llc</div>
+    <div>joestechsolutions.com</div>
+  </div>
+</footer>
+
+</body>
+</html>

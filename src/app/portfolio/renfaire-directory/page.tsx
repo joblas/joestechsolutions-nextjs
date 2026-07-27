@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 export default function RenFaireDirectoryCaseStudy() {
   return (
-    <div className="min-h-screen bg-[#0d0d12]">
+    <div className="min-h-screen bg-background">
       {/* Back Button */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-8">
         <Link href="/portfolio">
-          <Button variant="outline" className="border-white/20 hover:bg-white/5">
+          <Button variant="outline" className="border-foreground/20 hover:bg-foreground/5">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Portfolio
           </Button>
@@ -33,20 +33,20 @@ export default function RenFaireDirectoryCaseStudy() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pb-20">
-        <div className="absolute inset-0 bg-linear-to-br from-[#7C3AED]/20 via-[#0d0d12]/20 to-[#0d0d12]/20" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-background/20 to-background/20" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-[#7C3AED]/20 border border-[#7C3AED]/30 rounded-full text-[#A78BFA] text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-none text-primary text-sm font-semibold">
                 Content Platform &bull; SEO &bull; Directory
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-space-grotesk">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground font-mono">
                 RenFaire Directory
               </h1>
 
-              <p className="text-xl text-white/90 leading-relaxed">
+              <p className="text-xl text-foreground/90 leading-relaxed">
                 The modern guide to Renaissance faires across America. A revenue-generating
                 directory featuring 200+ events, rich structured data, affiliate monetization,
                 and top search engine rankings.
@@ -54,7 +54,7 @@ export default function RenFaireDirectoryCaseStudy() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="https://www.renfaireguide.com" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] rounded-full shadow-lg shadow-[#7C3AED]/20">
+                  <Button size="lg" className="bg-primary hover:bg-primary rounded-none shadow-lg shadow-primary/20">
                     Visit Live Site
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </Button>
@@ -63,7 +63,7 @@ export default function RenFaireDirectoryCaseStudy() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+              <div className="relative aspect-[4/3] rounded-none overflow-hidden border border-foreground/10">
                 <Image
                   src="/images/renfaire-hero.jpg"
                   alt="RenFaire Directory homepage"
@@ -77,42 +77,42 @@ export default function RenFaireDirectoryCaseStudy() {
       </section>
 
       {/* Project Overview Stats */}
-      <section className="relative py-20 bg-[#1c1c26]/30">
+      <section className="relative py-20 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-[#1c1c26] border-white/10 text-center">
+            <Card className="bg-card border-foreground/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#7C3AED]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-6 h-6 text-[#A78BFA]" />
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white font-space-grotesk">Listings</CardTitle>
+                <CardTitle className="text-xl font-bold text-foreground font-mono">Listings</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-white/80">218 Faires Across 50 States</p>
+                <p className="text-foreground/80">218 Faires Across 50 States</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-[#1c1c26] border-white/10 text-center">
+            <Card className="bg-card border-foreground/10 text-center">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#2dd4bf]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-[#2dd4bf]" />
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white font-space-grotesk">SEO</CardTitle>
+                <CardTitle className="text-xl font-bold text-foreground font-mono">SEO</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-white/80">200+ Pages Indexed by Google</p>
+                <p className="text-foreground/80">200+ Pages Indexed by Google</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-[#1c1c26] border-white/10 text-center">
+            <Card className="bg-card border-foreground/10 text-center">
               <CardHeader>
                 <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <DollarSign className="w-6 h-6 text-green-400" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white font-space-grotesk">Revenue</CardTitle>
+                <CardTitle className="text-xl font-bold text-foreground font-mono">Revenue</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-white/80">Live Affiliate + AdSense</p>
+                <p className="text-foreground/80">Live Affiliate + AdSense</p>
               </CardContent>
             </Card>
           </div>
@@ -120,13 +120,13 @@ export default function RenFaireDirectoryCaseStudy() {
           {/* Challenge & Solution */}
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">The Challenge</h2>
-              <p className="text-white/70 text-lg leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-mono">The Challenge</h2>
+              <p className="text-foreground/70 text-lg leading-relaxed">
                 Renaissance faire information was scattered across Facebook groups, outdated
                 WordPress sites, and incomplete event listings. Faire-goers had no centralized,
                 modern resource to discover events, check dates, read reviews, or plan trips.
               </p>
-              <p className="text-white/70 text-lg leading-relaxed">
+              <p className="text-foreground/70 text-lg leading-relaxed">
                 The opportunity: build the definitive directory that Google would trust as the
                 authority on Renaissance faires, while creating a sustainable revenue model
                 through affiliate partnerships and advertising.
@@ -134,8 +134,8 @@ export default function RenFaireDirectoryCaseStudy() {
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">The Solution</h2>
-              <p className="text-white/70 text-lg leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-mono">The Solution</h2>
+              <p className="text-foreground/70 text-lg leading-relaxed">
                 Built an SEO-first content platform with automated data enrichment, rich
                 structured data, and multiple revenue streams from day one.
               </p>
@@ -152,7 +152,7 @@ export default function RenFaireDirectoryCaseStudy() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-white/90">{item}</span>
+                    <span className="text-foreground/90">{item}</span>
                   </div>
                 ))}
               </div>
@@ -164,11 +164,11 @@ export default function RenFaireDirectoryCaseStudy() {
       {/* Faire Detail Screenshot */}
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-4 font-space-grotesk">Rich Faire Listings</h2>
-          <p className="text-center text-white/60 mb-12 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-4 font-mono">Rich Faire Listings</h2>
+          <p className="text-center text-foreground/60 mb-12 max-w-2xl mx-auto">
             Every listing features Google Maps data, ratings, reviews, nearby hotels, costume shops, and structured data for rich search results.
           </p>
-          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10">
+          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-none overflow-hidden border border-foreground/10">
             <Image
               src="/images/renfaire-detail.jpg"
               alt="RenFaire Directory faire detail page"
@@ -180,9 +180,9 @@ export default function RenFaireDirectoryCaseStudy() {
       </section>
 
       {/* Technology Stack */}
-      <section className="relative py-20 bg-[#1c1c26]/30">
+      <section className="relative py-20 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12 font-space-grotesk">Technology Stack</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-12 font-mono">Technology Stack</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -191,14 +191,14 @@ export default function RenFaireDirectoryCaseStudy() {
               { category: "SEO & Schema", tech: ["Event Schema (JSON-LD)", "FAQPage Schema", "Dynamic Sitemap", "SSR / ISR"] },
               { category: "Infrastructure", tech: ["Vercel", "Google Search Console", "AdSense", "Hostinger SMTP"] }
             ].map((stack, index) => (
-              <Card key={index} className="bg-[#1c1c26] border-white/10">
+              <Card key={index} className="bg-card border-foreground/10">
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-white font-space-grotesk">{stack.category}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-foreground font-mono">{stack.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {stack.tech.map((item, i) => (
-                      <li key={i} className="text-white/80 text-sm">{item}</li>
+                      <li key={i} className="text-foreground/80 text-sm">{item}</li>
                     ))}
                   </ul>
                 </CardContent>
@@ -211,7 +211,7 @@ export default function RenFaireDirectoryCaseStudy() {
       {/* Key Features */}
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12 font-space-grotesk">Key Features</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-12 font-mono">Key Features</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -236,15 +236,15 @@ export default function RenFaireDirectoryCaseStudy() {
                 icon: DollarSign
               }
             ].map((feature, index) => (
-              <Card key={index} className="bg-[#1c1c26] border-white/10 hover:border-[#7C3AED]/50 transition-colors group">
+              <Card key={index} className="bg-card border-foreground/10 hover:border-primary/50 transition-colors group">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-[#7C3AED]/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6 text-[#A78BFA]" />
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-white font-space-grotesk">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-foreground font-mono">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-white/90">{feature.description}</p>
+                  <p className="text-foreground/90">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -253,13 +253,13 @@ export default function RenFaireDirectoryCaseStudy() {
       </section>
 
       {/* Near-Me Screenshot */}
-      <section className="relative py-20 bg-[#1c1c26]/30">
+      <section className="relative py-20 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-4 font-space-grotesk">Find Faires Near You</h2>
-          <p className="text-center text-white/60 mb-12 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-4 font-mono">Find Faires Near You</h2>
+          <p className="text-center text-foreground/60 mb-12 max-w-2xl mx-auto">
             Geolocation-powered search with server-side rendering for fast, SEO-friendly results.
           </p>
-          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10">
+          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-none overflow-hidden border border-foreground/10">
             <Image
               src="/images/renfaire-nearme.jpg"
               alt="RenFaire Directory near-me search feature"
@@ -274,8 +274,8 @@ export default function RenFaireDirectoryCaseStudy() {
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-space-grotesk">Results &amp; Impact</h2>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 font-mono">Results &amp; Impact</h2>
+            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
               Live in production with growing organic traffic and active monetization
             </p>
           </div>
@@ -287,11 +287,11 @@ export default function RenFaireDirectoryCaseStudy() {
               { label: "Blog Posts", value: "19", desc: "State-specific SEO content" },
               { label: "Revenue", value: "Live", desc: "Affiliate partnerships active" }
             ].map((stat, index) => (
-              <Card key={index} className="bg-linear-to-br from-[#7C3AED]/10 to-[#A78BFA]/10 border-[#7C3AED]/30 text-center">
+              <Card key={index} className="bg-linear-to-br from-primary/10 to-primary/10 border-primary/30 text-center">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-[#A78BFA] mb-2">{stat.value}</div>
-                  <div className="text-white font-semibold mb-1">{stat.label}</div>
-                  <div className="text-white/60 text-sm">{stat.desc}</div>
+                  <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                  <div className="text-foreground font-semibold mb-1">{stat.label}</div>
+                  <div className="text-foreground/60 text-sm">{stat.desc}</div>
                 </CardContent>
               </Card>
             ))}
@@ -300,9 +300,9 @@ export default function RenFaireDirectoryCaseStudy() {
       </section>
 
       {/* SEO Strategy Breakdown */}
-      <section className="relative py-20 bg-[#1c1c26]/30">
+      <section className="relative py-20 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12 font-space-grotesk">SEO Strategy That Ranks</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-12 font-mono">SEO Strategy That Ranks</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -322,19 +322,19 @@ export default function RenFaireDirectoryCaseStudy() {
                 icon: Zap
               }
             ].map((strategy, index) => (
-              <Card key={index} className="bg-[#1c1c26] border-white/10">
+              <Card key={index} className="bg-card border-foreground/10">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-[#7C3AED]/20 rounded-xl flex items-center justify-center mb-4">
-                    <strategy.icon className="w-6 h-6 text-[#A78BFA]" />
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                    <strategy.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-white font-space-grotesk">{strategy.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-foreground font-mono">{strategy.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {strategy.items.map((item, i) => (
                       <li key={i} className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
-                        <span className="text-white/80 text-sm">{item}</span>
+                        <span className="text-foreground/80 text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -346,22 +346,22 @@ export default function RenFaireDirectoryCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-linear-to-r from-[#7C3AED]/10 via-[#0d0d12] to-[#A78BFA]/10">
+      <section className="relative py-20 sm:py-32 bg-linear-to-r from-primary/10 via-background to-primary/10">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-space-grotesk">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-mono">
             Want a Directory That Ranks and Earns?
           </h2>
-          <p className="text-xl text-white/90 mb-10">
+          <p className="text-xl text-foreground/90 mb-10">
             I build SEO-first content platforms with real revenue models — not just pretty pages.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] rounded-full shadow-lg shadow-[#7C3AED]/20">
+              <Button size="lg" className="bg-primary hover:bg-primary rounded-none shadow-lg shadow-primary/20">
                 Get in touch →
               </Button>
             </Link>
             <Link href="/portfolio">
-              <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/5">
+              <Button size="lg" variant="outline" className="border-foreground/20 hover:bg-foreground/5">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Portfolio
               </Button>

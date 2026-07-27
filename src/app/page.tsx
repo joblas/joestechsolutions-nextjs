@@ -16,468 +16,312 @@ export const metadata: Metadata = {
     url: "https://www.joestechsolutions.com",
   },
 };
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Mail, ArrowUpRight } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { AnimatedCard } from "@/components/animations/AnimatedCard";
-import { MagneticButton } from "@/components/animations/MagneticButton";
-import { CountUp } from "@/components/animations/CountUp";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
-import { AngleBand } from "@/components/ui/AngleBand";
-import { WorkflowComparison } from "@/components/ui/WorkflowComparison";
+import { TerminalHero } from "@/components/home/TerminalHero";
+import { SmoothScroll } from "@/components/home/SmoothScroll";
 import { TIERS, type Tier } from "@/lib/tiers";
 
-type Stat = {
-  value: number;
-  suffix: string;
-  label: string;
-  count: boolean;
-  display?: string;
-};
-
-const stats: Stat[] = [
-  { value: 14, suffix: "", label: "systems running 24/7", count: true },
-  { value: 0, suffix: "", label: "downtime since launch", count: true },
-  { value: 32, suffix: "", label: "automations on a schedule", count: true },
-  { value: 100, suffix: "%", label: "local and private by default", count: true },
+// System stats rendered as terminal key/value output.
+const stats = [
+  { key: "agents_running", val: "14" },
+  { key: "downtime_since_launch", val: "0" },
+  { key: "automations_on_schedule", val: "32" },
+  { key: "local_and_private", val: "100%" },
 ];
-
-// Services preview — data comes from the canonical tier ladder in lib/tiers.ts.
-// Images/metrics are homepage presentation only.
-const tierMedia: Record<Tier["id"], { image: string; alt: string }> = {
-  "quick-start": {
-    image: "/images/joe-launch-private-ai.png",
-    alt: "Joe launching a private AI setup for a client",
-  },
-  "back-office": {
-    image: "/images/joe-deploying-server.png",
-    alt: "Joe deploying a server for back-office automation",
-  },
-  "custom-build": {
-    image: "/images/skate-workshop-hero.png",
-    alt: "The Skate Workshop mobile app",
-  },
-};
-
-const tierTag = (t: Tier) =>
-  `${t.category} — ${t.price}${t.cadence === "monthly" ? "/mo" : ""}`;
 
 // Stripe-blocked tiers route to /contact until their pages + price IDs exist.
 const tierHref = (t: Tier) =>
   t.stripeReady ? t.href : `/contact?tier=${t.id}`;
 
-const featuredMetrics = [
-  { v: "100%", l: "Private" },
-  { v: "$0/mo", l: "After setup" },
-  { v: "75 min", l: "Live session" },
-  { v: "24", l: "Models" },
+const featuredSpecs = [
+  { k: "privacy", v: "100%" },
+  { k: "ongoing", v: "$0/mo" },
+  { k: "session", v: "75 min" },
+  { k: "models", v: "24" },
 ];
 
+// Portfolio as `ls -la /proof_of_work/` — real screenshots, real routes.
 const portfolio = [
   {
+    status: "[IN_PROD]",
+    live: true,
+    name: "Hermes Agent System",
+    desc: "My own 24/7 multi-agent system — coding, research, content, ops. The thing running this site.",
+    href: "/stack",
+    image: "/images/blog/22-agent-architecture.png",
+    alt: "14-agent architecture diagram",
+  },
+  {
+    status: "[PAUSED]",
+    live: false,
     name: "RenFaire Directory",
-    tag: "Paused",
-    desc: "The modern guide to Renaissance faires across America. 200+ listings, SEO-first architecture, affiliate monetization, top Google rankings.",
+    desc: "The modern guide to Renaissance faires across America. 200+ listings, SEO-first architecture.",
     href: "/portfolio/renfaire-directory",
     image: "/images/renfaire-hero.jpg",
     alt: "RenFaire Directory homepage",
-    span: "md:col-span-2 md:row-span-2",
   },
   {
-    name: "Hermes Agent System",
-    tag: "In prod • 14 agents",
-    desc: "My own 24/7 multi-agent system — coding, research, content, ops.",
-    href: "/stack",
-    image: "/images/blog/22-agent-architecture.png",
-    alt: "14-agent architecture",
-    span: "",
-  },
-  {
+    status: "[IN_DEV]",
+    live: true,
     name: "The Skate Workshop",
-    tag: "In Development • React Native",
     desc: "Cross-platform coaching app. 400+ trick DB, video feedback, multiplayer.",
     href: "/portfolio/skate-workshop",
     image: "/images/skate-workshop-hero.png",
     alt: "The Skate Workshop app",
-    span: "",
   },
   {
-    name: "Whisper Walkie",
-    tag: "Archive · MIT",
-    desc: "Push-to-talk voice typing that works in any app. Your voice never leaves your machine.",
-    href: "/whisper-walkie",
-    image: "/images/joe-ai-typing.png",
-    alt: "Whisper Walkie voice typing",
-    span: "",
-  },
-  {
+    status: "[CLIENT_WORK]",
+    live: true,
     name: "Private AI Setup",
-    tag: "Client work",
     desc: "Self-hosted AI for small businesses that don't want their data in someone else's cloud.",
     href: "/private-ai-setup",
     image: "/images/joe-launch-private-ai.png",
-    alt: "Private AI setup",
-    span: "",
+    alt: "Private AI setup session",
+  },
+  {
+    status: "[ARCHIVE]",
+    live: false,
+    name: "Whisper Walkie",
+    desc: "Push-to-talk voice typing that works in any app. Your voice never leaves your machine.",
+    href: "/whisper-walkie",
+    image: "/images/whisper-walkie-icon.png",
+    alt: "Whisper Walkie app icon — a microphone over a soundwave field",
   },
 ];
 
-const stackLogos = [
-  { name: "Ollama", logo: "/logos/ollama.png", url: "https://ollama.com" },
-  { name: "Open WebUI", logo: "/logos/openwebui.png", url: "https://openwebui.com" },
-  { name: "Replicate", logo: "/logos/replicate.png", url: "https://replicate.com" },
-  { name: "Flux", logo: "/logos/flux.png", url: "https://blackforestlabs.ai" },
-  { name: "n8n", logo: "/logos/n8n-color.png", url: "https://n8n.io" },
-  { name: "Cloudflare", logo: "/logos/cloudflare-color.png", url: "https://www.cloudflare.com" },
-  { name: "Anthropic", logo: "/logos/anthropic.png", url: "https://anthropic.com" },
-  { name: "OpenAI", logo: "/logos/openai.png", url: "https://openai.com" },
+// Stack as installed packages.
+const stack = [
+  { pkg: "ollama", desc: "local model inference", url: "https://ollama.com" },
+  { pkg: "open_webui", desc: "chat interface", url: "https://openwebui.com" },
+  { pkg: "replicate", desc: "cloud model api", url: "https://replicate.com" },
+  { pkg: "flux", desc: "image generation", url: "https://blackforestlabs.ai" },
+  { pkg: "n8n", desc: "workflow automation", url: "https://n8n.io" },
+  { pkg: "cloudflare", desc: "dns, cdn, tunnels", url: "https://www.cloudflare.com" },
+  { pkg: "anthropic", desc: "claude api", url: "https://anthropic.com" },
+  { pkg: "openai", desc: "gpt api", url: "https://openai.com" },
+  { pkg: "next_js", desc: "web framework", url: "https://nextjs.org" },
+  { pkg: "react_native", desc: "mobile apps", url: "https://reactnative.dev" },
+  { pkg: "supabase", desc: "database + auth", url: "https://supabase.com" },
+  { pkg: "docker", desc: "containerization", url: "https://www.docker.com" },
 ];
+
+function SectionLabel({ children }: { children: string }) {
+  return (
+    <p className="mb-1.5 font-mono text-[13px] font-bold text-foreground">
+      <span className="text-primary">$ </span>
+      {children}
+    </p>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
-        {/* Subtle radial glow (replaces particle background) */}
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(60% 50% at 70% 0%, rgba(13,148,136,0.18), transparent 60%), radial-gradient(50% 50% at 20% 30%, rgba(45,212,191,0.10), transparent 60%)",
-          }}
-          aria-hidden="true"
-        />
+    <div className="bg-background text-foreground">
+      <SmoothScroll />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center space-y-10">
-            {/* Avatar + Status badge */}
-            <FadeIn delay={0.1}>
-              <div className="flex flex-col items-center gap-4">
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-[#0d9488]/30 shadow-lg shadow-[#0b7f73]/20">
-                  <Image
-                    src="/images/joe-profile.jpg"
-                    alt="Joe Blas — Founder of Joe's Tech Solutions"
-                    fill
-                    priority
-                    sizes="112px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-sm font-medium backdrop-blur-sm">
-                  <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0b7f73] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2dd4bf]" />
-                  </span>
-                  <span className="text-white/80">
-                    Currently operating <span className="text-[#2dd4bf]">Hermes</span> — 14 agents, 24/7
-                  </span>
-                </div>
-              </div>
-            </FadeIn>
+      <TerminalHero />
 
-            {/* Headline */}
-            <FadeIn delay={0.2}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">I build the tools your</span>
-                <span className="block text-[#0d9488]">business runs on.</span>
-              </h1>
-            </FadeIn>
-
-            {/* Subheadline */}
-            <FadeIn delay={0.3}>
-              <p className="text-xl sm:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
-                Custom software, automation, and AI — built for small businesses that just need things
-                to work. I test everything on myself first. If it survives me, it&apos;ll survive you.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.35}>
-              <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed font-light">
-                No discovery calls, no 40-page proposals. Tell me what&apos;s not working. I&apos;ll build the
-                fix and leave it running.
-              </p>
-            </FadeIn>
-
-            {/* CTAs */}
-            <FadeIn delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link href="/contact">
-                  <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all">
-                      Get in touch
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Button>
-                  </MagneticButton>
-                </Link>
-                <Link href="/services">
-                  <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all">
-                    See what I do
-                  </Button>
-                </Link>
-              </div>
-            </FadeIn>
+      {/* Stats — system output */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-3xl px-6 py-7 font-mono text-sm">
+          {stats.map((s) => (
+            <div
+              key={s.key}
+              className="flex justify-between border-b border-dashed border-border/70 py-1.5"
+            >
+              <span className="text-muted-foreground">{s.key}</span>
+              <span className="font-bold">{s.val}</span>
+            </div>
+          ))}
+          <div className="flex justify-between py-1.5">
+            <span className="text-muted-foreground">system</span>
+            <span className="font-bold text-[var(--ok)]">● operational</span>
           </div>
         </div>
       </section>
-
-      {/* Stats bar */}
-      <section className="relative py-10 border-y border-white/5 bg-[#1c1c26]/40">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-[#0d0d12] p-6 sm:p-8 text-center">
-                <div className="text-4xl sm:text-5xl font-bold font-space-grotesk text-white mb-2">
-                  {s.count ? (
-                    <CountUp to={s.value} suffix={s.suffix} duration={2} />
-                  ) : (
-                    <span>{s.display}</span>
-                  )}
-                </div>
-                <div className="text-sm text-white/60">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Approved angle */}
-      <AngleBand />
-
-      {/* Before & after workflow — visual, not an info dump */}
-      <WorkflowComparison />
 
       {/* Services */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 max-w-2xl">
-            <p className="text-[#2dd4bf] text-sm font-semibold uppercase tracking-wider mb-3">Services</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk mb-4">
-              Three ways I work with you.
-            </h2>
-            <p className="text-lg text-white/60 font-light">
-              From a one-time setup to a full operations layer. Start where you need to, move up
-              when you&apos;re ready.
-            </p>
-          </div>
-
-          {/* Featured: Quick Start */}
-          <AnimatedCard>
-            <Link href={tierHref(TIERS[0])} className="block mb-6">
-              <Card className="relative bg-[#1c1c26] border-[#0d9488]/30 hover:border-[#0d9488]/60 transition-all duration-500 group overflow-hidden">
-                <div className="absolute top-4 right-4 px-3 py-1 bg-[#0b7f73]/20 rounded-full text-[#2dd4bf] text-sm font-medium z-10">
-                  {TIERS[0].badge}
-                </div>
-                <div className="grid md:grid-cols-2 gap-0">
-                  <div className="space-y-4 p-6 sm:p-8">
-                    <p className="text-[#0d9488] text-sm font-semibold">{tierTag(TIERS[0])}</p>
-                    <CardTitle className="text-white text-2xl font-space-grotesk">{TIERS[0].name}</CardTitle>
-                    <p className="text-white/70 leading-relaxed">{TIERS[0].blurb}</p>
-                    <div className="grid grid-cols-2 gap-3 pt-2">
-                      {featuredMetrics.map((m) => (
-                        <div key={m.l} className="p-3 bg-[#0d0d12]/60 rounded-xl border border-white/5">
-                          <span className="text-[#0d9488] font-semibold">{m.v}</span>
-                          <span className="text-white/60 block text-sm">{m.l}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-2 text-[#0d9488] font-medium group/link pt-2">
-                      Get Started
-                      <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-                    </div>
-                  </div>
-                  <div className="relative min-h-[240px] bg-[#0d0d12]">
-                    <Image
-                      src={tierMedia[TIERS[0].id].image}
-                      alt={tierMedia[TIERS[0].id].alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </AnimatedCard>
-
-          {/* Remaining two tiers */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {TIERS.slice(1).map((t) => (
-              <AnimatedCard key={t.id}>
-                <Link href={tierHref(t)}>
-                  <Card className="relative bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full overflow-hidden">
-                    {t.badge && (
-                      <div className="absolute top-3 right-3 px-3 py-1 bg-[#0b7f73]/20 rounded-full text-[#2dd4bf] text-xs font-medium z-10">
-                        {t.badge}
-                      </div>
+      <section id="services" className="border-b border-border">
+        <div className="mx-auto max-w-3xl px-6 py-14">
+          <SectionLabel>cat services.md</SectionLabel>
+          <h2 className="mb-8 font-mono text-2xl font-bold tracking-tight">
+            Three ways I work with you.
+          </h2>
+          <div className="flex flex-col gap-5">
+            {TIERS.map((t, i) => (
+              <FadeIn key={t.id} delay={i * 0.05}>
+                <div
+                  className={`border-2 border-foreground bg-card p-6 ${t.badge ? "shadow-[6px_6px_0_var(--primary)]" : ""}`}
+                >
+                  <p className="mb-2 font-mono text-[11px] tracking-wider text-muted-foreground">
+                    {t.badge ? (
+                      <>
+                        [ <span className="font-bold text-primary">{t.badge.toUpperCase()}</span> ]{" "}
+                        {t.category.toLowerCase()}
+                      </>
+                    ) : (
+                      `[ ${t.category.toLowerCase()} ]`
                     )}
-                    <div className="relative aspect-[16/10] bg-[#0d0d12] overflow-hidden">
-                      <Image
-                        src={tierMedia[t.id].image}
-                        alt={tierMedia[t.id].alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <CardHeader className="space-y-2">
-                      <p className="text-[#0d9488] text-xs font-semibold">{tierTag(t)}</p>
-                      <CardTitle className="text-white text-xl font-space-grotesk">{t.name}</CardTitle>
-                      <CardDescription className="text-white/60 text-sm leading-relaxed">{t.blurb}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <span className="text-[#0d9488] text-sm font-medium inline-flex items-center group/link">
-                        Learn more
-                        <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-                      </span>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </AnimatedCard>
+                  </p>
+                  <h3 className="font-mono text-lg font-bold">
+                    <span className="text-primary">▸ </span>
+                    {t.name}
+                  </h3>
+                  <p className="mb-3 font-mono text-[22px] font-bold text-primary">
+                    {t.price}
+                    {t.cadence === "monthly" ? "/mo" : ""}
+                  </p>
+                  <p className="mb-3 max-w-[600px] text-[13.5px] text-foreground/80">
+                    {t.blurb}
+                  </p>
+                  {t.id === "quick-start" && (
+                    <p className="mb-3.5 font-mono text-xs text-muted-foreground">
+                      {featuredSpecs.map((m, j) => (
+                        <span key={m.k}>
+                          {m.k}: <span className="font-bold text-foreground">{m.v}</span>
+                          {j < featuredSpecs.length - 1 ? " · " : ""}
+                        </span>
+                      ))}
+                    </p>
+                  )}
+                  <Link
+                    href={tierHref(t)}
+                    className="border-b-2 border-primary font-mono text-[13px] font-bold text-foreground transition-colors hover:text-primary"
+                  >
+                    {t.stripeReady ? "get started →" : "learn more →"}
+                  </Link>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Portfolio — bento grid */}
-      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 max-w-2xl">
-            <p className="text-[#2dd4bf] text-sm font-semibold uppercase tracking-wider mb-3">Proof of work</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk mb-4">
-              Real things I&apos;ve built.
-            </h2>
-            <p className="text-lg text-white/60 font-light">
-              Not mockups. Not concepts. Things people actually use.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-5 auto-rows-[220px]">
-            {portfolio.map((p) => (
-              <AnimatedCard key={p.name} className={p.span}>
-                <Link href={p.href} className="block h-full">
-                  <div className={`relative h-full overflow-hidden rounded-2xl border border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 group ${p.span}`}>
+      {/* Portfolio — ls output with real screenshots */}
+      <section id="portfolio" className="border-b border-border">
+        <div className="mx-auto max-w-3xl px-6 py-14">
+          <SectionLabel>ls -la /proof_of_work/</SectionLabel>
+          <h2 className="mb-8 font-mono text-2xl font-bold tracking-tight">
+            Real things I&apos;ve built.
+          </h2>
+          <div className="flex flex-col">
+            {portfolio.map((p, i) => (
+              <FadeIn key={p.name} delay={i * 0.04}>
+                <Link
+                  href={p.href}
+                  className={`group flex flex-wrap items-start gap-5 py-4 ${i < portfolio.length - 1 ? "border-b border-dashed border-border" : ""}`}
+                >
+                  <div className="relative h-[88px] w-[132px] shrink-0 border-2 border-foreground">
                     <Image
                       src={p.image}
                       alt={p.alt}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="132px"
+                      className="object-cover object-top"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-[#0d0d12]/60 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-[#2dd4bf] text-xs font-semibold mb-1">{p.tag}</p>
-                      <h3 className="text-white text-lg font-semibold font-space-grotesk mb-1">{p.name}</h3>
-                      <p className="text-white/70 text-sm leading-snug line-clamp-2">{p.desc}</p>
-                      <span className="inline-flex items-center gap-1 text-[#0d9488] text-xs font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        View <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                      </span>
-                    </div>
                   </div>
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className={`font-mono text-[11px] font-bold ${p.live ? "text-[var(--ok)]" : "text-muted-foreground/70"}`}
+                    >
+                      {p.status}
+                    </p>
+                    <h3 className="mb-1 mt-0.5 font-mono text-[15px] font-bold group-hover:text-primary">
+                      {p.name}
+                    </h3>
+                    <p className="max-w-[460px] text-[12.5px] text-muted-foreground">
+                      {p.desc}
+                    </p>
+                  </div>
+                  <span className="whitespace-nowrap font-mono text-xs font-bold text-primary">
+                    view →
+                  </span>
                 </Link>
-              </AnimatedCard>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stack — clean grid */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-            <div className="max-w-2xl">
-              <p className="text-[#2dd4bf] text-sm font-semibold uppercase tracking-wider mb-3">The stack</p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk mb-4">
-                What I actually run.
-              </h2>
-              <p className="text-lg text-white/60 font-light">
-                Not a logo wall — the real tools, models, and services powering my business right now.
-              </p>
-            </div>
-            <Link href="/stack" className="shrink-0">
-              <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 group">
-                See the live stack
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Button>
+      {/* Stack — installed packages */}
+      <section id="stack" className="border-b border-border">
+        <div className="mx-auto max-w-3xl px-6 py-14">
+          <SectionLabel>cat /etc/stack.txt</SectionLabel>
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-mono text-2xl font-bold tracking-tight">
+              What I actually run.
+            </h2>
+            <Link
+              href="/stack"
+              className="border-b-2 border-primary font-mono text-[13px] font-bold transition-colors hover:text-primary"
+            >
+              see the live stack →
             </Link>
           </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {stackLogos.map((tech) => (
-              <a
-                key={tech.name}
-                href={tech.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center gap-3 h-32 bg-[#1c1c26] border border-white/10 rounded-2xl p-6 hover:border-white/25 hover:bg-[#1c1c26]/80 transition-colors"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={tech.logo}
-                  alt={`${tech.name} logo`}
-                  loading="lazy"
-                  decoding="async"
-                  width={40}
-                  height={40}
-                  className="max-h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                />
-                <span className="text-sm text-white/60">{tech.name}</span>
-              </a>
+          <div className="font-mono text-[13.5px] leading-[2.1]">
+            {stack.map((t) => (
+              <div key={t.pkg}>
+                <a
+                  href={t.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-primary hover:underline"
+                >
+                  {t.pkg}
+                </a>{" "}
+                <span className="text-muted-foreground">— {t.desc}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Newsletter — a dark console card so the signup form keeps its styling */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-3xl px-6 py-14">
           <FadeIn>
-            <div className="mx-auto max-w-2xl bg-[#1c1c26] border border-white/10 rounded-2xl p-8 sm:p-12 text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 font-space-grotesk">
+            <div className="border-2 border-foreground bg-[var(--panel)] p-8 shadow-[8px_8px_0_var(--foreground)] sm:p-10">
+              <p className="mb-1.5 font-mono text-[13px] font-bold text-[var(--color-accent)]">
+                <span className="text-[#8a919c]">joe@jts:~$ </span>
+                subscribe --weekly
+              </p>
+              <h2 className="mb-2 font-mono text-xl font-bold text-[#f0f1ec]">
                 The JTS Brief
               </h2>
-              <p className="text-white/60 mb-8 leading-relaxed">
-                Weekly notes from a builder actually shipping AI. 100% human. No slop.
+              <p className="mb-6 text-sm text-[#8a919c]">
+                Weekly notes from a builder actually shipping AI. 100% human. No
+                slop. Unsubscribe anytime.
               </p>
-
               <NewsletterSignup />
-
-              <p className="text-xs text-white/40 mt-6">
-                No spam. No AI-generated content. Unsubscribe anytime.
-              </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(50% 60% at 50% 100%, rgba(13,148,136,0.18), transparent 60%)",
-          }}
-          aria-hidden="true"
-        />
-        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
-            If you made it this far, you probably already know if you want to talk. So let&apos;s talk.
+      <section id="contact">
+        <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+          <p className="mb-1.5 font-mono text-[13px] font-bold">
+            <span className="text-primary">$ </span>
+            echo &quot;ready?&quot;
+          </p>
+          <h2 className="mx-auto mb-7 mt-2 max-w-xl font-mono text-[22px] font-bold leading-normal">
+            If you made it this far, you probably already know if you want to{" "}
+            <span className="text-primary">talk</span>.
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30 transition-all">
-                  Get in touch
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </Button>
-              </MagneticButton>
+          <div className="flex flex-wrap justify-center gap-3.5">
+            <Link
+              href="/contact"
+              className="border-2 border-foreground bg-foreground px-6 py-2.5 font-mono text-sm font-bold text-background transition-colors hover:border-primary hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              get in touch
             </Link>
-            <a href="mailto:joe@joestechsolutions.com">
-              <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all group">
-                <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
-                Email me
-              </Button>
+            <a
+              href="mailto:joe@joestechsolutions.com"
+              className="border-2 border-foreground px-6 py-2.5 font-mono text-sm font-bold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              email me
             </a>
           </div>
         </div>

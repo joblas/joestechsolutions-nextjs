@@ -64,20 +64,20 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0A1628] via-[#0d0d12] to-[#0d0d12]">
+    <div className="min-h-screen bg-gradient-to-b from-card via-background to-background">
       {/* Hero */}
       <section className="relative overflow-hidden py-20 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0d9488]/20 via-[#2dd4bf]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-6">
             <FadeIn delay={0.1}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-2">Things I&apos;ve built.</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-mono">
+                <span className="block text-foreground mb-2">Things I&apos;ve built.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl sm:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
                 Not a portfolio of pitch decks. Real apps, real sites, real people using them.
               </p>
             </FadeIn>
@@ -92,23 +92,23 @@ export default function Portfolio() {
             {projects.map((project) => (
               <StaggerItem key={project.id}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-300 overflow-hidden group h-full">
-                <div className={`relative aspect-video overflow-hidden ${project.imageContain ? 'bg-[#1c1c26]' : ''}`}>
+                  <Card className="bg-card border-foreground/10 hover:border-primary/50 transition-all duration-300 overflow-hidden group h-full">
+                <div className={`relative aspect-video overflow-hidden ${project.imageContain ? 'bg-card' : ''}`}>
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     className={`${project.imageContain ? 'object-contain p-8' : 'object-cover'} group-hover:scale-105 transition-transform duration-300`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-[#0d0d12]/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 bg-[#0b7f73]/20 text-[#0d9488] backdrop-blur-sm rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-primary/15 text-primary backdrop-blur-sm rounded-none text-sm font-medium">
                       {project.category}
                     </span>
                   </div>
                   {project.tag && (
                     <div className="absolute top-4 right-4">
-                      <span className="inline-block px-3 py-1 bg-[#1c1c26]/80 text-white/80 backdrop-blur-sm rounded-full text-sm font-medium">
+                      <span className="inline-block px-3 py-1 bg-card/80 text-foreground/80 backdrop-blur-sm rounded-none text-sm font-medium">
                         {project.tag}
                       </span>
                     </div>
@@ -116,8 +116,8 @@ export default function Portfolio() {
                 </div>
 
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-white mb-2 font-space-grotesk">{project.title}</CardTitle>
-                  <CardDescription className="text-white/70 text-base">
+                  <CardTitle className="text-2xl font-bold text-foreground mb-2 font-mono">{project.title}</CardTitle>
+                  <CardDescription className="text-foreground/70 text-base">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -127,7 +127,7 @@ export default function Portfolio() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-[#1c1c26] border border-white/10 rounded-full text-white/80 text-sm"
+                        className="px-3 py-1 bg-card border border-foreground/10 rounded-none text-foreground/80 text-sm"
                       >
                         {tag}
                       </span>
@@ -136,13 +136,13 @@ export default function Portfolio() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href={project.href} className="flex-1">
-                      <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] group/btn">
+                      <Button className="w-full bg-primary hover:bg-primary/85 group/btn">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
                     <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="w-full border-white/20 hover:bg-white/5">
+                      <Button variant="outline" className="w-full border-foreground/20 hover:bg-foreground/5">
                         Live Site
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>
@@ -158,14 +158,14 @@ export default function Portfolio() {
           {/* More Projects Coming */}
           <FadeIn delay={0.4}>
             <div className="mt-16">
-              <Card className="bg-[#1c1c26]/30 border-white/10 border-dashed">
+              <Card className="bg-card/30 border-foreground/10 border-dashed">
                 <CardContent className="py-12">
-                  <p className="text-white/70 text-lg mb-6">
+                  <p className="text-foreground/70 text-lg mb-6">
                     Working on a salon management app, a golf + skate course directory, and a few things
                     I can&apos;t talk about yet. Want to be next?
                   </p>
                   <Link href="/contact">
-                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e]">
+                    <Button size="lg" className="bg-primary hover:bg-primary/85">
                       Get in touch
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -178,17 +178,17 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 bg-[#1c1c26]/30">
+      <section className="relative py-20 sm:py-32 bg-card/30">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <p className="text-xl text-white/80 mb-8 font-light">
+            <p className="text-xl text-foreground/80 mb-8 font-light">
               Don&apos;t see your industry here? Doesn&apos;t matter. I build for the problem, not the vertical.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-lg px-10 py-6 group">
+                <Button size="lg" className="bg-primary hover:bg-primary/85 text-lg px-10 py-6 group">
                   Tell me what you need
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

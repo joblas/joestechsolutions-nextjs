@@ -84,7 +84,7 @@ function QualifyForm() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div role="status" aria-label="Loading">
-          <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+          <Spinner aria-hidden="true" className="h-12 w-12 text-primary animate-spin" />
           <span className="sr-only">Loading...</span>
         </div>
       </div>
@@ -98,7 +98,7 @@ function QualifyForm() {
     : `${tierPrice.setup} one-time`;
 
   const TierIcon = isManaged ? Rocket : needsVPS ? Cloud : Desktop;
-  const accentColor = isManaged ? "#8B5CF6" : isCloud ? "#2dd4bf" : "#0d9488";
+  const accentColor = isManaged ? "#8B5CF6" : isCloud ? "#e8703f" : "#d4541e";
 
   const isFormComplete = qualifyData.operatingSystem && (needsVPS || qualifyData.ramAmount);
   const canProceed = isFormComplete && qualificationStatus !== "pending";
@@ -109,7 +109,7 @@ function QualifyForm() {
         <FadeIn>
           <button
             onClick={() => router.push("/private-ai-setup")}
-            className="flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors"
+            className="flex items-center gap-2 text-foreground/60 hover:text-foreground mb-8 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back to options</span>
@@ -118,10 +118,10 @@ function QualifyForm() {
 
         <FadeIn delay={0.1}>
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-bold text-white font-space-grotesk mb-3">
+            <h1 className="text-4xl font-bold text-foreground font-mono mb-3">
               Quick System Check
             </h1>
-            <p className="text-xl text-white/70">
+            <p className="text-xl text-foreground/70">
               {isLocal
                 ? "Let's make sure your computer is ready for AI."
                 : "Just a couple quick questions before I set you up."}
@@ -130,14 +130,14 @@ function QualifyForm() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <Card className="bg-[#1c1c26] border-white/10">
+          <Card className="bg-card border-foreground/10">
             <CardContent className="p-8 space-y-6">
               {/* Setup Type Indicator */}
-              <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10">
+              <div className="flex items-center gap-3 p-4 bg-background rounded-xl border border-foreground/10">
                 <TierIcon weight="duotone" className="h-6 w-6" style={{ color: accentColor }} />
                 <div className="flex-1">
-                  <span className="text-white font-medium block">{tierLabel}</span>
-                  <span className="text-white/50 text-sm">{priceDisplay}</span>
+                  <span className="text-foreground font-medium block">{tierLabel}</span>
+                  <span className="text-foreground/50 text-sm">{priceDisplay}</span>
                 </div>
                 <button
                   type="button"
@@ -156,14 +156,14 @@ function QualifyForm() {
 
               {/* Operating System */}
               <div>
-                <label htmlFor="os" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="os" className="block text-sm font-medium text-foreground mb-2">
                   {needsVPS ? "Preferred VPS OS" : "Your Operating System"}
                 </label>
                 <select
                   id="os"
                   value={qualifyData.operatingSystem}
                   onChange={(e) => setQualifyData({ ...qualifyData, operatingSystem: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                 >
                   <option value="">Select OS</option>
                   {needsVPS ? (
@@ -190,7 +190,7 @@ function QualifyForm() {
               {/* RAM Amount (Local only) */}
               {isLocal && (
                 <fieldset>
-                  <legend className="block text-sm font-medium text-white mb-3">
+                  <legend className="block text-sm font-medium text-foreground mb-3">
                     How much RAM does your computer have?
                   </legend>
                   <div className="grid grid-cols-2 gap-3">
@@ -206,8 +206,8 @@ function QualifyForm() {
                           qualifyData.ramAmount === option.value
                             ? option.warn
                               ? "border-amber-500 bg-amber-500/10"
-                              : "border-[#0d9488] bg-[#0b7f73]/10"
-                            : "border-white/10 hover:border-white/20"
+                              : "border-primary bg-primary/10"
+                            : "border-foreground/10 hover:border-foreground/20"
                         }`}
                       >
                         <input
@@ -218,11 +218,11 @@ function QualifyForm() {
                           onChange={(e) => setQualifyData({ ...qualifyData, ramAmount: e.target.value })}
                           className="sr-only"
                         />
-                        <span className="text-white font-medium">{option.label}</span>
+                        <span className="text-foreground font-medium">{option.label}</span>
                       </label>
                     ))}
                   </div>
-                  <p className="text-white/50 text-sm mt-2">
+                  <p className="text-foreground/50 text-sm mt-2">
                     8GB minimum required. 16GB+ recommended for best performance.
                   </p>
                 </fieldset>
@@ -230,8 +230,8 @@ function QualifyForm() {
 
               {/* Managed tier note */}
               {isManaged && (
-                <div className="p-4 bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 rounded-xl">
-                  <p className="text-[#c4b5fd] text-sm">
+                <div className="p-4 bg-primary/10 border border-primary/20 rounded-xl">
+                  <p className="text-primary text-sm">
                     <strong>Managed tier includes:</strong> n8n workflow automation, document Q&A (RAG), private web search, 3 custom workflows, quarterly strategy calls, and priority support.
                   </p>
                 </div>
@@ -275,7 +275,7 @@ function QualifyForm() {
               <Button
                 onClick={handleProceedToPayment}
                 disabled={!canProceed || isSubmitting}
-                className="w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50"
+                className="w-full text-foreground text-lg py-6 rounded-none shadow-lg disabled:opacity-50"
                 style={{
                   background: `linear-gradient(to right, ${accentColor}, ${accentColor}dd)`,
                   boxShadow: `0 10px 15px -3px ${accentColor}33`,
@@ -297,7 +297,7 @@ function QualifyForm() {
                 )}
               </Button>
 
-              <p className="text-center text-white/50 text-sm">
+              <p className="text-center text-foreground/50 text-sm">
                 Secure checkout via Stripe &middot; Setup call scheduled after payment
               </p>
             </CardContent>
@@ -314,7 +314,7 @@ export default function QualifyPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center">
           <div role="status" aria-label="Loading">
-            <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+            <Spinner aria-hidden="true" className="h-12 w-12 text-primary animate-spin" />
             <span className="sr-only">Loading...</span>
           </div>
         </div>

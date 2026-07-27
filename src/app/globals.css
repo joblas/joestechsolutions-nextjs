@@ -10,8 +10,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
   --font-space-grotesk: var(--font-space-grotesk);
   --font-jetbrains-mono: var(--font-jetbrains-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -50,25 +50,26 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  /* Paper Terminal — zero-radius, workshop-utilitarian */
+  --radius: 0rem;
 
   /* === UNIFIED COLOR SYSTEM === */
-  /* Primary: Ocean Teal — the ONE brand color used everywhere */
-  --color-primary: #0d9488;
-  --color-primary-hover: #0f766e;
-  --color-primary-glow: #0d9488;
+  /* Primary: Safety Orange — the ONE brand color used everywhere */
+  --color-primary: #d4541e;
+  --color-primary-hover: #b8451a;
+  --color-primary-glow: #d4541e;
 
-  /* Accent: Mint — secondary accent for variety */
-  --color-accent: #2dd4bf;
-  --color-accent-hover: #14b8a6;
+  /* Accent: lighter orange for dark grounds */
+  --color-accent: #e8703f;
+  --color-accent-hover: #d4541e;
 
   /* Backgrounds */
-  --color-bg-deep: #0d0d12;
-  --color-bg-card: #1c1c26;
-  --color-bg-hero: #0A1628;
+  --color-bg-deep: var(--background);
+  --color-bg-card: var(--card);
+  --color-bg-hero: var(--card);
 
   /* Focus */
-  --color-focus: #0d9488;
+  --color-focus: #d4541e;
 
   /* Legacy aliases (for backward compat during migration) */
   --color-deep-navy: var(--color-bg-hero);
@@ -79,73 +80,81 @@
   --color-deep-charcoal: var(--color-bg-deep);
   --color-secondary-dark: var(--color-bg-card);
 
-  /* Light mode (default) */
-  --background: oklch(0.99 0 0);  /* Near white */
-  --foreground: oklch(0.25 0 0);  /* Dark text */
-  --card: oklch(1 0 0);  /* Pure white cards */
-  --card-foreground: oklch(0.25 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0 0);
-  --primary: oklch(0.57 0.17 225);  /* Bright blue */
-  --primary-foreground: oklch(1 0 0);  /* White text on blue */
-  --secondary: oklch(0.95 0.01 225);  /* Light blue */
-  --secondary-foreground: oklch(0.25 0 0);
-  --muted: oklch(0.96 0.005 225);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.95 0.01 225);
-  --accent-foreground: oklch(0.25 0 0);
+  /* Semantic extras */
+  --ok: #00871f;             /* "operational" green */
+  --panel: #16181c;          /* console panels stay dark in both themes */
+  --panel-foreground: #c9cdd3;
+
+  /* Light mode (default): paper */
+  --background: #f5f5f0;     /* Cream paper */
+  --foreground: #1a1a1a;     /* Ink */
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #d4541e;        /* Safety orange */
+  --primary-foreground: #ffffff;
+  --secondary: #ecebe4;
+  --secondary-foreground: #1a1a1a;
+  --muted: #ecebe4;
+  --muted-foreground: #666666;
+  --accent: #f2e4db;         /* faint orange wash */
+  --accent-foreground: #1a1a1a;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.005 225);
-  --input: oklch(0.92 0.005 225);
-  --ring: oklch(0.57 0.17 225);
-  --chart-1: oklch(0.57 0.17 225);
-  --chart-2: oklch(0.65 0.15 220);
-  --chart-3: oklch(0.75 0.12 230);
-  --chart-4: oklch(0.85 0.08 225);
-  --chart-5: oklch(0.95 0.04 220);
-  --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.25 0 0);
-  --sidebar-primary: oklch(0.57 0.17 225);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.95 0.01 225);
-  --sidebar-accent-foreground: oklch(0.25 0 0);
-  --sidebar-border: oklch(0.92 0.005 225);
-  --sidebar-ring: oklch(0.57 0.17 225);
+  --border: #cccccc;
+  --input: #cccccc;
+  --ring: #d4541e;
+  --chart-1: #d4541e;
+  --chart-2: #e8703f;
+  --chart-3: #1a1a1a;
+  --chart-4: #666666;
+  --chart-5: #cccccc;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #d4541e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ecebe4;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #cccccc;
+  --sidebar-ring: #d4541e;
 }
 
 .dark {
-  /* Lemni-inspired dark theme with deep charcoal and cyan accents */
-  --background: #0d0d12;  /* Deep charcoal */
-  --foreground: oklch(0.98 0 0);  /* Near white */
-  --card: #1c1c26;  /* Secondary dark */
-  --card-foreground: oklch(0.98 0 0);
-  --popover: #1c1c26;
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: #0b7f73;  /* Ocean teal — darkened from #0d9488 for WCAG AA 4.5:1 white-on-teal contrast */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: #1c1c26;
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: #1c1c26;
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: #2dd4bf;  /* Mint */
-  --accent-foreground: oklch(1 0 0);
+  /* Paper Terminal dark — terminal ground, light ink, brightened orange */
+  --background: #16181c;
+  --foreground: #e8e9e6;
+  --card: #1d2127;
+  --card-foreground: #e8e9e6;
+  --popover: #1d2127;
+  --popover-foreground: #e8e9e6;
+  --primary: #e8703f;        /* brightened for contrast on dark */
+  --primary-foreground: #16181c;
+  --secondary: #23272e;
+  --secondary-foreground: #e8e9e6;
+  --muted: #23272e;
+  --muted-foreground: #9aa1ab;
+  --accent: #2c2622;         /* faint orange wash on dark */
+  --accent-foreground: #e8e9e6;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.1);
-  --ring: #0d9488;
-  --chart-1: #0d9488;
-  --chart-2: #2dd4bf;
-  --chart-3: #0A1628;
-  --chart-4: #1E293B;
-  --chart-5: #1c1c26;
-  --sidebar: #0d0d12;
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: #0d9488;
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: #1c1c26;
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #0d9488;
+  --border: #3a4048;
+  --input: #3a4048;
+  --ring: #e8703f;
+  --chart-1: #e8703f;
+  --chart-2: #d4541e;
+  --chart-3: #e8e9e6;
+  --chart-4: #9aa1ab;
+  --chart-5: #3a4048;
+  --sidebar: #16181c;
+  --sidebar-foreground: #e8e9e6;
+  --sidebar-primary: #e8703f;
+  --sidebar-primary-foreground: #16181c;
+  --sidebar-accent: #23272e;
+  --sidebar-accent-foreground: #e8e9e6;
+  --sidebar-border: #3a4048;
+  --sidebar-ring: #e8703f;
+
+  --ok: #3ddc84;
+  --panel: #101215;
 }
 
 @layer base {
@@ -409,7 +418,7 @@
 
 /* Blog prose styles */
 .prose-blog {
-  color: rgb(229 231 235); /* text-gray-200 - bright, high contrast */
+  color: var(--foreground); /* text-gray-200 - bright, high contrast */
   font-size: 1.125rem;
   line-height: 2; /* leading-loose - generous line spacing */
   font-family: var(--font-inter, sans-serif);
@@ -422,7 +431,7 @@
 .prose-blog p.lead {
   font-size: 1.25rem;
   line-height: 1.85;
-  color: #ffffff; /* Pure white for lead paragraphs */
+  color: var(--foreground); /* Pure white for lead paragraphs */
   font-weight: 400;
   margin-bottom: 2.5rem;
 }
@@ -430,7 +439,7 @@
 .prose-blog h2 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--foreground);
   font-family: var(--font-jetbrains-mono, monospace);
   margin-top: 4rem;
   margin-bottom: 1.5rem;
@@ -440,7 +449,7 @@
 .prose-blog h3 {
   font-size: 1.375rem;
   font-weight: 600;
-  color: #0d9488;
+  color: var(--primary);
   font-family: var(--font-jetbrains-mono, monospace);
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -448,24 +457,24 @@
 }
 
 .prose-blog strong {
-  color: #ffffff;
+  color: var(--foreground);
   font-weight: 600;
 }
 
 .prose-blog a {
-  color: #0d9488;
+  color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.2s;
 }
 
 .prose-blog a:hover {
-  color: #2dd4bf;
+  color: var(--color-accent);
 }
 
 .prose-blog pre {
-  background: #1c1c26;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   padding: 2rem; /* More generous padding */
   overflow-x: auto;
@@ -476,15 +485,15 @@
 .prose-blog code {
   font-family: var(--font-jetbrains-mono, 'Courier New', monospace);
   font-size: 0.9rem;
-  color: #0d9488; /* Brighter cyan for inline code */
-  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary); /* Brighter cyan for inline code */
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
   padding: 0.2rem 0.5rem;
   border-radius: 0.3rem;
 }
 
 .prose-blog pre code {
   background: transparent;
-  color: rgb(229 231 235); /* Brighter code block text */
+  color: var(--foreground); /* Brighter code block text */
   padding: 0;
   font-size: 0.9rem;
 }

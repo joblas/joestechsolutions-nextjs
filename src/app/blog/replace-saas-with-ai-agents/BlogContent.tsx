@@ -50,16 +50,16 @@ export function BlogContent() {
           {/* Stats block */}
           <StatBlock
             stats={[
-              { value: 24, suffix: "", label: "AI Agents", color: "from-[#0d9488]/10 to-transparent" },
+              { value: 24, suffix: "", label: "AI Agents", color: "from-primary/10 to-transparent" },
               { value: 285, prefix: "$", label: "Typical SaaS Cost Avoided/mo", color: "from-red-500/10 to-transparent" },
               { value: 0, prefix: "$", label: "Marginal Cost", color: "from-emerald-500/10 to-transparent" },
-              { value: 8, suffix: "h", label: "Saved Weekly", color: "from-[#8B5CF6]/10 to-transparent" },
+              { value: 8, suffix: "h", label: "Saved Weekly", color: "from-primary/10 to-transparent" },
             ]}
           />
 
           {/* The Stack */}
           <FadeIn>
-            <h2 id="the-stack" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Stack: Hermes + 24 Specialized Agents</h2>
+            <h2 id="the-stack" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">The Stack: Hermes + 24 Specialized Agents</h2>
             <p className="text-gray-200 text-lg leading-loose mb-6">
               One orchestrator agent (Lurkr) that sits on top of 24 sub-agents. Each one has a lane:
             </p>
@@ -67,25 +67,25 @@ export function BlogContent() {
 
           <FadeIn>
             <ul className="space-y-2 mb-10 text-gray-200 text-base leading-loose">
-              <li><strong className="text-white">Forge</strong> — code, PRs, reviews, CI/CD</li>
-              <li><strong className="text-white">Radar</strong> — lead gen, competitive research</li>
-              <li><strong className="text-white">Muse</strong> — content creation</li>
-              <li><strong className="text-white">Helm</strong> — infrastructure, deployments</li>
-              <li><strong className="text-white">Beacon</strong> — SEO health, indexing</li>
-              <li><strong className="text-white">Ledger</strong> — revenue, invoicing</li>
-              <li><strong className="text-white">Bridge</strong> — email triage, drafts</li>
-              <li><strong className="text-white">Scout</strong> — calendar, reminders</li>
+              <li><strong className="text-foreground">Forge</strong> — code, PRs, reviews, CI/CD</li>
+              <li><strong className="text-foreground">Radar</strong> — lead gen, competitive research</li>
+              <li><strong className="text-foreground">Muse</strong> — content creation</li>
+              <li><strong className="text-foreground">Helm</strong> — infrastructure, deployments</li>
+              <li><strong className="text-foreground">Beacon</strong> — SEO health, indexing</li>
+              <li><strong className="text-foreground">Ledger</strong> — revenue, invoicing</li>
+              <li><strong className="text-foreground">Bridge</strong> — email triage, drafts</li>
+              <li><strong className="text-foreground">Scout</strong> — calendar, reminders</li>
               <li>...and 16 more covering everything from video generation to backup verification.</li>
             </ul>
           </FadeIn>
 
           <Callout variant="insight">
-            The whole thing runs on <a href="/stack" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">Hermes</a>, my agent runtime, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
+            The whole thing runs on <a href="/stack" className="text-primary underline underline-offset-2 hover:text-primary">Hermes</a>, my agent runtime, deployed on my own local Linux machine. Not a cloud VPS. Not Kubernetes. <strong>One box in my house.</strong>
           </Callout>
 
           {/* Comparison Table */}
           <FadeIn>
-            <h2 id="what-it-replaced" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The SaaS Tools I Never Had to Buy</h2>
+            <h2 id="what-it-replaced" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">The SaaS Tools I Never Had to Buy</h2>
             <p className="text-gray-200 text-lg leading-loose mb-10">Here's what running a solo dev business typically costs. I skipped all of it:</p>
           </FadeIn>
 
@@ -100,7 +100,7 @@ export function BlogContent() {
 
           {/* Architecture */}
           <FadeIn>
-            <h2 id="architecture" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The Architecture (Keep It Simple)</h2>
+            <h2 id="architecture" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">The Architecture (Keep It Simple)</h2>
             <p className="text-gray-200 text-lg leading-loose mb-10">
               Each agent is a system prompt + relevant tools (API keys, scripts, file paths) + memory files (daily logs + long-term context). That&apos;s it. No vector databases required. No LangChain. No framework soup. I control everything through Telegram — one interface for morning briefings, deployment confirmations, draft proposals, revenue reports. No dashboards. No web UIs. Just my phone. When agents hit complex coding tasks, Claude Code runs on the same machine as the escape hatch for heavy-duty development work. The toolkit includes image/video generation (Gemini, ElevenLabs), Google Workspace, GitHub, Stripe, Notion, plus custom scripts for deployments, invoicing, and CRM.
             </p>
@@ -110,7 +110,7 @@ export function BlogContent() {
 
           {/* 3-Tier Model */}
           <FadeIn>
-            <h2 id="three-tier" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">The 3-Tier Action Model</h2>
+            <h2 id="three-tier" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">The 3-Tier Action Model</h2>
             <p className="text-gray-200 text-lg leading-loose mb-10">
               The thing that makes this actually useful instead of terrifying:
             </p>
@@ -162,7 +162,7 @@ export function BlogContent() {
                     </span>
                     <span className="text-gray-200 text-sm font-medium">{item.desc}</span>
                   </div>
-                  <p className="text-white/60 text-sm ml-0 mb-0 leading-relaxed">{item.examples}</p>
+                  <p className="text-foreground/60 text-sm ml-0 mb-0 leading-relaxed">{item.examples}</p>
                 </div>
               ))}
             </div>
@@ -174,14 +174,14 @@ export function BlogContent() {
 
           {/* Monday Morning */}
           <FadeIn>
-            <h2 id="monday-morning" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">Real Example: Monday Morning</h2>
+            <h2 id="monday-morning" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">Real Example: Monday Morning</h2>
             <p className="text-gray-200 text-lg leading-loose mb-10">Here&apos;s what happened last Monday, entirely through Telegram, before I even opened my laptop:</p>
           </FadeIn>
 
-          <div className="my-10 border border-white/10 rounded-xl bg-white/[0.02] p-8">
+          <div className="my-10 border border-foreground/10 rounded-xl bg-foreground/[0.02] p-8">
             <TimelineStep time="9:00 AM" index={0}>
               <strong>Lurk Report</strong> drops in my Telegram DM:
-              <ul className="mt-3 space-y-2 text-white/60 text-sm list-disc list-inside">
+              <ul className="mt-3 space-y-2 text-foreground/60 text-sm list-disc list-inside">
                 <li>3 new emails (1 client inquiry, 1 invoice paid, 1 spam)</li>
                 <li>GitHub: 2 PRs ready for review, CI green across all repos</li>
                 <li>Revenue: $2,400 collected last 7 days, +15% WoW</li>
@@ -190,13 +190,13 @@ export function BlogContent() {
               </ul>
             </TimelineStep>
             <TimelineStep time="9:01 AM" index={1}>
-              I reply in Telegram: <span className="text-[#0d9488] font-mono text-xs">&quot;send that proposal to Nick&quot;</span> (a client from last week)
+              I reply in Telegram: <span className="text-primary font-mono text-xs">&quot;send that proposal to Nick&quot;</span> (a client from last week)
             </TimelineStep>
             <TimelineStep time="9:02 AM" index={2}>
               Lurkr orchestrates → Muse (content agent) generates proposal from template → result comes back to my Telegram with the PDF preview, asking permission to send
             </TimelineStep>
             <TimelineStep time="9:02 AM" index={3}>
-              I reply in Telegram: <span className="text-[#0d9488] font-mono text-xs">&quot;send it&quot;</span>
+              I reply in Telegram: <span className="text-primary font-mono text-xs">&quot;send it&quot;</span>
             </TimelineStep>
             <TimelineStep time="9:03 AM" index={4}>
               <strong>Done.</strong> Email sent, confirmation delivered back to my Telegram. Coffee&apos;s not even ready. ☕
@@ -205,7 +205,7 @@ export function BlogContent() {
 
           <FadeIn>
             <p className="text-gray-200 text-lg leading-loose mb-8 mt-8">
-              The key here: <strong className="text-white">every step happened in one Telegram thread.</strong> No switching apps. 
+              The key here: <strong className="text-foreground">every step happened in one Telegram thread.</strong> No switching apps. 
               No logging into dashboards. No &quot;let me check the CRM.&quot; Just a conversation with an AI 
               that has access to everything and reports back in the same place.
             </p>
@@ -213,7 +213,7 @@ export function BlogContent() {
 
           {/* Safety & Guardrails */}
           <FadeIn>
-            <h2 id="safety-guardrails" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">Safety &amp; Guardrails</h2>
+            <h2 id="safety-guardrails" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">Safety &amp; Guardrails</h2>
             <p className="text-gray-200 text-lg leading-loose mb-10">
               &ldquo;24 AI agents with access to your business tools&rdquo; sounds dangerous. Here&apos;s how it&apos;s not:
             </p>
@@ -225,18 +225,18 @@ export function BlogContent() {
               alt="AI Control Panel and Safety Systems"
               width={1920}
               height={1072}
-              className="w-full rounded-xl border border-white/10 shadow-2xl"
+              className="w-full rounded-xl border border-foreground/10 shadow-2xl"
               style={{ height: "auto" }}
             />
           </div>
 
           <FadeIn>
             <ul className="space-y-4 mb-10 text-gray-200 text-lg leading-loose">
-              <li><strong className="text-white">Kill switch via Telegram</strong> — I can stop anything instantly from my phone. No SSH. No dashboard. Just one command.</li>
-              <li><strong className="text-white">The 3-tier action model</strong> — Agents can&apos;t send emails, push code, or deploy without explicit approval. Everything goes through CONFIRM tier.</li>
-              <li><strong className="text-white">Cost controls</strong> — Model tiering (Opus/Sonnet/Haiku), cron job timeouts, fallback to cheaper models on rate limits, monthly spend monitoring.</li>
-              <li><strong className="text-white">Security boundaries</strong> — No auto-send on external actions, UFW firewall active, secrets protected in env vars, external content treated as untrusted, agents can&apos;t self-modify.</li>
-              <li><strong className="text-white">Full audit trail</strong> — Daily memory files, morning briefing, failed jobs surface automatically, revenue and costs tracked.</li>
+              <li><strong className="text-foreground">Kill switch via Telegram</strong> — I can stop anything instantly from my phone. No SSH. No dashboard. Just one command.</li>
+              <li><strong className="text-foreground">The 3-tier action model</strong> — Agents can&apos;t send emails, push code, or deploy without explicit approval. Everything goes through CONFIRM tier.</li>
+              <li><strong className="text-foreground">Cost controls</strong> — Model tiering (Opus/Sonnet/Haiku), cron job timeouts, fallback to cheaper models on rate limits, monthly spend monitoring.</li>
+              <li><strong className="text-foreground">Security boundaries</strong> — No auto-send on external actions, UFW firewall active, secrets protected in env vars, external content treated as untrusted, agents can&apos;t self-modify.</li>
+              <li><strong className="text-foreground">Full audit trail</strong> — Daily memory files, morning briefing, failed jobs surface automatically, revenue and costs tracked.</li>
             </ul>
           </FadeIn>
 
@@ -249,14 +249,14 @@ export function BlogContent() {
 
           {/* Lessons */}
           <FadeIn>
-            <h2 id="lessons" className="pt-16 text-white text-3xl sm:text-4xl font-bold mb-6">Lessons Learned</h2>
+            <h2 id="lessons" className="pt-16 text-foreground text-3xl sm:text-4xl font-bold mb-6">Lessons Learned</h2>
           </FadeIn>
 
           <FadeIn>
             <ul className="space-y-3 mb-10 text-gray-200 text-lg leading-loose">
-              <li><strong className="text-white">Start with one agent, not twenty-four.</strong> Build incrementally. Get email triage working, then expand.</li>
-              <li><strong className="text-white">Memory is everything.</strong> Daily logs + long-term memory files make Lurkr actually useful across sessions.</li>
-              <li><strong className="text-white">Don&apos;t over-automate sending.</strong> Draft everything, send nothing without approval. I learned this the hard way.</li>
+              <li><strong className="text-foreground">Start with one agent, not twenty-four.</strong> Build incrementally. Get email triage working, then expand.</li>
+              <li><strong className="text-foreground">Memory is everything.</strong> Daily logs + long-term memory files make Lurkr actually useful across sessions.</li>
+              <li><strong className="text-foreground">Don&apos;t over-automate sending.</strong> Draft everything, send nothing without approval. I learned this the hard way.</li>
             </ul>
           </FadeIn>
 
@@ -264,7 +264,7 @@ export function BlogContent() {
             <p className="text-gray-200 text-lg leading-loose mb-6">
               If you&apos;re a developer who runs a freelance business or small agency, the ROI is insane. Not just avoiding $200-300/mo in SaaS, but the time — I save 6-8 hours a week on admin work. 
               If you&apos;re not technical? Wait a year. The tooling will get easier. But if you&apos;re curious, start with{" "}
-              <a href="/stack" className="text-[#0d9488] underline underline-offset-2 hover:text-[#2dd4bf]">the stack I run</a>{" "}
+              <a href="/stack" className="text-primary underline underline-offset-2 hover:text-primary">the stack I run</a>{" "}
               and just get one automation working.
             </p>
           </FadeIn>

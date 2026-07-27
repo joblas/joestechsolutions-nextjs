@@ -33,17 +33,17 @@ export default function Services() {
 
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Three ways I</span>
-                <span className="block text-[#0d9488]">work with you.</span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-mono">
+                <span className="block text-foreground mb-3">Three ways I</span>
+                <span className="block text-primary">work with you.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+              <p className="text-xl sm:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-light">
                 From a one-time setup to a full operations layer. Start where you need to, move up
                 when you&apos;re ready.
               </p>
@@ -70,32 +70,32 @@ export default function Services() {
           <FadeIn delay={0.35}>
             <div className="mt-20">
               <div className="text-center mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 font-space-grotesk">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 font-mono">
                   Free & Open Source
                 </h2>
-                <p className="text-white/60 text-base font-light">
+                <p className="text-foreground/60 text-base font-light">
                   Free tools I built and still ship.
                 </p>
               </div>
 
               <Link href="/whisper-walkie" className="block">
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26]/60 border-white/10 hover:border-[#2dd4bf]/40 transition-all duration-500 group overflow-hidden">
+                  <Card className="bg-card/60 border-foreground/10 hover:border-primary/40 transition-all duration-500 group overflow-hidden">
                     <div className="relative grid sm:grid-cols-[auto_1fr_auto] items-center gap-6 p-8">
-                      <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-[#2dd4bf]/20 transition-all duration-300 mx-auto sm:mx-0">
-                        <Mic className="h-8 w-8 text-[#2dd4bf]" />
+                      <div className="w-16 h-16 bg-primary/10 rounded-none flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300 mx-auto sm:mx-0">
+                        <Mic className="h-8 w-8 text-primary" />
                       </div>
 
                       <div className="text-center sm:text-left">
                         <div className="flex items-center gap-3 justify-center sm:justify-start mb-2">
-                          <h3 className="text-xl font-bold text-white font-space-grotesk">
+                          <h3 className="text-xl font-bold text-foreground font-mono">
                             Whisper Walkie
                           </h3>
-                          <span className="px-2.5 py-0.5 bg-[#2dd4bf]/15 rounded-full text-[#2dd4bf] text-xs font-medium">
+                          <span className="px-2.5 py-0.5 bg-primary/15 rounded-none text-primary text-xs font-medium">
                             Free
                           </span>
                         </div>
-                        <p className="text-white/70 text-base leading-relaxed mb-3">
+                        <p className="text-foreground/70 text-base leading-relaxed mb-3">
                           Push-to-talk voice typing for any app. Hold a key, speak, release — text
                           appears wherever your cursor is. 100% local, no cloud, no subscriptions.
                         </p>
@@ -103,7 +103,7 @@ export default function Services() {
                           {["Windows", "macOS", "Linux", "GPU Accelerated", "Offline"].map((tag) => (
                             <span
                               key={tag}
-                              className="px-2 py-0.5 bg-white/5 rounded text-white/50 text-xs"
+                              className="px-2 py-0.5 bg-foreground/5 rounded text-foreground/50 text-xs"
                             >
                               {tag}
                             </span>
@@ -112,11 +112,11 @@ export default function Services() {
                       </div>
 
                       <div className="flex flex-col gap-2 items-center">
-                        <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2dd4bf] hover:bg-[#14b8a6] text-white text-sm font-medium rounded-full shadow-lg shadow-[#2dd4bf]/20 transition-colors">
+                        <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/85 text-foreground text-sm font-medium rounded-none shadow-lg shadow-primary/20 transition-colors">
                           <Download className="h-4 w-4" />
                           Download Free
                         </span>
-                        <span className="text-white/40 text-xs flex items-center gap-1">
+                        <span className="text-foreground/40 text-xs flex items-center gap-1">
                           <ExternalLink className="h-3 w-3" />
                           MIT License
                         </span>
@@ -134,10 +134,10 @@ export default function Services() {
 
       {/* CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
+            <p className="text-xl text-foreground/80 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
               Don&apos;t know which one you need? Tell me what&apos;s not working and I&apos;ll tell you.
             </p>
           </FadeIn>
@@ -146,7 +146,7 @@ export default function Services() {
               <MagneticButton strength={0.3}>
                 <Button
                   size="lg"
-                  className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30"
+                  className="bg-primary hover:bg-primary/85 text-foreground text-lg px-12 py-7 rounded-none group shadow-2xl shadow-primary/20"
                 >
                   Get in touch
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

@@ -70,7 +70,7 @@ export function HeroDownloadButton() {
         <MagneticButton strength={0.2}>
           <Button
             size="lg"
-            className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all"
+            className="bg-primary hover:bg-primary/85 text-foreground text-lg px-10 py-7 rounded-none group shadow-lg shadow-primary/20 transition-all"
           >
             <Download className="mr-2 h-5 w-5" aria-hidden="true" />
             Download for {info.label}
@@ -80,13 +80,13 @@ export function HeroDownloadButton() {
       </a>
 
       {info.file && (
-        <span className="text-white/40 text-xs">{info.file}</span>
+        <span className="text-foreground/40 text-xs">{info.file}</span>
       )}
 
       {/* Other platforms toggle */}
       <button
         onClick={() => setShowOthers(!showOthers)}
-        className="text-white/50 hover:text-white/70 text-sm flex items-center gap-1 transition-colors mt-1"
+        className="text-foreground/50 hover:text-foreground/70 text-sm flex items-center gap-1 transition-colors mt-1"
         aria-expanded={showOthers}
       >
         Other platforms
@@ -103,7 +103,7 @@ export function HeroDownloadButton() {
               key={key}
               href={plat.url}
               rel="noopener noreferrer"
-              className="text-sm text-[#2dd4bf] hover:text-[#2dd4bf]/80 border border-white/10 hover:border-[#2dd4bf]/30 rounded-full px-4 py-2 transition-all flex items-center gap-2"
+              className="text-sm text-primary hover:text-primary/80 border border-foreground/10 hover:border-primary/30 rounded-none px-4 py-2 transition-all flex items-center gap-2"
             >
               <Download className="w-3.5 h-3.5" aria-hidden="true" />
               {plat.label}
@@ -113,7 +113,7 @@ export function HeroDownloadButton() {
             href={GITHUB_RELEASES}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-white/40 hover:text-white/60 border border-white/10 hover:border-white/20 rounded-full px-4 py-2 transition-all"
+            className="text-sm text-foreground/40 hover:text-foreground/60 border border-foreground/10 hover:border-foreground/20 rounded-none px-4 py-2 transition-all"
           >
             All releases
           </a>
@@ -131,21 +131,21 @@ export function PlatformDownloadCards() {
       platform: "windows",
       formats: [".exe installer (recommended)", "Portable .zip"],
       note: "CUDA GPU acceleration supported",
-      accent: "#0d9488",
+      accent: "#d4541e",
     },
     {
       name: "macOS",
       platform: "macos",
       formats: [".zip download"],
       note: "Requires Accessibility permissions",
-      accent: "#2dd4bf",
+      accent: "#e8703f",
     },
     {
       name: "Linux",
       platform: "linux",
       formats: [".tar.gz download"],
       note: "Works on X11 and Wayland",
-      accent: "#0d9488",
+      accent: "#d4541e",
     },
   ];
 
@@ -162,10 +162,10 @@ export function PlatformDownloadCards() {
             aria-label={`Download Whisper Walkie for ${card.name}`}
           >
             <div
-              className="bg-[#1c1c26] border border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 h-full rounded-xl cursor-pointer p-8 text-center space-y-5"
+              className="bg-card border border-foreground/10 hover:border-primary/50 transition-all duration-500 h-full rounded-xl cursor-pointer p-8 text-center space-y-5"
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
+                className="w-14 h-14 rounded-none flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
                 style={{ backgroundColor: `${card.accent}15` }}
               >
                 <Download
@@ -174,13 +174,13 @@ export function PlatformDownloadCards() {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white font-space-grotesk">{card.name}</h3>
+              <h3 className="text-xl font-bold text-foreground font-mono">{card.name}</h3>
               <ul className="space-y-1" role="list">
                 {card.formats.map((format) => (
-                  <li key={format} className="text-white/60 text-sm">{format}</li>
+                  <li key={format} className="text-foreground/60 text-sm">{format}</li>
                 ))}
               </ul>
-              <p className="text-xs text-white/40 leading-relaxed">{card.note}</p>
+              <p className="text-xs text-foreground/40 leading-relaxed">{card.note}</p>
               <div
                 className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
                 style={{ color: card.accent }}
@@ -212,7 +212,7 @@ export function CtaDownloadButton() {
       <MagneticButton strength={0.15}>
         <Button
           size="lg"
-          className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-10 py-7 rounded-full group shadow-lg shadow-[#0b7f73]/20 transition-all"
+          className="bg-primary hover:bg-primary/85 text-foreground text-lg px-10 py-7 rounded-none group shadow-lg shadow-primary/20 transition-all"
         >
           <Download className="mr-2 h-5 w-5" aria-hidden="true" />
           Download for {info.label}

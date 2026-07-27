@@ -65,37 +65,37 @@ const features = [
     icon: Lock,
     title: "100% Local",
     description: "Audio is transcribed entirely on your device using faster-whisper. Nothing is sent to any server, ever.",
-    accent: "#0d9488",
+    accent: "#d4541e",
   },
   {
     icon: Globe,
     title: "Works Everywhere",
     description: "Browser, Slack, VS Code, Word, games — if your OS can focus it, Whisper Walkie can type into it.",
-    accent: "#2dd4bf",
+    accent: "#e8703f",
   },
   {
     icon: Cpu,
     title: "GPU Accelerated",
     description: "CUDA support on Windows and Linux for near-instant transcription. Falls back to CPU automatically.",
-    accent: "#0d9488",
+    accent: "#d4541e",
   },
   {
     icon: Monitor,
     title: "Cross-Platform",
     description: "Native support for Windows, macOS, and Linux. One codebase, three platforms, zero compromises.",
-    accent: "#2dd4bf",
+    accent: "#e8703f",
   },
   {
     icon: Mic,
     title: "Push-to-Talk",
     description: "Hold Right Alt (customizable), speak, release. It only records when you tell it to — total control.",
-    accent: "#0d9488",
+    accent: "#d4541e",
   },
   {
     icon: Shield,
     title: "Open Source",
     description: "MIT licensed. Read every line of code. Fork it, modify it, ship it. Free now and always.",
-    accent: "#2dd4bf",
+    accent: "#e8703f",
   },
 ];
 
@@ -107,12 +107,12 @@ export default function WhisperWalkiePage() {
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
         {/* Gradient background */}
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
         {/* Animated blobs */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0b7f73] rounded-full blur-[120px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-none blur-[120px] animate-glow" />
           <div
-            className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#2dd4bf] rounded-full blur-[100px] animate-glow"
+            className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary rounded-none blur-[100px] animate-glow"
             style={{ animationDelay: "2s" }}
           />
         </div>
@@ -122,7 +122,7 @@ export default function WhisperWalkiePage() {
           <FadeIn delay={0.05}>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors mb-12"
+              className="inline-flex items-center gap-2 text-foreground/50 hover:text-foreground text-sm transition-colors mb-12"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               Joe&apos;s Tech Solutions
@@ -132,17 +132,17 @@ export default function WhisperWalkiePage() {
           <div className="mx-auto max-w-4xl text-center space-y-10">
             {/* Badge */}
             <FadeIn delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#1c1c26] border border-white/10 rounded-full text-[#0d9488] text-sm font-medium backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 bg-[#0b7f73] rounded-full" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-card border border-foreground/10 rounded-none text-primary text-sm font-medium backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 bg-primary rounded-none" aria-hidden="true" />
                 Archive &middot; Open Source (MIT) &middot; Privacy First
               </div>
             </FadeIn>
 
             {/* Title */}
             <FadeIn delay={0.15}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Whisper Walkie</span>
-                <span className="block bg-gradient-to-r from-[#0d9488] via-[#2dd4bf] to-[#7dd3fc] text-transparent bg-clip-text">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-mono">
+                <span className="block text-foreground mb-3">Whisper Walkie</span>
+                <span className="block bg-gradient-to-r from-primary via-primary to-primary text-transparent bg-clip-text">
                   Your voice, your machine.
                 </span>
               </h1>
@@ -150,14 +150,14 @@ export default function WhisperWalkiePage() {
 
             {/* Subtitle */}
             <FadeIn delay={0.2}>
-              <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+              <p className="text-xl sm:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-light">
                 Nothing leaves.
               </p>
             </FadeIn>
 
             {/* Description */}
             <FadeIn delay={0.25}>
-              <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto leading-relaxed">
                 Hold a hotkey, speak naturally, release. The transcribed text types directly into whatever
                 window has focus — no clipboard, no cloud, no account. Whisper AI runs entirely on your
                 machine.
@@ -172,7 +172,7 @@ export default function WhisperWalkiePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all"
+                    className="text-lg px-10 py-7 rounded-none border-foreground/20 hover:bg-foreground/5 hover:border-foreground/30 backdrop-blur-sm transition-all"
                   >
                     <ExternalLink className="mr-2 h-5 w-5" aria-hidden="true" />
                     View Source
@@ -189,13 +189,13 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-3">
                 Simple by design
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-mono">
                 How It Works
               </h2>
-              <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto font-light">
                 Three seconds from voice to text in any application on your computer.
               </p>
             </FadeIn>
@@ -203,7 +203,7 @@ export default function WhisperWalkiePage() {
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8 relative" staggerDelay={0.12}>
             {/* Connector line — visible on md+ */}
-            <div className="hidden md:block absolute top-[2.75rem] left-[calc(16.667%+1.5rem)] right-[calc(16.667%+1.5rem)] h-px bg-gradient-to-r from-[#0d9488]/40 via-[#2dd4bf]/40 to-transparent pointer-events-none" />
+            <div className="hidden md:block absolute top-[2.75rem] left-[calc(16.667%+1.5rem)] right-[calc(16.667%+1.5rem)] h-px bg-gradient-to-r from-primary/40 via-primary/40 to-transparent pointer-events-none" />
 
             {[
               {
@@ -211,7 +211,7 @@ export default function WhisperWalkiePage() {
                 icon: Mic,
                 label: "Hold",
                 description: "Press and hold the push-to-talk hotkey (default: Right Alt). The app starts recording immediately.",
-                color: "#0d9488",
+                color: "#d4541e",
                 shadowColor: "rgba(14,165,233,0.25)",
               },
               {
@@ -219,7 +219,7 @@ export default function WhisperWalkiePage() {
                 icon: Zap,
                 label: "Speak",
                 description: "Talk naturally into your microphone for as long as you need. No time limit, no wake word.",
-                color: "#2dd4bf",
+                color: "#e8703f",
                 shadowColor: "rgba(6,182,212,0.25)",
               },
               {
@@ -227,16 +227,16 @@ export default function WhisperWalkiePage() {
                 icon: Monitor,
                 label: "Done",
                 description: "Release the key. Whisper transcribes locally and types the text directly into your focused window.",
-                color: "#0d9488",
+                color: "#d4541e",
                 shadowColor: "rgba(14,165,233,0.25)",
               },
             ].map((item) => (
               <StaggerItem key={item.step}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 text-center h-full p-8 relative group">
+                  <Card className="bg-card border-foreground/10 hover:border-primary/40 transition-all duration-500 text-center h-full p-8 relative group">
                     {/* Step number circle */}
                     <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center font-space-grotesk text-xl font-bold mx-auto mb-6 border-2 transition-shadow duration-300 group-hover:shadow-[0_0_40px_var(--step-glow)]"
+                      className="w-16 h-16 rounded-none flex items-center justify-center font-mono text-xl font-bold mx-auto mb-6 border-2 transition-shadow duration-300 group-hover:shadow-[0_0_40px_var(--step-glow)]"
                       style={{
                         backgroundColor: `${item.color}18`,
                         color: item.color,
@@ -249,7 +249,7 @@ export default function WhisperWalkiePage() {
                     </div>
                     {/* Icon */}
                     <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5"
+                      className="w-12 h-12 rounded-none flex items-center justify-center mx-auto mb-5"
                       style={{ backgroundColor: `${item.color}15` }}
                     >
                       <item.icon
@@ -258,8 +258,8 @@ export default function WhisperWalkiePage() {
                         aria-hidden="true"
                       />
                     </div>
-                    <h3 className="text-2xl font-bold text-white font-space-grotesk mb-3">{item.label}</h3>
-                    <p className="text-white/60 leading-relaxed max-w-[240px] mx-auto">{item.description}</p>
+                    <h3 className="text-2xl font-bold text-foreground font-mono mb-3">{item.label}</h3>
+                    <p className="text-foreground/60 leading-relaxed max-w-[240px] mx-auto">{item.description}</p>
                   </Card>
                 </AnimatedCard>
               </StaggerItem>
@@ -272,17 +272,17 @@ export default function WhisperWalkiePage() {
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* ── Quickstart Guide ──────────────────────────────────────── */}
-      <section className="relative py-20 sm:py-32 bg-[#1c1c26]/20">
+      <section className="relative py-20 sm:py-32 bg-card/20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-3">
                 First time setup
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-mono">
                 Quickstart Guide
               </h2>
-              <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto font-light">
                 Up and running in under five minutes.
               </p>
             </FadeIn>
@@ -291,7 +291,7 @@ export default function WhisperWalkiePage() {
           {/* Vertical timeline */}
           <div className="max-w-3xl mx-auto relative">
             {/* Vertical connecting line */}
-            <div className="absolute left-7 top-8 bottom-8 w-px bg-gradient-to-b from-[#0d9488]/60 via-[#2dd4bf]/30 to-transparent pointer-events-none hidden sm:block" aria-hidden="true" />
+            <div className="absolute left-7 top-8 bottom-8 w-px bg-gradient-to-b from-primary/60 via-primary/30 to-transparent pointer-events-none hidden sm:block" aria-hidden="true" />
 
             <StaggerContainer className="space-y-6" staggerDelay={0.12}>
 
@@ -300,19 +300,19 @@ export default function WhisperWalkiePage() {
                 <div className="flex gap-6 items-start">
                   {/* Circle + icon */}
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#0b7f73]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
-                      <Download className="w-6 h-6 text-[#0d9488]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-none bg-primary/15 border-2 border-primary/50 flex items-center justify-center z-10 relative">
+                      <Download className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0b7f73] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-none bg-primary text-foreground text-[10px] font-bold flex items-center justify-center z-20">
                       1
                     </span>
                   </div>
                   {/* Content */}
                   <AnimatedCard>
-                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 flex-1">
+                    <Card className="bg-card border-foreground/10 hover:border-primary/40 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Download</h3>
-                        <p className="text-white/60 leading-relaxed text-sm">
+                        <h3 className="text-lg font-bold text-foreground font-mono mb-2">Download</h3>
+                        <p className="text-foreground/60 leading-relaxed text-sm">
                           Click Download, choose your platform. The installer handles everything.
                         </p>
                       </CardContent>
@@ -325,75 +325,75 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#2dd4bf]/15 border-2 border-[#2dd4bf]/50 flex items-center justify-center z-10 relative">
-                      <Monitor className="w-6 h-6 text-[#2dd4bf]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-none bg-primary/15 border-2 border-primary/50 flex items-center justify-center z-10 relative">
+                      <Monitor className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#2dd4bf] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-none bg-primary text-foreground text-[10px] font-bold flex items-center justify-center z-20">
                       2
                     </span>
                   </div>
                   <AnimatedCard>
-                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/40 transition-all duration-500 flex-1">
+                    <Card className="bg-card border-foreground/10 hover:border-primary/40 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-3">Install &amp; Open</h3>
+                        <h3 className="text-lg font-bold text-foreground font-mono mb-3">Install &amp; Open</h3>
                         <div className="space-y-3">
                           {/* Windows */}
                           <details className="group/detail">
-                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#0b7f73]/15 flex items-center justify-center flex-shrink-0">
-                                <Monitor className="w-3 h-3 text-[#0d9488]" aria-hidden="true" />
+                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-foreground/80 hover:text-foreground transition-colors select-none">
+                              <span className="w-5 h-5 rounded bg-primary/15 flex items-center justify-center flex-shrink-0">
+                                <Monitor className="w-3 h-3 text-primary" aria-hidden="true" />
                               </span>
                               Windows
-                              <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                              <svg className="w-3.5 h-3.5 text-foreground/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
-                            <p className="mt-2 ml-7 text-white/50 text-sm leading-relaxed">
+                            <p className="mt-2 ml-7 text-foreground/50 text-sm leading-relaxed">
                               Run the installer. If SmartScreen appears, click &ldquo;More info&rdquo; &rarr; &ldquo;Run anyway&rdquo; — the app is open source and safe.
                             </p>
                           </details>
                           {/* macOS */}
                           <details className="group/detail">
-                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#2dd4bf]/15 flex items-center justify-center flex-shrink-0">
-                                <Globe className="w-3 h-3 text-[#2dd4bf]" aria-hidden="true" />
+                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-foreground/80 hover:text-foreground transition-colors select-none">
+                              <span className="w-5 h-5 rounded bg-primary/15 flex items-center justify-center flex-shrink-0">
+                                <Globe className="w-3 h-3 text-primary" aria-hidden="true" />
                               </span>
                               macOS
-                              <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                              <svg className="w-3.5 h-3.5 text-foreground/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
                             <div className="mt-2 ml-7 space-y-2">
-                              <ol className="text-white/50 text-sm leading-relaxed space-y-1.5 list-decimal list-inside">
-                                <li>Open the downloaded <code className="text-[#2dd4bf]/80 bg-white/5 px-1 py-0.5 rounded text-xs">.zip</code> — it extracts automatically</li>
-                                <li>Open the <span className="text-white/70">WhisperWalkie</span> folder</li>
-                                <li>Right-click <span className="text-white/70">WhisperWalkie</span> &rarr; <span className="text-white/70">Open</span></li>
-                                <li>Click <span className="text-white/70">&ldquo;Open&rdquo;</span> when macOS asks to confirm</li>
+                              <ol className="text-foreground/50 text-sm leading-relaxed space-y-1.5 list-decimal list-inside">
+                                <li>Open the downloaded <code className="text-primary/80 bg-foreground/5 px-1 py-0.5 rounded text-xs">.zip</code> — it extracts automatically</li>
+                                <li>Open the <span className="text-foreground/70">WhisperWalkie</span> folder</li>
+                                <li>Right-click <span className="text-foreground/70">WhisperWalkie</span> &rarr; <span className="text-foreground/70">Open</span></li>
+                                <li>Click <span className="text-foreground/70">&ldquo;Open&rdquo;</span> when macOS asks to confirm</li>
                               </ol>
-                              <p className="text-white/40 text-xs">
+                              <p className="text-foreground/40 text-xs">
                                 Grant Accessibility permissions when prompted: System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.
                               </p>
                             </div>
                           </details>
                           {/* Linux */}
                           <details className="group/detail">
-                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-white/80 hover:text-white transition-colors select-none">
-                              <span className="w-5 h-5 rounded bg-[#0b7f73]/15 flex items-center justify-center flex-shrink-0">
-                                <Terminal className="w-3 h-3 text-[#0d9488]" aria-hidden="true" />
+                            <summary className="flex items-center gap-2 cursor-pointer list-none text-sm font-medium text-foreground/80 hover:text-foreground transition-colors select-none">
+                              <span className="w-5 h-5 rounded bg-primary/15 flex items-center justify-center flex-shrink-0">
+                                <Terminal className="w-3 h-3 text-primary" aria-hidden="true" />
                               </span>
                               Linux
-                              <svg className="w-3.5 h-3.5 text-white/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                              <svg className="w-3.5 h-3.5 text-foreground/40 ml-auto transition-transform group-open/detail:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
                             </summary>
                             <div className="mt-2 ml-7 space-y-2">
-                              <ol className="text-white/50 text-sm leading-relaxed space-y-1.5 list-decimal list-inside">
-                                <li>Extract the downloaded <code className="text-[#2dd4bf]/80 bg-white/5 px-1 py-0.5 rounded text-xs">.tar.gz</code> file</li>
-                                <li>Open the <span className="text-white/70">WhisperWalkie</span> folder</li>
-                                <li>Double-click <span className="text-white/70">WhisperWalkie</span> to launch</li>
+                              <ol className="text-foreground/50 text-sm leading-relaxed space-y-1.5 list-decimal list-inside">
+                                <li>Extract the downloaded <code className="text-primary/80 bg-foreground/5 px-1 py-0.5 rounded text-xs">.tar.gz</code> file</li>
+                                <li>Open the <span className="text-foreground/70">WhisperWalkie</span> folder</li>
+                                <li>Double-click <span className="text-foreground/70">WhisperWalkie</span> to launch</li>
                               </ol>
-                              <p className="text-white/40 text-xs mt-1">
-                                Optional: run <code className="text-[#2dd4bf]/80 bg-white/5 px-1 py-0.5 rounded text-xs">./install-linux.sh</code> to add a desktop shortcut to your app menu.
+                              <p className="text-foreground/40 text-xs mt-1">
+                                Optional: run <code className="text-primary/80 bg-foreground/5 px-1 py-0.5 rounded text-xs">./install-linux.sh</code> to add a desktop shortcut to your app menu.
                               </p>
                             </div>
                           </details>
@@ -408,18 +408,18 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#0b7f73]/15 border-2 border-[#0d9488]/50 flex items-center justify-center z-10 relative">
-                      <Settings className="w-6 h-6 text-[#0d9488]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-none bg-primary/15 border-2 border-primary/50 flex items-center justify-center z-10 relative">
+                      <Settings className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#0b7f73] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-none bg-primary text-foreground text-[10px] font-bold flex items-center justify-center z-20">
                       3
                     </span>
                   </div>
                   <AnimatedCard>
-                    <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 flex-1">
+                    <Card className="bg-card border-foreground/10 hover:border-primary/40 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Choose Your Mic</h3>
-                        <p className="text-white/60 leading-relaxed text-sm">
+                        <h3 className="text-lg font-bold text-foreground font-mono mb-2">Choose Your Mic</h3>
+                        <p className="text-foreground/60 leading-relaxed text-sm">
                           Open Settings in the app and select your microphone from the dropdown.
                         </p>
                       </CardContent>
@@ -432,19 +432,19 @@ export default function WhisperWalkiePage() {
               <StaggerItem>
                 <div className="flex gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#2dd4bf]/15 border-2 border-[#2dd4bf]/50 flex items-center justify-center z-10 relative">
-                      <Play className="w-6 h-6 text-[#2dd4bf]" aria-hidden="true" />
+                    <div className="w-14 h-14 rounded-none bg-primary/15 border-2 border-primary/50 flex items-center justify-center z-10 relative">
+                      <Play className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#2dd4bf] text-white text-[10px] font-bold flex items-center justify-center z-20">
+                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-none bg-primary text-foreground text-[10px] font-bold flex items-center justify-center z-20">
                       4
                     </span>
                   </div>
                   <AnimatedCard>
-                    <Card className="bg-gradient-to-br from-[#0d9488]/8 via-[#1c1c26] to-[#2dd4bf]/8 border-[#2dd4bf]/25 hover:border-[#2dd4bf]/50 transition-all duration-500 flex-1">
+                    <Card className="bg-gradient-to-br from-primary/8 via-card to-primary/8 border-primary/25 hover:border-primary/50 transition-all duration-500 flex-1">
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Try It!</h3>
-                        <p className="text-white/60 leading-relaxed text-sm">
-                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-[#0b7f73]/15 border border-[#0d9488]/30 rounded text-[#0d9488] font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
+                        <h3 className="text-lg font-bold text-foreground font-mono mb-2">Try It!</h3>
+                        <p className="text-foreground/60 leading-relaxed text-sm">
+                          Hold <kbd className="px-1.5 py-0.5 text-xs bg-primary/15 border border-primary/30 rounded text-primary font-mono">Right Alt</kbd> (or your chosen hotkey), speak naturally, release. Text appears wherever your cursor is!
                         </p>
                       </CardContent>
                     </Card>
@@ -465,13 +465,13 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-3">
                 Why switch
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-mono">
                 Why Whisper Walkie
               </h2>
-              <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto font-light">
                 Most voice tools trade your privacy for convenience. You should not have to choose.
               </p>
             </FadeIn>
@@ -480,22 +480,22 @@ export default function WhisperWalkiePage() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Other tools — muted/negative */}
             <FadeIn delay={0.1} direction="right">
-              <Card className="bg-[#1c1c26]/60 border-white/10 h-full">
+              <Card className="bg-card/60 border-foreground/10 h-full">
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <span className="text-xs font-bold uppercase tracking-wider text-white/30">Other Voice Tools</span>
-                    <h3 className="text-xl font-bold text-white/50 font-space-grotesk mt-1">The trade-offs you accept</h3>
+                    <span className="text-xs font-bold uppercase tracking-wider text-foreground/30">Other Voice Tools</span>
+                    <h3 className="text-xl font-bold text-foreground/50 font-mono mt-1">The trade-offs you accept</h3>
                   </div>
                   <ul className="space-y-4" role="list">
                     {otherToolsProblems.map((problem) => (
                       <li key={problem} className="flex items-start gap-3">
                         <span
-                          className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold text-red-400/70 bg-red-500/10 border border-red-500/20"
+                          className="mt-0.5 w-5 h-5 rounded-none flex items-center justify-center flex-shrink-0 text-xs font-bold text-red-400/70 bg-red-500/10 border border-red-500/20"
                           aria-hidden="true"
                         >
                           ✕
                         </span>
-                        <span className="text-white/40 leading-relaxed">{problem}</span>
+                        <span className="text-foreground/40 leading-relaxed">{problem}</span>
                       </li>
                     ))}
                   </ul>
@@ -505,20 +505,20 @@ export default function WhisperWalkiePage() {
 
             {/* Whisper Walkie — positive */}
             <FadeIn delay={0.2} direction="left">
-              <Card className="bg-gradient-to-br from-[#0d9488]/8 via-[#1c1c26] to-[#2dd4bf]/8 border-[#0d9488]/25 hover:border-[#0d9488]/50 transition-all duration-500 h-full">
+              <Card className="bg-gradient-to-br from-primary/8 via-card to-primary/8 border-primary/25 hover:border-primary/50 transition-all duration-500 h-full">
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">Whisper Walkie</span>
-                    <h3 className="text-xl font-bold text-white font-space-grotesk mt-1">What you actually get</h3>
+                    <span className="text-xs font-bold uppercase tracking-wider text-primary">Whisper Walkie</span>
+                    <h3 className="text-xl font-bold text-foreground font-mono mt-1">What you actually get</h3>
                   </div>
                   <ul className="space-y-4" role="list">
                     {whisperwalkieBenefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-3">
                         <CheckCircle
-                          className="mt-0.5 w-5 h-5 flex-shrink-0 text-[#2dd4bf]"
+                          className="mt-0.5 w-5 h-5 flex-shrink-0 text-primary"
                           aria-hidden="true"
                         />
-                        <span className="text-white/80 leading-relaxed">{benefit}</span>
+                        <span className="text-foreground/80 leading-relaxed">{benefit}</span>
                       </li>
                     ))}
                   </ul>
@@ -533,17 +533,17 @@ export default function WhisperWalkiePage() {
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* ── Features Grid ─────────────────────────────────────────── */}
-      <section className="relative py-20 sm:py-32 bg-[#1c1c26]/20">
+      <section className="relative py-20 sm:py-32 bg-card/20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-3">
                 What&apos;s inside
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-mono">
                 Features
               </h2>
-              <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto font-light">
                 Everything you need. Nothing you don&apos;t.
               </p>
             </FadeIn>
@@ -553,10 +553,10 @@ export default function WhisperWalkiePage() {
             {features.map((feature) => (
               <StaggerItem key={feature.title}>
                 <AnimatedCard>
-                  <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/40 transition-all duration-500 h-full group">
+                  <Card className="bg-card border-foreground/10 hover:border-primary/40 transition-all duration-500 h-full group">
                     <CardContent className="p-6 sm:p-8 space-y-4">
                       <div
-                        className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                        className="w-12 h-12 rounded-none flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                         style={{ backgroundColor: `${feature.accent}15` }}
                       >
                         <feature.icon
@@ -565,8 +565,8 @@ export default function WhisperWalkiePage() {
                           aria-hidden="true"
                         />
                       </div>
-                      <h3 className="text-lg font-bold text-white font-space-grotesk">{feature.title}</h3>
-                      <p className="text-white/60 leading-relaxed text-sm">{feature.description}</p>
+                      <h3 className="text-lg font-bold text-foreground font-mono">{feature.title}</h3>
+                      <p className="text-foreground/60 leading-relaxed text-sm">{feature.description}</p>
                     </CardContent>
                   </Card>
                 </AnimatedCard>
@@ -584,36 +584,36 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-12">
-              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-3">
                 The story
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-mono">
                 Why I Built This
               </h2>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <div className="space-y-6 text-white/70 leading-relaxed text-lg">
+            <div className="space-y-6 text-foreground/70 leading-relaxed text-lg">
               <p>
                 I was using tools like{" "}
-                <a href="https://heywillow.io" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Willow</a>
+                <a href="https://heywillow.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Willow</a>
                 {" "}and{" "}
-                <a href="https://openwhispr.com" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">OpenWhispr</a>
+                <a href="https://openwhispr.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">OpenWhispr</a>
                 {" "}for voice transcription. They worked — but every word I spoke was going to the cloud,
                 where other companies could use it to train their models. That didn&apos;t sit right with me.
               </p>
               <p>
                 I was already running{" "}
-                <a href="https://ollama.com" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Ollama</a>
+                <a href="https://ollama.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ollama</a>
                 {" "}and{" "}
-                <a href="https://openwebui.com" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Open WebUI</a>
+                <a href="https://openwebui.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Open WebUI</a>
                 {" "}for local LLMs. I wanted the same thing for voice: fast, private, and completely offline.
                 So I built it.
               </p>
               <p>
                 Whisper Walkie was built entirely using the agentic AI workflow with{" "}
-                <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer" className="text-[#2dd4bf] hover:underline">Claude Code</a>
+                <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Claude Code</a>
                 {" "}from Anthropic — proving that one developer with the right tools can ship production-quality,
                 cross-platform software that stands up against anything built by a traditional dev team.
               </p>
@@ -626,8 +626,8 @@ export default function WhisperWalkiePage() {
           </FadeIn>
 
           <FadeIn delay={0.25}>
-            <p className="mt-8 text-center text-white/40 text-sm">
-              &mdash; Joe, <a href="/" className="text-[#0d9488] hover:underline">Joe&apos;s Tech Solutions</a>
+            <p className="mt-8 text-center text-foreground/40 text-sm">
+              &mdash; Joe, <a href="/" className="text-primary hover:underline">Joe&apos;s Tech Solutions</a>
             </p>
           </FadeIn>
         </div>
@@ -641,13 +641,13 @@ export default function WhisperWalkiePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <FadeIn>
-              <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-3">
                 Get started
               </span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-mono">
                 Download
               </h2>
-              <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto font-light">
                 Whisper AI model is bundled — no internet needed after download.
               </p>
             </FadeIn>
@@ -656,34 +656,34 @@ export default function WhisperWalkiePage() {
           <PlatformDownloadCards />
 
           <FadeIn delay={0.3}>
-            <p className="text-center text-sm text-white/40 mt-8">
+            <p className="text-center text-sm text-foreground/40 mt-8">
               All downloads on{" "}
               <a
                 href={GITHUB_RELEASES}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0d9488] hover:underline"
+                className="text-primary hover:underline"
               >
                 GitHub Releases
               </a>
               . Whisper AI model bundled — no internet needed after download.
             </p>
-            <div className="text-center text-sm text-white/50 mt-4 max-w-2xl mx-auto space-y-2">
+            <div className="text-center text-sm text-foreground/50 mt-4 max-w-2xl mx-auto space-y-2">
               <p>
-                <span className="text-[#2dd4bf] font-medium">Windows:</span>{" "}
+                <span className="text-primary font-medium">Windows:</span>{" "}
                 If SmartScreen says &ldquo;Windows protected your PC,&rdquo; click{" "}
-                <span className="text-white/80 font-medium">&ldquo;More info&rdquo;</span> &rarr;{" "}
-                <span className="text-white/80 font-medium">&ldquo;Run anyway.&rdquo;</span>
+                <span className="text-foreground/80 font-medium">&ldquo;More info&rdquo;</span> &rarr;{" "}
+                <span className="text-foreground/80 font-medium">&ldquo;Run anyway.&rdquo;</span>
               </p>
               <p>
-                <span className="text-[#2dd4bf] font-medium">macOS:</span>{" "}
+                <span className="text-primary font-medium">macOS:</span>{" "}
                 Right-click the app and choose &ldquo;Open&rdquo; on first launch. Grant Accessibility access when prompted.
               </p>
               <p>
-                <span className="text-[#2dd4bf] font-medium">Linux:</span>{" "}
+                <span className="text-primary font-medium">Linux:</span>{" "}
                 Extract the folder and double-click WhisperWalkie to launch.
               </p>
-              <p className="text-white/40 text-xs pt-1">
+              <p className="text-foreground/40 text-xs pt-1">
                 These warnings are normal for independent software. Whisper Walkie is fully open source — inspect every line on GitHub.
               </p>
             </div>
@@ -695,22 +695,22 @@ export default function WhisperWalkiePage() {
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* ── Built with AI ─────────────────────────────────────────── */}
-      <section className="relative py-20 sm:py-32 bg-[#1c1c26]/20">
+      <section className="relative py-20 sm:py-32 bg-card/20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="block text-[#0d9488] font-bold text-xs tracking-wider uppercase mb-6">
+            <span className="block text-primary font-bold text-xs tracking-wider uppercase mb-6">
               Human + AI collaboration
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-space-grotesk">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-mono">
               Built with AI
             </h2>
-            <p className="text-lg text-white/70 leading-relaxed mb-4 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 leading-relaxed mb-4 max-w-2xl mx-auto">
               This entire app was built through human-AI collaboration with Claude by Anthropic.
               The architecture, the cross-platform backend, the GUI — all designed and iterated through
               a tight loop between a developer who knew what the app needed to do and an AI that could
               help ship it faster without cutting corners.
             </p>
-            <p className="text-base text-white/50 leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-base text-foreground/50 leading-relaxed max-w-2xl mx-auto mb-8">
               That is not a disclaimer — it is the point. AI-assisted development lets a single developer
               build and maintain production-quality, cross-platform software that would otherwise require
               a team. Whisper Walkie is a working proof of that model.
@@ -719,7 +719,7 @@ export default function WhisperWalkiePage() {
               href={GITHUB_REPO}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#0d9488] hover:text-[#38bdf8] font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary font-medium transition-colors"
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
               Read the source on GitHub
@@ -739,24 +739,24 @@ export default function WhisperWalkiePage() {
 
       {/* ── Final CTA ─────────────────────────────────────────────── */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
         {/* Blobs */}
         <div className="absolute inset-0 opacity-25 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0b7f73] rounded-full blur-[130px] animate-glow" />
+          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-primary rounded-none blur-[130px] animate-glow" />
           <div
-            className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#2dd4bf] rounded-full blur-[110px] animate-glow"
+            className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-primary rounded-none blur-[110px] animate-glow"
             style={{ animationDelay: "1.5s" }}
           />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 font-space-grotesk">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 font-mono">
               Try Whisper Walkie Today
             </h2>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="text-xl text-white/70 mb-10 font-light">
+            <p className="text-xl text-foreground/70 mb-10 font-light">
               Free. Private. Works in any app.
             </p>
           </FadeIn>
@@ -767,7 +767,7 @@ export default function WhisperWalkiePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg px-10 py-7 rounded-full border-white/20 hover:bg-white/5 hover:border-white/30 backdrop-blur-sm transition-all"
+                  className="text-lg px-10 py-7 rounded-none border-foreground/20 hover:bg-foreground/5 hover:border-foreground/30 backdrop-blur-sm transition-all"
                 >
                   Star on GitHub
                 </Button>
@@ -775,7 +775,7 @@ export default function WhisperWalkiePage() {
             </div>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <p className="mt-8 text-white/30 text-sm">
+            <p className="mt-8 text-foreground/30 text-sm">
               MIT License &middot; No account required &middot; Audio never leaves your machine
             </p>
           </FadeIn>

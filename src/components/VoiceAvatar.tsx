@@ -101,13 +101,13 @@ export function VoiceAvatar() {
         {/* Pulsing rings when playing */}
         {isPlaying && (
           <>
-            <span className="absolute inset-0 rounded-full animate-ping-slow bg-[#0d9488]/20" />
-            <span className="absolute inset-0 rounded-full animate-ping-slower bg-[#0d9488]/10" />
+            <span className="absolute inset-0 rounded-none animate-ping-slow bg-primary/20" />
+            <span className="absolute inset-0 rounded-none animate-ping-slower bg-primary/10" />
           </>
         )}
 
         {/* Avatar image */}
-        <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-[#0d9488]/40 group-hover:border-[#0d9488]/70 transition-all duration-500 shadow-xl shadow-[#0d9488]/10">
+        <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-none overflow-hidden border-2 border-primary/40 group-hover:border-primary/70 transition-all duration-500 shadow-xl shadow-primary/10">
           <Image
             src="/images/joe-profile.jpg"
             alt="Joe Blas — Joe's Tech Solutions"
@@ -119,14 +119,14 @@ export function VoiceAvatar() {
         </div>
 
         {/* Play/Pause overlay */}
-        <div className={`absolute inset-0 flex items-center justify-center rounded-full transition-all duration-300 ${isPlaying ? "bg-black/40" : "bg-black/20 group-hover:bg-black/30"}`}>
+        <div className={`absolute inset-0 flex items-center justify-center rounded-none transition-all duration-300 ${isPlaying ? "bg-black/40" : "bg-black/20 group-hover:bg-black/30"}`}>
           {isPlaying ? (
-            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-foreground" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="6" y="5" width="4" height="14" rx="1" />
               <rect x="14" y="5" width="4" height="14" rx="1" />
             </svg>
           ) : (
-            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-foreground drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M8 5v14l11-7z" />
             </svg>
           )}
@@ -135,14 +135,14 @@ export function VoiceAvatar() {
         {/* Progress ring */}
         {isPlaying && progress > 0 && (
           <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="48" fill="none" stroke="#0d9488" strokeWidth="2" strokeDasharray="301.6" strokeDashoffset={301.6 - (301.6 * progress) / 100} strokeLinecap="round" className="transition-all duration-150" />
+            <circle cx="50" cy="50" r="48" fill="none" stroke="#d4541e" strokeWidth="2" strokeDasharray="301.6" strokeDashoffset={301.6 - (301.6 * progress) / 100} strokeLinecap="round" className="transition-all duration-150" />
           </svg>
         )}
       </div>
 
       {/* Label */}
       <div className="text-center">
-        <p className="text-sm text-white/60 font-medium">
+        <p className="text-sm text-foreground/60 font-medium">
           {isPlaying ? "Joe is talking..." : "Hear from Joe"}
         </p>
       </div>
@@ -154,10 +154,10 @@ export function VoiceAvatar() {
             <button
               key={clip.id}
               onClick={() => handlePlay(clip)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-none text-sm font-medium transition-all duration-300 ${
                 activeClip === clip.id
-                  ? "bg-[#0b7f73] text-white border-[#0d9488]"
-                  : "bg-[#1c1c26] text-white/70 border-white/10 hover:border-[#0d9488]/40 hover:text-white"
+                  ? "bg-primary text-foreground border-primary"
+                  : "bg-card text-foreground/70 border-foreground/10 hover:border-primary/40 hover:text-foreground"
               } border`}
             >
               {clip.label}
@@ -168,10 +168,10 @@ export function VoiceAvatar() {
 
       {/* Coming soon state when no audio yet */}
       {!hasAudio && (
-        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1c1c26]/60 border border-white/10 text-xs text-white/40">
+        <div className="flex items-center gap-2 px-4 py-2 rounded-none bg-card/60 border border-foreground/10 text-xs text-foreground/40">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2dd4bf]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-primary opacity-75" />
+            <span className="relative inline-flex rounded-none h-2 w-2 bg-primary" />
           </span>
           Voice cloning in progress
         </div>

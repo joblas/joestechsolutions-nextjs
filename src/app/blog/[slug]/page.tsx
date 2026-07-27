@@ -84,10 +84,10 @@ export default async function BlogPostPage({ params }: Props) {
       <ScrollProgress />
       {/* Header */}
       <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0d0d12] to-[#0d0d12]" />
+        <div className="absolute inset-0 bg-linear-to-br from-card via-background to-background" />
         <div className="absolute inset-0 opacity-15">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#8B5CF6] rounded-full blur-[160px]" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#0b7f73] rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-none blur-[160px]" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary rounded-none blur-[120px]" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: Props) {
           <FadeIn delay={0}>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-white/40 hover:text-white text-sm font-[family-name:var(--font-jetbrains-mono)] mb-10 transition-colors group"
+              className="inline-flex items-center gap-2 text-foreground/40 hover:text-foreground text-sm font-[family-name:var(--font-jetbrains-mono)] mb-10 transition-colors group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               cd ../blog
@@ -104,18 +104,18 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Title */}
           <TextReveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[family-name:var(--font-jetbrains-mono)] leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-[family-name:var(--font-jetbrains-mono)] leading-tight mb-6">
               {post.title}
             </h1>
           </TextReveal>
 
           {/* Meta bar */}
           <FadeIn delay={0.15}>
-            <div className="flex flex-wrap items-center gap-4 text-white/40 text-sm font-[family-name:var(--font-jetbrains-mono)] border-t border-white/5 pt-4">
+            <div className="flex flex-wrap items-center gap-4 text-foreground/40 text-sm font-[family-name:var(--font-jetbrains-mono)] border-t border-foreground/5 pt-4">
               <span>{post.author}</span>
-              <span className="text-white/15">·</span>
+              <span className="text-foreground/15">·</span>
               <time dateTime={post.date}>{formatDate(post.date)}</time>
-              <span className="text-white/15">·</span>
+              <span className="text-foreground/15">·</span>
               <span>{post.readTime} min read</span>
             </div>
           </FadeIn>
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs text-white/30 border border-white/10 rounded px-2 py-0.5 font-[family-name:var(--font-jetbrains-mono)]"
+                  className="text-xs text-foreground/30 border border-foreground/10 rounded px-2 py-0.5 font-[family-name:var(--font-jetbrains-mono)]"
                 >
                   {tag}
                 </span>
@@ -229,31 +229,31 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="relative py-16 sm:py-24 overflow-hidden">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
-            <div className="relative bg-linear-to-br from-[#0d9488]/10 via-[#1c1c26] to-[#8B5CF6]/10 border border-white/10 rounded-3xl p-10 sm:p-14 overflow-hidden">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#0b7f73] rounded-full blur-[100px] opacity-10" />
-              <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-[#8B5CF6] rounded-full blur-[80px] opacity-10" />
+            <div className="relative bg-linear-to-br from-primary/10 via-card to-primary/10 border border-foreground/10 rounded-none p-10 sm:p-14 overflow-hidden">
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary rounded-none blur-[100px] opacity-10" />
+              <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-primary rounded-none blur-[80px] opacity-10" />
               <div className="relative">
-                <div className="inline-flex items-center gap-2 bg-[#0b7f73]/10 border border-[#0d9488]/30 rounded-full px-4 py-1.5 mb-6">
-                  <span className="w-2 h-2 rounded-full bg-[#0b7f73]" />
-                  <span className="text-[#0d9488] text-sm font-medium">Private AI Setup Service</span>
+                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-none px-4 py-1.5 mb-6">
+                  <span className="w-2 h-2 rounded-none bg-primary" />
+                  <span className="text-primary text-sm font-medium">Private AI Setup Service</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-jetbrains-mono)]">
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-[family-name:var(--font-jetbrains-mono)]">
                   Keep Your Data Where It Belongs
                 </h2>
-                <p className="text-white/70 text-lg mb-8 max-w-xl leading-relaxed">
+                <p className="text-foreground/70 text-lg mb-8 max-w-xl leading-relaxed">
                   I&apos;ll set up a fully private AI on your hardware — Ollama, Open WebUI, model configuration, and team onboarding. One flat fee. No monthly subscriptions. Your data never leaves your building.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/private-ai-setup"
-                    className="inline-flex items-center justify-center gap-2 bg-[#0b7f73] hover:bg-[#0f766e] text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg shadow-[#0b7f73]/20"
+                    className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/85 text-foreground font-semibold px-8 py-4 rounded-none transition-colors shadow-lg shadow-primary/20"
                   >
                     See the Setup Package
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/blog"
-                    className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-full border border-white/10 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-foreground/5 hover:bg-foreground/10 text-foreground font-semibold px-8 py-4 rounded-none border border-foreground/10 transition-colors"
                   >
                     More Posts
                   </Link>

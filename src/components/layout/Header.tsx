@@ -6,6 +6,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-[#0d0d12]/95 backdrop-blur-md border-b border-white/10" role="banner">
+    <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-foreground/10" role="banner">
       <nav className="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -34,7 +35,7 @@ export function Header() {
                 height={56}
                 className="transition-transform group-hover:scale-105"
               />
-              <span className="text-lg font-bold text-white group-hover:text-[#0d9488] transition-colors font-space-grotesk hidden sm:inline">
+              <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors font-mono hidden sm:inline">
                 Joe's Tech Solutions
               </span>
             </Link>
@@ -51,8 +52,8 @@ export function Header() {
                     href={item.href}
                     className={`transition-colors text-sm font-medium ${
                       isActive
-                        ? "text-[#0d9488]"
-                        : "text-white/70 hover:text-[#0d9488]"
+                        ? "text-primary"
+                        : "text-foreground/70 hover:text-primary"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -60,8 +61,9 @@ export function Header() {
                   </Link>
                 );
               })}
+              <ThemeToggle />
               <Link href="/contact">
-                <Button size="sm" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full shadow-lg shadow-[#0b7f73]/20">
+                <Button size="sm" className="bg-primary hover:bg-primary/85 text-foreground rounded-none shadow-lg shadow-primary/20">
                   Get in touch
                 </Button>
               </Link>
@@ -69,10 +71,11 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white/70 hover:text-[#0d9488] min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="text-foreground/70 hover:text-primary min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
@@ -93,8 +96,8 @@ export function Header() {
                   href={item.href}
                   className={`flex items-center px-4 py-2 rounded transition-colors min-h-[44px] ${
                     isActive
-                      ? "text-[#0d9488] bg-white/5"
-                      : "text-white/70 hover:text-[#0d9488] hover:bg-white/5"
+                      ? "text-primary bg-foreground/5"
+                      : "text-foreground/70 hover:text-primary hover:bg-foreground/5"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive ? "page" : undefined}
@@ -105,7 +108,7 @@ export function Header() {
             })}
             <div className="px-4 pt-2">
               <Link href="/contact" className="block" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full min-h-[44px] shadow-lg shadow-[#0b7f73]/20">
+                <Button className="w-full bg-primary hover:bg-primary/85 text-foreground rounded-none min-h-[44px] shadow-lg shadow-primary/20">
                   Get in touch
                 </Button>
               </Link>

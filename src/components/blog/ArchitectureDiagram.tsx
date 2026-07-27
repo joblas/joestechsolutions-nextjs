@@ -50,7 +50,7 @@ function Node({
         stroke={color}
         strokeWidth={1.5}
       />
-      <text x={x} y={sublabel ? y - 4 : y + 1} textAnchor="middle" dominantBaseline="middle" fill="white" fontSize={size === "lg" ? 14 : 12} fontWeight={600} fontFamily="var(--font-space-grotesk), system-ui">
+      <text x={x} y={sublabel ? y - 4 : y + 1} textAnchor="middle" dominantBaseline="middle" fill="white" fontSize={size === "lg" ? 14 : 12} fontWeight={600} fontFamily="var(--font-mono), system-ui">
         {label}
       </text>
       {sublabel && (
@@ -87,8 +87,8 @@ export function ArchitectureDiagram() {
   return (
     <div className="relative my-10">
       {/* Glow backdrop */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0d9488]/5 via-transparent to-[#8B5CF6]/5 rounded-2xl" />
-      <div className="relative border border-white/10 rounded-2xl bg-[#0d0d12]/80 backdrop-blur-sm p-4 sm:p-8 overflow-x-auto">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 rounded-none" />
+      <div className="relative border border-foreground/10 rounded-none bg-background/80 backdrop-blur-sm p-4 sm:p-8 overflow-x-auto">
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full min-w-[600px]" preserveAspectRatio="xMidYMid meet">
           {/* Connections */}
           <Connection x1={400} y1={56} x2={400} y2={120} index={0} />
@@ -104,17 +104,17 @@ export function ArchitectureDiagram() {
           <Connection x1={400} y1={358} x2={640} y2={392} index={8} />
 
           {/* Top: Joe */}
-          <Node x={400} y={36} label="👤 Joe" sublabel="Telegram" color="#0d9488" index={0} size="lg" />
+          <Node x={400} y={36} label="👤 Joe" sublabel="Telegram" color="#d4541e" index={0} size="lg" />
 
           {/* Orchestrator */}
           <Node x={400} y={142} label="🧠 Lurkr" sublabel="Orchestrator · Opus" color="#8B5CF6" index={1} size="lg" />
 
           {/* Sub-agents row */}
-          <Node x={120} y={248} label="⚒️ Forge" sublabel="Code" color="#2dd4bf" index={2} size="sm" />
-          <Node x={260} y={248} label="📡 Radar" sublabel="Leads" color="#2dd4bf" index={3} size="sm" />
-          <Node x={400} y={248} label="🎨 Muse" sublabel="Content" color="#2dd4bf" index={4} size="sm" />
-          <Node x={540} y={248} label="⚙️ Helm" sublabel="Infra" color="#2dd4bf" index={5} size="sm" />
-          <Node x={680} y={248} label="💰 Ledger" sublabel="Finance" color="#2dd4bf" index={6} size="sm" />
+          <Node x={120} y={248} label="⚒️ Forge" sublabel="Code" color="#e8703f" index={2} size="sm" />
+          <Node x={260} y={248} label="📡 Radar" sublabel="Leads" color="#e8703f" index={3} size="sm" />
+          <Node x={400} y={248} label="🎨 Muse" sublabel="Content" color="#e8703f" index={4} size="sm" />
+          <Node x={540} y={248} label="⚙️ Helm" sublabel="Infra" color="#e8703f" index={5} size="sm" />
+          <Node x={680} y={248} label="💰 Ledger" sublabel="Finance" color="#e8703f" index={6} size="sm" />
 
           {/* Memory layer */}
           <Node x={400} y={338} label="💾 Memory + Cron" sublabel="Files · Supabase · Schedules" color="#F59E0B" index={7} size="lg" />
@@ -126,7 +126,7 @@ export function ArchitectureDiagram() {
           <Node x={640} y={400} label="Search" color="#64748B" index={11} size="sm" />
         </svg>
       </div>
-      <p className="text-center text-white/40 text-sm mt-3">System architecture — one VPS, 24 agents, zero Kubernetes</p>
+      <p className="text-center text-foreground/40 text-sm mt-3">System architecture — one VPS, 24 agents, zero Kubernetes</p>
     </div>
   );
 }

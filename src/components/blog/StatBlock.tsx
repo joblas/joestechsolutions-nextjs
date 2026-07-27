@@ -23,14 +23,14 @@ export function StatBlock({ stats }: { stats: Stat[] }) {
       {stats.map((stat, i) => (
         <div
           key={i}
-          className="relative border border-white/10 rounded-xl bg-[#0d0d12]/80 p-5 text-center overflow-hidden group hover:border-white/20 transition-colors"
+          className="relative border border-foreground/10 rounded-xl bg-background/80 p-5 text-center overflow-hidden group hover:border-foreground/20 transition-colors"
         >
-          <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${stat.color || "from-[#0d9488]/5 to-transparent"}`} />
+          <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${stat.color || "from-primary/5 to-transparent"}`} />
           <div className="relative">
-            <p className="text-2xl sm:text-3xl font-bold text-white font-space-grotesk">
+            <p className="text-2xl sm:text-3xl font-bold text-foreground font-mono">
               <CountUp to={stat.value} prefix={stat.prefix} suffix={stat.suffix} duration={1.5} />
             </p>
-            <p className="text-white/40 text-xs sm:text-sm mt-1">{stat.label}</p>
+            <p className="text-foreground/40 text-xs sm:text-sm mt-1">{stat.label}</p>
           </div>
         </div>
       ))}

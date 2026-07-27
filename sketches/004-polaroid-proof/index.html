@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JTS — Polaroid Proof</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #fdfcf7;
+    color: #1a1a1a;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { padding: 20px 0; border-bottom: 2px solid #1a1a1a; }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+  .logo span { color: #d4541e; }
+  nav ul { display: flex; gap: 24px; list-style: none; }
+  nav a { color: #1a1a1a; text-decoration: none; font-size: 15px; font-weight: 500; }
+  nav a:hover { color: #d4541e; }
+  .cta { background: #1a1a1a; color: #fff; padding: 8px 20px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cta:hover { background: #d4541e; }
+
+  /* Hero */
+  .hero { padding: 72px 0 48px; text-align: center; position: relative; }
+  .hero .polaroid {
+    display: inline-block;
+    background: #fff;
+    padding: 12px 12px 48px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    transform: rotate(-2deg);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .hero .polaroid .photo {
+    width: 160px; height: 160px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #666; font-size: 12px;
+  }
+  .hero .polaroid .caption {
+    position: absolute; bottom: 8px; left: 0; right: 0;
+    font-family: 'Caveat', cursive; font-size: 16px; color: #666;
+  }
+  .hero h1 { font-size: 40px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+  .hero h1 span { color: #d4541e; }
+  .hero p { font-size: 18px; max-width: 520px; margin: 0 auto 16px; color: #333; }
+  .hero .actions { display: flex; gap: 16px; justify-content: center; margin-top: 32px; }
+  .btn-primary { background: #d4541e; color: #fff; padding: 12px 28px; font-size: 15px; font-weight: 600; text-decoration: none; }
+  .btn-primary:hover { background: #1a1a1a; }
+  .btn-secondary { color: #1a1a1a; padding: 12px 28px; font-size: 15px; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1a1a1a; }
+
+  /* Status */
+  .status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Caveat', cursive; font-size: 18px; color: #666;
+    margin-bottom: 20px;
+  }
+  .status::before { content: '●'; color: #00aa44; }
+
+  /* Stats — as sticky notes */
+  .stats { display: flex; justify-content: center; gap: 24px; padding: 24px 0 48px; flex-wrap: wrap; }
+  .stat {
+    background: #fff; padding: 16px 24px; text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transform: rotate(var(--rot, 0deg));
+  }
+  .stat:nth-child(1) { --rot: -1deg; }
+  .stat:nth-child(2) { --rot: 1deg; }
+  .stat:nth-child(3) { --rot: -2deg; }
+  .stat:nth-child(4) { --rot: 1.5deg; }
+  .stat .num { font-size: 28px; font-weight: 700; color: #1a1a1a; }
+  .stat .label { font-family: 'Caveat', cursive; font-size: 14px; color: #888; margin-top: 2px; }
+
+  /* Sections */
+  section { padding: 56px 0; }
+  .section-label { font-family: 'Caveat', cursive; font-size: 20px; color: #d4541e; margin-bottom: 8px; }
+  .section-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; letter-spacing: -0.01em; }
+  .section-title span { color: #d4541e; }
+
+  /* Services — as pinned cards */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service {
+    background: #fff; padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transform: rotate(var(--rot, 0deg));
+  }
+  .service:nth-child(1) { --rot: -0.5deg; }
+  .service:nth-child(2) { --rot: 0.5deg; }
+  .service:nth-child(3) { --rot: -0.3deg; }
+  .service .tag { font-family: 'Caveat', cursive; font-size: 16px; color: #888; margin-bottom: 8px; }
+  .service h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .service .price { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+  .service p { font-size: 14px; color: #444; margin-bottom: 16px; line-height: 1.6; }
+  .service ul { list-style: none; margin-bottom: 20px; }
+  .service li { font-size: 13px; padding: 4px 0; border-bottom: 1px dashed #ddd; display: flex; justify-content: space-between; }
+  .service li span { color: #888; }
+  .service a { font-size: 14px; font-weight: 600; color: #d4541e; text-decoration: none; border-bottom: 1px solid #d4541e; }
+  .service.featured { border-color: #d4541e; border-width: 2px; }
+
+  /* Portfolio — as polaroid wall */
+  .portfolio { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .project {
+    background: #fff; padding: 16px 16px 40px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transform: rotate(var(--rot, 0deg));
+    position: relative;
+  }
+  .project:nth-child(1) { --rot: -1deg; }
+  .project:nth-child(2) { --rot: 1deg; }
+  .project:nth-child(3) { --rot: 0.5deg; }
+  .project:nth-child(4) { --rot: -1.5deg; }
+  .project .screen {
+    width: 100%; height: 120px;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+  }
+  .project .status { font-family: 'Caveat', cursive; font-size: 15px; color: #888; margin-bottom: 4px; }
+  .project h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .project p { font-size: 13px; color: #555; }
+  .project .link { font-family: 'Caveat', cursive; font-size: 15px; color: #d4541e; text-decoration: none; position: absolute; bottom: 12px; right: 16px; }
+  .project .annotation {
+    position: absolute; top: -8px; right: -8px;
+    background: #d4541e; color: #fff;
+    font-family: 'Caveat', cursive; font-size: 12px;
+    padding: 2px 10px; transform: rotate(3deg);
+  }
+
+  /* Stack — as label tags */
+  .stack { display: flex; flex-wrap: wrap; gap: 12px; }
+  .tool {
+    font-size: 13px; padding: 6px 14px;
+    background: #fff; border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transform: rotate(var(--rot, 0deg));
+  }
+  .tool:nth-child(odd) { --rot: -1deg; }
+  .tool:nth-child(even) { --rot: 1deg; }
+
+  /* CTA */
+  .final-cta { text-align: center; padding: 64px 0; }
+  .final-cta h2 { font-size: 26px; font-weight: 700; margin-bottom: 24px; }
+  .final-cta h2 span { color: #d4541e; }
+  .final-cta .actions { justify-content: center; }
+  .final-cta .note { font-family: 'Caveat', cursive; font-size: 18px; color: #888; margin-top: 16px; }
+
+  /* Footer */
+  footer { border-top: 2px solid #1a1a1a; padding: 24px 0; font-size: 13px; color: #666; }
+  footer .container { display: flex; justify-content: space-between; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .stats { gap: 12px; }
+    .services { grid-template-columns: 1fr; }
+    .portfolio { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Joe's Tech Solutions<span>.</span></div>
+    <ul>
+      <li><a href="#services">Solutions</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact" class="cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="polaroid">
+      <div class="photo">JB</div>
+      <div class="caption">that's me</div>
+    </div>
+    <div class="status">currently running 14 agents, 24/7</div>
+    <h1>I build the tools<br>your <span>business</span> runs on.</h1>
+    <p>Custom software, automation, and AI — built for small businesses that just need things to work. I test everything on myself first. If it survives me, it'll survive you.</p>
+    <p>No discovery calls. No 40-page proposals. Tell me what's not working. I'll build the fix and leave it running.</p>
+    <div class="actions">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#portfolio" class="btn-secondary">See what I do</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="num">14</div><div class="label">agents, 24/7</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">downtime</div></div>
+    <div class="stat"><div class="num">32</div><div class="label">automations</div></div>
+    <div class="stat"><div class="num">100%</div><div class="label">private</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label">// services</div>
+    <div class="section-title">Three ways I work with <span>you</span>.</div>
+    <div class="services">
+      <div class="service featured">
+        <div class="tag">★ Most popular — one-time</div>
+        <h3>Setup</h3>
+        <div class="price">$199</div>
+        <p>Private AI on your machine or server. A 75-minute session, live, one on one. When we're done, you own it — no subscriptions, no data leaving your setup.</p>
+        <ul>
+          <li>Private <span>100%</span></li>
+          <li>After setup <span>$0/mo</span></li>
+          <li>Live session <span>75 min</span></li>
+          <li>Models <span>24</span></li>
+        </ul>
+        <a href="#">Get started →</a>
+      </div>
+      <div class="service">
+        <div class="tag">monthly retainer</div>
+        <h3>Operations</h3>
+        <div class="price">$499/mo</div>
+        <p>An AI assistant running on your server — scheduling, outreach, reporting, daily briefings. I tune it every month so it gets better.</p>
+        <a href="#">Learn more →</a>
+      </div>
+      <div class="service">
+        <div class="tag">project-based</div>
+        <h3>Custom Build</h3>
+        <div class="price">$2,500+</div>
+        <p>Mobile apps, web apps, full agent systems — built with the stack I use daily. AI-assisted development, human-verified.</p>
+        <a href="#">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-label">// proof of work</div>
+    <div class="section-title">Real things I've <span>built</span>.</div>
+    <div class="portfolio">
+      <div class="project">
+        <div class="annotation">paused</div>
+        <div class="screen"></div>
+        <div class="status">200+ listings</div>
+        <h3>RenFaire Directory</h3>
+        <p>The modern guide to Renaissance faires across America. SEO-first architecture, affiliate monetization.</p>
+        <a href="#" class="link">view →</a>
+      </div>
+      <div class="project">
+        <div class="annotation">in prod</div>
+        <div class="screen"></div>
+        <div class="status">14 agents, 24/7</div>
+        <h3>Hermes Agent System</h3>
+        <p>My own 24/7 multi-agent system — coding, research, content, ops. The thing running this site.</p>
+        <a href="#" class="link">view →</a>
+      </div>
+      <div class="project">
+        <div class="annotation">in dev</div>
+        <div class="screen"></div>
+        <div class="status">React Native</div>
+        <h3>The Skate Workshop</h3>
+        <p>Cross-platform coaching app. 400+ trick DB, video feedback, multiplayer.</p>
+        <a href="#" class="link">view →</a>
+      </div>
+      <div class="project">
+        <div class="annotation">archived</div>
+        <div class="screen"></div>
+        <div class="status">MIT licensed</div>
+        <h3>Whisper Walkie</h3>
+        <p>Push-to-talk voice typing that works in any app. Your voice never leaves your machine.</p>
+        <a href="#" class="link">view →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+    <div class="section-label">// the stack</div>
+    <div class="section-title">What I <span>actually</span> run.</div>
+    <p style="font-size:16px;color:#444;margin-bottom:32px;max-width:560px;">Not a logo wall — the real tools, models, and services powering my business right now.</p>
+    <div class="stack">
+      <div class="tool">Ollama</div>
+      <div class="tool">Open WebUI</div>
+      <div class="tool">Replicate</div>
+      <div class="tool">Flux</div>
+      <div class="tool">n8n</div>
+      <div class="tool">Cloudflare</div>
+      <div class="tool">Anthropic</div>
+      <div class="tool">OpenAI</div>
+      <div class="tool">Next.js</div>
+      <div class="tool">React Native</div>
+      <div class="tool">Supabase</div>
+      <div class="tool">Docker</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="final-cta">
+  <div class="container">
+    <h2>If you made it this far, you probably<br>already know if you want to <span>talk</span>.</h2>
+    <div class="actions">
+      <a href="#" class="btn-primary">Get in touch</a>
+      <a href="mailto:joe@joestechsolutions.com" class="btn-secondary">Email me</a>
+    </div>
+    <div class="note">— so let's talk.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Joe's Tech Solutions LLC</div>
+    <div>joestechsolutions.com</div>
+  </div>
+</footer>
+
+</body>
+</html>

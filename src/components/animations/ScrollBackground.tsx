@@ -34,7 +34,7 @@ export function ScrollBackground() {
   return (
     <div ref={ref} className="absolute inset-0 overflow-hidden">
       {/* Base */}
-      <div className="absolute inset-0 bg-[#0d0d12]" />
+      <div className="absolute inset-0 bg-background" />
 
       {/* Subtle grid pattern */}
       <motion.div
@@ -55,7 +55,7 @@ export function ScrollBackground() {
 
       {/* Purple orb — top right, drifts up-right on scroll */}
       <motion.div
-        className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full blur-[160px] bg-[#8B5CF6]"
+        className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-none blur-[160px] bg-primary"
         style={{
           y: orbOneY,
           x: orbOneX,
@@ -66,7 +66,7 @@ export function ScrollBackground() {
 
       {/* Teal orb — bottom left, drifts up-left */}
       <motion.div
-        className="absolute bottom-[-10%] -left-20 w-[400px] h-[400px] rounded-full blur-[140px] bg-[#0b7f73]"
+        className="absolute bottom-[-10%] -left-20 w-[400px] h-[400px] rounded-none blur-[140px] bg-primary"
         style={{
           y: orbTwoY,
           x: orbTwoX,
@@ -77,7 +77,7 @@ export function ScrollBackground() {
 
       {/* Small accent orb — center, rises fastest */}
       <motion.div
-        className="absolute top-1/2 left-1/3 w-[200px] h-[200px] rounded-full blur-[100px] bg-[#8B5CF6]"
+        className="absolute top-1/2 left-1/3 w-[200px] h-[200px] rounded-none blur-[100px] bg-primary"
         style={{
           y: orbThreeY,
           opacity: orbThreeOpacity,
@@ -86,7 +86,7 @@ export function ScrollBackground() {
 
       {/* Horizontal accent line at bottom */}
       <motion.div
-        className="absolute bottom-0 left-0 h-px bg-gradient-to-r from-transparent via-[#8B5CF6]/50 to-transparent"
+        className="absolute bottom-0 left-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
         style={{ width: lineWidth }}
       />
     </div>

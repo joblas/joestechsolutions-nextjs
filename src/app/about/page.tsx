@@ -33,25 +33,25 @@ export default function About() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-8">
               <FadeIn delay={0.1}>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-space-grotesk">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground font-mono">
                   I&apos;m Joe. I build the tools your business runs on.
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
+                <p className="text-xl sm:text-2xl text-foreground/80 leading-relaxed font-light">
                   I&apos;m what you get when you skip the agency, skip the discovery sprint, and just hire
                   the person who&apos;s going to build your thing. Forward Deployed Engineer — I show up
                   where the work is, figure out what&apos;s broken, and leave it running.
                 </p>
               </FadeIn>
               <FadeIn delay={0.25}>
-                <p className="text-lg text-white/60 leading-relaxed font-light">
+                <p className="text-lg text-foreground/60 leading-relaxed font-light">
                   I run the same stack for my own business that I build for clients. If it doesn&apos;t
                   survive me, it doesn&apos;t ship to you.
                 </p>
@@ -59,7 +59,7 @@ export default function About() {
               <FadeIn delay={0.3}>
                 <Link href="/contact">
                   <MagneticButton strength={0.2}>
-                    <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group shadow-lg shadow-[#0b7f73]/20">
+                    <Button size="lg" className="bg-primary hover:bg-primary/85 text-foreground rounded-none group shadow-lg shadow-primary/20">
                       Get in touch
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -70,8 +70,8 @@ export default function About() {
 
             <FadeIn delay={0.4} direction="left">
               <div className="relative">
-                <div className="absolute inset-0 bg-[#0b7f73] rounded-3xl blur-2xl opacity-20" />
-                <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
+                <div className="absolute inset-0 bg-primary rounded-none blur-2xl opacity-20" />
+                <div className="relative aspect-square rounded-none overflow-hidden border border-foreground/10">
                   <Image
                     src="/images/joe-profile.jpg"
                     alt="Joe Blasiola, Founder of Joe's Tech Solutions"
@@ -86,16 +86,16 @@ export default function About() {
       </section>
 
       {/* Why I do this */}
-      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
+      <section className="relative py-24 sm:py-32 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <FadeIn>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground font-mono">
                 Why I do this
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light">
+              <div className="space-y-6 text-lg text-foreground/70 leading-relaxed font-light">
                 <p>
                   I spent years watching small businesses get sold "AI solutions" by people who&apos;d
                   never run a business. Strategy decks. Retainers. "Alignment sessions." Six weeks in,
@@ -117,24 +117,24 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <FadeIn>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground font-mono">
                 The proof
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="space-y-6">
-                <p className="text-lg text-white/70 leading-relaxed font-light">
+                <p className="text-lg text-foreground/70 leading-relaxed font-light">
                   Here&apos;s what I run for myself right now:
                 </p>
                 <ul className="space-y-4">
                   {proofPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-white/80">
-                      <CheckCircle className="h-6 w-6 text-[#0d9488] shrink-0 mt-0.5" />
+                    <li key={point} className="flex items-start gap-3 text-foreground/80">
+                      <CheckCircle className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{point}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-lg text-white/70 leading-relaxed font-light pt-2">
+                <p className="text-lg text-foreground/70 leading-relaxed font-light pt-2">
                   I don&apos;t read about this stuff. I use it. Every day. The same stack I build for clients
                   is the stack that runs my business. That&apos;s why it works.
                 </p>
@@ -145,17 +145,17 @@ export default function About() {
       </section>
 
       {/* Who I am */}
-      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
+      <section className="relative py-24 sm:py-32 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <FadeIn>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white font-space-grotesk">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground font-mono">
                 Who I am
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light">
-                <p className="text-white font-medium">
+              <div className="space-y-6 text-lg text-foreground/70 leading-relaxed font-light">
+                <p className="text-foreground font-medium">
                   I&apos;m not a consultant. I&apos;m not an agency. I&apos;m a builder who deploys forward.
                 </p>
                 <p>
@@ -175,18 +175,18 @@ export default function About() {
 
       {/* CTA */}
       <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
 
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 font-mono">
               If you&apos;ve read this far and you&apos;re thinking "yeah, this guy gets it" — let&apos;s talk.
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link href="/contact">
               <MagneticButton strength={0.3}>
-                <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white text-lg px-12 py-7 rounded-full group shadow-2xl shadow-[#0b7f73]/30">
+                <Button size="lg" className="bg-primary hover:bg-primary/85 text-foreground text-lg px-12 py-7 rounded-none group shadow-2xl shadow-primary/20">
                   Get in touch
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

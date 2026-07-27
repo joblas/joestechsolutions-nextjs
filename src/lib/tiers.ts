@@ -12,7 +12,7 @@ export type Tier = {
   blurb: string;
   features: string[];
   badge?: "New" | "Most Popular" | "Most Impactful";
-  accent: "#0d9488" | "#2dd4bf" | "#8B5CF6";
+  accent: "#d4541e" | "#e8703f" | "#8B5CF6";
   stripeReady: boolean; // false → CTA routes to /contact until Stripe product exists
 };
 
@@ -33,7 +33,7 @@ export const TIERS: Tier[] = [
       "You own everything when we're done",
     ],
     badge: "Most Popular",
-    accent: "#0d9488",
+    accent: "#d4541e",
     stripeReady: true,
   },
   {
@@ -51,7 +51,7 @@ export const TIERS: Tier[] = [
       "Tuned and maintained every month",
       "Your data never leaves your infrastructure",
     ],
-    accent: "#0d9488",
+    accent: "#d4541e",
     stripeReady: false,
   },
   {
@@ -69,7 +69,7 @@ export const TIERS: Tier[] = [
       "Scoped and priced before I write a line",
       "You own the code and the repo",
     ],
-    accent: "#0d9488",
+    accent: "#d4541e",
     stripeReady: false,
   },
 ];

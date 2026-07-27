@@ -26,17 +26,17 @@ export default function Contact() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[#0d0d12]" />
+        <div className="absolute inset-0 bg-background" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-space-grotesk">
-                <span className="block text-white mb-3">Tell me what&apos;s not working.</span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight font-mono">
+                <span className="block text-foreground mb-3">Tell me what&apos;s not working.</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light">
+              <p className="text-xl sm:text-2xl text-foreground/80 leading-relaxed font-light">
                 No pitch, no pressure, no "discovery call." Just tell me what you&apos;re dealing with and
                 I&apos;ll tell you if I can help. If I can&apos;t, I&apos;ll tell you that too.
               </p>
@@ -48,53 +48,26 @@ export default function Contact() {
       {/* Contact Options */}
       <section className="relative py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <StaggerContainer className="grid md:grid-cols-2 gap-8" staggerDelay={0.2}>
+          <StaggerContainer className="grid md:grid-cols-1 gap-8" staggerDelay={0.2}>
             {/* Email */}
             <StaggerItem>
               <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#0d9488]/50 transition-all duration-500 group h-full">
+                <Card className="bg-card border-foreground/10 hover:border-primary/50 transition-all duration-500 group h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-primary/10 rounded-none flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Image src="/icons/mail-dynamic/premium.png" alt="Email" width={32} height={32} className="object-contain" />
                     </div>
-                    <CardTitle className="text-white text-2xl font-space-grotesk">Email</CardTitle>
-                    <CardDescription className="text-white/70 text-base leading-relaxed">
+                    <CardTitle className="text-foreground text-2xl font-mono">Email</CardTitle>
+                    <CardDescription className="text-foreground/70 text-base leading-relaxed">
                       Send me a message and I&apos;ll get back to you within 24 hours
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <a
                       href="mailto:joe@joestechsolutions.com"
-                      className="text-[#0d9488] hover:text-[#0f766e] text-lg font-medium transition-colors"
+                      className="text-primary hover:text-primary text-lg font-medium transition-colors"
                     >
                       joe@joestechsolutions.com
-                    </a>
-                  </CardContent>
-                </Card>
-              </AnimatedCard>
-            </StaggerItem>
-
-            {/* Telegram */}
-            <StaggerItem>
-              <AnimatedCard>
-                <Card className="bg-[#1c1c26] border-white/10 hover:border-[#2dd4bf]/50 transition-all duration-500 group h-full">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                      <Image src="/icons/telegram-dynamic/premium.png" alt="Telegram" width={32} height={32} className="object-contain" />
-                    </div>
-                    <CardTitle className="text-white text-2xl font-space-grotesk">Telegram</CardTitle>
-                    <CardDescription className="text-white/70 text-base leading-relaxed">
-                      DM me on Telegram for quick, direct messages
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <a
-                      href="https://t.me/joblasio"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#2dd4bf] hover:text-[#14b8a6] text-lg font-medium transition-colors"
-                    >
-                      @joblasio
                     </a>
                   </CardContent>
                 </Card>
@@ -105,46 +78,46 @@ export default function Contact() {
           {/* Contact Form Alternative */}
           <FadeIn delay={0.4}>
             <div className="mt-12">
-              <Card className="bg-[#1c1c26] border-white/10">
+              <Card className="bg-card border-foreground/10">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-[#0b7f73]/10 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-none flex items-center justify-center">
                       <Image src="/icons/chat-bubble-dynamic/premium.png" alt="Message" width={32} height={32} className="object-contain" />
                     </div>
                     <div>
-                      <CardTitle className="text-white text-2xl font-space-grotesk">Quick Message</CardTitle>
-                      <CardDescription className="text-white/70">
+                      <CardTitle className="text-foreground text-2xl font-mono">Quick Message</CardTitle>
+                      <CardDescription className="text-foreground/70">
                         Tell me about your project
                       </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-white/80 text-lg">
+                  <p className="text-foreground/80 text-lg">
                     For now, please email me directly at{" "}
                     <a
                       href="mailto:joe@joestechsolutions.com"
-                      className="text-[#0d9488] hover:text-[#0f766e] font-medium transition-colors"
+                      className="text-primary hover:text-primary font-medium transition-colors"
                     >
                       joe@joestechsolutions.com
                     </a>
                     {" "}with:
                   </p>
-                  <ul className="space-y-4 text-white/80">
+                  <ul className="space-y-4 text-foreground/80">
                     <li className="flex items-start">
-                      <span className="text-[#0d9488] mr-3 text-xl">•</span>
+                      <span className="text-primary mr-3 text-xl">•</span>
                       <span>Brief project description</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#0d9488] mr-3 text-xl">•</span>
+                      <span className="text-primary mr-3 text-xl">•</span>
                       <span>Timeline and budget (if known)</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#0d9488] mr-3 text-xl">•</span>
+                      <span className="text-primary mr-3 text-xl">•</span>
                       <span>Any specific questions or requirements</span>
                     </li>
                   </ul>
-                  <Button asChild className="w-full bg-[#0b7f73] hover:bg-[#0f766e] text-white mt-6 rounded-full shadow-lg shadow-[#0b7f73]/20">
+                  <Button asChild className="w-full bg-primary hover:bg-primary/85 text-foreground mt-6 rounded-none shadow-lg shadow-primary/20">
                     <a href="mailto:joe@joestechsolutions.com?subject=Project%20Inquiry&body=Hi%20Joe%2C%0A%0AI%27m%20interested%20in%20discussing%20a%20project.%0A%0AProject%20description%3A%0A%0ATimeline%2Fbudget%3A%0A%0AQuestions%3A">
                       <Image src="/icons/mail-dynamic/premium.png" alt="" width={16} height={16} className="mr-2 object-contain" />
                       Send Email
@@ -158,14 +131,14 @@ export default function Contact() {
       </section>
 
       {/* Close */}
-      <section className="relative py-24 sm:py-32 bg-[#1c1c26]/30">
+      <section className="relative py-24 sm:py-32 bg-card/30">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <p className="text-xl text-white/80 mb-8 font-light">
+            <p className="text-xl text-foreground/80 mb-8 font-light">
               Not ready to talk yet? Browse the work first.
             </p>
             <Link href="/portfolio">
-              <Button size="lg" className="bg-[#0b7f73] hover:bg-[#0f766e] text-white rounded-full group">
+              <Button size="lg" className="bg-primary hover:bg-primary/85 text-foreground rounded-none group">
                 See what I&apos;ve built
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>

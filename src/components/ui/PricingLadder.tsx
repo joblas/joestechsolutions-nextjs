@@ -10,10 +10,10 @@ export function PricingLadder() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-space-grotesk">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 font-mono">
               Three ways I work with you.
             </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-light">
               From a one-time setup to a full operations layer. Start where you need to, move up
               when you&apos;re ready.
             </p>

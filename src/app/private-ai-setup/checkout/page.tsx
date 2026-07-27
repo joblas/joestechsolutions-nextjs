@@ -85,7 +85,7 @@ function CheckoutForm() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div role="status" aria-label="Loading">
-          <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+          <Spinner aria-hidden="true" className="h-12 w-12 text-primary animate-spin" />
           <span className="sr-only">Loading...</span>
         </div>
       </div>
@@ -99,7 +99,7 @@ function CheckoutForm() {
         <FadeIn>
           <button
             onClick={() => router.push("/private-ai-setup")}
-            className="flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors"
+            className="flex items-center gap-2 text-foreground/60 hover:text-foreground mb-8 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back to options</span>
@@ -108,38 +108,38 @@ function CheckoutForm() {
 
         <FadeIn delay={0.1}>
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-bold text-white font-space-grotesk mb-3">
+            <h1 className="text-4xl font-bold text-foreground font-mono mb-3">
               Let's Get Started
             </h1>
-            <p className="text-xl text-white/70">
+            <p className="text-xl text-foreground/70">
               Quick form so I can prepare for your {isVPS ? "VPS" : "local"} setup session.
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <Card className="bg-[#1c1c26] border-white/10">
+          <Card className="bg-card border-foreground/10">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Setup Type Indicator */}
-                <div className="flex items-center gap-3 p-4 bg-[#0d0d12] rounded-xl border border-white/10 mb-6">
+                <div className="flex items-center gap-3 p-4 bg-background rounded-xl border border-foreground/10 mb-6">
                   {isVPS ? (
-                    <Cloud weight="duotone" className="h-6 w-6 text-[#2dd4bf]" />
+                    <Cloud weight="duotone" className="h-6 w-6 text-primary" />
                   ) : (
-                    <Desktop weight="duotone" className="h-6 w-6 text-[#0d9488]" />
+                    <Desktop weight="duotone" className="h-6 w-6 text-primary" />
                   )}
                   <div className="flex-1">
-                    <span className="text-white font-medium block">
+                    <span className="text-foreground font-medium block">
                       {isVPS ? "VPS Hosting Setup" : "Local Install"}
                     </span>
-                    <span className="text-white/50 text-sm">
+                    <span className="text-foreground/50 text-sm">
                       {isVPS ? "$499 setup + $29/mo" : "$199 one-time"}
                     </span>
                   </div>
                   <button
                     type="button"
                     onClick={() => router.push("/private-ai-setup")}
-                    className="text-[#0d9488] text-sm hover:underline"
+                    className="text-primary text-sm hover:underline"
                   >
                     Change
                   </button>
@@ -154,7 +154,7 @@ function CheckoutForm() {
 
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Your Name *
                   </label>
                   <input
@@ -163,14 +163,14 @@ function CheckoutForm() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                     placeholder="John Smith"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Email Address *
                   </label>
                   <input
@@ -179,7 +179,7 @@ function CheckoutForm() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -187,7 +187,7 @@ function CheckoutForm() {
                 {/* VPS-specific: Domain Preference */}
                 {isVPS && (
                   <div>
-                    <label htmlFor="domain" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="domain" className="block text-sm font-medium text-foreground mb-2">
                       Preferred Domain (optional)
                     </label>
                     <input
@@ -195,17 +195,17 @@ function CheckoutForm() {
                       id="domain"
                       value={formData.domainPreference}
                       onChange={(e) => setFormData({ ...formData, domainPreference: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                       placeholder="myai.yourdomain.com or leave blank for suggestions"
                     />
-                    <p className="text-white/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
+                    <p className="text-foreground/50 text-sm mt-1">We'll set up SSL and DNS for you</p>
                   </div>
                 )}
 
                 {/* VPS-specific: Model Size */}
                 {isVPS && (
                   <fieldset>
-                    <legend className="block text-sm font-medium text-white mb-3">
+                    <legend className="block text-sm font-medium text-foreground mb-3">
                       Expected Model Size
                     </legend>
                     <div className="grid grid-cols-3 gap-3">
@@ -218,8 +218,8 @@ function CheckoutForm() {
                           key={option.value}
                           className={`flex flex-col items-center p-3 rounded-xl border cursor-pointer transition-all text-center ${
                             formData.modelSizePreference === option.value
-                              ? "border-[#2dd4bf] bg-[#2dd4bf]/10"
-                              : "border-white/10 hover:border-white/20"
+                              ? "border-primary bg-primary/10"
+                              : "border-foreground/10 hover:border-foreground/20"
                           }`}
                         >
                           <input
@@ -235,8 +235,8 @@ function CheckoutForm() {
                             }
                             className="sr-only"
                           />
-                          <span className="text-white font-medium text-sm">{option.label}</span>
-                          <span className="text-white/50 text-xs">{option.desc}</span>
+                          <span className="text-foreground font-medium text-sm">{option.label}</span>
+                          <span className="text-foreground/50 text-xs">{option.desc}</span>
                         </label>
                       ))}
                     </div>
@@ -245,7 +245,7 @@ function CheckoutForm() {
 
                 {/* Operating System */}
                 <div>
-                  <label htmlFor="os" className="block text-sm font-medium text-white mb-2">
+                  <label htmlFor="os" className="block text-sm font-medium text-foreground mb-2">
                     {isVPS ? "VPS Operating System *" : "Your Operating System *"}
                   </label>
                   <select
@@ -253,7 +253,7 @@ function CheckoutForm() {
                     required
                     value={formData.operatingSystem}
                     onChange={(e) => setFormData({ ...formData, operatingSystem: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   >
                     <option value="">Select OS</option>
                     {isVPS ? (
@@ -281,7 +281,7 @@ function CheckoutForm() {
                 {/* Specs (only for local) */}
                 {!isVPS && (
                   <div>
-                    <label htmlFor="specs" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="specs" className="block text-sm font-medium text-foreground mb-2">
                       Computer Specs (RAM, CPU, GPU if any)
                     </label>
                     <textarea
@@ -289,7 +289,7 @@ function CheckoutForm() {
                       value={formData.specs}
                       onChange={(e) => setFormData({ ...formData, specs: e.target.value })}
                       rows={3}
-                      className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                       placeholder="e.g., 16GB RAM, Intel i7, no dedicated GPU&#10;(Leave blank if unsure - I'll help figure it out)"
                     />
                   </div>
@@ -297,7 +297,7 @@ function CheckoutForm() {
 
                 {/* Use Cases */}
                 <div>
-                  <label htmlFor="useCases" className="block text-sm font-medium text-white mb-2">
+                  <label htmlFor="useCases" className="block text-sm font-medium text-foreground mb-2">
                     What do you want to use AI for? *
                   </label>
                   <textarea
@@ -306,7 +306,7 @@ function CheckoutForm() {
                     value={formData.useCases}
                     onChange={(e) => setFormData({ ...formData, useCases: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 bg-[#0d0d12] border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-background border border-foreground/10 rounded-xl text-foreground placeholder:text-muted-foreground/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                     placeholder="e.g., Writing assistance, coding help, analyzing documents, brainstorming ideas..."
                   />
                 </div>
@@ -315,10 +315,10 @@ function CheckoutForm() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full text-white text-lg py-6 rounded-full shadow-lg disabled:opacity-50 ${
+                  className={`w-full text-foreground text-lg py-6 rounded-none shadow-lg disabled:opacity-50 ${
                     isVPS
-                      ? "bg-[#2dd4bf] hover:bg-[#14b8a6] shadow-[#2dd4bf]/20"
-                      : "bg-[#0b7f73] hover:bg-[#0f766e] shadow-[#0b7f73]/20"
+                      ? "bg-primary hover:bg-primary/85 shadow-primary/20"
+                      : "bg-primary hover:bg-primary/85 shadow-primary/20"
                   }`}
                 >
                   {isSubmitting ? (
@@ -337,7 +337,7 @@ function CheckoutForm() {
                   )}
                 </Button>
 
-                <p className="text-center text-white/50 text-sm">
+                <p className="text-center text-foreground/50 text-sm">
                   Secure checkout powered by Stripe
                 </p>
               </form>
@@ -355,7 +355,7 @@ export default function CheckoutPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center">
           <div role="status" aria-label="Loading">
-            <Spinner aria-hidden="true" className="h-12 w-12 text-[#0d9488] animate-spin" />
+            <Spinner aria-hidden="true" className="h-12 w-12 text-primary animate-spin" />
             <span className="sr-only">Loading...</span>
           </div>
         </div>
