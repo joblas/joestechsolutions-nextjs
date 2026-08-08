@@ -128,7 +128,7 @@ fi
 # Create venv and install
 if [ "$USE_PIP_FALLBACK" = "1" ]; then
     # Fallback: standard python venv + pip
-    su - "$TARGET_USER" -bash -c "
+    su - "$TARGET_USER" -c "
         cd '$MEMPALACE_DIR'
         python3 -m venv .venv
         source .venv/bin/activate
@@ -136,8 +136,8 @@ if [ "$USE_PIP_FALLBACK" = "1" ]; then
     " 2>&1 | tail -3
 else
     # Preferred: uv venv + uv pip
-    su - "$TARGET_USER" -bash -c "
-        export PATH=\"$HOME/.local/bin:\$PATH\"
+    su - "$TARGET_USER" -c "
+        export PATH=\"\$HOME/.local/bin:\$PATH\"
         cd '$MEMPALACE_DIR'
         uv venv .venv
         source .venv/bin/activate
@@ -150,8 +150,8 @@ mkdir -p "$MEMPALACE_DATA"
 chmod 700 "$MEMPALACE_DATA"
 
 # Run mempalace onboarding (non-interactive — just creates the palace)
-su - "$TARGET_USER" -bash -c "
-    export PATH=\"$HOME/.local/bin:\$PATH\"
+su - "$TARGET_USER" -c "
+    export PATH=\"\$HOME/.local/bin:\$PATH\"
     cd '$MEMPALACE_DIR'
     source .venv/bin/activate
     mempalace --palace '$MEMPALACE_DATA' init 2>/dev/null || true
@@ -164,6 +164,7 @@ print_ok "Palace data at: $MEMPALACE_DATA"
 print_step "Configuring MemPalace in Hermes"
 
 HERMES_CONFIG="$USER_HOME/.hermes/config.yaml"
+export HERMES_CONFIG
 MEMPALACE_MCP="$MEMPALACE_VENV/bin/mempalace-mcp"
 
 # Check if Hermes config exists
@@ -316,6 +317,7 @@ fi
 if [ -f "$HERMES_CONFIG" ]; then
     python3 << 'PYEOF' 2>/dev/null || true
 import yaml
+import os
 
 config_path = os.environ.get('HERMES_CONFIG', '')
 if not config_path:
@@ -418,8 +420,9 @@ print_step "Enabling Hermes tools"
 if [ -f "$HERMES_CONFIG" ]; then
     python3 << 'PYEOF' 2>/dev/null || true
 import yaml
+import os
 
-config_path = "$HERMES_CONFIG"
+config_path = os.environ['HERMES_CONFIG']
 with open(config_path, 'r') as f:
     config = yaml.safe_load(f) or {}
 
