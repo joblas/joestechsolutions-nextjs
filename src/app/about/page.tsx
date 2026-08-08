@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const proofPoints = [
   "An orchestrator with 14 sub-agents handling coding, research, content, and memory across sessions",
-  "32 automations on a schedule — daily briefings, content drafts, health checks, backups",
+  "30 automations on a schedule — daily briefings, content drafts, health checks, backups",
   "Everything local, everything private, everything on my own infrastructure",
 ];
 

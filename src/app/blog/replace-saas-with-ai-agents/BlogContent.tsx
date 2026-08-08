@@ -29,6 +29,14 @@ export function BlogContent() {
             <TableOfContents items={tocItems} />
           </FadeIn>
 
+          {/* Editor's note */}
+          <FadeIn delay={0.12}>
+            <p className="text-gray-400 italic text-base leading-relaxed mb-6">
+              Editor&apos;s note (August 2026): this post is a snapshot from March. The team has since
+              been consolidated to 14 agents — see the live setup at <a href="/stack" className="text-primary hover:underline">/stack</a>.
+            </p>
+          </FadeIn>
+
           {/* Intro */}
           <FadeIn delay={0.15}>
             <p className="lead text-gray-200 text-xl sm:text-2xl leading-loose mb-8">

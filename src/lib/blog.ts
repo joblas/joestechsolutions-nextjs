@@ -22,13 +22,15 @@ import { post as agentArchitecturePost } from "@/content/blog/22-agent-ai-team-a
 import { post as replaceSaasPost } from "@/content/blog/replace-saas-with-ai-agents";
 import { post as nvidiaGtc2026Post } from "@/content/blog/nvidia-gtc-2026-keynote";
 import { post as skateWorkshopPost } from "@/content/blog/behind-the-build-skate-workshop-app";
+import { post as betaLoopPost } from "@/content/blog/how-my-beta-testers-texts-become-app-updates";
 
 export const allPosts: BlogPost[] = [
   privateAiPost,
   agentArchitecturePost,
   replaceSaasPost,
   nvidiaGtc2026Post,
-  skateWorkshopPost
+  skateWorkshopPost,
+  betaLoopPost
 ];
 
 export function getAllPosts(): BlogPost[] {

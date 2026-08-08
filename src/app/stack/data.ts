@@ -113,7 +113,7 @@ export const tools = [
 
 export const stats = [
   { label: "AI Agents", value: "14" },
-  { label: "Scheduled Automations", value: "32" },
+  { label: "Scheduled Automations", value: "30" },
   { label: "Cloud Models", value: "24" },
   { label: "Indexed Code Nodes", value: "60K+" },
   { label: "Active Services", value: "7" },

@@ -271,7 +271,7 @@ export default function AgentSystem() {
                 title: "24/7 Automation",
                 color: "#F472B6",
                 items: [
-                  "32 cron jobs running on schedule",
+                  "30 cron jobs running on schedule",
                   "Daily standups & briefings",
                   "Weekly reviews per department",
                   "Content posting on autopilot",
@@ -424,7 +424,7 @@ export default function AgentSystem() {
                     "100+ custom skills library",
                     "Memory system (semantic search + knowledge graph)",
                     "Telegram, Gmail, Instagram, Stripe integrations",
-                    "24/7 cron automation (32 scheduled jobs)",
+                    "24/7 cron automation (30 scheduled jobs)",
                     "Ollama Cloud model routing — $100/mo, no caps",
                     "Dedicated VPS with daily backups",
                     "Weekly health checks + monthly updates",

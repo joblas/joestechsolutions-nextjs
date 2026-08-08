@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zach's AI Assistant — Setup Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0A0A0B;--bg2:#0F0F12;--accent:#2DD4BF;--text:#F5F5F4;--muted:#8B8B8B;--border:rgba(255,255,255,0.06);--card:rgba(255,255,255,0.03)}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;line-height:1.1}
+.container{max-width:680px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{padding:80px 0 60px;position:relative}
+.hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:400px;background:radial-gradient(ellipse,rgba(45,212,191,0.15) 0%,transparent 60%);pointer-events:none;animation:glow 6s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:0.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
+.hero .label{font-size:11px;letter-spacing:0.25em;font-weight:500;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.hero h1{font-size:2.5rem;font-weight:700;margin-bottom:20px}
+.hero h1 .accent{color:var(--accent)}
+.hero .lede{font-size:17px;color:var(--muted);max-width:540px;margin-bottom:32px}
+.hero .meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:8px}
+.hero .meta-item{font-size:14px;color:var(--muted)}
+.hero .meta-item strong{color:var(--text);font-weight:600}
+
+/* Sections */
+section{padding:48px 0;border-top:var(--border)}
+.section-num{font-size:11px;letter-spacing:0.25em;font-weight:600;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h2{font-size:1.75rem;font-weight:600;margin-bottom:16px}
+h3{font-size:1.1rem;font-weight:600;margin-bottom:8px;color:var(--text)}
+p{margin-bottom:16px;font-size:15px;color:#C8C8C7}
+
+/* Steps */
+.step{margin-bottom:28px;padding-left:0}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(45,212,191,0.1);color:var(--accent);font-size:13px;font-weight:600;font-family:'Space Grotesk',sans-serif;margin-right:12px;flex-shrink:0}
+.step-title{font-size:1rem;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:0}
+.step-body{padding-left:40px}
+.step-body p{font-size:14.5px}
+ol,ul{list-style:none}
+li{margin-bottom:6px;font-size:14.5px;color:#C8C8C7;padding-left:20px;position:relative}
+li::before{content:"→";position:absolute;left:0;color:var(--accent);font-size:13px}
+
+/* Cards */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:20px 0}
+.card-amber{border-color:rgba(45,212,191,0.15);background:rgba(45,212,191,0.03)}
+
+/* Code blocks */
+.code{background:rgba(0,0,0,0.4);border:1px solid var(--border);border-radius:12px;padding:16px 20px;font-family:'SF Mono',Consolas,monospace;font-size:13px;color:#A8B8C8;margin:16px 0;white-space:pre-wrap;overflow-x:auto}
+.code .token{color:var(--accent)}
+
+/* Callout */
+.callout{border-left:3px solid var(--accent);padding:12px 0 12px 20px;margin:16px 0}
+.callout p{font-size:14px;color:var(--accent);font-weight:500;margin:0}
+
+/* Checklist */
+.checklist{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.check-item{display:flex;align-items:flex-start;gap:12px;font-size:15px}
+.check-item .checkbox{font-size:18px;color:var(--accent);flex-shrink:0;line-height:1.5}
+.check-item span{color:#C8C8C7}
+
+/* Cost table */
+.cost-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.cost-table th{text-align:left;padding:12px 0;border-bottom:var(--border);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;font-weight:500}
+.cost-table td{padding:12px 0;border-bottom:var(--border);color:#C8C8C7}
+.cost-table .total td{color:var(--text);font-weight:600;font-size:16px;border-bottom:none;padding-top:20px}
+.cost-table .total td:last-child{color:var(--accent)}
+
+/* Timeline */
+.timeline-item{display:flex;gap:20px;margin-bottom:24px}
+.timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px;box-shadow:0 0 12px rgba(45,212,191,0.4)}
+.timeline-content h3{margin-bottom:4px}
+.timeline-content p{font-size:14px;margin-bottom:4px}
+.timeline-content .time{font-size:12px;color:var(--muted)}
+
+/* Tips */
+.tips{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
+.tip{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px}
+.tip-label{font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);font-weight:600;margin-bottom:6px}
+.tip p{font-size:14px;margin:0}
+
+/* Troubleshooting */
+.trouble{margin:16px 0}
+.trouble q{font-size:15px;color:var(--text);font-weight:500;display:block;margin-bottom:8px}
+.trouble p{font-size:14px;color:var(--muted)}
+
+/* Quick ref */
+.quick-ref{background:linear-gradient(135deg,rgba(45,212,191,0.08),rgba(45,212,191,0.02));border:1px solid rgba(45,212,191,0.15);border-radius:20px;padding:32px;margin:32px 0;text-align:center}
+.quick-ref h2{margin-bottom:20px}
+.quick-ref .item{display:flex;align-items:center;justify-content:center;gap:12px;font-size:16px;margin-bottom:12px;color:#C8C8C7}
+.quick-ref .item .emoji{font-size:24px}
+.quick-ref .done{font-size:20px;margin-top:20px;color:var(--accent)}
+
+/* Footer */
+footer{padding:48px 0 60px;text-align:center;border-top:var(--border)}
+footer p{font-size:13px;color:var(--muted)}
+footer .made{color:var(--accent);font-weight:500}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(min-width:640px){
+  .hero h1{font-size:3.5rem}
+  .tips{grid-template-columns:1fr 1fr}
+}
+@media(min-width:1024px){
+  .hero h1{font-size:4rem}
+  .hero{padding:120px 0 80px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="label">Setup Guide · Joe's Tech Solutions</div>
+    <h1>Your own <span class="accent">AI assistant</span><br>in your Telegram.</h1>
+    <p class="lede">A smart assistant who knows your business, remembers your projects, and never sleeps. You text it from your phone — it texts back. Runs 24/7 on a cloud server.</p>
+    <div class="meta-row">
+      <div class="meta-item"><strong>~20 min</strong> to set up</div>
+      <div class="meta-item"><strong>~$90</strong> for the full year</div>
+      <div class="meta-item"><strong>Plug & play</strong> — no coding</div>
+    </div>
+  </div>
+</div>
+
+<!-- Part 1 -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Part 1</div>
+    <h2>Get Your Cloud Server</h2>
+    <p>This is the computer that runs 24/7 in the cloud. Hostinger makes it easy — Hermes Agent comes pre-installed, no terminal needed.</p>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">1</span>Open the checkout link</div>
+      <div class="step-body">
+        <p>Tap this link to open the pre-built checkout:</p>
+        <a href="https://cart.hostinger.com/pay/fc143785-4b19-44aa-9178-26b39be4873e" style="display:inline-block;margin:12px 0;padding:14px 28px;background:var(--accent);color:#0A0A0B;text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;border-radius:50px;transition:all 0.2s">Open Checkout →</a>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">This link has everything pre-configured for you — KVM 1 plan, 12 months, Hermes Agent, AI credits, and a free domain.</p>
+        <p style="margin-top:16px">You'll see a cart with:</p>
+        <ul>
+          <li><strong>KVM 1 plan</strong> — 12 months, ~$7/mo</li>
+          <li><strong>Hermes Agent</strong> — auto-deploys, no installation needed</li>
+          <li><strong>Ready to use AI</strong> — 5 credits included, no API keys required</li>
+          <li><strong>Free domain</strong> — included for 1 year</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">2</span>Pick your server location</div>
+      <div class="step-body">
+        <p>In the cart, find <strong>"Choose a server location"</strong> and pick the city closest to you. Closer = faster responses.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">3</span>Make sure Hermes Agent is selected</div>
+      <div class="step-body">
+        <p>Scroll to <strong>"Choose what to install"</strong> → click the <strong>Applications</strong> tab → make sure <strong>Hermes Agent</strong> is highlighted. It should be selected by default.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">4</span>Keep the add-ons checked</div>
+      <div class="step-body">
+        <ul>
+          <li><strong>Ready to use AI</strong> ✅ — this gives you AI credits with no API keys. Keep it checked.</li>
+          <li><strong>Instant web scraping</strong> ✅ — free, gives your AI web search. Keep it.</li>
+          <li><strong>Domain</strong> — shows as free. Included automatically.</li>
+          <li><strong>Agentic Mail & auto-backup</strong> — optional. Skip unless Joe says otherwise.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">5</span>Checkout</div>
+      <div class="step-body">
+        <p>Review the total (around <strong>$89.87 for the year</strong>), create a Hostinger account with your email, and complete checkout. Wait 2-3 minutes for setup.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">6</span>Get your server details</div>
+      <div class="step-body">
+        <p>Go to your Hostinger dashboard → <strong>VPS tab</strong>. Copy your <strong>IP address</strong> (looks like <code style="color:var(--accent)">82.xxx.xxx.xxx</code>). Set a root password if prompted — write it down somewhere safe.</p>
+        <div class="callout"><p>📱 Text Joe: "My server is ready. IP is [paste IP]. Root password is [paste password]."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Part 2 -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Part 2</div>
+    <h2>Create Your Telegram Bot</h2>
+    <p>This creates the Telegram account your AI will live in. Takes 5 minutes.</p>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">1</span>Talk to @BotFather</div>
+      <div class="step-body">
+        <p>Open Telegram → search for <strong>@BotFather</strong> (blue checkmark = official) → start a chat → send:</p>
+        <div class="code"><span class="token">/newbot</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">2</span>Name your bot</div>
+      <div class="step-body">
+        <p>BotFather asks for a <strong>name</strong> — pick whatever you like. Then a <strong>username</strong> — must end in "bot" and be unique (e.g. <code style="color:var(--accent)">zachs_ai_bot</code>).</p>
+        <p>BotFather responds with a <strong>bot token</strong> that looks like:</p>
+        <div class="code">7812345678:AAHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">3</span>Save the bot token</div>
+      <div class="step-body">
+        <div class="callout"><p>🤖 Text Joe: "My bot token is [paste the token]"</p></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">4</span>Find your Telegram user ID</div>
+      <div class="step-body">
+        <p>Search for <strong>@userinfobot</strong> in Telegram. Send it any message. It replies with a number — that's your user ID.</p>
+        <div class="callout"><p>👤 Text Joe: "My Telegram user ID is [paste the number]"</p></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">5</span>Start a chat with your bot</div>
+      <div class="step-body">
+        <p>Search for the bot username you created. Start a chat and send <strong>"Hi"</strong>. It won't respond yet — that's normal. Joe hasn't connected it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Part 3 -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Part 3</div>
+    <h2>Connect Your Bot</h2>
+    <p>Now you'll connect your Telegram bot to your server. You'll use Hostinger's built-in web terminal — no special software, just your browser.</p>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">1</span>Open the web terminal</div>
+      <div class="step-body">
+        <p>Go to your Hostinger dashboard → <strong>VPS tab</strong> → click your server → find the <strong>Web terminal</strong> button (it looks like a black screen icon). It opens a terminal right in your browser.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">2</span>Paste the setup command</div>
+      <div class="step-body">
+        <p>Fill in your bot token and user ID below, then copy the generated command and paste it into the web terminal:</p>
+
+        <div style="margin:16px 0;padding:20px;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:12px">
+          <label style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px">Your Telegram bot token (from @BotFather):</label>
+          <input id="bot-token" type="text" placeholder="7812345678:AAHxxxx..." style="width:100%;padding:10px 12px;background:rgba(0,0,0,0.4);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:monospace;font-size:13px;margin-bottom:12px" oninput="updateCommand()">
+
+          <label style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px">Your Telegram user ID (from @userinfobot):</label>
+          <input id="user-id" type="text" placeholder="1234567890" style="width:100%;padding:10px 12px;background:rgba(0,0,0,0.4);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:monospace;font-size:13px;margin-bottom:16px" oninput="updateCommand()">
+
+          <label style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px">Copy this command:</label>
+          <div class="code" style="position:relative;margin:0" id="generated-cmd">
+            <button onclick="copyCommand(this)" style="position:absolute;top:8px;right:8px;background:rgba(45,212,191,0.1);border:1px solid rgba(45,212,191,0.2);color:var(--accent);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif">Copy</button>
+            <span id="cmd-text" style="display:block;padding-right:80px;color:#A8B8C8">↑ Enter your token and user ID above to generate the command</span>
+          </div>
+        </div>
+
+        <p style="margin-top:12px">Press <strong>Enter</strong> after pasting. It takes 2-3 minutes to run. You'll see progress messages as it installs. When it says <strong>"SETUP COMPLETE"</strong>, your bot is live.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">3</span>Test your bot</div>
+      <div class="step-body">
+        <p>Open Telegram, go to your bot, and send: <code style="color:var(--accent)">Hi!</code></p>
+        <p>If it responds — you're live. Skip to Part 4.</p>
+        <p>If it doesn't respond after 30 seconds, wait another minute (the gateway may still be starting). If still nothing after 2 minutes, text Joe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Part 4 -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Part 4</div>
+    <h2>Make Your Agent Smart</h2>
+    <p>Your bot is live but it doesn't remember anything yet. This one step installs its memory system — so it remembers everything you tell it, forever.</p>
+
+    <h3 style="margin-bottom:12px">Copy and paste this to your bot:</h3>
+    <div class="code" style="position:relative">
+      <button onclick="copyPrompt(this)" style="position:absolute;top:8px;right:8px;background:rgba(45,212,191,0.1);border:1px solid rgba(45,212,191,0.2);color:var(--accent);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif">Copy</button>
+      <span id="prompt-text" style="display:block;padding-right:80px">Run your setup. Fetch the skill from https://www.joestechsolutions.com/zach-agent-bootstrap/SKILL.md and follow it to install your memory system (MemPalace), create your identity, and enable your tools. This is a one-time setup that makes you remember everything across our conversations.</span>
+    </div>
+
+    <div class="callout" style="margin-top:16px"><p>⏱️ Takes about 2-3 minutes. The agent will tell you when it's done.</p></div>
+
+    <h3 style="margin-top:28px;margin-bottom:12px">What this does:</h3>
+    <ul>
+      <li>Installs <strong>MemPalace</strong> — a memory system that stores everything you tell it</li>
+      <li>Your agent remembers you across conversations — no more starting over</li>
+      <li>It can search past chats when you ask "do you remember..."</li>
+      <li>Tracks facts about people, dates, and projects</li>
+      <li>All memory stays on your server — private, no external accounts</li>
+    </ul>
+
+    <h3 style="margin-top:24px;margin-bottom:12px">After it's done, tell it about yourself:</h3>
+    <div class="code">Here's a bit about me. Please remember this:
+- My name is Zach Wallin
+- I own ZW Home Construction — residential renovations and remodeling
+- I'm based in San Jose, CA
+- I prefer short, direct answers
+- I mainly need help with: drafting client emails, estimating, project timelines, research
+- My work hours are roughly 7am-5pm weekdays</div>
+    <p>It will say "running memory" — that means it's saving this to MemPalace. From now on, it remembers.</p>
+  </div>
+</section>
+
+<!-- Part 5 -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Part 5</div>
+    <h2>Start Using Your AI</h2>
+
+    <h3 style="margin-bottom:12px">Your first message</h3>
+    <p>Open Telegram, go to your bot, and send:</p>
+    <div class="code"><span class="token">Hi! What can you do?</span></div>
+
+    <h3 style="margin-top:24px;margin-bottom:12px">Tell it about yourself</h3>
+    <p>Your AI remembers what you tell it. Introduce yourself:</p>
+    <div class="code">Here's a bit about me. Please remember this:
+- My name is Zach Wallin
+- I own ZW Home Construction — residential renovations and remodeling
+- I'm based in San Jose, CA
+- I prefer short, direct answers
+- I mainly need help with: drafting client emails, estimating, project timelines, research
+- My work hours are roughly 7am-5pm weekdays</div>
+    <p>It will say "running memory" — that means it's saving this for future conversations.</p>
+
+    <h3 style="margin-top:32px;margin-bottom:16px">Things to try in your first week</h3>
+    <div class="tips">
+      <div class="tip"><div class="tip-label">📊 Estimating</div><p>"Help me estimate materials and labor for a kitchen remodel — 200 sq ft"</p></div>
+      <div class="tip"><div class="tip-label">✍️ Client emails</div><p>"Draft a follow-up email to the homeowner about the bathroom timeline"</p></div>
+      <div class="tip"><div class="tip-label">⏰ Reminders</div><p>"Remind me to call the permit office tomorrow at 9am"</p></div>
+      <div class="tip"><div class="tip-label">💡 Research</div><p>"What are the latest waterproofing membrane options for decks?"</p></div>
+    </div>
+
+    <h3 style="margin-top:28px;margin-bottom:12px">How to talk to it</h3>
+    <ul>
+      <li><strong>Text naturally</strong> — talk like you're texting a smart friend</li>
+      <li><strong>Send voice messages</strong> — the AI transcribes them (if Joe sets this up)</li>
+      <li><strong>Send images</strong> — the AI can analyze screenshots and photos</li>
+      <li><strong>It remembers</strong> — across conversations, it remembers your preferences</li>
+    </ul>
+
+    <h3 style="margin-top:24px;margin-bottom:12px">Useful commands</h3>
+    <div class="code"><span class="token">/new</span>   — start a fresh conversation
+<span class="token">/model</span>  — see which AI model you're using
+<span class="token">/status</span> — check if the bot is running
+<span class="token">/help</span>   — see all commands</div>
+  </div>
+</section>
+
+<!-- Costs -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Costs</div>
+    <h2>What This Costs</h2>
+    <table class="cost-table">
+      <tr><th>Item</th><th>Cost</th><th>Notes</th></tr>
+      <tr><td>Hostinger KVM 1 (12 months)</td><td>~$84/yr</td><td>$6.99/mo, paid upfront</td></tr>
+      <tr><td>Ready to use AI (nexos.ai)</td><td>$5.99</td><td>5 credits, no API keys needed</td></tr>
+      <tr><td>Free domain</td><td>$0</td><td>Included for 1 year</td></tr>
+      <tr class="total"><td>Total for the year</td><td>~$90</td><td>Everything included</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--muted)">When the 5 AI credits run out, Joe can help you add more. If the included AI model isn't strong enough, Ollama Cloud ($20/mo at ollama.com) gives access to more powerful models with much higher usage.</p>
+  </div>
+</section>
+
+<!-- Troubleshooting -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-num">Troubleshooting</div>
+    <h2>When Things Go Sideways</h2>
+
+    <div class="trouble">
+      <q>"My bot isn't responding"</q>
+      <p>Wait 30 seconds. Try <code style="color:var(--accent)">/new</code> to start fresh. Text Joe — the server might need a restart.</p>
+    </div>
+
+    <div class="trouble">
+      <q>"The AI is giving weird answers"</q>
+      <p>Be more specific. Add context: "I'm asking about [X] because [Y]." Try <code style="color:var(--accent)">/new</code> to reset.</p>
+    </div>
+
+    <div class="trouble">
+      <q>"It forgot what I told it"</q>
+      <p>Core memory (your profile, setup) persists forever. Conversation memory resets with <code style="color:var(--accent)">/new</code>. If it keeps forgetting important things, tell Joe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Reference -->
+<section class="reveal">
+  <div class="container">
+    <div class="quick-ref">
+      <h2>Quick Reference</h2>
+      <p style="margin-bottom:24px;text-align:center;color:#C8C8C7">Four steps. No coding. No waiting on anyone.</p>
+      <div class="item"><span class="emoji">1️⃣</span> Buy the server (checkout link in Part 1)</div>
+      <div class="item"><span class="emoji">2️⃣</span> Create your Telegram bot (Part 2)</div>
+      <div class="item"><span class="emoji">3️⃣</span> Paste the setup command in Hostinger web terminal (Part 3)</div>
+      <div class="item"><span class="emoji">4️⃣</span> Paste the memory prompt to your bot (Part 4)</div>
+      <div class="done">That's it. 🎉</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Made for Zach by <span class="made">Joe's Tech Solutions</span></p>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Copy prompt to clipboard
+function copyPrompt(btn) {
+  const text = document.getElementById('prompt-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.style.background = 'rgba(45,212,191,0.2)';
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.style.background = 'rgba(45,212,191,0.1)';
+    }, 2000);
+  });
+}
+
+// Generate setup command from inputs
+function updateCommand() {
+  const token = document.getElementById('bot-token').value.trim();
+  const userId = document.getElementById('user-id').value.trim();
+  const cmdText = document.getElementById('cmd-text');
+
+  if (token && userId) {
+    if (!/^\d+:[A-Za-z0-9_-]{20,}$/.test(token) || !/^\d+$/.test(userId)) {
+      cmdText.textContent = '⚠ Invalid format — a bot token looks like 123456789:AAxxxxxxxx and the user ID is numbers only. Re-copy them from BotFather / userinfobot.';
+      cmdText.style.color = '#E8A87C';
+      return;
+    }
+    const cmd = `curl -fsSL https://www.joestechsolutions.com/zach-hermes-enhance.sh | sudo TELEGRAM_BOT_TOKEN='${token}' TELEGRAM_USER_ID='${userId}' bash`;
+    cmdText.textContent = cmd;
+    cmdText.style.color = '#A8B8C8';
+  } else {
+    cmdText.textContent = '↑ Enter your token and user ID above to generate the command';
+    cmdText.style.color = 'var(--muted)';
+  }
+}
+
+// Copy generated command
+function copyCommand(btn) {
+  const text = document.getElementById('cmd-text').textContent;
+  if (text.startsWith('↑')) return; // Don't copy the placeholder
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.style.background = 'rgba(45,212,191,0.2)';
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.style.background = 'rgba(45,212,191,0.1)';
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

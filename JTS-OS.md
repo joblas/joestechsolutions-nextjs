@@ -1,7 +1,7 @@
 # JTS Company OS
 
-**Version:** 7.0
-**Updated:** June 30, 2026
+**Version:** 7.1
+**Updated:** August 8, 2026
 **Owner:** Joe Blas (CEO)
 **Operator:** Lurkr (CTO / Hermes Agent)
 
@@ -64,7 +64,7 @@ Joe Blas (CEO / Owner / Founder)
         │
         ├── COO — operations, project tracking, weekly reviews
         │     ├── ops-dashboard (:8642 metrics)
-        │     └── quadient-check-in (cron weekly Sun)
+        │     └── weekly personal check-in (non-JTS lane — § 11)
         │
         ├── CMO — content, brand, social media, media studio
         │     ├── joe-content-lane (skill + cron 7:10am)
@@ -116,7 +116,9 @@ Joe Blas (CEO / Owner / Founder)
               └── expansion-finder (qwen3.5:cloud)
 ```
 
-**Stats:** 1 CEO · 1 CTO · 6 C-Suite · 6 VPs · 25 Agents · 27 Cron Jobs · 100+ Skills · 8 Services · 8 Docker containers
+**Stats:** 1 CEO · 1 CTO · 6 C-Suite · 6 VPs · 14 Active Agents · 30 Cron Jobs · 100+ Skills · 8 Services · 8 Docker containers
+
+> **Count rule (verified 2026-08-08):** The active delegation roster is **14 agents** — canonical list in `~/.hermes/delegation/agents/REGISTRY.yaml` (archived agents live in `archived/` and are not counted). The tree above shows *roles and lanes*: some leaves are cron jobs, dashboards, or skill lanes rather than standing agents. The old "25 Agents" figure was the pre-consolidation peak from the OpenClaw era and is retired — do not quote it. Cron count comes from `hermes cron list` (§ 10 mirrors it).
 
 Visual chart: `~/jts-org-chart-v7-visual.png`
 
@@ -409,50 +411,59 @@ Do NOT save: task progress, PR numbers, commit SHAs, "fixed bug X", anything sta
 
 ---
 
-## 10. Cron Schedule (27 Jobs)
+## 10. Cron Schedule (30 Jobs)
+
+> Mirrors `hermes cron list` — verified 2026-08-08. When a job is added, removed, or renamed, update this table AND the `jts-company-os` skill's cron count. Removed since the last version: `spend_caps_enforcement`, `ig_comment_drafter`, `morning_brief`. Renamed: `openrouter_balance_check` → `weekly_balance_check`.
 
 ### Daily
 
 | Time (PT) | Job | Owner |
 |---|---|---|
+| 3:00am | system-security-sweep | VP Infrastructure |
+| 3:30am | skillopt-sleep-nightly | VP Infrastructure |
 | 5:30am | daily-update-check | VP Infrastructure |
 | 6:30am | tech_intel_brief | Chief of Staff |
+| 7:00am | kimi-k3-tier-watch | VP AI/ML |
 | 7:10am | content_draft | CMO (joe-content-lane) |
+| 8:00am | renfaire_content_draft | CMO |
 | 8:30am | vp_infrastructure_daily_health | VP Infrastructure |
 | 9:00am | cos_daily_standup | Chief of Staff |
-| 10:00am | spend_caps_enforcement | CFO |
 | 5:30pm | evening_plan | Chief of Staff |
-| 5x/day | ig_auto_reply | CMO |
-| 2x/day | ig_comment_drafter | CMO |
-| daily | cfo_monthly_expense_scan | CFO |
-| daily | jts_cold_email_sender | CRO (5 emails/day) |
-| daily | jts_cold_email_reply_check | CRO |
+| 5x/day (6a–10p) | ig_auto_reply | CMO |
+| every 15 min | cron-failure-watch | VP Infrastructure |
+| every 4 hrs | gritt-email-watch | Personal lane (non-JTS — § 12) |
+
+### Weekdays (Mon–Fri)
+
+| Time (PT) | Job | Owner |
+|---|---|---|
+| 9:00am | jts_cold_email_sender | CRO (5 emails/day) |
+| 11:00am | jts_cold_email_reply_check | CRO |
 
 ### Weekly
 
 | Day | Time | Job | Owner |
 |---|---|---|---|
 | Sun | 4:00am | local_model_bakeoff_weekly | VP AI/ML |
-| Sun | 6:00pm | jts_coo_weekly_review | COO |
-| Mon | 3:00am | system-security-sweep | VP Infrastructure |
+| Sun | 6:00pm | weekly personal check-in | Personal lane (non-JTS — § 11/§ 12) |
 | Mon | 4:00am | skillspector_weekly_scan | VP Infrastructure |
 | Mon | 4:00am | weekly-config-sync | VP Infrastructure |
+| Mon | 6:00am | agent_scorecard | VP Infrastructure (script-only, no tokens) |
+| Mon | 8:00am | jts_weekly_success_report | CCO |
 | Mon | 8:00am | vp_engineering_sprint_review | VP Engineering |
+| Mon | 8:00am | weekly-job-search-sweep | Personal lane (career-ops — § 12) |
+| Mon | 9:00am | fcc-upstream-tracker | VP Engineering |
 | Mon | 9:00am | vp_product_monthly_review | VP Product |
+| Mon | 9:00am | weekly_balance_check | VP Infrastructure |
 | Mon | 9:30am | cmo_weekly_review | CMO |
 | Mon | 6:00pm | jts_cfo_monthly_review | CFO |
-| Mon | 9:00am | openrouter_balance_check | VP Infrastructure |
-| Mon | 9:00am | fcc-upstream-tracker | VP Engineering |
-| Sun | 6:00pm | Quadient Weekly Check-in | Chief of Staff |
-| weekly | jts_weekly_success_report | CCO |
-| weekly | renfaire_content_draft | CMO |
+| Mon | 7:00pm | jts_coo_weekly_review | COO |
 
-### Monthly / Other
+### Monthly
 
 | Schedule | Job | Owner |
 |---|---|---|
-| Monthly | jts_cfo_monthly_review | CFO |
-| Jan 1 | morning_brief | Chief of Staff |
+| 1st, 9:00am | cfo_monthly_expense_scan | CFO |
 
 ---
 
