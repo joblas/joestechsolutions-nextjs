@@ -28,7 +28,7 @@ export const post: BlogPost = {
 </div>
 <p>Van texts something like <em>"not only is there 10&ndash;40vol theres 5, 7, 13"</em> &mdash; that's salon-speak for developer volumes missing from a picker. The bot replies "Got it &mdash; on it." From there, her message flows through three possible lanes:</p>
 
-<div class="my-6 p-4 rounded-xl border border-secondary/20 bg-secondary/10 overflow-x-auto">
+<div class="my-6 p-4 rounded-xl border border-secondary/20 bg-secondary/10 overflow-x-auto" style="content-visibility:auto;contain-intrinsic-size:auto 360px">
 <svg viewBox="0 0 780 320" role="img" aria-label="Pipeline diagram: Van texts the bot, triage creates a GitHub issue, then three lanes: bug fixes ship themselves via tests, CI and OTA; features stop at a pull request Joe approves; native or database changes always become a new TestFlight build." style="min-width:700px;display:block">
 <style>
 .bl-node{fill:var(--card,rgba(127,127,127,.06));stroke:var(--border,rgba(127,127,127,.35));stroke-width:1.2}
@@ -37,13 +37,13 @@ export const post: BlogPost = {
 .bl-s{fill:currentColor;opacity:.55;font:400 10.5px Inter,system-ui,sans-serif}
 .bl-lane{fill:currentColor;opacity:.45;font:600 10px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .bl-edge{stroke:currentColor;opacity:.4;fill:none;stroke-width:1.5;marker-end:url(#bl-arr)}
-.bl-flow{stroke:var(--color-accent,#14b8a6);opacity:.95;fill:none;stroke-width:1.8;stroke-dasharray:5 7;marker-end:url(#bl-arr2);animation:bl-march 1.1s linear infinite}
+.bl-flow{stroke:var(--color-accent,#e8703f);opacity:.95;fill:none;stroke-width:1.8;stroke-dasharray:5 7;marker-end:url(#bl-arr2);animation:bl-march 1.1s linear infinite}
 @keyframes bl-march{to{stroke-dashoffset:-12}}
 @media (prefers-reduced-motion:reduce){.bl-flow{animation:none}}
 </style>
 <defs>
 <marker id="bl-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="currentColor" opacity="0.5"/></marker>
-<marker id="bl-arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-accent,#14b8a6)"/></marker>
+<marker id="bl-arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-accent,#e8703f)"/></marker>
 </defs>
 <text x="375" y="12" class="bl-lane">ships itself</text>
 <text x="375" y="130" class="bl-lane">merge is mine</text>
@@ -124,14 +124,14 @@ export const post: BlogPost = {
   <li>The agent re-arms its own daily sweep (TestFlight feedback + crash reports flow into the same triage lane), because scheduled jobs die with the session and reboots were silently eating them.</li>
   <li>It refuses to run in the mode that once leaked permission prompts into Van's chat &mdash; she saw approval buttons meant for me. Fixed at the source.</li>
 </ul>
-<div class="my-6 p-4 rounded-xl border border-secondary/20 bg-secondary/10 overflow-x-auto">
+<div class="my-6 p-4 rounded-xl border border-secondary/20 bg-secondary/10 overflow-x-auto" style="content-visibility:auto;contain-intrinsic-size:auto 360px">
 <svg viewBox="0 0 780 175" role="img" aria-label="Self-healing diagram: when the machine boots, a watchdog timer starts the agent within 45 seconds and health-checks it every 5 minutes. A separate 8:23 AM daily sweep pulls TestFlight feedback and crash reports into the same triage lane." style="min-width:700px;display:block">
 <style>
 .bl2-node{fill:var(--card,rgba(127,127,127,.06));stroke:var(--border,rgba(127,127,127,.35));stroke-width:1.2}
 .bl2-t{fill:currentColor;font:600 12.5px Inter,system-ui,sans-serif}
 .bl2-s{fill:currentColor;opacity:.55;font:400 10.5px Inter,system-ui,sans-serif}
 .bl2-edge{stroke:currentColor;opacity:.4;fill:none;stroke-width:1.5;marker-end:url(#bl2-arr)}
-.bl2-flow{stroke:var(--color-accent,#14b8a6);opacity:.95;fill:none;stroke-width:1.8;stroke-dasharray:5 7;marker-end:url(#bl2-arr2);animation:bl2-march 1.1s linear infinite}
+.bl2-flow{stroke:var(--color-accent,#e8703f);opacity:.95;fill:none;stroke-width:1.8;stroke-dasharray:5 7;marker-end:url(#bl2-arr2);animation:bl2-march 1.1s linear infinite}
 .bl2-pulse{animation:bl2-beat 2.4s ease-in-out infinite;transform-origin:585px 46px}
 @keyframes bl2-march{to{stroke-dashoffset:-12}}
 @keyframes bl2-beat{0%,100%{opacity:.35}50%{opacity:.9}}
@@ -139,7 +139,7 @@ export const post: BlogPost = {
 </style>
 <defs>
 <marker id="bl2-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="currentColor" opacity="0.5"/></marker>
-<marker id="bl2-arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-accent,#14b8a6)"/></marker>
+<marker id="bl2-arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-accent,#e8703f)"/></marker>
 </defs>
 <rect class="bl2-node" x="10" y="20" width="130" height="52" rx="9"/>
 <text x="75" y="42" text-anchor="middle" class="bl2-t">Machine boots</text>
