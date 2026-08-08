@@ -9,19 +9,85 @@ export const post: BlogPost = {
   readTime: 7,
   author: "Joe Blas",
   tags: ["AI Agents", "Build in Public", "Automation", "Mobile Development", "Archive"],
+  images: {
+    "/images/blog/beta-loop-og.jpg": { width: 1024, height: 576 },
+  },
   seo: {
     title:
       "Build in Public: How My Beta Tester's Texts Become App Updates | Joe's Tech Solutions",
     description:
       "A real AI agent pipeline in production: a salon owner texts feedback in plain English, and an autonomous agent triages, test-drives a fix, and ships an over-the-air update — with human gates exactly where they belong.",
+    ogImage: "/images/blog/beta-loop-og.jpg",
   },
   content: `
+<img src="/images/blog/beta-loop-og.jpg" alt="Illustration: a text message on one phone flows through a glowing pipeline into an update checkmark on another phone" />
 <p class="lead">I'm building Archive, a salon inventory app, with a real beta tester: Van, a salon owner. She's not a developer. She doesn't file GitHub issues. She texts a Telegram bot in her own words — sometimes with screenshots — and her app updates itself. Everything in between is an AI agent pipeline I run in production, and this post is exactly how it works, including the part where it broke.</p>
 
 <div class="flex items-center gap-2 mb-4">
   <h2 class="m-0 text-2xl font-bold">The Loop</h2>
 </div>
 <p>Van texts something like <em>"not only is there 10&ndash;40vol theres 5, 7, 13"</em> &mdash; that's salon-speak for developer volumes missing from a picker. The bot replies "Got it &mdash; on it." From there, her message flows through three possible lanes:</p>
+
+<div class="my-6 p-4 rounded-xl border border-secondary/20 bg-secondary/10 overflow-x-auto">
+<svg viewBox="0 0 780 320" role="img" aria-label="Pipeline diagram: Van texts the bot, triage creates a GitHub issue, then three lanes: bug fixes ship themselves via tests, CI and OTA; features stop at a pull request Joe approves; native or database changes always become a new TestFlight build." style="min-width:700px;display:block">
+<style>
+.bl-node{fill:var(--card,rgba(127,127,127,.06));stroke:var(--border,rgba(127,127,127,.35));stroke-width:1.2}
+.bl-gate{stroke-dasharray:5 3}
+.bl-t{fill:currentColor;font:600 12.5px Inter,system-ui,sans-serif}
+.bl-s{fill:currentColor;opacity:.55;font:400 10.5px Inter,system-ui,sans-serif}
+.bl-lane{fill:currentColor;opacity:.45;font:600 10px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.bl-edge{stroke:currentColor;opacity:.4;fill:none;stroke-width:1.5;marker-end:url(#bl-arr)}
+.bl-flow{stroke:var(--color-accent,#14b8a6);opacity:.95;fill:none;stroke-width:1.8;stroke-dasharray:5 7;marker-end:url(#bl-arr2);animation:bl-march 1.1s linear infinite}
+@keyframes bl-march{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.bl-flow{animation:none}}
+</style>
+<defs>
+<marker id="bl-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="currentColor" opacity="0.5"/></marker>
+<marker id="bl-arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-accent,#14b8a6)"/></marker>
+</defs>
+<text x="375" y="12" class="bl-lane">ships itself</text>
+<text x="375" y="130" class="bl-lane">merge is mine</text>
+<text x="375" y="248" class="bl-lane">always a new build</text>
+<rect class="bl-node" x="10" y="125" width="120" height="64" rx="9"/>
+<text x="70" y="152" text-anchor="middle" class="bl-t">&#128172; Van texts</text>
+<text x="70" y="170" text-anchor="middle" class="bl-s">plain English</text>
+<rect class="bl-node" x="180" y="125" width="140" height="64" rx="9"/>
+<text x="250" y="152" text-anchor="middle" class="bl-t">Triage</text>
+<text x="250" y="170" text-anchor="middle" class="bl-s">&#8594; GitHub issue</text>
+<rect class="bl-node" x="370" y="20" width="140" height="52" rx="9"/>
+<text x="440" y="42" text-anchor="middle" class="bl-t">Failing test &#8594; fix</text>
+<text x="440" y="59" text-anchor="middle" class="bl-s">test-first, always</text>
+<rect class="bl-node" x="540" y="20" width="66" height="52" rx="9"/>
+<text x="573" y="50" text-anchor="middle" class="bl-t">CI &#10003;</text>
+<rect class="bl-node" x="636" y="20" width="134" height="52" rx="9"/>
+<text x="703" y="42" text-anchor="middle" class="bl-t">&#128241; OTA update</text>
+<text x="703" y="59" text-anchor="middle" class="bl-s">her app self-updates</text>
+<rect class="bl-node" x="370" y="138" width="140" height="52" rx="9"/>
+<text x="440" y="160" text-anchor="middle" class="bl-t">Feature &#8594; PR</text>
+<text x="440" y="177" text-anchor="middle" class="bl-s">built, not merged</text>
+<rect class="bl-node bl-gate" x="540" y="138" width="120" height="52" rx="9"/>
+<text x="600" y="160" text-anchor="middle" class="bl-t">&#128100; Joe approves</text>
+<text x="600" y="177" text-anchor="middle" class="bl-s">one tap</text>
+<rect class="bl-node" x="370" y="256" width="140" height="52" rx="9"/>
+<text x="440" y="278" text-anchor="middle" class="bl-t">Native / DB change</text>
+<text x="440" y="295" text-anchor="middle" class="bl-s">app foundations</text>
+<rect class="bl-node bl-gate" x="540" y="256" width="120" height="52" rx="9"/>
+<text x="600" y="278" text-anchor="middle" class="bl-t">&#128100; Joe approves</text>
+<rect class="bl-node" x="690" y="256" width="80" height="52" rx="9"/>
+<text x="730" y="278" text-anchor="middle" class="bl-t">TestFlight</text>
+<text x="730" y="295" text-anchor="middle" class="bl-s">install once</text>
+<path class="bl-flow" d="M130,157 L174,157"/>
+<path class="bl-flow" d="M320,150 C348,140 342,60 364,48"/>
+<path class="bl-edge" d="M320,160 L364,163"/>
+<path class="bl-edge" d="M320,172 C348,182 342,268 364,278"/>
+<path class="bl-flow" d="M510,46 L534,46"/>
+<path class="bl-flow" d="M606,46 L630,46"/>
+<path class="bl-edge" d="M510,164 L534,164"/>
+<path class="bl-edge" d="M660,157 C690,150 692,95 700,78"/>
+<path class="bl-edge" d="M510,282 L534,282"/>
+<path class="bl-edge" d="M660,282 L684,282"/>
+</svg>
+</div>
 
 <div class="grid gap-4 sm:grid-cols-3 my-6">
   <div class="p-5 bg-secondary/10 rounded-xl border border-secondary/20">
@@ -58,6 +124,48 @@ export const post: BlogPost = {
   <li>The agent re-arms its own daily sweep (TestFlight feedback + crash reports flow into the same triage lane), because scheduled jobs die with the session and reboots were silently eating them.</li>
   <li>It refuses to run in the mode that once leaked permission prompts into Van's chat &mdash; she saw approval buttons meant for me. Fixed at the source.</li>
 </ul>
+<div class="my-6 p-4 rounded-xl border border-secondary/20 bg-secondary/10 overflow-x-auto">
+<svg viewBox="0 0 780 175" role="img" aria-label="Self-healing diagram: when the machine boots, a watchdog timer starts the agent within 45 seconds and health-checks it every 5 minutes. A separate 8:23 AM daily sweep pulls TestFlight feedback and crash reports into the same triage lane." style="min-width:700px;display:block">
+<style>
+.bl2-node{fill:var(--card,rgba(127,127,127,.06));stroke:var(--border,rgba(127,127,127,.35));stroke-width:1.2}
+.bl2-t{fill:currentColor;font:600 12.5px Inter,system-ui,sans-serif}
+.bl2-s{fill:currentColor;opacity:.55;font:400 10.5px Inter,system-ui,sans-serif}
+.bl2-edge{stroke:currentColor;opacity:.4;fill:none;stroke-width:1.5;marker-end:url(#bl2-arr)}
+.bl2-flow{stroke:var(--color-accent,#14b8a6);opacity:.95;fill:none;stroke-width:1.8;stroke-dasharray:5 7;marker-end:url(#bl2-arr2);animation:bl2-march 1.1s linear infinite}
+.bl2-pulse{animation:bl2-beat 2.4s ease-in-out infinite;transform-origin:585px 46px}
+@keyframes bl2-march{to{stroke-dashoffset:-12}}
+@keyframes bl2-beat{0%,100%{opacity:.35}50%{opacity:.9}}
+@media (prefers-reduced-motion:reduce){.bl2-flow,.bl2-pulse{animation:none}}
+</style>
+<defs>
+<marker id="bl2-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="currentColor" opacity="0.5"/></marker>
+<marker id="bl2-arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--color-accent,#14b8a6)"/></marker>
+</defs>
+<rect class="bl2-node" x="10" y="20" width="130" height="52" rx="9"/>
+<text x="75" y="42" text-anchor="middle" class="bl2-t">Machine boots</text>
+<text x="75" y="59" text-anchor="middle" class="bl2-s">any reboot or crash</text>
+<rect class="bl2-node" x="190" y="20" width="150" height="52" rx="9"/>
+<text x="265" y="42" text-anchor="middle" class="bl2-t">Watchdog timer</text>
+<text x="265" y="59" text-anchor="middle" class="bl2-s">starts the agent in 45 s</text>
+<rect class="bl2-node" x="440" y="20" width="180" height="52" rx="9"/>
+<text x="530" y="42" text-anchor="middle" class="bl2-t">Agent listening 24/7</text>
+<text x="530" y="59" text-anchor="middle" class="bl2-s">re-arms its own daily sweep</text>
+<path class="bl2-flow" d="M140,46 L184,46"/>
+<path class="bl2-flow" d="M340,46 L434,46"/>
+<path class="bl2-edge bl2-pulse" d="M440,80 C400,105 375,80 350,74"/>
+<text x="400" y="105" text-anchor="middle" class="bl2-s">health check every 5 min &#8212; replaced if half-dead</text>
+<rect class="bl2-node" x="10" y="120" width="160" height="45" rx="9"/>
+<text x="90" y="147" text-anchor="middle" class="bl2-t">8:23 AM daily sweep</text>
+<rect class="bl2-node" x="230" y="120" width="220" height="45" rx="9"/>
+<text x="340" y="140" text-anchor="middle" class="bl2-t">TestFlight feedback + crashes</text>
+<text x="340" y="156" text-anchor="middle" class="bl2-s">what she didn't text about</text>
+<rect class="bl2-node" x="510" y="120" width="150" height="45" rx="9"/>
+<text x="585" y="147" text-anchor="middle" class="bl2-t">Same triage lane</text>
+<path class="bl2-edge" d="M170,142 L224,142"/>
+<path class="bl2-edge" d="M450,142 L504,142"/>
+</svg>
+</div>
+
 <p>The lesson generalizes: an autonomous agent is only as reliable as its supervisor. The interesting engineering isn't the AI writing the fix &mdash; it's the boring systemd timer making sure the AI is still listening.</p>
 
 <div class="flex items-center gap-2 mb-4">
